@@ -1,0 +1,46 @@
+name: 去广告规则
+desc: 分流去广告
+
+rule-providers:
+
+  Adblock-Domain1:
+    type: http
+    behavior: domain-text
+    url: "https://ruleset.skk.moe/List/domainset/reject.conf"
+    path: ./ruleset/AdDomain1.yaml
+    interval: 86400
+
+  Adblock-Domain2:
+    type: http
+    behavior: domain-text
+    url: "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/reject.txt"
+    path: ./ruleset/AdDomain2.yaml
+    interval: 86400
+  
+  Adblock-Domain3:
+    type: http
+    behavior: domain-text
+    url: "https://raw.githubusercontent.com/mieqq/mieqq/master/In-AppTracker.txt"
+    path: ./ruleset/AdDomain3.yaml
+    interval: 86400
+    
+  Adblock-Domain4:
+    type: http
+    behavior: domain-text
+    url: "https://dbl.oisd.nl/basic/"
+    path: ./ruleset/AdDomain4.yaml
+    interval: 86400
+    
+  Adblock-Domain5:
+    type: http
+    behavior: domain-text
+    url: "https://raw.githubusercontent.com/QiuSimons/openwrt-mos/master/dat/serverlist.txt"
+    path: ./ruleset/AdDomain5.yaml
+    interval: 86400
+    
+rules:
+  - RULE-SET,Adblock-Domain1,REJECT  
+  - RULE-SET,Adblock-Domain2,REJECT
+  - RULE-SET,Adblock-Domain3,REJECT
+  - RULE-SET,Adblock-Domain4,REJECT
+  - RULE-SET,Adblock-Domain5,REJECT
