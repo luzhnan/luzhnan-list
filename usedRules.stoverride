@@ -1,5 +1,5 @@
-name: 去广告规则
-desc: 分流去广告
+name: 自用规则
+desc: 分流
 
 rule-providers:
 
@@ -38,9 +38,25 @@ rule-providers:
     path: ./ruleset/AdDomain5.yaml
     interval: 86400
     
+  appleCDN:
+    type: http
+    behavior: domain-text
+    url: "https://ruleset.skk.moe/List/domainset/apple_cdn.conf"
+    path: ./ruleset/appleCDN.yaml
+    interval: 86400
+    
+  sCDN:
+    type: http
+    behavior: domain-text
+    url: "https://ruleset.skk.moe/List/domainset/cdn.conf"
+    path: ./ruleset/sCDN.yaml
+    interval: 86400
+    
 rules:
   - RULE-SET,Adblock-Domain1,REJECT  
   - RULE-SET,Adblock-Domain2,REJECT
   - RULE-SET,Adblock-Domain3,REJECT
   - RULE-SET,Adblock-Domain4,REJECT
   - RULE-SET,Adblock-Domain5,REJECT
+  - RULE-SET,appleCDN,DRIECT
+  - RULE-SET,sCDN,PROXY
