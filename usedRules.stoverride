@@ -2,6 +2,12 @@ name: 自用规则
 desc: 分流（Stash 规则条数保持在 25 万内为佳。）
 
 rule-providers:
+  adblocknoip:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/luzhnan/luzhnan-list/main/adblockClashClassicalnoip.txt"
+    path: ./ruleset/Classicalnoip.txt
+    interval: 86400
 
   Adblock-Domain2:
     type: http
@@ -30,6 +36,13 @@ rule-providers:
     url: "https://raw.githubusercontent.com/QiuSimons/openwrt-mos/master/dat/serverlist.txt"
     path: ./ruleset/AdDomain5.txt
     interval: 86400
+
+  adblocknoip:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/luzhnan/luzhnan-list/main/adblockClashClassicalip.txt"
+    path: ./ruleset/Classicalip.txt
+    interval: 86400
     
   appleCDN:
     type: http
@@ -38,11 +51,16 @@ rule-providers:
     path: ./ruleset/appleCDN.txt
     interval: 86400
     
+
+
+    
     
 rules:
+  - RULE-SET,adblocknoip,REJECT
   - RULE-SET,Adblock-Domain2,REJECT
   - RULE-SET,Adblock-Domain3,REJECT
   # - RULE-SET,Adblock-Domain4,REJECT
   # - RULE-SET,Adblock-Domain5,REJECT
+  - RULE-SET,adblockip,REJECT
   - RULE-SET,appleCDN,DIRECT
 
