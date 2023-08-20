@@ -6,44 +6,43 @@ rule-providers:
   Adblock-Domain2:
     type: http
     behavior: domain-text
-    url: "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/reject.txt"
-    path: ./ruleset/AdDomain2.yaml
+    url: "https://ruleset.skk.moe/List/domainset/reject.conf"
+    path: ./ruleset/AdDomain2.txt
     interval: 86400
   
   Adblock-Domain3:
     type: http
     behavior: domain-text
     url: "https://raw.githubusercontent.com/mieqq/mieqq/master/In-AppTracker.txt"
-    path: ./ruleset/AdDomain3.yaml
+    path: ./ruleset/AdDomain3.txt
     interval: 86400
     
   Adblock-Domain4:
     type: http
     behavior: domain-text
     url: "https://dbl.oisd.nl/basic/"
-    path: ./ruleset/AdDomain4.yaml
+    path: ./ruleset/AdDomain4.txt
     interval: 86400
     
   Adblock-Domain5:
     type: http
     behavior: domain-text
     url: "https://raw.githubusercontent.com/QiuSimons/openwrt-mos/master/dat/serverlist.txt"
-    path: ./ruleset/AdDomain5.yaml
+    path: ./ruleset/AdDomain5.txt
     interval: 86400
     
   appleCDN:
     type: http
     behavior: domain-text
     url: "https://ruleset.skk.moe/List/domainset/apple_cdn.conf"
-    path: ./ruleset/appleCDN.yaml
+    path: ./ruleset/appleCDN.txt
     interval: 86400
     
     
 rules:
-  # - RULE-SET,Adblock-Domain1,REJECT  
-  # - RULE-SET,Adblock-Domain2,REJECT
+  - RULE-SET,Adblock-Domain2,REJECT
   - RULE-SET,Adblock-Domain3,REJECT
-  - RULE-SET,Adblock-Domain4,REJECT
+  # - RULE-SET,Adblock-Domain4,REJECT
   # - RULE-SET,Adblock-Domain5,REJECT
   - RULE-SET,appleCDN,DIRECT
 
