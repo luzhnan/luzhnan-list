@@ -69538,8 +69538,8 @@
 ! https://github.com/uBlock-user/uBO-Personal-Filters/blob/master/uPF.txt
 ! https://github.com/crssi/Firefox/blob/master/uBO-Deny.txt
 $ping
-.checkfront.com/lib/Control.Geocoder.js$script
-.checkfront.com/reserve/lib/jquery.cookie.js$script
+.checkfront.com/lib/Control.Geocoder*.js$script
+.checkfront.com/reserve/lib/jquery.cookie*.js$script
 /fingerprintjs2$script
 /fp.js$script
 /loginmanager_sniff.js$script
@@ -69691,7 +69691,7 @@ $ping
 ||js.partnerstack.com^$3p
 ||js.testfreaks.com^$3p
 ||judge.me^$3p
-||jwp.com^$3p,~script,~media,~image
+||jwp*.com^$3p,~script,~media,~image
 ||kme.si^$3p,~image
 ||knowyourapps.com^$3p
 ||kount.com^$3p
@@ -69768,7 +69768,7 @@ $ping
 ||qq.com^$3p
 ||quantserve.com^$3p
 ||readcomiconline.*/Ads/
-||readcomiconline.*/wp-includes/*/.html$subdocument,1p
+||readcomiconline.*/wp-includes/*/*.html$subdocument,1p
 ||rebuyengine.com^$3p
 ||recommendation-hybrid.wpdigital.net^$all
 ||refer.bose.com^
@@ -69885,7 +69885,7 @@ fmovies.*##+js(nosiif, try)
 ! https://github.com/crssi/Firefox/blob/master/uBO-Unbreak.txt
 @@*/lwa/WebPages/LwaClient.aspx$subdocument
 @@*/saml/$subdocument
-@@/clarity-.js$1p,script
+@@/clarity-*.js$1p,script
 @@/share-link-$1p,xhr
 @@||a-msedge.net^$domain=bing.com
 @@||advertising.com^$1p
@@ -69939,8 +69939,8 @@ fmovies.*##+js(nosiif, try)
 @@||accounts.google.*/ServiceLogin$subdocument
 @@||apis.google.com^$script,domain=content.googleapis.com|dropbox.com
 @@||appspot.com^$subdocument,domain=cloud.google.com
-@@||blogger..google.com^$domain=blogspot.com
-@@||blogger..google.com^$subdocument
+@@||blogger.*.google.com^$domain=blogspot.com
+@@||blogger.*.google.com^$subdocument
 @@||blogger.com/comment-iframe.$subdocument
 @@||consent.google.com^$subdocument
 @@||docs.google.com^$subdocument,domain=dropbox.com
@@ -69950,15 +69950,15 @@ fmovies.*##+js(nosiif, try)
 @@||google.com/recaptcha/$subdocument
 @@||google.com/recaptcha/api.js$script
 @@||google.com^$script,domain=youtube.com
-@@||google.^$domain=youtube.com|youtube-nocookie.com
+@@||google*.^$domain=youtube.com|youtube-nocookie.com
 @@||google.com/uds/*visualization$script,stylesheet
-@@||gstaticadssl..google.com^$font
+@@||gstaticadssl.*.google.com^$font
 @@||maps-api-ssl.google.com^$script,image
 @@||maps.google.*/maps$script,image
 @@||maps.googleapis.com/maps$script,image,xhr
 @@||mapsengine.google.com/map/embed$subdocument
-@@||youtube-ui..google.com^$subdocument,script
-@@||ytimg..google.com^$image
+@@||youtube-ui.*.google.com^$subdocument,script
+@@||ytimg.*.google.com^$image
 @@||ytimg.com^$script
 
 ! FACEBOOK
@@ -69982,7 +69982,7 @@ fmovies.*##+js(nosiif, try)
 ||instagram.com^$3p,~subdocument
 @@||instagram.com/p/$subdocument
 @@||instagram.com^$script
-@@||-instagram..facebook.com^$subdocument
+@@||-instagram.*.facebook.com^$subdocument
 
 ! TWITTER
 ||api.twitter.com^$3p,domain=~tweetdeck.com|~twitter.com|~twitter.jp
@@ -70122,7 +70122,7 @@ bing.com##+js(nosiif, logQueue, 10000)
 ||eventcom.api.np.km.playstation.net/event^$important
 ||g.doubleclick.net/tag/js/gpt.js$important,domain=accuweather.com
 ||networkworld.com/www/js/ads/$important
-@@||clients.google.com/adsense/*?key=$domain=~calcalist.co.il|~gaytube.com|~mako.co.il|~pornhub.com|~pornhubthbh7ap3u.onion|~redtube.com|~redtube.com.br|~tube8.com|~tube8.es|~tube8.fr|~walla.co.il|~xtube.com|~ynet.co.il|~youjizz.com|~youporn.com|~youporngay.com,badfilter
+@@||clients*.google.com/adsense/*?key=$domain=~calcalist.co.il|~gaytube.com|~mako.co.il|~pornhub.com|~pornhubthbh7ap3u.onion|~redtube.com|~redtube.com.br|~tube8.com|~tube8.es|~tube8.fr|~walla.co.il|~xtube.com|~ynet.co.il|~youjizz.com|~youporn.com|~youporngay.com,badfilter
 
 ! EP
 ||omtrdc.net/rest/$important
@@ -72546,7 +72546,7 @@ $removeparam=referral_story_type,domain=facebook.*|facebookwkhpilnemxj7asaniu7vn
 $removeparam=_nc_cat,domain=~instagram.com
 !!! $removeparam=_nc_sid - https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2829464
 ! https://instagram.fosl3-2.fna.fbcdn.net/v/t51.2885-15/267121608_448870736951308_2963883134408890666_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_ht=instagram.fosl3-2.fna.fbcdn.net&_nc_ohc=iE409d8ytCsAX8xESXq&edm=ABZsPhsBAAAA&oh=00_AT9JTbbYP_FBvW8fijShd6P5E2_vhuETlGyFHwXa6Lz3cg&oe=6269A904 (23/04/2022)
-||instagram..fna.fbcdn.net^$removeparam=ccb,domain=~instagram.com
+||instagram.*.fna.fbcdn.net^$removeparam=ccb,domain=~instagram.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2829469
 ||facebook.$doc,removeparam=hoisted_section_header_type
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3173335
@@ -75185,7 +75185,7 @@ buffalonews.com##+js(set, lee_trkLinkSrc, noopFunc)
 @@||web.archive.org/*_/http$removeparam
 
 ! Cause image upload failure on the forum `bbs.nga.cn` - https://github.com/AdguardTeam/AdguardFilters/issues/96952
-@@||img.nga$removeparam=cmpid
+@@||img*.nga$removeparam=cmpid
 
 ! Fix '404 Not Found' on pages with path /aff_c - https://go.nordvpn.net/aff_c?offer_id=129&aff_id=614&aff_sub=06VOOBfmFXpFAcqqIHYIr28&aff_sub2=blackfriday.com
 @@/aff_c?$removeparam=/^aff_id\d?=/i
@@ -75335,13 +75335,13 @@ buffalonews.com##+js(set, lee_trkLinkSrc, noopFunc)
 ||webfonts.sakura.ne.jp^$font
 
 ! Privacy Essentials, anti-allowlist:
-@@||gstaticadssl..google.com^$font,badfilter
+@@||gstaticadssl.*.google.com^$font,badfilter
 ! @@||use.typekit.net^$font,badfilter
 
 !!! UNUSED
 ! Causes too many false positives:
 !*$font,3p
-!/fonts/.ttf$font,3p
+!/fonts/*.ttf$font,3p
 !||maxcdn.bootstrapcdn.com/font-awesome/$3p
 !||maxcdn.bootstrapcdn.com^*/fonts/
 
@@ -76804,7 +76804,7 @@ google.*##[id^="eob_"]
 ! Hide Reddit 'Top Broadcast Now' & 'Top livestream'
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##a[href^="/rpan/"] > h3:has-text(/Top (livestream|broadcast)/):upward(7)
 ! Block downloading
-!||redd.it/.m3u8^$xhr,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+!||redd.it/*.m3u8^$xhr,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||strapi.reddit.com^$xhr,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ! https://github.com/yokoffing/filterlists/issues/38
 @@||v.redd.it^$xhr,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
@@ -77485,7 +77485,7 @@ foxnews.com##.show-gate.gated-overlay.article-gating
 @@cdn.cxense.com^$script,domain=bizjournals.com|journaldemontreal.com|journaldequebec.com
 ||ensighten.com/*/Bootstrap.js$script,third-party
 ||evolok.net^$third-party
-||fewcents.co/*/paywall.js$script,third-party
+||fewcents.co/*/paywall*.js$script,third-party
 ||hadrianpaywall.com^$third-party
 ||ippen.space^$third-party
 /sub/js/pc-offer-west.js$script,~third-party
@@ -77509,7 +77509,7 @@ gadget.pico.tools##+js(json-prune, locked)
 /c/assets/pigeon.js$script,~third-party
 /evolok/*/ev-widgets.min.js$script,~third-party
 /paywall/evercookie_get.js$script,~third-party
-/shared-content/art/tncms/api/access..js$script,~third-party
+/shared-content/art/tncms/api/access.*.js$script,~third-party
 /wp-content/*/ev-em.min.js$script,~third-party
 /wp-content/plugins/leaky-paywall/js/leaky-paywall-cookie.js$script,~third-party
 /zephr/feature$xmlhttprequest,~third-party
@@ -77530,14 +77530,14 @@ artforum.com##+js(cookie-remover, /^/)
 artnet.com##div.article-body:style(display:block !important;)
 artnet.com##div[id^="issuem-leaky-paywall-"]
 magazine.atavist.com##+js(aopr, localStorage)
-||automobilwoche.de/sites/camw/files/js/js_-YBiL.js$script,~third-party
+||automobilwoche.de/sites/camw/files/js/js_-YBiL*.js$script,~third-party
 ||axios.com/api/v1/licenses
 axios.com##[data-vars-experiment="pro-paywall"],[class^="Modal_paywallContainer"],.apexAd
 axios.com##+js(ra, style, html[style], stay)
 ||cdn.cxense.com/cx.js$script,domain=bizjournals.com,important
 ! bloomberg.com: disable Dark Reader extension
 ||cm.bloomberg.com^$xmlhttprequest,~third-party
-||assets.bwbx.io/s3/javelin/public/javelin/js/foundation/transporter/foundation_transporter-.js$script,domain=bloomberg.com
+||assets.bwbx.io/s3/javelin/public/javelin/js/foundation/transporter/foundation_transporter-*.js$script,domain=bloomberg.com
 bloomberg.com##+js(ra, data-paywall-overlay-status, body[data-paywall-overlay-status], stay)
 bloomberg.com##div[id^="fortress-"]
 bloomberg.com##+js(set-local-storage-item, history, $remove$)
@@ -77570,10 +77570,10 @@ citywire.com##+js(rc, m-article--locked, .m-article--locked)
 citywire.com##+js(rc, m-media-container--locked, .m-media-container--locked)
 citywire.com##+js(rc, m-article__body--locked, .m-article__body--locked)
 citywire.com##registration-widget,div.alert--locked
-||clarin.com/js/meter.js$script,~third-party
+||clarin.com/js/meter*.js$script,~third-party
 ||codesports.com.au/*/news-story/$inline-script
 ||commentary.org/*/js/dg-locker-public.js$script,~third-party
-||connaissancedesarts.com/wp-content/cache/.js$script,~third-party
+||connaissancedesarts.com/wp-content/cache/*.js$script,~third-party
 connaissancedesarts.com##div.ad-container
 ||paywall.correiodopovo.com.br$script,~third-party
 ||corriereobjects.it/*/js/_paywall.sjs$script,domain=corriere.it
@@ -77623,7 +77623,7 @@ financialexpress.com##div.pcl-wrap
 forbes.com##+js(ra, class, body[class], stay)
 forbes.com.au##+js(cookie-remover, blaize_session)
 ||foreignaffairs.com/modules/custom/fa_paywall_js/js/paywall.js$script,~third-party
-||foreignaffairs.com/sites/default/files/assets/css/css_.css*delta=0$stylesheet,~third-party
+||foreignaffairs.com/sites/default/files/assets/css/css_*.css*delta=0$stylesheet,~third-party
 foreignaffairs.com##.article-dropcap:style(height: auto !important;)
 foreignaffairs.com##.paywall,.loading-indicator,.messages--container--bottom
 foreignpolicy.com##body:not(.is-fp-insider) div.content-ungated
@@ -77637,7 +77637,7 @@ foxnews.com##div.article-gating-wrapper
 ftm.eu,ftm.nl##div.banner-pp,a.readmore
 groene.nl##+js(cookie-remover, rlist)
 harpers.org##+js(cookie-remover, hr_session)
-||harpers.org/wp-content/themes/timber/static/js/modal.js
+||harpers.org/wp-content/themes/timber/static/js/modal*.js
 ||hilltimes.com/*/js/loadingoverlay/loadingoverlay.min.js$script,~third-party
 hindustantimes.com##.freemium-card,.closeStory
 hindustantimes.com##+js(rc, freemiumText, .freemiumText)
@@ -77664,8 +77664,8 @@ krautreporter.de##+js(rc, json-ld-paywall-marker, .json-ld-paywall-marker, stay)
 ||cdn.tinypass.com/api/tinypass.min.js$script,domain=kurier.at
 kurier.at##+js(ra, class|style, div.paywall)
 kurier.at##div#cfs-paywall-container
-||la-croix.com/build/*/paywall.js$script,~third-party
-||glanacion.com/*/metering/.js$script,domain=lanacion.com.ar
+||la-croix.com/build/*/paywall*.js$script,~third-party
+||glanacion.com/*/metering/*.js$script,domain=lanacion.com.ar
 lanacion.com.ar##+js(cookie-remover, /^metering_arc/)
 lanacion.com.ar##+js(aopr, localStorage)
 ||latercera.com/arc/subs/p.min.js$script,~third-party
@@ -77694,7 +77694,7 @@ loeildelaphotographie.com##.premium-pic-box,.membership-promo-container,.login_f
 loeildelaphotographie.com##+js(ra, style, img[style*="blur"])
 ||lrb.co.uk$inline-script
 ||medscapestatic.com/*/medscape-library.js$script,domain=medscape.com
-||wbmdstatic.com/*/chunk-vendors..js$script,domain=medscape.com
+||wbmdstatic.com/*/chunk-vendors.*.js$script,domain=medscape.com
 medscape.com##.AdUnit,div[id^="ads-"]
 mexiconewsdaily.com##+js(rc, tdb-block-inner, body.single div.td-post-content > div.tdb-block-inner)
 mv-voice.com##+js(cookie-remover, /^/)
@@ -77703,7 +77703,7 @@ nautil.us##+js(cookie-remover, /^(arc|sfa)$/)
 newsday.com##+js(ra, class, html[class])
 newrepublic.com##div.article-scheduled-modal
 ||blink.net/*/blink-sdk.js$script,domain=newrepublic.com|thebaffler.com
-||newstatesman.com/*/nsmg-evolok-paywall/.js$script,~third-party
+||newstatesman.com/*/nsmg-evolok-paywall/*.js$script,~third-party
 nrc.nl##+js(cookie-remover, counter)
 ||nrc.nl/paywall-api/api/zephr$xmlhttprequest,~third-party
 nrc.nl##div[id$="modal__overlay"],div.header__subscribe-bar,div.banner
@@ -77722,10 +77722,10 @@ paloaltoonline.com##+js(cookie-remover, /^/)
 philosophynow.org##+js(cookie-remover, /^/)
 profil.at##+js(ra, class|style, div.paywall)
 profil.at##div#cfs-paywall-container,div.consentOverlay
-||kinja-static.com/assets/*/regwalled-content..js$script,domain=qz.com
+||kinja-static.com/assets/*/regwalled-content.*.js$script,domain=qz.com
 ||reuters.com/pf/resources/dist/reuters/js/index.js$script,~third-party
 ||reuters.com/arc/subs/p.min.js$script,~third-party
-||revistaoeste.com/wp-content/*/js/app..js$script,~third-party
+||revistaoeste.com/wp-content/*/js/app.*.js$script,~third-party
 revistaoeste.com##+js(rc, hidden, div.hidden[data-url])
 revistaoeste.com##+js(rc, expandable, div.expandable)
 revistaoeste.com##div.is-locked,div.subscribe-panel
@@ -77775,7 +77775,7 @@ tes.com##div.js-paywall-info,div.tg-paywall-message
 texasmonthly.com##div.promo-in-body
 the-scientist.com##+js(rc, paywall, div.paywall)
 the-scientist.com##div.gated-fader,div#Modal
-||theartnewspaper.com/_next/static/chunks/pages/access-allowed-.js$script,~third-party
+||theartnewspaper.com/_next/static/chunks/pages/access-allowed-*.js$script,~third-party
 theathletic.com##div[id^="slideup-"],div[id*="overlay"],div:empty:not([data-rjs]),#paywall,div.ad-container
 theathletic.com##body[class]:style(overflow:visible !important; position:relative !important)
 ||theatlantic.com/_next/static/chunks/pages/*/archive/$script,~third-party
@@ -77807,10 +77807,10 @@ thetimes.co.uk##body,html:style(overflow: auto !important; height: 100% !importa
 theweek.com##+js(rc, paywall-locker, div.paywall-locker)
 theweek.com##div.kiosq-main-layer
 thewrap.com##+js(cookie-remover, blaize_session)
-||timeshighereducation.com/sites/default/files/*/js__.js$script,~third-party
+||timeshighereducation.com/sites/default/files/*/js__*.js$script,~third-party
 tt.com##+js(rc, exclusive-elem, .exclusive-elem)
 tt.com##div.adblock-warning
-||tuttosport.com/_next/static/chunks/pages/news/%5B.js$script,~third-party
+||tuttosport.com/_next/static/chunks/pages/news/%5B*.js$script,~third-party
 tuttosport.com##div[class^="AdUnit_"]
 unherd.com##+js(ra, id, div#premiumcontent)
 unherd.com##div#premiumpreview
@@ -77833,7 +77833,7 @@ bendigoadvertiser.com.au,bordermail.com.au,canberratimes.com.au,centralwesternda
 accountingtoday.com,americanbanker.com,benefitnews.com,bondbuyer.com,dig-in.com,financial-planning.com,nationalmortgagenews.com##+js(set, contentGating.ungate, true)
 
 ! Condé Nast
-/journey/compiler/build-.js$script,~third-party,domain=architecturaldigest.com|bonappetit.com|cntraveler.com|epicurious.com|gq.com|newyorker.com|vanityfair.com|vogue.co.uk|vogue.com|voguebusiness.com|wired.com
+/journey/compiler/build-*.js$script,~third-party,domain=architecturaldigest.com|bonappetit.com|cntraveler.com|epicurious.com|gq.com|newyorker.com|vanityfair.com|vogue.co.uk|vogue.com|voguebusiness.com|wired.com
 voguebusiness.com##+js(cookie-remover, userId)
 
 ! Crain Communications
@@ -77925,7 +77925,7 @@ bostonherald.com,denverpost.com,eastbaytimes.com,mercurynews.com,ocregister.com,
 bostonherald.com,denverpost.com,eastbaytimes.com,mercurynews.com,ocregister.com,pressenterprise.com,twincities.com##[subscriptions-section="content-not-granted"]
 
 ! Medium (custom) sites for userscript: redirect to webcache.googleusercontent.com
-||cdn-client.medium.com/lite/static/js/main..js$script,domain=webcache.googleusercontent.com
+||cdn-client.medium.com/lite/static/js/main.*.js$script,domain=webcache.googleusercontent.com
 
 ! Motor Presse Stuttgart
 .de/thenewsbar/config/$xmlhttprequest,~third-party,domain=aerokurier.de|auto-motor-und-sport.de|flugrevue.de|motorradonline.de|womenshealth.de
@@ -77933,7 +77933,7 @@ bostonherald.com,denverpost.com,eastbaytimes.com,mercurynews.com,ocregister.com,
 ! New York Magazine
 curbed.com,grubstreet.com,nymag.com,thecut.com,vulture.com##+js(cookie-remover, /nymcid$/)
 curbed.com,grubstreet.com,nymag.com,thecut.com,vulture.com##div.m-ad
-||cloudfront.net/embed/widget/subx.js$script,domain=curbed.com|grubstreet.com|nymag.com|thecut.com|vulture.com
+||cloudfront.net/embed/widget/subx*.js$script,domain=curbed.com|grubstreet.com|nymag.com|thecut.com|vulture.com
 
 ! NHST Media Group
 ||subscription-static-global.nhst.tech$script,domain=europower.no|fiskeribladet.no|intrafish.com|intrafish.no|rechargenews.com|tradewindsnews.com
@@ -77978,7 +77978,7 @@ computerweekly.com,lemagit.fr,techtarget.com##p#firstP,div#inlineRegistrationWra
 ||flowerstreatment.com^$third-party
 ||guidecent.com^$script,third-party
 ||memberstack.com/scripts/v*/memberstack.js$script,third-party
-||assets.guim.co.uk/assets/SignInGate.js$script,domain=theguardian.com
+||assets.guim.co.uk/assets/SignInGate*.js$script,domain=theguardian.com
 theguardian.com##[name="SlotBodyEnd"],div[data-cy="contributions-liveblog-epic"]
 
 @@||sdk.privacy-center.org^$script,third-party
@@ -78031,7 +78031,7 @@ ipsoa.it##+js(ra, style, div.paywall)
 jornaljoca.com.br##+js(acis, $, paywall)
 kunststoffe.de,qz-online.de##+js(ra, style, div[style^="filter: blur"], stay)
 kunststoffe.de,qz-online.de##dialog#paywall-dialog
-||lasvegasadvisor.com/opt/.js$script,~third-party
+||lasvegasadvisor.com/opt/*.js$script,~third-party
 ||lasvegasadvisor.com/js/access.min.js$script,~third-party
 legalbites.in##+js(ra, class, div.hide.paywall-content)
 legalbites.in##div#subscription_paid_message,div.restricted_message > div.story
@@ -78075,7 +78075,7 @@ rockdelux.com##+js(ra, class|style, body, stay)
 rockdelux.com##+js(ra, style, div#body, stay)
 rockdelux.com##div.bg-paywall
 ||schwaebische-post.de/sub/js/pc-offer-west.js$script,~third-party
-||shrm.org/*/js/paywall.js$script,~third-party
+||shrm.org/*/js/paywall*.js$script,~third-party
 ||spectrejournal.com/wp-content/plugins/elementor/*/dialog.min.js$script,~third-party
 splainer.in##+js(rc, hide-section, .hide-section)
 splainer.in##.subscription-prompt
@@ -78097,7 +78097,7 @@ stockunlock.com##div[class*="-root"][class*="css-"]:style(filter: none !importan
 stockunlock.com##div.css-coxdc8
 ||thenationalpulse.com/wp-content/*/assets/js/national-pulse.js$script,~third-party
 trailsoffroad.com##.paywall
-||zeitzeichen.net/sites/default/files/js/js_.js$script,~third-party
+||zeitzeichen.net/sites/default/files/js/js_*.js$script,~third-party
 zvw.de##+js(rc, paywall, .paywall)
 zvw.de##.nfy-products-teaser,.nfy-banner
 
