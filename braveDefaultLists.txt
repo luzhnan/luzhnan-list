@@ -115,9 +115,6 @@ m4ufree.com##+js(aopw, document.oncontextmenu)
 ! https://github.com/NanoAdblocker/NanoFilters/issues/63
 sportsnet.ca##+js(aopr, uxGuid)
 
-! https://github.com/NanoAdblocker/NanoFilters/issues/72
-relyonhorror.com##+js(nostif, checkAdStatus, 500)
-
 ! https://github.com/uBlockOrigin/uAssets/issues/2299
 androidrepublic.org##.samSupportUs
 
@@ -6718,7 +6715,7 @@ nicekkk.com##+js(rmnt, script, debugger)
 sgd.de##+js(aeld, contextmenu)
 
 ! https://github.com/uBlockOrigin/uAssets/issues/4747#issuecomment-1691485028
-fullxh.com,hamsterix.*,megaxh.com,unlockxh4.com,xhadult2.com,xhadult3.com,xhadult4.com,xhadult5.com,xhamster.*,xhamster1.*,xhamster10.*,xhamster11.*,xhamster12.*,xhamster13.*,xhamster14.*,xhamster15.*,xhamster16.*,xhamster17.*,xhamster18.*,xhamster19.*,xhamster20.*,xhamster2.*,xhamster3.*,xhamster4.*,xhamster46.com,xhamster5.*,xhamster7.*,xhamster8.*,xhday.com,xhday1.com,xhmoon5.com,xhplanet1.com,xhplanet2.com,xhreal2.com,xhreal3.com,xhtab2.com,xhvictory.com,xhwebsite.com,xhwebsite2.com,xhwide1.com,xhwide8.com##+js(no-fetch-if, ad.php)
+fullxh.com,hamsterix.*,megaxh.com,unlockxh4.com,xhadult2.com,xhadult3.com,xhadult4.com,xhadult5.com,xhamster.*,xhamster1.*,xhamster10.*,xhamster11.*,xhamster12.*,xhamster13.*,xhamster14.*,xhamster15.*,xhamster16.*,xhamster17.*,xhamster18.*,xhamster19.*,xhamster20.*,xhamster2.*,xhamster3.*,xhamster4.*,xhamster46.com,xhamster5.*,xhamster7.*,xhamster8.*,xhday.com,xhday1.com,xhmoon5.com,xhplanet1.com,xhplanet2.com,xhreal2.com,xhreal3.com,xhtab2.com,xhvictory.com,xhwebsite.com,xhwebsite2.com,xhwide1.com,xhwide8.com##+js(no-fetch-if, /ad\.php|api\/ads/)
 
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159897
 *$script,1p,redirect-rule=noopjs,domain=punishworld.com
@@ -6891,7 +6888,7 @@ sportando.basketball##.select-none:style(-webkit-touch-callout: default !importa
 ! https://www.reddit.com/r/uBlockOrigin/comments/17hcflr/ymoviesvip_devtools_detector_embedded_into_app/
 ! https://github.com/uBlockOrigin/uAssets/issues/20492
 ! https://github.com/uBlockOrigin/uAssets/issues/22899
-ymovies.vip,aniwatch.to,megacloud.tv,hianime.to,rapid-cloud.co,rabbitstream.net##+js(set, devtoolsDetector.launch, noopFunc)
+ymovies.vip,aniwatch.to,megacloud.tv,hianime.to,rapid-cloud.co,rabbitstream.net,pupupul.site##+js(set, devtoolsDetector.launch, noopFunc)
 ||9animetv.to/js/safe.ob.min.js$script
 myflixerz.to##+js(nostif, 0x)
 movie4kto.net##+js(nosiif, /DevTools|_0x/)
@@ -7117,13 +7114,7 @@ news.17173.com##+js(aeld, copy)
 ||ip.sb/assets/js/wwads_blocked.js
 
 ! https://github.com/uBlockOrigin/uAssets/issues/21301
-@@||arras.io^$xhr,1p
-arras.io,arras.netlify.app,arrax.io##+js(rmnt, script, onerror)
-||cdn.intergient.com^$redirect-rule=noopjs,domain=arras.*|arras.netlify.app|arrax.io
-!#if cap_html_filtering
-/container.js$script,1p,replace=/5\>Object\.keys\(/0>Object.keys(/g,domain=arras.io|arras.netlify.app|arrax.io
-/container.js$script,1p,replace=/\>Object\[_/<Object[_/g,domain=arras.io|arras.netlify.app|arrax.io
-!#else
+!#if env_chromium
 @@||cdn.intergient.com/*/ramp.js$script,domain=arras.io|arras.netlify.app|arrax.io
 !#endif
 
@@ -7467,6 +7458,9 @@ fightful.com##+js(nosiif, getComputedStyle)
 ! https://teller.jp/ mobile-app
 teller.jp##+js(trusted-click-element, .z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\:opacity_0\.4.h_50px)
 
+! thenation.com anti-adb
+||config.content-settings.com^$xhr,domain=thenation.com
+
 ! https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-cookies.txt
 ! Title: uBlock filters – Cookie Notices
 ! Last modified: %timestamp%
@@ -7555,7 +7549,7 @@ sourcepoint.theguardian.com##+js(trusted-click-element, .sp_choice_type_12[title
 sourcepoint.theguardian.com##+js(trusted-click-element, [title="Reject all"], , 500)
 theguardian.com##[title="SP Consent Message"]
 ! https://github.com/uBlockOrigin/uAssets/issues/21974
-bbc.com##+js(trusted-click-element, #consentBanner > button[data-testid="banner-button"])
+bbc.com##+js(trusted-click-element, [data-testid="consentBanner"] > button[data-testid="banner-button"], , 1000)
 ! https://video.lefigaro.fr/figaro/video/les-gestes-damour-prennent-plusieurs-formes-dans-une-video-humoristique-lukraine-demande-plus-de-caesar-a-la-france/
 lefigaro.fr##+js(trusted-set-cookie, fig_save_consent, iTTPgpSWqAGGcd3vV88zNDbHsABxE1hB, 1year)
 ! https://www.filmweb.pl/video/Zwiastun/Indiana+Jones+i+artefakt+przeznaczenia+Zwiastun+nr+2+polskie+napisy-64884
@@ -7992,18 +7986,14 @@ player.boom973.com##+js(trusted-set-cookie, _iub_cs-30166201, %7B%22timestamp%22
 ! https://github.com/uBlockOrigin/uAssets/issues/19940 - Precise location
 lachainemeteo.com##+js(trusted-set-local-storage-item, appconsent, '{"consents":{},"i18n":{},"ui":{},"vendorlist":{},"CMP_VERSION":10,"xchange":{},"events":[],"client":{"externalIds":{},"floatingPurposes":[{"id":"","version":0}],"floatingPurposesConsent":[{"extra_id":"","type":0,"given_at":null,"version":0}]},"consentstring":"CPzBFAAPzBFAAACAKAFRDUCoAAAAAH_AAAqIIzNF_H_dSSNj8X5_Yft0eY1P5dAz7uQxBhaJg6QFyBLEsJwXwmAIIEnqAKgKGBIEskJAIQBlCAHABUEAYIEBISGMAEAQIQAAJiAEEEERAmJICBBJG4AgEAIQglgCABQAgAsESFsoQMhAAIAABUJAAAgggIABAgAIBDAAQAAAAAAAAgAAEAAAAAAAAAAEABBHYAkw1LiABsiAkJpAwigRAjCIICKBQAAACQMEAACQIAlBGASgwAQAgRQAEBAAAAFEAAAAAAIAEIAAgACBAABAIBAAAABAAAAAQAAAgAIAQAAAABADAEAABAAAAAAACAECEIAAIACAgAAgAEAIAAAAAAIBAIBAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAAAA.YAAAAAAAAAAA","consentstringUpdatedAt":{}}')
 
-! https://github.com/uBlockOrigin/uAssets/issues/19941
-! https://github.com/AdguardTeam/AdguardFilters/issues/145866 - Accept all
-@@||sdk.privacy-center.org^$domain=actu.fr
-actu.fr##+js(trusted-set-cookie, didomi_token, eyJ1c2VyX2lkIjoiMThhZWVmMWQtNGQ2ZC02MDAwLWEzYTAtMDgzZjdhYzBhNGQ1IiwiY3JlYXRlZCI6IjIwMjMtMTAtMDJUMDU6NTI6MjUuNDUzWiIsInVwZGF0ZWQiOiIyMDIzLTEwLTAyVDA1OjUyOjI1LjQ1M1oiLCJ2ZW5kb3JzIjp7ImVuYWJsZWQiOlsiZ29vZ2xlIiwiYzptZXN1cmVkYS1aYzl6dDhMOCIsImM6cHJvbW90aW9ucy1Id0VZZjRUQyIsImM6eWFob28tYWQtZXhjaGFuZ2UiLCJjOnB1YmxpaGViZG8tM1FORWNnRjQiLCJjOnB1YmxpaGViZG8tSE40Z1hhWDYiLCJjOnB1YmxpaGViZG8tWk1iWDI2a1IiLCJjOnlhaG9vLWdlbWluaS1hbmQtZmx1cnJ5IiwiYzpwdWJsaWNpdGUtSGlLR0ZDNGEiLCJjOnB1YmxpaGViZG8tR0huUW1Ea0YiXX0sInB1cnBvc2VzIjp7ImVuYWJsZWQiOlsibWVzdXJlZGEteDN0YzhHYUUiLCJwcm9tb3Rpb25zLVF4R2NHQXpSIiwiY29udGVudXNjLVJad2ZYSk1RIiwiY29udGVudXNkLTcyVlRUYzdlIiwiY29udGVudXN2LXl4TlFXOWI4IiwicHVibGljaXRlLURSRm1UV3RHIiwicHVibGljaXRlLWJiM0M0ZDR6IiwiZGV2aWNlX2NoYXJhY3RlcmlzdGljcyIsImdlb2xvY2F0aW9uX2RhdGEiXX0sInZlcnNpb24iOjIsImFjIjoiQ0JxQUNDQm8uQUFBQSJ9)
-actu.fr##+js(trusted-set-cookie, euconsent-v2, CPzBFAAPzBFAAAHABBENDYCsAP_AAAAAAAAAJNNf_X_db3Nj-_5_fvt0eY1f9dy-v-wjDhedh-0NzXrW-L0F02I7vF3ihggKOQ4EshJBIQdlGKHcRUkw6okEgzGsYESUg4MAJqLEikETEwNYGE1bGcRCOAIYrtsoPr2ymtuKev_9W2V-_-j0QzpJKS-i8IbtQ185xLmsyf0fn4jOP_-VO2997____8AAAFEIEABZAAEAAABISADAAEQUA0AGAAIgoCIAMAARBQFQAYAAiCgMgAwABEFAdABgACIKBCADAAEQUCUAGAAIgoFIAMAARBQA.f_gAAAAAAAAA)
+! https://github.com/uBlockOrigin/uAssets/issues/23107
+actu.fr,elconfidencial.com,rtl.lu##+js(trusted-click-element, #didomi-notice-agree-button)
+@@||sdk.privacy-center.org^$domain=actu.fr|elconfidencial.com
 
 ! https://github.com/uBlockOrigin/uAssets/issues/19942
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122648 - Social
 @@||sdk.privacy-center.org^$domain=ledauphine.com
-ledauphine.com##[class*="cmp_alternative"]
-ledauphine.com##+js(trusted-set-cookie, euconsent-v2, CPzBFAAPzBFAAAHABBENDYCgAAAAAAAAAAAAJNFB_W_fD2Ni-35_avt0aQ1dwVC_6-UxDgKZB4kFyRpEMKwX3mAKKFXgpKAKGBYEsUZAIQBlHCHEDECwQIERLzHMIAEQJQIAJqJEgFERAkJQCBpZHwMACAIQgHRWATFIiB-HaBroyfhEMaC0AUBQ4AonhMTPAoSdwXCkg7uaHIgIImgFASBAIoYMEEEEBlTkFABAAAkAAABJSADAAEQUCUAGAAIgoDoAMAARBQIQAYAAiCgEgAwABEFARABgACIKAyADAAEQUA0AGAAIgoCoAMAARBQA.YAAAAAAAAAAA, , , reload, 1)
-ledauphine.com##+js(trusted-set-local-storage-item, euconsent-v2, CPzBFAAPzBFAAAHABBENDYCgAAAAAAAAAAAAJNFB_W_fD2Ni-35_avt0aQ1dwVC_6-UxDgKZB4kFyRpEMKwX3mAKKFXgpKAKGBYEsUZAIQBlHCHEDECwQIERLzHMIAEQJQIAJqJEgFERAkJQCBpZHwMACAIQgHRWATFIiB-HaBroyfhEMaC0AUBQ4AonhMTPAoSdwXCkg7uaHIgIImgFASBAIoYMEEEEBlTkFABAAAkAAABJSADAAEQUCUAGAAIgoDoAMAARBQIQAYAAiCgEgAwABEFARABgACIKAyADAAEQUA0AGAAIgoCoAMAARBQA.YAAAAAAAAAAA)
+ledauphine.com##+js(trusted-click-element, button[id="didomi-notice-agree-button"])
 privacy.ledauphine-presse.fr##+js(trusted-set-cookie, didomi_token, eyJ1c2VyX2lkIjoiMThhZWVmZTgtNGJjMS02NjhmLWE5YTgtNmNhM2VmMmQ0NzVkIiwiY3JlYXRlZCI6IjIwMjMtMTAtMDJUMDY6MDY6NDQuODA0WiIsInVwZGF0ZWQiOiIyMDIzLTEwLTAyVDA2OjA2OjQ0LjgwNFoiLCJ2ZW5kb3JzIjp7ImVuYWJsZWQiOlsiYzphYi10YXN0eSIsImM6YWNhc3QtQ2M3MmNoWHAiLCJjOmFjcG0tSkIzNEJicmQiLCJjOmFwbG96ZS14NDdKZlhVSyIsImM6YXBwc2ZseWVyLXdETmJrQ2I2IiwiYzphdGludGVybmUtY1dRS0hlSloiLCJjOmJlb3AtdEdSV0hIYUYiLCJjOmJpbmctYWRzIiwiYzpjaGFydGJlYXQiLCJjOmNsaWNraW50ZXh0IiwiYzpkYWlseW1vdGlvLWhyRldwVEtDIiwiYzpzcXVhZGF0YS1lYXN5ZG1wIiwiYzpkeW5hbWljbWEtNzhlUmpLY1YiLCJjOmZhY2Vib29rLXRrQWpXM2k2IiwiYzpmbG91cmlzaC14bnhZTVo2TiIsImM6Z2VuaWFsbHktWjhiUmhxRW4iLCJnb29nbGUiLCJjOmdvb2dsZW1hcC1kRDdDWkNKZyIsImM6aW5mb2dyYW0tcXFoZDNoZk0iLCJjOmluc3RhZ3JhbS1MWmthNlI0NCIsImM6aW5zdGFncmFtIiwiYzpqdXh0YXBvc2UtTVpnSEZmWXgiLCJjOm1hcHM0bmV3cy0zWDlWUVc3NiIsImM6bWljcm9zb2Z0IiwiYzptaWNyb3NvZnQtYW5hbHl0aWNzIiwiYzptaWNyb3NvZnQtb25lZHJpdmUtbGl2ZS1zZGsiLCJjOm15ZmVlbGJhY2siLCJjOm9uZXNpZ25hbC1uS1hmQ3BZcyIsImM6cGxheWJ1enotamhKcUNBeEsiLCJjOnBvb29sLWV3WjY2ZWdmIiwiYzpwb29vbC1WeWhDaXQ3TiIsImM6cHVic3RhY2stV3JDYkV5Y00iLCJjOnNob3J0aGFuZC02R01GSzJCVyIsImM6c291bmRjbG91ZC14S01ER1g0TCIsImM6c3RvcnltYXAtTFpwaWQ3WXEiLCJjOnN1YnNjcmliZS1abXdVZVVDUCIsImM6dGltZWxpbmVqLWU2WFJDS1VYIiwidHdpdHRlciIsImM6dHdpdHRlci1pNnhkQjJyVCIsImM6dmltZW8tSGlNcnpFUEgiLCJjOnlvdXR1YmUiLCJjOnlvdXR1YmUtQ2VWemptSlAiXX0sInB1cnBvc2VzIjp7ImVuYWJsZWQiOlsicmVzZWF1eHNvLTlLYmpid05oIl0sImRpc2FibGVkIjpbImdlb2xvY2F0aW9uX2RhdGEiLCJkZXZpY2VfY2hhcmFjdGVyaXN0aWNzIiwiYXVkaWVuY2VtLXhlZGVVMmdRIiwiY29udGVudXN2LWhGVDhpZmRSIiwiY29udGVudXNjLXBYQVZVdDhyIiwibWVzdXJlZGEtaDdHUWVyclQiXX0sInZlcnNpb24iOjIsImFjIjoiQ25XQUdBRmtCSllLZFFBQS5BRm1BQ0FGayJ9)
 privacy.ledauphine-presse.fr##+js(trusted-set-cookie, euconsent-v2, CPzBFAAPzBFAAAHABBENDYCgAAAAAAAAAAAAJNFB_W_fD2Ni-35_avt0aQ1dwVC_6-UxDgKZB4kFyRpEMKwX3mAKKFXgpKAKGBYEsUZAIQBlHCHEDECwQIERLzHMIAEQJQIAJqJEgFERAkJQCBpZHwMACAIQgHRWATFIiB-HaBroyfhEMaC0AUBQ4AonhMTPAoSdwXCkg7uaHIgIImgFASBAIoYMEEEEBlTkFABAAAkAAABJSADAAEQUCUAGAAIgoDoAMAARBQIQAYAAiCgEgAwABEFARABgACIKAyADAAEQUA0AGAAIgoCoAMAARBQA.YAAAAAAAAAAA)
 
@@ -9134,6 +9124,7 @@ curbed.com,grubstreet.com,nymag.com,thecut.com,vulture.com##div.m-ad
 /temptation/resolve$xmlhttprequest,~third-party,domain=demorgen.be|flair.nl|humo.be|libelle.nl|margriet.nl|parool.nl|trouw.nl|volkskrant.nl
 ||temptation.*/temptation.js$script,~third-party,domain=demorgen.be|flair.nl|humo.be|libelle.nl|margriet.nl|parool.nl|trouw.nl|volkskrant.nl
 @@||myprivacy-static.dpgmedia.net/consent.js$script,third-party
+@@/wrapperMessagingWithoutDetection.js$script,~third-party,domain=demorgen.be|flair.nl|humo.be|libelle.nl|margriet.nl|parool.nl|trouw.nl|volkskrant.nl
 
 ! DPG ADR (no scroll)
 ||temptation.*/temptation.js$script,~third-party,domain=ad.nl|bd.nl|bndestem.nl|destentor.nl|ed.nl|gelderlander.nl|pzc.nl|tubantia.nl
@@ -14182,6 +14173,7 @@ moneyweb.co.za###overlayPromo
 mrctv.org###pardotForm
 rawstory.com###piano-infobar-container
 hyperallergic.com###pico_prompt
+newsshopper.co.uk###po-inline-article-above
 gameworldobserver.com###popmechanic-snippet
 artdaily.cc,radioandmusic.com,researchnews.cc###popup
 inhope.org###popup-home
@@ -17742,6 +17734,7 @@ moneyweb.co.za###overlayPromo
 mrctv.org###pardotForm
 rawstory.com###piano-infobar-container
 hyperallergic.com###pico_prompt
+newsshopper.co.uk###po-inline-article-above
 gameworldobserver.com###popmechanic-snippet
 artdaily.cc,radioandmusic.com,researchnews.cc###popup
 inhope.org###popup-home
@@ -20626,6 +20619,7 @@ duckduckgo.com##[data-testid="serp-popover-promotion"]
 weatherbug.com##[href="/appdownload"]
 wpxi.com##[href="/mobile-apps/"]
 theapplepost.com##[href^="https://apps.apple.com/app/"]
+sherbrookerecord.com##[href^="https://apps.apple.com/ca/app/the-record-news/"]
 reddit.com##[slot="use-app"]
 ozmall.co.jp##[style="display:table;background:#f3f3f3;padding:3%;"]
 google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,google.be,google.bf,google.bg,google.bi,google.bj,google.bs,google.bt,google.by,google.ca,google.cat,google.cd,google.cf,google.cg,google.ch,google.ci,google.cl,google.cm,google.cn,google.co.ao,google.co.bw,google.co.ck,google.co.cr,google.co.id,google.co.il,google.co.in,google.co.jp,google.co.ke,google.co.kr,google.co.ls,google.co.ma,google.co.mz,google.co.nz,google.co.th,google.co.tz,google.co.ug,google.co.uk,google.co.uz,google.co.ve,google.co.vi,google.co.za,google.co.zm,google.co.zw,google.com,google.com.af,google.com.ag,google.com.ai,google.com.ar,google.com.au,google.com.bd,google.com.bh,google.com.bn,google.com.bo,google.com.br,google.com.bz,google.com.co,google.com.cu,google.com.cy,google.com.do,google.com.ec,google.com.eg,google.com.et,google.com.fj,google.com.gh,google.com.gi,google.com.gt,google.com.hk,google.com.jm,google.com.kh,google.com.kw,google.com.lb,google.com.ly,google.com.mm,google.com.mt,google.com.mx,google.com.my,google.com.na,google.com.nf,google.com.ng,google.com.ni,google.com.np,google.com.om,google.com.pa,google.com.pe,google.com.pg,google.com.ph,google.com.pk,google.com.pr,google.com.py,google.com.qa,google.com.sa,google.com.sb,google.com.sg,google.com.sl,google.com.sv,google.com.tj,google.com.tr,google.com.tw,google.com.ua,google.com.uy,google.com.vc,google.com.vn,google.cv,google.cz,google.de,google.dj,google.dk,google.dm,google.dz,google.ee,google.es,google.fi,google.fm,google.fr,google.ga,google.ge,google.gg,google.gl,google.gm,google.gp,google.gr,google.gy,google.hn,google.hr,google.ht,google.hu,google.ie,google.im,google.iq,google.is,google.it,google.je,google.jo,google.kg,google.ki,google.kz,google.la,google.li,google.lk,google.lt,google.lu,google.lv,google.md,google.me,google.mg,google.mk,google.ml,google.mn,google.ms,google.mu,google.mv,google.mw,google.ne,google.nl,google.no,google.nr,google.nu,google.pl,google.pn,google.ps,google.pt,google.ro,google.rs,google.ru,google.rw,google.sc,google.se,google.sh,google.si,google.sk,google.sm,google.sn,google.so,google.sr,google.st,google.td,google.tg,google.tk,google.tl,google.tm,google.tn,google.to,google.tt,google.vg,google.vu,google.ws##body > div[style="min-height: 100%; display: none;"] + div[style="visibility: visible;"] > div[jsowner]
@@ -23132,6 +23126,7 @@ straitstimes.com##.field-name-telegram
 peepingmoon.com##.fixed-action-btn
 onegreenplanet.org##.fixed-ad
 indiatoday.in##.fixedshared
+testbook.com##.fl-social
 kick.com##.flex.flex-col.space-y-3
 techradar.com##.flipboard-icon
 thehackernews.com##.float-share
@@ -23342,6 +23337,7 @@ iranwire.com##.opinion-advertising
 dictionary.com##.otd-socials
 otakumode.com##.p-product-detail__social-buttons
 rogerebert.com##.page-content--byline-share--share
+brennancenter.org##.page-info-header__social
 odt.co.nz##.pane-odt-social-odt-social-rsb
 lifezette.com##.parler
 mondediplo.com##.partage
@@ -23460,6 +23456,7 @@ japantimes.co.jp##.single-sns-area
 foodsforbetterhealth.com##.single-social-icon
 flyingmag.com##.single-social-share
 nme.com##.site-footer-social
+news.sky.com,skysports.com##.site-share-wrapper
 simplejoy.com##.sj-recipe-callout
 medcraveonline.com##.slide-on-scroll
 leagle.com##.sm-btns
@@ -23681,6 +23678,7 @@ retbit.com##.zox-post-soc-scroll-out
 retbit.com##.zox-post-soc-stat
 footwearnews.com,indiewire.com##[class^="_socialMedia_"]
 motortrend.com##[data-c="social-share"]
+news.sky.com##[data-component-name="sdc-article-strapline"]
 lifehacker.com##[data-ga-element="social-link"]
 sundayworld.com##[data-testid="article-share"]
 nytimes.com##[data-testid="social-group"]
@@ -24112,6 +24110,7 @@ $script,third-party,denyallow=fastly.net|statically.io|sharecast.ws|b-cdn.net|bu
 !
 !
 !
+klyingshi.net##.row > div.url-card:has(> div.url-body span.badge-danger)
 phone-book.tw#%#//scriptlet('remove-node-text', 'script', 'yumayishop')
 xiaozhongjishu.com##.apd > a[target="_blank"] > img
 sports.qq.com##.scr-login > .cnxh:has(> .videoDiv #hotvideo)
@@ -25732,6 +25731,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_chinese
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
 !
+||1x5jlh.xyz^$popup
 ||98765.pw^
 ||cdn.holmesmind.com^$third-party
 ||aziekg.xyz^
@@ -27449,8 +27449,11 @@ antiguanewsroom.com,aptoslife.com,aviacionline.com,bohemian.com,carnewschina.com
 ! zycrypto.com
 zycrypto.com##.td-a-rec-id-content_bottom
 ! news.sky.com
+news.sky.com,skysports.com###mpu-1
+news.sky.com##[data-role="ad-label"]
 news.sky.com###leaderboard
 news.sky.com##[data-format="leaderboard"]
+||analytics.global.sky.com^
 ! axios.com
 axios.com##.shortFormNativeAd
 axios.com##[data-cy="injected-promo"]
@@ -28680,9 +28683,9 @@ cnn.com##[data-zone-label="Paid Partner Content"]
 
 ! https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
 [Adblock Plus 2.0]
-! Version: 202401062131
+! Version: 202403310745
 ! Title: CJX's Annoyance List
-! Last modified: 2024/01/06 21:31 +0800
+! Last modified: 2024/03/31 07:45 +0800
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/cjx82630/cjxlist
 !
@@ -29169,7 +29172,7 @@ cnn.com##[data-zone-label="Paid Partner Content"]
 ||tencent.com/developer/api/common/getOneAds
 ||10086.cn/together/s?func=together:getAdvertInfos&
 !------------------------Specific element hiding rules------------------------!
-baidu.com##.bd-aside-ad
+bilibili.com##.extension-tips
 77mh.nl###bdtopbot
 77mh.nl###bdbottop
 youdao.com##.banner
@@ -29236,8 +29239,6 @@ alibabacloud.com##.hmod-alicloud-contact-sales-support
 autohome.com.cn##.activity-coin-layer
 php.cn##.wwads-cn
 thwiki.cc##.on-right > .swiper-container
-waipian5.com##.shortcuts-mobile-overlay
-waipian5.com##.popup
 autohome.com.cn##.activity-app-layer
 autohome.com.cn##DIV[id^="popautoapp"]
 shengxinwang.net###floatDivBoxs
@@ -30245,6 +30246,7 @@ m.babytree.com##script + a[class]
 @@||fm.ipinyou.$domain=ipinyou.com.cn
 @@||fm.p0y.cn^$domain=ipinyou.com.cn
 !--------------------------------Tracking Systems-----------------------------!
+||tongjiniao.com^$third-party
 .com/js/o.js$domain=qdmm.com|qdwenxue.com|qidian.com
 ||3158.cn^*_analyser.
 /analytics.js$domain=qunar.com
@@ -30512,10 +30514,14 @@ m.babytree.com##script + a[class]
 [Adblock Plus 2.0]
 ! Title: 轻量广告拦截规则
 ! Homepage: https://github.com/damengzhu/banad
-! Update Time: 2024-03-29 10:33:10（北京时间）
-! Total Count: 5243
+! Update Time: 2024-03-31 12:09:36（北京时间）
+! Total Count: 5248
 ! by: 酷安@大萌主
 ! Host
+||cnalzlf.top^
+||truxalsl.com^
+||6cyfvvs.com^
+||6functf.com^
 ||llksja.com^
 ||aqilk66444a.xyz^
 ||4vgyjja.cn^
@@ -34822,6 +34828,7 @@ yhdm*.com/js/wap2-jm-ms.js?ver=
 ||jialingmm.net/dm/tj.js
 ||58jingxuan.top/115
 xmh/200/200-*.gif
+||missav.com/pop?url=
 /scripts/snstyle.js?v=2$~third-party
 .com/qq.js$third-party
 .xyz/st?gp=*$third-party
@@ -35765,12 +35772,12 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 
 ! https://filters.adtidy.org/extension/ublock/filters/224.txt
 ![Adblock Plus 2.0]
-! Checksum: 1muaUariFEHXeM8ypsiJ1Q
-! Diff-Path: ../patches/224/224-s-1711715866-3600.patch
+! Checksum: jjY1BAwVtSV267J0Ny0Rhw
+! Diff-Path: ../patches/224/224-s-1711856204-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.13.29
-! TimeUpdated: 2024-03-29T12:32:43+00:00
+! Version: 2.1.13.40
+! TimeUpdated: 2024-03-31T03:32:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35842,6 +35849,7 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
 !
+||1x5jlh.xyz^$popup
 ||98765.pw^
 ||cdn.holmesmind.com^$third-party
 ||aziekg.xyz^
@@ -36860,6 +36868,7 @@ $script,third-party,denyallow=fastly.net|statically.io|sharecast.ws|b-cdn.net|bu
 !
 !
 !
+klyingshi.net##.row > div.url-card:has(> div.url-body span.badge-danger)
 phone-book.tw##+js(remove-node-text, script, yumayishop)
 xiaozhongjishu.com##.apd > a[target="_blank"] > img
 sports.qq.com##.scr-login > .cnxh:has(> .videoDiv #hotvideo)
@@ -40342,6 +40351,7 @@ newduba.cn###jq_youxi
 ||51hir.cyou^
 ||5z0d3.cyou^
 ||666bbb333bbb.com^
+||6slb0.cyou^
 ||6zfem.icu^
 ||777bbb222bbb.com^
 ||7vviw.cyou^
@@ -40349,6 +40359,7 @@ newduba.cn###jq_youxi
 ||88lm05.com^
 ||88lm06.com^
 ||88lm07.com^
+||88lm08.com^
 ||8t9he.cyou^
 ||8xtm6i.cn^
 ||999bb222ww.com^
@@ -40373,6 +40384,7 @@ newduba.cn###jq_youxi
 ||bdtdat652.shop^
 ||bdxpdz.xyz^
 ||benpsbp.com^
+||beyers.cn^
 ||bijiangqing.com^
 ||bjswhpy.cn^
 ||bkzmtp.xyz^
@@ -40391,6 +40403,7 @@ newduba.cn###jq_youxi
 ||bvtvlp.xyz^
 ||bvxiht.xyz^
 ||bwlcpr.xyz^
+||byuwkbv.top^
 ||bzzxyyh.xyz^
 ||c11011.com^
 ||caomeixz7.xyz^
@@ -40432,6 +40445,7 @@ newduba.cn###jq_youxi
 ||delhirs.com^
 ||destinyssa.com^
 ||diccsbhij.com^
+||difhil.icu^
 ||difmnd.xyz^
 ||djxpnuo.xyz^
 ||dkjwbv.xyz^
@@ -40445,6 +40459,7 @@ newduba.cn###jq_youxi
 ||dsbqvj.xyz^
 ||dsjkbcjsjkbvs.com^
 ||dvotlhs.cn^
+||dwbfqmz.cn^
 ||dxrnksm.xyz^
 ||dyegif.icu^
 ||dytkgl.icu^
@@ -40462,10 +40477,12 @@ newduba.cn###jq_youxi
 ||ejdhmed.xyz^
 ||elisium.cn^
 ||ellingsen.cn^
+||elphhrj.xyz^
 ||endolift.cn^
 ||enifdlaw.top^
 ||eqqwgw.xyz^
 ||ersjnpwf837.shop^
+||esqhsm.xyz^
 ||etyusiw.top^
 ||execuri.com^
 ||f7fe0.cyou^
@@ -40506,6 +40523,7 @@ newduba.cn###jq_youxi
 ||heapz.cyou^
 ||hendehy.com^
 ||hexcvb.xyz^
+||hfbfbvmjdmxc.com^
 ||hgthpj.xyz^
 ||hhffks967.shop^
 ||hhffnu135.shop^
@@ -40517,6 +40535,7 @@ newduba.cn###jq_youxi
 ||hnifdlau.top^
 ||hozatr.xyz^
 ||hrnkdr.xyz^
+||hsutav.icu^
 ||htyusiu.top^
 ||hubgets.cn^
 ||hyusnisu.top^
@@ -40528,7 +40547,9 @@ newduba.cn###jq_youxi
 ||ityusio.top^
 ||ivbgpax.cn^
 ||ivnrrkx.cn^
+||iykig.cn^
 ||jbmfldt.cn^
+||jedlnn.xyz^
 ||jflwhf.xyz^
 ||jgblvt.xyz^
 ||jgmywh.icu^
@@ -40539,12 +40560,16 @@ newduba.cn###jq_youxi
 ||jqpejp.xyz^
 ||js131.cn^
 ||jtyusia.top^
+||jubnpx.xyz^
 ||justapp.top^
 ||jvkqkzu.cn^
 ||jzjpntr.xyz^
 ||kbomku.xyz^
+||kdeh.cn^
 ||kfdrc.cyou^
+||kfpnqug.cn^
 ||kfvjdvjzhddhc.com^
+||khzyojb.cn^
 ||kksjsa.top^
 ||knifdlad.top^
 ||kssolo.com^
@@ -40555,6 +40580,8 @@ newduba.cn###jq_youxi
 ||l5kt1.icu^
 ||lafirx.xyz^
 ||lardmoni.com^
+||lbyx.xyz^
+||lcefsf.icu^
 ||ldgjwdohqbi.xyz^
 ||lenvvb.xyz^
 ||lewiooz.cn^
@@ -40562,6 +40589,7 @@ newduba.cn###jq_youxi
 ||lfhdryz.xyz^
 ||lgtpdt.xyz^
 ||lkpxzt.xyz^
+||llksja.com^
 ||lmxiqf.icu^
 ||lnifdlal.top^
 ||lsfevr.xyz^
@@ -40570,6 +40598,7 @@ newduba.cn###jq_youxi
 ||luofk.xyz^
 ||lvdedf.xyz^
 ||lwrohd.xyz^
+||ly55442.com^
 ||m6690.top^
 ||mdhv3.icu^
 ||mdzwjra.cn^
@@ -40624,13 +40653,16 @@ newduba.cn###jq_youxi
 ||pidzlp.xyz^
 ||pimg2023.com^
 ||pjzxdl.xyz^
+||pkyjuc.cn^
 ||pnxtnp.xyz^
 ||prhfziq.xyz^
 ||przbzr.xyz^
+||pseudonym.cn^
 ||pwhtip.icu^
 ||pxzrlf.xyz^
 ||qbhzghb.xyz^
 ||qcohkm.xyz^
+||qdtzbbh.xyz^
 ||qetskupch581.shop^
 ||qetskupyka61.shop^
 ||qhemphox.com^
@@ -40640,7 +40672,9 @@ newduba.cn###jq_youxi
 ||qnifdlay.top^
 ||qqkkpos.com^
 ||qrkhwe.xyz^
+||qrovwu.xyz^
 ||qrttfmo.cn^
+||qtyusiy.top^
 ||qvnbjjd.xyz^
 ||qw9cu.cyou^
 ||qzalsk.xyz^
@@ -40657,6 +40691,7 @@ newduba.cn###jq_youxi
 ||rktddv.xyz^
 ||rlw86.cyou^
 ||rnkzhsi.cn^
+||rofmjd.xyz^
 ||rouqiuqq.cn^
 ||rpnufv.xyz^
 ||ruqwgb.icu^
@@ -40669,6 +40704,7 @@ newduba.cn###jq_youxi
 ||sdfsad562.xyz^
 ||sdjkbcjksbdsvv.com^
 ||seslco.xyz^
+||sgcwoe.xyz^
 ||shanvezhu.com^
 ||shnpetdb638.shop^
 ||shnpetdn185.shop^
@@ -40682,6 +40718,7 @@ newduba.cn###jq_youxi
 ||sosakk.xyz^
 ||spsfupq.cn^
 ||srzpsbf.xyz^
+||stlpnom.xyz^
 ||styusib.top^
 ||svncowt.cn^
 ||swsegi.xyz^
@@ -40728,6 +40765,7 @@ newduba.cn###jq_youxi
 ||uqwbcm.xyz^
 ||urqwzbu.cn^
 ||usltmus.cn^
+||utxmb.cn^
 ||uu22662.com^
 ||uuvzmba.cn^
 ||uxlvk.cn^
@@ -40756,6 +40794,8 @@ newduba.cn###jq_youxi
 ||wnmaoc.xyz^
 ||wopvmmy.cn^
 ||wqcfg.cn^
+||wsdwbfs.cn^
+||wtyusie.top^
 ||wwjtdjj.cn^
 ||xcypgd.icu^
 ||xdfhidrk.xyz^
@@ -40779,7 +40819,9 @@ newduba.cn###jq_youxi
 ||xvbjctqs.xyz^
 ||xvgrszkg.xyz^
 ||xvudqzoa.xyz^
+||xwvnhe.cn^
 ||xxle.cn^
+||xylhwdu.com^
 ||ybrrvck.xyz^
 ||ycqbgm.xyz^
 ||yddjmpjo.xyz^
@@ -40796,25 +40838,6 @@ newduba.cn###jq_youxi
 ||yyddkm526.shop^
 ||yyttmyy.cn^
 ||zagyjnn.cn^
-||sgcwoe.xyz^
-||khzyojb.cn^
-||jubnpx.xyz^
-||pkyjuc.cn^
-||wtyusie.top^
-||difhil.icu^
-||stlpnom.xyz^
-||ly55442.com^
-||wsdwbfs.cn^
-||jedlnn.xyz^
-||xwvnhe.cn^
-||elphhrj.xyz^
-||esqhsm.xyz^
-||hsutav.icu^
-||88lm08.com^
-||6slb0.cyou^
-||beyers.cn^
-||iykig.cn^
-||kdeh.cn^
 ||zailgrae.com^
 ||zeqvqb.icu^
 ||zfzys.top^
@@ -40824,6 +40847,14 @@ newduba.cn###jq_youxi
 ||znhlxvb.xyz^
 ||zojyob.icu^
 ||zopuqv.icu^
+||3q1lsj.cn^
+||cdmgac.xyz^
+||ryhkft.xyz^
+||hvxrvef.xyz^
+||hnalzlu.top^
+||pmtrkp.icu^
+||hptyp.icu^
+||pressit.cn^
 ||zsjpi.cn^
 ||zttuvj.xyz^
 ||ztxjutz.xyz^
@@ -49571,7 +49602,8 @@ hxsame.hexun.com$domain=~quote.hexun.com
 ||zzz4.com/JS_AD/
 ||zzzyk.com/js/
 szxx.com.cn###A0
-miushuo.com###leftDiv1
+touchgal.org##a[href*=".sailing.ink"]
+touchgal.org##a[href*=".taobao.com"]
 szxx.com.cn###A1
 szxx.com.cn###A2
 yahoo.com###ACT_crazy
@@ -50402,6 +50434,7 @@ hbzhan.com###leftAdv
 jiaodong.net###leftBanner
 91duba.com###leftBar
 cs.com.cn,qinbing.cn,sonimei.cn###leftDiv
+miushuo.com###leftDiv1
 duba.com###leftHot
 51credit.com###leftLayerDown
 2345.com###leftPacketBox
@@ -55155,8 +55188,8 @@ che168.com#@#[data-adid]
 bitauto.com#@#a[href^="http://ad.doubleclick.net/"]
 brandsales.58.com#@#div[id^="ad_"]
 gohome.com.hk#@#div[id^="div-gpt-ad"]
-android-doc.com,apk.tw,chaojizhibo.net,chtoen.com,dizhishengcheng.com,doitwell.tw,epinv.com,ff14angler.com,fxpan.com,haoweichi.com,logi.im,lspdfrcn.com,moa.tw,moe48.com,numberempire.com,playok.com,reh.tw,shenfendaquan.com,vaptcha.com#@#ins.adsbygoogle[data-ad-slot]
 android-doc.com,apk.tw,chaojizhibo.net,chtoen.com,dizhishengcheng.com,doitwell.tw,epinv.com,ff14angler.com,fxpan.com,haoweichi.com,logi.im,lspdfrcn.com,moa.tw,moe48.com,numberempire.com,playok.com,reh.tw,shenfendaquan.com,vaptcha.com#@#ins.adsbygoogle
+android-doc.com,apk.tw,chaojizhibo.net,chtoen.com,dizhishengcheng.com,doitwell.tw,epinv.com,ff14angler.com,fxpan.com,haoweichi.com,logi.im,lspdfrcn.com,moa.tw,moe48.com,numberempire.com,playok.com,reh.tw,shenfendaquan.com,vaptcha.com#@#ins.adsbygoogle[data-ad-slot]
 @@.adserver.$domain=litv.tv
 @@.com/adv/$domain=my.ctrip.com
 @@.gif#$domain=b168.net|cnprint.org|huhupan.com|tgfcer.com|wgun.net
