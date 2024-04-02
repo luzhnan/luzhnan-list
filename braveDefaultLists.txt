@@ -7459,7 +7459,15 @@ fightful.com##+js(nosiif, getComputedStyle)
 teller.jp##+js(trusted-click-element, .z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\:opacity_0\.4.h_50px)
 
 ! thenation.com anti-adb
-||config.content-settings.com^$xhr,domain=thenation.com
+||site-config.com^$3p
+||content-settings.com^$3p
+
+! https://github.com/uBlockOrigin/uAssets/issues/21353
+raenonx.cc##div[class^="flex flex-row w-full h-full"]:has(.adsbygoogle)
+raenonx.cc##body > div[class] > [class="flex flex-col w-full"]:has(> button.button-clickable-bg-opaque > div > svg)
+!#if !env_firefox
+raenonx.cc##body > div[id][data-floating-ui-portal]:has-text(/blocker/i)
+!#endif
 
 ! https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-cookies.txt
 ! Title: uBlock filters – Cookie Notices
@@ -7993,6 +8001,7 @@ actu.fr,elconfidencial.com,rtl.lu##+js(trusted-click-element, #didomi-notice-agr
 ! https://github.com/uBlockOrigin/uAssets/issues/19942
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122648 - Social
 @@||sdk.privacy-center.org^$domain=ledauphine.com
+ledauphine.com##[class*="cmp_alternative"]
 ledauphine.com##+js(trusted-click-element, button[id="didomi-notice-agree-button"])
 privacy.ledauphine-presse.fr##+js(trusted-set-cookie, didomi_token, eyJ1c2VyX2lkIjoiMThhZWVmZTgtNGJjMS02NjhmLWE5YTgtNmNhM2VmMmQ0NzVkIiwiY3JlYXRlZCI6IjIwMjMtMTAtMDJUMDY6MDY6NDQuODA0WiIsInVwZGF0ZWQiOiIyMDIzLTEwLTAyVDA2OjA2OjQ0LjgwNFoiLCJ2ZW5kb3JzIjp7ImVuYWJsZWQiOlsiYzphYi10YXN0eSIsImM6YWNhc3QtQ2M3MmNoWHAiLCJjOmFjcG0tSkIzNEJicmQiLCJjOmFwbG96ZS14NDdKZlhVSyIsImM6YXBwc2ZseWVyLXdETmJrQ2I2IiwiYzphdGludGVybmUtY1dRS0hlSloiLCJjOmJlb3AtdEdSV0hIYUYiLCJjOmJpbmctYWRzIiwiYzpjaGFydGJlYXQiLCJjOmNsaWNraW50ZXh0IiwiYzpkYWlseW1vdGlvLWhyRldwVEtDIiwiYzpzcXVhZGF0YS1lYXN5ZG1wIiwiYzpkeW5hbWljbWEtNzhlUmpLY1YiLCJjOmZhY2Vib29rLXRrQWpXM2k2IiwiYzpmbG91cmlzaC14bnhZTVo2TiIsImM6Z2VuaWFsbHktWjhiUmhxRW4iLCJnb29nbGUiLCJjOmdvb2dsZW1hcC1kRDdDWkNKZyIsImM6aW5mb2dyYW0tcXFoZDNoZk0iLCJjOmluc3RhZ3JhbS1MWmthNlI0NCIsImM6aW5zdGFncmFtIiwiYzpqdXh0YXBvc2UtTVpnSEZmWXgiLCJjOm1hcHM0bmV3cy0zWDlWUVc3NiIsImM6bWljcm9zb2Z0IiwiYzptaWNyb3NvZnQtYW5hbHl0aWNzIiwiYzptaWNyb3NvZnQtb25lZHJpdmUtbGl2ZS1zZGsiLCJjOm15ZmVlbGJhY2siLCJjOm9uZXNpZ25hbC1uS1hmQ3BZcyIsImM6cGxheWJ1enotamhKcUNBeEsiLCJjOnBvb29sLWV3WjY2ZWdmIiwiYzpwb29vbC1WeWhDaXQ3TiIsImM6cHVic3RhY2stV3JDYkV5Y00iLCJjOnNob3J0aGFuZC02R01GSzJCVyIsImM6c291bmRjbG91ZC14S01ER1g0TCIsImM6c3RvcnltYXAtTFpwaWQ3WXEiLCJjOnN1YnNjcmliZS1abXdVZVVDUCIsImM6dGltZWxpbmVqLWU2WFJDS1VYIiwidHdpdHRlciIsImM6dHdpdHRlci1pNnhkQjJyVCIsImM6dmltZW8tSGlNcnpFUEgiLCJjOnlvdXR1YmUiLCJjOnlvdXR1YmUtQ2VWemptSlAiXX0sInB1cnBvc2VzIjp7ImVuYWJsZWQiOlsicmVzZWF1eHNvLTlLYmpid05oIl0sImRpc2FibGVkIjpbImdlb2xvY2F0aW9uX2RhdGEiLCJkZXZpY2VfY2hhcmFjdGVyaXN0aWNzIiwiYXVkaWVuY2VtLXhlZGVVMmdRIiwiY29udGVudXN2LWhGVDhpZmRSIiwiY29udGVudXNjLXBYQVZVdDhyIiwibWVzdXJlZGEtaDdHUWVyclQiXX0sInZlcnNpb24iOjIsImFjIjoiQ25XQUdBRmtCSllLZFFBQS5BRm1BQ0FGayJ9)
 privacy.ledauphine-presse.fr##+js(trusted-set-cookie, euconsent-v2, CPzBFAAPzBFAAAHABBENDYCgAAAAAAAAAAAAJNFB_W_fD2Ni-35_avt0aQ1dwVC_6-UxDgKZB4kFyRpEMKwX3mAKKFXgpKAKGBYEsUZAIQBlHCHEDECwQIERLzHMIAEQJQIAJqJEgFERAkJQCBpZHwMACAIQgHRWATFIiB-HaBroyfhEMaC0AUBQ4AonhMTPAoSdwXCkg7uaHIgIImgFASBAIoYMEEEEBlTkFABAAAkAAABJSADAAEQUCUAGAAIgoDoAMAARBQIQAYAAiCgEgAwABEFARABgACIKAyADAAEQUA0AGAAIgoCoAMAARBQA.YAAAAAAAAAAA)
@@ -8642,6 +8651,21 @@ giga.de##+js(trusted-click-element, button.sp_choice_type_11)
 ! Created date=1, ANALYTICS_STORAGE status = DENIED
 auto.nl##+js(trusted-set-local-storage-item, cookieConsent, '{"created":"1","versionNumber":2,"consents":[{"type":"ANALYTICS_STORAGE","status":"DENIED"},{"type":"AD_STORAGE","status":"DENIED"},{"type":"AD_USER_DATA","status":"DENIED"},{"type":"AD_PERSONALIZATION","status":"DENIED"}],"gtmParams":{"analytics_storage":"granted","ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}}')
 
+! only necessary
+eurocard.com##+js(trusted-click-element, .button--necessary-approve, , 2000)
+
+! stats/marketing/personalization=disable, time and id=1
+tlkhorgaszaruhaz.hu##+js(trusted-set-cookie, UN_cookie_consent_v2, %7B%22marketing%22%3A0%2C%22statistics%22%3A0%2C%22personalization%22%3A0%2C%22time%22%3A1711880201%2C%22id%22%3A%221%22%7D, , , reload, 1)
+
+! Aggred to consent
+derstandard.at,derstandard.de##+js(trusted-set-cookie, consentUUID, 191c03c5-1154-4937-aa26-ced186f90097_30, , , reload, 1)
+
+! https://github.com/uBlockOrigin/uAssets/issues/23135 - Functional
+cencenelec.eu##+js(trusted-set-cookie, cookieconsent, saved=1&functional=1&analytics=0&marketing=0, , , reload, 1)
+
+! required only, optional/analytics = false
+white.market##+js(trusted-set-cookie, cookie-consent, '{"required":true,"optional":false,"analytics":false}')
+
 ! https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/raw/main/bpc-paywall-filter.txt
 ! Title: Bypass Paywalls Clean filter
 ! Expires: 1 day (update frequency)
@@ -8649,7 +8673,7 @@ auto.nl##+js(trusted-set-local-storage-item, cookieConsent, '{"created":"1","ver
 ! Homepage: https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters
 ! License: MIT; https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/blob/main/LICENSE
 ! Last modified: 
-! Version: 3.6.0.2
+! Version: 3.6.1.2
 
 ! General
 
@@ -8894,6 +8918,7 @@ nytimes.com##div[data-testid="inline-message"],div[id^="ad-"],div#dock-container
 ||cooking.nytimes.com/api/*/access$xmlhttprequest,~third-party
 ||nzherald.co.nz/sales/public/v*/entitlements$xmlhttprequest,~third-party
 nzherald.co.nz##+js(set, Fusion.globalContent.isPremium, false)
+nzz.ch,themarket.ch##+js(rc, nzzinteraction, .nzzinteraction)
 /\/observador\.pt\/(\d{4}|especiais|opiniao)\//$inline-script
 paloaltoonline.com##+js(cookie-remover, /^/)
 pourleco.com##+js(ra, style, div[class*="article-"][style])
@@ -8997,6 +9022,7 @@ unherd.com##div#premiumpreview
 ||washingtonpost.com/tetro/metering/evaluate$xmlhttprequest,~third-party
 ||account.winnipegfreepress.com/api/v*/auth/identify$xmlhttprequest,~third-party
 winnipegfreepress.com##.billboard-ad-space,.ad,.article-ad,.fixed-sky
+||wiwo.de/js/*/wt.*.js$script,~third-party
 yorkshirepost.co.uk##+js(ra, class, div.premium)
 
 ! Australian Community Media
@@ -9132,6 +9158,10 @@ curbed.com,grubstreet.com,nymag.com,thecut.com,vulture.com##div.m-ad
 ! Ringier Axel Springer Polska
 businessinsider.com.pl##+js(cookie-remover, xbc)
 businessinsider.com.pl##div#content-premium-offer
+newsweek.pl##+js(ra, class|style, div.contentPremium[style])
+newsweek.pl##+js(ra, class, div.videoPremiumWrapper)
+newsweek.pl##+js(ra, class, div.embed__mainVideoWrapper)
+newsweek.pl##+js(ra, class, div#contentPremiumPlaceholder[class])
 onet.pl##+js(cookie-remover, xbc)
 
 ! Roularta Media Groep
@@ -9517,8 +9547,8 @@ csmonitor.com##+js(json-prune, ids meteredIds, modified)
 ! McClatchy sites
 ###ConnatixVideoAd
 bellinghamherald.com,bnd.com,bradenton.com,centredaily.com,charlotteobserver.com,elnuevoherald.com,fresnobee.com,heraldonline.com,heraldsun.com,idahostatesman.com,islandpacket.com,kansas.com,kansascity.com,kentucky.com,ledger-enquirer.com,macon.com,mcclatchydc.com,mercedsunstar.com,miamiherald.com,modbee.com,myrtlebeachonline.com,newsobserver.com,sacbee.com,sanluisobispo.com,star-telegram.com,sunherald.com,thenewstribune.com,theolympian.com,thestate.com,tri-cityherald.com##.zone-el[data-feature="suggested"], .zone
-/zisloby-on/*$~third-party,domain=bellinghamherald.com|bnd.com|bradenton.com|centredaily.com|charlotteobserver.com|elnuevoherald.com|fresnobee.com|heraldonline.com|heraldsun.com|idahostatesman.com|islandpacket.com|kansas.com|kansascity.com|kentucky.com|ledger-enquirer.com|macon.com|mcclatchydc.com|mercedsunstar.com|miamiherald.com|modbee.com|myrtlebeachonline.com|newsobserver.com|sacbee.com|sanluisobispo.com|star-telegram.com|sunherald.com|thenewstribune.com|theolympian.com|thestate.com|tri-cityherald.com
-@@/zisloby-on*core.js$script,~third-party,domain=bellinghamherald.com|bnd.com|bradenton.com|centredaily.com|charlotteobserver.com|elnuevoherald.com|fresnobee.com|heraldonline.com|heraldsun.com|idahostatesman.com|islandpacket.com|kansas.com|kansascity.com|kentucky.com|ledger-enquirer.com|macon.com|mcclatchydc.com|mercedsunstar.com|miamiherald.com|modbee.com|myrtlebeachonline.com|newsobserver.com|sacbee.com|sanluisobispo.com|star-telegram.com|sunherald.com|thenewstribune.com|theolympian.com|thestate.com|tri-cityherald.com
+/yn-lozobsi/*$~third-party,domain=bellinghamherald.com|bnd.com|bradenton.com|centredaily.com|charlotteobserver.com|elnuevoherald.com|fresnobee.com|heraldonline.com|heraldsun.com|idahostatesman.com|islandpacket.com|kansas.com|kansascity.com|kentucky.com|ledger-enquirer.com|macon.com|mcclatchydc.com|mercedsunstar.com|miamiherald.com|modbee.com|myrtlebeachonline.com|newsobserver.com|sacbee.com|sanluisobispo.com|star-telegram.com|sunherald.com|thenewstribune.com|theolympian.com|thestate.com|tri-cityherald.com
+@@/yn-lozobsi*core.js$script,~third-party,domain=bellinghamherald.com|bnd.com|bradenton.com|centredaily.com|charlotteobserver.com|elnuevoherald.com|fresnobee.com|heraldonline.com|heraldsun.com|idahostatesman.com|islandpacket.com|kansas.com|kansascity.com|kentucky.com|ledger-enquirer.com|macon.com|mcclatchydc.com|mercedsunstar.com|miamiherald.com|modbee.com|myrtlebeachonline.com|newsobserver.com|sacbee.com|sanluisobispo.com|star-telegram.com|sunherald.com|thenewstribune.com|theolympian.com|thestate.com|tri-cityherald.com
 ://media.*/escenic$script,~third-party,domain=bellinghamherald.com|bnd.com|bradenton.com|centredaily.com|charlotteobserver.com|elnuevoherald.com|fresnobee.com|heraldonline.com|heraldsun.com|idahostatesman.com|islandpacket.com|kansas.com|kansascity.com|kentucky.com|ledger-enquirer.com|macon.com|mcclatchydc.com|mercedsunstar.com|miamiherald.com|modbee.com|myrtlebeachonline.com|newsobserver.com|sacbee.com|sanluisobispo.com|star-telegram.com|sunherald.com|thenewstribune.com|theolympian.com|thestate.com|tri-cityherald.com
 ://media.*/micb.js|$script,~third-party,domain=bellinghamherald.com|bnd.com|bradenton.com|centredaily.com|charlotteobserver.com|elnuevoherald.com|fresnobee.com|heraldonline.com|heraldsun.com|idahostatesman.com|islandpacket.com|kansas.com|kansascity.com|kentucky.com|ledger-enquirer.com|macon.com|mcclatchydc.com|mercedsunstar.com|miamiherald.com|modbee.com|myrtlebeachonline.com|newsobserver.com|sacbee.com|sanluisobispo.com|star-telegram.com|sunherald.com|thenewstribune.com|theolympian.com|thestate.com|tri-cityherald.com
 ://media.*/misites/$script,~third-party,domain=bellinghamherald.com|bnd.com|bradenton.com|centredaily.com|charlotteobserver.com|elnuevoherald.com|fresnobee.com|heraldonline.com|heraldsun.com|idahostatesman.com|islandpacket.com|kansas.com|kansascity.com|kentucky.com|ledger-enquirer.com|macon.com|mcclatchydc.com|mercedsunstar.com|miamiherald.com|modbee.com|myrtlebeachonline.com|newsobserver.com|sacbee.com|sanluisobispo.com|star-telegram.com|sunherald.com|thenewstribune.com|theolympian.com|thestate.com|tri-cityherald.com
@@ -9789,6 +9819,11 @@ al.com,cleveland.com,lehighvalleylive.com,masslive.com,mlive.com,nj.com,oregonli
 ! Fox News
 foxnews.com##.gated-article-body.has-gated-overlay:style(height:auto!important;overflow:show!important)
 foxnews.com##.show-gate.gated-overlay.article-gating
+
+! Business Insider
+||businessinsider.com/chunks/scripts/piano.
+||businessinsider.com/chunks/scripts/components~paywall-
+||businessinsider.com/ajax/render-component?path=paywall
 
 ! https://raw.githubusercontent.com/easylist/easylist/master/fanboy-addon/fanboy_agegate_allowlist.txt
 ! fanboy_agegate_allowlist.txt
@@ -13498,9 +13533,9 @@ jared.com,zales.com##.join-list
 templeandwebster.com.au##.js-footer-email-capture
 shop.amoreterra.com##.js-section__promo-pop
 harbourbookshop.co.uk##.jsFixedMessage
-hugesupplements.com,loveyourmelon.com,ritual.com,well.ca##.ju_Con
+birdbgone.com,hugesupplements.com,loveyourmelon.com,ritual.com,well.ca##.ju_Con
 dbrand.com##.ju_iframe
-hugesupplements.com,loveyourmelon.com,ritual.com,well.ca##.ju_overlay
+birdbgone.com,hugesupplements.com,loveyourmelon.com,ritual.com,well.ca##.ju_overlay
 tanga.com##.jumbotron
 runningwarehouse.com.au##.l-footer-join
 oakandluna.com##.l2VEg
@@ -13646,7 +13681,7 @@ baybloorradio.com,bizpromo.co.nz,de-santis.it,drinkfreshjuice.com,underarmour.ca
 !! underarmour
 underarmour.ca,underarmour.cl,underarmour.co.nz,underarmour.com,underarmour.com.au,underarmour.com.br,underarmour.com.mx,underarmour.com.my,underarmour.de,underarmour.es,underarmour.eu,underarmour.fr,underarmour.it,underarmour.nl###emailPopUpModal
 !! #omnisend-dynamic-container
-a1supplements.com,allyouplay.com,factoryfast.com.au,globaleparts.com,huskymoto.co.uk,jj-motorsports.com,mavigadget.com,myvillagegreen.com,nevstudio.com,northwestohioliquidations.com,noticethereckless.com,orbitgear.net,orka.ca,pastimesports.ca,santiemidwest.com,skinhelpzone.com,supplementschester.co.uk,thetruthbeautycompany.com,toolsplus.com###omnisend-dynamic-container
+a1supplements.com,allyouplay.com,factoryfast.com.au,globaleparts.com,huskymoto.co.uk,jj-motorsports.com,mavigadget.com,myvillagegreen.com,nevstudio.com,northwestohioliquidations.com,noticethereckless.com,orbitgear.net,orka.ca,pastimesports.ca,recstuff.com,santiemidwest.com,skinhelpzone.com,supplementschester.co.uk,thetruthbeautycompany.com,toolsplus.com###omnisend-dynamic-container
 !! #smile-ui-container
 5percentnutrition.com,legacytoys.com,myotcstore.com,myvillagegreen.com,newvaping.com,nisupplements.com###smile-ui-container
 !! .ba-widget-namespace
@@ -16156,6 +16191,10 @@ nieuwsblad.be##body:style(overflow: auto !important;)
 ! .pum
 thurrott.com,hypebot.com,fatgirlskinny.net,moneymagpie.com,verdadeiroolhar.pt,thecanary.co##.pum
 thurrott.com,hypebot.com,fatgirlskinny.net,moneymagpie.com,verdadeiroolhar.pt,thecanary.co##html:style(overflow:auto !important)
+! mbt-store.com
+mbt-store.com###newsletterModal
+mbt-store.com##.modal-backdrop
+mbt-store.com##.index-wrap:style(overflow: auto !important;)
 ! washingtonpost.com
 washingtonpost.com###wall-bottom-drawer
 washingtonpost.com##.regwall-overlay
@@ -17059,9 +17098,9 @@ jared.com,zales.com##.join-list
 templeandwebster.com.au##.js-footer-email-capture
 shop.amoreterra.com##.js-section__promo-pop
 harbourbookshop.co.uk##.jsFixedMessage
-hugesupplements.com,loveyourmelon.com,ritual.com,well.ca##.ju_Con
+birdbgone.com,hugesupplements.com,loveyourmelon.com,ritual.com,well.ca##.ju_Con
 dbrand.com##.ju_iframe
-hugesupplements.com,loveyourmelon.com,ritual.com,well.ca##.ju_overlay
+birdbgone.com,hugesupplements.com,loveyourmelon.com,ritual.com,well.ca##.ju_overlay
 tanga.com##.jumbotron
 runningwarehouse.com.au##.l-footer-join
 oakandluna.com##.l2VEg
@@ -17207,7 +17246,7 @@ baybloorradio.com,bizpromo.co.nz,de-santis.it,drinkfreshjuice.com,underarmour.ca
 !! underarmour
 underarmour.ca,underarmour.cl,underarmour.co.nz,underarmour.com,underarmour.com.au,underarmour.com.br,underarmour.com.mx,underarmour.com.my,underarmour.de,underarmour.es,underarmour.eu,underarmour.fr,underarmour.it,underarmour.nl###emailPopUpModal
 !! #omnisend-dynamic-container
-a1supplements.com,allyouplay.com,factoryfast.com.au,globaleparts.com,huskymoto.co.uk,jj-motorsports.com,mavigadget.com,myvillagegreen.com,nevstudio.com,northwestohioliquidations.com,noticethereckless.com,orbitgear.net,orka.ca,pastimesports.ca,santiemidwest.com,skinhelpzone.com,supplementschester.co.uk,thetruthbeautycompany.com,toolsplus.com###omnisend-dynamic-container
+a1supplements.com,allyouplay.com,factoryfast.com.au,globaleparts.com,huskymoto.co.uk,jj-motorsports.com,mavigadget.com,myvillagegreen.com,nevstudio.com,northwestohioliquidations.com,noticethereckless.com,orbitgear.net,orka.ca,pastimesports.ca,recstuff.com,santiemidwest.com,skinhelpzone.com,supplementschester.co.uk,thetruthbeautycompany.com,toolsplus.com###omnisend-dynamic-container
 !! #smile-ui-container
 5percentnutrition.com,legacytoys.com,myotcstore.com,myvillagegreen.com,newvaping.com,nisupplements.com###smile-ui-container
 !! .ba-widget-namespace
@@ -19717,6 +19756,10 @@ nieuwsblad.be##body:style(overflow: auto !important;)
 ! .pum
 thurrott.com,hypebot.com,fatgirlskinny.net,moneymagpie.com,verdadeiroolhar.pt,thecanary.co##.pum
 thurrott.com,hypebot.com,fatgirlskinny.net,moneymagpie.com,verdadeiroolhar.pt,thecanary.co##html:style(overflow:auto !important)
+! mbt-store.com
+mbt-store.com###newsletterModal
+mbt-store.com##.modal-backdrop
+mbt-store.com##.index-wrap:style(overflow: auto !important;)
 ! washingtonpost.com
 washingtonpost.com###wall-bottom-drawer
 washingtonpost.com##.regwall-overlay
@@ -20877,6 +20920,7 @@ izumi.jp##html[data-smartbanner-original-margin-top="0"][style="margin-top: 84px
 ||jubi.ai/buttonbot/$script,third-party
 ||krakenoptimize.com^$third-party
 ||luravius.com^$third-party
+||medallia.com^*/onsite/embed.js
 ||neopush.io^$third-party
 ||news2day.me^$third-party
 ||notification-time.com^$third-party
@@ -21933,11 +21977,13 @@ terresinovia.fr##.lksociaux
 lesnumeriques.com##.ln__m-shr
 autoplus.fr##.nl-social
 europe1.fr##.partage
+quechoisir.org##.qc-footer_social-media-links
 moneyvox.fr##.reseau-soc-page
 terresinovia.fr##.reseaux-list
 pulsaroptics.fr##.reseaux_sociaux
 madagascar-tribune.com##.rezo_sociaux
 bledina.com##.rs-icon
+liberation.fr##.sc-eVBRet.htUQLJ
 la-croix.com##.send-article-icon
 quebeccoupongratuit.com##.share-site
 homap.fr##.share_content_button
@@ -25719,6 +25765,11 @@ m.xigua110.com##.ui-detail-info > div[style*="line-height:35px; text-align:cente
 !
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_chinese
+! Detect of using AdGuard products
+!+ PLATFORM(windows, mac, android, ios) NOT_OPTIMIZED
+adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
+!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
+adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 
 ! https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/adservers.txt
@@ -35772,12 +35823,12 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 
 ! https://filters.adtidy.org/extension/ublock/filters/224.txt
 ![Adblock Plus 2.0]
-! Checksum: jjY1BAwVtSV267J0Ny0Rhw
-! Diff-Path: ../patches/224/224-s-1711856204-3600.patch
+! Checksum: RqcuG5G86ecAtC4MyN77pQ
+! Diff-Path: ../patches/224/224-s-1712014601-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.13.40
-! TimeUpdated: 2024-03-31T03:32:35+00:00
+! Version: 2.1.13.52
+! TimeUpdated: 2024-04-01T23:32:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36155,6 +36206,7 @@ yaociyuan.bid##+js(set-constant, killads, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/141600
 520cc.cc##+js(no-setTimeout-if, myModal)
 520cc.cc##+js(set-constant, all520dddaaa2022ccc, true)
+@@||520click.com/ad.php$domain=520cc.cc
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138700
 manwa.me#@#.ad-area
 manwa.me#$#.ad-area { position: absolute !important; left: -3000px !important; }
@@ -38447,6 +38499,7 @@ iyf.tv##vg-player.ng-star-inserted > vg-pause-ads + div.caption.show > .inner
 !
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_chinese
+! Detect of using AdGuard products
 !
 !---------------------------------------------------------------------------!
 !-------------- Content replacement rules ----------------------------------!
@@ -40333,6 +40386,7 @@ newduba.cn###jq_youxi
 ##a[href*=".xwrfr.com/"]
 ##a[href*=".yezere.com/"]
 ##a[href*="/dsf71.cc"]
+##a[href*="/ihezu.fans"]
 ||0940088.com^
 ||0j775d.cn^
 ||0k7wod.cn^
@@ -40348,6 +40402,8 @@ newduba.cn###jq_youxi
 ||1ny3r.icu^
 ||2jse6.icu^
 ||3bxe2.cyou^
+||3q1lsj.cn^
+||4wu3gf.cn^
 ||51hir.cyou^
 ||5z0d3.cyou^
 ||666bbb333bbb.com^
@@ -40412,6 +40468,7 @@ newduba.cn###jq_youxi
 ||ccsshn137.shop^
 ||cdfhidrk.xyz^
 ||cdftizu.xyz^
+||cdmgac.xyz^
 ||cdmnlxtu.xyz^
 ||cdrvkdni.xyz^
 ||cdybwjpa.xyz^
@@ -40478,6 +40535,7 @@ newduba.cn###jq_youxi
 ||elisium.cn^
 ||ellingsen.cn^
 ||elphhrj.xyz^
+||eluocs.xyz^
 ||endolift.cn^
 ||enifdlaw.top^
 ||eqqwgw.xyz^
@@ -40493,6 +40551,7 @@ newduba.cn###jq_youxi
 ||fhtfnb.xyz^
 ||fidelius.cn^
 ||fmfnrf.xyz^
+||fmssoj.icu^
 ||fpjjjh.xyz^
 ||fpvdrzx.xyz^
 ||frtnqps358.shop^
@@ -40532,12 +40591,15 @@ newduba.cn###jq_youxi
 ||hjshal.com^
 ||hkbumv.icu^
 ||hmrwkcx.cn^
+||hnalzlu.top^
 ||hnifdlau.top^
 ||hozatr.xyz^
+||hptyp.icu^
 ||hrnkdr.xyz^
 ||hsutav.icu^
 ||htyusiu.top^
 ||hubgets.cn^
+||hvxrvef.xyz^
 ||hyusnisu.top^
 ||ijvla.cn^
 ||imevzbn.cn^
@@ -40563,6 +40625,7 @@ newduba.cn###jq_youxi
 ||jubnpx.xyz^
 ||justapp.top^
 ||jvkqkzu.cn^
+||jyuwkba.top^
 ||jzjpntr.xyz^
 ||kbomku.xyz^
 ||kdeh.cn^
@@ -40607,6 +40670,7 @@ newduba.cn###jq_youxi
 ||mnifdlax.top^
 ||moberg.cn^
 ||mondigo.cn^
+||mpn56e.cn^
 ||mrtxtrq.xyz^
 ||mtddqjk.cn^
 ||mthhhuq.cn^
@@ -40617,6 +40681,7 @@ newduba.cn###jq_youxi
 ||ndthdtr586.shop^
 ||neess105.top^
 ||ngnxyub.cn^
+||njenlz.cn^
 ||njhvalu.cn^
 ||nkbkor.icu^
 ||nlhpxj.xyz^
@@ -40654,10 +40719,14 @@ newduba.cn###jq_youxi
 ||pimg2023.com^
 ||pjzxdl.xyz^
 ||pkyjuc.cn^
+||pmtrkp.icu^
 ||pnxtnp.xyz^
+||polepole.cn^
+||pressit.cn^
 ||prhfziq.xyz^
 ||przbzr.xyz^
 ||pseudonym.cn^
+||pwhkfd.xyz^
 ||pwhtip.icu^
 ||pxzrlf.xyz^
 ||qbhzghb.xyz^
@@ -40696,6 +40765,7 @@ newduba.cn###jq_youxi
 ||rpnufv.xyz^
 ||ruqwgb.icu^
 ||rydyvv.xyz^
+||ryhkft.xyz^
 ||ryrmvd.xyz^
 ||rzfdbsn.cn^
 ||rzpvbl.xyz^
@@ -40797,6 +40867,7 @@ newduba.cn###jq_youxi
 ||wsdwbfs.cn^
 ||wtyusie.top^
 ||wwjtdjj.cn^
+||wxfdmri.xyz^
 ||xcypgd.icu^
 ||xdfhidrk.xyz^
 ||xdmnlxtu.xyz^
@@ -40835,6 +40906,7 @@ newduba.cn###jq_youxi
 ||yvbjctqs.xyz^
 ||yvnxetmq.xyz^
 ||yvudqzoa.xyz^
+||ywhws.cn^
 ||yyddkm526.shop^
 ||yyttmyy.cn^
 ||zagyjnn.cn^
@@ -40847,14 +40919,12 @@ newduba.cn###jq_youxi
 ||znhlxvb.xyz^
 ||zojyob.icu^
 ||zopuqv.icu^
-||3q1lsj.cn^
-||cdmgac.xyz^
-||ryhkft.xyz^
-||hvxrvef.xyz^
-||hnalzlu.top^
-||pmtrkp.icu^
-||hptyp.icu^
-||pressit.cn^
+||ebwonro.cn^
+||inalzlo.top^
+||qkscga.xyz^
+||xgjidt.xyz^
+||jwhdgt.icu^
+||npjvgug.xyz^
 ||zsjpi.cn^
 ||zttuvj.xyz^
 ||ztxjutz.xyz^
@@ -49602,8 +49672,6 @@ hxsame.hexun.com$domain=~quote.hexun.com
 ||zzz4.com/JS_AD/
 ||zzzyk.com/js/
 szxx.com.cn###A0
-touchgal.org##a[href*=".sailing.ink"]
-touchgal.org##a[href*=".taobao.com"]
 szxx.com.cn###A1
 szxx.com.cn###A2
 yahoo.com###ACT_crazy
@@ -51141,7 +51209,6 @@ gamer.com.tw##.a-mercy-d:not([href*=".gamer."])
 159i.com##.a2d
 159i.com##.a3d
 159i.com##.a4d
-cupfox.app,cupfox2.com##.a5-box[class^="jsx-"]
 thinkphp.cn##.a6
 chacuo.net##.a96090
 speedtest.cn##.aP-box
@@ -53528,7 +53595,7 @@ speedtest.cn##.summer_logo
 zol.com.cn##.supervalue
 qingdaonews.com##.surround
 baidu.com##.swan-ad-fc-feed
-cupfox.app,cupfox2.com,hcomic.net##.swiper
+cupfox.love,hcomic.net##.swiper
 instrument.com.cn,tool.lu##.swiper-container
 toolfk.com##.swiper-container-horizontal
 1kkk.com,dm5.com##.swiper-container[style*="760px;"]
@@ -54107,9 +54174,10 @@ iqiyi.com##a[href*=".oppo."]
 6park.com##a[href*=".php?key="]
 v.qq.com##a[href*=".renrendai.com"]
 makepolo.com##a[href*=".rong360.com"]
+touchgal.org##a[href*=".sailing.ink"]
 ccav5.com##a[href*=".sinaimg."]
 chdbits.co##a[href*=".taobao"]
-52movieba.com,acglala.cc,awaker.cn,bimiacg4.net,bimiacg5.net,ccav1.com,cgown.com,cn163.net,comicat.org,cosersuki.org,dzbhdm.net,epinv.com,eroacg.com,galacg.me,gmgard.com,haochi123.com,hexieshe.cn,hexieshe.com,hexieshe.xyz,hggard.com,hmghmg.com,hmoe11.net,idanmu.ee,ifenpaidy.com,jitapu.com,jitashe.org,kelatv.com,kisssub.org,languang.co,llss.bz,mtrend.cn,mydrivers.com,mzh.ren,nxing.cn,oyksoft.com,souxue8.com,speedtest.cn,tingroom.com,whsir.com,xxshe.info,xxshe.xyz##a[href*=".taobao.com"]
+52movieba.com,acglala.cc,awaker.cn,bimiacg4.net,bimiacg5.net,ccav1.com,cgown.com,cn163.net,comicat.org,cosersuki.org,dzbhdm.net,epinv.com,eroacg.com,galacg.me,gmgard.com,haochi123.com,hexieshe.cn,hexieshe.com,hexieshe.xyz,hggard.com,hmghmg.com,hmoe11.net,idanmu.ee,ifenpaidy.com,jitapu.com,jitashe.org,kelatv.com,kisssub.org,languang.co,llss.bz,mtrend.cn,mydrivers.com,mzh.ren,nxing.cn,oyksoft.com,souxue8.com,speedtest.cn,tingroom.com,touchgal.org,whsir.com,xxshe.info,xxshe.xyz##a[href*=".taobao.com"]
 rouman5.com##a[href*=".tapdb.net"]
 boke112.com##a[href*=".tencent.com"]
 acgdoge.net,acglala.cc,chinalawedu.com,douyu.com,dzbhdm.net,gmgard.com,hggard.com,iqiyi.com,jinti.com##a[href*=".tmall.com"]
@@ -54603,7 +54671,7 @@ yahoo.com##div[id^="ads-"]
 cbmland.com##div[id^="ads_"]
 actoys.net,hualongxiang.com##div[id^="ads_d_"]
 eyuyan.com##div[id^="ads_r_"]
-gamersky.com##div[id^="adscontainer_"]
+gamersky.com##div[id^="adscontainer_b"]
 v.baidu.com##div[id^="adv_asp_"]
 ali213.net##div[id^="ali-ad-js-"]
 jdbbs.com##div[id^="archy_ad"]
@@ -57119,6 +57187,7 @@ $script,subdocument,third-party,websocket,xmlhttprequest,domain=bhshu.net|louzho
 @@||230book.com/images/bqg.js$domain=230book.net
 @@||dushu.ru^$script,domain=bhshu.net
 @@||zhaiyd5.com^$script,domain=louzhong8.com|miwens.com
+bamxs.com###inglestore
 bamxs.com##body > a
 bookrb.com##a[href="/rmtj.html"]
 booktxts.com##div[style*="position:"]
