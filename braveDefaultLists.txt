@@ -819,12 +819,6 @@ howjsay.com##+js(nostif, (), 1500)
 ! https://github.com/uBlockOrigin/uAssets/issues/4325
 vpnmentor.com##+js(nostif, bioEp.showPopup)
 
-! right clik, ctrl-U https://github.com/NanoMeow/QuickReports/issues/453
-! https://github.com/uBlockOrigin/uAssets/issues/19641
-animeshouse.net##+js(aeld, /^(contextmenu|keydown)$/)
-olhonaviagem.com##+js(aeld, keydown)
-olhonaviagem.com##+js(aopw, document.oncontextmenu)
-
 ! select / copy informagiovani-italia . com
 informagiovani-italia.com##body:style(-webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important;)
 
@@ -7461,8 +7455,8 @@ raenonx.cc##div[id][data-floating-ui-portal]:has(> .z-popup-ultimate.fixed[style
 @@||www3.doubleclick.net^$xhr,domain=raenonx.cc
 
 ! gdplayertv.top group anti-devtools, context menu
-gdplayertv.top,mixstreams.top,tvfreemium.top##+js(set, devtoolsDetector.launch, noopFunc)
-gdplayertv.top,mixstreams.top,tvfreemium.top##+js(aeld, contextmenu)
+freewatchtv.top,gdplayertv.top,mixstreams.top,tvfreemium.top##+js(set, devtoolsDetector.launch, noopFunc)
+freewatchtv.top,gdplayertv.top,mixstreams.top,tvfreemium.top##+js(aeld, contextmenu)
 
 ! https://github.com/uBlockOrigin/uAssets/issues/21974
 bbc.com##+js(trusted-click-element, [data-testid="consentBanner"] > button[data-testid="banner-button"], , 1000)
@@ -7470,6 +7464,9 @@ bbc.com##+js(trusted-click-element, [data-testid="consentBanner"] > button[data-
 bbc.com##+js(trusted-click-element, [data-testid="consentBanner"] > button[data-testid="banner-button"], , 1200)
 bbc.com##+js(trusted-click-element, [data-testid="consentBanner"] > button[data-testid="banner-button"], , 1300)
 bbc.com##+js(nano-stb, viewClickAttributeId)
+
+! https://github.com/uBlockOrigin/uAssets/issues/23209
+bilibili.com##+js(aeld, copy)
 
 ! https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-cookies.txt
 ! Title: uBlock filters – Cookie Notices
@@ -8361,6 +8358,8 @@ movieplayer.it##+js(trusted-click-element, button.iubenda-cs-accept-btn)
 
 ! https://github.com/uBlockOrigin/uAssets/issues/21954
 huffingtonpost.it,lastampa.it##+js(trusted-click-element, .iubenda-cs-visible .iubenda-cs-accept-btn)
+! https://forums.lanik.us/viewtopic.php?p=167093-huffingtonpost-fr#p167093
+huffingtonpost.fr##+js(trusted-click-element, button[data-gdpr-expression="acceptAll"])
 
 ! https://github.com/uBlockOrigin/uAssets/issues/21955
 ilsecoloxix.it##+js(trusted-click-element, .iubenda-cs-visible .iubenda-cs-accept-btn)
@@ -8680,7 +8679,7 @@ saseurobonusmastercard.se##+js(trusted-click-element, .button--necessary-approve
 ! Homepage: https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters
 ! License: MIT; https://gitlab.com/magnolia1234/bypass-paywalls-clean-filters/-/blob/main/LICENSE
 ! Last modified: 
-! Version: 3.6.2.5
+! Version: 3.6.2.7
 
 ! General
 
@@ -8784,7 +8783,6 @@ citywire.com##registration-widget,div.alert--locked
 connaissancedesarts.com##div.ad-container
 ||paywall.correiodopovo.com.br$script,~third-party
 ||corriereobjects.it/*/js/_paywall.sjs$script,domain=corriere.it
-crikey.com.au##+js(cookie-remover, blaize_session)
 ||cdn.wyleex.com/elcronista/pw.min.js$script,domain=cronista.com
 ||crusoe.com.br/assets/js/swg-wallcontent-crusoe.js$script,~third-party
 crusoe.com.br##div#gpt-leaderboard,div.ads_desktop,div.catchment-box
@@ -9148,7 +9146,6 @@ bostonherald.com,denverpost.com,eastbaytimes.com,mercurynews.com,ocregister.com,
 
 ! New York Magazine
 curbed.com,grubstreet.com,nymag.com,thecut.com,vulture.com##+js(cookie-remover, /nymcid$/)
-curbed.com,grubstreet.com,nymag.com,thecut.com,vulture.com##div.m-ad
 ||cloudfront.net/embed/widget/subx*.js$script,domain=curbed.com|grubstreet.com|nymag.com|thecut.com|vulture.com
 
 ! NHST Media Group
@@ -9162,6 +9159,9 @@ curbed.com,grubstreet.com,nymag.com,thecut.com,vulture.com##div.m-ad
 
 ! DPG ADR (no scroll)
 ||temptation.*/temptation.js$script,~third-party,domain=ad.nl|bd.nl|bndestem.nl|destentor.nl|ed.nl|gelderlander.nl|pzc.nl|tubantia.nl|hln.be
+
+! Private Media Australia
+crikey.com.au,inc-aus.com,smartcompany.com.au##+js(cookie-remover, blaize_session)
 
 ! Ringier Axel Springer Polska
 businessinsider.com.pl##+js(cookie-remover, xbc)
@@ -9207,6 +9207,7 @@ computerweekly.com,lemagit.fr,techtarget.com##p#firstP,div#inlineRegistrationWra
 ||assets.guim.co.uk/assets/SignInGate*.js$script,domain=theguardian.com
 theguardian.com##[name="SlotBodyEnd"],div[data-cy="contributions-liveblog-epic"]
 
+@@||consentmanager.net$script,third-party
 @@||petametrics.com$script,domain=seekingalpha.com
 @@||sdk.privacy-center.org^$script,third-party
 !##div#didomi-host
@@ -9929,7 +9930,7 @@ reddit.com##+js(set-cookie, over18, true)
 beyblade.com##+js(set-cookie, underage, false, , reload, 1)
 ! Porn/xxx
 pornhub.com##+js(set-cookie, accessAgeDisclaimerPH, 1)
-buktube.com,xhamster.com,xhamster.desi,xhamster2.com,xhamster3.com##+js(set-cookie, parental-control, yes, , reload, 1)
+buktube.com,xhaccess.com,xhamster.com,xhamster.desi,xhamster2.com,xhamster3.com##+js(set-cookie, parental-control, yes, , reload, 1)
 redtube.com,redtube.com.br##+js(set-cookie, showAgeDisclaimer, 1)
 tube8.com,tube8.es,tube8.fr##+js(set-cookie, t8disclaimer, 1)
 bigtitslust.com,camwhores.info,camwhores.tv,camwhores.video##+js(set-cookie, kt_agecheck, 1)
@@ -11083,7 +11084,7 @@ freemake.com,next-gen.biz##.community
 avg.com,copykat.com,snagfilms.com##.connect
 pixabay.com##.container--GV-ux
 themoscowtimes.com##.contribute-teaser-mobile
-xhamster.com,xhamster.desi##.creator-promo-bg
+xhaccess.com,xhamster.com,xhamster.desi##.creator-promo-bg
 timesofisrael.com##.crm-post-module
 frontpagetech.com##.cs-entry__prev-next-item
 upqode.com##.cursore-uq
@@ -11303,6 +11304,7 @@ alternet.org,rawstory.com###kindest-container
 gq-magazine.co.uk###link-banner
 investors.com###login-banner
 dailywire.com###lts-banner
+signin.aws.amazon.com###marketingimagelink
 libertynation.com###memberZoneFullSub
 texastribune.org###message-bar-id
 mikesmoneytalks.ca###mikes_reading
@@ -11547,7 +11549,7 @@ myanimelist.net##.header-mini-banner
 themarkup.org##.header-stripe
 crealitycloud.com##.header-top-banner
 infoq.com##.header__bottom__events
-xhamster.com,xhamster.desi##.heading-promo
+xhaccess.com,xhamster.com,xhamster.desi##.heading-promo
 insidethegames.biz##.hide-for-contributors
 tipranks.com##.hideOnpremium
 48hills.org##.hills-inline-full-width
@@ -11781,7 +11783,7 @@ walletinvestor.com##[href^="https://premium.walletinvestor.com/"]
 theguardian.com##[name="SlotBodyEnd"]
 theguardian.com##[name="StickyBottomBanner"]
 techdirt.com##[style="width: 300px; height: 360px;"]
-xhamster.com,xhamster.desi##a[class*="promoMessageBanner-"]
+xhaccess.com,xhamster.com,xhamster.desi##a[class*="promoMessageBanner-"]
 tech-camp.in##a[data-gtm-tcb="TCB_CLICK_scrollbanner_default_exp_income"]
 tech-camp.in##a[data-gtm-tcb^="TCB_CLICK_buntyubanner_"]
 nerdwallet.com##div._3VJt4n > div > ._3eCw6n._2247K8
@@ -11812,7 +11814,7 @@ thepress.co.nz##.article-navigation-buttons
 thespinoff.co.nz##.article-peep
 1news.co.nz##.articleSuggestStories
 bozemandailychronicle.com,thespec.com##.asset-paging
-bgdailynews.com,bramptonguardian.com,citizentribune.com,clintonherald.com,crossroadstoday.com,dentonrc.com,gazette.com,guelphmercury.com,homenewshere.com,kentuckytoday.com,khq.com,kilgorenewsherald.com,kmaland.com,ktbs.com,kulr8.com,lufkindailynews.com,nashvillescene.com,nbcrightnow.com,news-gazette.com,newsmirror.net,ottumwacourier.com,phillytrib.com,pulaskicountyweekly.com,starlocalmedia.com,thecentersquare.com,thesuburban.com,thetimestribune.com,unionleader.com,wdel.com,wdrb.com,wfmz.com,wvnews.com##.asset-paging-container
+bgdailynews.com,bramptonguardian.com,citizentribune.com,clintonherald.com,crossroadstoday.com,dentonrc.com,denvergazette.com,gazette.com,guelphmercury.com,homenewshere.com,kentuckytoday.com,khq.com,kilgorenewsherald.com,kmaland.com,ktbs.com,kulr8.com,lufkindailynews.com,nashvillescene.com,nbcrightnow.com,news-gazette.com,newsmirror.net,ottumwacourier.com,phillytrib.com,pulaskicountyweekly.com,starlocalmedia.com,swiowanewssource.com,thecentersquare.com,thesuburban.com,thetimestribune.com,unionleader.com,wdel.com,wdrb.com,wfmz.com,wvnews.com##.asset-paging-container
 emergingrisks.co.uk##.avia-post-nav
 dailyvoice.com##.b-scroll-to-next-article
 cockroachlabs.com##.blog-back-header
@@ -12121,7 +12123,7 @@ spjeff.com##.totop-br
 nftplazas.com##.trx_addons_scroll_to_top
 nippon.com##.u-pagetop
 news.arizona.edu##.ua-zen-back-to-top
-xhamster.com,xhamster.desi##.up-arrow
+xhaccess.com,xhamster.com,xhamster.desi##.up-arrow
 epicgames.com,wapbold.net##.up-button
 webuycars.co.za##.up-scroll
 newrepublic.com##.upArrow
@@ -13516,7 +13518,7 @@ crutchfield.com##.footer-card-email
 keychron.com##.footer-col--newsletter
 fleshlight.eu##.footer-cta
 123ink.ca,primecables.ca,shopperplus.ca##.footer-customer-gift
-farmandfleet.com##.footer-email-signup
+cheshirehorse.com,farmandfleet.com##.footer-email-signup
 renodepot.com##.footer-fixed
 carshopinc.com##.footer-head
 btr.com##.footer-info-col--newsletter
@@ -13991,6 +13993,7 @@ temu.com##body:style(overflow: auto !important; position: initial !important;)
 ||herokuapp.com/email$domain=peopleofcolorintech.com
 ||indiatimes.com/subscriptionhomepage.cms
 ||insidesources.com/wp-content/themes/insidesources/js/jquery.fancybox.js
+||irishstar.com/newsletter-preference-centre
 ||listrakbi.com^$script,domain=ruralking.com
 ||loader.wisepops.com^$domain=grist.org
 ||newsletter.bdnews24.com^
@@ -14214,6 +14217,7 @@ designtaxi.com###newsletter-subscribe-div
 essence.com###newsletter-subscribe-modal
 law.justia.com###newsletter-subscription-aside-widget
 trip101.com###newsletterCheckbox
+trains.com###newsletterContainer
 comicbook.com,popculture.com###newsletterModal
 usafacts.org###newsletter__sticky
 miningjournal.net,minotdailynews.com,salemnews.net###newsletter_article
@@ -14338,6 +14342,7 @@ armradio.am###tie-newsletter-3
 dnronline.com###tncms-block-529772
 nashvillescene.com###tncms-region-article_bottom
 postandcourier.com,starlocalmedia.com###tncms-region-article_instory_bottom
+denvergazette.com###tncms-region-global-container-top
 thesuburban.com###tncms-region-global-side-secondary
 thenewstack.io###tns-post-newsletter
 thenewstack.io###tns-promo-daily
@@ -15007,7 +15012,6 @@ biztechmagazine.com##.insider-register-one-form-wrapper
 sap-press.com##.interstitial
 qd-europe.com##.invader-overlay
 money.usnews.com##.investedpromo
-cnbc.com##.investigation-wrapper
 topgear.com##.iqwqGM.lbWKus
 indyweek.com,wisconsinwatch.org##.is-layout-constrained
 lgbtqnation.com##.is-style-default
@@ -15144,6 +15148,7 @@ missouri.edu##.miz-layer
 motherjones.com##.mj-text-cta
 heartfm.co.za##.mk-subscribe-link
 techpolicy.press,thegazette.com##.ml-form-embedContainer
+pymnts.com##.ml-subscribe-form-5774674
 thebestcakerecipes.com##.ml-vertical-align-center
 lung.org##.modaal-overlay
 abc15.com##.modal--content
@@ -15206,6 +15211,7 @@ theintercept.com##.newsletter-block__content
 dailydot.com##.newsletter-button
 health.com,lifewire.com##.newsletter-dialog-header-link
 carnewschina.com##.newsletter-for-scroll
+cfr.org##.newsletter-form-article
 mobilesyrup.com##.newsletter-form-container
 popsugar.com.au##.newsletter-form-wrapper
 beinsports.com,wftv.com,wpxi.com,wsbtv.com##.newsletter-header
@@ -15228,7 +15234,7 @@ hypebeast.com##.newsletter-popup-modal
 thepitchkc.com##.newsletter-promo-box
 narcity.com,winnipegfreepress.com##.newsletter-prompt
 poynter.org##.newsletter-section
-audacy.com,darkreading.com,everydayhealth.com,gamedeveloper.com,historyextra.com,radiotimes.com,sciencefocus.com##.newsletter-sign-up
+darkreading.com,everydayhealth.com,gamedeveloper.com,historyextra.com,radiotimes.com,sciencefocus.com##.newsletter-sign-up
 capitaltransport.com##.newsletter-sign-up-wrapper
 news24.com##.newsletter-signup--group
 foreignpolicy.com##.newsletter-signup-and-ads
@@ -15607,6 +15613,7 @@ iflscience.com##.subscribeBox
 zookeys.pensoft.net##.subscribeForEmail
 controleng.com##.subscribePromo
 bartendersbusiness.com##.subscribeToOurNewsletter
+pbs.org##.subscribe__box
 thejc.com##.subscribe__footer
 dualipa.com##.subscribe__form
 pbs.org##.subscribe__form-wrapper
@@ -15728,6 +15735,7 @@ mygaming.co.za,printmag.com##.widget-area
 offshore-energy.biz##.widget-dynamic
 nextplatform.com##.widget-no-mobile
 bestlifeonline.com##.widget-postup-standalone-form
+theafricareport.com##.widget-signup
 blog.vidizmo.com##.widget-type-blog_subscribe
 domainnamewire.com##.widget-wrap.widget_text
 vancouverisawesome.com##.widget-wysiwyg
@@ -16372,8 +16380,8 @@ treblezine.com##body,html:style(height: auto !important; overflow: auto !importa
 pv-magazine-usa.com###newsletter-modal
 pv-magazine-usa.com##body,html:style(height: auto !important; overflow: auto !important)
 ! substack.com
-construction-physics.com,sambowman.co,asiasentinel.com,understandingai.org,hamiltonnolan.com,aporiamagazine.com,garbageday.email,jacobwolf.report,semianalysis.com,dossier.today,engineeringleadership.xyz,piratewires.com,slowboring.com,flowstate.fm,popular.info,newsletter.banklesshq.com,antiracismnewsletter.com,racket.news,eugyppius.com,dkb.blog,duffelblog.com,theankler.com,fullstackeconomics.com,substack.com,platformer.news##.intro-popup
-construction-physics.com,sambowman.co,asiasentinel.com,understandingai.org,hamiltonnolan.com,aporiamagazine.com,garbageday.email,jacobwolf.report,semianalysis.com,dossier.today,engineeringleadership.xyz,piratewires.com,slowboring.com,flowstate.fm,popular.info,newsletter.banklesshq.com,antiracismnewsletter.com,racket.news,eugyppius.com,dkb.blog,duffelblog.com,theankler.com,fullstackeconomics.com,substack.com,platformer.news##+js(remove-class, show-intro-popup, , stay)
+! construction-physics.com,sambowman.co,asiasentinel.com,understandingai.org,hamiltonnolan.com,aporiamagazine.com,garbageday.email,jacobwolf.report,semianalysis.com,dossier.today,engineeringleadership.xyz,piratewires.com,slowboring.com,flowstate.fm,popular.info,newsletter.banklesshq.com,antiracismnewsletter.com,racket.news,eugyppius.com,dkb.blog,duffelblog.com,theankler.com,fullstackeconomics.com,substack.com,platformer.news##.intro-popup
+! construction-physics.com,sambowman.co,asiasentinel.com,understandingai.org,hamiltonnolan.com,aporiamagazine.com,garbageday.email,jacobwolf.report,semianalysis.com,dossier.today,engineeringleadership.xyz,piratewires.com,slowboring.com,flowstate.fm,popular.info,newsletter.banklesshq.com,antiracismnewsletter.com,racket.news,eugyppius.com,dkb.blog,duffelblog.com,theankler.com,fullstackeconomics.com,substack.com,platformer.news##+js(remove-class, show-intro-popup, , stay)
 ! apotekfordeg.no
 apotekfordeg.no##.newsletter-modal
 apotekfordeg.no##.modal-backdrop
@@ -17102,7 +17110,7 @@ crutchfield.com##.footer-card-email
 keychron.com##.footer-col--newsletter
 fleshlight.eu##.footer-cta
 123ink.ca,primecables.ca,shopperplus.ca##.footer-customer-gift
-farmandfleet.com##.footer-email-signup
+cheshirehorse.com,farmandfleet.com##.footer-email-signup
 renodepot.com##.footer-fixed
 carshopinc.com##.footer-head
 btr.com##.footer-info-col--newsletter
@@ -17577,6 +17585,7 @@ temu.com##body:style(overflow: auto !important; position: initial !important;)
 ||herokuapp.com/email$domain=peopleofcolorintech.com
 ||indiatimes.com/subscriptionhomepage.cms
 ||insidesources.com/wp-content/themes/insidesources/js/jquery.fancybox.js
+||irishstar.com/newsletter-preference-centre
 ||listrakbi.com^$script,domain=ruralking.com
 ||loader.wisepops.com^$domain=grist.org
 ||newsletter.bdnews24.com^
@@ -17800,6 +17809,7 @@ designtaxi.com###newsletter-subscribe-div
 essence.com###newsletter-subscribe-modal
 law.justia.com###newsletter-subscription-aside-widget
 trip101.com###newsletterCheckbox
+trains.com###newsletterContainer
 comicbook.com,popculture.com###newsletterModal
 usafacts.org###newsletter__sticky
 miningjournal.net,minotdailynews.com,salemnews.net###newsletter_article
@@ -17924,6 +17934,7 @@ armradio.am###tie-newsletter-3
 dnronline.com###tncms-block-529772
 nashvillescene.com###tncms-region-article_bottom
 postandcourier.com,starlocalmedia.com###tncms-region-article_instory_bottom
+denvergazette.com###tncms-region-global-container-top
 thesuburban.com###tncms-region-global-side-secondary
 thenewstack.io###tns-post-newsletter
 thenewstack.io###tns-promo-daily
@@ -18593,7 +18604,6 @@ biztechmagazine.com##.insider-register-one-form-wrapper
 sap-press.com##.interstitial
 qd-europe.com##.invader-overlay
 money.usnews.com##.investedpromo
-cnbc.com##.investigation-wrapper
 topgear.com##.iqwqGM.lbWKus
 indyweek.com,wisconsinwatch.org##.is-layout-constrained
 lgbtqnation.com##.is-style-default
@@ -18730,6 +18740,7 @@ missouri.edu##.miz-layer
 motherjones.com##.mj-text-cta
 heartfm.co.za##.mk-subscribe-link
 techpolicy.press,thegazette.com##.ml-form-embedContainer
+pymnts.com##.ml-subscribe-form-5774674
 thebestcakerecipes.com##.ml-vertical-align-center
 lung.org##.modaal-overlay
 abc15.com##.modal--content
@@ -18792,6 +18803,7 @@ theintercept.com##.newsletter-block__content
 dailydot.com##.newsletter-button
 health.com,lifewire.com##.newsletter-dialog-header-link
 carnewschina.com##.newsletter-for-scroll
+cfr.org##.newsletter-form-article
 mobilesyrup.com##.newsletter-form-container
 popsugar.com.au##.newsletter-form-wrapper
 beinsports.com,wftv.com,wpxi.com,wsbtv.com##.newsletter-header
@@ -18814,7 +18826,7 @@ hypebeast.com##.newsletter-popup-modal
 thepitchkc.com##.newsletter-promo-box
 narcity.com,winnipegfreepress.com##.newsletter-prompt
 poynter.org##.newsletter-section
-audacy.com,darkreading.com,everydayhealth.com,gamedeveloper.com,historyextra.com,radiotimes.com,sciencefocus.com##.newsletter-sign-up
+darkreading.com,everydayhealth.com,gamedeveloper.com,historyextra.com,radiotimes.com,sciencefocus.com##.newsletter-sign-up
 capitaltransport.com##.newsletter-sign-up-wrapper
 news24.com##.newsletter-signup--group
 foreignpolicy.com##.newsletter-signup-and-ads
@@ -19193,6 +19205,7 @@ iflscience.com##.subscribeBox
 zookeys.pensoft.net##.subscribeForEmail
 controleng.com##.subscribePromo
 bartendersbusiness.com##.subscribeToOurNewsletter
+pbs.org##.subscribe__box
 thejc.com##.subscribe__footer
 dualipa.com##.subscribe__form
 pbs.org##.subscribe__form-wrapper
@@ -19314,6 +19327,7 @@ mygaming.co.za,printmag.com##.widget-area
 offshore-energy.biz##.widget-dynamic
 nextplatform.com##.widget-no-mobile
 bestlifeonline.com##.widget-postup-standalone-form
+theafricareport.com##.widget-signup
 blog.vidizmo.com##.widget-type-blog_subscribe
 domainnamewire.com##.widget-wrap.widget_text
 vancouverisawesome.com##.widget-wysiwyg
@@ -19958,8 +19972,8 @@ treblezine.com##body,html:style(height: auto !important; overflow: auto !importa
 pv-magazine-usa.com###newsletter-modal
 pv-magazine-usa.com##body,html:style(height: auto !important; overflow: auto !important)
 ! substack.com
-construction-physics.com,sambowman.co,asiasentinel.com,understandingai.org,hamiltonnolan.com,aporiamagazine.com,garbageday.email,jacobwolf.report,semianalysis.com,dossier.today,engineeringleadership.xyz,piratewires.com,slowboring.com,flowstate.fm,popular.info,newsletter.banklesshq.com,antiracismnewsletter.com,racket.news,eugyppius.com,dkb.blog,duffelblog.com,theankler.com,fullstackeconomics.com,substack.com,platformer.news##.intro-popup
-construction-physics.com,sambowman.co,asiasentinel.com,understandingai.org,hamiltonnolan.com,aporiamagazine.com,garbageday.email,jacobwolf.report,semianalysis.com,dossier.today,engineeringleadership.xyz,piratewires.com,slowboring.com,flowstate.fm,popular.info,newsletter.banklesshq.com,antiracismnewsletter.com,racket.news,eugyppius.com,dkb.blog,duffelblog.com,theankler.com,fullstackeconomics.com,substack.com,platformer.news##+js(remove-class, show-intro-popup, , stay)
+! construction-physics.com,sambowman.co,asiasentinel.com,understandingai.org,hamiltonnolan.com,aporiamagazine.com,garbageday.email,jacobwolf.report,semianalysis.com,dossier.today,engineeringleadership.xyz,piratewires.com,slowboring.com,flowstate.fm,popular.info,newsletter.banklesshq.com,antiracismnewsletter.com,racket.news,eugyppius.com,dkb.blog,duffelblog.com,theankler.com,fullstackeconomics.com,substack.com,platformer.news##.intro-popup
+! construction-physics.com,sambowman.co,asiasentinel.com,understandingai.org,hamiltonnolan.com,aporiamagazine.com,garbageday.email,jacobwolf.report,semianalysis.com,dossier.today,engineeringleadership.xyz,piratewires.com,slowboring.com,flowstate.fm,popular.info,newsletter.banklesshq.com,antiracismnewsletter.com,racket.news,eugyppius.com,dkb.blog,duffelblog.com,theankler.com,fullstackeconomics.com,substack.com,platformer.news##+js(remove-class, show-intro-popup, , stay)
 ! apotekfordeg.no
 apotekfordeg.no##.newsletter-modal
 apotekfordeg.no##.modal-backdrop
@@ -20988,6 +21002,7 @@ cecile.co.jp##.smartbanner-show:style(margin-top: 0 !important;)
 ||medallia.com^*/onsite/embed.js
 ||neopush.io^$third-party
 ||news2day.me^$third-party
+||newsmemory.com/?meter
 ||notification-time.com^$third-party
 ||notification.tubecup.net^
 ||notifications.ltd^$third-party
@@ -23804,7 +23819,7 @@ adressa.no,alwatanvoice.com,apk4free.org,auto-moto.com,bank.gov.ua,criminaljusti
 !! #share
 bulawayo24.com,canavesenews.it,dbknews.com,designtaxi.com,foreca.fi,hqbabes.com,hqsluts.com,keepone.net,libsyn.com,m.tribunnews.com,memuplay.com,meteoblue.com,monstercockland.com,sohu.com,sputnik-abkhazia.ru,sputnik-georgia.ru,sputnik-ossetia.ru,sputniknewslv.com,themoviedb.org,voltairenet.org,xvideos-br.com,xxxymovies.com###share
 !! .share
-411mania.com,9gag.com,abril.com.br,actiefwonen.be,administradores.com.br,al-shabaka.org,al-sharq.com,alfredopedulla.com,algemeiner.com,alibaba.com,alu.jp,amica.it,aminiya.ng,ara.cat,areanapoli.it,aristeguinoticias.com,arizonasports.com,asia.nikkei.com,asmartbear.com,astanatimes.com,at5.nl,autodidacts.io,autoline-az.com,autoline-br.com,autoline-eu.fr,autoline-eu.it,autoline-eu.kz,autoline-eu.ru,autoline-eu.se,autoline-ge.com,autoline-nl.be,autoline-ru.ee,autoline-ru.lt,autoline-ru.lv,autoline-tm.com,autoline.be,autoline.bo,autoline.by,autoline.com.pl,autoline.com.py,autoline.com.ua,autoline.es,autoline.kg,autoline.lu,autoline.lv,autoline.md,autoline.me,autoline.nl,autoline.pe,autoline.pt,autoline.ro,autoline.tj,autoline.ua,autoline.uz,averagelinuxuser.com,basketinside.com,bianconeranews.it,bilibili.com,blogtivvu.com,brundisium.net,businessam.be,buzzmoica.fr,c-span.org,cardealermagazine.co.uk,carpicalcionews.it,cbc.ca,cctv.com,cdt.ch,ch-aviation.com,chicercacasa.it,cittaceleste.it,clarin.com,classicandsportscar.com,cna.com.tw,cnbcindonesia.com,cncnews.cn,cnnindonesia.com,cnnturk.com,columbian.com,commentwiki.fr,comune.torino.it,coopcasarsa.it,corsedimoto.com,cricket.com.au,crusoe.com.br,crypto.news,cryptopotato.com,dailymail.co.uk,dailytrust.com,dancestarparty.com,democracynow.org,devisesquare.com,dictionary.com,diningcity.be,diningcity.hu,diningcity.nl,downzen.com,dr.dk,ecoaustral.com,ecommercemag.fr,eleconomista.com.mx,elgrafico.com,elperiodico.cat,elperiodico.com,elquindiano.com,em.com.br,epochtimes.com.br,epochtimes.fr,epochtimes.nl,euobserver.com,exchangerates.org.uk,exclusivo.com.br,fairplanet.org,fantamagazine.com,fcinter1908.it,firenzeviola.it,flowingdata.com,food.com,foodnetwork.it,football365.com,forzaroma.info,fotomac.com.tr,franceinter.fr,francetvinfo.fr,frandroid.com,freespeech.org,funweek.it,gamespot.com,gamingonlinux.com,gazeta.pl,gazzamercato.it,gazzetta.it,geekwire.com,gettyimages.be,gettyimages.dk,gettyimages.es,gettyimages.fr,gettyimages.it,gettyimages.nl,gettyimages.pt,gettyimages.se,gids.tv,globo.com,golssip.it,good.is,gumtree.co.za,hispantv.com,huuto.net,hvg.hu,hyundai.co.nz,idcquan.com,ildolomiti.it,ilmilanista.it,ilsecoloxix.it,ilsussidiario.net,ilviaggiatorgoloso.it,insomnia.gr,intesasanpaolo.com,isaechia.it,itasportpress.it,jornada.com.mx,juvenews.eu,kingarthurbaking.com,kleinreport.ch,kmfa.org,knjizara-dominovic.hr,ktar.com,lagranepoca.com,laleggepertutti.it,landrover.be,landrover.ch,landrover.com.br,landrover.com.cn,landrover.dk,landrover.es,landrover.fr,landrover.hu,landrover.it,landrover.lv,landrover.nl,landrover.pt,landrover.ru,landrover.se,landroverkz.com,lantidiplomatico.it,laola1.at,laprensagrafica.com,lastampa.it,lavozdegalicia.es,lifegate.it,lifezette.com,ltn.com.tw,maannews.net,madeinbz.info,mail.ru,mediacorp.sg,mediagol.it,megasesso.com,metropolitano.it,milesplit.com,miur.gov.it,mmegi.bw,mobilita.org,monacomatin.mc,mondoudinese.it,money.com,mynorthwest.com,nachrichten.it,napi.hu,neoplan.com,new.qq.com,newhua.com,news.unl.edu,newsmaxtv.com,newsmonkey.be,nicematin.com,nieuwsblad.be,nos.nl,ntn24.com,numericalcio.it,nuus.hu,oantagonista.com,obastidor.com.br,omglinux.com,otempo.com.br,padovasport.tv,paginegialle.it,panorama.it,passioneinter.com,perlaretorica.it,pianetagenoa1893.net,pianetamilan.it,planetrugby.com,planetware.com,portaldotransito.com.br,qz.com,r7.com,radiotirol.it,radiotoday.com.au,ravennanotizie.it,rbc.ua,recyclingproductnews.com,reductress.com,responsiblestatecraft.org,reteimprese.it,rftvoficial.com.br,ria.ru,romadailynews.it,rxresource.org,sanmarinortv.sm,sasomange.rs,sassuolocalcionews.it,scholarlykitchen.sspnet.org,segmentnext.com,slantmagazine.com,sleepfoundation.org,speakingtree.in,sportando.basketball,sportavellino.it,sportsbusinessjournal.com,sputnikportal.rs,steampowered.com,suedtirol1.it,supereva.it,tag43.it,taiwanheute.tw,taiwantoday.tw,takvim.com.tr,tenniscircus.com,the-decoder.com,theringreport.com,thisiscolossal.com,tivusat.tv,toronews.net,toy-people.com,trend-online.com,tuttobolognaweb.it,u.today,uol.com.br,va.se,valeursactuelles.com,vastoweb.com,vavradyo.com.tr,vectorstock.com,violanews.com,viveusa.mx,vz.ru,webdunia.com,wikiway.com,xxxymovies.com,yougov.com##.share
+411mania.com,9gag.com,abril.com.br,actiefwonen.be,administradores.com.br,al-shabaka.org,al-sharq.com,alfredopedulla.com,algemeiner.com,alibaba.com,alu.jp,amica.it,aminiya.ng,ara.cat,areanapoli.it,aristeguinoticias.com,arizonasports.com,asia.nikkei.com,asmartbear.com,astanatimes.com,at5.nl,autodidacts.io,autoline-az.com,autoline-br.com,autoline-eu.fr,autoline-eu.it,autoline-eu.kz,autoline-eu.ru,autoline-eu.se,autoline-ge.com,autoline-nl.be,autoline-ru.ee,autoline-ru.lt,autoline-ru.lv,autoline-tm.com,autoline.be,autoline.bo,autoline.by,autoline.com.pl,autoline.com.py,autoline.com.ua,autoline.es,autoline.kg,autoline.lu,autoline.lv,autoline.md,autoline.me,autoline.nl,autoline.pe,autoline.pt,autoline.ro,autoline.tj,autoline.ua,autoline.uz,averagelinuxuser.com,basketinside.com,bianconeranews.it,bilibili.com,blogtivvu.com,brundisium.net,businessam.be,buzzmoica.fr,c-span.org,cardealermagazine.co.uk,carpicalcionews.it,cbc.ca,cctv.com,cdt.ch,ch-aviation.com,chicercacasa.it,cittaceleste.it,clarin.com,classicandsportscar.com,cna.com.tw,cnbcindonesia.com,cncnews.cn,cnnindonesia.com,cnnturk.com,columbian.com,commentwiki.fr,comune.torino.it,coopcasarsa.it,corsedimoto.com,cricket.com.au,crusoe.com.br,crypto.news,cryptopotato.com,dailymail.co.uk,dailytrust.com,dancestarparty.com,democracynow.org,devisesquare.com,dictionary.com,diningcity.be,diningcity.hu,diningcity.nl,downzen.com,dr.dk,ecoaustral.com,ecommercemag.fr,eleconomista.com.mx,elgrafico.com,elperiodico.cat,elperiodico.com,elquindiano.com,em.com.br,epochtimes.com.br,epochtimes.fr,epochtimes.nl,euobserver.com,exchangerates.org.uk,exclusivo.com.br,fairplanet.org,fantamagazine.com,fcinter1908.it,firenzeviola.it,flowingdata.com,food.com,foodnetwork.it,football365.com,forzaroma.info,fotomac.com.tr,franceinter.fr,francetvinfo.fr,frandroid.com,freespeech.org,funweek.it,gamespot.com,gamingonlinux.com,gazeta.pl,gazzamercato.it,gazzetta.it,geekwire.com,gettyimages.be,gettyimages.dk,gettyimages.es,gettyimages.fr,gettyimages.it,gettyimages.nl,gettyimages.pt,gettyimages.se,gids.tv,globo.com,golssip.it,good.is,gumtree.co.za,hispantv.com,huuto.net,hvg.hu,hyundai.co.nz,idcquan.com,ildolomiti.it,ilmilanista.it,ilsecoloxix.it,ilsussidiario.net,ilviaggiatorgoloso.it,insomnia.gr,intesasanpaolo.com,isaechia.it,itasportpress.it,jornada.com.mx,juvenews.eu,kingarthurbaking.com,kleinreport.ch,kmfa.org,knjizara-dominovic.hr,ktar.com,lagranepoca.com,laleggepertutti.it,landrover.be,landrover.ch,landrover.com.br,landrover.com.cn,landrover.dk,landrover.es,landrover.fr,landrover.hu,landrover.it,landrover.lv,landrover.nl,landrover.pt,landrover.ru,landrover.se,landroverkz.com,lantidiplomatico.it,laola1.at,laprensagrafica.com,lastampa.it,lavozdegalicia.es,lifegate.it,lifezette.com,ltn.com.tw,maannews.net,madeinbz.info,mail.ru,mediacorp.sg,mediagol.it,megasesso.com,metropolitano.it,milesplit.com,miur.gov.it,mmegi.bw,mobilita.org,monacomatin.mc,mondoudinese.it,money.com,mynorthwest.com,nachrichten.it,napi.hu,neoplan.com,new.qq.com,newhua.com,news.unl.edu,newsmaxtv.com,newsmonkey.be,nicematin.com,nieuwsblad.be,nos.nl,ntn24.com,numericalcio.it,nuus.hu,oantagonista.com,obastidor.com.br,omglinux.com,otempo.com.br,padovasport.tv,paginegialle.it,panorama.it,passioneinter.com,pbs.org,perlaretorica.it,pianetagenoa1893.net,pianetamilan.it,planetrugby.com,planetware.com,portaldotransito.com.br,qz.com,r7.com,radiotirol.it,radiotoday.com.au,ravennanotizie.it,rbc.ua,recyclingproductnews.com,reductress.com,responsiblestatecraft.org,reteimprese.it,rftvoficial.com.br,ria.ru,romadailynews.it,rxresource.org,sanmarinortv.sm,sasomange.rs,sassuolocalcionews.it,scholarlykitchen.sspnet.org,segmentnext.com,slantmagazine.com,sleepfoundation.org,speakingtree.in,sportando.basketball,sportavellino.it,sportsbusinessjournal.com,sputnikportal.rs,steampowered.com,suedtirol1.it,supereva.it,tag43.it,taiwanheute.tw,taiwantoday.tw,takvim.com.tr,tenniscircus.com,the-decoder.com,theringreport.com,thisiscolossal.com,tivusat.tv,toronews.net,toy-people.com,trend-online.com,tuttobolognaweb.it,u.today,uol.com.br,va.se,valeursactuelles.com,vastoweb.com,vavradyo.com.tr,vectorstock.com,violanews.com,viveusa.mx,vz.ru,webdunia.com,wikiway.com,xxxymovies.com,yougov.com##.share
 !! .share-button
 almanar.com.lb,bergamonews.it,fantasymagazine.it,overwolf.com,tirto.id##.share-button
 !! .twitter
@@ -26107,6 +26122,7 @@ phoronix.com##div[dir="auto"][style]
 baeldung.com##.aelzmn
 sonichits.com##+js(set-session-storage-item, fs.adb831.dis, 1)
 baeldung.com##+js(set-session-storage-item, fs.adb.dis, 1)
+smithsonianmag.com##+js(set-session-cookie, fs.adb2410.dis, 1)
 ! Taboola
 /taboola-header.js
 /taboola.js
@@ -30641,7 +30657,7 @@ m.babytree.com##script + a[class]
 [Adblock Plus 2.0]
 ! Title: 轻量广告拦截规则
 ! Homepage: https://github.com/damengzhu/banad
-! Update Time: 2024-04-04 10:51:57（北京时间）
+! Update Time: 2024-04-09 16:44:09（北京时间）
 ! Total Count: 5252
 ! by: 酷安@大萌主
 ! Host
@@ -34873,7 +34889,7 @@ m.babytree.com##script + a[class]
 ||mobads.baidu.com^
 ||stat.meitudata.com^
 ! URL
-@@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com
+@@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
 @@.com/o.js$domain=2biqu.com
 @@||/template/conch/asset/js/hlhtml.js$domain=www.lldm.net|1anime.me
 @@||css.yhdmtu.xyz^$domain=iyinghua.io|yinghua8.tv
@@ -34895,7 +34911,7 @@ m.babytree.com##script + a[class]
 @@||guokr.com/apis/flowingboard/item/m_home_
 ||qishula.com/css/ding.js
 ||adutp.com^$third-party
-/bar/*.js$domain=yinghuavideo.com|yinghua8.tv
+||www.hdmp4.cc/js/foot.js
 ||google-analytics.com/analytics.js
 ||www.cartoon18.com/assets/*/jquery.js
 ||onesignal.com^$third-party
@@ -35427,7 +35443,7 @@ ali213.net##.placeholderforpromotion
 happymh.com##[src="https://c.nationaltcm.com/ad/tm1111dd.png"]
 skyroad.downallbook.com##IMG[height='60'][width='98%']
 trakt.tv##DIV[id$='-wrapper']
-www.mxdm9.com,www.ntdm9.com##[style$='background-size: 400px 127px !important;'],[style$='bottom: 127px;']
+mxdm9.com,ntdm9.com,mxdm6.com,ntdm6.com##[style$='background-size: 400px 127px !important;'],[style$='bottom: 127px;']
 ximalaya.com##.change-logo.S_q,.packet-container._PC,.less-tips._PC *
 m.douban.com##div.center [style*='padding: 4px;']
 m.sm.cn##DIV[ad_seid],.dl-banner-lg.card
