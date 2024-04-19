@@ -29,6 +29,7 @@
 
 ! 移除追踪链接
 ||xiaohongshu.com^$removeparam
+||dianping.com^$removeparam
 ||bilibili.com^$removeparam
 ||taobao.com^$removeparam=~id
 @@||*api*^$removeparam
@@ -53,7 +54,7 @@ www.youtube.com##+js(nano-stb, resolve(1), 5000, 0.001)
 
 ! 去掉一些网站的第三方脚本/frame/xhr
 !||*$third-party,domain=9to5google.com
-*$script,frame,xhr,3p,domain=9to5google.com|9to5mac.com|macrumors.com|theverge.com|sspai.com
+*$script,frame,xhr,3p,domain=9to5google.com|9to5mac.com|macrumors.com|theverge.com|sspai.com|dianping.com
 
 ! 2024-03-11 https://www.macrumors.com
 macrumors.com##.video-wrapper
@@ -353,5 +354,8 @@ www.androidcentral.com###affiliate-disclaimer
 www.androidcentral.com##[class*=comments]
 www.androidcentral.com##[class*=newsletter]
 
+! 2024-04-19 https://m.dianping.com
+m.dianping.com##.wx-view.service-wrap
+m.dianping.com##.wx-view.tuanInfo
 
 
