@@ -1,6 +1,3 @@
-# 米家爆发IP，其实就是一个普通的运营商 IP，但不知道为什么要狂发这么多包
-DEST-PORT,5222
-IP-CIDR,117.128.102.9/32,REJECT-DROP,no-resolve
 # 
 AND,((DOMAIN-KEYWORD,genuine), (DOMAIN-KEYWORD,autodesk))
 AND,((USER-AGENT,bili*),(NOT,((OR,((DOMAIN-SUFFIX,bilibili.com),(DOMAIN-SUFFIX,hdslb.com),(DOMAIN-SUFFIX,wo.cn),(DOMAIN-SUFFIX,biligame.com),(DOMAIN-SUFFIX,bilivideo.com),(DOMAIN-SUFFIX,bilivideo.cn),(DOMAIN-SUFFIX,biliapi.com),(DOMAIN-SUFFIX,biliapi.net),(DOMAIN-SUFFIX,biliintl.com),(DOMAIN-SUFFIX,bstarstatic.com),(DOMAIN-SUFFIX,akamaized.net))))))
@@ -74,3 +71,22 @@ IP-CIDR,203.205.137.89/32,no-resolve
 IP-CIDR,59.111.239.62/32,no-resolve
 IP-CIDR,101.124.19.122/32,no-resolve
 IP-CIDR,203.107.1.0/24,no-resolve
+# 米家爆发IP，其实就是一个普通的运营商 IP，但不知道为什么要狂发这么多包
+DEST-PORT,5222
+# > 米家 cn.app.chat.xiaomi.net, app.chat.xiaomi.net
+DOMAIN-SUFFIX,resolver.msg.xiaomi.net,extended-matching,pre-matching
+DOMAIN-SUFFIX,app.chat.xiaomi.net,extended-matching,pre-matching
+DOMAIN-SUFFIX,relay.mimc.chat.xiaomi.net,extended-matching,pre-matching
+IP-CIDR,106.120.178.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,114.247.154.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,117.128.102.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,123.125.102.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,220.181.106.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,39.102.218.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,58.83.177.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,161.117.185.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,161.117.226.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,161.117.238.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,161.117.251.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,111.13.141.1/24,REJECT-DROP,no-resolve,pre-matching
+IP-CIDR,111.13.213.1/24,REJECT-DROP,no-resolve,pre-matching
