@@ -5,8 +5,15 @@ $cookie=initial_referrer,domain=duolingo.com
 $cookie=wuuid,domain=duolingo.cn
 $cookie=wuuid,domain=duolingo.com
 $domain=browserleaks.com,permissions=geolocation=()
+$removeparam=aid,domain=adguard-dns.io
+$removeparam=aid,domain=adguard-vpn.com
+$removeparam=aid,domain=adguard.com
 $removeparam=cxt,domain=twitter.com
 $removeparam=cxt,domain=x.com
+$removeparam=dt_dapp,domain=163.com
+$removeparam=dt_dapp,domain=douban.com
+$removeparam=embeds_referring_euri,domain=youtube.com
+$removeparam=embeds_referring_origin,domain=youtube.com
 $removeparam=feature,domain=youtu.be
 $removeparam=feature,domain=youtube.com
 $removeparam=gclid,domain=youtu.be
@@ -15,6 +22,12 @@ $removeparam=igshid,domain=instagram.com
 $removeparam=igshid,domain=threads.net
 $removeparam=kw,domain=youtu.be
 $removeparam=kw,domain=youtube.com
+$removeparam=ns_campaign,domain=bbc.com
+$removeparam=ns_fee,domain=bbc.com
+$removeparam=ns_linkname,domain=bbc.com
+$removeparam=ns_mchannel,domain=bbc.com
+$removeparam=ns_source,domain=bbc.com
+$removeparam=ocid,domain=bbc.com
 $removeparam=ref_src,domain=twitter.com
 $removeparam=ref_src,domain=x.com
 $removeparam=ref_url,domain=twitter.com
@@ -25,6 +38,10 @@ $removeparam=s,domain=twitter.com
 $removeparam=s,domain=x.com
 $removeparam=si,domain=youtu.be
 $removeparam=si,domain=youtube.com
+$removeparam=spm,domain=aliyun.com
+$removeparam=spm,domain=sohu.com
+$removeparam=union_lens,domain=taobao.com
+$removeparam=union_lens,domain=tmall.com
 $script,redirect-rule=noop.js,domain=sammobile.com
 $script,redirect-rule=noopjs,domain=sammobile.com
 $websocket,domain=pornhub.com
@@ -46,6 +63,8 @@ $websocket,domain=pornhub.com
 .baidu.com/h.
 .baidu.com/union/
 .com./$popup,domain=pornhub.com
+.com/*/status/$removeparam=t,domain=twitter.com
+.com/*/status/$removeparam=t,domain=x.com
 .com/ad/$~image,third-party,domain=wsj.com
 .com/ad/$~image,third-party,domain=wsj.com,badfilter
 .com/playlist?list=$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtube.com
@@ -269,6 +288,7 @@ $websocket,domain=pornhub.com
 163.com##.post_adtop_main
 163.com##.post_recommend_ad
 163.com##.post_side_logo
+163.com##.post_top_share
 163.com##.quickmark
 163.com##.redpacket-footer
 163.com##.redpacket-subbox
@@ -340,6 +360,7 @@ $websocket,domain=pornhub.com
 3g.163.com##.big_boom
 3g.163.com##.bottom.widget-slider-article.widget-slider
 3g.163.com##.comment_bot
+3g.163.com##.content-list > section.m_papa,papa-item
 3g.163.com##.hotSearch-box
 3g.163.com##.js-new-relative-doc.new_relative_doc
 3g.163.com##.js-recommend-wrap
@@ -366,13 +387,19 @@ $websocket,domain=pornhub.com
 9to5google.com##.ad-disclaimer-container
 9to5google.com##.ad-disclaimer-container, .inlinead, .ad-container
 9to5google.com##.google-news-link
+9to5google.com##.newsletter-box
 9to5google.com##.post-body > p > a[href^="http://bit.ly/"] > img
+9to5google.com##.sharedaddy
 9to5google.com##.top-comment, .featured-items, .amp-notbuilt.i-amphtml-notbuilt.i-amphtml-element.i-amphtml-layout-size-defined.i-amphtml-layout-intrinsic.amp-wp-enforced-sizes, .amp-wp-7023da7, .bg-wht-alt.comments-area, .related-guides-container, .show-promo.visitor-promo, .google-news-link, .post-meta > .icon-twitter
 9to5google.com##iframe[data-google-container-id]
 9to5google.com##iframe[title="3-rd party ad content"]
 9to5google.com##iframe[title="Advertisement"]
+9to5google.com##li[class^="share-"]
+9to5google.com#$##content { margin-top: 0 !important; }
 9to5google.com#$#body div.fc-consent-root { display: none !important; }
 9to5google.com#$#body { overflow: auto !important; }
+9to5google.com#%#//scriptlet('hide-in-shadow-dom', 'button[data-testid="ShareBtn"]')
+9to5google.com#%#//scriptlet('remove-in-shadow-dom', 'div[data-spot-im-class="vote-links"] + span[class$="index__dot"]')
 9to5mac.com###after_disclaimer_placement
 9to5mac.com###pnfpb-push-subscribe-icon
 9to5mac.com##+js(trusted-rpnt, script, (function($), '(function(){const a=document.createElement("div");document.documentElement.appendChild(a),setTimeout(()=>{a&&a.remove()},100)})(); (function($)')
@@ -389,25 +416,32 @@ $websocket,domain=pornhub.com
 9to5mac.com##.author-bio-container > .author-gear
 9to5mac.com##.author-gear-items
 9to5mac.com##.google-news-link
+9to5mac.com##.newsletter-box
 9to5mac.com##.post-body > p > a[href^="http://bit.ly/"] > img
 9to5mac.com##.post-content > :is(hr.wp-block-separator, figure.img-border) + p:has(> a[href^="https://mosyle.net/"][target="_blank"][rel])
 9to5mac.com##.post-content > :is(hr.wp-block-separator, figure.img-border) + p:has(> a[href^="https://mosyle.net/"][target="_blank"][rel]) + hr.wp-block-separator
 9to5mac.com##.post-content > hr.wp-block-separator:has(+ p > a[href^="https://mosyle.net/"][target="_blank"][rel])
+9to5mac.com##.sharedaddy
 9to5mac.com##.single-custom-post-ad
 9to5mac.com##.top-comment, .featured-items, .amp-notbuilt.i-amphtml-notbuilt.i-amphtml-element.i-amphtml-layout-size-defined.i-amphtml-layout-intrinsic.amp-wp-enforced-sizes, .amp-wp-7023da7, .bg-wht-alt.comments-area, .related-guides-container, .show-promo.visitor-promo, .google-news-link, .post-meta > .icon-twitter
 9to5mac.com##:is(.post-content, .extended) > .wp-block-image > a[href^="https://mosyle.net/"] > img
 9to5mac.com##iframe[data-google-container-id]
 9to5mac.com##iframe[title="3-rd party ad content"]
 9to5mac.com##iframe[title="Advertisement"]
+9to5mac.com##li[class^="share-"]
 9to5mac.com##p strong:has-text(/^Related/):upward(p)
 9to5mac.com#$#body div.fc-consent-root { display: none !important; }
 9to5mac.com#$#body { overflow: auto !important; }
+9to5mac.com#%#//scriptlet('hide-in-shadow-dom', 'button[data-testid="ShareBtn"]')
+9to5mac.com#%#//scriptlet('remove-in-shadow-dom', 'div[data-spot-im-class="vote-links"] + span[class$="index__dot"]')
 9to5toys.com###pnfpb-push-subscribe-icon
 9to5toys.com##.ad-container
 9to5toys.com##.ad-disclaimer-container
 9to5toys.com##.ad-disclaimer-container, .inlinead, .ad-container
 9to5toys.com##.google-news-link
+9to5toys.com##.newsletter-box
 9to5toys.com##.post-body > p > a[href^="http://bit.ly/"] > img
+9to5toys.com##.sharedaddy
 9to5toys.com##.slot-leaderboard
 9to5toys.com##.top-comment, .featured-items, .amp-notbuilt.i-amphtml-notbuilt.i-amphtml-element.i-amphtml-layout-size-defined.i-amphtml-layout-intrinsic.amp-wp-enforced-sizes, .amp-wp-7023da7, .bg-wht-alt.comments-area, .related-guides-container, .show-promo.visitor-promo, .google-news-link, .post-meta > .icon-twitter
 9to5toys.com##div[id^="jrrjoh_dgv_liudph_/1049447"]
@@ -415,6 +449,9 @@ $websocket,domain=pornhub.com
 9to5toys.com##iframe[id="jrrjoh_dgv_iudph1"]
 9to5toys.com##iframe[title="3-rd party ad content"]
 9to5toys.com##iframe[title="Advertisement"]
+9to5toys.com##li[class^="share-"]
+9to5toys.com#%#//scriptlet('hide-in-shadow-dom', 'button[data-testid="ShareBtn"]')
+9to5toys.com#%#//scriptlet('remove-in-shadow-dom', 'div[data-spot-im-class="vote-links"] + span[class$="index__dot"]')
 ://adv.$domain=typeform.com
 ://rs-stripe.wsj.com/stripe/image?
 ?*=*=*=$subdocument,domain=39.net
@@ -493,6 +530,7 @@ $websocket,domain=pornhub.com
 @@||360buyimg.com/ad/$domain=jd.com
 @@||360buyimg.com/ads/$domain=jd.com
 @@||a-msedge.net^$domain=bing.com
+@@||a.pub.network/core/prebid-universal-creative.js$script,domain=androidheadlines.com
 @@||accounts.google.com/gsi/$stealth
 @@||accounts.google.com/o/oauth2/$removeparam
 @@||accounts.google.com/signin/oauth/$removeparam
@@ -506,6 +544,7 @@ $websocket,domain=pornhub.com
 @@||ad.doubleclick.net/*/adi/com.ytbc/$domain=youtube.com
 @@||ad.doubleclick.net/ddm/$popup,domain=nytimes.com
 @@||ad.vivo.com.cn^$~third-party
+@@||adblock.adguard.com^
 @@||adguard.com/*/blog/
 @@||adguard.com/*/support/
 @@||adguard.com^$stealth
@@ -541,6 +580,7 @@ $websocket,domain=pornhub.com
 @@||almayadeen.net/Content/VideoJS/js/videoPlayer/VideoAds.js$domain=almayadeen.net
 @@||amazon-adsystem.com/aax2/apstag.js$domain=accuweather.com
 @@||analytics.itunes.apple.com^$~third-party
+@@||android.clients.google.com/market/GetBinary/$document
 @@||androidauthority.net/wp-content/uploads/*-300x600.$image,domain=androidauthority.com
 @@||androidcentral.com/content/$domain=androidcentral.com,xmlhttprequest
 @@||androidcentral.com/sites/all/libraries/adblockdetection/adblockDetector.min.js
@@ -556,9 +596,12 @@ $websocket,domain=pornhub.com
 @@||api.github.com^$stealth
 @@||api.spotify.com^$xmlhttprequest,stealth=3p-auth
 @@||api.stackcommerce.net^$stealth=3p-auth
+@@||api.taboola.com^$domain=samsung.com
 @@||api.useinsider.com^$domain=lenovo.com
 @@||apis.google.com/js/plusone.js$domain=pornhub.com
 @@||apis.google.com^
+@@||app.appsflyer.com/*?af_ios_url=https*shopee.co
+@@||app.appsflyer.com/id*&*navigate_url*shopee.co
 @@||app.appsflyer.com^$third-party
 @@||apple.com/metrics/ac-analytics/*/scripts/$domain=apple.com
 @@||apple.com/metrics/data-relay/*/scripts/data-relay.js
@@ -603,6 +646,7 @@ $websocket,domain=pornhub.com
 @@||bing.com^$stealth=ip
 @@||blogger.*.google.com^$subdocument
 @@||bloomberg.com/*/captcha/captcha.js$script,1p
+@@||bloomberg.com^$generichide
 @@||bnet.163.com/
 @@||bokecc.com/flash/playlog?
 @@||brave.com/static-assets/$image,~third-party
@@ -640,6 +684,8 @@ $websocket,domain=pornhub.com
 @@||cdn.jsdelivr.net/jwplayer/5.10/jwplayer.js$script
 @@||cdn.jsdelivr.net/npm/*/fuckadblock.min.js$script,3p
 @@||cdn.jsdelivr.net/npm/fuckadblock@3.2.1/fuckadblock.min.js
+@@||cdn.jsdelivr.net/npm/jquery@
+@@||cdn.onesignal.com/sdks/OneSignalSDK.js$domain=sammobile.com
 @@||cdn.optimizely.com/js/*.js$domain=forbes.com
 @@||cdn.optimizely.com/js/*.js$domain=spotify.com
 @@||cdn.optimizely.com/public/$script,domain=nytimes.com
@@ -648,6 +694,7 @@ $websocket,domain=pornhub.com
 @@||cdn.privacy-mgmt.com/unified/$domain=bbc.com
 @@||cdn.segment.com/analytics.js/*/analytics.min.js$domain=stacksocial.com
 @@||cdn.spotxcdn.com/integration/directsdk/*.js$domain=bloomberg.com
+@@||cdn.taboola.com^$domain=samsung.com
 @@||cdn.theguardian.tv/ad/*.m3u8$domain=theguardian.com
 @@||cdn.viglink.com/api/vglnk.js$domain=9to5google.com
 @@||cdn.viglink.com/api/vglnk.js$domain=9to5mac.com
@@ -675,6 +722,7 @@ $websocket,domain=pornhub.com
 @@||cloud.google.com^$~third-party
 @@||cloudflare.com/ajax/libs/*$script,domain=androidcentral.com
 @@||cloudflare.com/analytics?$domain=cloudflare.com
+@@||cmp.uniconsent.com^$domain=photopea.com
 @@||cmp.uniconsent.com^$xhr,domain=photopea.com
 @@||combo.staticflickr.com/zz/*/cookie-banner-view/cookie-banner-view-min.js$domain=flickr.com
 @@||community.brave.com/t/$xmlhttprequest
@@ -708,6 +756,7 @@ $websocket,domain=pornhub.com
 @@||d8rk54i4mohrb.cloudfront.net/js/video.js$script,domain=forbes.com
 @@||data.alicloudccp.com^$stealth,domain=aliyundrive.com
 @@||datadoghq-browser-agent.com/datadog-logs.js$domain=linktr.ee
+@@||developers.google.com^
 @@||dl.phncdn.com/pics/$domain=pornhub.com
 @@||dnvodcdn.me/*/mp4$stealth,domain=iyf.tv
 @@||docs.google.com/*/viewdata$~third-party
@@ -743,6 +792,7 @@ $websocket,domain=pornhub.com
 @@||fonts.gstatic.com$domain=google.com
 @@||fonts.gstatic.com$domain=googlesource.com
 @@||fonts.gstatic.com$domain=youtube.com
+@@||forbes.com^$generichide
 @@||forbes.com^$ghide
 @@||fundingchoicesmessages.google.com/i/$script,domain=9to5mac.com
 @@||fundingchoicesmessages.google.com^$script,domain=bbc.com
@@ -827,6 +877,7 @@ $websocket,domain=pornhub.com
 @@||googletagmanager.com/gtm.js$domain=duolingo.com
 @@||googletagmanager.com/gtm.js$domain=sonos.com
 @@||googletagmanager.com/gtm.js$domain=soundguys.com
+@@||googletagservices.com/tag/js/gpt.js$domain=androidheadlines.com
 @@||gov.cn/scripts/Comm/AdRotator.js
 @@||graph.facebook.com^$xhr,domain=merriam-webster.com
 @@||gstatic.com/cast/sdk/libs/sender/*/cast_framework.js$domain=pornhub.com
@@ -851,8 +902,10 @@ $websocket,domain=pornhub.com
 @@||icloud.com^$stealth
 @@||idmsa.apple.com/appleauth/$stealth,domain=icloud.com
 @@||image.useinsider.com/lenovosg/$image,domain=lenovo.com
+@@||images-dl.taboola.com^$domain=samsung.com
 @@||images.apple.com/metrics/scripts/s_code_h.js$domain=apple.com
 @@||images.macrumors.com/*/article-new/
+@@||images.taboola.com^$domain=samsung.com
 @@||imasdk.googleapis.com/js/core/bridge*.html$domain=~spotify.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=androidpolice.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=bbc.com
@@ -926,9 +979,11 @@ $websocket,domain=pornhub.com
 @@||my.nextdns.io^$stealth=dpi
 @@||myaccount.google.com^$generichide
 @@||naiadsystems.com/*/hls/live$domain=pornhub.com
+@@||neowin.net^$generichide
 @@||netflix.com/*/Login
 @@||netflix.com^$generichide
 @@||news.google.com.*?hl=$removeparam
+@@||news.internet.apps.samsung.com^$generichide
 @@||notebook-check.com^$script,domain=notebookcheck.net
 @@||notebookcheck-ru.com^$script,domain=notebookcheck.net
 @@||notebookcheck.net^$script,1p
@@ -947,7 +1002,9 @@ $websocket,domain=pornhub.com
 @@||openai.com/compliance/cookie_consent/$~third-party
 @@||optimizely.com^$domain=sonos.com
 @@||order-order.com/wp-content/themes/orderorder/admanager.google.com.js
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=androidcentral.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=duolingo.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=photopea.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=sammobile.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=tampermonkey.net
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=yummy.best
@@ -978,11 +1035,14 @@ $websocket,domain=pornhub.com
 @@||radar.cloudflare.com^$elemhide,extension,content
 @@||raw.githubusercontent.com/*/cookie_consent^
 @@||raw.githubusercontent.com/wmcmurray/just-detect-adblock/master/baits
+@@||reddit.com/*/cookie_consent_
+@@||reddit.com/r/*/social_media_
 @@||reddit.com/r/*_advertising/
 @@||reddit.com/r/*_banner_ads_
 @@||reddit.com^$generichide
 @@||reddit.com^$generichide,badfilter
 @@||redditstatic.com^*/xads.js$script,domain=reddit.com
+@@||reports.adguard.com^
 @@||reseguiden.se^*.siteCatalyst.js! url: https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt
 @@||reseguiden.se^*.siteCatalyst.js! url: https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt
 @@||right.com.cn/forum/*300*250$image
@@ -1002,6 +1062,7 @@ $websocket,domain=pornhub.com
 @@||sdk.privacy-center.org/*/loader.js?$domain=euronews.com
 @@||sdk.privacy-center.org/sdk/*/modern/*.js$domain=euronews.com
 @@||sdk.privacy-center.org^$script,domain=euronews.com
+@@||seal.globalsign.com^$app=jp.co.alc.eow
 @@||search.brave.com/search$xmlhttprequest
 @@||securepubads.g.doubleclick.net/gampad/ads?$domain=bloomberg.com
 @@||securepubads.g.doubleclick.net/gampad/ads?gdfp_req=1$domain=wired.com
@@ -1010,6 +1071,7 @@ $websocket,domain=pornhub.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=bloomberg.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=newyorker.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=sammobile.com
+@@||sf*-*cdn-tos.pstatp.com^$domain=juejin.cn
 @@||shop.bbc.com/skin/$script,1p
 @@||simba.taobao.com/?name=mcad$script
 @@||simg.doubanio.com^$stealth=referrer,domain=douban.com
@@ -1062,10 +1124,13 @@ $websocket,domain=pornhub.com
 @@||thechive.files.wordpress.com/*?quality=*&strip=info
 @@||theverge.com/*/*/*/*/*-*-
 @@||theverge.com/_next/data/*.json
+@@||theverge.com/platform/amp/*/eu-cookie-consent-policy-updated-guidelines-cookie-wall
 @@||theverge.com^$content
 @@||tmall.com/add?
 @@||tmall.com/go/*/banner.php
 @@||traffic.megaphone.fm^$domain=megaphone.fm
+@@||trc.taboola.com/samsung-browser-feed$domain=samsung.com
+@@||trc.taboola.com/samsung-browser-us$domain=samsung.com
 @@||trc.taboolasyndication.com^$domain=bloomberg.com
 @@||tv.youtube.com^$generichide
 @@||twitter.com/adlink_tech
@@ -1125,8 +1190,11 @@ $websocket,domain=pornhub.com
 @@||ytimg.*.google.com^$image
 @@||ytimg.com^*_banner$domain=youtube.com
 @@||yummy.best^$generichide
+@@||z.moatads.com/freewheel*/MoatFreeWheelJSPEM.js$domain=yahoo.com
 @@||ziffstatic.com^*/zdconsent.js$domain=humblebundle.com
 @@||zqtk.net^$script,domain=wsj.com
+[$path=/embed/playlist/]open.spotify.com#?#div[data-testid="embed-widget-container"] > div[style^="--background-color:"]:has(button[data-testid="upsell-close-button"])
+[$path=/m]consent.youtube.com#%#//scriptlet('trusted-click-element', 'form[action="https://consent.youtube.com/save"][jsaction] button[jsname="b3VHJd"]')
 _reklama_$domain=~youtube.com
 a.9game.cn##.DownBox
 a.9game.cn##.JS_xlyx_down.down-app
@@ -1140,6 +1208,8 @@ a.9game.cn##.newGame.normal-module
 a.9game.cn##section.normal-module:nth-of-type(2)
 about.gitlab.com##.newsletter-form
 about.gitlab.com##.share
+about.gitlab.com##.slpBlog__social
+about.netflix.com##div[class^="social-media-buttonsstyles__"]
 acast.com##.MuiSnackbar-anchorOriginBottomRight
 acast.com##.consent
 account.jetbrains.com##.jba-agreement-panel
@@ -1148,8 +1218,10 @@ account.samsung.com##eu-cookie-action-bar
 account.samsung.com#%#//scriptlet('ubo-set-cookie.js', 'sa_enable', 'off')
 accuweather.com###connatix
 accuweather.com###eu-cookie-notify-wrap
+accuweather.com###mid-ad
 accuweather.com###top
 accuweather.com##.ad-lr
+accuweather.com##.adhesion-ad-frame
 accuweather.com##.adhesion-header
 accuweather.com##.cnx-content-wrapper.cnx-float > .cnx-video-container
 accuweather.com##.connatix-player
@@ -1165,15 +1237,18 @@ accuweather.com##body .ad
 accuweather.com##body:remove-class(ads-not-loaded)
 accuweather.com#$#.ads-not-loaded .non-ad { -webkit-filter: none !important; filter: none !important; }
 accuweather.com#$#.base-header.has-banner { height: calc(100%) !important; }
+accuweather.com#$#.header-placeholder.has-adhesion { height: 44px !important; }
 accuweather.com#$#body div.fc-consent-root { display: none !important; }
 accuweather.com#$#body { overflow: auto !important; }
 accuweather.com#%#//scriptlet('remove-attr', 'style', '.cnx-content-wrapper.cnx-float-transition')
 accuweather.com#%#//scriptlet('remove-class', 'cnx-float', '.cnx-content-wrapper.cnx-float')
+accuweather.com#%#//scriptlet('remove-class', 'has-adhesion', '.header-placeholder.has-adhesion')
 accuweather.com#@#.cnx-player-wrapper
 accuweather.com#@#.connatix-player
 adblock-tester.com##embed[width="240"]
 adblock-tester.com##object[width="240"]
 addons.mozilla.org###site-welcome.site-balloon
+addons.mozilla.org##.blogpost-meta-share-social
 adguard-dns.io##.annoyance
 adguard-dns.io##.cookie-terms
 adguard-dns.io##.sticky-bar--cookie
@@ -1188,26 +1263,36 @@ adguard.com##.hello_from_adguard_adblocking_app
 adguard.com##.hello_from_adguard_adblocking_ext
 adguard.com##.hello_from_adguard_annoyances_apps
 adguard.com##.hello_from_adguard_annoyances_cookies
+adguard.com##.hello_from_adguard_annoyances_ext
 adguard.com##.hello_from_adguard_annoyances_mobileappbanners
 adguard.com##.hello_from_adguard_annoyances_other
 adguard.com##.hello_from_adguard_annoyances_popups
 adguard.com##.hello_from_adguard_annoyances_widgets
 adguard.com##.hello_from_adguard_apps
 adguard.com##.hello_from_adguard_chinese
+adguard.com##.hello_from_adguard_experimental
 adguard.com##.hello_from_adguard_ext
+adguard.com##.hello_from_adguard_mobile
+adguard.com##.hello_from_adguard_social
+adguard.com##.hello_from_adguard_tracking_params
 adguard.com##.hello_from_adguard_tracking_protection_app
+adguard.com##.hello_from_adguard_tracking_protection_ext
+adguard.com##.share
 adguard.com##.theme-back-to-top-button
 adguard.com#$#.hello_from_adguard_advanced_protection_ios { display: none !important; }
 adlock.com##.adl__spec__disc
 adlock.com##.download-panel
 adlock.com##.panel > div.aside__cta
+adlock.com##.share
 adlock.com#$#.adl__spec__disc__content { display: none !important; }
 adlock.com#$#body[style^="filter: blur"] { filter: unset !important; }
 ads.google.com#@#.video-ads
 ads.spotify.com#$#body.anti-flicker { opacity: 1 !important; }
+adssettings.google.com##sc-survey-survey-manager
 aiqicha.baidu.com##.float-banner
 aiqicha.baidu.com#@#.share-label
 aiqicha.baidu.com#@#.share-title
+ajunews.com##.share_sticky
 ala.baidu.com##.tbui_aside_float_bar + .clearfix
 algolia.com###__next > div.bdtw-1.pos-fixed
 aliyun.com###yq-a-r-bottom
@@ -1216,7 +1301,12 @@ aliyun.com##.yq-ads-blog
 aliyun.com##.yq-main-left > a:first-child
 aliyundrive.com##div[class^="share-list-banner--"]
 amkstation.com##.ad
+amp.reddit.com##div[class*="__Ad"]
+amp.theguardian.com###ad-undefined
 amp.theguardian.com##[data-sort-time="1"]
+amp.theguardian.com##amp-iframe
+amp.theguardian.com##amp-list
+amp.theguardian.com##div[id^="ad-"]
 analytics.twitter.com##.home-columns div[data-type="advertiser"]
 anandtech.com###side_ad
 anandtech.com###taboola-mid-article
@@ -1226,6 +1316,7 @@ anandtech.com##.jw-reset
 anandtech.com##.jwplayer
 anandtech.com##.twitter
 androidauthority.com###aa-subscribe-widget-wrap
+androidauthority.com###text-44
 androidauthority.com##+js(href-sanitizer, 'a[href*="?"][href*="url=http"]:is([href^="https://cc."][href*=".com/v1/otc/"][href*="merchant="],[href^="https://go.skimresources.com"],[href^="https://go.redirectingat.com"],[href^="https://shop-links.co/link"],[href^="https://track.effiliation.com/servlet/effi.redir?"],[href*=".com/a.ashx?"],[href^="https://www."][href*=".com/t/"],[href*=".prsm1.com/r?"],[href*=".com/click-"],[href*=".net/click-"],a[href*=".com/t/t?a="],a[href*=".dk/t/t?a="])', ?url)
 androidauthority.com##.-___sc
 androidauthority.com##._--_-___Qb
@@ -1236,6 +1327,7 @@ androidauthority.com##.andro-newsletter-signup
 androidauthority.com##.d_3i:has-text(Latest deals)
 androidauthority.com##.d_um
 androidauthority.com##.gcap-shown
+androidauthority.com##.single_share_block
 androidauthority.com##[class] > [class] > form[class]
 androidauthority.com##[data-ad-type]
 androidauthority.com##a[href="https://www.androidauthority.com/newsletters/"]
@@ -1272,11 +1364,16 @@ androidcentral.com##.article-footer--taboola
 androidcentral.com##.article-leaderboard
 androidcentral.com##.article-shop-bar
 androidcentral.com##.block-newsletter
+androidcentral.com##.fb_like_and_share
+androidcentral.com##.mn_mbn_share
+androidcentral.com##.share
+androidcentral.com##.socialite-widget-ul
 androidcentral.com##.usr-msg
 androidcentral.com##.van_taboola
 androidcentral.com##.visor-breaker-ad
 androidcentral.com##.widget-newsletter
 androidcentral.com##a[href^="http://pubads.g.doubleclick.net/"]
+androidcentral.com##a[href^="http://www.amazon.com/gp/"]
 androidcentral.com##a[href^="http://www.amazon.com/gp/new-releases?tag=mbn"]
 androidcentral.com##a[href^="https://ad.doubleclick.net"]
 androidcentral.com##div[id$="-store-ad"]
@@ -1300,12 +1397,16 @@ androidheadlines.com##.adthrive
 androidheadlines.com##.amp-ad-bottom
 androidheadlines.com##.newsletter-modal-button
 androidheadlines.com##.post-share
+androidheadlines.com##.share-widget
 androidheadlines.com##.widget-ahcount
 androidheadlines.com##.widget-ahsubscribe
 androidheadlines.com#%#//scriptlet('abort-current-inline-script', 'Uint8Array', 'getAndSetOverlay')
 androidheadlines.com#%#//scriptlet('prevent-element-src-loading', 'script', 'a.pub.network')
 androidheadlines.com#?#.entry-content > div.post-video:has(> div.video-title:contains(Sponsored Video))
 androidheadlines.com#?#div[class^="col-"] > div.row:has(> div[class] > a[href="http://www.androidheadlines.com/category/best-cell-phone-deals"])
+androidheadlines.com#@#.ad-siderail
+androidheadlines.com#@#.banner-ad
+androidheadlines.com#@#.banner-ad-container
 androidpolice.com###newsletter-popup-container
 androidpolice.com###sbar-content > li#ai_widget-6 > .ains > a.no_ul[href^="http://andp.lc/"] > img
 androidpolice.com###sbar-content > li#ai_widget-6 > .ains > a[href^="https://ad.doubleclick.net/"] + a.no_ul[href="/tags/ifa2018/"]
@@ -1319,6 +1420,7 @@ androidpolice.com##+js(cookie-remover, /articlesRead|previousPage/)
 androidpolice.com##+js(rmnt, script, '"v4ac1eiZr0"')
 androidpolice.com##+js(set, Object.prototype.ads.nopreroll_, true)
 androidpolice.com##+js(set-constant, ValstreamVideoPlayer.prototype.isAllowedToPlayAds, falseFunc)
+androidpolice.com##.addthis_fallback
 androidpolice.com##.adsninja-ad-zone-container-with-set-height
 androidpolice.com##.adsninja-ad-zone:not(.adsninja-valstream)
 androidpolice.com##.adzone-above-latest
@@ -1335,6 +1437,7 @@ androidpolice.com##.home .tag-sponsored
 androidpolice.com##.homepage-sponsor
 androidpolice.com##.nav-right > div.nav-elements
 androidpolice.com##.newsletter-container
+androidpolice.com##.sharing-btn:not(.btn-comments)
 androidpolice.com##.social-media
 androidpolice.com##.w-affiliate
 androidpolice.com##.w-pencil-banner
@@ -1368,6 +1471,7 @@ androidpolice.com#@#.div-gpt-ad
 androidpolice.com#@#.ima-ad-container
 anthropic.com##div[class^="ConsentBanner_"]
 api.so.lianmeng.360.cn##body
+app.getpocket.com##button[aria-label="Buffer"]
 app.idagio.com#?#div[class^="modals"]:has(> div[class^="ReactModal"] > div[aria-label="gdpr-opt-out-modal"])
 appinn.com###media_image-2
 appinn.com###ranshownow
@@ -1377,12 +1481,15 @@ appinn.com##.ads
 appinn.com##.ads-m
 appinn.com##.widget_media_image
 appinn.com##a[href*=".houdeyun.cn"]
+apple.com##.nr-article-share
+apple.com##.sharesheet
 apple.com.cn##.adv-wrapper
 apple.com.cn#$##ac-globalnav { top: 0 !important; }
 apple.com.cn#$#.ac-gn-blur { top: 0 !important; }
 apple.com.cn#$#html #globalnav { top: 0 !important; }
 apple.com.cn#$#html { margin-top: 0 !important; }
 appleinsider.com###mc_embed_signup
+appleinsider.com###mobile-ad-wrap
 appleinsider.com###mobile-article-anchor
 appleinsider.com##.ad
 appleinsider.com##.article-comments.row, .col-lg-3 > div.hidden-xs, .hidden-xs.article-comments.row, .primis-ad-wrap
@@ -1421,6 +1528,7 @@ arstechnica.com##.ad_fullwidth
 arstechnica.com##.ad_xrail
 arstechnica.com##.ars-appeal-wrapper
 arstechnica.com##.instream-wrap
+arstechnica.com##.share-links
 arstechnica.com##.shepherd-element
 arstechnica.com#$#.ad_crown { position: absolute!important; left: -10000px!important; }
 arstechnica.com#$#.ad_fullwidth { position: absolute!important; left: -10000px!important; }
@@ -1438,7 +1546,9 @@ arstechnica.com#@#.textAd
 arstechnica.com#@#.text_ad
 arstechnica.com#@#.text_ads
 arstechnica.com#@#a[href^="https://www.amazon."][href*="tag="]
+artsandculture.google.com##.Z7Jybf > div[jscontroller="acWgwb"]
 artsandculture.google.com##.iMnvWc
+artsandculture.google.com##div[jscontroller="Ax0JBf"] > a
 auto.163.com##div[class^="ga ga"]
 axios.com###referrerModalCTA--modal_ampm
 axios.com###referrerModalCTA--modal_prorata
@@ -1452,7 +1562,11 @@ axios.com##.shortFormNativeAd
 axios.com##[data-cy="injected-promo"]
 axios.com##div[class^="Modal_ctaContainer"]
 axios.com##div[class^="SubscribeStreamCap__"]
+axios.com##div[data-cy^="social-share-"]
+axios.com##div[data-testid="social-share-button"]
 axios.com##div[id^="localTopicCTA--"]
+axios.com##li.inline > button[data-cy$="-share"]
+axios.com#?#.gtmView > div[class^="space-"]:has(> div.inline > button[data-cy$="share"])
 baidu.com###J-super-layer-promote
 baidu.com###activateGuidePopupOuter
 baidu.com###adCard
@@ -1482,6 +1596,7 @@ baidu.com###fengchaoad
 baidu.com###gamePromo
 baidu.com###ggbtm
 baidu.com###header > div:last-child
+baidu.com###header > div[style="overflow: hidden;background: #fff;position: relative;"]
 baidu.com###index_banner_top
 baidu.com###index_right_float
 baidu.com###index_right_top
@@ -1491,6 +1606,7 @@ baidu.com###knowledge-answer
 baidu.com###left-promotion
 baidu.com###login-wraps > a.index-banner.square-banner-bgicon
 baidu.com###main > div[lgoinprompt="prompt"]
+baidu.com###page-copyright > div[style^="position: fixed;"][ref]
 baidu.com###page-copyright.se-page-copyright.se-copyrig
 baidu.com###page-copyright.se-page-copyright.se-copyright-zbios[style='margin-bottom: 50px;']
 baidu.com###page_wrapper > div > .tgSGud4cOeqca
@@ -1594,6 +1710,7 @@ baidu.com##.link-banner
 baidu.com##.manual-spread
 baidu.com##.na-ec-waterfall
 baidu.com##.nav_ads
+baidu.com##.navs-bottom-bar[style="margin-top: 10px; height: 0px;"]
 baidu.com##.openAppCarsouselTpl
 baidu.com##.openAppCommonTpl-100
 baidu.com##.openBox-shareEntry
@@ -1754,17 +1871,27 @@ bbc.com###zephr-message
 bbc.com##+js(set-constant, dotcom.reinitAds, noopFunc)
 bbc.com##.app__domestic-disclaimer
 bbc.com##.article-body-ad-slot
+bbc.com##.article-share-tools
 bbc.com##.article__side-mpu
 bbc.com##.bbc-n7zdg2
 bbc.com##.e3eyuya5.ssrcss-msolhr-LinksWrapper
 bbc.com##.e5tfeyi0.ssrcss-1o5f7ft-BulletListContainer > ul
 bbc.com##.eh3hs0a5
+bbc.com##.lx-share-tools
+bbc.com##.lx-stream-post__footer-share
 bbc.com##.nw-c-breaking-news-banner
 bbc.com##.nw-c-leaderboard-ad
+bbc.com##.share
+bbc.com##.social:not(body)
+bbc.com##.tempShareToolsHolder
+bbc.com##.twite__share-button
 bbc.com##aside
 bbc.com##aside.e1ia0oo95.ssrcss-1kczfdm-AsideWrapper:nth-of-type(1), aside.e1ia0oo95.ssrcss-1kczfdm-AsideWrapper:nth-of-type(2), aside.e1ia0oo95.ssrcss-1kczfdm-AsideWrapper:nth-of-type(3), aside.e1ia0oo95.ssrcss-1kczfdm-AsideWrapper:nth-of-type(4)
+bbc.com##button[data-testid="socialShareTriggerButton"]
 bbc.com##div[class*="-ConsentBanner"]
 bbc.com##div[class*="DialogBackdrop"]
+bbc.com##div[class*="TagShareWrapper"]
+bbc.com##div[data-testid="share-tools-container"]
 bbc.com##div[id^="piano-inline"]
 bbc.com##header[role="banner"] > div[class^="bbc-"] > div[class^="bbc-"][dir="ltr"]:not([class*="-Banner"])
 bbc.com##header[role="banner"] > div[class^="bbc-"] > div[class^="bbc-"][dir="rtl"]:not([class*="-Banner"])
@@ -1792,6 +1919,7 @@ bbc.com#?#header[role="banner"] > div > div:has(> div  > div > h2)
 bbc.com#?#main > figure[class^="bbc-"]:has(> div > amp-img[alt="Контекст"])
 bbc.com#?#main > figure[class^="bbc-"]:has(> div > amp-img[alt="Контекст"]) + div[class^="bbc-"]
 bbc.com#?#section[aria-labelledby^="features-analysis-heading"] > ul > li[class]:has(> div[data-testid="frosted-promo-0"] > a[href^="/russian/resources/idt-"])
+bbc.com#?#ul[role="list"] > li[class^="ssrcss"]:has(> div[class^="ssrcss"] > div#sticky-mpu)
 bbc.com#@##consentBanner
 bilibili.com###app > DIV.bili-header-m.report-wrap-module:first-child > DIV.nav-menu:first-child > DIV.nav-wrapper.clearfix.bili-wrapper:last-child > DIV.nav-con.fl:first-child > UL > LI.nav-item.mobile:last-child
 bilibili.com###b_app_link
@@ -1863,6 +1991,8 @@ bilibili.com##a[href*="cm.bilibili.com"][data-target-url]:not([data-target-url*=
 bilibili.com##a[href*="cm.bilibili.com"][data-target-url]:not([data-target-url*=".bilibili.com/"]) + .bili-video-card__info
 bilibili.com##a[href="//app.bilibili.com"]
 bilibili.com##a[href="/video/av8587236/?tg"]
+bilibili.com##bili-open-app div.open-btn
+bilibili.com##bili-open-app ~ bili-open-app
 bilibili.com##div[style*="height:"][data-loc-id]
 bilibili.com##span[style*="height:"][data-loc-id]
 bilibili.com#$#.adblock-tips { position: absolute !important; left: -3000px !important; }
@@ -1881,9 +2011,14 @@ bilibili.com#?#.video-card-common:-abp-has(>.card-pic>a[href*="cm.bilibili.com"]
 bilibili.com#?#.video-page-special-card-small:-abp-has(>.card-box>.info>a[href^="http"]:not([href*=".bilibili.com/"]))
 bilibili.com#@#.bili-dialog-m
 bilibili.com#@#.btn-ctnr
+bilibili.com#@#.share-wrap
+bilibili.com#@#.video-share
 bilibili.com#@#a[href*="cm.bilibili.com"][data-target-url]:not([data-target-url*=".bilibili.com/"])
 binance.com##.ng-scope > div.download-fixed
+binance.com##a[id^="Community-a-share"]
+binance.com#%#//scriptlet('set-constant', 'navigator.credentials.get', 'noopPromiseReject')
 binance.com#?#body > aside[class^="css-"]:has(> a[data-bn-type="button"][href^="https://ftp.binance.com/"])
+binance.com#?#h6:contains(/^Share Posts$/):upward(1)
 bing.com###BottomAppPro
 bing.com###TopApp
 bing.com###b_content > div#pole > div[class="ra_car_block ra_pole"] > div.ra_car_container
@@ -1975,6 +2110,7 @@ bing.com##.secure_icon
 bing.com##.shop_page .br-poleoffcarousel
 bing.com##.slide-in
 bing.com##.slide:has(.rtb_ad_caritem_mvtr)
+bing.com##.spl_share
 bing.com##.sto_slides
 bing.com##.survey-opt-in-wrapper
 bing.com##.text-ads-container
@@ -2040,6 +2176,9 @@ bing.com#@#.b_adBottom
 bing.com#@#.b_adLastChild
 bing.com#@#.pa_carousel_mlo
 bing.com#@#.pa_sb
+bing.com#@#a[href*="//b.hatena.ne.jp/add?"]
+bing.com#@#a[href*="//b.hatena.ne.jp/append?"]
+bing.com#@#a[href*="//b.hatena.ne.jp/entry/"]
 bing.com#@#a[href*="/aclick?ld="]
 bing.com#@#a[href^="https://www.bing.com/aclk?"]
 bing.com#@#li.b_adBottom
@@ -2061,6 +2200,7 @@ blog.163.com###topbar_randShowArea
 blog.163.com###topbar_yxpArea
 blog.163.com##.m-regGuideLayer.f-trans
 blog.163.com##.postadlayer
+blog.chromium.org##.share
 blog.cloudflare.com###cloudflare-tv-embed
 blog.cloudflare.com##+js(no-fetch-if, method:POST body:zaraz)
 blog.cloudflare.com##.center.mw7.flex-wrap.flex-row.flex.ph0-l.ph3.pv4
@@ -2088,17 +2228,24 @@ blog.csdn.net#$#.weixin-shadowbox { display: none !important; }
 blog.csdn.net#%#//scriptlet('prevent-addEventListener', 'scroll', 'scrollTop())+n-i>o/2')
 blog.csdn.net#%#//scriptlet('set-cookie', 'popShowed10s', 'yes')
 blog.csdn.net#%#//scriptlet('set-cookie', 'unlogin_scroll_step', '1')
+blog.jetbrains.com###custom_html-29
 blog.jetbrains.com##.banner
 blog.jetbrains.com##.form-subscribe
 blog.jetbrains.com##.jb-download-button
 blog.jetbrains.com##.newsletter
+blog.jetbrains.com##.social:not(body)
 blog.jetbrains.com##.subscribe-form
+blog.jetbrains.com##.twitter-timeline
 blog.mozilla.org###newsletter-subscribe
 blog.mozilla.org###related-posts, #comments, .nav-paging.section
+blog.mozilla.org##.ft-c-post-share
 blog.nightly.mozilla.org###newsletter-subscribe
 blog.twitter.com##.js-eu-cookie-notice
+blog.twitter.com##div[class*="share--icons"]
 blog.x.com##.js-eu-cookie-notice
 blogs.bing.com###cookie-banner
+blogs.bing.com##.addthis-single-wrap
+blogs.wsj.com##.vltSocialLinks
 bloomberg.com###adBlockerContainer
 bloomberg.com###fortress-preblocked-container-root
 bloomberg.com###leaderboard
@@ -2107,9 +2254,12 @@ bloomberg.com###pathfinder-tout
 bloomberg.com###paywall-banner
 bloomberg.com###plug-banner-outlet
 bloomberg.com###plug-overlay
+bloomberg.com###story_social_toolbar_top_container
 bloomberg.com##+js(trusted-click-element, button[title="Reject All"], , 2000)
 bloomberg.com##.BaseAd_baseAd-dXBqvbLRJy0-
+bloomberg.com##.adWrapper
 bloomberg.com##.ad_unit_container
+bloomberg.com##.amp-taboola
 bloomberg.com##.banner
 bloomberg.com##.canopy-container
 bloomberg.com##.container-width.dvz-recirculator, #plug-banner-outlet, .bottom-left-rail-touts, .art_done.body-copy-v2 > .postr-recirc--opinion.postr-recirc, .fence-body.body-copy-v2 > .postr-recirc--opinion.postr-recirc
@@ -2117,6 +2267,7 @@ bloomberg.com##.content-cliff__ad
 bloomberg.com##.content-cliff__ad-container
 bloomberg.com##.css--social-wrapper-outer
 bloomberg.com##.dvz-v0-ad
+bloomberg.com##.fence-body > div[data-position="mobile-box"]
 bloomberg.com##.fence-body.body-copy-v2 > .paywall.postr-recirc--hyperdrive.postr-recirc, .art_done.body-copy-v2 > .paywall.postr-recirc--hyperdrive.postr-recirc, .video-player, .paywall.postr-recirc--opinion.postr-recirc, .paywall.postr-recirc--equality.postr-recirc, .postr-recirc--equality.postr-recirc, .paywall.news-wallet__wrapper, figure.paywall
 bloomberg.com##.inline-newsletter-middle
 bloomberg.com##.inline-newsletter-top
@@ -2124,8 +2275,11 @@ bloomberg.com##.leaderboard-ad-dummy
 bloomberg.com##.leaderboard-wrapper
 bloomberg.com##.native-content-footer
 bloomberg.com##.navi-push-notification-prompt
+bloomberg.com##.navi-terms-of-service
 bloomberg.com##.newsletter-module
 bloomberg.com##.newsletter-sponsored-ad
+bloomberg.com##.share
+bloomberg.com##.share-article-button
 bloomberg.com##.table-ad-container
 bloomberg.com##[class^="FullWidthAd_"]
 bloomberg.com##[data-component="in-body-ad"]
@@ -2135,6 +2289,7 @@ bloomberg.com##div[class^="BaseAd_"]
 bloomberg.com##div[class^="StoryCardSmall_adWrapper-"]
 bloomberg.com##div[class^="media-ui-BaseAd"]
 bloomberg.com##div[class^="media-ui-FullWidthAd"]
+bloomberg.com##div[class^="share-article-button__"]
 bloomberg.com##div[data-ad-placeholder="Advertisement"]
 bloomberg.com##div[data-ad-placeholder]
 bloomberg.com##div[data-component="inline-recirc"]
@@ -2157,11 +2312,14 @@ bloomberg.com#@#.text-ads
 bloomberg.com#@#.textAd
 bloomberg.com#@#.text_ad
 bloomberg.com#@#.text_ads
+books.apple.com##.we-share
 boxnovel.baidu.com##.popup_mask
+boxnovel.baidu.com##.wechat-wrapper
 brave.com###notice
 brave.com##.announcement-banner
 browserleaks.com###vpn_text
 browserleaks.com##.adsbygoogle
+browserleaks.com##.twt
 bugsnag.com^$domain=adblock-tester.com
 business.instagram.com#$#body.hasCookieBanner > ._li._31e { position: sticky !important; }
 business.instagram.com#$#div[data-testid="cookie-policy-manage-dialog"] { display: none !important; }
@@ -2173,9 +2331,12 @@ c.m.163.com##.qr
 c.mi.com##.app-download
 c.mi.com##.cookie-setting-bottom-bar
 c.mi.com##.qr-box
+c.mi.com##.share-wrapper
+c.mi.com##.thread-share-btn
 c.mi.com#$#.app-download { display: none !important; }
 c.mi.com#$#.xm-header.app-down .top { top: 0 !important; }
 c.mi.com#$#.xm-header.app-down { margin-top: 0 !important; }
+caifuhao.eastmoney.com##.share
 calendar.google.com#?#iframe[src^="https://ogs.google.com"][src*="/widget/callout/"]:upward(div[style^="overflow: hidden; position: absolute; top: 0px; width:"])
 careers.google.com##.gc-cookie-bar
 cdn-settings.appsflyersdk.com^
@@ -2196,10 +2357,19 @@ ci.chromium.org###cookie-consent-prompt
 cleantechnica.com###omc-full-article > center
 cleantechnica.com###text-165
 cleantechnica.com###zox-top-head-wrap
+cleantechnica.com##.mrf-adv__wrapper
+cleantechnica.com##.mrf-sticky-wrapper
+cleantechnica.com##.wp-caption > a[rel^="nofollow sponsored"][target="_blank"]
+cleantechnica.com##.zox-post-body > center > a[target="_blank"] > span.mrf-detailsMedia
+cleantechnica.com##.zox-post-body > p > span > a[rel*="sponsored"] > span.mrf-detailsMedia
+cleantechnica.com##a[onclick*="share.flipboard.com"]
 cleantechnica.com#?#.xoxo > li[id^="text-"]:has(> .textwidget a[href^="http://cleantechnica.com/advertise/"])
 cleantechnica.com#?#.xoxo > li[id^="text-"]:has(> .widgettitle > span:contains(Advertisement))
 cleantechnica.com#?#.zox-post-body > center:has(> a[href="https://cleantechnica.com/support/"] > span.mrf-detailsMedia)
+cleantechnica.com#?#.zox-post-body > center:has(> a[href^="https://www.paypal.com/donate/"][target="_blank"])
 cleantechnica.com#?#.zox-post-body > div > center:has(> .adsbygoogle) + hr
+cleantechnica.com#?#.zox-post-body > p:has(> a[rel^="nofollow sponsored"][target="_blank"] > span.mrf-detailsMedia)
+cleantechnica.com#?#.zox-post-soc-stat-list > a[href^="mailto:?"]
 cleantechnica.com#?#.zox-side-widget:-abp-contains(/^Advertis/)
 cleantechnica.com#?#center:has(> bold:contains(Advertisement))
 cloud.baidu.com##.cloud-header-operate
@@ -2208,6 +2378,9 @@ cloud.baidu.com##div[class*="width"][class$="-center"] a[href^="https://cloud.ba
 cloud.baidu.com#$#.__9EcYiCyZ { display: none !important; }
 cloud.baidu.com#%#//scriptlet('remove-class', 'header-body-no-scroll', 'body')
 cloud.google.com##.glue-cookie-notification-bar
+cloud.google.com##a[track-type="social share"]
+cloud.google.com##article-sticky-share-block
+cloud.tencent.com##.cdc-commercial-card
 cloud.tencent.com##.cdc-commercial-swiper
 cloud.tencent.com##.cdc-group-qr-card
 cloud.tencent.com##.cdc-portal-wrapper
@@ -2221,6 +2394,7 @@ cloudflare.com##.eu-cookie-banner
 cloudflare.com##.mb7 > div.bg-blue4:has(> section > form input#Email)
 cloudflare.com##.mt6.ph2.bg-blue4
 cloudflare.com##.ph3.items-center.flex-l, .bottom-0.fixed
+cloudflare.com##.share
 cloudflare.com##.site-content > div.fixed.bottom-0
 cn.bing.com###id_qrcode_popup_positioner
 cn.bing.com##.b_bza_pole
@@ -2229,11 +2403,17 @@ cn.bing.com##.bnp_rich_div_visible.top
 cn.bing.com#$#hide-if-contains 360 #b_results>li .b_adProvider
 cn.bing.com#?##b_results > li:-abp-has(.b_adProvider)
 cn.bing.com#?#.b_algo:-abp-has(p:-abp-properties(AAAAAElFTkSuQmCC))
+cna.com.tw###left_socail
 cna.com.tw##.Subscription
 cna.com.tw##.ad_336_2
 cna.com.tw##.ad_970
+cna.com.tw##.fb_fanpage_inpage > [class^="fb_"]
+cna.com.tw##.footer_soical
 cna.com.tw##.gotop
+cna.com.tw##.inpage_social_box > div[class^="in_"]:not(.in_tools)
 cna.com.tw##.qrcode_box
+cna.com.tw##.right_social
+cna.com.tw##.right_social_inpage
 cna.com.tw##.share
 cna.com.tw#$#.fb_fanpage_inpage > .other_news_box_2 { padding: 0 0px!important; margin: 26px 0!important; }
 cnblogs.com###blog_c1
@@ -2253,7 +2433,9 @@ cnblogs.com##a[href^="https://promotion.aliyun.com/"]
 coingape.com###custom_html-15
 coingape.com###custom_html-17
 coingape.com###social-ad-new
+coingape.com###social-section
 coingape.com###spinbtn
+coingape.com##.GoogleFollws
 coingape.com##.ads-up
 coingape.com##.coing-after-3rd-paragraph
 coingape.com##.coing-before-last-2-paragraph
@@ -2269,6 +2451,8 @@ communities.apple.com##.notification
 community.cloudflare.com###discourse-modal:not(.login-modal):not(.create-account)
 community.cloudflare.com##.modal-backdrop
 community.cloudflare.com#%#//scriptlet('trusted-click-element', '.interstitial-alert-modal .modal-close')
+community.mozilla.org##.campaign__intro-card > .campaign__keyline
+community.mozilla.org##.campaign__share-container
 communitynotes.twitter.com#?##main > div[class^="sc-"] > div[class^="src__InlineCalloutElement"]
 communitynotes.twitter.com#?##main > div[class^="wrapper__"]:has(> div[aria-labelledby^="notice"])
 consent.youtube.com##+js(trusted-click-element, [action="https://consent.youtube.com/save"][style="display:inline;"] [name="set_eom"][value="true"] ~ .basebuttonUIModernization[value][aria-label], , 1500)
@@ -2283,6 +2467,7 @@ cooking.nytimes.com##.footer_newsletterSectionBlock__c0Qgo
 cooking.nytimes.com##.has-newsletter
 cooking.nytimes.com##.newslettersignupmodule_newsletterSignupModule__pT3BJ
 cooking.nytimes.com##.recipe-newsletter-signup
+cooking.nytimes.com##.share-group
 cooking.nytimes.com##body:style(height: auto !important; overflow: auto !important)
 cooking.nytimes.com##div[class^="inlineoffer_inline-img-offer-container__"]
 cooking.nytimes.com##html:style(height: auto !important; overflow: auto !important)
@@ -2318,8 +2503,10 @@ developer.android.com##.devsite-badger-award
 developer.android.com##.devsite-snackbar-snack:has-text(Please help us)
 developer.android.com##devsite-snackbar
 developer.android.com##div[type="cookie-notification"]
+developer.android.com##sc-survey-survey-manager
 developer.android.com#?#devsite-snackbar a.devsite-snackbar-link[href^="https://developer.android.com/survey"]:upward(devsite-snackbar)
 developer.apple.com##.push-subscription-banner-container
+developer.apple.com##.social-share-container
 developer.baidu.com##a[class^="articel_detail_begining-market-po"]
 developer.baidu.com##a[class^="articel_detail_block-item__"][data-track-value$="banner"]
 developer.baidu.com#$#a[class^="articel_detail_top-market-pos__"] { display: none !important; }
@@ -2329,8 +2516,10 @@ developer.mozilla.org###helpful-survey
 developer.mozilla.org##.mdn-cta-container
 developer.mozilla.org##.newsletter-box
 developer.mozilla.org##.section-newsletter
+developer.mozilla.org##.sidebar-inner > section.place:empty
 developer.mozilla.org##.top-banner
 developer.samsung.com###cookie-bottom-layer
+developer.samsung.com##a[id^="rs_send_"]
 developer.samsung.com#$##el-sdp-popup-cookies-wrapper { display: none !important; }
 developer.samsung.com#$#.common-backdrop:not(.full-backdrop) { display: none !important; }
 developer.samsung.com#$#body { position: static !important; }
@@ -2371,6 +2560,7 @@ docin.com##.moneyBox
 docin.com##.sider_gg
 docs.github.com##[aria-label="Scroll to top"]
 docs.google.com##+js(no-xhr-if, method:POST url:/logImpressions)
+docs.google.com##.docs-ml-promotion
 docs.google.com##.onegoogle-material-minibar > div.gb_sa > div[data-ogsr-up] > div.gb_Xf > div.gb_Ad[aria-label][style][role="dialog"]
 docs.google.com#?#iframe[src^="https://ogs.google.com"][src*="/widget/callout/"]:upward(div[style^="overflow: hidden; position: absolute; top: 0px; width:"])
 douban.com##.ad
@@ -2429,6 +2619,8 @@ duckduckgo.com##.sponsored
 duckduckgo.com##.vertical-section-divider:has(span.badge--ad-wrap)
 duckduckgo.com##[data-layout="ad"]
 duckduckgo.com##[data-layout="products"]:has(.badge--ad-wrap)
+duckduckgo.com##a[class^="legacyMobileAtbBanner_"]
+duckduckgo.com##a[class^="mobile-atb-banner_"]
 duckduckgo.com##div[class^="mobile-homepage_atbBadge"]
 duckduckgo.com##li[class][data-layout="creditcards"] div[data-testid="creditcards-carousel-module"].bing
 duckduckgo.com##li[data-layout="multimedia_ad"]
@@ -2439,6 +2631,9 @@ duckduckgo.com#$#.badge-link.ddg-extension-hide { display: none!important; }
 duckduckgo.com#$#.js-header-aside.is-hidden { display: block!important; }
 duckduckgo.com#%#//scriptlet('trusted-set-cookie', 'ax', 'v433-5')
 duckduckgo.com#@#.js-sidebar-ads
+duckduckgo.com#@#a[href*="//b.hatena.ne.jp/add?"]
+duckduckgo.com#@#a[href*="//b.hatena.ne.jp/append?"]
+duckduckgo.com#@#a[href*="//b.hatena.ne.jp/entry/"]
 duolingo.com##+js(no-xhr-if, excess.duolingo.com/batch)
 duolingo.com##._1UOwI._3bfsh
 duolingo.com##._1e7JD
@@ -2451,9 +2646,11 @@ duolingo.com#?##root div[data-test="player-end-carousel"] > div[class]:has(> ins
 duolingo.com#?#body > div[id="root"] > div:not([class]) > div[class^="_"] > div:not([class]) > div[class^="_"] > div[class^="_"]:has(> div[class^="_"] > div[class*=" _"] > h2 + div[class^="_"]:contains(Duolingo Plus))
 duolingo.com#?#div[class^="_"] > div[class*=" _"]:has( > div[class^="_"] > div[class*=" _"] > div[class^="_"]:contains(Duolingo Plus))
 duolingo.com#?#div[class^="_"]:has(> div[class^="_"] > a[href*="How-can-I-disable-my-ad-blocker-to-support-Duolingo"])
+duolingo.com#?#footer[class^="_"] + div[class^="_"]:has(> div[class] > div[class^="_"] > a[href*="adj.st/?"])
 duolingo.com#?#section > div:has(> div > div[class] > div[class] > ins.adsbygoogle)
 duolingo.com#@#ins.adsbygoogle[data-ad-client]
 duolingo.com#@#ins.adsbygoogle[data-ad-slot]
+dushu.baidu.com##.openBox-shareEntry
 eastmoney.com###ListPage_r_Ad
 eastmoney.com###fp1
 eastmoney.com###fundtg-fb
@@ -2468,6 +2665,7 @@ eastmoney.com##.footer-ads,#rightAD
 eastmoney.com##.fund-pop
 eastmoney.com##.head_adbox
 eastmoney.com##.popswipe
+eastmoney.com##div[class^="ban"]
 eastmoney.com##div[data-url*="same.eastmoney.com"]
 eastmoney.com##div[id^="em_important_"]
 eastmoney.com##div[id^="flow-ad-"]
@@ -2485,6 +2683,7 @@ edit.chromium.org#%#//scriptlet('hide-in-shadow-dom', 'cookie-bar')
 edu.sh.gov.cn#@#.short-ad
 eet-china.com#?#.new-list > ul > li:has(> div.li-row > div > h2 > a[href^="http://pubads.g.doubleclick.net/gampad/"])
 elevenlabs.io##+js(set-local-storage-item, IIElevenLabsDubbingResult, $remove$)
+embed.acast.com##button[aria-label^="Share on"]
 ent.163.com##.hotset
 eslite.com##.fixed-banner
 eudic.net###bodycontent > style + div[id] > :nth-child(n+2)
@@ -2496,28 +2695,39 @@ euronews.com###o-site-hr__leaderboard-wallpaper.u-show-for-xlarge:remove()
 euronews.com###sharethrough-ad
 euronews.com###sharethrough-ad-medium-up
 euronews.com##+js(trusted-click-element, #didomi-notice-agree-button, , 2200)
+euronews.com##.amp-flying-carpet-text-border
+euronews.com##.article__social--links
 euronews.com##.base-leaderboard
+euronews.com##.bottom-meta--share
 euronews.com##.c-card-sponsor
 euronews.com##.c-leaderboard
+euronews.com##.c-social--share
+euronews.com##.c-social-share
 euronews.com##.c-sublock-most-viewed
+euronews.com##.c-widget-share
 euronews.com##.enw-MPU
 euronews.com##.enw-block-theme__mpu
 euronews.com##.js-article-sidebar-content > div.c-article-sidebar__sticky-zone.u-min-height-1200
 euronews.com##.js-c-article-partage-commentaire-share
+euronews.com##.js-footer-social-widget
 euronews.com##.js-swip-btn
 euronews.com##.m-object:has(.m-object__spons-quote)
 euronews.com##.o-site-footer__newsletter
 euronews.com##.qa-dfpLeaderBoard
 euronews.com##.qa-marketBlock
+euronews.com##.selectionSharer
 euronews.com##.taboola
+euronews.com##amp-fx-flying-carpet
 euronews.com##aside.o-article__aside > .OUTBRAIN
 euronews.com##body .smartbanner
 euronews.com#$#div.pub.ad.advertising.adzone.sponsored[data-ad-name] { display: block !important; }
 euronews.com#$?##o-site-hr__leaderboard-wallpaper.u-show-for-xlarge { remove: true; }
 euronews.com#%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button')
 euronews.com#?#.m-object:has(.m-object__quote:-abp-contains(/In partnership with|En partenariat avec|Mit Unterstützung von|In collaborazione con|En colaboración con|Em parceria com|Совместно с|ile birlikte|Σε συνεργασία με|Együttműködésben a|با همکاری|بالمشاركة مع/))
+euronews.com#?#.u-article-content > div.c-article-partage-commentaire:has(> .js-c-article-partage-commentaire-share)
 euronews.com#?#.u-hide-for-medium-only:has(> div[class] div[data-ad-id])
 eustore.ifixit.com###cookieNote
+ezgif.com###hdr
 ezgif.com##.ads
 ezgif.com##div[style$="min-height:90px;display:block"]
 familydoctor.com.cn##.adExtra
@@ -2536,10 +2746,12 @@ fanyi.baidu.com##.hot-link-middle
 fanyi.baidu.com##.trans-side-ad-wrap
 fanyi.baidu.com##H1,H3,.intro-nav.clearfix,.intro-copyrigh,A.app-bar,.intro-copyright
 fanyi.baidu.com##div.banner-wrap
+fast.com##.share-container > a[id^="share-on-"]
 feed.baidu.com##a[data-type="ec_ad"]
 feed.baidu.com##body > div[id$="-container"]:last-child
 fi.google.com##fi-cookie-consent
 fi.google.com##fi-newsletter-prompt
+figma.com###progress-indicator-target + div:has(> div > button[class^="react-share__"])
 figma.com##.base_cookie_banner--container--nUKFl
 figma.com##.css-eouiu8
 figma.com##div[aria-label="Cookie Consent"]
@@ -2548,13 +2760,17 @@ finance.sina.cn##.m-client-call3
 finance.sina.cn##.s_card.cj_24
 finance.sina.cn##aside#actionTop + .m-client-call
 finance.yahoo.com###Overlay-2-Rmp-Proxy, .caas-non-sticky-sda, .Mb\(\$gridMargin\).wafer-rapid-module, .Pt\(25px\).W\(300px\).Pos\(r\)
+finance.yahoo.com###mrt-node-Col1-1-GeminiBrokerBtnsMobileWeb
 finance.yahoo.com###mrt-node-Lead-0-Ad
 finance.yahoo.com##.YDC-Overlay
 finance.yahoo.com##.ad
 finance.yahoo.com##.ad-lrec3
+finance.yahoo.com##.caas-native-share-btn
 finance.yahoo.com##.gam-placeholder
 finance.yahoo.com##.sdaContainer
+finance.yahoo.com##.share-menu-wrapper
 finance.yahoo.com##.smartphone div#module-featurebar
+finance.yahoo.com##.ys-mobileFeaturedAd
 finance.yahoo.com##[id^="defaultLREC"]
 finance.yahoo.com##a[title="Stay ahead of the market"]
 finance.yahoo.com##div[id^="mrt-node"][id*="Ad"]
@@ -2564,11 +2780,15 @@ finance.yahoo.com#$#html { overflow: auto !important; }
 financialexpress.com###append_cubebox_box
 financialexpress.com###id_newsletter_subscription
 financialexpress.com###id_newsletter_subscription_popup
+financialexpress.com###whatsapp_button
+financialexpress.com##.ad-bg-container
 financialexpress.com##.adsbox990x90
 financialexpress.com##.app-btn
 financialexpress.com##.ie-google-news
 financialexpress.com##.ie-network-taboola
 financialexpress.com##a[href*="/sponsored/"]
+financialexpress.com##header > .fewrapper
+financialexpress.com#$#.wp-block-group.auto-header { min-height: auto !important; }
 findmymobile.samsung.com##footer + div.fixed.bottom-0.items-center.p-5.h-fit
 firebase.google.com##devsite-cookie-notification-bar
 firebase.google.com##devsite-snackbar[type="cookie-notification"]
@@ -2580,6 +2800,8 @@ flickr.com##.ad-rail-content-container
 flickr.com##.cookie-banner-reg
 flickr.com##.cookie-banner-view
 flickr.com##.flickr-view-root-view > .feed-b
+flickr.com##.fluid-share-cameraroll-view
+flickr.com##.fluid-share-photo-view
 flickr.com##.getty-search-view
 flickr.com##.getty-widget-view
 flickr.com##.moola-search-div
@@ -2612,7 +2834,11 @@ forbes.com##.adblock-unused
 forbes.com##.amp-ad-container
 forbes.com##.article-body .tp-container-inner
 forbes.com##.article-body > div[style^="padding: 20px 0pt; margin: 20px 0pt; border-bottom: 1px solid #DDDDDD;"]
+forbes.com##.article-container > sharing
+forbes.com##.article-fbs-sharing
 forbes.com##.article-sharing
+forbes.com##.article-sharing__container
+forbes.com##.article-social-sharing
 forbes.com##.article-speed-bump
 forbes.com##.channel--ad
 forbes.com##.color-body-border.color-body.link-embed--no-thumbnail.embed-6.link-embed.embed-base, .shopping.recirc-module, .color-body-border.color-body.link-embed--no-thumbnail.embed-2.link-embed.embed-base, .color-body-border.color-body.link-embed--no-thumbnail.embed-4.link-embed.embed-base, .seo.recirc-module, .marketPlace.recirc-module, #article-container-1 > .main-content--body
@@ -2624,11 +2850,14 @@ forbes.com##.fbs-ad-wrapper
 forbes.com##.footer-ad-labeling
 forbes.com##.for-you__component:empty
 forbes.com##.grid__ad-container--amp
+forbes.com##.incontent-placeholder-row
 forbes.com##.inline-article-ed-placeholder
 forbes.com##.inline__zephr
 forbes.com##.ju_Con[data-title="Daily%20Dozen"]
 forbes.com##.ju_overlay
 forbes.com##.link-embed.color-body-border.color-body.embed-base
+forbes.com##.listuser-header__sharing
+forbes.com##.mobile-social-icons
 forbes.com##.mobile-sticky-ed-placeholder
 forbes.com##.monito-widget-wrapper
 forbes.com##.moreon-ad
@@ -2640,22 +2869,31 @@ forbes.com##.open-web-anchor-standard-topline.open-web_anchor--desktop.open-web_
 forbes.com##.profile-sidebar__sticky-container
 forbes.com##.ribbon-mobile-ad-wrapper
 forbes.com##.rtb-top-wrapper
+forbes.com##.social-expand-control
+forbes.com##.social-icon
+forbes.com##.social:not(body)
 forbes.com##.sticky-cta
 forbes.com##.table-ad
 forbes.com##.top-ad-container
 forbes.com##.top-ed-placeholder
 forbes.com##.top-placeholder
+forbes.com##.tweet-this
 forbes.com##.vestpocket
 forbes.com##.video-placeholder
 forbes.com##.video-placeholder.sticky-video-placeholder > fbs-video.sticky-video
 forbes.com##.zephr-editorial-newsletter-backdrop
 forbes.com##.zephr-editorial-newsletter-modal
 forbes.com##[data-testid="locked-top-ad-container"]
+forbes.com##amp-ad
 forbes.com##amp-consent
+forbes.com##article-body-container.article-body > tweet-quotes
 forbes.com##body fbs-ad:not(#style_important)
+forbes.com##div[article-sharing]
 forbes.com##div[class^="fbs-ad--"]
 forbes.com##div[id^="google_ads_iframe_"]
 forbes.com##fbs-ad
+forbes.com#$#.article-body .tweet_quote > a > span { display: none !important; }
+forbes.com#$#.article-body .tweet_quote > a { cursor: auto !important; background-color: transparent !important; color: #000 !important; }
 forbes.com#$#.fbs-auth__adblock { display: none !important; }
 forbes.com#$#.main-content--body { padding-top: unset !important; }
 forbes.com#$#.tp-backdrop { display: none !important; }
@@ -2668,6 +2906,8 @@ forbes.com#$#html > body:not(#style_important) { overflow: visible !important; }
 forbes.com#$#html { overflow: auto !important; }
 forbes.com#$#html { position: static !important; overflow: auto !important; width: auto !important; }
 forbes.com#$#page-standard[id^="article-container"] { position: unset!important; }
+forbes.com#%#//scriptlet('inject-css-in-shadow-dom', 'section[class^="MenuBody_"] > button:not([data-testid="link"]) { display: none !important; }')
+forbes.com#%#//scriptlet('remove-attr', 'href', '.article-body .tweet_quote > a[href^="https://twitter.com/intent/"]')
 forbes.com#%#//scriptlet('remove-class', 'zephr-modal-open|zephr-editorial-newsletter-modal-open', 'body.zephr-editorial-newsletter-modal-open')
 forbes.com#%#//scriptlet('trusted-click-element', 'div[class*="ketch-"] button[aria-label="Accept All"]')
 forbes.com#%#//scriptlet('ubo-rc.js', 'zephr-modal-open', 'body', 'stay')
@@ -2708,6 +2948,7 @@ forbes.com#@#.text_ad
 forbes.com#@#.text_ads
 forbes.com#@#.truste_box_overlay
 forbes.com#@#.truste_overlay:not(body):not(html)
+forbes.com#@#a[href^="https://twitter.com/intent/tweet?"]
 form.typeform.com##div[data-qa="cookie-region"]
 forum.dji.com##+js(set, sensorsDataAnalytic201505, {})
 forum.dji.com##+js(set, sensorsDataAnalytic201505.track, noopFunc)
@@ -2719,11 +2960,15 @@ forums.anandtech.com###header_leaderboard
 forums.anandtech.com###rightcol_top
 forums.androidcentral.com###header_leaderboard
 forums.androidcentral.com###rightcol_top
+forums.androidcentral.com##.adunit
+forums.androidcentral.com##.homeforums > div.forumbit_nopost + div[align="center"]
 forums.androidcentral.com##.mn_postbit > .row > .mn_deals__widget
 forums.androidcentral.com##.mn_postbit:not([id])
+forums.androidcentral.com##.threadbit + li.ui-body-null
 forums.lenovo.com##.banner_alert
 forums.macrumors.com###mrsubscribe
 forums.macrumors.com##.mr_join_sidebar
+forums.macrumors.com##.mr_shareLabel
 forums.macrumors.com##.mr_signup_container
 forums.macrumors.com##.samCodeUnit
 forums.macrumors.com##.uix_sidebarInner
@@ -2733,10 +2978,14 @@ forums.tomshardware.com###rightcol_bottom
 forums.tomshardware.com###rightcol_top
 forums.tomshardware.com###video_ad
 forums.tomshardware.com##.qc-cmp2-container
+forums.tomshardware.com##.shareButtons
+forums.tomshardware.com##a[data-xf-init="share-tooltip"]
 foundation.mozilla.org##.d-print-none.container
 friends.figma.com##.cookie-consent-acknowledgement-conatiner
+fujixweekly.com#$?#span[data-ez-ph-id] { display: none !important; }
 fund.eastmoney.com##div[data-url^="//same.eastmoney.com/"]
 galaxystore.samsung.com##div[class^="CookieBanner_"]
+galaxystore.samsung.com##div[class^="SnsPlugin_share__"]
 gamersky.com##.ad_cmt_cont
 gamersky.com##.downLoadGame-2
 gamersky.com##.downLoadGame-2 + .dl_url
@@ -2747,6 +2996,8 @@ gate.baidu.com###container
 gcdsdk.appsflyersdk.com^
 gdpr.twitter.com#%#//scriptlet('ubo-set-cookie.js', 'twtr_pixel_opt_in', 'N')
 gemini.google.com##.cdk-overlay-container:has(.get-app-mobile-dialog)
+gemini.google.com##.get-app-banner
+gemini.google.com#$#body .share-button { display: block !important; }
 getpocket.com###__next > div[class$=" isVisible"] > div > aside
 getpocket.com###pocket-hits-container > div[class^="css-"][class*="-Chyron-Chyron-Chyron"] > div[class^="css-"][class*="-CTAContainer"]
 getpocket.com##.\'syndication-ad\'
@@ -2758,13 +3009,17 @@ getpocket.com##.right-aside
 getpocket.com##.social-actions
 getpocket.com##.st8mpmf
 getpocket.com##.syndication-ad
+getpocket.com##div[class$="-share"]
 getpocket.com##div[data-cy="mylist-flyaway-extensions"]
 getpocket.com##div[data-cy="reader-flyaway-apps"]
+getpocket.com##li[class*="-ShareElement"] > a[class*="-ShareLink-"]:not([class*="-ShareLink-PocketShare"])
 getpocket.com#?##__next > aside:has(> div[class][style^="max-width:"] > div[class] > a[href^="https://getpocket.com/premium?"])
 github.blog###newsletter
 github.blog###wcpConsentBannerCtrl
 github.blog##.dismissible-newsletter
+github.blog##.flex-items-center > ul:has(> li > span:contains(Share:))
 github.blog##.post__sidebar > div.d-none.d-md-block
+github.blog##.post__social-share
 github.blog##main > div.color-bg-subtle:has(> div.container-xl > section#newsletter)
 github.com###cookie-consent-banner
 github.com##.feed-right-sidebar > div:has(> div.js-notice)
@@ -2772,6 +3027,7 @@ github.com##.js-cookie-consent-banner
 github.com##.js-newsletter-signup-form
 github.com##.js-notice-dismiss[data-analytics-visible]
 github.com##.js-unwatch-suggestions
+github.com##.readme-sharing
 github.com##.repository-content [data-prompt="signup"]
 github.com##.signup-prompt
 github.com##.survey-container, .js-notice-dismiss, .mb-4.bg-white, .code-navigation-banner, .js-notice:remove()
@@ -2793,6 +3049,8 @@ gitlab.com##.newsletter-form
 gitlab.com##.onetrust-pc-dark-filter
 global.app.mi.com##div[class^="cookie-banner"]
 global.cainiao.com##.puckinn-cookie-consent
+google.com###ad-undefined
+google.com###amp-cookie-hint
 google.com###app > div.visible > div[role="dialog"][jsaction^="focusout:promotion.dismiss;"]
 google.com###app-container #vasquette div[class] > div[aria-label*="Chrome"]
 google.com###bottomads > div[id^="tads"]
@@ -2846,6 +3104,8 @@ google.com##.commercial-unit-mobile-top > div[data-pla="1"]
 google.com##.ctr-p > div.og-pdp
 google.com##.cu-container
 google.com##.flt-actionblock
+google.com##.flying-carpet-element__ad-label
+google.com##.flying-carpet-element__ad-label + amp-fx-flying-carpet
 google.com##.gb_g[role="dialog"] > div.gb_fa.gb_g
 google.com##.gws-local-hotels__booking-module
 google.com##.gws-local-promotions__border
@@ -2856,17 +3116,22 @@ google.com##.ltJjte
 google.com##.luhb-div
 google.com##.ml-promotion-container
 google.com##.nD2EKb.VEELad
+google.com##.nWi0wf.kDTz5c
 google.com##.nextad
 google.com##.pdp-psy > .gb_ld.gb_g
 google.com##.pdp-psy.og-pdp
 google.com##.pdp-psyv
 google.com##.pmoabs
+google.com##.publicidad_amp
 google.com##.qarstb > div[data-endpoint="overlay"] + div.vcVZ7d
 google.com##.rbgrBd div[role="dialog"] > div[jsaction^="settings."] button[jsaction^="settings.useApp;"]
+google.com##.share
 google.com##.szppmdbYutt__middle-slot-promo
 google.com##.uEierd
+google.com##.xzCJ9 > div[jscontroller] + div[class]
 google.com##[data-profile-url-path^="/localservices"]:has-text(/google screened/i)
 google.com##a[data-ad-tracking-url]
+google.com##a[data-async-trigger="ddlshare"]
 google.com##a[href^="/aclk?sa="][href*="&adurl=&placesheetAdFix=1"]
 google.com##a[href^="/aclk?sa="][href*="&adurl=&placesheetAdFix=1"] + button
 google.com##a[href^="https://www.googleadservices.com/pagead/aclk?"]
@@ -2904,6 +3169,8 @@ google.com##div[data-section-type="ads"]
 google.com##div[jsdata*="CarouselPLA-"][data-id^="CarouselPLA-"]
 google.com##div[jsdata*="SinglePLA-"][data-id^="SinglePLA-"]
 google.com##div[jsname="wA2P2b"]:has-text(How helpful were the results)
+google.com##div[role="heading"] + div[class] > div[class] > span[data-is-tooltip-wrapper] > button[jsaction^="click"][aria-label="Share"]
+google.com##div[role="menu"] > style ~ a[class][href^="https://search.app.goo.gl/"]
 google.com##div[role="navigation"] + c-wiz > div > .kxhcC
 google.com##div[style^="behavior:url(#default#homePage) url(#default#userData);background-color:"]
 google.com##g-bottom-sheet > [class$="__visible"][style="transform: none;"]
@@ -2912,6 +3179,7 @@ google.com##header[role="banner"] div[class^="gb_"][role="dialog"][style="behavi
 google.com##html[itemtype="http://schema.org/SearchResultsPage"] #cnt div[class$="sh-sr__bau"]
 google.com##html[itemtype="http://schema.org/SearchResultsPage"] #cnt div[class$="sh-sr__tau"][style]
 google.com##iframe[role="presentation"][src*="ogs.google."][src*="widget/callout"]
+google.com##main div:not([class])[jsmodel] + div[jsaction] > div[data-is-touch-wrapper] > button[jsaction^="click"]
 google.com##mobile-promo
 google.com#$##app-container > #pushdown > .gb_Cc.gb_g { display: none!important; }
 google.com#$#.pdp-psy > .gb_Lc.gb_g[data-ved]{display:none!important;}
@@ -2922,6 +3190,7 @@ google.com#?##cnt > div[class] > div[data-ved]:has(> div[jsdata] > promo-throttl
 google.com#?##taw:has(> div[id] > div > div > promo-throttler ~ div[jsslot] > div > promo-throttler + div > div > svg[height="70"][width="70"])
 google.com#?#.rl_full-list div.rl_tile-group > .rlfl__tls > div > div[data-hveid] > div[class]:has(> div > a > div[class] > .gghBu)
 google.com#?#.rlfl__tls > div[jstcache="0"]:not([class]):not([id]):has(span._mB)
+google.com#?#header[id="hdr"] ~ div#main > div[class="ZINbbc xpd O9g5cc uUPGi"]:has(> div > a[href*="/aclk?"][data-al])
 google.com#?#iframe[role="presentation"][src*="ogs.google."][src*="widget/callout"]:upward(div[style^="overflow: hidden; position: absolute; top: 0px; width: 370px;"])
 google.com#@#.privacyBar
 google.com#@#SHARE-BUTTON
@@ -2932,6 +3201,7 @@ gov.cn###ZhiXuwFloatWindow
 gov.cn###ippad01
 gov.cn###ippad02
 gov.cn###ippad03
+greasyfork.org###share
 greasyfork.org##.ad-entry
 greasyfork.org#@#body .ad
 gsmarena.com###subHeader
@@ -2950,6 +3220,7 @@ gsxt.gov.cn#@#.ads-right
 gu.sina.cn###__callup_bottom
 guba.eastmoney.com##.redian
 gufengmh.com##.animated
+gwytb.gov.cn#@#.sharebox
 h5.m.taobao.com##[style*="top: 0rem"]
 hacks.mozilla.org###newsletterForm
 hacks.mozilla.org##.newsletter
@@ -2996,6 +3267,9 @@ hardwaretimes.com##.stream-item
 hardwaretimes.com##.stream-item-size
 hardwaretimes.com#?#.theiaStickySidebar > .widget:has(> div > .adsbygoogle)
 help.instagram.com###cookie-policy-banner
+help.twitter.com##div[class*="-share-tweet"]
+help.twitter.com##main > div.twtr-container > div.twtr-grid > div.twtr-grid__yang > div[class^="twtr-component-space"] + div[class^="ap"]
+help.twitter.com#?#.b01__copy > h4:contains(/Поделиться этой статьей|Share this article|Partagez cet article|Compartir este artículo|Compartilhe este artigo|Condividi questo articolo|Diesen Artikel teilen|この記事を共有する|이 문서 공유하기|Bu makaleyi paylaşın|Bagikan artikel ini|مشاركة هذه المقالة/)
 help.x.com##.b17-scroll-top-button
 hentaiforce.net##+js(set-constant, show_popup, false)
 hentaiforce.net##+js(window.open-defuser)
@@ -3005,10 +3279,12 @@ home.jd.com###ttbar-apps > .cw-icon.dt
 html.duckduckgo.com##+js(href-sanitizer, a[href^="//duckduckgo.com/l/?uddg="], ?uddg)
 https://github.com/AdguardTeam/AdguardFilters/issues/51221
 hubei.gov.cn#@##ad-side
+huggingface.co##a[href^="https://play.google.com/store/apps/"]
 humblebundle.com###_evidon-barrier-wrapper
 humblebundle.com###_evidon_banner
 humblebundle.com###eu-cookie-warning-banner
 humblebundle.com###site-xpromo-banner
+humblebundle.com##.social:not(body)
 huxiu.com##li:nth-of-type(1) > .header-top-list__link > .flip-wrap > .flip-up
 i.mi.com##div[class^="order-"][class*="policy-"]
 icbc.com.cn###kv-admain > div[id$="_1900_380"]
@@ -3038,6 +3314,7 @@ image.baidu.com###plz-albums
 image.baidu.com###plz-head-banner
 image.baidu.com###relEcom
 image.baidu.com###relecom54
+image.baidu.com##.boxBanner
 image.baidu.com##.ford-tag
 image.baidu.com##.imglist > .fcImgli
 image.baidu.com##.mod-promo
@@ -3103,6 +3380,8 @@ instagram.com#@#div[style="max-height: inherit; max-width: inherit;"]:has(span:h
 instagram.com#@?#article[class] > div[class]:-abp-has(span:-abp-contains(/Anzeige|Gesponsert|Sponsored|Geborg|Sponzorováno|Sponsoreret|Χορηγούμενη|Publicidad|Sponsoroitu|Sponsorisé|Bersponsor|Sponsorizzato|広告|광고|Ditaja|Sponset|Gesponsord|Sponsorowane|Patrocinado|Реклама|Sponsrad|ได้รับการสนับสนุน|May Sponsor|Sponsorlu|赞助内容|贊助|প্রযোজিত|પ્રાયોજિત|स्पॉन्सर्ड|Sponzorirano|ಪ್ರಾಯೋಜಿತ|സ്‌പോൺസർ ചെയ്‌തത്|पुरस्‍कृत|प्रायोजित|ਪ੍ਰਾਯੋਜਿਤ|මුදල් ගෙවා ප්‍රචාරය කරන ලදි|Sponzorované|விளம்பரதாரர்கள்|స్పాన్సర్ చేసింది|Được tài trợ|Спонсорирано|Commandité|Sponsorizat|Спонзорисано/))
 instagram.com#@?#article[role="presentation"] > div[style]:-abp-has(span:-abp-contains(/Anzeige|Gesponsert|Sponsored|Geborg|Sponzorováno|Sponsoreret|Χορηγούμενη|Publicidad|Sponsoroitu|Sponsorisé|Bersponsor|Sponsorizzato|広告|광고|Ditaja|Sponset|Gesponsord|Sponsorowane|Patrocinado|Реклама|Sponsrad|ได้รับการสนับสนุน|May Sponsor|Sponsorlu|赞助内容|贊助|প্রযোজিত|પ્રાયોજિત|स्पॉन्सर्ड|Sponzorirano|ಪ್ರಾಯೋಜಿತ|സ്‌പോൺസർ ചെയ്‌തത്|पुरस्‍कृत|प्रायोजित|ਪ੍ਰਾਯੋਜਿਤ|මුදල් ගෙවා ප්‍රචාරය කරන ලදි|Sponzorované|விளம்பரதாரர்கள்|స్పాన్సర్ చేసింది|Được tài trợ|Спонсорирано|Commandité|Sponsorizat|Спонзорисано/))
 instagram.com#@?#div[style="max-height: inherit; max-width: inherit;"]:-abp-has(span:-abp-contains(Paid partnership with ))
+intellij-support.jetbrains.com##.g-row > .margin-bottom-vertical-unit-half:not(.g-col)
+interactive.libsyn.com##.container > div.alert:has(ul.social-list)
 interactive.libsyn.com#@#iframe[width="100%"][height="90"]
 interactivebrokers.com###cookie-modal ~ .modal-backdrop:not(.modal-backdrop + .modal-backdrop)
 interactivebrokers.com##.modal-backdrop
@@ -3269,6 +3548,7 @@ jetbrains.com##.slideup-banner
 jianshu.com###index-aside-download-qrbox
 jianshu.com###note-fixed-ad-container
 jianshu.com###recommended-notes
+jianshu.com###share
 jianshu.com###web-nav-app-download-btn
 jianshu.com###web-note-ad-1
 jianshu.com##._13lIbp
@@ -3317,6 +3597,8 @@ jingyan.baidu.com##.right-fixed-related-wrap
 jingyan.baidu.com##.task-panel-entrance
 jingyan.baidu.com##.wgt-cms-banner
 jingyan.baidu.com##.wgt-cms-banner, .right-fixed-related-wrap, #bottom-ads-container
+jp.techcrunch.com###social-after-wrapper
+jp.techcrunch.com##body #stcky-footer
 jr.jd.com###app-jr
 jr.jd.com##.app.ui-sidebar-block
 juejin.cn##.activity-recommend
@@ -3327,14 +3609,22 @@ juejin.cn##.bottom-login-guide
 juejin.cn##.login-guide-wrap
 juejin.cn##.recommend-box
 juejin.cn##.recommend-box > .extension
+juejin.cn##.share-btn:not(.report-btn)
+juejin.cn##.share-title
 juejin.cn##.sidebar-bd-entry
 juejin.cn##.source-vip
+juejin.cn#@#.share-btn
 k.sina.cn#$#.sina_sliders_pos { display: none !important; }
 k.sina.cn#$#body.body_p { margin-top: 0 !important; }
 k.sina.com.cn##.tab_related_app_imglink
 keep.google.com##.N4imRe-DWWcKd-EfADOe
 kickstarter.com###react-consent-modal
+kickstarter.com##.border-top-md > div.nested-full-width-xs
+kickstarter.com##.bttn-facebook
+kickstarter.com##.facebook
 kickstarter.com##.mobile > .shadow-high.relative:first-child
+kickstarter.com##.react_share_icons
+kickstarter.com##.twitter
 kraken.com##.kraken-cookie-warning
 labs.google.com#@##google-hats-survey
 larksuite.com###sc-cookie-banner
@@ -3349,6 +3639,8 @@ lenovo.com##.siteAlertMessage
 lestore.lenovo.com##.pin-banner
 lesuobingdu.360.cn##.top-banner
 libsyn.com###share
+linktr.ee##button[aria-label="Share"]
+linktr.ee##div[data-testid="ShareModal-ShareList"]
 linktr.ee##div[data-testid="SubscribeCta"]
 linktr.ee##div[data-testid="TopBar"]
 linux.do#$#div.topic-in-gated-category { display: none !important; }
@@ -3375,6 +3667,7 @@ lynkco.com.cn##.privacyPolicy
 m.163.com##.floatMenu-backflow
 m.163.com##.floatMenu-logo
 m.163.com##.js-open-app
+m.163.com##.operate-share
 m.163.com##footer > span
 m.accuweather.com###app-store-links
 m.baidu.com###banner_call + div[id]
@@ -3385,6 +3678,9 @@ m.baidu.com###page-copyright
 m.baidu.com###page-copyright > div[style^="position: fixed;"][style*="height: 52px;"]
 m.baidu.com###results > div[class]:not(.result):not(.result-op):not(.sp-rslt-bar):not(.s-group-result):not(.hint-unsafe)
 m.baidu.com##.blank-frame
+m.baidu.com##.c-line-bottom > div.c-row > div[class^="ad-layout-"]
+m.baidu.com##.c-line-bottom > div.c-row > div[class^="ad-layout-"] + div[class]
+m.baidu.com##.c-touchable-feedback[rl-node][rl-highlight-self][style^="padding-bottom:"]:not([data-module]) > a[href^="https://m.baidu.com/from"][target="_self"][data-log]
 m.baidu.com##.callicon-wrap
 m.baidu.com##.ec_adv
 m.baidu.com##.ec_wise_ad
@@ -3395,13 +3691,17 @@ m.baidu.com##.water-container.tab-news-content
 m.baidu.com##DIV#se-recommend-word-list-container.se-recommend-word-list-container
 m.baidu.com##a[href*="m.lecai.com"]
 m.baidu.com##div[class^="mkt-ball-wrapper__"]
+m.baidu.com##div[data-module="rec:undefined-undefined"]
+m.baidu.com##div[data-tpl="jr_stock_open_account"] > div.c-result-content
 m.baidu.com##div[srcid="mkt_entrance_ball"]
+m.baidu.com#?#.c-list > div.c-list-item:has(> div[class] > p[class] ~ div > span[class^="new-ad-label"])
 m.baidu.com#?#div:-abp-has(>.openBox-container)
 m.baidu.com#?#div:-abp-has(>div[id$="_1"]+div[id$="_5"])
 m.baidu.com#@##results > div[class]:not(.result):not(.result-op):not(.sp-rslt-bar):not(.s-group-result)
 m.baidu.com#@##results > div[class]:not(.result):not(.result-op):not(.sp-rslt-bar):not(.s-group-result):not(.hint-unsafe)
 m.bilibili.com##.bottom-tab:contains(App)
 m.bilibili.com##.container:contains(打开App)
+m.bilibili.com##.fe-ui-open-app-btn
 m.bilibili.com##.launch-app-btn > a:contains(App)
 m.bilibili.com##.launch-app-btn:contains(打开APP)
 m.bilibili.com##.m-home-float-openapp
@@ -3417,6 +3717,10 @@ m.bilibili.com##div[class*="mplayer-widescreen-callapp"]
 m.bilibili.com##div[class*="openapp"]
 m.bilibili.com##div[class^="open-app-btn"]
 m.bilibili.com#?#.story-nav.bottom:has(> .launch-app-btn)
+m.cna.com.tw##.fancybox-wrap
+m.cna.com.tw##.fancybox-wrap + .fancybox-overlay
+m.cna.com.tw##.inner_social
+m.cna.com.tw##.linebtn2
 m.dongchedi.com##.float-open-app-btn.float-open-app
 m.dongchedi.com##.mui-dialog__no-spacing.mui-dialog
 m.dongchedi.com##.open-app
@@ -3448,10 +3752,19 @@ m.douban.com#$#.TalionNav { padding-bottom: 30px !important; }
 m.douban.com#$#.TalionNav-static { display: none !important; }
 m.douban.com#?#a:contains(用App看更多)
 m.douban.com#?#div:matches-css(width:68px)
+m.gsmarena.com###specs-list > .align-center:has(> pgs-ad)
+m.gsmarena.com##.adv-bottom
+m.gsmarena.com##.adv-mid
+m.gsmarena.com##.adv-top
+m.gsmarena.com##.align-center[style^="padding-bottom: 17px; min-height: 318px"]
+m.gsmarena.com##.share-buttons > a[class*="-share-button"]
+m.gsmarena.com##.top-adv
 m.huxiu.com###qr_code_pc
+m.icbc.com.cn##div[data-collecting-aname="手机网站首页主图广告"]
 m.ithome.com##.hot-app
 m.ithome.com##.open-app-a
 m.iyf.tv##.container:has(> div.download-title)
+m.iyf.tv#%#//scriptlet("adjust-setInterval", "isPeriodic", "", "0.02")
 m.jd.com###imk2FixedBottom
 m.jd.com###imk2FixedSideText
 m.jd.com###m_common_tip
@@ -3463,12 +3776,15 @@ m.jd.com##DIV.modal__mask
 m.jd.com##DIV.modal__wrap
 m.jd.com##div[id^="imk2Fixed"]
 m.mi.com##.download-app-go
+m.smzdm.com##.footer-banner
 m.sohu.com###artLifeService
 m.sohu.com##.art-rec-news
 m.sohu.com##.art-sogou-hotw
 m.sohu.com##.article-main > div:nth-of-type(3)
 m.sohu.com##.cbd-backtop
 m.sohu.com##.cbd-top-bar
+m.sohu.com##.common-ad
+m.sohu.com##.f-list > div[data-spm^="ad-"]
 m.sohu.com##.feed-list-scoped > div[data-spm-type="content"]
 m.sohu.com##.fr
 m.sohu.com##.index.new.fixed.fixed-setto-desktop
@@ -3483,6 +3799,8 @@ m.soundcloud.com#$#body { overflow: auto !important; }
 m.soundcloud.com#$#div[class^="Tooltip_TooltipOverlay__"] { display: none !important; }
 m.taobao.com###tcodeSideBar
 m.taobao.com##.install-app
+m.taobao.com##body > button[style*="position: fixed;"]
+m.taobao.com##body > div#SLK_manualPopBox
 m.thepaper.cn###bottomBanner
 m.thepaper.cn###moblink_moreread
 m.thepaper.cn###newDetailHotRecommend
@@ -3494,6 +3812,7 @@ m.thepaper.cn##.moblink_btn-650-white
 m.thepaper.cn##a[data-statclick="downloadApp"]
 m.thepaper.cn##div[class^="index_footer_banner"]
 m.thepaper.cn##div[class^="index_footer_banner__"]
+m.thepaper.cn##iframe[src^="https://adproject.thepaper.cn/"]
 m.thepaper.cn##li.icon_openapp
 m.tv.sohu.com##.btn-xz-app
 m.tv.sohu.com##.js-app-topbanner.actv-banner
@@ -3514,6 +3833,7 @@ m.xiaomiyoupin.com##[src="//m.xiaomiyoupin.com/shopcenter/erised/index.html"]
 m.xiaomiyoupin.com#@#[style*="mi-img.com"]
 m.yicai.com###app1
 m.yicai.com###appdownload
+m.yicai.com##.crystalAD
 m.yicai.com##.linkapp
 m.yicai.com##.m-float-appopen
 m.you.163.com##.close.u-icon-modalClose.u-icon
@@ -3541,7 +3861,9 @@ m.youtube.com##.pivot-bar-slide-in
 m.youtube.com##.rich-section-content
 m.youtube.com##.video-ads.ytp-ad-module
 m.youtube.com##.ytm-player-endscreen
+m.youtube.com##a[onclick*='"ping_url":"http://www.google.com/aclk?']
 m.youtube.com##lazy-list > ad-slot-renderer
+m.youtube.com##ytm-button-renderer.icon-share_arrow
 m.youtube.com##ytm-comments-entry-point-header-renderer
 m.youtube.com##ytm-companion-slot[data-content-type] > ytm-companion-ad-renderer
 m.youtube.com##ytm-item-section-renderer[section-identifier="related-items"]
@@ -3549,6 +3871,7 @@ m.youtube.com##ytm-paid-content-overlay-renderer
 m.youtube.com##ytm-rich-item-renderer > ad-slot-renderer
 m.youtube.com##ytm-slim-video-metadata-section-renderer
 m.youtube.com##ytm-topbar-menu-button-renderer
+m.youtube.com##ytm-watch-metadata-app-promo-renderer
 m.youtube.com#$#abort-on-property-write adBreakHeartbeatParams
 m.youtube.com#$#body > c3-overlay.bottom-sheet-overlay-scrim + div.ytm-bottom-sheet-overlay-container { display: none !important; }
 m.youtube.com#$#body > c3-overlay.bottom-sheet-overlay-scrim { display: none !important; }
@@ -3568,8 +3891,10 @@ m.youtube.com#$#simulate-mouse-event 'span.ytp-ad-preview-container$delay=0'; si
 m.youtube.com#$#simulate-mouse-event 'span.ytp-ad-preview-container$delay=0'; simulate-mouse-event 'button.ytp-ad-skip-button-modern$continue,delay=100'; simulate-mouse-event 'button.ytp-skip-ad-button$continue,delay=100';! url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt
 m.youtube.com#$#skip-video 'video.html5-main-video' './/div[@id="ytlr-player__player-container"]//div[contains(@class,"ad-interrupting") or contains(@class,"ad-showing")]';
 m.youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots')
+m.youtube.com#%#//scriptlet('set-cookie-reload', 'visitor', '1')
 m.youtube.com#%#//scriptlet('trusted-click-element', '.ytm-bottom-sheet-overlay-renderer-container > .ytm-bottom-sheet-overlay-renderer-header[style*="m.youtube.com/static/open-app."] > ytm-button-renderer.icon-close button.yt-spec-button-shape-next', '', '2000')
 m.youtube.com#%#//scriptlet('trusted-click-element', 'ytm-consent-bump-v2-renderer .dialog-scrollable-content > .one-col-dialog-buttons > ytm-button-renderer.eom-reject button.yt-spec-button-shape-next', '', '2000')
+m.youtube.com#@#a[onclick*="\"ping_url\":\"http://www.google.com/aclk?"]
 m5.baidu.com###banner_call + div[id]
 m5.baidu.com#?#div:-abp-has(>.openBox-container)
 m5.baidu.com#?#div:-abp-has(>div[id$="_1"]+div[id$="_5"])
@@ -3596,6 +3921,7 @@ macrumors.com##div[id^="adplaceholder"]
 macrumors.com#?##root > h1#page-title ~ div div#maincontent > article:has(> div[class^="titlebar--"]:contains(/^Deals:/))
 macstories.net##.ad-container
 macstories.net##.follow
+macstories.net##.social:not(body)
 mail.163.com##.emailSuggest,#theme,.gWel-bottom
 mail.163.com##.gWel-bottom
 mail.163.com##div[id$="_AdDiv"]
@@ -3608,8 +3934,10 @@ mail.google.com###sdppromo
 mail.google.com##.aeF > .nH > .nH[role="main"] > .aKB
 mail.google.com##.nH.PS
 mail.google.com##a[href^="http://li.blogtrottr.com/click?"]
+mail.google.com##div[class][style^="min-height:"] > form[role="search"] ~ div[class*=" "][style=""]
 mail.google.com##header[role="banner"] > div[class] > div.gb_yf > div.gb_gc[role="dialog"][aria-label$="Google Chrome"]
 mail.google.com##header[role="banner"] > div[class^="gb_"] > div[class^="gb_"][data-ogsr-up] > div[style^="overflow: hidden; position: absolute; top: 0px; width: 370px; z-index:"] > iframe[name="callout"]
+mail.google.com#?##views div[style^="min-height:"] > form ~ div[class][style]:has(> div[class] > div[class][id] > div[class] > div[class]:contains(Ad))
 mail.google.com#?#.aeF > .nH > .nH[role="main"] > .aKB:has(> div)
 mail.google.com#?#iframe[src^="https://ogs.google.com"][src*="/widget/callout/"]:upward(div[style^="overflow: hidden; position: absolute; top: 0px; width:"])
 mail.google.com#@#div[aria-label="Ads"]
@@ -3637,6 +3965,7 @@ manga18fx.com#$#abort-on-property-read Math.floor
 manga18fx.com#%#//scriptlet('abort-current-inline-script', 'document.querySelectorAll', 'popMagic')
 manga18fx.com#%#//scriptlet('prevent-fetch', 'realsrv.com')
 mangapark.net##.ad-page-3x
+mangapark.net##.max-w-screen-2xl > a[target="_blank"][rel]
 mangapark.net##div[claass="ad-970x250"]
 manhua.weibo.com###p-nav-fix + .p-area.w980
 manhwa-raw.com##+js(abort-on-property-write, advads_passive_placements)
@@ -3652,6 +3981,7 @@ map.baidu.com###fis_elm__6
 map.baidu.com###mapBanner
 map.baidu.com###message-panel
 map.baidu.com##.damoce-search-item
+map.baidu.com##.poiLeadDownloadCard
 map.baidu.com##.search-item[data-stat-code="poisearch.damoce.item"]
 map.baidu.com#%#//scriptlet('set-cookie', 'showLoginPopup', '1')
 map.baidu.com#%#//scriptlet('set-local-storage-item', 'firstEnter', 'false')
@@ -3667,6 +3997,7 @@ mayoclinic.org##.internal-promo-stack-order + div.internal.side
 mayoclinic.org##.mayoad
 mayoclinic.org##.mayoad > .policy
 mayoclinic.org##.myc-subscription-form
+mayoclinic.org##.social:not(body)
 mbd.baidu.com###content_wrapper + div + .default-container
 mbd.baidu.com##.related-news > section:first-child + div
 mbd.baidu.com##div[class^="_"][style="visibility: visible;"]
@@ -3676,17 +4007,23 @@ media.netflix.com#@##cookieAlert
 medium.com##.abs.abr.yu.m
 medium.com##.adm.adl.abi.m, .bg.adn.abg.adp
 medium.com##.butterBar--CCPA
+medium.com##.dm[aria-label="Share Post"]
 medium.com##.js-directEmailSignup
 medium.com##.ky.ku.u.ut.aj.kw.kp.df.mj, .z.cw.s, .ug.uf.s.ue, .s.qn.qm
 medium.com##.paragraph-image > a[href="http://medium.com/pythoneers"]
 medium.com##.screenContent > .u-zIndexMetabar
 medium.com##[class][style="bottom: 0px;"]
 medium.com##a[href^="https://rsci.app.link"]
+medium.com##body > div:not([class]):not([id]) > div.o.kt
 medium.com##body > div:not([class]):not([id]) > div[class*=" "]:has(> div > div > div[class] > a[href^="https://policy.medium.com/medium-privacy-policy-"])
+medium.com##button[aria-label^="Share on"]
 medium.com##div > .branch-journeys-top
 medium.com##div:has(div[role='alert'] > a[href^="https://policy.medium.com/medium-privacy-policy-"])
+medium.com##div[aria-describedby="postFooterSocialMenu"]
 medium.com##div[id*="ShowPostUnderUser-navbar-open-in-app-button"]
 medium.com##div[role="dialog"] ~ div > div[style="bottom: 0px;"]
+medium.com##div[style*="position: absolute;"][style*="transform: translate"] button > svg[width="25px"][height="25px"][viewBox="0 0 24 24"]:has(> path[d^="M13."]:not([fill-rule]))
+medium.com##header.pw-post-byline-header > div[class] + div[class] > div[class] > div > [aria-describedby]
 medium.com#$#html { overflow-y: visible!important; }
 medium.com#%#//scriptlet('ubo-set-local-storage-item.js', '201805-policy|accepted', '1')
 medium.com#?##root div[style^="top:"][style*="50vh"]:has(span > button:contains(Sign up for free))
@@ -3695,11 +4032,15 @@ medium.com#?#div:not([class]):has(> a[href^="/plans?source=upgrade_membership-"]
 medium.com#?#div[class*=" "]:has(> div[class*=" "] > h2[class*=" "]:contains(/^Get unlimited access/))
 medium.com#?#div[data-test-id="post-sidebar"] ~ div:not([class]) div ~ div[class]:has(> div[class] > h2[class]:contains(/^Get an email|^Sign up for/))
 medium.com#?#div[role="dialog"] ~ div > div > div > div > div > h2:contains(/^Get an email|Sign up for/):upward(2)
+medium.com#@#div[data-popper-placement]
 meethue.com###sliding-popup
 meituan.com##.banner-download
 meituan.com##.component-downtip
+member.bilibili.com#@#.share-page
 merriam-webster.com###gdpr
 merriam-webster.com###recirc-bar-footer
+merriam-webster.com###social-links
+merriam-webster.com###social-sidebar-container
 merriam-webster.com###subscribe-overlay
 merriam-webster.com##+js(aopr, __cmpGdprAppliesGlobally)
 merriam-webster.com##.abl
@@ -3707,8 +4048,10 @@ merriam-webster.com##.cafemedia-ad-slot-top
 merriam-webster.com##.footer-subscribe-block
 merriam-webster.com##.home-redesign-ad
 merriam-webster.com##.home-top-creative-cont
+merriam-webster.com##.mobile-fixed-ad
 merriam-webster.com##.mw-right-ad-slot
 merriam-webster.com##.right-content-box.active-subscribe
+merriam-webster.com##.share-icons
 merriam-webster.com##.social-link
 merriam-webster.com##.word-of-day-subscribe-block
 merriam-webster.com##.wotd-side__subscribe
@@ -3730,10 +4073,12 @@ mi.com##span.sep:nth-of-type(10)
 mi.com#$#body { overflow: visible !important; }
 mi.com#$#div[id^="J_cookie_settings_"] { display: none !important; }
 mirror.xyz##div[class]:has(> div[class]:only-child > div[class]:first-child + form:last-child > div[class]:first-child > input[name="email"])
+mobile.baidu.com##.detail-banner
 mobile.baidu.com##.p_fixed_lb
 mobile.baidu.com##SECTION.detail-banner.banner-ck
 mobile.mi.com##.agree-tokens-modal
 mobile.mi.com##.header-storeapp
+mobile.mi.com##.product-information__share
 mobile.twitter.com##.rn-13w96dm
 mobile.twitter.com##.rn-1kihuf0.rn-1awozwy
 mobile.twitter.com##div[data-testid=sidebarColumn] section[aria-label][role=region]
@@ -3748,6 +4093,7 @@ mozilla.org###firefox-daylight-promo
 mozilla.org##.mobile-download-buttons-wrapper
 mozilla.org##.mzp-c-newsletter
 mozilla.org##.mzp-c-sticky-promo
+mozilla.org##.share
 mozilla.org#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
 mp.weixin.qq.com###js_pc_qr_code
 mse.360.cn##a[id^="banner"]
@@ -3758,7 +4104,11 @@ music.163.com##.m-homeft
 music.163.com##.m-moreLists
 music.163.com##.topfr
 music.163.com##.u-ft
+music.apple.com##.product-page-header__metadata > div.button-content > div.cloud-button-container
 music.apple.com##.upsell-banner
+music.apple.com##button[aria-label^="Share"]
+music.apple.com##button[title^="共有"]
+music.apple.com#?#.context-menu--submenu > ul > li[class=" context-menu__option"]:has(> span.context-menu__option-text > span.context-menu__option-text-clamp:contains(/^(Twitter|Facebook)$/))
 music.youtube.com##+js(href-sanitizer, a[href^="https://www.youtube.com/redirect?event=video_description"][href*="&q=http"], ?q)
 music.youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important)
 music.youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots)
@@ -3801,6 +4151,7 @@ neowin.net###sidebar > div.category-bar[style^="padding-top:0px;color:#eeeeee"]
 neowin.net###sidebar > div.widget-content
 neowin.net###sidebar > div.widget-header
 neowin.net##.ad
+neowin.net##.article-share
 neowin.net##.category-bar
 neowin.net##.deals
 neowin.net##.footer-banner
@@ -3809,6 +4160,7 @@ neowin.net##.ipsLayout_sidebarright  > div.cWidgetContainer > ul.ipsList_reset >
 neowin.net##.sidebar-col .ad
 neowin.net##.sidebar-col > a[href^="https://www.neowin.net/subscribe/"][target]
 neowin.net##.social
+neowin.net##.twitter-follow-button
 neowin.net##.verdict-badge
 neowin.net##.widget-ad
 neowin.net##.widget-ad + div.widget-header
@@ -3817,11 +4169,15 @@ neowin.net##a[href^="https://news.google.com/publications/"]
 neowin.net##article[class^="classes "]:not([itemscope]):not(itemtype):not([id^="elComment_"])
 neowin.net##div.trending-item-title[class*="w_stackcn"] > span[class*="rec"]
 neowin.net##div[style^="float:left"]
+neowin.net##li[id^="article-interact-"]
 neowin.net#$#.banner-square { height: 0!important; min-height: 0!important; margin: 0!important; padding: 0!important; display: none!important; }
 neowin.net#$#.news-list > .news-item[style="display: none !important;"] + .news-item { padding-left: 0px !important; }
+neowin.net#$#body > div[class^="sp_"] { display: none!important; }
+neowin.net#$#body > div[id^="sp_"] { display: none!important; }
 neowin.net#$#div[class^="banner-"] { height: 0!important; min-height: 0!important; margin: 0!important; padding: 0!important; display: none!important; }
 neowin.net#$?#.news-item--sharethrough { remove: true; }
 neowin.net#$?#.news-list > .news-item:has( > .news-item-promo > .news-item-thumb > a > .sponsored) { remove: true; }
+neowin.net#%#!function(){function b(){}function a(a){return{get:function(){return a},set:b}}function c(a){a(!1)}AG_defineProperty('_sp_.config.content_control_callback',a(b)),AG_defineProperty('_sp_.config.spid_control_callback',a(b)),AG_defineProperty('_sp_.config.vid_control_callback',a(b)),AG_defineProperty('_sp_.config.disableBlockerStyleSheets',a(!1)),AG_defineProperty('_sp_.checkState',a(c)),AG_defineProperty('_sp_.isAdBlocking',a(c)),AG_defineProperty('_sp_.isAdblocking',a(c)),AG_defineProperty('_sp_.isContentBlockerPresent',a(c)),AG_defineProperty('_sp_.getSafeUri',a(function(a){return a})),AG_defineProperty('_sp_.pageChange',a(b)),AG_defineProperty('_sp_.setupSmartBeacons',a(b)),AG_defineProperty('_sp_.msg.startMsg',a(b)),document.addEventListener('sp.blocking',function(a){a.stopImmediatePropagation(),a=document.createEvent('Event'),a.initEvent('sp.not_blocking',!0,!1),this.dispatchEvent(a)})}();
 neowin.net#?#.ipsColumns_collapsePhone.classes:-abp-contains(Our Sponsors)
 neowin.net#?#.sidebar-col > .category-bar[style] > div > #revue-form:upward(2)
 neowin.net#@##ipsLayout_contentWrapper > .ipsResponsive_hidePhone
@@ -3829,6 +4185,7 @@ neowin.net#@#.article-share
 netflix.com###cookie-disclosure
 netflix.com##.cookie-disclosure-visible
 netflix.com##div[data-testid="CookieBanner"]
+netflix.com##section[data-guid^="article-social-share-buttons"]
 netflix.com#%#(() => { var ReplaceMap = {adBreaks: [], adState: null, currentAdBreak: 'undefined'}; Object.defineProperty = new Proxy(Object.defineProperty, { apply: (target, thisArg, ArgsList) => { var Original = Reflect.apply(target, thisArg, ArgsList); if (ArgsList[1] == 'getAdBreaks' || ArgsList[1] == 'getAdsDisplayStringParams') { return Original[ArgsList[1]] = function() {}; } else if (ArgsList[1] == 'adBreaks' || ArgsList[1] == 'currentAdBreak' || typeof Original['adBreaks'] !== 'undefined') { for (var [key, value] of Object.entries(Original)) { if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] !== 'undefined') { Original[key] = ReplaceMap[key]; } else if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] === 'undefined') { Original[key] = undefined; } } return Original; } else { return Original; }}})})();
 new.m.taobao.com##[style*="top: 0px"]
 new.qq.com###Recomend
@@ -3837,6 +4194,7 @@ new.qq.com##.download-banner
 new.qq.com##.godown.qqcom_fb-item
 new.qq.com##.group-pic-bar
 new.qq.com##.hot-choice-bar
+new.qq.com##.operation:has(> .share-list)
 new.qq.com##.original-bar
 new.qq.com##.share
 new.qq.com##.tuijian-bar
@@ -3858,7 +4216,10 @@ news.163.com##.mod_pageh5
 news.163.com##a[href^="http://g.163.com/"]
 news.163.com#?#div[ne-module="/modules/slide/slide.js"]:-abp-has(.ad_hover_pic)
 news.abplive.com###cookieViewApp
+news.abplive.com##._viewInApp
+news.abplive.com##.ad-container-outer
 news.abplive.com##.join-channels-wrap
+news.abplive.com##div[style="min-height:280px;"]
 news.baidu.com###detail-HotScrollNews-wrapper
 news.baidu.com###favoriteTips
 news.baidu.com###women-picwall
@@ -3866,10 +4227,12 @@ news.baidu.com##.recommend-animate
 news.baidu.com##.recommend-mask
 news.baidu.com##.swipe-backflow-container
 news.baidu.com#?#.index-list-item:-abp-has(.tip-time:-abp-contains(广告))
+news.google.com##div[class] > div[class] + div[class] > span[jscontroller] > div[role="button"][aria-label]
 news.google.com##div[class^="gb_"][data-cbh="consent.google.com"]
 news.google.com#?#header[role="banner"] > div:has(> div > div > span[style="color:#ffffff"] + a[role="button"])
 news.google.com#?#iframe[src^="https://ogs.google.com"][src*="/widget/callout/"]:upward(div[style^="overflow: hidden; position: absolute; top: 0px; width:"])
 news.samsung.com##.snr-newsletter
+news.samsung.com##div[class^="snr-article"][class*="share"]
 news.samsung.com#%#//scriptlet('ubo-set-cookie.js', 'COOKIECONSENT', 'false')
 news.samsung.com/us/?noti=$image
 news.sohu.com##.god-first
@@ -3878,16 +4241,20 @@ newscientist.com##.ArticleHeader__SocialWrapper
 newscientist.com##.NewsletterPromotion
 newscientist.com##.Outbrain
 newscientist.com##.SidebarNewsletterWrapper
+newscientist.com##.article-body .social__button-container
+newscientist.com##.article__footer div.social__button-container
 newscientist.com##.issue-promotion
 newscientist.com##.leaderboard-container
 newscientist.com##.mpu
 newscientist.com#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 newscientist.com#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
 newscientist.com#$#html > body.tp-modal-open { overflow: auto !important; }
+newsroom.spotify.com##button[data-toggle="share-dropdown"]
 newyorker.com##+js(nofab)
 newyorker.com##+js(set, paywallGateway.truncateContent, noopFunc)
 newyorker.com##.cm-footer__failsafe
 newyorker.com##.cm-footer__wrapper
+newyorker.com##.cne-video-buttons
 newyorker.com##.journey-template--footer
 newyorker.com##.journey-unit
 newyorker.com##.newsletter-subscribe-form
@@ -3904,6 +4271,9 @@ newyorker.com##div[class^="StickyHeroAdWrapper-"]
 newyorker.com##div[class^="paywall"]
 newyorker.com##div[data-testid="message-banner"]
 newyorker.com##inline-embed
+newyorker.com##li[data-source="facebook"]
+newyorker.com##li[data-source="twitter"]
+newyorker.com##ul[data-testid="socialIconslist"] > li:not([class*="social-icons__list-item--bookmark"])
 newyorker.com#$?#figure[data-testid="cne-interlude-container"] { remove: true; }
 newyorker.com#?#.tny-interactives-story > div > div[class^="styles-module--rules--"]:has(> .ad__slot)
 newyorker.com#?#div[class^="LinkStackContent-"] > div[class^="LinkStackFooter-"]:has(> div a[href="https://www.newyorker.com/newsletter/daily"])
@@ -3911,16 +4281,20 @@ newyorker.com#?#div[class^="PageSections__container"] > section[class^="SoloProm
 newyorker.com#?#div[class^="PageSections__container"] > section[class^="SoloPromoSection__promoWrapper"]:has(> div[class^="SoloPromoSection__promoColumn"] > p[class^="SoloPromoSection__promo"] > span > a[href^="https://subscribe.condenastdigital.com"])
 newyorker.com#@#.ad-container
 nlc.gov.cn###lovexin12xx
+notebookcheck.net###content > .ttcl_0 > .tx-nbc2fe-incontent-column > .first_incontent
 notebookcheck.net###contenta
 notebookcheck.net###sncmp-container
 notebookcheck.net##+js(abort-current-script, navigator, Flags.autoRecov)
 notebookcheck.net##+js(abort-on-property-read, Object.prototype.autoRecov)
 notebookcheck.net##.nbc-right-float
+notebookcheck.net##.socialarea
 notebookcheck.net#%#//scriptlet("abort-current-inline-script", "navigator", "Flags.autoRecov")
 notebookcheck.net#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")
 notebookcheck.net#%#window.uabpdl = window.uabInject = true;
+notebookcheck.net#?#.nbc-right-float-inline:has(> div[id^="adngin-"])
 notion.site#%#//scriptlet('set-cookie', 'notion_cookie_consent', '0')
 notion.so##+js(no-fetch-if, splunkcloud.com/services/collector)
+notion.so##.social-share
 notion.so##.spacer + div.signup-wrap
 notion.so#%#//scriptlet('set-cookie', 'notion_cookie_consent', '0')
 npr.org###ad-backstage-wrap + div.flex-location-wrap
@@ -3930,6 +4304,8 @@ npr.org##.ad-config
 npr.org##.callout--newsletter
 npr.org##.img.bucket
 npr.org##.newsletter-subscription
+npr.org##.share
+npr.org##.social:not(body)
 npr.org##.subscribe
 npr.org##.tp-modal
 npr.org##aside[aria-label="advertisement"]
@@ -3949,6 +4325,7 @@ nytimes.com###mid1-wrapper.eaca97t0
 nytimes.com###mid2-wrapper.eaca97t0
 nytimes.com###mktg-wrapper.eaca97t0
 nytimes.com###pz-gdpr
+nytimes.com###site-content > div[class] > div[class^="css-"][class*=" e1"][class*="pa"]
 nytimes.com###site-content > div[class^="css"]:has(> [data-testid="StandardAd"])
 nytimes.com###stream-panel ol > div[id^="mid"][type="supplemental"]
 nytimes.com###top-wrapper
@@ -3964,17 +4341,20 @@ nytimes.com##.css-1yvwzdo
 nytimes.com##.css-brw7hw, div[aria-labelledby="editorial-sub-messaging-header"]
 nytimes.com##.css-bs95eu
 nytimes.com##.css-oeful5
+nytimes.com##.css-p3qvdn
 nytimes.com##.css-wmyc1
 nytimes.com##.e1xxpj0j1.css-4vtjtj
 nytimes.com##.eaca97t1v
 nytimes.com##.expanded-dock
 nytimes.com##.g-paid
 nytimes.com##.gdpr
+nytimes.com##.more-share-item
 nytimes.com##.promo
 nytimes.com##.purr-blocker-card
 nytimes.com##.pz-ad-box
 nytimes.com##.pz-hide-newsreader
 nytimes.com##.reporter-update-container + div[data-place-component="nlsignup"]
+nytimes.com##.vi-gateway-container > div[class^="css-"]:has(> div[class^="css-"] > .ad.mobile_top-wrapper)
 nytimes.com##:xpath(//div[starts-with(@id, "dfp-ad")]/../..)
 nytimes.com##[class]:has(> [id="ad-top"])
 nytimes.com##[data-testid="StandardAd"]
@@ -3984,6 +4364,7 @@ nytimes.com##[id^="story-ad"][id$="wrapper"]
 nytimes.com##article.story:style(opacity: 1.0 !important;)
 nytimes.com##body .ad
 nytimes.com##body > #app > div[class^="css-rpp"][class*=" "] > div[class^="css-"][class*=" "]
+nytimes.com##button[aria-label*="sharing"]
 nytimes.com##button[data-testid="getstarted-magic-link"]
 nytimes.com##div:has(> div[data-testid="StandardAd"]:only-child)
 nytimes.com##div[class^="meter_default shown"][data-testid="standard-dock"][aria-label="A message from The Times"]
@@ -3992,6 +4373,7 @@ nytimes.com##div[data-scp="newsletter"]
 nytimes.com##div[data-testid="gdprDock"]
 nytimes.com##div[data-testid="inline-message"]
 nytimes.com##div[data-testid="onsite-messaging-unit-dock"]
+nytimes.com##div[data-testid="share-tools"] li:not([class^="css-"])
 nytimes.com##div[id*="_MAIN_CONTENT_"][data-testid="region"]
 nytimes.com##div[id^="ad-"]
 nytimes.com##section[aria-labelledby="new-york-section"] > div > div[class^="css"]:has(> #pp_morein-wrapper)
@@ -4022,12 +4404,14 @@ nytimes.com#?#.StoryBodyCompanionColumn > div[class^="css-"] > p[class^="css-"]:
 nytimes.com#?#div[data-hierarchy] div:has(> div > div[class] > div[class] > div[data-testid="StandardAd"])
 nytimes.com#?#div[data-testid="block-Well"] > div[class] > div[data-well-section="well-section"]:has( > div[class] > .ad)
 nytimes.com#?#div[data-testid="block-Well"] > div[class^="css-"] > [class^="css-"][data-well-section="well-section"]:has(> div[class^="css-"] > div > .ad)
+nytimes.com#?#div[data-testid="share-tools"] ul > li[class^="css-"]:has(button[aria-label*="sharing"][aria-haspopup="true"])
 nytimes.com#?#footer + div > span[data-gtm-trigger="cookie_banner_dismiss"]:upward(1)
 nytimes.com#?#footer[role="contentinfo"] + div[class^="_"]:has(> div > span[data-gtm-trigger="cookie_banner_dismiss"])
 nytimes.com#?#section > div[class^="css-"] > div[class^="css-"]:has(> div#pp_morein-wrapper > div.ad)
 nytimes.com#?#section[aria-labelledby="new-york-section"] > div > div[class^="css"] > #pp_morein-wrapper:upward(1)
 nytimes.com#?#section[data-testid="most-popular-play"] + div[class]:has(> div[class] > div[data-testid="StandardAd"])
 nytimes.com#@##bottom-wrapper
+nytimes.com#@#.share-btn
 nytimes.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
 old.reddit.com##.comment .author[href="https://old.reddit.com/user/AutoModerator"]:upward(.comment)
 old.reddit.com##.listingsignupbar
@@ -4037,6 +4421,7 @@ open.163.com###j-hbtj,#j-footertj
 open.nytimes.com##body > div:not([class]):not([id]) > div[class*=" "]:has(> div > div > div[class] > a[href^="https://policy.medium.com/medium-privacy-policy-"])
 open.nytimes.com##div[role="dialog"] ~ div > div[style="bottom: 0px;"]
 open.spotify.com###leaderboard-ad-element
+open.spotify.com##.Root__nav-bar a[href="/download"]
 open.spotify.com##.Root__now-playing-bar > footer[data-testid="now-playing-bar"] > div[data-testid="signup-bar"]
 open.spotify.com##[href^="https://adclick.g.doubleclick.net/"]
 open.spotify.com##a[data-context-item-type="ad"]
@@ -4069,17 +4454,23 @@ pan.baidu.com##.photo-banner
 pan.baidu.com##.wp-side-options
 pan.baidu.com##A.active-msg
 pan.baidu.com##div.content DIV.photo-banner
+pan.baidu.com#@#.share-list
 partner.ads.js$domain=d3ward.github.io
 perplexity.ai##+js(aost, window.screen.height, setTimeout)
 perplexity.ai##.fixed.bottom-md:has(> div[class*="borderMainDark"])
 perplexity.ai##.w-full + div.relative.w-full > div.absolute  > div.flex.w-full.cursor-default.transition-all
 perplexity.ai##.z-50
 perplexity.ai##a[href="/download-android"]
+perplexity.ai##a[href="/download-mobile"]
+perplexity.ai##a[href="https://www.perplexity.ai/download-android"]
+perplexity.ai##button:has(> div > svg[data-icon="share"])
 perplexity.ai##div[class^="border-borderMain"] > div[class="isolate flex flex-col gap-md"][style^="opacity:"] > div.mt-md.flex.items-end.justify-between
 perplexity.ai##div[class^="border-borderMain"] > div[class="isolate flex flex-col gap-md"][style^="opacity:"] > div[class="flex flex-col gap-md"] > div[data-widget-id]
+perplexity.ai##div[class^="framer-"] > div[class^="framer-"]:has(> div[class^="framer-"] > div[style] > div[style^="border-radius:"] > svg)
 perplexity.ai#$#body > div:not([class]):not([id]):not([role]):has(> div.items-stretch + div.flex.items-center .space-y-sm > button.border) { display: none !important; }
 perplexity.ai#%#//scriptlet('prevent-addEventListener', 'wheel', '===a){var n="deltaY"in t?P')
 perplexity.ai#%#//scriptlet('set-cookie', 'trackingAllowed', 'false')
+perplexity.ai#%#//scriptlet('set-local-storage-item', 'appDownloadBannerDismissed', 'true')
 perplexity.ai#%#//scriptlet('set-session-storage-item', 'shouldShowAuthBannerAfterQuery', 'true')
 perplexity.ai#%#//scriptlet('set-session-storage-item', 'signUpBannerDismissed', 'false')
 perplexity.ai#%#//scriptlet('ubo-set-session-storage-item.js', 'appDownloadBannerDismissed', 'true')
@@ -4101,20 +4492,27 @@ photopea.com##div[style^="padding-top: 10px; overflow: hidden; padding-left:"] >
 photopea.com#%#//scriptlet('trusted-set-local-storage-item', '_ppp', '{"capShown":"false"}')
 photopea.com#?#.window:has(> div.body > div > div:contains(ad blocker))
 photopea.com#?#.window:has(> div.body > p:contains(blocked ads))
+photos.google.com##.Ac8dXc > div.x9c2lb
+photos.google.com##.XTW6Hc > button[jsaction^="click:"]
 platform.openai.com##div[data-testid="cookie-consent-banner"]
 platform.twitter.com##+js(cookie-remover, /^/)
 play.acast.com#?##app-root > div[class^="Wrapper-sc-"]:has(> aside[class^="Container-sc-"] > div[class^="Body-sc-"] > a[href="https://www.acast.com/cookies"])
 play.google.com##.gb_Ad.gb_0c.gb_g[style]
 play.google.com##.searchbox-controller > div[class][ng-non-bindable] > div[class][style*="background-color:"]
+play.google.com##button[aria-label="Share"]
 play.google.com##c-wiz > div > div[class][ng-non-bindable] > div[style="background-color: rgb(90, 90, 90);"]
 play.google.com##c-wiz > div > div[class][ng-non-bindable] > div[style="behavior:url(#default#homePage) url(#default#userData);background-color:#5a5a5a"]
+play.google.com##div[data-is-touch-wrapper] > button:has(> span > svg > path[d^="M18 16.08c-"])
 play.google.com##div[id="gb"][style="min-width: 750px;"] > div.gb_nd.gb_Nc[style]
 play.google.com#$##gba.gb_hg { height: 60px!important; }
 play.google.com#$#.gb_ld.gb_Lc.gb_g { display: none!important; }
 play.google.com#@#div[aria-label="Ads"]
+player.bilibili.com##div[class$="sendjumpbar"][style="opacity: 1;"]
 plugins.jetbrains.com##.acceptance-popup
 po.baidu.com###shareBoxBlank
+podcasts.apple.com#?#.we-share ul.we-share__list > li.we-share__list-item:has(> button:not([class*="icon-embed-copylink"]))
 popsci.com##+js(set-constant, Object.prototype.iadb, undefined)
+popsci.com##.Article-socialShare
 popsci.com##.PromotionalStripe
 popsci.com##.arcAdsBox
 popsci.com##.arcAdsContainer
@@ -4144,10 +4542,13 @@ pornhub.com###hd-rightColVideoPage div[id^="f"]
 pornhub.com###hd-rightColVideoPage iframe
 pornhub.com###hd-rightColVideoPage, .cmtPrelaodContainer.js-commentReplacement.video-wrapper, .video-wrapper.hd-videos_wrapper.hd-smallerWidth.sectionWrapper
 pornhub.com###js-abContainterMain
+pornhub.com###jsShare
 pornhub.com###main-container > .abovePlayer
 pornhub.com###pb_block
 pornhub.com###pb_template
 pornhub.com###relatedVideosCenter > li[class^="related"]
+pornhub.com###shareButton
+pornhub.com###shareModal
 pornhub.com###singleFeedSection > .emptyBlockSpace
 pornhub.com###welcome
 pornhub.com##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\x63\x6b\x20\x66\x6f\x72\x20\x70\x6f\x72\x6e\x68\x75\x62)
@@ -4169,6 +4570,8 @@ pornhub.com##.premiumPromoBannerWrapper
 pornhub.com##.realsex
 pornhub.com##.sectionWrapper > .videos[id] > li[class^="sniper"]:not(.videoblock):not(.videobox):not([id^="playlist_"])
 pornhub.com##.sectionWrapper:has(> #bottomVideos > .wrapVideoBlock)
+pornhub.com##.share
+pornhub.com##.share-sites-thumbs
 pornhub.com##.sniperModeEngaged
 pornhub.com##.topAdContainter
 pornhub.com##.underplayer-thumbs
@@ -4203,6 +4606,7 @@ pornhub.com#$#abort-on-property-read HTMLElement.prototype.attachShadow; overrid
 pornhub.com#$#hide-if-matches-xpath './/div[contains(text(),"TrafficJunky")]/parent::div[@style]/ancestor::div[@class][@style]/parent::*[not(self::body) and not(self::div[@class])][1]'
 pornhub.com#$#iframe[title*="Campaign"] { position: absolute!important; left: -3000px!important; }
 pornhub.com#%#//scriptlet('prevent-setTimeout', '\x41\x64\x62\x6c\x6f\x63\x6b\x20\x66\x6f\x72\x20\x70\x6f\x72\x6e\x68\x75\x62')
+pornhub.com#%#//scriptlet('set-constant', 'abp1', '0')
 pornhub.com#%#//scriptlet('set-constant', 'page_params.holiday_promo_prem', 'true')
 pornhub.com#?##relatedVideosCenter > .wrapVideoBlock:has(> .videoSpiceVidsBlock span.bg-spice-badge)
 pornhub.com#?#:-abp-properties(float: right; margin-top: 30px; width: 50%;)
@@ -4211,6 +4615,7 @@ pornhub.com#@#.share-link-container
 pornhub.com#@#[src^="bLob:"]
 pornhub.com#@#[style] > div > iframe[width]:first-child
 pornhub.com#@#a[href^="https://www.moscarossa.biz/"]
+pornhub.com#@#div > [style*="width: 100%;"]:first-child
 pornhub.com#@#div > [style] iframe[width][height]
 pornhub.com#@#iframe[width][height*="px"]
 pos.baidu.com##body
@@ -4223,12 +4628,17 @@ pro.kraken.com##.bottom-0
 pro.m.jd.com##.bottom_tips_wrapper
 pro.m.jd.com##.download-pannel
 producthunt.com##.app_1151c > div.container_3300b
+producthunt.com##.mt-12.direction-row.flex
 producthunt.com##.styles_item__hNPI1
+producthunt.com##div[class*="styles_descriptionContent_"] div[class*="styles_socialButtons_"] > button[class*="Button_"]:not([data-test="collect-button"])
+producthunt.com##div[class*="styles_mobilePopoutAd_"]
 producthunt.com##div[class^="styles_ad"]
 producthunt.com##div[data-test="dismiss-CookiePopup"]
 producthunt.com##div[data-test="dismiss-EmailSubscribeCard"]
+producthunt.com##div[data-test="share-btn"]
 producthunt.com#%#//scriptlet('prevent-addEventListener', 'scroll', 'Math.round(e/n)!==r')
 producthunt.com#%#//scriptlet('ubo-set-cookie.js', 'agreed_cookie_policy', '1')
+producthunt.com#?##__next > div:is([class^="styles_banner__"], [class^="styles_header__"]):has(> div.align-center > a[class*="styles_useAppButton"])
 producthunt.com#?#.layoutSidebar div[class^="styles_item"]:has(> div > img + div.flex > div.flex > a[href="/sponsor"])
 producthunt.com#?#.sidebarWithSeparator > div.flex:has(> a[href="/newsletter"])
 producthunt.com#?#.text-12:-abp-contains(Promoted)
@@ -4236,6 +4646,18 @@ producthunt.com#?#aside[class^="styles_sidebar__"] > div[class^="styles_containe
 producthunt.com#?#div[class*="style_direction-row__"]:has(a[href="/sponsor"])
 producthunt.com#?#div[class^="styles_postsList__"] > div[class^="styles_card__"]:has(input[value^="email_capture_"])
 promote.telegram.org#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links.ads-header.ads-content { display: block !important; }
+promote.telegram.org#@#.ads-content
+promote.telegram.org#@#.ads-header
+promote.telegram.org#@#.pub_300x250
+promote.telegram.org#@#.pub_300x250m
+promote.telegram.org#@#.pub_728x90
+promote.telegram.org#@#.text-ad
+promote.telegram.org#@#.text-ad-links
+promote.telegram.org#@#.text-ads
+promote.telegram.org#@#.textAd
+promote.telegram.org#@#.text_ad
+promote.telegram.org#@#.text_ads
+quad9.net##.base-share-buttons
 redd.it##reddit-cookie-banner
 redd.it##shreddit-async-loader[bundlename="reddit_cookie_banner"]
 reddit.com###SHORTCUT_FOCUSABLE_DIV > div > div:not([class]):not([id]):not([style]) > .hvdZkC
@@ -4246,6 +4668,7 @@ reddit.com###credential_picker_iframe
 reddit.com###eu-cookie-policy
 reddit.com###uapp-banner
 reddit.com###xpromo-small-header.mr-xs
+reddit.com##.BannerAd__320x50
 reddit.com##.EUCookieNotice
 reddit.com##.XPromoBlockingModal
 reddit.com##._1YCqQVO-9r-Up6QPB9H6_4 > div > div:has-text(AutoModerator)
@@ -4274,6 +4697,7 @@ reddit.com##[style^="filter:"]:style(filter: none !important;)
 reddit.com##a[href="#pixel"]
 reddit.com##a[href^="/rpan/"] > h3:has-text(/Top (livestream|broadcast)/):upward(7)
 reddit.com##a[href^="https://PornGameFree.fun"]
+reddit.com##article[id] > a[href^="https://alb.reddit.com/"] ~ *
 reddit.com##div._2vEf-C2keJaBMY9qk_BxVn:nth-of-type(4)
 reddit.com##div[class*="EUCookieNotice"]
 reddit.com##div[class][data-before-content="Werbung"]:not([id])
@@ -4301,6 +4725,7 @@ reddit.com#$#.XPromoBlockingModalRpl { display: none !important; }
 reddit.com#$#.m-blurred { filter: none !important; }
 reddit.com#$#.theme-beta .sidebar-grid.fixed { position: unset !important;}
 reddit.com#$#body > .footer-parent { height: calc(100%)!important; padding:0px!important; }
+reddit.com#$#body > div[style*="backdrop-filter: blur"] { display: none !important; }
 reddit.com#$#body { pointer-events:auto !important; }
 reddit.com#$#body:not([style^="overflow:"]) { pointer-events: auto !important; overflow: auto !important; }
 reddit.com#$#div[class="NavFrame"] div.XPromoBottomBar { display: none !important; }
@@ -4309,6 +4734,7 @@ reddit.com#$#shreddit-async-loader[paint-group="xpromo"][bundlename="app_selecto
 reddit.com#$#shreddit-experience-tree { display: none !important; }
 reddit.com#$?#shreddit-async-loader[bundlename="app_selector"] { remove: true; }
 reddit.com#%#//scriptlet('hide-in-shadow-dom', 'faceplate-tracker[source="xpromo"] #get-app')
+reddit.com#%#//scriptlet('hide-in-shadow-dom', 'xpromo-app-selector')
 reddit.com#%#//scriptlet('hide-in-shadow-dom', 'xpromo-viral-community')
 reddit.com#%#//scriptlet('prevent-addEventListener', 'block-body-scrolling')
 reddit.com#%#//scriptlet('remove-class', 'm-blurred', '.m-blurred')
@@ -4321,7 +4747,11 @@ reddit.com#%#//scriptlet('ubo-set-local-storage-item.js', 'xpromo-consolidation'
 reddit.com#?##AppRouter-main-content > div[class] > div[class^="_"]:has(> div[class^="_"] > img[alt="QR Code to get the Reddit app"])
 reddit.com#?##SHORTCUT_FOCUSABLE_DIV span > a[href$="/policies/cookie-notice"]:upward(section > div[style^="opacity"])
 reddit.com#?##nsfw-qr-dialog:contains(Scan this QR code to download the app now)
+reddit.com#?#.CommentsPage > article[class][id]:has(> div[class] > a > div[class]:contains(Promoted))
 reddit.com#?#.ListingLayout-outerContainer > div[class] > div[style][class] > div[style][class] > div[class] div[class]:not([data-redditstyle]):has(> div[class] > div[class] > .SidebarAd)
+reddit.com#?#.PostsList > div article:has(> .Post__header-wrapper .PostHeader__post-descriptor-line-overflow > span > .PostHeader__promoted-post-descriptor)
+reddit.com#?#.PostsList > div:not([class]):not([id]) > div:not([class]):not([id]) > article.Post:has(> .adLinkBar)
+reddit.com#?#.PostsList > span > article:has(> .adLinkBar)
 reddit.com#?#.XPromoPopup.m-active
 reddit.com#?#.XPromoPopupRpl.m-active
 reddit.com#?#article.Post:-abp-has(a[rel="nofollow noopener sponsored"])
@@ -4384,6 +4814,7 @@ samfw.com##+js(acs, jQuery, banner)
 samfw.com##.social
 samfw.com##[href^="https://samfw.com/clicks/"]
 samfw.com##[href^="https://samfw.com/link/"]
+samfw.com##[id^="btn-share"]
 samfw.com##div[class="text-center"] > a[rel="nofollow"] > img
 samfw.com#$#body div.fc-consent-root { display: none !important; }
 samfw.com#$#body { overflow: auto !important; }
@@ -4391,22 +4822,28 @@ sammobile.com###closeAd
 sammobile.com###venatus-hybrid-banner
 sammobile.com##.adRoot-loop-ad
 sammobile.com##.g
+sammobile.com##.g-29
 sammobile.com##.g-59
 sammobile.com##.google-news-cta
 sammobile.com##.news-for-you-wrapper
 sammobile.com##.rev
+sammobile.com##body > header.navbar-fixed-top + div.container-fluid
 sammobile.com#$#.container-fluid > div[class="g g-29"] { height: 0 !important; }
+sammobile.com#$#body > #home-slider + section.content { margin-top: 0!important; }
+sammobile.com#$#body > .g-29 + section.content { margin-top: 0!important; }
 sammobile.com#$#body > div[class="g g-29"] { margin-top: 20px!important; }
 sammobile.com#%#//scriptlet("adjust-setInterval", "showDownloadButton", "", "0.02")
 sammobile.com#%#//scriptlet('set-local-storage-item', 'request-permission-modal', '1')
 sammobile.com#%#//scriptlet('ubo-set-local-storage-item.js', 'request-permission-modal', '1')
 sammobile.com#?##latest_news .item:has(a[href*="/sponsored"])
 sammobile.com#?#.owl-stage > .owl-item:has(a[href*="/sponsored"])
+sammobile.com#?#div[class^="col"] > div.sidebar-item:has(> div.sidebar-item__content > ul.sidebar-item__content-socials)
 samsung.com###consent_bottombar
 samsung.com###operationBanner
 samsung.com##.chats
 samsung.com##.cm-cookie-geo > .cm-cookie-geo__msg
 samsung.com##.cm-cookie-geo__msg-wrap
+samsung.com##.cod05-app-banner
 samsung.com##.gb-gnb__notice-bar
 samsung.com##.js-cookie
 samsung.com#%#//scriptlet('prevent-element-src-loading', 'script', 'mpsnare.iesnare.com/snare.js')
@@ -4418,7 +4855,10 @@ santatracker.google.com##santa-notice
 science.org##.alert-donation
 science.org##.news-article__newsletter
 science.org##.news-article__share
+science.org##.share__block
 science.org##.show-recommended
+science.org##.st-header__share
+science.org##a[href="#core-collateral-share"]
 science.org##body .adplaceholder
 science.org#%#//scriptlet('ubo-cookie-remover.js', 'MAID')
 screenshots.firefox.com##.alt-notification
@@ -4447,6 +4887,7 @@ setapp.com##div[data-storage-item*="cookiename"]
 sh.reddit.com##[data-id="user-hover-card"] a[href="/user/AutoModerator/"]:upward(shreddit-comment)
 sh.reddit.com##community-highlight-card[subreddit-prefixed-name="r/uBlockOrigin"][src]:remove-attr(src)
 shows.acast.com###subscribe-item-RSS
+shows.acast.com##.ant-row > div.ant-col:has(> div > ul > li#share-icon-facebook)
 site.baidu.com###midline
 site.baidu.com##.banner2
 site.baidu.com##.popup
@@ -4454,6 +4895,8 @@ site.baidu.com##.pstr.mt10
 sites.google.com##div[data-cookie-path]
 smartthingsfind.samsung.com##.bottom-0.fixed
 smartthingsfind.samsung.com##footer + div.fixed.bottom-0
+smhn.info###share
+smhn.info##.share_top
 smzdm.com###elevator > LI:first-child
 smzdm.com###footer_layer
 smzdm.com###global-search > DIV.search-inner.z-clearfix > DIV.download:last-child
@@ -4480,6 +4923,7 @@ smzdm.com##.top-applink
 smzdm.com##a[class^="fixed-logo"]
 smzdm.com#@#.comment_share
 so.m.jd.com###mDownload
+sohu.com###abroad-share-box
 sohu.com###apkBanner
 sohu.com###bottomBanner[data-spm='b-mb'][data-spm-stop='init']
 sohu.com###hotpicnew
@@ -4542,6 +4986,7 @@ soundcloud.com##.l-product-banners
 soundcloud.com##.listenDetails__login
 soundcloud.com##.mobileApps
 soundcloud.com##.onetrust-pc-dark-filter
+soundcloud.com##.publicShare__socialButtons
 soundcloud.com##.soundList__item:has(.sc-promoted-icon-medium)
 soundcloud.com##article.mobileApps
 soundcloud.com#$#.ot-no-scroll { overflow: visible !important; }
@@ -4585,10 +5030,18 @@ stacksocial.com#$#html { overflow: auto !important; }
 stacksocial.com#$#html[class]:not(#style_important) { overflow: visible !important; }
 stacksocial.com#%#//scriptlet('set-cookie', 'sc_cookie_consent', '0')
 stc.gov.cn###mov
+store.epicgames.com#?#div[class^="css-"] > div[class]:has(> button > span:contains(/Share|Paylaş/))
 store.epicgames.com#?#div[class^="css-"] > div[class^="css-"]:has(> div[class^="css-"] > h2 > span:contains(Follow Us))
 store.google.com##bento-dialog[position="bottom"]
+store.google.com##blog-social-share[slot="socialShare"]
 store.steampowered.com###cookiePrefPopup
+store.steampowered.com###shareBtn
+store.steampowered.com##.EventDisplay_Share_Dialog a[href*="/share/"][href*="?site="]
 store.steampowered.com##.banner_open_in_steam
+store.steampowered.com##a[class^="discussionwidget_ShareBtn_"]
+store.steampowered.com##a[onclick^="ShowShareDialog();"]
+store.steampowered.com##body .cookiepreferences_popup
+store.steampowered.com##div[class*="salesocialshare"]
 store.steampowered.com##div[data-featuretarget="broadcast-embed"]
 store.steampowered.com#%#//scriptlet('trusted-click-element', '.broadcast_embed_top_ctn_trgt button:has(> svg.SVGIcon_X)', '', '500')
 store.steampowered.com#%#//scriptlet('trusted-set-cookie', 'bGameHighlightAutoplayDisabled', 'true')
@@ -4597,7 +5050,9 @@ study.163.com##.ui-common-privacy
 successteam.typeform.com##div[data-qa="cookie-region"]
 support.apple.com##.accsoffer-wrapper
 support.github.com###consent-banner
+support.google.com##.social-sharing-widgets
 support.mozilla.org###doc-contributors + section.sumo-page-section
+support.mozilla.org##.share-link
 support.reddithelp.com##.lt-article-vote-feedback-container
 support.theguardian.com##.component-consent-banner-consent-banner
 t3.com###article-body > .hawk-nest[data-model-name][data-widget-type]
@@ -4607,7 +5062,9 @@ t3.com##.ad-unit
 t3.com##.hawk-placeholder
 t3.com##.leaderboard__container
 t3.com##.social
+t3.com##.social:not(body)
 t3.com##.sponsored-post
+t3.com#%#!function(){function b(){}function a(a){return{get:function(){return a},set:b}}function c(a){a(!1)}AG_defineProperty('_sp_.config.content_control_callback',a(b)),AG_defineProperty('_sp_.config.spid_control_callback',a(b)),AG_defineProperty('_sp_.config.vid_control_callback',a(b)),AG_defineProperty('_sp_.config.disableBlockerStyleSheets',a(!1)),AG_defineProperty('_sp_.checkState',a(c)),AG_defineProperty('_sp_.isAdBlocking',a(c)),AG_defineProperty('_sp_.isAdblocking',a(c)),AG_defineProperty('_sp_.isContentBlockerPresent',a(c)),AG_defineProperty('_sp_.getSafeUri',a(function(a){return a})),AG_defineProperty('_sp_.pageChange',a(b)),AG_defineProperty('_sp_.setupSmartBeacons',a(b)),AG_defineProperty('_sp_.msg.startMsg',a(b)),document.addEventListener('sp.blocking',function(a){a.stopImmediatePropagation(),a=document.createEvent('Event'),a.initEvent('sp.not_blocking',!0,!1),this.dispatchEvent(a)})}();
 t3.com#@#.ads-inline
 tampermonkey.net##.ad-changelog-block
 tampermonkey.net##.advent_head
@@ -4642,6 +5099,8 @@ taobao.com#?#div[class^="Content--contentInner"] > div:has(> a[class^="Card--dou
 techcrunch.com###consent-gpc-popUp
 techcrunch.com##+js(trusted-click-element, #didomi-notice-agree-button, , 2200)
 techcrunch.com##.announcement-banner[style="position: fixed;"]
+techcrunch.com##.article__social-share
+techcrunch.com##.article__social-vertical-share
 techcrunch.com##.hbspt-form
 techcrunch.com##.marfeel-experience-event-cta
 techcrunch.com##.newsletter-signup-block
@@ -4657,6 +5116,7 @@ techcrunch.com##div[class$="-newsletter-signup-compact"]
 techcrunch.com##div[class*="ad-unit"]
 techcrunch.com##p > .wp-embedded-content
 techcrunch.com#$##didomi-host { display: none !important; }
+techcrunch.com#$#.mobile-header-nav { top: 0!important; }
 techcrunch.com#$#html > body.didomi-popup-open { overflow: auto !important; position: unset !important; }
 techcrunch.com#%#//scriptlet('set-local-storage-item', 'criteo_fast_bid', '$remove$')
 theguardian.com###contact-the-guardian
@@ -4665,23 +5125,29 @@ theguardian.com###slot-body-end
 theguardian.com##.adblock-sticky__message
 theguardian.com##.contributions__adblock
 theguardian.com##.contributions__epic
+theguardian.com##.d-comment__action--share
 theguardian.com##.dcr-1aq0rzi
 theguardian.com##.dcr-nv35qx
 theguardian.com##.email-sub__iframe
 theguardian.com##.fc-slice__item--mpu-candidate
 theguardian.com##.js-adblock-sticky
 theguardian.com##.js-outbrain
+theguardian.com##.js-sharecount
 theguardian.com##.js-top-banner
 theguardian.com##.site-message
 theguardian.com##.site-message--adblock-message
 theguardian.com##.site-message--banner
 theguardian.com##.site-message--cookies
+theguardian.com##.social:not(body)
 theguardian.com##.top-banner-ad-container
 theguardian.com##.top-fronts-banner-ad-container
 theguardian.com##[name="SlotBodyEnd"]
 theguardian.com##[name="StickyBottomBanner"]
+theguardian.com##a[aria-label^="Share "]
 theguardian.com##div > gu-island[name="ShareButton"]
+theguardian.com##div[class^="block-share"]
 theguardian.com##figure[data-spacefinder-type$=".NewsletterSignupBlockElement"]
+theguardian.com##gu-island[name="ShareButton"]
 theguardian.com##gu-island[props*="/email/form/plaintone/"]
 theguardian.com##section#support-the-guardian-thrasher
 theguardian.com#$#.signin-gate { display: none !important; }
@@ -4692,6 +5158,7 @@ theguardian.com#%#//scriptlet('trusted-click-element', 'button.sp_choice_type_11
 theguardian.com#%#//scriptlet('ubo-set-local-storage-item.js', 'gu.history.dailyArticleCount', '$remove$')
 theguardian.com#%#//scriptlet('ubo-set-local-storage-item.js', 'gu.history.weeklyArticleCount', '$remove$')
 theguardian.com#@#.ad_unit
+theinitium.com##.c-download-banner
 theinitium.com##.download
 thepaper.cn###QRcode
 thepaper.cn###head_ask_app_down
@@ -4705,6 +5172,8 @@ theregister.com##.listinks
 theregister.com##.newsletter_signup
 theregister.com##.newsletter_signup_unit
 theregister.com##.promo_article, #story-bot-col
+theregister.com##.sharing_widget
+theregister.com##.sharing_widget_story_desktop
 theregister.com##.wptl
 theregister.com#$?##index_page > .srow > .faux-article:has(> .newsletter_link) { visibility: hidden !important; }
 theregister.com#?##index_page > .srow > .faux-article > .newsletter_signup_unit:upward(1)
@@ -4712,16 +5181,22 @@ theregister.com#?##right-col > .rhs_eagle_container > .adun:upward(1)
 theverge.com###kYgI66 > .c-read-more
 theverge.com###notice.p-notice
 theverge.com##.ad__athena_internal
+theverge.com##.article__share-buttons
 theverge.com##.c-comments, .c-read-more, .c-recirc-module, .has-content.p-comment-notification, .c-related-list
 theverge.com##.c-newsletter_signup_box
+theverge.com##.c-social-buttons__more
+theverge.com##.content-start > div.uppercase
 theverge.com##.duet--article--lede-share-tools-separator
 theverge.com##.duet--article--share-buttons
 theverge.com##.duet--cta--cookie-banner
 theverge.com##.duet--cta--newsletter
+theverge.com##.feature-photos-share-tool
 theverge.com##.l-sidebar-fixed > div[data-analytics-placement]
+theverge.com##.m-ad
 theverge.com##.mb-40.duet--recirculation--related-list, .top-90.bg-white.lg\:mb-40.lg\:mt-0.rounded-\[4px\].w-mobile-breaker.my-50.m-auto.p-20.sticky.duet--recirculation--list-breaker-standard
 theverge.com##.newsletter-wrapper
 theverge.com##.outbrain-wrapper
+theverge.com##.tab-bar-fixed
 theverge.com##.zephr-overlay
 theverge.com##.zephr-zone-footer
 theverge.com##amp-iframe[src^="https://widgets.outbrain.com/hub/amp.html"]
@@ -4730,6 +5205,7 @@ theverge.com##div[class^="adblock-allowlist-messaging"]
 theverge.com##div[data-concert]
 theverge.com##iframe[src="https://www.platformer.news/embed"]
 theverge.com#$#.async-hide { opacity: 1.0 !important; }
+theverge.com#$#.c-social-buttons { visibility: hidden!important; }
 theverge.com#$#.mb-60 { margin-bottom: 0px !important; }
 theverge.com#$#.md\:mb-40 { margin-bottom: 20px !important; }
 theverge.com#$#.mt-80 { margin-top: 50px !important; }
@@ -4737,6 +5213,8 @@ theverge.com#$#body { height: auto !important; overflow: auto !important }
 theverge.com#%#//scriptlet('ubo-set-cookie.js', '_duet_gdpr_acknowledged', '1')
 theverge.com#?#.duet--layout--river > div.border-b:has(> div > a + div > div:contains(/^AD$/))
 theverge.com#?#.flex-auto:has(> div[data-concert])
+theverge.com#?#div.mb-18:has(> div > h2:contains(Share this story))
+theverge.com#@##privacy-consent
 threadreaderapp.com##.cookies
 threadreaderapp.com##.promo
 threads.net##+js(json-prune, require.0.3.0.__bbox.define.[].2.is_linkshim_supported)
@@ -4890,6 +5368,7 @@ tieba.baidu.com##.recommend-title
 tieba.baidu.com##.score_ecr_wrapper
 tieba.baidu.com##.spreadad
 tieba.baidu.com##.switch_radios + div[class]
+tieba.baidu.com##.tb-forum-user__join-btn
 tieba.baidu.com##.tb_poster_info.poster_success
 tieba.baidu.com##.tb_poster_placeholder
 tieba.baidu.com##.tbui_aside_float_bar + .clearfix
@@ -4974,12 +5453,16 @@ tomshardware.com##.onesignal-customlink-container
 tomshardware.com##.prism-modal
 tomshardware.com##.read-more-container
 tomshardware.com##.related-articles-block
+tomshardware.com##.share-bar
 tomshardware.com##.social-promote-box
+tomshardware.com##.socialite-widget
 tomshardware.com##.socialite-widget-ul
 tomshardware.com##.van_taboola
 tomshardware.com##.van_vid_carousel
 tomshardware.com##.vid-present
+tomshardware.com##amp-ad
 tomshardware.com##amp-consent
+tomshardware.com##amp-embed[type="taboola"]
 tomshardware.com##body > div[style^="position: fixed;"][style*="z-index: 999"][style*="pointer-events:"]:not([class]):not([id])
 tomshardware.com##div[class*="ad-unit"]
 tomshardware.com#$#.xenforo-comment-widget { height: auto !important; }
@@ -5071,10 +5554,13 @@ twitter.com#%#//scriptlet('set-cookie', 'twtr_pixel_opt_in', 'N')
 twitter.com#%#document.cookie="eu_cn=1; path=/;";
 twitter.com#?##layers > div[class*=" "]:first-of-type:has(a[href="/i/flow/signup"])
 twitter.com#?##layers > div[class] > div[class]:has(> div[class] > div[data-testid="BottomBar"] > div[class] > div[class] > div[dir="ltr"] > span:contains(ookie))
+twitter.com#?##layers div[class^="css-"] div[dir] > a[href$="/rules-and-policies/twitter-cookies"]:upward(2)
 twitter.com#?#a[href="/i/flow/signup"][dir=auto][role=link][data-focusable=true]:upward(7)
+twitter.com#?#article > div[class] > div[role="button"]:has(> div[dir="auto"] > span:contains(/^Share/))
 twitter.com#?#div[data-testid="inlinePrompt"]:has(> div > a[href="/i/premium_sign_up"])
 twitter.com#?#div[data-testid=primaryColumn] div:has(> div > div > a[href="/login"])
 twitter.com#?#div[role=group]:has(div[data-testid*=apple_sign_in]:only-of-type)
+twitter.com#?#div[style^="transform"] > div > div > div > div[data-testid="inlinePrompt"]:has(> div > a[href^="https://twitter.app.link/"])
 twitter.com#?#div[style^="transform"] h2 > div[style^="-webkit-line-clamp"] > span:contains(/^(?:Promoted Post|Promowany Post|Post promovat|プロモポスト)$/):upward(3)
 twitter.com#?#div[style^="transform"]:has(div[data-testid="inlinePrompt"] > div > a[href="/i/premium_sign_up?referring_page=timeline_prompt"])
 twitter.com#?#h2[role="heading"]:-abp-contains(/Promoted|Gesponsert|Promocionado|Sponsorisé|Sponsorizzato|Promowane|Promovido|Реклама|Uitgelicht|Sponsorlu|Promotert|Promoveret|Sponsrad|Mainostettu|Sponzorováno|Promovat|Ajánlott|Προωθημένο|Dipromosikan|Được quảng bá|推廣|推广|推薦|推荐|プロモーション|프로모션|ประชาสมพนธ|परचरत|বজঞপত|تشہیر شدہ|مروج|تبلیغی|מקודם/)
@@ -5102,9 +5588,13 @@ unsplash.com#?#div[data-test="editorial-route"] div[style^="--column-gutter:"] >
 unsplash.com#?#div[data-test="masonry-grid-count-three"] > div[class^="rip"] > div[class]:has(span[style="color:transparent"])
 unsplash.com#?#div[data-test="masonry-grid-count-three"] > div[class^="ripi"] > div > footer:upward(1)
 unsplash.com#?#div[data-test="search-photos-route"] > div[class] > div[class] > h2:contains(Browse premium images on iStock)
+unsplash.com#?#div[data-test="search-photos-route"] div[style^="--column-gutter:"] > div[class] > figure + div:has(> div + footer)
+unsplash.com#?#div[style^="--column-gutter:"] > div[style^="--row-gutter:"] > div:first-child:has(> figure a + div > span)
 unwire.hk###cookie
 unwire.hk###post-sidebar-ad
+unwire.hk##.google-ad:not(#style_important)
 unwire.hk##.post-main-ad
+unwire.hk#?#.entry-content > h3:contains(分享到)
 userscript.zone##.searcad
 userscript.zone##.w300
 v.163.com###v_shapeLeft_divId
@@ -5132,6 +5622,7 @@ v3.account.samsung.com#%#//scriptlet('set-cookie', 'sa_enable', 'off')
 vercel.com###fides-banner-container
 view.inews.qq.com##div[class^="article-recommend_wrapper"]
 view.inews.qq.com##div[class^="bottom-bar_buttonWrap"]
+view.inews.qq.com##div[class^="bottom-bar_buttonWrap__"]
 view.inews.qq.com##div[class^="infinite-comment-list_subText"]
 view.inews.qq.com##div[class^="interaction-bottom_interaction"]
 view.inews.qq.com##div[class^="justify-text_showMore"]
@@ -5141,8 +5632,10 @@ view.inews.qq.com##div[class^="new-recommend_wrapper"]
 view.inews.qq.com##div[class^="normal_buttonWrap"]
 view.inews.qq.com##div[class^="slider-top-bar_newSliderWrapper"]
 view.inews.qq.com##div[class^="slider-top-bar_sliderWrapper"]
+view.inews.qq.com##div[class^="slider-top-bar_sliderWrapper__"]
 view.inews.qq.com#?#div[class^="_"]:-abp-has(>div[data-action-id]>div>.react-swipeable-view-container)
 vivo.com.cn##.vp-vivo-app
+w.soundcloud.com##.soundHeader__shareButton
 wap.baidu.com##.tab_news
 wap.gamersky.com##.countHitSql.countHit.gsTgAppConCommentBtn
 wap.gamersky.com##.gsTgWapConBdshareTopBox
@@ -5152,6 +5645,7 @@ wap.gamersky.com##.ymw-header2021.ymwBootDownload
 wap.gamersky.com##.ymw-rel-list.ymw-aside-box
 wap.gamersky.com##section.ymw-rel-list
 wap.ithome.com###a_ad
+wapbaike.baidu.com##a[onclick^="Mixedor.mixedOpen"]
 wapp.baidu.com###pblist > li[class]:not(.j_post_list_item)
 wapp.baidu.com##.iSlider-wrapper-container-hot-thread
 wapp.baidu.com##a.fixed_bar
@@ -5389,6 +5883,9 @@ www.youtube.com##.ytp-featured-product
 www.youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
 www.youtube.com##ytlr-ad-skip-or-preview
 www.youtube.com##ytlr-banner-cta-renderer
+www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) > #contents:first-child { max-width: unset !important; }
+www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) ytd-rich-grid-media { max-width: unset !important; }
+www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) { --ytd-rich-grid-items-per-row: 1 !important; }
 www.youtube.com#$#override-property-read Object.prototype.args.raw_player_response.playerAds undefined; override-property-read Object.prototype.args.raw_player_response.adSlots undefined;
 www.youtube.com#$#override-property-read Object.prototype.videoSkipJob_ noopFunc; override-property-read Object.prototype.web_playlist_queue_multiple_skips_ks false;
 www.youtube.com#$#override-property-read playerResponse.adPlacements undefined;
@@ -5553,6 +6050,7 @@ x.com#%#//scriptlet('ubo-aeld.js', 'mouseleave')
 x.com#%#document.cookie="eu_cn=1; path=/;";
 x.com#?##layers > div[class*=" "]:first-of-type:has(a[href="/i/flow/signup"])
 x.com#?##layers > div[class] > div[class]:has(> div[class] > div[data-testid="BottomBar"] > div[class] > div[class] > div[dir="ltr"] > span:contains(ookie))
+x.com#?##layers div[class^="css-"] div[dir] > a[href$="/rules-and-policies/twitter-cookies"]:upward(2)
 x.com#?##main > div[class^="sc-"] > div[class^="src__InlineCalloutElement"]
 x.com#?##main > div[class^="wrapper__"]:has(> div[aria-labelledby^="notice"])
 x.com#?#a[href="/i/flow/signup"][dir=auto][role=link][data-focusable=true]:upward(7)
@@ -5579,6 +6077,7 @@ xiaohongshu.com##.recommend-box
 xiaohongshu.com##.section.related-notes
 xiaohongshu.com##.user-notes-clo-layout-container.user-notes-box
 xiaohongshu.com##.wx-open-launch-app-container
+xiaohongshu.com#?#.note-view-container > div.nav-bar-box:has(> div.reds-box div.reds-text:contains(小红书App))
 xiaomiyoupin.com##.fixed-nav > li:nth-of-type(2)
 xiaomiyoupin.com##.site-item.m-download.fl
 xingqu.baidu.com###activity_countdown_head
@@ -5826,11 +6325,13 @@ youtube.com##.iv-promo-video
 youtube.com##.mealbar-promo-renderer
 youtube.com##.media-item-thumbnail-container[aria-hidden][href^="/shorts/"]
 youtube.com##.pivot-shorts.pivot-bar-item-tab
+youtube.com##.share-panel-services-container > div#share-services-container
 youtube.com##.video-ads .ytp-ad-player-overlay, .video-ads .ytp-ad-player-overlay-layout
 youtube.com##.video-annotations
 youtube.com##.yt-consent-banner
 youtube.com##.yt-mealbar-promo-renderer
 youtube.com##.yt-simple-endpoint[title="Shorts"]
+youtube.com##.yt-third-party-share-target-section-renderer > yt-share-target-renderer:not(:first-of-type)
 youtube.com##.ytd-merch-shelf-renderer
 youtube.com##.ytd-primetime-promo-renderer
 youtube.com##.ytd-single-option-survey-option-renderer
@@ -5843,6 +6344,12 @@ youtube.com##.ytp-pause-overlay
 youtube.com##.ytp-subscribe-card
 youtube.com##.ytp-suggested-action > button.ytp-suggested-action-badge
 youtube.com##AD-SLOT-RENDERER
+youtube.com##a[href^="http://www.blogger.com/blog-this.g?"]
+youtube.com##a[href^="http://www.facebook.com/dialog/share?"]
+youtube.com##a[href^="https://twitter.com/intent/tweet?"]
+youtube.com##body yt-third-party-share-target-section-renderer > .yt-third-party-share-target-section-renderer ~ yt-icon-button#scroll-button-forward
+youtube.com##button[title="Facebook"]
+youtube.com##button[title="WhatsApp"]
 youtube.com##div #main-container.style-scope.ytd-promoted-video-renderer
 youtube.com##div #player-ads.style-scope.ytd-watch-flexy
 youtube.com##div #root.style-scope.ytd-display-ad-renderer.yt-simple-endpoint
@@ -5869,6 +6376,7 @@ youtube.com#$##appbar-guide-menu { margin-top: 50px!important; }
 youtube.com#$##ticker.ytd-masthead { display: none!important; }
 youtube.com#$#array-override push BISCOTTI_BASED_DETECTION_STATE_IS_CLICK_EVENT_NOT_TRUSTED
 youtube.com#$#override-property-read Object.prototype.ab_sa_ef undefined
+youtube.com#%#(()=>{const wrapper=(target,thisArg,args)=>{let result=Reflect.apply(target,thisArg,args);try{const decoded=atob(result);if(decoded.includes('ssapPrerollEnabled')){const modifiedContent=decoded.replace(/\n.\n.playerConfig\.ssapConfig\.ssapPrerollEnabled.{2}(?:tru|fals)e/,'');const encodeToBase64=btoa(modifiedContent);return encodeToBase64}}catch(e){} return result};const handler={apply:wrapper};window.Array.prototype.join=new Proxy(window.Array.prototype.join,handler)})();
 youtube.com#%#(function(){try{var time=(new Date).getTime();var cookieDate=new Date(time+1314E6);var hostname=location.host;var locSubString=null;if(!hostname.startsWith("google.")&&!hostname.startsWith("youtube."))locSubString=hostname.substring(hostname.indexOf(".")+1);var loc=locSubString||hostname;if(document.cookie.indexOf("CONSENT=YES")!==-1)return;document.cookie="CONSENT=YES+; domain="+loc+"; path=/; expires="+cookieDate.toUTCString()}catch(ex){console.error("AG: failed to set consent cookie: "+ex)}})();
 youtube.com#%#(function(){window.self!==window.top||document.cookie.includes("visitor=")||(document.cookie="visitor=1; path=/;",document.cookie&&location.reload())})();
 youtube.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=/')
@@ -5879,7 +6387,9 @@ youtube.com#%#//scriptlet('set-constant', 'yt.config_.EXPERIMENT_FLAGS.web_bind_
 youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.adPlacements', 'undefined')
 youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.adSlots', 'undefined')
 youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.playerAds', 'undefined')
+youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.playerConfig.ssapConfig', 'undefined')
 youtube.com#%#//scriptlet('trusted-click-element', 'ytd-consent-bump-v2-lightbox .eom-buttons > .ytd-consent-bump-v2-lightbox > .ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next')
+youtube.com#%#//scriptlet('trusted-replace-node-text', 'script', 'serverContract', '/^(\(function serverContract\(\))/s', '/*start*/(function(){const wrapper=(target,thisArg,args)=>{let result=Reflect.apply(target,thisArg,args);try{const decoded=atob(result);if(decoded.includes("ssapPrerollEnabled")){const modifiedContent=decoded.replace(/\n.\n.playerConfig\.ssapConfig\.ssapPrerollEnabled.{2}(?:tru|fals)e/,"");const encodeToBase64=btoa(modifiedContent);return encodeToBase64;}}catch(e){}return result;};const handler={apply:wrapper};window.Array.prototype.join=new Proxy(window.Array.prototype.join,handler);document.currentScript.textContent=document.currentScript.textContent.replace(/\/\*start\*\/(.*)\/\*end\*\//g,"");})();/*end*/$1')
 youtube.com#?#.ytd-metadata-row-container-renderer:has(> div.style-scope > ytd-rich-metadata-renderer > a[href="https://www.youtubekids.com/"])
 youtube.com#?#ytd-rich-grid-renderer ytd-rich-item-renderer div > ytd-display-ad-renderer:upward(2)
 youtube.com#?#ytd-rich-grid-row > #contents > ytd-rich-item-renderer:has(> #content > ytd-display-ad-renderer)
@@ -5912,6 +6422,7 @@ zhidao.baidu.com##.wgt-clew[data-type="goods"]
 zhidao.baidu.com##.zhidao-app.menu-right-list-item
 zhidao.baidu.com##[class$='-ecom-ads']
 zhidao.baidu.com##a[class="cur"][href^="/mobile/board?"] > img
+zhidao.baidu.com##body .share-area
 zhidao.baidu.com##div[class^="cms-slide"] > p[class="cms-link-title"]
 zhidao.baidu.com##div[class^="mm-content-box kmb5707e0 wm-"]
 zhidao.baidu.com##style[id*="s-m"] + div[id^="m"]
@@ -5948,6 +6459,7 @@ zhihu.com##.QuestionAdBanner
 zhihu.com##.RelatedReadings-adItem
 zhihu.com##.RelatedReadings.Card
 zhihu.com##.RichText-Ecommerce
+zhihu.com##.ShareMenu
 zhihu.com##.Sticky > .Card[data-za-detail-view-path-module="ContentList"]
 zhihu.com##.TopstoryItem--advertCard
 zhihu.com##.ViewAllInappButton
@@ -6064,6 +6576,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||alipay.com/service/clear.png?
 ||alipay.com/web/bi.do?ref=
 ||aliyun.com/actionlog/
+||aliyun.com^$removeparam=scm
 ||aliyuncs.com/ad/jd-smoofit-ad.jpg
 ||aliyuncs.com/gg/
 ||aliyuncs.com/ghdb.gif
@@ -6096,7 +6609,11 @@ zuoye.baidu.com##dl[class="card related"]
 ||apple.com/metrics/
 ||apple.com/mw/v1/reportAnalytics
 ||apple.com^$removeparam=/^ign-itsc[a-z]+=/
+||apple.com^$removeparam=afid
 ||apple.com^$removeparam=app
+||apple.com^$removeparam=cid
+||apple.com^$removeparam=ct
+||apple.com^$removeparam=pt
 ||appmetrica.yandex.ru^$domain=d3ward.github.io
 ||appsflyer.com^$3p
 ||appsflyer.com^$badfilter
@@ -6108,6 +6625,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||assets.bwbx.io/*/initialize_ads-*.js$domain=bloomberg.com
 ||assets.msn.com/service/news/feed/pages/binghp?$xhr,3p,removeparam=wpopageid,domain=bing.com
 ||assets.poool.fr^$domain=euronews.com
+||atlassian.net^$removeparam=atlOrigin
 ||audio-*.scdn.co/audio/$media,redirect=noop-1s.mp4,domain=spotify.com
 ||audio-*.scdn.co/audio/$media,redirect=noopmp4-1s,domain=spotify.com
 ||audio-ak*-*.akamaized.net/audio/$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
@@ -6172,6 +6690,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||baidu.com/resource/ads/
 ||baidu.com/resource/tuisong/
 ||baidu.com/rmaAjax/getGame?
+||baidu.com/setting/grobal_strategy?p=com.adslib.mobovee$app=cn.xender
 ||baidu.com/show/livevideo/getStreamConf?
 ||baidu.com/showbrand/banner_
 ||baidu.com/showbrand/sponsor_
@@ -6221,8 +6740,11 @@ zuoye.baidu.com##dl[class="card related"]
 ||bilibili.com/x/web-interface/archive/special/recommend?aid=
 ||bilibili.com^$removeparam=buvid
 ||bilibili.com^$removeparam=callback
+||bilibili.com^$removeparam=csource
 ||bilibili.com^$removeparam=from
 ||bilibili.com^$removeparam=from_source
+||bilibili.com^$removeparam=from_spm_id
+||bilibili.com^$removeparam=from_spmid
 ||bilibili.com^$removeparam=is_story_h5
 ||bilibili.com^$removeparam=mid
 ||bilibili.com^$removeparam=msource
@@ -6235,7 +6757,9 @@ zuoye.baidu.com##dl[class="card related"]
 ||bilibili.com^$removeparam=share_session_id
 ||bilibili.com^$removeparam=share_source
 ||bilibili.com^$removeparam=share_tag
+||bilibili.com^$removeparam=source
 ||bilibili.com^$removeparam=spm_id_from
+||bilibili.com^$removeparam=spmid
 ||bilibili.com^$removeparam=timestamp
 ||bilibili.com^$removeparam=unique_k
 ||bilibili.com^$removeparam=up_id
@@ -6246,6 +6770,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||bing.com/api/*/mediation/clientauction
 ||bing.com/api/shopping/v1/telemetry
 ||bing.com/api/v1/mediation/tracking?
+||bing.com/fd/ls/
 ||bing.com/fd/ls/GLinkPing.aspx?
 ||bing.com/fd/ls/l?IG=
 ||bing.com/fd/ls/lsp.aspx
@@ -6259,11 +6784,17 @@ zuoye.baidu.com##dl[class="card related"]
 ||bing.com/rewardsapp/reportActivity?
 ||bing.com/rewardsapp/reportactivity?$badfilter
 ||bing.com^$3p,domain=bing.com
+||bing.com^$app=com.offerup
 ||bing.com^$cookie=ABDEF
+||bing.com^$document,removeparam=cvid
 ||bing.com^*/GLinkPingPost.aspx$ping,xmlhttprequest
 ||bing.com^*/glinkping.aspx$ping,xmlhttprequest
 ||blockworks.co/_vercel/insights/
 ||bloomberg.com/8FCGYgk4/init.js
+||bloomberg.com^$removeparam=in_source
+||bloomberg.com^$removeparam=leadSource
+||bloomberg.com^$removeparam=sref
+||bloomberg.com^$removeparam=srnd
 ||bokecc.com/flash/playlog?
 ||bokecc.com/flash/timerecorder?
 ||brave.com/static-assets/js/analysis.js
@@ -6317,6 +6848,8 @@ zuoye.baidu.com##dl[class="card related"]
 ||cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js
 ||cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js
 ||cdn.jsdelivr.net^*/arlinablock.js$script
+||cdn.onesignal.com/sdks/OneSignalSDK.js$script,redirect=noopjs,domain=sammobile.com
+||cdn.piano.io/api/tinypass.min.js$domain=npr.org
 ||cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js^$script,domain=wsj.com
 ||cdn.privacy-mgmt.com^$domain=popsci.com
 ||cdn.privacy-mgmt.com^$domain=wsj.com
@@ -6430,14 +6963,25 @@ zuoye.baidu.com##dl[class="card related"]
 ||dongchedi.com/motor/ad/
 ||douban.com/?unit=dale_movie_trailer_after_play&
 ||douban.com/view/dale-online/dale_ad
+||douban.com^$removeparam=_i
+||douban.com^$removeparam=dt_platform
 ||douban.com^*/fm_bgad.js
 ||doubleclick.net^$important,script,domain=wired.com
 ||douyin.com/api/user/getPcBanner?
+||douyin.com^$removeparam=extra_params
+||douyin.com^$removeparam=previous_page
 ||duckduckgo.com/*/reportAnalytics
 ||duckduckgo.com/*/reportAnalytics$xmlhttprequest,redirect-rule=noopjson
 ||duckduckgo.com/t/
+||duckduckgo.com/y.js$removeparam=ad_domain
+||duckduckgo.com/y.js$removeparam=ad_provider
+||duckduckgo.com/y.js$removeparam=ad_type
 ||duckduckgo.com/y.js?ifu=
 ||duckduckgo.com^$3p,domain=duckduckgo.com
+||duckduckgo.com^$removeparam=from
+||duckduckgo.com^$removeparam=parent_perf_id
+||duckduckgo.com^$removeparam=perf_id
+||duckduckgo.com^$removeparam=vis
 ||duolingo.com/2017-06-30/tracking-status
 ||eastmoney.com/Extends/GetReferralLinkJavaScriptObj
 ||eastmoney.com/analysis/
@@ -6465,9 +7009,11 @@ zuoye.baidu.com##dl[class="card related"]
 ||figma.com/api/figment-proxy/
 ||figma.com/api/web_logger/
 ||firefox.com^$removeparam=form_type
+||flickr.com/badge_code$third-party
 ||fobshanghai.com/bbsad/
 ||forbes.com^$cookie=client_id
 ||forbes.com^$cookie=fadvuke2etid
+||forbes.com^$removeparam=sh
 ||fundingchoicesmessages.google.com/i/$script,domain=9to5google.com
 ||fundingchoicesmessages.google.com/i/$script,domain=9to5mac.com
 ||g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js:5,domain=euronews.com
@@ -6485,8 +7031,10 @@ zuoye.baidu.com##dl[class="card related"]
 ||github.com/_stats
 ||github.com/hydro_browser_events
 ||github.com/notifications/beacon/$important
+||github.com/signup$removeparam=source
 ||github.com^$removeparam=email_source
 ||github.com^$removeparam=email_token
+||github.com^$removeparam=reference_location
 ||github.io/health-records-x-ray$doc
 ||github.io/samedaydelivery/$doc,to=~dhl.com
 ||githubusercontent.com/vip888vip/ug/main/*.gif
@@ -6496,6 +7044,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||google.com/_/+1/$third-party
 ||google.com/ads/measurement/
 ||google.com/ads/search/app?
+||google.com/ads/search/app?*&caps=*sdkAdmobApiForAds
 ||google.com/adsense/domains/caf.js
 ||google.com/adsense/search/ads.js
 ||google.com/adsense/search/async-ads.js
@@ -6504,6 +7053,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||google.com/analytics/$third-party
 ||google.com/apis/gpf_metrics?
 ||google.com/async/ddllog
+||google.com/buzz/api$third-party
 ||google.com/dssw.js
 ||google.com/favicon.ico$popup
 ||google.com/gen_204?
@@ -6546,6 +7096,12 @@ zuoye.baidu.com##dl[class="card related"]
 ||hdslb.com/js/core-v5/picment.
 ||herokudns.com^$xhr,domain=darkreader.org
 ||huggingface.co/js/script.js
+||humblebundle.com^$removeparam=hmb_campaign
+||humblebundle.com^$removeparam=hmb_medium
+||humblebundle.com^$removeparam=hmb_source
+||humblebundle.com^$removeparam=linkID
+||humblebundle.com^$removeparam=mcID
+||humblebundle.com^$removeparam=partner
 ||i.imgur.com^$domain=samfw.com
 ||i2.sinaimg.cn/*/searchCallup.js$domain=gu.sina.cn
 ||icanhazip.com^$third-party
@@ -6594,6 +7150,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||jd.com/exsites?spread_type=
 ||jd.com/static/js/auto.js
 ||jd.com/static/js/cpc.js
+||jetbrains.com^$removeparam=from
 ||jianshu.com/asimov/ab_test/info$xmlhttprequest,redirect=nooptext
 ||jsdelivr.net/*/adb-analytics$script,3p
 ||jsdelivr.net/*/levelmaxblock.js$script,3p
@@ -6635,6 +7192,9 @@ zuoye.baidu.com##dl[class="card related"]
 ||juejin.cn/content_api/v1/advert/query_adverts?
 ||jwplayer.com^$domain=tomshardware.com
 ||kickstarter.com/Uy3R669N/init.js
+||kickstarter.com/projects$removeparam=event
+||kickstarter.com/projects$removeparam=term
+||kickstarter.com/projects$removeparam=total_hits
 ||kmw.com/js/adshow
 ||kraken.com/analytics
 ||kraken.com/js/sift.min.js
@@ -6680,6 +7240,20 @@ zuoye.baidu.com##dl[class="card related"]
 ||mp.weixin.qq.com/mp/jsmonitor?
 ||mp.weixin.qq.com/mp/report?
 ||mp.weixin.qq.com/mp/webcommreport?
+||mp.weixin.qq.com^$removeparam=WBAPIAnalysisOriUICodes
+||mp.weixin.qq.com^$removeparam=aid
+||mp.weixin.qq.com^$removeparam=chksm
+||mp.weixin.qq.com^$removeparam=devicetype
+||mp.weixin.qq.com^$removeparam=exportkey
+||mp.weixin.qq.com^$removeparam=from
+||mp.weixin.qq.com^$removeparam=key
+||mp.weixin.qq.com^$removeparam=launchid
+||mp.weixin.qq.com^$removeparam=mpshare
+||mp.weixin.qq.com^$removeparam=nettype
+||mp.weixin.qq.com^$removeparam=scene
+||mp.weixin.qq.com^$removeparam=srcid
+||mp.weixin.qq.com^$removeparam=uin
+||mp.weixin.qq.com^$removeparam=v_p
 ||mxtoolbox.com/Public/Lookup.aspx/GetNextInlineAd
 ||narrativ.com^$domain=androidauthority.com
 ||neowin.net/ws/$websocket
@@ -6713,6 +7287,9 @@ zuoye.baidu.com##dl[class="card related"]
 ||notion.so/api/v*/teV1|
 ||nyt.com/ads/tpc-check.html$domain=nytimes.com
 ||nytimes.com/v1/purr-cache
+||nytimes.com^$removeparam=impression_id
+||nytimes.com^$removeparam=referringSource
+||nytimes.com^$removeparam=sgrp
 ||nytimes.com^$removeparam=smid
 ||okx.com/jsstat/sb?
 ||onelink.me/*&af_web_dp=$doc
@@ -6736,11 +7313,13 @@ zuoye.baidu.com##dl[class="card related"]
 ||piano.io^$domain=npr.org
 ||platform.twitter.com^$3p,domain=twitter.com
 ||platform.twitter.com^$3p,domain=x.com
+||plausible.io/js/plausible.js$script,redirect=noopjs,domain=sammobile.com
 ||player.cnevids.com/interlude/$domain=wired.com
 ||podtrac.com^*redirect.mp3/$urlskip=/\/redirect\.mp3\/([^?]+\.mp3\b)/ +https
 ||pornhub.com/js/eht.js
 ||pornhub.com/pix.php?s=
 ||pornhub.com/video/category_tracker?e=$important
+||pornhub.com^$cookie=views
 ||producthunt.com^$cookie=/visitor_id|track_code|first_visit/
 ||qq.com/Index/getAdsAndHotspot
 ||qq.com/PL_adT.htm
@@ -6784,10 +7363,12 @@ zuoye.baidu.com##dl[class="card related"]
 ||qq.com^$3p
 ||raw.githubusercontent.com/easylist/easylist/master/docs/1x1.gif
 ||raw.githubusercontent.com/easylist/easylist/master/docs/2x2.png$third-party
+||raw.githubusercontent.com^$app=com.yoku.marumovie
 ||reddit.com/api/info.json?$third-party
 ||reddit.com/api/request_promo.json
 ||reddit.com/counters/$xmlhttprequest
 ||reddit.com/static/$third-party
+||reddit.com/static/button/$third-party
 ||reddit.com/static/pixel.png
 ||reddit.com/static/pixel.png$image
 ||reddit.com/svc/shreddit/perfMetrics
@@ -6805,12 +7386,19 @@ zuoye.baidu.com##dl[class="card related"]
 ||reddit.com^$removeparam=/^\x243p=/
 ||reddit.com^$removeparam=/^\x24deep_link=/
 ||reddit.com^$removeparam=/^\x24original_url=/
+||reddit.com^$removeparam=/deep_link|3p/
 ||reddit.com^$removeparam=_branch_match_id
 ||reddit.com^$removeparam=correlation_id
+||reddit.com^$removeparam=post_fullname
+||reddit.com^$removeparam=post_index
+||reddit.com^$removeparam=rdt
 ||reddit.com^$removeparam=rdt,doc
 ||reddit.com^$removeparam=recap_redirect
+||reddit.com^$removeparam=ref
 ||reddit.com^$removeparam=ref_campaign
 ||reddit.com^$removeparam=ref_source
+||reddit.com^$removeparam=share_id
+||redditstatic.com/button/button*.$domain=~reddit.com
 ||redditstatic.com/shreddit/sentry-$domain=reddit.com
 ||right.com.cn/forum/static/image/common/logo
 ||right.com.cn/forum/static/image/common/logo*.gif
@@ -6827,6 +7415,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||sammobile.com^*/newrelic.js$script,1p,redirect=noop.js
 ||samsung.com/*/peppermint_buy_tracking.js
 ||samsung.com/us/web/internal/logger
+||samsung.com^$removeparam=cid
 ||samsung.com^*/scripts/tracking.js
 ||scholar.google.com^$3p,domain=~google.com
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=bloomberg.com
@@ -6885,8 +7474,11 @@ zuoye.baidu.com##dl[class="card related"]
 ||sohu.com/qfpc.gif?
 ||sohu.com/stat/
 ||sohu.com/track/
+||sohu.com^$removeparam=_f
+||sohu.com^$removeparam=_trans_
 ||sohu.com^$removeparam=pvid
 ||sohu.com^$removeparam=scm
+||sohu.com^$removeparam=spm
 ||soundcloud.com/audio-ad$1p,xhr
 ||soundcloud.com/audio-ads?
 ||soundcloud.com/promoted$1p,xhr
@@ -6899,6 +7491,9 @@ zuoye.baidu.com##dl[class="card related"]
 ||spotify.com^$removeparam=si
 ||sspai.com/api/v1/recommend*=article_
 ||sspai.com/attachment/sponsor/
+||stacksocial.com/*/*&partnerid=$removeparam=partnerid
+||stacksocial.com^$removeparam=aid
+||stacksocial.com^$removeparam=rid
 ||static.adsafeprotected.com/vans-adapter-google-ima.js$script,redirect=noopjs,domain=forbes.com
 ||static.zhihu.com/heifetz/main.signflow.*.js$script,domain=zhihu.com
 ||staticflickr.com/ap/build/javascripts/prbd-$script,domain=flickr.com
@@ -6908,6 +7503,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||strapi.reddit.com^$xhr,domain=reddit.com
 ||stripe.com/?event=
 ||stripe.com/tracking/
+||t.co/i/adsct$third-party
 ||t.co/i/adsct*tw_sale_amount=
 ||t.co/i/adsct?
 ||t.co^$3p,domain=twitter.com
@@ -6928,11 +7524,13 @@ zuoye.baidu.com##dl[class="card related"]
 ||taobao.com^$removeparam=abbucket
 ||taobao.com^$removeparam=abtest
 ||taobao.com^$removeparam=acm
+||taobao.com^$removeparam=activityId
 ||taobao.com^$removeparam=algo_expid
 ||taobao.com^$removeparam=algo_pvid
 ||taobao.com^$removeparam=ali_refid
 ||taobao.com^$removeparam=ali_trackid
 ||taobao.com^$removeparam=app
+||taobao.com^$removeparam=app_pvid
 ||taobao.com^$removeparam=bftRwd
 ||taobao.com^$removeparam=bftTag
 ||taobao.com^$removeparam=cpp
@@ -6942,8 +7540,10 @@ zuoye.baidu.com##dl[class="card related"]
 ||taobao.com^$removeparam=ns
 ||taobao.com^$removeparam=pos
 ||taobao.com^$removeparam=price
+||taobao.com^$removeparam=ptl
 ||taobao.com^$removeparam=pvid
 ||taobao.com^$removeparam=scene
+||taobao.com^$removeparam=scm
 ||taobao.com^$removeparam=share_crt_v
 ||taobao.com^$removeparam=shareurl
 ||taobao.com^$removeparam=short_name
@@ -6951,12 +7551,14 @@ zuoye.baidu.com##dl[class="card related"]
 ||taobao.com^$removeparam=sp_tk
 ||taobao.com^$removeparam=spm
 ||taobao.com^$removeparam=suid
+||taobao.com^$removeparam=traceId
 ||taobao.com^$removeparam=trackInfo
 ||taobao.com^$removeparam=turing_bucket
 ||taobao.com^$removeparam=un
 ||taobao.com^$removeparam=ut_sk
 ||taobao.com^$removeparam=utkn
 ||taobao.com^$removeparam=utparam
+||taobao.com^$removeparam=xId
 ||taobaocdn.com^$image,domain=cnblogs.com
 ||tb.cn^$removeparam=sm
 ||tbcdn.cn/mm/tanxssp-custom/sina_
@@ -6968,6 +7570,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||tencent.com/developer/api/common/getOneAds
 ||theguardian.com^$removeparam=CMP
 ||thepaper.cn/bottomBanner_
+||theregister.com^$removeparam=td
 ||tinypass.com/checkout/template/show?displayMode=modal&templateId=*$domain=bbc.com
 ||tinypass.com^$domain=npr.org
 ||tmall.com^$removeparam=/^scm[_a-z-]*=/
@@ -6982,6 +7585,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||tmall.com^$removeparam=app
 ||tmall.com^$removeparam=bftRwd
 ||tmall.com^$removeparam=bftTag
+||tmall.com^$removeparam=bxsign
 ||tmall.com^$removeparam=cpp
 ||tmall.com^$removeparam=impid
 ||tmall.com^$removeparam=lygClk
@@ -7010,6 +7614,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||twitter.com/1.1/jot
 ||twitter.com/1.1/jot/client_event.json
 ||twitter.com/9/measurement/
+||twitter.com/home?status=$third-party
 ||twitter.com/i/api/1.1/jot
 ||twitter.com/i/csp_report?
 ||twitter.com/i/jot
@@ -7017,6 +7622,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||twitter.com/js/timeline.$script,third-party
 ||twitter.com/oct.js
 ||twitter.com/scribe/
+||twitter.com/share$third-party
 ||twitter.com^$3p,domain=~x.com
 ||twitter.com^$removeparam=/^(ref_?)?src=/
 ||twitter.com^$removeparam=cn
@@ -7031,8 +7637,19 @@ zuoye.baidu.com##dl[class="card related"]
 ||v.icbc.com.cn/userfiles/ADResources/$domain=icbc.com.cn
 ||vercel.app/ads/
 ||vercel.app/mixcc.html/$doc,to=~facebook.com
+||vercel.com^$removeparam=redirected
+||vercel.com^$removeparam=sfmc_activity_id
+||vercel.com^$removeparam=sfmc_activity_name
+||vercel.com^$removeparam=sfmc_activityid
+||vercel.com^$removeparam=sfmc_asset_id
+||vercel.com^$removeparam=sfmc_channel
+||vercel.com^$removeparam=sfmc_journey_id
+||vercel.com^$removeparam=sfmc_journey_name
 ||widgets.future-fie.co.uk^$domain=t3.com
 ||widgets.pinterest.com^$domain=d3ward.github.io
+||www.baidu.com/link?url=$removeparam=eqid
+||www.baidu.com^$removeparam=rsv_pq
+||www.baidu.com^$removeparam=rsv_t
 ||www.reddit.com/|$xhr,1p,method=post
 ||www.youtube.com/@melonitysoft/$doc
 ||www.youtube.com/@pengwincheat/$doc
@@ -7093,12 +7710,15 @@ zuoye.baidu.com##dl[class="card related"]
 ||yahoo.com^$3p,~image,domain=~yahoo.com
 ||yahoo.com^$cookie=APIDTS
 ||yahoo.com^$cookie=GUC
+||yahoo.com^$removeparam=ncid
 ||yimg.com/*/api/res/*/curveball/ads/$redirect=nooptext,domain=yahoo.com
 ||yimg.com/nn/lib/metro/g/sda/$domain=yahoo.com
 ||yimg.com/no/$domain=~yahoo.com
 ||yimg.com/rq/darla/$domain=yahoo.com
 ||yimg.com/uu/api/*/ads/$redirect=nooptext,image,domain=yahoo.com
 ||youtu.be^$removeparam=si
+||youtube.com/_get_ads?
+||youtube.com/api/stats/ads
 ||youtube.com/api/stats/ads?
 ||youtube.com/api/stats/atr?
 ||youtube.com/api/stats/delayplay?
@@ -7137,10 +7757,14 @@ zuoye.baidu.com##dl[class="card related"]
 ~ads.google.com#%#navigator.getBattery = undefined;
 ~cbachina.sports.sohu.com##sohuadcode
 ~love.163.com##a[href^="http://love.163.com/"]
+~m.gsmarena.com##.share-buttons
 ~platform.twitter.com##+js(json-prune-xhr-response, data.home.home_timeline_urt.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/Home)
 ~platform.twitter.com##+js(json-prune-xhr-response, data.immersiveMedia.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/ImmersiveMedia)
 ~platform.twitter.com##+js(json-prune-xhr-response, data.search_by_raw_query.search_timeline.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/SearchTimeline)
 ~platform.twitter.com##+js(json-prune-xhr-response, data.threaded_conversation_with_injections_v2.instructions.[].entries.[-].content.items.[].item.itemContent.promotedMetadata, , propsToMatch, url:/TweetDetail)
 ~platform.twitter.com##+js(json-prune-xhr-response, data.user.result.timeline_v2.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/UserTweets)
+~plus.google.com##a[href^="//plus.google.com/share"]
+~plus.google.com##a[href^="http://plus.google.com/share"]
+~plus.google.com##a[href^="https://plus.google.com/share"]
 ~studio.youtube.com##.ytp-pause-overlay
 ~wan.jd.com##a[href*="wan.jd.com/"]
