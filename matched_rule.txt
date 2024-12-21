@@ -8,6 +8,7 @@ $domain=browserleaks.com,permissions=geolocation=()
 $removeparam=aid,domain=adguard-dns.io
 $removeparam=aid,domain=adguard-vpn.com
 $removeparam=aid,domain=adguard.com
+$removeparam=cvid,domain=bing.com
 $removeparam=cxt,domain=twitter.com
 $removeparam=cxt,domain=x.com
 $removeparam=dt_dapp,domain=163.com
@@ -124,6 +125,7 @@ $websocket,domain=pornhub.com
 /wrapperMessagingWithoutDetection.js$domain=bbc.com
 /wrapperMessagingWithoutDetection.js$domain=t3.com
 /wrapperMessagingWithoutDetection.js$domain=tomshardware.com
+/youtubei/v*/get_watch?$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtube.com
 /youtubei/v*/player?$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtube.com
 1111.baidu.com###activity_countdown_head
 1111.baidu.com###attention-game-wraper_dialog
@@ -1381,7 +1383,6 @@ androidcentral.com##p > a[rel="nofollow"] > img
 androidcentral.com#$#.field-items > .field-item > div[style*="display: block !important;"] { position: absolute!important; left: -3000px!important; }
 androidcentral.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
 androidcentral.com#%#//scriptlet("prevent-fab-3.2.0")
-androidcentral.com#%#URL.createObjectURL=function(){return"about:blank"};
 androidcentral.com#?#.article-body > .article-body__section > .article-body__aside:has(> p.caption > img[alt="Zagg Ad Hero"])
 androidcentral.com#?#.article-body > .article-body__section > p + div[style*="text-align: center;"][style*="display:"][style*="!important"]:not(p):contains(Advertisement)
 androidcentral.com#@#.pub_300x250
@@ -4057,7 +4058,6 @@ merriam-webster.com##.word-of-day-subscribe-block
 merriam-webster.com##.wotd-side__subscribe
 merriam-webster.com##body .abl
 merriam-webster.com#%#//scriptlet('ubo-aopr.js', '__cmpGdprAppliesGlobally')
-merriam-webster.com#%#URL.createObjectURL=function(){return"about:blank"};
 merriam-webster.com#?#.col-lg-6.col-12.no-padding:has(> div.wotd-promo)
 merriam-webster.com#?#.right-rail > div[id$="-sticky-wrapper"]:has(> div > div[class^="mw-ad-slot"])
 messaging-custom-newsletters.nytimes.com##.advt-padding
@@ -5180,6 +5180,7 @@ theregister.com#?##index_page > .srow > .faux-article > .newsletter_signup_unit:
 theregister.com#?##right-col > .rhs_eagle_container > .adun:upward(1)
 theverge.com###kYgI66 > .c-read-more
 theverge.com###notice.p-notice
+theverge.com###zephr-zone-footer
 theverge.com##.ad__athena_internal
 theverge.com##.article__share-buttons
 theverge.com##.c-comments, .c-read-more, .c-recirc-module, .has-content.p-comment-notification, .c-related-list
@@ -5466,7 +5467,6 @@ tomshardware.com##amp-embed[type="taboola"]
 tomshardware.com##body > div[style^="position: fixed;"][style*="z-index: 999"][style*="pointer-events:"]:not([class]):not([id])
 tomshardware.com##div[class*="ad-unit"]
 tomshardware.com#$#.xenforo-comment-widget { height: auto !important; }
-tomshardware.com#%#URL.createObjectURL=function(){return"about:blank"};
 tomshardware.com#@#.sponsored-article
 tongren.gov.cn###tanchukuang
 tongren.gov.cn##.ads
@@ -6303,6 +6303,7 @@ youtube.com###consent-bump
 youtube.com###content > .style-scope > .ytd-compact-promoted-item-renderer
 youtube.com###items.yt-horizontal-list-renderer > ytd-reel-item-renderer
 youtube.com###masthead-ad
+youtube.com###mealbar-promo-renderer
 youtube.com###player-ads
 youtube.com###shorts-inner-container > .ytd-shorts:has(> .ytd-reel-video-renderer > ytd-ad-slot-renderer)
 youtube.com###ticker-content
@@ -6313,7 +6314,6 @@ youtube.com##+js(set, ytInitialPlayerResponse.adSlots, undefined)
 youtube.com##+js(set, ytInitialPlayerResponse.playerAds, undefined)
 youtube.com##+js(set-constant, google_ad_status, 1)
 youtube.com##+js(set-constant, playerResponse.adPlacements, undefined)
-youtube.com##+js(set-constant, yt.config_.EXPERIMENT_FLAGS.web_bind_fetch, false)
 youtube.com##+js(set-constant, ytInitialPlayerResponse.adPlacements, undefined)
 youtube.com##+js(set-constant, ytInitialPlayerResponse.adSlots, undefined)
 youtube.com##+js(set-constant, ytInitialPlayerResponse.playerAds, undefined)
@@ -6379,11 +6379,10 @@ youtube.com#$#override-property-read Object.prototype.ab_sa_ef undefined
 youtube.com#%#(()=>{const wrapper=(target,thisArg,args)=>{let result=Reflect.apply(target,thisArg,args);try{const decoded=atob(result);if(decoded.includes('ssapPrerollEnabled')){const modifiedContent=decoded.replace(/\n.\n.playerConfig\.ssapConfig\.ssapPrerollEnabled.{2}(?:tru|fals)e/,'');const encodeToBase64=btoa(modifiedContent);return encodeToBase64}}catch(e){} return result};const handler={apply:wrapper};window.Array.prototype.join=new Proxy(window.Array.prototype.join,handler)})();
 youtube.com#%#(function(){try{var time=(new Date).getTime();var cookieDate=new Date(time+1314E6);var hostname=location.host;var locSubString=null;if(!hostname.startsWith("google.")&&!hostname.startsWith("youtube."))locSubString=hostname.substring(hostname.indexOf(".")+1);var loc=locSubString||hostname;if(document.cookie.indexOf("CONSENT=YES")!==-1)return;document.cookie="CONSENT=YES+; domain="+loc+"; path=/; expires="+cookieDate.toUTCString()}catch(ex){console.error("AG: failed to set consent cookie: "+ex)}})();
 youtube.com#%#(function(){window.self!==window.top||document.cookie.includes("visitor=")||(document.cookie="visitor=1; path=/;",document.cookie&&location.reload())})();
-youtube.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=/')
-youtube.com#%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=/')
+youtube.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=|get_watch\?/')
+youtube.com#%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=|get_watch\?/')
 youtube.com#%#//scriptlet('set-constant', 'google_ad_status', '1')
 youtube.com#%#//scriptlet('set-constant', 'playerResponse.adPlacements', 'undefined')
-youtube.com#%#//scriptlet('set-constant', 'yt.config_.EXPERIMENT_FLAGS.web_bind_fetch', 'false')
 youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.adPlacements', 'undefined')
 youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.adSlots', 'undefined')
 youtube.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.playerAds', 'undefined')
@@ -6398,6 +6397,8 @@ youtube.com#@#.share-bar
 youtube.com#@#.show-share
 youtube.com#@#.video-ads
 youtube.com#@#body > ytd-app > #content.ytd-app.style-scope > tp-yt-app-drawer#guide.ytd-app.style-scope[align="start"][role="navigation"][style^="transition-duration:"][position] + ytd-mini-guide-renderer.ytd-app.style-scope + ytd-page-manager#page-manager.ytd-app.style-scope > ytd-browse.ytd-page-manager.style-scope[page-subtype="home"][role="main"] > ytd-settings-sidebar-renderer.ytd-browse.style-scope + dom-if.ytd-browse.style-scope + ytd-two-column-browse-results-renderer.grid-disabled.grid.ytd-browse.style-scope[page-subtype="home"][style] > #primary.ytd-two-column-browse-results-renderer.style-scope > ytd-rich-grid-renderer.ytd-two-column-browse-results-renderer.style-scope[style^="--ytd-rich-grid-item-max-width:"] > #spinner-container.ytd-rich-grid-renderer.style-scope + #contents.ytd-rich-grid-renderer.style-scope > ytd-rich-grid-row.ytd-rich-grid-renderer.style-scope > #contents.ytd-rich-grid-row.style-scope > ytd-rich-item-renderer.ytd-rich-grid-row.style-scope[items-per-row]:has(> #content.ytd-rich-item-renderer.style-scope > ytd-ad-slot-renderer.ytd-rich-item-renderer.style-scope:not(:empty))
+youtube.com#@%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=/')
+youtube.com#@%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=/')
 youtube.com/get_video_info?*=adunit&
 youxi.baidu.com###banner
 youxi.baidu.com###coupletBanner
@@ -6786,7 +6787,6 @@ zuoye.baidu.com##dl[class="card related"]
 ||bing.com^$3p,domain=bing.com
 ||bing.com^$app=com.offerup
 ||bing.com^$cookie=ABDEF
-||bing.com^$document,removeparam=cvid
 ||bing.com^*/GLinkPingPost.aspx$ping,xmlhttprequest
 ||bing.com^*/glinkping.aspx$ping,xmlhttprequest
 ||blockworks.co/_vercel/insights/
@@ -7739,6 +7739,8 @@ zuoye.baidu.com##dl[class="card related"]
 ||youtube.com/set_awesome?
 ||youtube.com/subscribe_embed?$third-party
 ||youtube.com/subscribe_widget$third-party
+||youtube.com/youtubei/v1/get_watch?$xhr,1p,replace=/"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,//
+||youtube.com/youtubei/v1/get_watch?$xhr,1p,replace=/"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/"adBreakHeartbeatParams/
 ||youtube.com/youtubei/v1/log_event?
 ||youtube.com^$removeparam=pp
 ||zendesk.com/embeddable_blip?type=analytics&data=
