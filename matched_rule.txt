@@ -47,7 +47,11 @@ $script,redirect-rule=noop.js,domain=sammobile.com
 $script,redirect-rule=noopjs,domain=sammobile.com
 $websocket,domain=pornhub.com
 *$3p,domain=d3ward.github.io
+*$frame,domain=csdn.net
+*$frame,domain=sina.cn
 *$script,3p,from=freeuseporn.com,to=~cloudflare.com
+*$script,domain=csdn.net
+*$script,domain=sina.cn
 *$script,redirect-rule=noopjs,domain=9to5google.com
 *$script,redirect-rule=noopjs,domain=9to5mac.com
 *$script,redirect-rule=noopjs,domain=9to5toys.com
@@ -71,6 +75,8 @@ $websocket,domain=pornhub.com
 .com/playlist?list=$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtube.com
 .com/watch?$xmlhttprequest,jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtube.com
 .duolingo.com/open/
+.js$domain=csdn.net
+.js$domain=sina.cn
 .mgmailer.binance.com/o/$image
 .monster/images/ads/2.png|$~third-party,domain=monster
 .mozilla.org/eos/$image
@@ -581,6 +587,7 @@ $websocket,domain=pornhub.com
 @@||ads.twitter.com/favicon.ico
 @@||ads.twitter.com^$popup
 @@||ads.x.com^$popup
+@@||adserver.juicyads.com/js/jads.js$domain=netflav.com
 @@||adserver.va3.megaphone.cloud.$domain=megaphone.fm
 @@||akamaized.net/*.m4s$stealth,domain=bilibili.com
 @@||alibaba.tanx.com^$domain=alidns.com
@@ -836,9 +843,15 @@ $websocket,domain=pornhub.com
 @@||geolocation.onetrust.com/cookieconsentpub/v*/geo/location$domain=soundcloud.com
 @@||gias.jd.com/js/td.js
 @@||gist.github.com/ad^
+@@||github.com/**/google-analytics
+@@||github.com/**/sensorsdata-ads
+@@||github.com/**/web-vitals-
+@@||github.com/**evercookie
+@@||github.com/**scrolltotop
 @@||github.com/*/*$~third-party
 @@||github.com/*/contributors$xhr,1p
 @@||github.com/*/cookie_consent^
+@@||github.com/*/web-vitals
 @@||github.com/*adblock
 @@||github.com/AdguardTeam/
 @@||github.com/AdguardTeam/*/antiadblock.txt
@@ -904,6 +917,7 @@ $websocket,domain=pornhub.com
 @@||googletagservices.com/tag/js/gpt.js$domain=androidheadlines.com
 @@||gov.cn/scripts/Comm/AdRotator.js
 @@||graph.facebook.com^$xhr,domain=merriam-webster.com
+@@||graph.qq.com$domain=qq.com
 @@||gstatic.com/cast/sdk/libs/sender/*/cast_framework.js$domain=pornhub.com
 @@||gstatic.com/cv/js/sender/*/cast_sender.js$domain=pornhub.com
 @@||gstatic.com^$script,domain=pornhub.com
@@ -963,6 +977,7 @@ $websocket,domain=pornhub.com
 @@||lenovo.com/fea/js/adobeAnalytics/$script,~third-party,xmlhttprequest
 @@||link.adtidy.org/forward.html
 @@||local.adguard.org^
+@@||localhost$domain=skk.moe
 @@||m.wikipedia.org/wiki/
 @@||macrumors.com/2021/*-ad-$domain=macrumors.com
 @@||mail.163.com/fetrack/api/27/envelope/?sentry_key=$xmlhttprequest
@@ -999,6 +1014,7 @@ $websocket,domain=pornhub.com
 @@||myaccount.google.com^$generichide
 @@||naiadsystems.com/*/hls/live$domain=pornhub.com
 @@||neowin.net^$generichide
+@@||netflav.com^$generichide
 @@||netflix.com/*/Login
 @@||netflix.com^$generichide
 @@||news.google.com.*?hl=$removeparam
@@ -1212,6 +1228,7 @@ $websocket,domain=pornhub.com
 @@||yummy.best^$generichide
 @@||z.moatads.com/freewheel*/MoatFreeWheelJSPEM.js$domain=yahoo.com
 @@||ziffstatic.com^*/zdconsent.js$domain=humblebundle.com
+@@||zopim.com$domain=ui.com
 @@||zqtk.net^$script,domain=wsj.com
 [$path=/embed/playlist/]open.spotify.com#?#div[data-testid="embed-widget-container"] > div[style^="--background-color:"]:has(button[data-testid="upsell-close-button"])
 [$path=/m]consent.youtube.com#%#//scriptlet('trusted-click-element', 'form[action="https://consent.youtube.com/save"][jsaction] button[jsname="b3VHJd"]')
@@ -1970,6 +1987,8 @@ bilibili.com###b_app_link
 bilibili.com###fixed_app_download
 bilibili.com###openAppBtn
 bilibili.com##+js(nowebrtc)
+bilibili.com##+js(set, window.biliMetaReporter.pv, noopFunc)
+bilibili.com##+js(sukka-disable-av1)
 bilibili.com##.__adblockhidden
 bilibili.com##.activity-slider[style="width: 1220px;"]
 bilibili.com##.ad-e1
@@ -2029,6 +2048,7 @@ bilibili.com##a[data-target-url*=".taobao.com"]
 bilibili.com##a[href$="_suning.html"]
 bilibili.com##a[href*=".admaster."]
 bilibili.com##a[href*=".doubleclick."]
+bilibili.com##a[href*="cm.bilibili.com"]:style(display: block !important)
 bilibili.com##a[href*="cm.bilibili.com"][data-target-url*="gaoneng.bilibili.com"]
 bilibili.com##a[href*="cm.bilibili.com"][data-target-url*="gaoneng.bilibili.com"] + .bili-video-card__info
 bilibili.com##a[href*="cm.bilibili.com"][data-target-url]:not([data-target-url*=".bilibili.com/"])
@@ -2253,17 +2273,26 @@ blog.cloudflare.com##+js(no-fetch-if, method:POST body:zaraz)
 blog.cloudflare.com##.center.mw7.flex-wrap.flex-row.flex.ph0-l.ph3.pv4
 blog.csdn.net###article_content > link + a
 blog.csdn.net###asideWriteGuide
+blog.csdn.net###csdn-toolbar
 blog.csdn.net###kp_box_www_swiper_ban
+blog.csdn.net###recommend-right
+blog.csdn.net##.article-info-box
 blog.csdn.net##.blog-slide-ad-box
+blog.csdn.net##.blog_container_aside
 blog.csdn.net##.btn_mod
 blog.csdn.net##.btn_open_app_prompt_div
+blog.csdn.net##.comment-box
 blog.csdn.net##.csdn-common-logo-advert
 blog.csdn.net##.feed-Sign-span
 blog.csdn.net##.feed-Sign-weixin
+blog.csdn.net##.more-toolbox
 blog.csdn.net##.passport-auto-tip-login-container
 blog.csdn.net##.programmer1Box
 blog.csdn.net##.readall_box
+blog.csdn.net##.recommend-box
+blog.csdn.net##.recommend-tit-mod
 blog.csdn.net##.t0
+blog.csdn.net##.template-box
 blog.csdn.net##.toolbar-advert
 blog.csdn.net##.toolbar-write-activity-more
 blog.csdn.net##.write-guide-buttom-box
@@ -2287,6 +2316,7 @@ blog.mozilla.org###newsletter-subscribe
 blog.mozilla.org###related-posts, #comments, .nav-paging.section
 blog.mozilla.org##.ft-c-post-share
 blog.nightly.mozilla.org###newsletter-subscribe
+blog.sohu.com##.focus-pic
 blog.twitter.com##.js-eu-cookie-notice
 blog.twitter.com##div[class*="share--icons"]
 blog.x.com##.js-eu-cookie-notice
@@ -2436,6 +2466,7 @@ cloud.tencent.com##.com-back2top
 cloud.tencent.com##.com-event-panel
 cloud.tencent.com##.mod-commercial
 cloud.tencent.com##body > .cdc-portal-wrapper:has(.cdc-modal__mask + .mod-m-new-year)
+cloud.tencent.com/act/common/report$redirect=nooptext
 cloudflare.com##.black.bg-orange-1-500.bottom-0.fixed
 cloudflare.com##.bottom-0.bg-blue0
 cloudflare.com##.eu-cookie-banner
@@ -2498,7 +2529,10 @@ coingape.com##.sidebar-btn-container
 colab.research.google.com##+js(href-sanitizer, a[href^="https://colab.research.google.com/corgiredirector?site=http"], ?site)
 communities.apple.com##.notification
 community.cloudflare.com###discourse-modal:not(.login-modal):not(.create-account)
+community.cloudflare.com##.d-modal__backdrop
+community.cloudflare.com##.house-ad
 community.cloudflare.com##.modal-backdrop
+community.cloudflare.com##.modal-container
 community.cloudflare.com#%#//scriptlet('trusted-click-element', '.interstitial-alert-modal .modal-close')
 community.mozilla.org##.campaign__intro-card > .campaign__keyline
 community.mozilla.org##.campaign__share-container
@@ -2546,6 +2580,7 @@ darkreader.org##a.logo-link[target="_blank"]
 deals.neowin.net#$#.fb_lightbox-overlay { display: none !important; }
 deals.neowin.net#$#div[aria-label="Modal Overlay Box"] { display: none !important; }
 deals.neowin.net#$?#style#dghstyles { remove: true; }
+developer.aliyun.com###right-box
 developer.aliyun.com##.developer-common-fixed-box-bottom
 developer.aliyun.com##.free-product
 developer.aliyun.com##div[class$="_banner"]
@@ -3075,6 +3110,7 @@ github.blog##.post__sidebar > div.d-none.d-md-block
 github.blog##.post__social-share
 github.blog##main > div.color-bg-subtle:has(> div.container-xl > section#newsletter)
 github.com###cookie-consent-banner
+github.com###repository-container-header:not(:has(.js-repo-nav)) :is(#repo-stars-counter-star, #repo-stars-counter-unstar, #repo-network-counter, #repo-notifications-counter, .js-codespaces-details-container summary .Button-label):style(display: inline-block !important)
 github.com##.feed-right-sidebar > div:has(> div.js-notice)
 github.com##.hx_cookie-banner
 github.com##.js-cookie-consent-banner
@@ -3082,6 +3118,7 @@ github.com##.js-newsletter-signup-form
 github.com##.js-notice
 github.com##.js-notice-dismiss[data-analytics-visible]
 github.com##.js-unwatch-suggestions
+github.com##.markdown-body li>p:style(margin-top: 0 !important; margin-bottom: 0 !important)
 github.com##.readme-sharing
 github.com##.repository-content [data-prompt="signup"]
 github.com##.signup-prompt
@@ -3457,6 +3494,7 @@ interactivebrokers.com###cookie-modal ~ .modal-backdrop:not(.modal-backdrop + .m
 interactivebrokers.com##.modal-backdrop
 interactivebrokers.com.au##.modal-backdrop
 ip.sb##.rivencloud_ads
+ip.sb##.wwads_abp
 ip.sb##div[class^="wwads-"]
 ipsw.me##.frameForMoney
 ipsw.me##div[class="col-md-12 alert alert-info"][style="background-color: #0a84ff; margin-top: 10px;"]
@@ -3744,6 +3782,7 @@ linktr.ee##button[aria-label="Share"]
 linktr.ee##div[data-testid="ShareModal-ShareList"]
 linktr.ee##div[data-testid="SubscribeCta"]
 linktr.ee##div[data-testid="TopBar"]
+linux.do##.custom-gated-topic-container
 linux.do#$#div.topic-in-gated-category { display: none !important; }
 linux.do#%#//scriptlet('remove-class', 'topic-in-gated-category', 'body')
 list.jd.com##.jdm-tbar-tab-qrcode
@@ -4220,6 +4259,7 @@ mozilla.org##.mzp-c-sticky-promo
 mozilla.org##.share
 mozilla.org#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
 mp.weixin.qq.com###js_pc_qr_code
+mp.weixin.qq.com/mp/*report$redirect=nooptext
 mse.360.cn##a[id^="banner"]
 mumu.163.com##.pic-con
 music.163.com###g_backtop
@@ -4307,6 +4347,12 @@ neowin.net#?#.ipsColumns_collapsePhone.classes:-abp-contains(Our Sponsors)
 neowin.net#?#.sidebar-col > .category-bar[style] > div > #revue-form:upward(2)
 neowin.net#@##ipsLayout_contentWrapper > .ipsResponsive_hidePhone
 neowin.net#@#.article-share
+netflav.com##+js(abort-on-property-read, __Y)
+netflav.com##.ads_head_banner_container
+netflav.com##.ads_video_overlay_mobile
+netflav.com##.video_iframe_overlay_absolute_background_container
+netflav.com#%#//scriptlet('abort-on-property-read', '__Y')
+netflav.com/static/js/gtag.js$redirect=noop.js
 netflix.com###cookie-disclosure
 netflix.com###uma > div > .message
 netflix.com##+js(json-prune, result.adverts)
@@ -4767,6 +4813,7 @@ pro.m.jd.com##.download-pannel
 producthunt.com##.app_1151c > div.container_3300b
 producthunt.com##.mt-12.direction-row.flex
 producthunt.com##.styles_item__hNPI1
+producthunt.com##[data-test^="ad-slot"]
 producthunt.com##div[class*="styles_descriptionContent_"] div[class*="styles_socialButtons_"] > button[class*="Button_"]:not([data-test="collect-button"])
 producthunt.com##div[class*="styles_mobilePopoutAd_"]
 producthunt.com##div[class^="styles_ad"]
@@ -4859,6 +4906,8 @@ reddit.com##div[style*="--Toaster-indicatorColor"]
 reddit.com##shreddit-async-loader[bundlename="bottom_bar_xpromo"]
 reddit.com##shreddit-async-loader[bundlename="reddit_cookie_banner"]
 reddit.com##shreddit-comment-tree-ad
+reddit.com##shreddit-comment-tree:style(visibility: visible!important)
+reddit.com##shreddit-comment:style(visibility: visible!important)
 reddit.com##shreddit-comments-page-ad
 reddit.com##shreddit-cookie-banner
 reddit.com##xpromo-app-selector
@@ -5039,6 +5088,7 @@ site.baidu.com##.banner2
 site.baidu.com##.popup
 site.baidu.com##.pstr.mt10
 sites.google.com##div[data-cookie-path]
+skk.moe##+js(no-fetch-if)
 smartthingsfind.samsung.com##.bottom-0.fixed
 smartthingsfind.samsung.com##footer + div.fixed.bottom-0
 smhn.info###share
@@ -5168,8 +5218,11 @@ spotify.com###onetrust-consent-sdk
 spotify.com##.ads-container
 spotify.com##.mh-message-bar
 spotify.com##.onetrust-pc-dark-filter
+spotify.com##button[title="Effettua l'upgrade a Premium"]
+spotify.com##button[title="Upgrade to Premium"]
 spotify.com##div[data-hypernova-key="MastheadHeader"] > .mh-message-bar
 spotify.com##div[data-testid="dynamic-hero"]
+spotify.com##div[data-testid="test-ref-div"]
 spotify.com#@#.m-ad
 sspai.com##.content hr:nth-last-child(-n+4) ~ p
 stacksocial.com#$##email-capture-modal { display: none !important; }
@@ -5601,6 +5654,8 @@ tieba.baidu.com##.thread_dir_ad
 tieba.baidu.com##.thread_local_58
 tieba.baidu.com##.thread_recommend
 tieba.baidu.com##.thread_recommend_ps
+tieba.baidu.com##.tieba-login-background
+tieba.baidu.com##.tieba-login-wrapper
 tieba.baidu.com##.tieba_notice
 tieba.baidu.com##.tl_spread
 tieba.baidu.com##.top-guide-wrap.top-guide
@@ -6066,6 +6121,12 @@ www.baidu.com#?#div:not([id]) > style[id^="s-"] + style + div + div[id]
 www.baidu.com#?#div:not([id]) > style[id^="s-"] + style + div[id]
 www.baidu.com#?#div[id$="_canvas"]
 www.baidu.com#@##results > div[class]:not(.result):not(.result-op):not(.sp-rslt-bar):not(.s-group-result)
+www.bilibili.com##.ad-report
+www.bilibili.com##.bili-danmaku-x-guide-all
+www.bilibili.com##.carousel-box
+www.bilibili.com##.pop-live-small-mode
+www.bilibili.com##.r-con
+www.bilibili.com##.video-page-game-card-small
 www.bing.com###b_mrs_BelowBOPAds
 www.bing.com##.l_ecrd_twoimgset
 www.cloudflare.com##+js(no-fetch-if, method:POST body:zaraz)
@@ -6084,6 +6145,7 @@ www.ithome.com##.content>a[href="http://m.ithome.com/ithome/"]
 www.jianshu.com##[aria-label='lwa-ad-one']
 www.jianshu.com#@#div[class$="_0"]
 www.lenovo.com##+js(trusted-replace-argument, history.replaceState, 2, "''", condition, ?orgRef)
+www.linuxbabe.com##.widgets
 www.nytimes.com##+js(trusted-click-element, button.fides-reject-all-button, , 1500)
 www.nytimes.com##.css-1r939ki
 www.reddit.com###COIN_PURCHASE_DROPDOWN_ID
@@ -6104,6 +6166,8 @@ www.reddit.com##header [href="/r/Popular/"]
 www.reddit.com##header [href="/r/all/"]
 www.reddit.com##header [href="/rpan/"]
 www.reddit.com##header button:has-text(/Shop Avatars/):upward(1)
+www.sohu.com##.article-allsee
+www.sohu.com##.swiper
 www.sohu.com#?#.list16 > ul > li:-abp-contains(广告)
 www.thepaper.cn##.pdtt01
 www.youtube.com###content > .ytd-rich-section-renderer:has-text(YouTube Playables)
@@ -6128,6 +6192,7 @@ www.youtube.com##+js(trusted-replace-xhr-response, /"adPlacements.*?("adSlots"|"
 www.youtube.com##+js(trusted-replace-xhr-response, /"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,/, , /playlist\?list=|\/player(?:\?.+)?$|watch\?[tv]=/)
 www.youtube.com##+js(trusted-replace-xhr-response, /"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,/, , /playlist\?list=|player\?|watch\?v=|youtubei\/v1\/player/)
 www.youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
+www.youtube.com##.ytd-rich-section-renderer
 www.youtube.com##.ytlr-watch-default__ad-badge-for-tvae
 www.youtube.com##.ytp-featured-product
 www.youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
@@ -6588,6 +6653,7 @@ youtube.com##+js(set-constant, playerResponse.adPlacements, undefined)
 youtube.com##+js(set-constant, ytInitialPlayerResponse.adPlacements, undefined)
 youtube.com##+js(set-constant, ytInitialPlayerResponse.adSlots, undefined)
 youtube.com##+js(set-constant, ytInitialPlayerResponse.playerAds, undefined)
+youtube.com##+js(sukka-disable-av1)
 youtube.com##.YtdShortsSuggestedActionStaticHostContainer
 youtube.com##.YtmPaidContentOverlayHost
 youtube.com##.annotation.iv-branding
@@ -6676,6 +6742,9 @@ youtube.com/get_video_info?*=adunit&
 youxi.baidu.com###banner
 youxi.baidu.com###coupletBanner
 yutu.cn###botfocus-res
+zh.moegirl.org.cn###grandpa-entrance
+zh.moegirl.org.cn###nav-userlink-grandpa-entrance
+zh.moegirl.org.cn##.banner-gallery
 zh.moegirl.org.cn##.moe-dropdown.moe-downloadapp
 zh.moegirl.org.cn#?#.swiper-slide:has(> a[href^="https://m.tb.cn/"])
 zhidao.baidu.com###act-link-banner
@@ -7009,6 +7078,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||bbc.com/ngas/latest/dotcom-analytics.js
 ||bbc.com^$removeparam=/^at_[a-z_]+=/
 ||bbc.com^$removeparam=xtor
+||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bilibili.com/html/ads-index.js
 ||bilibili.com/x/frontend/finger/fpfmc?
 ||bilibili.com/x/web-interface/archive/special/recommend?aid=
@@ -7078,6 +7148,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||bugsnag.com^$third-party
 ||business-api.tiktok.com^$domain=d3ward.github.io
 ||bwbx.io/s3/javelin/public/hub/js/abba/$script,domain=bloomberg.com
+||bytegoofy.com$domain=sohu.com
 ||cc/scriptAD/$script
 ||cdn.ampproject.org/v0/amp-access-0.1.js$domain=wsj.com
 ||cdn.branch.io^$domain=medium.com
@@ -7369,6 +7440,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||hdslb.com/bfs/ad/
 ||hdslb.com/bfs/cm/cm-sdk/static/js/bili-collect.js$script,redirect=noop.js,domain=bilibili.com
 ||hdslb.com/bfs/cm/cm-sdk/static/js/bili-collect.js$script,redirect=noopjs,domain=bilibili.com
+||hdslb.com/bfs/seed/log/*.js*$redirect=noop.js
 ||hdslb.com/js/bfd.js
 ||hdslb.com/js/core-v5/picment.
 ||herokudns.com^$xhr,domain=darkreader.org
@@ -7379,6 +7451,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||humblebundle.com^$removeparam=linkID
 ||humblebundle.com^$removeparam=mcID
 ||humblebundle.com^$removeparam=partner
+||i.imgur.com^$domain=netflav.com
 ||i.imgur.com^$domain=samfw.com
 ||i2.sinaimg.cn/*/searchCallup.js$domain=gu.sina.cn
 ||icanhazip.com^$third-party
@@ -7684,6 +7757,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||reddit.com^$removeparam=share_id
 ||redditstatic.com/button/button*.$domain=~reddit.com
 ||redditstatic.com/shreddit/sentry-$domain=reddit.com
+||render.alipay.com/p/s/taobaonpm_click*$image
 ||right.com.cn/forum/static/image/common/logo
 ||right.com.cn/forum/static/image/common/logo*.gif
 ||right.com.cn/forum/static/image/common/logo1.
@@ -7786,6 +7860,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||steampowered.com/default/usabilitytracking
 ||steampowered.com^$removeparam=snr
 ||store.steampowered.com/app/usabilitytracking/
+||store.ui.com/api/geo-ip$domain=ui.com
 ||strapi.reddit.com^$xhr,domain=reddit.com
 ||stripe.com/?event=
 ||stripe.com/tracking/
@@ -7940,6 +8015,8 @@ zuoye.baidu.com##dl[class="card related"]
 ||www.baidu.com/link?url=$removeparam=eqid
 ||www.baidu.com^$removeparam=rsv_pq
 ||www.baidu.com^$removeparam=rsv_t
+||www.dmit.io/templates/dmit_theme_2020/dmit/assets/images/dmit_banner_bbs-liyuan.jpg
+||www.google.com/adsense/domains/caf.js*$redirect=noop.js
 ||www.reddit.com/|$xhr,1p,method=post
 ||www.youtube.com/@melonitysoft/$doc
 ||www.youtube.com/@pengwincheat/$doc
@@ -7954,6 +8031,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||www.youtube.com/watch?$xhr,1p,replace=/"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/"adBreakHeartbeatParams/
 ||www.youtube.com/youtubei/v1/player?$xhr,1p,replace=/"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,//
 ||www.youtube.com/youtubei/v1/player?$xhr,1p,replace=/"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/"adBreakHeartbeatParams/
+||www.zhihu.com/commercial_api/banners_v3/question_up$redirect=noop.txt
 ||x.com/*/videoads/
 ||x.com/1.1/attribution
 ||x.com/1.1/jot
@@ -8017,6 +8095,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||youtube.com/api/stats/delayplay?
 ||youtube.com/api/stats/qoe?
 ||youtube.com/csi_204?
+||youtube.com/embed/$3p,frame,redirect=click2load.html
 ||youtube.com/embed/?enablejsapi=1&origin=*3dnews.ru&widgetid=1
 ||youtube.com/embed/wqLWTeNBEEQ?
 ||youtube.com/gen_204
@@ -8033,6 +8112,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||youtube.com/set_awesome?
 ||youtube.com/subscribe_embed?$third-party
 ||youtube.com/subscribe_widget$third-party
+||youtube.com/sw.js
 ||youtube.com/watch$replace=/adSlots/no_ads/,document
 ||youtube.com/youtubei/v1/get_watch?$xhr,1p,replace=/"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,//
 ||youtube.com/youtubei/v1/get_watch?$xhr,1p,replace=/"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/"adBreakHeartbeatParams/
