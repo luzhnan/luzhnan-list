@@ -80,6 +80,8 @@ $websocket,domain=pornhub.com
 .mgmailer.binance.com/o/$image
 .monster/images/ads/2.png|$~third-party,domain=monster
 .mozilla.org/eos/$image
+/(pv-cdn\.net|\/dm\/).*\.mpd/$replace=/<Period.{0\,400}value="Ad"[\s\S]*?<\/Period>//,xmlhttprequest,domain=amazon.com
+/(pv-cdn\.net|\/dm\/).*\.mpd/$replace=/start="[0-9A-Z.]+?">/>/,xmlhttprequest,domain=amazon.com
 /\/js\/\d{2,3}eka\d{2,3}\.js$/$script,1p,domain=com
 /^https:\/\/(?:www\.)?roblox(?:\.com)?\.[a-z]{2}\//$doc,to=roblox.*|~roblox.com
 /^https:\/\/[a-z]\d{3}\.[a-z]+\.com\/script\.js$/$script,1p,strict3p,domain=com,redirect=noopjs
@@ -110,6 +112,7 @@ $websocket,domain=pornhub.com
 /adverts.$~script,~xmlhttprequest,domain=gitlab.com
 /assets/sidebar/*$domain=v2ex.com
 /bugsnag.min.js$domain=adblock-tester.com
+/counter?$domain=amazon.com
 /ghost/api/content/newsletters/*$domain=matduggan.com
 /i/api/graphql/*/HomeLatestTimeline$jsonprune=\$.data.home.home_timeline_urt.instructions..entries..[?(key-substr 'entryId' 'promoted-tweet-')],domain=twitter.com
 /i/api/graphql/*/HomeLatestTimeline$jsonprune=\$.data.home.home_timeline_urt.instructions..entries..[?(key-substr 'entryId' 'promoted-tweet-')],domain=x.com
@@ -131,6 +134,7 @@ $websocket,domain=pornhub.com
 /r/video/*$domain=youxi.baidu.com
 /reklam/*$~xmlhttprequest,domain=cloudflare.com
 /reklam/*$~xmlhttprequest,domain=github.com
+/web-vitals.$script,redirect=noopjs,domain=amazon.com
 /wp-content/uploads/pum/*$domain=linuxbabe.com
 /wrapperMessagingWithoutDetection.js$domain=androidcentral.com
 /wrapperMessagingWithoutDetection.js$domain=bbc.com
@@ -279,6 +283,7 @@ $websocket,domain=pornhub.com
 163.com##.expoure_track_item
 163.com##.fixed_foot_ad
 163.com##.gWel-promt
+163.com##.gg200,.gg300,.gg200x300,[class$="_ad"],div.mod_ad_text,#bobo,#layout-bobo,.txt-bobo,#js_a_bobo,.bobo-area,.imglist-bobo-app,#layout-love,#layout-shop,.top-banner,div.post_adtop_main,div.post_adtop_side,a.tie-ad-bar,#fixed_foot_ad,#js-epTabDS,#js-epBobo
 163.com##.gkk_bj_yw
 163.com##.gkk_default_yw
 163.com##.idx_textlink_ad
@@ -644,6 +649,7 @@ $websocket,domain=pornhub.com
 @@||api.bilibili.com^$removeparam
 @@||api.bilibili.com^$stealth
 @@||api.github.com^$stealth
+@@||api.imgur.com^$stealth
 @@||api.ip.sb/geoip$domain=ip.skk.moe
 @@||api.spotify.com^$xmlhttprequest,stealth=3p-auth
 @@||api.stackcommerce.net^$stealth=3p-auth
@@ -963,10 +969,12 @@ $websocket,domain=pornhub.com
 @@||googletagmanager.com/gtm.js$domain=9to5mac.com
 @@||googletagmanager.com/gtm.js$domain=ads.spotify.com
 @@||googletagmanager.com/gtm.js$domain=duolingo.com
+@@||googletagmanager.com/gtm.js$domain=imgur.com
 @@||googletagmanager.com/gtm.js$domain=sonos.com
 @@||googletagmanager.com/gtm.js$domain=soundguys.com
 @@||googletagmanager.com/gtm.js$script,3p,domain=eu.community.samsung.com
 @@||googletagservices.com/tag/js/gpt.js$domain=androidheadlines.com
+@@||googletagservices.com/tag/js/gpt.js$domain=imgur.com
 @@||gov.cn/scripts/Comm/AdRotator.js
 @@||graph.facebook.com^$xhr,domain=merriam-webster.com
 @@||graph.qq.com$domain=qq.com
@@ -999,6 +1007,7 @@ $websocket,domain=pornhub.com
 @@||icloud.com^$stealth
 @@||idmsa.apple.com/appleauth/$stealth,domain=icloud.com
 @@||image.useinsider.com/lenovosg/$image,domain=lenovo.com
+@@||images-*.ssl-images-amazon.com/images/*/advertising^$domain=amazon.com
 @@||images-dl.taboola.com^$domain=samsung.com
 @@||images.apple.com/metrics/scripts/s_code_h.js$domain=apple.com
 @@||images.macrumors.com/*/article-new/
@@ -1011,6 +1020,8 @@ $websocket,domain=pornhub.com
 @@||img*.*img18fx.xyz^$stealth,image,domain=manga18fx.com
 @@||img*.doubanio.com^$stealth=referrer,domain=douban.com
 @@||img.connatix.com/*.jpg$3p,image,domain=accuweather.com
+@@||imgur.com/desktop-assets/js/floaty_rotator.*.bundle.js
+@@||imgur.com/min/px.js$~third-party
 @@||injections.adguard.com^$document
 @@||inside-graph.com^$domain=lenovo.com
 @@||instagram.com/api/v1/ads/$~third-party,xmlhttprequest
@@ -1038,6 +1049,7 @@ $websocket,domain=pornhub.com
 @@||link.adtidy.org/forward.html
 @@||local.adguard.org^
 @@||localhost$domain=skk.moe
+@@||m.media-amazon.com/images/*/csm/showads.*.js
 @@||m.wikipedia.org/wiki/
 @@||macrumors.com/2021/*-ad-$domain=macrumors.com
 @@||mail.163.com/fetrack/api/27/envelope/?sentry_key=$xmlhttprequest
@@ -1093,6 +1105,8 @@ $websocket,domain=pornhub.com
 @@||nytimes.com/ads/google/adsbygoogle.js
 @@||nytimes.com^*/EventTracker.js$~third-party
 @@||nytimes.com^*/adslot-$script,xhr,badfilter
+@@||omtrdc.net/b/ss/acsca-prod/$domain=amazon.com
+@@||omtrdc.net^$domain=amazon.com
 @@||ooyala.com/3rdparty/comscore_*.swf$domain=bloomberg.com
 @@||open.spotify.com^$cname
 @@||open.spotify.com^$generichide
@@ -1156,6 +1170,8 @@ $websocket,domain=pornhub.com
 @@||s.206ads.com/js/data/androidauthority.com.js$domain=androidauthority.com
 @@||s.206ads.com/prebid.js$domain=androidauthority.com
 @@||s.click.taobao.com^$popup
+@@||s.imgur.com/min/advertising.js
+@@||s.imgur.com/min/px.js$domain=imgur.com
 @@||s.ntv.io/serve/load.js$domain=bloomberg.com
 @@||s.youtube.com/api/stats/playback?
 @@||scdn.co/cdn/js/gtag.$script,domain=spotify.com
@@ -1170,6 +1186,8 @@ $websocket,domain=pornhub.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=bloomberg.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=newyorker.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=sammobile.com
+@@||sellercentral.amazon.com/gp/remote-nav-html.html$elemhide,jsinject
+@@||sellercentral.amazon.com/hz/inventory/$elemhide,jsinject
 @@||service.force.com/embeddedservice/*/esw.min.js$domain=support.sonos.com
 @@||sf*-*cdn-tos.pstatp.com^$domain=juejin.cn
 @@||shop.bbc.com/skin/$script,1p
@@ -1446,6 +1464,12 @@ ali213.net##.zadmainholder
 ali213.net##div[class^="GG"]
 ali213.net##div[id^="ali-ad-js-"]
 ali213.net#@#.subscribe-container
+alibabacloud.com###alicloud-home-top-banner
+alibabacloud.com###carousel-whois
+alibabacloud.com##.BottomBanner
+alibabacloud.com##.b-alicloud-bottom
+alibabacloud.com##.btn-survey
+alibabacloud.com##.hmod-alicloud-contact-sales-support
 alipay.com###J-cooperant-banner
 aliyun.com###yq-a-r-bottom
 aliyun.com##.aliyun-delivery-view-container
@@ -1457,6 +1481,158 @@ almayadeen.net##+js(set-constant, videojsIma, noopFunc)
 almayadeen.net##.social-bar
 almayadeen.net#%#//scriptlet("set-constant", "videojsContribAds", "noopFunc")
 almayadeen.net#%#//scriptlet("set-constant", "videojsIma", "noopFunc")
+amazon.cn###Share
+amazon.cn###nav-swmslot
+amazon.cn###sc-rec-bottom
+amazon.cn###sc-rec-right
+amazon.cn###similarities_feature_div:has(span.sponsored_label_tap_space)
+amazon.cn###sponsoredProducts2_feature_div
+amazon.cn###sponsoredProducts_feature_div
+amazon.cn###typ-recommendations-stripe-1
+amazon.cn###typ-recommendations-stripe-2
+amazon.cn##.amzn-safe-frame-container
+amazon.cn##.dp-widget-card-deck:has([data-ad-placement-metadata])
+amazon.cn##.maple-banner
+amazon.cn##.moduleBookmarkLinks
+amazon.cn##.s-result-item:has([data-ad-feedback])
+amazon.cn##.s-result-item:has(div.puis-sponsored-label-text)
+amazon.cn##.s-result-list > .a-section:has(.sbv-ad-content-container)
+amazon.cn##.sbv-video-single-product
+amazon.cn##[cel_widget_id*="-creative-desktop_loom-desktop-"]
+amazon.cn##div.s-inner-result-item > div.sg-col-inner:has(a.puis-sponsored-label-text)
+amazon.cn##div[cel_widget_id*="Deals3Ads"]
+amazon.cn##div[cel_widget_id*="_ad-placements-"]
+amazon.cn##div[cel_widget_id*="desktop-dp-"]
+amazon.cn##div[cel_widget_id="sp-orderdetails-desktop-carousel_desktop-yo-orderdetails_0"]
+amazon.cn##div[cel_widget_id="sp-orderdetails-mobile-list_mobile-yo-orderdetails_0"]
+amazon.cn##div[cel_widget_id="sp-pop-mobile-carousel_mobile-yo-postdelivery_0"]
+amazon.cn##div[cel_widget_id="sp-rhf-desktop-carousel_desktop-rhf_0"]
+amazon.cn##div[cel_widget_id="sp-shiptrack-desktop-carousel_desktop-yo-shiptrack_0"]
+amazon.cn##div[cel_widget_id="sp-shiptrack-mobile-list_mobile-yo-shiptrack_0"]
+amazon.cn##div[cel_widget_id="sp-typ-mobile-carousel_mobile-typ-carousels_2"]
+amazon.cn##div[cel_widget_id="sp_phone_detail_thematic"]
+amazon.cn##div[cel_widget_id="typ-ads"]
+amazon.cn##div[cel_widget_id^="LEFT-SAFE_FRAME-"]
+amazon.cn##div[cel_widget_id^="MAIN-FEATURED_ASINS_LIST-"]
+amazon.cn##div[cel_widget_id^="adplacements:"]
+amazon.cn##div[cel_widget_id^="multi-brand-"]
+amazon.cn##div[cel_widget_id^="sp-desktop-carousel_handsfree-browse"]
+amazon.cn##div[class*="SponsoredProducts"]
+amazon.cn##div[class*="_dpNoOverflow_"][data-idt]
+amazon.cn##div[data-a-carousel-options*="\\\"isSponsoredProduct\\\":\\\"true\\\""]
+amazon.cn##div[data-ad-id]
+amazon.cn##div[data-cel-widget="sp-rhf-desktop-carousel_desktop-rhf_1"]
+amazon.cn##div[data-cel-widget="sp-shiptrack-desktop-carousel_desktop-yo-shiptrack_0"]
+amazon.cn##div[data-cel-widget^="multi-brand-video-mobile_DPSims_"]
+amazon.cn##div[data-cel-widget^="multi-card-creative-desktop_loom-desktop-top-slot_"]
+amazon.cn##div[data-csa-c-painter="sp-cart-mobile-carousel-cards"]
+amazon.cn##div[data-csa-c-slot-id^="loom-mobile-brand-footer-slot_hsa-id-"]
+amazon.cn##div[data-csa-c-slot-id^="loom-mobile-top-slot_hsa-id-"]
+amazon.cn##div[id^="sp_detail"]
+amazon.cn##div[id^="sponsoredProducts"]
+amazon.cn##span[cel_widget_id^="MAIN-FEATURED_ASINS_LIST-"]
+amazon.cn##span[cel_widget_id^="MAIN-loom-desktop-brand-footer-slot_hsa-id-CARDS-"]
+amazon.cn##span[cel_widget_id^="MAIN-loom-desktop-top-slot_hsa-id-CARDS-"]
+amazon.cn#?#.s-result-item:-abp-has(> .s-item-container > h5 .s-sponsored-info-icon)
+amazon.com###ADPlaceholder
+amazon.com###DAnsm
+amazon.com###Share
+amazon.com###ape_Detail_dp-ads-center-promo_Desktop_placement
+amazon.com###centerBelow > #ape_search_btf_search-mWeb_text-wrapper
+amazon.com###detailILMPercolate_feature_div
+amazon.com###facebook
+amazon.com###hqpWrapper
+amazon.com###huc-first-upsell-row
+amazon.com###mobile-ad
+amazon.com###mobile-immersive-player
+amazon.com###native-app-upsell
+amazon.com###nav-app-banner-container
+amazon.com###nav-swmslot
+amazon.com###nav-upnav
+amazon.com###nav-upnav[style]
+amazon.com###percolate-ui-ilm_div
+amazon.com###pldn-deep-link
+amazon.com###sc-rec-bottom
+amazon.com###sc-rec-right
+amazon.com###similarities_feature_div:has(span.sponsored_label_tap_space)
+amazon.com###smart-app-banner
+amazon.com###sp-cc
+amazon.com###sponsoredProducts2_feature_div
+amazon.com###sponsoredProducts_feature_div
+amazon.com###twitter
+amazon.com###typ-recommendations-stripe-1
+amazon.com###typ-recommendations-stripe-2
+amazon.com###watchNow_feature_div
+amazon.com##+js(json-prune, cuepointPlaylist)
+amazon.com##.a-carousel-card:empty
+amazon.com##.adFeedback
+amazon.com##.amsSparkleAdContainer
+amazon.com##.amzn-safe-frame-container
+amazon.com##.aw-campaigns
+amazon.com##.dp-widget-card-deck:has([data-ad-placement-metadata])
+amazon.com##.maple-banner
+amazon.com##.mini-atf
+amazon.com##.mo-wp
+amazon.com##.moduleBookmarkLinks
+amazon.com##.payment-plan-02.payment-options-financing-option.payment-options-option.a-padding-small.a-spacing-small.a-section
+amazon.com##.pmts-payment-option-list-wrapper > .a-box:not([class*=" "])
+amazon.com##.s-result-item:has([data-ad-feedback])
+amazon.com##.s-result-item:has(div.puis-sponsored-label-text)
+amazon.com##.s-result-list > .a-section:has(.sbv-ad-content-container)
+amazon.com##.sbv-video-single-product
+amazon.com##.slot__ad
+amazon.com##.sparkle-container
+amazon.com##[cel_widget_id*="-creative-desktop_loom-desktop-"]
+amazon.com##a[aria-label="Sponsored video, click to navigate to featured page."]
+amazon.com##body .accept-cookies
+amazon.com##div.afap-above-nav#afap-above-nav
+amazon.com##div.s-inner-result-item > div.sg-col-inner:has(a.puis-sponsored-label-text)
+amazon.com##div[cel_widget_id*="Deals3Ads"]
+amazon.com##div[cel_widget_id*="_ad-placements-"]
+amazon.com##div[cel_widget_id*="desktop-dp-"]
+amazon.com##div[cel_widget_id="sp-orderdetails-desktop-carousel_desktop-yo-orderdetails_0"]
+amazon.com##div[cel_widget_id="sp-orderdetails-mobile-list_mobile-yo-orderdetails_0"]
+amazon.com##div[cel_widget_id="sp-pop-mobile-carousel_mobile-yo-postdelivery_0"]
+amazon.com##div[cel_widget_id="sp-rhf-desktop-carousel_desktop-rhf_0"]
+amazon.com##div[cel_widget_id="sp-shiptrack-desktop-carousel_desktop-yo-shiptrack_0"]
+amazon.com##div[cel_widget_id="sp-shiptrack-mobile-list_mobile-yo-shiptrack_0"]
+amazon.com##div[cel_widget_id="sp-typ-mobile-carousel_mobile-typ-carousels_2"]
+amazon.com##div[cel_widget_id="sp_phone_detail_thematic"]
+amazon.com##div[cel_widget_id="typ-ads"]
+amazon.com##div[cel_widget_id^="LEFT-SAFE_FRAME-"]
+amazon.com##div[cel_widget_id^="MAIN-FEATURED_ASINS_LIST-"]
+amazon.com##div[cel_widget_id^="adplacements:"]
+amazon.com##div[cel_widget_id^="multi-brand-"]
+amazon.com##div[cel_widget_id^="sp-desktop-carousel_handsfree-browse"]
+amazon.com##div[class*="SponsoredProducts"]
+amazon.com##div[class*="_dpNoOverflow_"][data-idt]
+amazon.com##div[class*="widget=loom-"][class*="FEATURED"]
+amazon.com##div[class^="DesktopFlexBannerLayout-module__playerContainer_"]
+amazon.com##div[data-a-carousel-options*="\\\"isSponsoredProduct\\\":\\\"true\\\""]
+amazon.com##div[data-ad-details]
+amazon.com##div[data-ad-id]
+amazon.com##div[data-cel-widget="sp-rhf-desktop-carousel_desktop-rhf_1"]
+amazon.com##div[data-cel-widget="sp-shiptrack-desktop-carousel_desktop-yo-shiptrack_0"]
+amazon.com##div[data-cel-widget^="multi-brand-video-mobile_DPSims_"]
+amazon.com##div[data-cel-widget^="multi-card-creative-desktop_loom-desktop-top-slot_"]
+amazon.com##div[data-csa-c-painter="sp-cart-mobile-carousel-cards"]
+amazon.com##div[data-csa-c-slot-id^="loom-mobile-brand-footer-slot_hsa-id-"]
+amazon.com##div[data-csa-c-slot-id^="loom-mobile-top-slot_hsa-id-"]
+amazon.com##div[data-widgetid="share"]
+amazon.com##div[id^="CardInstance"][data-card-metrics-id^="tempo-desktop-typ-prominent"]
+amazon.com##div[id^="sp_detail"]
+amazon.com##div[id^="sponsoredProducts"]
+amazon.com##span[cel_widget_id^="MAIN-FEATURED_ASINS_LIST-"]
+amazon.com##span[cel_widget_id^="MAIN-loom-desktop-brand-footer-slot_hsa-id-CARDS-"]
+amazon.com##span[cel_widget_id^="MAIN-loom-desktop-top-slot_hsa-id-CARDS-"]
+amazon.com##span[data-action="ssf-share-icon"]
+amazon.com#%#//scriptlet('json-prune', 'cuepointPlaylist')
+amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[@value="Ad"]] | //*[name()="Period"]/@start)', '[value="Ad"]', '.mpd')
+amazon.com#?##huc-page-container > div[role="complementary"]:has(a[href*="ref=huc_sponsor"])
+amazon.com#@#.a-link-normal[href*="&adId="]
+amazon.com#@#[id^="div-gpt-ad"]
+amazon.com#@#h5[data-alt-pixel-url^="/gp/sponsored-products/"]
+amazon.com#@#h5[data-alt-pixel-url^="/gp/sponsored-products/"] + div + .a-row
 amkstation.com##.ad
 amp.reddit.com##.UpsellModal
 amp.reddit.com##div[class*="__Ad"]
@@ -2386,6 +2562,7 @@ bing.com#?#.insights > .insml > li > .ins_exp > div > ul > li > .ta_c > a[href*=
 bing.com#?#.sb_form_placeholder:-abp-has(>.ad-ghost-slug)
 bing.com#?#.slide:has(> .tobitem > a > .rtb_ad_caritem_mvtr)
 bing.com#?#.tob_calcontainer > div.slide:has(> div.tobitem > a[href*="/tracking?adUnit="])
+bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^(Amazon|Best Buy|Booking\.com|eBay|eDreams|Trip\.com|Tripadvisor|Walmart)$/))
 bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^Amazon$/))
 bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^Best Buy$/))
 bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^Booking\.com$/))
@@ -4104,6 +4281,40 @@ image.baidu.com#?#.newfcImgli:-abp-has(.fc-ad-tip)
 imazing.com#$#body.modal-open { overflow: auto !important; }
 imazing.com#$#div#cookie-consent-modal { display: none !important; }
 imazing.com#$#div.modal-backdrop { display: none !important; }
+imgur.com###share-button
+imgur.com##+js(adjust-setTimeout, /function\(\)\{try\{|adBegan/, 5000, 0.02)
+imgur.com##+js(remove-attr, style, .GalleryPage-bg)
+imgur.com##+js(rmnt, script, '"v4ac1eiZr0"')
+imgur.com##+js(set, ADBLOCKED, false)
+imgur.com##+js(set, Object.prototype.adsEnabled, false)
+imgur.com##+js(set, Object.prototype.has_opted_out_tracking, trueFunc)
+imgur.com##+js(set-constant, ADBLOCKED, false)
+imgur.com##+js(set-cookie, WHITELISTED_CLOSED, 1)
+imgur.com##.Ad
+imgur.com##.Ad.sas.Smart
+imgur.com##.BannerAd-cont
+imgur.com##.EmeraldBanner
+imgur.com##.Gallery-Share
+imgur.com##.SmartAppBanner-wrapper
+imgur.com##.Top300x600
+imgur.com##.fast-grid-ad
+imgur.com##.get-app-block
+imgur.com##.masthead
+imgur.com##.post-banner
+imgur.com##.qc-cmp2-container
+imgur.com##.smartbanner
+imgur.com##.social:not(body)
+imgur.com##^script:has-text('"v4ac1eiZr0"')
+imgur.com##a[href].Post-item:has(.Post-item-external-ad):style(opacity: 0 !important; cursor: unset !important; pointer-events: none !important;)
+imgur.com#$#.Gallery-EngagementBarContainer > div.Transformation-wrapper { display: none !important; }
+imgur.com#$#.RewardVideo { display: none !important; }
+imgur.com#$#body { overflow-y: auto !important; }
+imgur.com#$#div[class^="SeeImgurOIA-"] { display: none !important; }
+imgur.com#%#//scriptlet("adjust-setTimeout", "/function\(\)\{try\{|adBegan/", "5000", "0.02")
+imgur.com#%#//scriptlet("set-constant", "ADBLOCKED", "false")
+imgur.com#%#//scriptlet('remove-attr', 'style', '.GalleryPage-bg')
+imgur.com#?##main-sidebar > div.sb-widget:has(> div.widget-content > div.fb-page)
+imgur.com#?#.FastGrid > .Grid-column > div[style*="height:"]:has(> a[href] > .Post-item-container > .Post-item-meta > .Post-item-external-ad)
 inapps.appsflyersdk.com^
 influencermarketinghub.com###ccl_ppu
 influencermarketinghub.com###cta_popup
@@ -4631,6 +4842,14 @@ m.gsmarena.com##.share-buttons > a[class*="-share-button"]
 m.gsmarena.com##.top-adv
 m.huxiu.com###qr_code_pc
 m.icbc.com.cn##div[data-collecting-aname="手机网站首页主图广告"]
+m.imgur.com##.AppBanner-container > *:not(.AppBanner-continueBrowsing)
+m.imgur.com##.FloatingOIA
+m.imgur.com##.Post-contentContainer > div.Post-metaContainer
+m.imgur.com##.PostContainer-postGetApp
+m.imgur.com##.share
+m.imgur.com##button.ShareButtons-shareMethod
+m.imgur.com##div[class^="Ad-adhesive"]
+m.imgur.com#$#.AppBanner-container { height: 50px!important; }
 m.ithome.com##.hot-app
 m.ithome.com##.open-app-a
 m.iyf.tv##.container:has(> div.download-title)
@@ -4914,7 +5133,6 @@ medium.com#?#div:not([class]):has(> a[href^="/plans?source=upgrade_membership-"]
 medium.com#?#div[class*=" "]:has(> div[class*=" "] > h2[class*=" "]:contains(/^Get unlimited access/))
 medium.com#?#div[data-test-id="post-sidebar"] ~ div:not([class]) div ~ div[class]:has(> div[class] > h2[class]:contains(/^Get an email|^Sign up for/))
 medium.com#?#div[role="dialog"] ~ div > div > div > div > div > h2:contains(/^Get an email|Sign up for/):upward(2)
-medium.com#@#div[data-popper-placement]
 meethue.com###sliding-popup
 meituan.com##.banner-download
 meituan.com##.component-downtip
@@ -7062,6 +7280,8 @@ wk.baidu.com##a[href^="http://www.baidu.com/cpro.php?"]
 world.taobao.com##div[data-spm="banner_above"]
 wq.jd.com###id-pcprompt-mask
 www.163.com##.float-bar
+www.amazon.com##+js(json-prune, cuepointPlaylist vodPlaybackUrls.result.playbackUrls.cuepoints)
+www.amazon.com##+js(xml-prune, xpath(//*[name()="Period"][.//*[@value="Ad"]] | //*[name()="Period"]/@start), [value="Ad"], .mpd)
 www.baidu.com###banner_call + div[id]
 www.baidu.com###content_left > .result ~ div:not([class]):not([style])
 www.baidu.com###content_left > [class] > [id*="00"] > div
@@ -7803,6 +8023,7 @@ yahoo.com##div[class^="article-aft-share-buttons-"]
 yahoo.com##div[class^="col-fullbleed mb-4 bg-marshmallow pb-5 "]
 yahoo.com##div[class^="loginbannerpromo"]
 yahoo.com##div[class^="subscriptiontdv2"]
+yahoo.com##div[data-article-body] > div[class="col-body md:hidden"]:has(form[aria-label="Newsletter sign up form"])
 yahoo.com##div[data-beacon] > div[class*="streamBoxShadow"]
 yahoo.com##div[data-content="廣告"]
 yahoo.com##div[data-i13n-sec="app-bhpromo"]
@@ -8154,6 +8375,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||adash.man.aliyuncs.com^
 ||adashx4ae.ut.taobao.com^
 ||adblock-tester.com/banners/
+||addthis.com^$third-party,domain=imgur.com
 ||adeventtracker.spotify.com^
 ||adeventtrackermonitoring.spotify.com^
 ||adfox.yandex.ru^$domain=d3ward.github.io
@@ -8230,6 +8452,15 @@ zuoye.baidu.com##dl[class="card related"]
 ||als.baidu.com^
 ||amap.com$domain=bigdata.speedtest.cn
 ||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=androidpolice.com
+||amazon.com/*/cerberus/log/
+||amazon.com/aan/
+||amazon.com/aan/$subdocument
+||amazon.com/e/xsp/imp?
+||amazon.com/empty.gif?
+||amazon.com/empty.gif?$image
+||amazon.com/gp/redirect.html?*&location=http$doc,urlskip=?location
+||amazon.com/shoppingaids/logimpression?
+||amazon.com^*/impress.html
 ||amdc.m.taobao.com^
 ||amdcopen.m.taobao.com^
 ||ampcid.google.com^$important
@@ -8477,6 +8708,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||bbc.com^$removeparam=xtor
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bbvaar.zeabur.app^$all,to=~bbva.com
+||bcebos.com^$image,domain=pan.baidu.com
 ||bdcpro*.techweb.com.cn^
 ||bdstatic.eastmoney.com^
 ||beacon-api.aliyuncs.com^
@@ -8655,6 +8887,8 @@ zuoye.baidu.com##dl[class="card related"]
 ||cloud.tencent.com/developer/api/common/getAds
 ||cloud.tencent.com/developer/api/common/getOneAds
 ||cloudflare.com/_cf/analytics.js
+||cloudfront.net/transcode/storyTeller/$media,domain=amazon.cn
+||cloudfront.net/transcode/storyTeller/$media,domain=amazon.com
 ||cm.baidu.com^
 ||cm.bilibili.com/cm/api$redirect=noop.txt
 ||cm.bilibili.com/cm/api/$xhr
@@ -8757,6 +8991,8 @@ zuoye.baidu.com##dl[class="card related"]
 ||d.email.forbes.com^
 ||d.reddit.com^
 ||d.skk.moe^
+||d1lxz4vuik53pc.cloudfront.net^$domain=amazon.cn
+||d1lxz4vuik53pc.cloudfront.net^$domain=amazon.com
 ||dai.google.com/*/id3-events.json
 ||darkreader.org/data/top-backers.json
 ||darkreader.org/elements/backers-
@@ -9049,6 +9285,18 @@ zuoye.baidu.com##dl[class="card related"]
 ||humblebundle.com^$removeparam=linkID
 ||humblebundle.com^$removeparam=mcID
 ||humblebundle.com^$removeparam=partner
+||i.imgur.com/4Pi4CHD.png
+||i.imgur.com/7RP9w5v.png
+||i.imgur.com/BsVtr7F.png$~third-party
+||i.imgur.com/FYROU5n.gif$image,3p
+||i.imgur.com/LJBMhkQ.gif
+||i.imgur.com/LJBMhkQ.gif$3p
+||i.imgur.com/OZ2OuM4.gif
+||i.imgur.com/cSePTP2.jpg
+||i.imgur.com/f0FSNTu.jpg
+||i.imgur.com/h4556XW.gif$image,3p
+||i.imgur.com/vPU6ACq.gif$3p
+||i.imgur.com^$app=com.easytouch.assistivetouch|com.assistivetouch.controlcenter|com.att.assistivetouch2|com.team.assistivetouch.easytouch|booster.optimizer.cleaner|screen.recorder.videorecorder.screenrecorder|com.att.swipe.assistivetouch
 ||i.imgur.com^$domain=netflav.com
 ||i.imgur.com^$domain=samfw.com
 ||i.singular.net^
@@ -9065,6 +9313,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||images.business.lenovo.com^
 ||images.chbusiness.samsung.com^
 ||images.frbusiness.samsung.com^
+||images.info.alibabacloud.com^
 ||images.it.business.samsung.com^
 ||images.newsletter.larksuite.com^
 ||images.partnersupport.samsung.com^
@@ -9084,6 +9333,13 @@ zuoye.baidu.com##dl[class="card related"]
 ||img.uu1001.cn^$third-party,domain=taobao.com
 ||imgsrc.baidu.com/tieba/pic/item/$image
 ||imgstat.baidu.com^
+||imgur.com/*-assets/js/main.*.js$replace=/("hasSeenUploadRewardVideo"\,)!1/\$1true/
+||imgur.com/Bs86dFv.png
+||imgur.com/albumview.gif?
+||imgur.com/df53F09.jpg
+||imgur.com/imageview.gif?
+||imgur.com/oPNxy4w.gif
+||imgur.com/zNQ0lXP.gif
 ||imp.go.sohu.com^
 ||improving.duckduckgo.com^
 ||ingress.linktr.ee^
@@ -9099,6 +9355,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||instagram.com^$removeparam=ig_rid
 ||instagram.com^$removeparam=igsh
 ||instagram.com^$removeparam=igshid
+||iob.imgur.com^
 ||ip-api.com^$3p
 ||ip.sb/assets/images/*_ads.
 ||ip.sb/assets/images/rivencloud_ads.gif
@@ -9230,6 +9487,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||m.baidu.com/tc?tcreq4log=
 ||m.bilibili.com^$removeparam=bbid
 ||m.bilibili.com^$removeparam=ts
+||m.imgur.com/js/share.*.bundle.js
 ||m.ithome.com/api/lapin/
 ||m.xiangce.baidu.com/mobileapp/motu-*?guid=
 ||m.youtube.com/*/ad.js$script
@@ -9249,6 +9507,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||market.aliyun.com/
 ||marketing.mangacopy.com^
 ||mcs.zijieapi.com^
+||media-amazon.com^$app=com.offerup
 ||media-us.amillionads.com/*.mp3$media,redirect=noop-1s.mp4,domain=spotify.com
 ||media-us.amillionads.com/*.mp3$media,redirect=noopmp4-1s,domain=spotify.com
 ||mediav.com^$third-party,domain=dev.360.cn
@@ -9293,6 +9552,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||mozilla.org^$removeparam=platform
 ||mozilla.org^$removeparam=redirect_source
 ||mozilla.org^$removeparam=src
+||mp.imgur.com^
 ||mp.weixin.qq.com/mp/appmsgreport?
 ||mp.weixin.qq.com/mp/getappmsgad?
 ||mp.weixin.qq.com/mp/jsmonitor?
@@ -9403,6 +9663,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||p-cdn.us/public/*$media,redirect=noopmp3-0.1s,domain=soundcloud.com
 ||p.aty.sohu.com^
 ||p.hentaiforce.net^
+||p.imgur.com^
 ||p.skimresources.com^
 ||p1-feedback.byteimg.com^
 ||pagead2.googlesyndication.com/pagead/$script,domain=gsmarena.com
@@ -9583,6 +9844,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||roblox.com/user-sponsorship/$important
 ||roblox.com/www/e.png?
 ||roblox.com^$removeparam=refPageId
+||run.app/events$domain=imgur.com
 ||s.360.cn^
 ||s.go.sohu.com^*/?callback=
 ||s.lenovo.com^
@@ -9598,6 +9860,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||samsung.com/us/web/internal/logger
 ||samsung.com^$removeparam=cid
 ||samsung.com^*/scripts/tracking.js
+||sascdn.com/diff/$script,redirect=noopjs,domain=imgur.com
 ||saveu5-normal-lq.zijieapi.com^
 ||sc-attache.forbes.com^
 ||sc-forbes.forbes.com^
@@ -9786,6 +10049,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||t.co^$badfilter
 ||t.co^$cookie=muc_ads
 ||t.e.x.com^
+||t.imgur.com^
 ||t.skimresources.com^
 ||taboola.com^$domain=popsci.com
 ||tagdelivery.mayoclinic.org^
@@ -9997,6 +10261,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||versioncheck.addons.mozilla.org^$xmlhttprequest,removeparam=appID
 ||video.google.com/api/stats/
 ||video231.oss-cn-beijing.aliyuncs.com^
+||videorolls.row.aiv-cdn.net/*.mp4$media,redirect=noopmp3-0.1s,domain=amazon.com
 ||view.zijieapi.com^
 ||vm.aty.sohu.com^
 ||vns86.oss-*.aliyuncs.com^
