@@ -6576,10 +6576,11 @@ techcrunch.com##body div[data-testid="text-html"]:has(> div.showTemplate > div.p
 techcrunch.com##div[class$="-newsletter-signup-compact"]
 techcrunch.com##div[class*="ad-unit"]
 techcrunch.com##p > .wp-embedded-content
-techcrunch.com#$##didomi-host { display: none !important; }
 techcrunch.com#$#.mobile-header-nav { top: 0!important; }
 techcrunch.com#$#html > body.didomi-popup-open { overflow: auto !important; position: unset !important; }
 techcrunch.com#%#//scriptlet('set-local-storage-item', 'criteo_fast_bid', '$remove$')
+techcrunch.com#%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button')
+techcrunch.com#@$##didomi-host { display: none !important; }
 telegram.org##.tg_try_desktop
 tencent.com##.cdc-commercial-swiper
 theguardian.com###contact-the-guardian
@@ -7494,6 +7495,7 @@ www.youtube.com#$#override-property-read playerResponse.adPlacements undefined;
 www.youtube.com#$#override-property-read ytInitialPlayerResponse.adPlacements undefined;
 www.youtube.com#$#race start; skip-video '#primary .video-stream' './/ytd-player/div[@id]//div[contains(@class,"ad-interrupting")]' '-start-from:1010' '-stop-on-video-end:true'; skip-video 'video.html5-main-video' './/div[@id="player"]/div[@id]//div[contains(@class,"ad-interrupting")]' '-start-from:1020' '-stop-on-video-end:true'; skip-video 'video.html5-main-video' './/div[@id="player"]//div[contains(@class,"ad-interrupting")]' '-start-from:1030' '-stop-on-video-end:true'; race stop;
 www.youtube.com#$#skip-video 'video.html5-main-video' './/div[@id="ytlr-player__player-container"]//div[contains(@class,"ad-interrupting") or contains(@class,"ad-showing")]';
+www.youtube.com#%#(()=>{const t={apply:(t,e,n)=>{const o=Reflect.apply(t,e,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch)}catch(t){}return o}};Element.prototype.appendChild=new Proxy(Element.prototype.appendChild,t)})();
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
 www.youtube.com#%#(()=>{window.JSON.parse=new Proxy(JSON.parse,{apply(r,e,t){const n=Reflect.apply(r,e,t);if(!location.pathname.startsWith("/shorts/"))return n;const a=n?.entries;return a&&Array.isArray(a)&&(n.entries=n.entries.filter((r=>{if(!r?.command?.reelWatchEndpoint?.adClientParams?.isAd)return r}))),n}});})();
 www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.001')
