@@ -490,6 +490,7 @@ $websocket,domain=pornhub.com
 ://ads.$~image,~xmlhttprequest,domain=ads.x.com
 ://adv.$domain=typeform.com
 ://rs-stripe.wsj.com/stripe/image?
+://www.*.com/*.css|$script,third-party,domain=blogspot.com
 ?*=*=*=$subdocument,domain=39.net
 ?*=*=*=$subdocument,domain=blog.sina.cn
 ?*=*=*=$subdocument,domain=hydcd.com
@@ -721,6 +722,7 @@ $websocket,domain=pornhub.com
 @@||bing.com/translator/dynamic/*/js/$elemhide,jsinject
 @@||bing.com^$generichide
 @@||bing.com^$stealth=ip
+@@||blogger.*.google.com^$domain=blogspot.com
 @@||blogger.*.google.com^$subdocument
 @@||bloomberg.com/*/captcha/captcha.js$script,1p
 @@||bloomberg.com^$generichide
@@ -2667,6 +2669,11 @@ blog.x.com##.js-eu-cookie-notice
 blogs.bing.com###cookie-banner
 blogs.bing.com##.addthis-single-wrap
 blogs.wsj.com##.vltSocialLinks
+blogspot.com###floatLayer1
+blogspot.com###supermag-cookie-ify
+blogspot.com##.share-controls
+blogspot.com##img[onclick="kemana()"]
+blogspot.com#@#.vertical-ads
 bloomberg.com###adBlockerContainer
 bloomberg.com###fortress-preblocked-container-root
 bloomberg.com###leaderboard
@@ -4146,6 +4153,7 @@ greasyfork.org###share
 greasyfork.org##.ad-entry
 greasyfork.org#@#body .ad
 gsmarena.com###subHeader
+gsmarena.com###subHeader2
 gsmarena.com###topAdv
 gsmarena.com###wrapper > div#outer > div#subHeader
 gsmarena.com##.adv
@@ -5603,6 +5611,7 @@ pan.baidu.com##A.active-msg
 pan.baidu.com##div.content DIV.photo-banner
 pan.baidu.com#@#.share-list
 partner.ads.js$domain=d3ward.github.io
+perplexity.ai###cookie-consent
 perplexity.ai##+js(aost, window.screen.height, setTimeout)
 perplexity.ai##.fixed.bottom-md:has(> div[class*="borderMainDark"])
 perplexity.ai##.w-full + div.relative.w-full > div.absolute  > div.flex.w-full.cursor-default.transition-all
@@ -8734,6 +8743,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bbc.com^$removeparam=xtor
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bbvaar.zeabur.app^$all,to=~bbva.com
+||bcebos.com^$image,domain=pan.baidu.com
 ||bdcpro*.techweb.com.cn^
 ||bdstatic.eastmoney.com^
 ||beacon-api.aliyuncs.com^
@@ -8798,6 +8808,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bldr.mkt.samsung.com^
 ||blockworks.co/_vercel/insights/
 ||blog.skk.moe/_nuxt/static/manifest$xmlhttprequest
+||blogspot.com^*/s1600/drug.gif
 ||bloomberg.com/8FCGYgk4/init.js
 ||bloomberg.com^$removeparam=in_source
 ||bloomberg.com^$removeparam=leadSource
@@ -9006,7 +9017,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cpu.baidu.com^$third-party
 ||cpucdn.baidu.com^
 ||crab.baidu.com^
-||creativeservice-production.scdn.co/mp3-ad/*.mp3$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
 ||creativeservice-production.scdn.co/mp3-ad/*.mp3$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
 ||crs.baidu.com^
 ||csdn.net/ggmm/
@@ -9235,6 +9245,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||google.com/buzz/api$third-party
 ||google.com/dssw.js
 ||google.com/favicon.ico$popup
+||google.com/friendconnect/script$domain=blogspot.com
 ||google.com/gen_204?
 ||google.com/gsi/log?
 ||google.com/images/phd/gfl.gif
