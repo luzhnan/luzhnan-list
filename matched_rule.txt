@@ -5,6 +5,7 @@ $cookie=initial_referrer,domain=duolingo.com
 $cookie=wuuid,domain=duolingo.cn
 $cookie=wuuid,domain=duolingo.com
 $domain=browserleaks.com,permissions=geolocation=()
+$removeparam=FORM,domain=bing.com
 $removeparam=aid,domain=adguard-dns.io
 $removeparam=aid,domain=adguard-vpn.com
 $removeparam=aid,domain=adguard.com
@@ -96,7 +97,7 @@ $websocket,domain=pornhub.com
 /^https:\/\/[a-z]{4,}\.(?:to)\/z-[a-z0-9]{7,10}(\.js)?$/$script,1p,strict1p,domain=to
 /^https:\/\/help\.[a-z]{3,}-x-[a-z]{3,}\.com\//$doc,to=com|~x.com
 /^https:\/\/www\.[a-z]{8,14}\.com\/[a-z]{1,4}\.js$/$script,3p,match-case,header=x-powered-by:Express,from=~edu|~gov,to=com|~exploretock.com|~photopea.com
-/^https:\/\/www\.telegramk[a-z]\.com\//$doc,to=com|~telegram.org
+/^https:\/\/www\.telegram[a-z]{2}\.com\//$doc,to=com|~telegram.org
 /^https?:\/\/.*\.(jpg|jpeg|gif|png|svg|ico|js|txt|css|srt|vtt|webp)/$popup,domain=bato.to,badfilter
 /^https?:\/\/.*\/[a-z0-9A-Z_]{2,15}\.(php|jx|jsx|1ph|jsf|jz|jsm|j$)/$script,subdocument,domain=manga18fx.com
 /^https?:\/\/.*\/[a-z0-9A-Z_]{2,15}\.(php|jx|jsx|1ph|jsf|jz|jsm|j$)/$script,subdocument,domain=manhwa18.cc
@@ -3110,6 +3111,7 @@ discussions.apple.com##.welcome-notification
 discussionschinese.apple.com##.notification
 discussionsjapan.apple.com##.notification
 discussionskorea.apple.com##.notification
+divineengine.net##.sidebar-content > .widget_custom_html
 dji.com###cookie-tip
 dji.com##.cc-window
 dlsdk.appsflyersdk.com^
@@ -6678,7 +6680,6 @@ theregister.com#?##index_page > .srow > .faux-article > .newsletter_signup_unit:
 theregister.com#?##right-col > .rhs_eagle_container > .adun:upward(1)
 theverge.com###kYgI66 > .c-read-more
 theverge.com###notice.p-notice
-theverge.com###zephr-zone-footer
 theverge.com##.ad__athena_internal
 theverge.com##.article__share-buttons
 theverge.com##.c-comments, .c-read-more, .c-recirc-module, .has-content.p-comment-notification, .c-related-list
@@ -6702,11 +6703,14 @@ theverge.com##div.flex-auto:nth-of-type(even)
 theverge.com##div[class^="adblock-allowlist-messaging"]
 theverge.com##div[data-concert]
 theverge.com##iframe[src="https://www.platformer.news/embed"]
+theverge.com#$##zephr-overlay { display: none !important; }
+theverge.com#$##zephr-zone-footer { display: none !important; }
 theverge.com#$#.async-hide { opacity: 1.0 !important; }
 theverge.com#$#.c-social-buttons { visibility: hidden!important; }
 theverge.com#$#.mb-60 { margin-bottom: 0px !important; }
 theverge.com#$#.md\:mb-40 { margin-bottom: 20px !important; }
 theverge.com#$#.mt-80 { margin-top: 50px !important; }
+theverge.com#$#body { overflow: auto !important; }
 theverge.com#?#.duet--layout--river > div.border-b:has(> div > a + div > div:contains(/^AD$/))
 theverge.com#?#.flex-auto:has(> div[data-concert])
 theverge.com#?#div.mb-18:has(> div > h2:contains(Share this story))
@@ -8779,6 +8783,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bbc.com^$removeparam=xtor
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bbvaar.zeabur.app^$all,to=~bbva.com
+||bcebos.com^$image,domain=pan.baidu.com
 ||bdcpro*.techweb.com.cn^
 ||bdstatic.eastmoney.com^
 ||beacon-api.aliyuncs.com^
