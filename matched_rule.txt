@@ -519,6 +519,7 @@ $websocket,domain=pornhub.com
 @@/images/share/*$domain=search.www.gov.cn
 @@/iplookup.$domain=sina.com.cn
 @@/log/report/*$script,domain=bilibili.com
+@@/media/*$image,stealth=referrer,domain=bato.to
 @@/nbc-ad*.js$domain=notebookcheck.net
 @@/otBannerSdk.js$domain=epicgames.com
 @@/otBannerSdk.js$domain=newyorker.com
@@ -2868,7 +2869,7 @@ cloud.tencent.com##.com-back2top
 cloud.tencent.com##.com-event-panel
 cloud.tencent.com##.mod-commercial
 cloud.tencent.com##body > .cdc-portal-wrapper:has(.cdc-modal__mask + .mod-m-new-year)
-cloud.tencent.com/act/common/report$redirect=nooptext
+cloud.tencent.com/act/common/report$redirect=noop.txt
 cloudflare.com##.black.bg-orange-1-500.bottom-0.fixed
 cloudflare.com##.bottom-0.bg-blue0
 cloudflare.com##.eu-cookie-banner
@@ -3603,6 +3604,7 @@ github.blog##.post__social-share
 github.blog##main > div.color-bg-subtle:has(> div.container-xl > section#newsletter)
 github.com###cookie-consent-banner
 github.com###repository-container-header:not(:has(.js-repo-nav)) :is(#repo-stars-counter-star, #repo-stars-counter-unstar, #repo-network-counter, #repo-notifications-counter, .js-codespaces-details-container summary .Button-label):style(display: inline-block !important)
+github.com###wcpConsentBannerCtrl
 github.com##.feed-right-sidebar > div:has(> div.js-notice)
 github.com##.hx_cookie-banner
 github.com##.js-cookie-consent-banner
@@ -5134,12 +5136,18 @@ map.baidu.com#%#//scriptlet('set-local-storage-item', 'firstEnter', 'false')
 map.baidu.com#?##page-wrapper > div#common-bottombanner-widget-fis:has(> div.common-widget-bottom-banner-changeId > div.bottom-banner-float)
 map.baidu.com#?#body > div[id]:has(> div#downloadnativepopupUlink)
 maps.google.com##div[jsaction*="promotion"]
+mayoclinic.org###ad-mobile-bottom-container
+mayoclinic.org###ad-mobile-top-container
+mayoclinic.org###advertising-disclaimer
+mayoclinic.org###kampyleButtonContainer
 mayoclinic.org###mayo-privacy-consent-banner
 mayoclinic.org##.appointmentbanner
 mayoclinic.org##.cmp-advertisement__wrapper
+mayoclinic.org##.cmp-mobile-advertisement
 mayoclinic.org##.globalnotice
 mayoclinic.org##.internal-promo-stack-order
 mayoclinic.org##.internal-promo-stack-order + div.internal.side
+mayoclinic.org##.internalads
 mayoclinic.org##.mayoad
 mayoclinic.org##.mayoad > .policy
 mayoclinic.org##.myc-subscription-form
@@ -5260,7 +5268,7 @@ mozilla.org##.mzp-c-sticky-promo
 mozilla.org##.share
 mozilla.org#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
 mp.weixin.qq.com###js_pc_qr_code
-mp.weixin.qq.com/mp/*report$redirect=nooptext
+mp.weixin.qq.com/mp/*report$redirect=noop.txt
 mse.360.cn##a[id^="banner"]
 mumu.163.com##.pic-con
 murf.ai###murfCookiePrompt
@@ -5310,6 +5318,18 @@ mzh.moegirl.org.cn##.n-button__content:contains(在App内打开)
 mzh.moegirl.org.cn##.open-in-app-wrapper
 mzh.moegirl.org.cn#?#.header > div:not([class]) > button.download-app:upward(1)
 nani.baidu.com##.tbui_aside_float_bar + .clearfix
+nature.com##.alert
+nature.com##.app-featured-row__item
+nature.com##.c-article-extras-additional-links
+nature.com##.c-site-messages--nature-briefing
+nature.com##.leaderboard-or-billboard-container[data-container-type="banner-advert"]
+nature.com##.social:not(body)
+nature.com##.u-lazy-ad-wrapper
+nature.com##body .cookie
+nature.com##div.c-site-messages
+nature.com##div.nature-briefing
+nature.com#$?#.cc-banner { remove: true; }
+nature.com#?#.nature-briefing-box:has(> form[action="/briefing/signup/formfeedback"])
 neowin.net###ajax-spinner
 neowin.net###billboard_wrapper
 neowin.net###desktop_after_3rd_article
@@ -5362,6 +5382,7 @@ netflix.com##.cookie-disclosure-visible
 netflix.com##div[data-testid="CookieBanner"]
 netflix.com##section[data-guid^="article-social-share-buttons"]
 netflix.com#%#(() => { var ReplaceMap = {adBreaks: [], adState: null, currentAdBreak: 'undefined'}; Object.defineProperty = new Proxy(Object.defineProperty, { apply: (target, thisArg, ArgsList) => { var Original = Reflect.apply(target, thisArg, ArgsList); if (ArgsList[1] == 'getAdBreaks' || ArgsList[1] == 'getAdsDisplayStringParams') { return Original[ArgsList[1]] = function() {}; } else if (ArgsList[1] == 'adBreaks' || ArgsList[1] == 'currentAdBreak' || typeof Original['adBreaks'] !== 'undefined') { for (var [key, value] of Object.entries(Original)) { if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] !== 'undefined') { Original[key] = ReplaceMap[key]; } else if (typeof ReplaceMap[key] !== 'undefined' && ReplaceMap[key] === 'undefined') { Original[key] = undefined; } } return Original; } else { return Original; }}})})();
+netmarble.com###NMCookieBanner
 new.m.taobao.com##[style*="top: 0px"]
 new.qq.com###Recomend
 new.qq.com##.cms-bar
@@ -5963,6 +5984,8 @@ qq.com#@#.adside
 qq.com#@#.side_ad
 quad9.net##.base-share-buttons
 quark.cn##.ad-wolong-container
+raspberrypi.com###__rptl-cookiebanner
+raspberrypi.com##.c-blog-social
 raycast.com##div[class^="ExtensionPage_extensionShare__"]
 redd.it##reddit-cookie-banner
 redd.it##shreddit-async-loader[bundlename="reddit_cookie_banner"]
@@ -6094,7 +6117,6 @@ register.appsflyersdk.com^
 reports.adguard.com##.flash-wrapper-wrap
 research.ibm.com###share
 research.ibm.com##div[class^="CTA_wrapper_"]
-resources.github.com###wcpConsentBannerCtrl
 rewards.bing.com###wcpConsentBannerCtrl
 right.com.cn###hd > div.wp > div.hdc > h2
 right.com.cn##a[href^="https://jd.dangbei.com/"]
@@ -7475,6 +7497,7 @@ www.jianshu.com##[aria-label='lwa-ad-one']
 www.jianshu.com#@#div[class$="_0"]
 www.lenovo.com##+js(trusted-replace-argument, history.replaceState, 2, "''", condition, ?orgRef)
 www.linuxbabe.com##.widgets
+www.nature.com##[data-cc-banner]
 www.nytimes.com##+js(trusted-click-element, button.fides-reject-all-button, , 1500)
 www.nytimes.com##.css-1r939ki
 www.qq.com##.adLeft,.adRight
@@ -7507,7 +7530,6 @@ www.sohu.com##.swiper
 www.sohu.com#?#.list16 > ul > li:-abp-contains(广告)
 www.thepaper.cn##.pdtt01
 www.yahoo.com###act-ad-parallax
-www.yahoo.com##.leading-3:has-text(Advertisement)
 www.yahoo.com##.sticky[class*="top-"]:has(style)
 www.yahoo.com##[id^="mid-center-ad"]
 www.yahoo.com##body#news-content-app li:has(.inset-0)
@@ -8969,6 +8991,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||click.taobao.com^$script
 ||client-telemetry.roblox.com^
 ||clientlog.music.163.com^
+||clientlog3.music.163.com^
+||clientlogdep.music.163.com^
+||clientlogsf.music.163.com^
 ||cloud.baidu.com^$removeparam=from
 ||cloud.tencent.com/developer/api/common/getAds
 ||cloud.tencent.com/developer/api/common/getOneAds
@@ -8978,6 +9003,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cm.baidu.com^
 ||cm.bilibili.com/cm/api$redirect=noop.txt
 ||cm.bilibili.com/cm/api/$xhr
+||cmp.*/*/consent-bundle-$domain=nature.com
 ||cmp.quantcast.com^$script,domain=anandtech.com
 ||cmp.quantcast.com^$script,domain=ezgif.com
 ||cmp.quantcast.com^$script,domain=neowin.net
@@ -9092,8 +9118,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||darkreader.org/elements/statistics.js
 ||darren01.oss-cn-beijing.aliyuncs.com^
 ||data.bilibili.com^
-||data.bilibili.com^$redirect=nooptext
+||data.bilibili.com^$redirect=noop.txt
 ||data.em2.cloudflare.com^
+||data.kuiniuca.com^
 ||dd.nytimes.com^
 ||developer.mozilla.org/pong/
 ||developer.mozilla.org/submit/
@@ -9450,6 +9477,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||instagram.com^$removeparam=ig_rid
 ||instagram.com^$removeparam=igsh
 ||instagram.com^$removeparam=igshid
+||interface3.music.163.com/eapi/ad/
 ||iob.imgur.com^
 ||ip-api.com^$3p
 ||ip.sb/assets/images/*_ads.
@@ -9689,12 +9717,14 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||mwcm.nytimes.com/capi/metered_assets/?plat=*&areas=welcomeAd
 ||mxtoolbox.com/Public/Lookup.aspx/GetNextInlineAd
 ||narrativ.com^$domain=androidauthority.com
+||nature.com/platform/track/
 ||nbsdk-baichuan.taobao.com^
 ||neowin.net/ws/$websocket
 ||net/Runtime/js/$script
 ||net/adfiles/
 ||net/code/pop_
 ||net/scriptAD/$script
+||netapm.music.163.com^
 ||netease.com/f2e/auto/modules/float-ask-price/
 ||netease.com/fz/interface/frontend/fz.do?pos=tongyong-
 ||netease.com/house-public/articleyunyans.js
@@ -9731,6 +9761,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||notion.so/api/v*/teV1
 ||notion.so/api/v*/teV1|
 ||nsclick.baidu.com^
+||nstool.netease.com^
 ||nyt.com/ads/tpc-check.html$domain=nytimes.com
 ||nytimes.com/v1/purr-cache
 ||nytimes.com^$removeparam=impression_id
