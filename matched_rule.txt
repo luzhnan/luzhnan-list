@@ -996,6 +996,7 @@ $websocket,domain=pornhub.com
 @@||googletagmanager.com/gtag/js$domain=photopea.com
 @@||googletagmanager.com/gtm.js$domain=9to5mac.com
 @@||googletagmanager.com/gtm.js$domain=ads.spotify.com
+@@||googletagmanager.com/gtm.js$domain=bybit.com
 @@||googletagmanager.com/gtm.js$domain=duolingo.com
 @@||googletagmanager.com/gtm.js$domain=imgur.com
 @@||googletagmanager.com/gtm.js$domain=sonos.com
@@ -2773,6 +2774,8 @@ browserleaks.com##.twt
 bugsnag.com^$domain=adblock-tester.com
 business.instagram.com#$#body.hasCookieBanner > ._li._31e { position: sticky !important; }
 business.instagram.com#$#div[data-testid="cookie-policy-manage-dialog"] { display: none !important; }
+bybit.com##[class^="style_gdpr"]
+bybit.com##div[class^="style_gdpr-cookie-notice"]
 c.m.163.com##.commentBar
 c.m.163.com##.fixedOpenNewsapp
 c.m.163.com##.js-open-newsapp.s-top > .s-btn
@@ -3581,11 +3584,8 @@ gemini.google.com#$#body .share-button { display: block !important; }
 getpocket.com###__next > div[class$=" isVisible"] > div > aside
 getpocket.com###pocket-hits-container > div[class^="css-"][class*="-Chyron-Chyron-Chyron"] > div[class^="css-"][class*="-CTAContainer"]
 getpocket.com##.\'syndication-ad\'
-getpocket.com##.a1cawpek
-getpocket.com##.a47c4wn
 getpocket.com##.b15sbo5g
 getpocket.com##.css-17mlbja
-getpocket.com##.paarv6m
 getpocket.com##.right-aside
 getpocket.com##.social-actions
 getpocket.com##.st8mpmf
@@ -7579,6 +7579,7 @@ www.youtube.com#%#(()=>{const t={apply:(t,e,n)=>{const o=Reflect.apply(t,e,n);tr
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
 www.youtube.com#%#(()=>{window.JSON.parse=new Proxy(JSON.parse,{apply(r,e,t){const n=Reflect.apply(r,e,t);if(!location.pathname.startsWith("/shorts/"))return n;const a=n?.entries;return a&&Array.isArray(a)&&(n.entries=n.entries.filter((r=>{if(!r?.command?.reelWatchEndpoint?.adClientParams?.isAd)return r}))),n}});})();
 www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.001')
+www.youtube.com#%#//scriptlet('set-constant', 'Object.prototype.fetchFn', 'undefined')
 www.zhihu.com##.KfeCollection-VipRecommendCard
 www.zhihu.com##.OpenInAppButton
 www.zhihu.com##A.MBannerAd
@@ -8601,8 +8602,13 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||androidpolice.com/an-strpixel.png
 ||androidpolice.com/pixel.png?
 ||androidpolice.com/wp-content/uploads/*/spigen_s20_728x350.png
+||announcements.bybit.com^$removeparam=pid
+||announcements.bybit.com^$removeparam=sa_utm_channel
+||announcements.bybit.com^$removeparam=sa_utm_ci
+||announcements.bybit.com^$removeparam=sa_utm_tcn
 ||api-adservices.apple.com^
 ||api-v*.soundcloud.com/audio-ads?
+||api.*.com/p/report?$domain=bybit.com
 ||api.amplitudeexperiment.com^
 ||api.bilibili.com/x/ad/
 ||api.bilibili.com/x/internal/gaia-gateway/ExClimbWuzhi$xhr,1p
@@ -8820,6 +8826,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bbc.com^$removeparam=xtor
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bbvaar.zeabur.app^$all,to=~bbva.com
+||bcebos.com^$image,domain=pan.baidu.com
 ||bdcpro*.techweb.com.cn^
 ||bdstatic.eastmoney.com^
 ||beacon-api.aliyuncs.com^
@@ -8972,7 +8979,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cf.adxcel.com^$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
 ||channelusa.samsung.com^
 ||chaoku.oss-cn-chengdu.aliyuncs.com^
-||chat.deepseek.com/api/v0/events
 ||chatgpt.com/ces/v1/t
 ||chinaz.com/2020/0306/2020030616083756.jpg
 ||chinaz.com/c0g/
@@ -9289,8 +9295,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||gemini.yahoo.com^$domain=d3ward.github.io
 ||geolocation.forbes.com^
 ||geotrust.com^$third-party
-||getpocket.com/t/
-||getpocket.com/web-client-api/braze
 ||getpocket.com/web-utilities/public/static/te.js
 ||gia.jd.com^
 ||gias.jd.com/js/td.js
