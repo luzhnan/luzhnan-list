@@ -533,6 +533,7 @@ $websocket,domain=pornhub.com
 @@/video/*$media,stealth,domain=douyin.com
 @@/videos/*$domain=pornhub.com
 @@/wp-content/plugins/blockalyzer-adblock-counter/*$image,script,~third-party,domain=pornhub.com
+@@://analytics.google.com/analytics/$domain=analytics.google.com
 @@?sid=ads$domain=mail.163.com
 @@http://adsense.google.$document,domain=google.co.jp
 @@http://adsense.google.$document,domain=google.com
@@ -963,7 +964,6 @@ $websocket,domain=pornhub.com
 @@||google-analytics.com/plugins/ua/ec.js$domain=lenovo.com.cn
 @@||google-analytics.com^$domain=analytics.google.com
 @@||google.com/adsense/start/images/favicon.ico
-@@||google.com/analytics/web/$document
 @@||google.com/cse/static^
 @@||google.com/images/integrations/$image,~third-party
 @@||google.com/js/gweb/analytics/$domain=google.com
@@ -2436,6 +2436,7 @@ bilibili.com#$#.bili-video-card:has(.bili-video-card__info--creative-ad) > .bili
 bilibili.com#$?#.bili-video-card > div[class]:only-child:matches-css(before, content: /Adblock/) { remove: true; }
 bilibili.com#$?#.container > div.feed-card:not(:has(> div > *)) { remove: true; }
 bilibili.com#$?#.container > div.floor-single-card:has(> div.skeleton) { remove: true; }
+bilibili.com#$?#.container > div[class*="-card"]:has(div[style="display: none !important;"]) { remove: true; }
 bilibili.com#$?#.ex-card-common:has(.gg-icon) { remove: true; }
 bilibili.com#$?#.van-slide > .item:has(.bypb-icon) { remove: true; }
 bilibili.com#%#//scriptlet('json-prune', 'data.cm_info.ads')
@@ -6143,6 +6144,7 @@ roblox.com#@##Skyscraper-Abp-Left
 roblox.com#@##Skyscraper-Abp-Right
 roblox.com#@#.abp
 roblox.com#@#.inline-social
+roguefitness.com##.newsletter
 rou.video##.grid > div[class^="col-span"]:has(> div[class] > div[id^="ts_ad_native"])
 rou.video##.grid > div[class^="col-span"]:has(> div[class] > ins)
 saas.360.cn##.promotion-entry-logo
