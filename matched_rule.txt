@@ -679,6 +679,7 @@ $websocket,domain=pornhub.com
 @@||api.imgur.com^$stealth
 @@||api.ip.sb/geoip$domain=ip.skk.moe
 @@||api.spotify.com^$xmlhttprequest,stealth=3p-auth
+@@||api.sprig.com/sdk/$domain=paypal.com
 @@||api.stackcommerce.net^$stealth=3p-auth
 @@||api.taboola.com^$domain=samsung.com
 @@||api.useinsider.com^$domain=lenovo.com
@@ -1153,6 +1154,8 @@ $websocket,domain=pornhub.com
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=bbc.com
 @@||pan.baidu.com/$removeparam,domain=pan.baidu.com
 @@||papi-service.jd.com/ads/
+@@||paypalobjects.com/*/pageView.js$script,domain=paypal.com
+@@||paypalobjects.com/web/*/gAnalytics.js$script,domain=paypal.com
 @@||photopea.com/promo/no_ads.png
 @@||photopea.com/promo/no_ads.png$xhr,1p
 @@||photos.google.com^$generichide
@@ -1217,7 +1220,6 @@ $websocket,domain=pornhub.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=bloomberg.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=newyorker.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=sammobile.com
-@@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=tradingview.com
 @@||sellercentral.amazon.com/gp/remote-nav-html.html$elemhide,jsinject
 @@||sellercentral.amazon.com/hz/inventory/$elemhide,jsinject
 @@||service.force.com/embeddedservice/*/esw.min.js$domain=support.sonos.com
@@ -3253,6 +3255,7 @@ eastmoney.com##div[id^="em_important_"]
 eastmoney.com##div[id^="flow-ad-"]
 eastmoney.com##div[style="width: 300px; height: 250px; margin-top: 10px;"]
 eastmoney.com##div[style^="position: fixed; z-index: 100000; top:"]
+eastmoney.com##div[style^="position: fixed; z-index:"]
 eastmoney.com##iframe[src*=".eastmoney.com/banner/"]
 eastmoney.com##iframe[src^="//fund.eastmoney.com/trade/hqb_hq.html"]
 eastmoney.com##iframe[src^="//same.eastmoney.com/"]
@@ -3397,6 +3400,7 @@ flickr.com##.getty-widget-view
 flickr.com##.moola-search-div
 flickr.com##.moola-search-div.main
 flickr.com##.nav-banner-container
+flickr.com##.sub-photo-submoola-banner-view
 flickr.com##.sub-photo-submoola-view
 flickr.com##div[class^="main view"]:has(a[href$="&ref=sponsored"])
 flickr.com##div[class^="view sub-photo-right-view"] > div.photo-charm-exif-scrappy-view + div
@@ -5594,7 +5598,6 @@ nytimes.com##div[id^="ad-"]
 nytimes.com##section[aria-labelledby="new-york-section"] > div > div[class^="css"]:has(> #pp_morein-wrapper)
 nytimes.com#$##app > div > div.css-mcm29f { overflow: auto !important; }
 nytimes.com#$##article-container-grid > div.article-content-container + div:empty { display: none !important; }
-nytimes.com#$##complianceOverlay { display: none !important; }
 nytimes.com#$##fides-overlay { display: none !important; }
 nytimes.com#$##site-content { position: static !important; }
 nytimes.com#$##standalone-footer { display: none !important; }
@@ -5604,7 +5607,6 @@ nytimes.com#$#.pz-header-sales > .nav-messaging.pz-nav { top: 0 !important; }
 nytimes.com#$#.pz-header-sales > .nav-messaging.pz-nav-drawer { top: 52px !important; }
 nytimes.com#$#.pz-header-sales > .show-messaging { display: none !important; }
 nytimes.com#$#.pz-header-sales { height: 53px !important; }
-nytimes.com#$#body { overflow: auto !important; }
 nytimes.com#$#body.noscroll { position: unset !important; }
 nytimes.com#$#main > div#body-container > div#darken-overlay { display: none !important; }
 nytimes.com#$#main > div#body-container > div#slideup-regwall { display: none !important; }
@@ -5672,6 +5674,10 @@ pan.baidu.com##A.active-msg
 pan.baidu.com##div.content DIV.photo-banner
 pan.baidu.com#@#.share-list
 partner.ads.js$domain=d3ward.github.io
+paypal.com###PPAppDownloadBannerContainer
+paypal.com###gdprCookieBanner
+paypal.com##+js(href-sanitizer, a[href^="https://app.adjust.com/"][href*="?fallback=http"], ?fallback)
+paypal.com##.notification-cookie
 perplexity.ai###cookie-consent
 perplexity.ai##+js(aost, window.screen.height, setTimeout)
 perplexity.ai##.fixed.bottom-md:has(> div[class*="borderMainDark"])
@@ -5797,6 +5803,7 @@ pornhub.com##.underplayer-thumbs
 pornhub.com##.video-wrapper > div#player~div[class$=" hd clear"]
 pornhub.com##.videoPremiumBlock
 pornhub.com##.videos-morepad.videos.full-row-thumbs.videos-being-watched.logInHotContainer+*
+pornhub.com##.watchpageAd
 pornhub.com##[href*="base64"]
 pornhub.com##[href*="data:"]
 pornhub.com##[srcset*="bloB:"]
@@ -6373,7 +6380,6 @@ site.baidu.com##.banner2
 site.baidu.com##.popup
 site.baidu.com##.pstr.mt10
 sites.google.com##div[data-cookie-path]
-skk.moe##+js(no-fetch-if)
 smartthingsfind.samsung.com##.bottom-0.fixed
 smartthingsfind.samsung.com##footer + div.fixed.bottom-0
 smhn.info###share
@@ -7105,7 +7111,6 @@ tongren.gov.cn##.ads
 tool.chinaz.com#?#.backtoTop > div.toItem:has(> a[href="http://my.chinaz.com/toolvip/vip"])
 tradingview.com###charting-ad
 tradingview.com##+js(no-fetch-if, doubleclick)
-tradingview.com##+js(no-fetch-if, doubleclick.net)
 tradingview.com##+js(set-local-storage-item, forcefeaturetoggle.enable_ad_block_detect, false)
 tradingview.com##div[class^="js-container-"][class$="-notification"]
 tradingview.com##div[class^="shareButton"]
@@ -8840,7 +8845,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bbc.com^$removeparam=xtor
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bbvaar.zeabur.app^$all,to=~bbva.com
-||bcebos.com^$image,domain=pan.baidu.com
 ||bdcpro*.techweb.com.cn^
 ||bdstatic.eastmoney.com^
 ||beacon-api.aliyuncs.com^
@@ -9861,6 +9865,14 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||pay.google.com^$3p
 ||payments.google.com/gp/w/*/PaymentsPortals/web-reports?
 ||payments.google.com/payments/jslogs?
+||paypal.com/credit-presentment/log
+||paypal.com/platform/tealeaftarget
+||paypal.com/ptrk/
+||paypal.com/tagmanager/pptm.js
+||paypal.com/webapps/beaconweb/
+||paypal.com/webapps/mch/cmd/?
+||paypal.com/xoplatform/logger/api/logger
+||paypal.com^*/pixel.gif$third-party
 ||pc-mon.zijieapi.com^
 ||pcsupport.lenovo.com/esv*/plugins/contactus/livefloatchat
 ||pdst.fm^$script,third-party
@@ -10067,6 +10079,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||securemetrics.apple.com/b/ss/*maps$image
 ||securemetrics.apple.com^$3p
 ||securemvt.apple.com^
+||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=tradingview.com
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=bloomberg.com
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=sammobile.com
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js,domain=bloomberg.com
