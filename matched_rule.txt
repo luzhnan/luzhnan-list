@@ -141,6 +141,7 @@ $websocket,domain=pornhub.com
 /r/video/*$domain=youxi.baidu.com
 /reklam/*$~xmlhttprequest,domain=cloudflare.com
 /reklam/*$~xmlhttprequest,domain=github.com
+/t.paypal.com/*$image
 /web-vitals.$script,redirect=noopjs,domain=amazon.com
 /wp-content/uploads/pum/*$domain=linuxbabe.com
 /wrapperMessagingWithoutDetection.js$domain=androidcentral.com
@@ -753,6 +754,7 @@ $websocket,domain=pornhub.com
 @@||browserleaks.com^$generichide
 @@||bugsnag.com^$~third-party,domain=app.bugsnag.com
 @@||c.amazon-adsystem.com/aax2/apstag.js$domain=androidpolice.com
+@@||c.paypal.com/da/r/fb.js$script
 @@||calendar.google.com^$generichide
 @@||captcha.su.baidu.com^
 @@||cd.connatix.com/connatix.playspace.js$domain=theverge.com
@@ -1154,6 +1156,7 @@ $websocket,domain=pornhub.com
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=bbc.com
 @@||pan.baidu.com/$removeparam,domain=pan.baidu.com
 @@||papi-service.jd.com/ads/
+@@||paypal.com^$app=com.bandcamp.android
 @@||paypalobjects.com/*/pageView.js$script,domain=paypal.com
 @@||paypalobjects.com/web/*/gAnalytics.js$script,domain=paypal.com
 @@||photopea.com/promo/no_ads.png
@@ -5334,7 +5337,6 @@ mzh.moegirl.org.cn##.n-button__content:contains(在App内打开)
 mzh.moegirl.org.cn##.open-in-app-wrapper
 mzh.moegirl.org.cn#?#.header > div:not([class]) > button.download-app:upward(1)
 nani.baidu.com##.tbui_aside_float_bar + .clearfix
-nature.com##.alert
 nature.com##.app-featured-row__item
 nature.com##.c-article-extras-additional-links
 nature.com##.c-site-messages--nature-briefing
@@ -5690,6 +5692,7 @@ perplexity.ai##div[class^="border-borderMain"] > div[class="isolate flex flex-co
 perplexity.ai##div[class^="border-borderMain"] > div[class="isolate flex flex-col gap-md"][style^="opacity:"] > div[class="flex flex-col gap-md"] > div[data-widget-id]
 perplexity.ai##div[class^="framer-"] > div[class^="framer-"]:has(> div[class^="framer-"] > div[style] > div[style^="border-radius:"] > svg)
 perplexity.ai#$#body > div:not([class]):not([id]):not([role]):has(> div.items-stretch + div.flex.items-center .space-y-sm > button.border) { display: none !important; }
+perplexity.ai#%#//scriptlet('prevent-addEventListener', '/^(?:wheel|touchmove)$/', '/===.\)\{var .="deltaY"in .\?./')
 perplexity.ai#%#//scriptlet('prevent-addEventListener', 'wheel', '===a){var n="deltaY"in t?P')
 perplexity.ai#%#//scriptlet('set-cookie', 'trackingAllowed', 'false')
 perplexity.ai#%#//scriptlet('set-local-storage-item', 'appDownloadBannerDismissed', 'true')
@@ -5777,6 +5780,7 @@ pornhub.com###welcome
 pornhub.com##+js(no-setTimeout-if, \x41\x64\x62\x6c\x6f\x63\x6b\x20\x66\x6f\x72\x20\x70\x6f\x72\x6e\x68\x75\x62)
 pornhub.com##+js(set-constant, page_params.holiday_promo_prem, true)
 pornhub.com##+js(set-cookie, views, 1)
+pornhub.com##.ad-tabSplit
 pornhub.com##.adContainer
 pornhub.com##.adWrapper
 pornhub.com##.ad_title + div
@@ -5785,6 +5789,7 @@ pornhub.com##.becomePartnerWrapper
 pornhub.com##.bottomNav > a[rel="noopener nofollow"]
 pornhub.com##.browse-ad-container + div[style*="float:right"]
 pornhub.com##.cookiesBanner
+pornhub.com##.eudsaLink
 pornhub.com##.hd.clear
 pornhub.com##.inesuch
 pornhub.com##.ml-subscribe-form
@@ -6677,6 +6682,8 @@ theguardian.com##.contributions__adblock
 theguardian.com##.contributions__epic
 theguardian.com##.d-comment__action--share
 theguardian.com##.dcr-1aq0rzi
+theguardian.com##.dcr-1mt0mpc:has-text(Sign up)
+theguardian.com##.dcr-4gwv1z > ul:has-text(Get our)
 theguardian.com##.dcr-nv35qx
 theguardian.com##.email-sub__iframe
 theguardian.com##.fc-slice__item--mpu-candidate
@@ -8915,6 +8922,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bloomberg.com^$removeparam=leadSource
 ||bloomberg.com^$removeparam=sref
 ||bloomberg.com^$removeparam=srnd
+||bm.paypal.com/spd3TxHV/init.js
 ||bokecc.com/flash/playlog?
 ||bokecc.com/flash/timerecorder?
 ||books-analytics-events.apple.com^
@@ -8932,6 +8940,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||c.arstechnica.com^
 ||c.bing.com/c.gif
 ||c.newyorker.com^
+||c.paypal.com^$image,script
 ||c.sayhi.360.cn^
 ||c.wired.com^
 ||caclick.baidu.com^
@@ -9154,6 +9163,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||data.bilibili.com^$redirect=noop.txt
 ||data.em2.cloudflare.com^
 ||data.kuiniuca.com^
+||data.news.paypal.com^
+||data.service.paypal.com^
 ||dd.nytimes.com^
 ||developer.mozilla.org/pong/
 ||developer.mozilla.org/submit/
@@ -9240,6 +9251,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||epicgames.com^$removeparam=epic_gameId
 ||erebor.douban.com^
 ||error-tracking.reddit.com^
+||espy.boehs.org^
 ||et.nytimes.com^
 ||eu.business.samsung.com^
 ||eventgateway.soundcloud.com^
@@ -9451,6 +9463,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||i.imgur.com^$app=com.easytouch.assistivetouch|com.assistivetouch.controlcenter|com.att.assistivetouch2|com.team.assistivetouch.easytouch|booster.optimizer.cleaner|screen.recorder.videorecorder.screenrecorder|com.att.swipe.assistivetouch
 ||i.imgur.com^$domain=netflav.com
 ||i.imgur.com^$domain=samfw.com
+||i.paypal.com^
 ||i.singular.net^
 ||i.skimresources.com^
 ||i2.sinaimg.cn/*/searchCallup.js$domain=gu.sina.cn
@@ -10248,6 +10261,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||t.co^$cookie=muc_ads
 ||t.e.x.com^
 ||t.imgur.com^
+||t.paypal.com^$image
 ||t.skimresources.com^
 ||taboola.com^$domain=popsci.com
 ||tagdelivery.mayoclinic.org^
