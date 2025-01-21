@@ -48,7 +48,6 @@ $removeparam=union_lens,domain=tmall.com
 $script,redirect-rule=noop.js,domain=sammobile.com
 $script,redirect-rule=noopjs,domain=sammobile.com
 $websocket,domain=pornhub.com
-*$3p,domain=d3ward.github.io
 *$frame,domain=csdn.net
 *$frame,domain=sina.cn
 *$media,3p,redirect-rule=noop-1s.mp4:10,domain=open.spotify.com
@@ -97,6 +96,8 @@ $websocket,domain=pornhub.com
 /^https:\/\/[a-z]{4,}\.(?:com)\/z-[a-z0-9]{7,10}(\.js)?$/$script,1p,strict1p,domain=com
 /^https:\/\/[a-z]{4,}\.(?:to)\/z-[a-z0-9]{7,10}(\.js)?$/$script,1p,strict1p,domain=to
 /^https:\/\/help\.[a-z]{3,}-x-[a-z]{3,}\.com\//$doc,to=com|~x.com
+/^https:\/\/telegram-[a-z]{2}\.[a-z]{2,3}\//$doc,to=~gov|~edu|~com|~net|~org|~telegram.org
+/^https:\/\/telegram-[a-z]{3,4}\.com\//$doc,to=com|~telegram.org
 /^https:\/\/www\.[a-z]{8,14}\.com\/[a-z]{1,4}\.js$/$script,3p,match-case,header=x-powered-by:Express,from=~edu|~gov,to=com|~exploretock.com|~photopea.com
 /^https:\/\/www\.telegram[a-z]{2}\.com\//$doc,to=com|~telegram.org
 /^https?:\/\/.*\.(jpg|jpeg|gif|png|svg|ico|js|txt|css|srt|vtt|webp)/$popup,domain=bato.to,badfilter
@@ -133,7 +134,6 @@ $websocket,domain=pornhub.com
 /isignesp.php^$doc,to=~edu|~gov|~apple.com
 /matomo/*$domain=github.com
 /notifications.google.com/g/img/*$image
-/pagead.js$domain=d3ward.github.io
 /perimeterx/*$domain=github.com
 /perimeterx/*$domain=github.io
 /piwik-$domain=github.com
@@ -503,7 +503,6 @@ $websocket,domain=pornhub.com
 ?*=*=*=$subdocument,domain=shenchuang.com
 ?*=*=*=$subdocument,domain=xiachufang.com
 @@*$ghide,domain=androidpolice.com
-@@*$redirect-rule,domain=d3ward.github.io
 @@.vmall.com/oauth
 @@/Tag.rb$domain=github.com
 @@/Themes/SamsungShop/Scripts/shop/cookie-notice.js$domain=shop.samsung.com
@@ -646,6 +645,8 @@ $websocket,domain=pornhub.com
 @@||ads.x.com^$popup
 @@||adserver.juicyads.com/js/jads.js$domain=netflav.com
 @@||adserver.va3.megaphone.cloud.$domain=megaphone.fm
+@@||adsninja.ca/api/cached/$xhr,domain=androidpolice.com
+@@||adsninja.ca/urlmap?$xhr,domain=androidpolice.com
 @@||adwords.google.com^$domain=accounts.google.com
 @@||akamaized.net/*.m4s$stealth,domain=bilibili.com
 @@||alibaba.tanx.com^$domain=alidns.com
@@ -761,10 +762,9 @@ $websocket,domain=pornhub.com
 @@||cdn-apple.com^$domain=apple.com
 @@||cdn-apple.com^$domain=icloud.com
 @@||cdn.adguard.com/public/$domain=adguard.com
-@@||cdn.adsninja.ca/adsninja_client$script,css,domain=androidpolice.com
 @@||cdn.adsninja.ca/adsninja_client.js$domain=androidpolice.com
 @@||cdn.adsninja.ca/adsninja_client_style.css$domain=androidpolice.com
-@@||cdn.adsninja.ca/adsninja_worker_caller.js$script,domain=androidpolice.com
+@@||cdn.adsninja.ca^$script,css,domain=androidpolice.com
 @@||cdn.ampproject.org/*/amp-geo-$script,domain=9to5google.com
 @@||cdn.ampproject.org/*/amp-geo-$script,domain=9to5mac.com
 @@||cdn.apple-cloudkit.com^$domain=apple.com,stealth=referrer
@@ -1433,6 +1433,10 @@ accuweather.com#%#//scriptlet('remove-class', 'cnx-float', '.cnx-content-wrapper
 accuweather.com#%#//scriptlet('remove-class', 'has-adhesion', '.header-placeholder.has-adhesion')
 accuweather.com#@#.cnx-player-wrapper
 accuweather.com#@#.connatix-player
+acm.org##.recommended--lazyLoad > .recommended-articles
+acm.org##.rlist > li[title="Share"]
+acm.org##.share
+acm.org##body .cookiePolicy-popup
 activity.lenovo.com.cn##.cms_fixed_nav
 activity.lenovo.com.cn##.mask-laye-box
 activity.lenovo.com.cn##.sign-in-box
@@ -1524,57 +1528,9 @@ almayadeen.net##.social-bar
 almayadeen.net#%#//scriptlet("set-constant", "videojsContribAds", "noopFunc")
 almayadeen.net#%#//scriptlet("set-constant", "videojsIma", "noopFunc")
 amazon.cn###Share
-amazon.cn###nav-swmslot
-amazon.cn###sc-rec-bottom
-amazon.cn###sc-rec-right
-amazon.cn###similarities_feature_div:has(span.sponsored_label_tap_space)
-amazon.cn###sponsoredProducts2_feature_div
-amazon.cn###sponsoredProducts_feature_div
-amazon.cn###typ-recommendations-stripe-1
-amazon.cn###typ-recommendations-stripe-2
-amazon.cn##.amzn-safe-frame-container
-amazon.cn##.dp-widget-card-deck:has([data-ad-placement-metadata])
 amazon.cn##.maple-banner
 amazon.cn##.moduleBookmarkLinks
-amazon.cn##.s-result-item:has([data-ad-feedback])
-amazon.cn##.s-result-item:has(div.puis-sponsored-label-text)
-amazon.cn##.s-result-list > .a-section:has(.sbv-ad-content-container)
-amazon.cn##.sbv-video-single-product
-amazon.cn##[cel_widget_id*="-creative-desktop_loom-desktop-"]
-amazon.cn##div.s-inner-result-item > div.sg-col-inner:has(a.puis-sponsored-label-text)
-amazon.cn##div[cel_widget_id*="Deals3Ads"]
-amazon.cn##div[cel_widget_id*="_ad-placements-"]
-amazon.cn##div[cel_widget_id*="desktop-dp-"]
-amazon.cn##div[cel_widget_id="sp-orderdetails-desktop-carousel_desktop-yo-orderdetails_0"]
-amazon.cn##div[cel_widget_id="sp-orderdetails-mobile-list_mobile-yo-orderdetails_0"]
-amazon.cn##div[cel_widget_id="sp-pop-mobile-carousel_mobile-yo-postdelivery_0"]
-amazon.cn##div[cel_widget_id="sp-rhf-desktop-carousel_desktop-rhf_0"]
-amazon.cn##div[cel_widget_id="sp-shiptrack-desktop-carousel_desktop-yo-shiptrack_0"]
-amazon.cn##div[cel_widget_id="sp-shiptrack-mobile-list_mobile-yo-shiptrack_0"]
-amazon.cn##div[cel_widget_id="sp-typ-mobile-carousel_mobile-typ-carousels_2"]
-amazon.cn##div[cel_widget_id="sp_phone_detail_thematic"]
-amazon.cn##div[cel_widget_id="typ-ads"]
-amazon.cn##div[cel_widget_id^="LEFT-SAFE_FRAME-"]
-amazon.cn##div[cel_widget_id^="MAIN-FEATURED_ASINS_LIST-"]
-amazon.cn##div[cel_widget_id^="adplacements:"]
-amazon.cn##div[cel_widget_id^="multi-brand-"]
-amazon.cn##div[cel_widget_id^="sp-desktop-carousel_handsfree-browse"]
-amazon.cn##div[class*="SponsoredProducts"]
-amazon.cn##div[class*="_dpNoOverflow_"][data-idt]
-amazon.cn##div[data-a-carousel-options*="\\\"isSponsoredProduct\\\":\\\"true\\\""]
-amazon.cn##div[data-ad-id]
-amazon.cn##div[data-cel-widget="sp-rhf-desktop-carousel_desktop-rhf_1"]
-amazon.cn##div[data-cel-widget="sp-shiptrack-desktop-carousel_desktop-yo-shiptrack_0"]
-amazon.cn##div[data-cel-widget^="multi-brand-video-mobile_DPSims_"]
-amazon.cn##div[data-cel-widget^="multi-card-creative-desktop_loom-desktop-top-slot_"]
-amazon.cn##div[data-csa-c-painter="sp-cart-mobile-carousel-cards"]
-amazon.cn##div[data-csa-c-slot-id^="loom-mobile-brand-footer-slot_hsa-id-"]
-amazon.cn##div[data-csa-c-slot-id^="loom-mobile-top-slot_hsa-id-"]
-amazon.cn##div[id^="sp_detail"]
 amazon.cn##div[id^="sponsoredProducts"]
-amazon.cn##span[cel_widget_id^="MAIN-FEATURED_ASINS_LIST-"]
-amazon.cn##span[cel_widget_id^="MAIN-loom-desktop-brand-footer-slot_hsa-id-CARDS-"]
-amazon.cn##span[cel_widget_id^="MAIN-loom-desktop-top-slot_hsa-id-CARDS-"]
 amazon.cn#?#.s-result-item:-abp-has(> .s-item-container > h5 .s-sponsored-info-icon)
 amazon.com###ADPlaceholder
 amazon.com###DAnsm
@@ -1589,84 +1545,36 @@ amazon.com###mobile-ad
 amazon.com###mobile-immersive-player
 amazon.com###native-app-upsell
 amazon.com###nav-app-banner-container
-amazon.com###nav-swmslot
 amazon.com###nav-upnav
 amazon.com###nav-upnav[style]
 amazon.com###percolate-ui-ilm_div
 amazon.com###pldn-deep-link
-amazon.com###sc-rec-bottom
-amazon.com###sc-rec-right
-amazon.com###similarities_feature_div:has(span.sponsored_label_tap_space)
 amazon.com###smart-app-banner
 amazon.com###sp-cc
-amazon.com###sponsoredProducts2_feature_div
-amazon.com###sponsoredProducts_feature_div
 amazon.com###twitter
-amazon.com###typ-recommendations-stripe-1
-amazon.com###typ-recommendations-stripe-2
 amazon.com###watchNow_feature_div
 amazon.com##+js(json-prune, cuepointPlaylist vodPlaybackUrls.result.playbackUrls.cuepoints)
 amazon.com##.a-carousel-card:empty
 amazon.com##.adFeedback
 amazon.com##.amsSparkleAdContainer
-amazon.com##.amzn-safe-frame-container
 amazon.com##.aw-campaigns
-amazon.com##.dp-widget-card-deck:has([data-ad-placement-metadata])
 amazon.com##.maple-banner
 amazon.com##.mini-atf
 amazon.com##.mo-wp
 amazon.com##.moduleBookmarkLinks
 amazon.com##.payment-plan-02.payment-options-financing-option.payment-options-option.a-padding-small.a-spacing-small.a-section
 amazon.com##.pmts-payment-option-list-wrapper > .a-box:not([class*=" "])
-amazon.com##.s-result-item:has([data-ad-feedback])
-amazon.com##.s-result-item:has(div.puis-sponsored-label-text)
-amazon.com##.s-result-list > .a-section:has(.sbv-ad-content-container)
-amazon.com##.sbv-video-single-product
 amazon.com##.slot__ad
 amazon.com##.sparkle-container
-amazon.com##[cel_widget_id*="-creative-desktop_loom-desktop-"]
 amazon.com##a[aria-label="Sponsored video, click to navigate to featured page."]
 amazon.com##body .accept-cookies
 amazon.com##div.afap-above-nav#afap-above-nav
-amazon.com##div.s-inner-result-item > div.sg-col-inner:has(a.puis-sponsored-label-text)
-amazon.com##div[cel_widget_id*="Deals3Ads"]
-amazon.com##div[cel_widget_id*="_ad-placements-"]
-amazon.com##div[cel_widget_id*="desktop-dp-"]
-amazon.com##div[cel_widget_id="sp-orderdetails-desktop-carousel_desktop-yo-orderdetails_0"]
-amazon.com##div[cel_widget_id="sp-orderdetails-mobile-list_mobile-yo-orderdetails_0"]
-amazon.com##div[cel_widget_id="sp-pop-mobile-carousel_mobile-yo-postdelivery_0"]
-amazon.com##div[cel_widget_id="sp-rhf-desktop-carousel_desktop-rhf_0"]
-amazon.com##div[cel_widget_id="sp-shiptrack-desktop-carousel_desktop-yo-shiptrack_0"]
-amazon.com##div[cel_widget_id="sp-shiptrack-mobile-list_mobile-yo-shiptrack_0"]
-amazon.com##div[cel_widget_id="sp-typ-mobile-carousel_mobile-typ-carousels_2"]
-amazon.com##div[cel_widget_id="sp_phone_detail_thematic"]
-amazon.com##div[cel_widget_id="typ-ads"]
-amazon.com##div[cel_widget_id^="LEFT-SAFE_FRAME-"]
-amazon.com##div[cel_widget_id^="MAIN-FEATURED_ASINS_LIST-"]
-amazon.com##div[cel_widget_id^="adplacements:"]
-amazon.com##div[cel_widget_id^="multi-brand-"]
-amazon.com##div[cel_widget_id^="sp-desktop-carousel_handsfree-browse"]
-amazon.com##div[class*="SponsoredProducts"]
-amazon.com##div[class*="_dpNoOverflow_"][data-idt]
 amazon.com##div[class*="widget=loom-"][class*="FEATURED"]
 amazon.com##div[class^="DesktopFlexBannerLayout-module__playerContainer_"]
-amazon.com##div[data-a-carousel-options*="\\\"isSponsoredProduct\\\":\\\"true\\\""]
 amazon.com##div[data-ad-details]
-amazon.com##div[data-ad-id]
-amazon.com##div[data-cel-widget="sp-rhf-desktop-carousel_desktop-rhf_1"]
-amazon.com##div[data-cel-widget="sp-shiptrack-desktop-carousel_desktop-yo-shiptrack_0"]
-amazon.com##div[data-cel-widget^="multi-brand-video-mobile_DPSims_"]
-amazon.com##div[data-cel-widget^="multi-card-creative-desktop_loom-desktop-top-slot_"]
-amazon.com##div[data-csa-c-painter="sp-cart-mobile-carousel-cards"]
-amazon.com##div[data-csa-c-slot-id^="loom-mobile-brand-footer-slot_hsa-id-"]
-amazon.com##div[data-csa-c-slot-id^="loom-mobile-top-slot_hsa-id-"]
 amazon.com##div[data-widgetid="share"]
 amazon.com##div[id^="CardInstance"][data-card-metrics-id^="tempo-desktop-typ-prominent"]
-amazon.com##div[id^="sp_detail"]
 amazon.com##div[id^="sponsoredProducts"]
-amazon.com##span[cel_widget_id^="MAIN-FEATURED_ASINS_LIST-"]
-amazon.com##span[cel_widget_id^="MAIN-loom-desktop-brand-footer-slot_hsa-id-CARDS-"]
-amazon.com##span[cel_widget_id^="MAIN-loom-desktop-top-slot_hsa-id-CARDS-"]
 amazon.com##span[data-action="ssf-share-icon"]
 amazon.com#%#//scriptlet('json-prune', 'cuepointPlaylist vodPlaybackUrls.result.playbackUrls.cuepoints')
 amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[@value="Ad"]] | //*[name()="Period"]/@start)', '[value="Ad"]', '.mpd')
@@ -2606,7 +2514,6 @@ bing.com#?#.sb_form_placeholder:-abp-has(>.ad-ghost-slug)
 bing.com#?#.slide:has(> .tobitem > a > .rtb_ad_caritem_mvtr)
 bing.com#?#.tob_calcontainer > div.slide:has(> div.tobitem > a[href*="/tracking?adUnit="])
 bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^(Amazon|Best Buy|Booking\.com|eBay|eDreams|Lenovo US|Trip\.com|Tripadvisor|Walmart)$/))
-bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^(Amazon|Best Buy|Booking\.com|eBay|eDreams|Trip\.com|Tripadvisor|Walmart)$/))
 bing.com#?#li[class="b_algo"]:-abp-has(.b_attribution[data-partnertag]+p[class])
 bing.com#?#li[class="b_algo"]:-abp-has(>[class="ad_ml1ESLItem"])
 bing.com#?#li[class="b_algo"]:-abp-has(>h2 + div[class="b_caption"] > [class^="b_attribution "])
@@ -2900,7 +2807,6 @@ cn.bing.com##.bnp_rich_div_visible.bottom
 cn.bing.com##.bnp_rich_div_visible.top
 cn.bing.com#$#hide-if-contains 360 #b_results>li .b_adProvider
 cn.bing.com#?##b_results > li:-abp-has(.b_adProvider)
-cn.bing.com#?#.b_algo:-abp-has(p:-abp-properties(content:*AAAAAElFTkSuQmCC))
 cn.bing.com#?#.b_algo:-abp-has(p:-abp-properties(content:*Jr8IbslwuuoZ9kr8cTrXXkY8lfZL5p8v2TTht91DQxXZU9AB6BpwzkAAU2AAAAAElFTkSuQmCC))
 cna.com.tw###left_socail
 cna.com.tw##.Subscription
@@ -3058,7 +2964,6 @@ csis.org##.block--social-sharing
 ctee.com.tw##.cookie-concent
 ctee.com.tw##.qxd
 d3ward.github.io##.afs_ads
-d3ward.github.io##.textads
 daily.zhihu.com##.Daily
 daily.zhihu.com##.active
 darkreader.org##.adblock-pro
@@ -3136,6 +3041,7 @@ discussionskorea.apple.com##.notification
 divineengine.net##.sidebar-content > .widget_custom_html
 dji.com###cookie-tip
 dji.com##.cc-window
+dl.acm.org##.back-to-top
 dlsdk.appsflyersdk.com^
 dmitrysotnikov.wordpress.com#@#.category-ad:not(html):not(body)
 docin.com###addFavoritesTips
@@ -3738,6 +3644,7 @@ google.co.jp##div[aria-modal="true"] > div[aria-labelledby="task-text"]
 google.co.jp##div[class*="chr-cookie-banner"]
 google.co.jp##div[class="gb_Xc gb_xc gb_g"][data-ved]
 google.co.jp##div[data-attrid="kc:/local:promotions"]
+google.co.jp##div[data-id="lclad"]
 google.co.jp##div[data-is-promoted="true"]
 google.co.jp##div[data-org-tls] > div.JgC4m[class*=" "]
 google.co.jp##div[data-promoid] div[aria-labelledby="task-text"][aria-modal="true"]
@@ -3860,6 +3767,7 @@ google.com##div[aria-modal="true"] > div[aria-labelledby="task-text"]
 google.com##div[class*="chr-cookie-banner"]
 google.com##div[class="gb_Xc gb_xc gb_g"][data-ved]
 google.com##div[data-attrid="kc:/local:promotions"]
+google.com##div[data-id="lclad"]
 google.com##div[data-is-promoted="true"]
 google.com##div[data-org-tls] > div.JgC4m[class*=" "]
 google.com##div[data-promoid] div[aria-labelledby="task-text"][aria-modal="true"]
@@ -3970,6 +3878,7 @@ google.com.hk##div[aria-modal="true"] > div[aria-labelledby="task-text"]
 google.com.hk##div[class*="chr-cookie-banner"]
 google.com.hk##div[class="gb_Xc gb_xc gb_g"][data-ved]
 google.com.hk##div[data-attrid="kc:/local:promotions"]
+google.com.hk##div[data-id="lclad"]
 google.com.hk##div[data-is-promoted="true"]
 google.com.hk##div[data-org-tls] > div.JgC4m[class*=" "]
 google.com.hk##div[data-promoid] div[aria-labelledby="task-text"][aria-modal="true"]
@@ -4074,6 +3983,7 @@ google.com.sg##div[aria-modal="true"] > div[aria-labelledby="task-text"]
 google.com.sg##div[class*="chr-cookie-banner"]
 google.com.sg##div[class="gb_Xc gb_xc gb_g"][data-ved]
 google.com.sg##div[data-attrid="kc:/local:promotions"]
+google.com.sg##div[data-id="lclad"]
 google.com.sg##div[data-is-promoted="true"]
 google.com.sg##div[data-org-tls] > div.JgC4m[class*=" "]
 google.com.sg##div[data-promoid] div[aria-labelledby="task-text"][aria-modal="true"]
@@ -4667,6 +4577,7 @@ lenovo.com.cn#?#.imgNewText:-abp-has(>footer>.info>.source:-abp-contains(/广告
 lenovo.com.cn#?#a:-abp-has(>div>p:-abp-contains(广告))
 lestore.lenovo.com##.pin-banner
 lesuobingdu.360.cn##.top-banner
+letsencrypt.org##.custom-dbox-popup
 letsencrypt.org##.footer-newsletter-col
 libsyn.com###share
 lineageos.org##.footer-icons
@@ -5589,7 +5500,6 @@ pan.baidu.com##.wp-side-options
 pan.baidu.com##A.active-msg
 pan.baidu.com##div.content DIV.photo-banner
 pan.baidu.com#@#.share-list
-partner.ads.js$domain=d3ward.github.io
 paypal.com###PPAppDownloadBannerContainer
 paypal.com###gdprCookieBanner
 paypal.com##+js(href-sanitizer, a[href^="https://app.adjust.com/"][href*="?fallback=http"], ?fallback)
@@ -7045,6 +6955,7 @@ translate.google.com##header[role="banner"] > div.gb_se > div.gb_0c.gb_g
 translate.google.com##iframe[src^="https://ogs.google."][src*="/widget/callout?prid="]
 translate.google.com#$#body > div[class^="gb_"][id="gba"] { height: 60px!important; }
 transparencyreport.google.com#@#.ad-icon
+truyentuan.wordpress.com#$#abort-current-inline-script $ btpop
 tv.sohu.com###miaozhenad
 tv.sohu.com###referr_bd_box
 tv.sohu.com##.actv-banner.js-app-topbanner,.banner_yunying,.js-oper-pos,IMG.vrs-banner-act-img
@@ -8152,7 +8063,6 @@ youtube.com##+js(set-constant, playerResponse.adPlacements, undefined)
 youtube.com##+js(set-constant, ytInitialPlayerResponse.adPlacements, undefined)
 youtube.com##+js(set-constant, ytInitialPlayerResponse.adSlots, undefined)
 youtube.com##+js(set-constant, ytInitialPlayerResponse.playerAds, undefined)
-youtube.com##+js(sukka-disable-av1)
 youtube.com##.YtdShortsSuggestedActionStaticHostContainer
 youtube.com##.YtmPaidContentOverlayHost
 youtube.com##.annotation.iv-branding
@@ -8423,12 +8333,10 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||addthis.com^$third-party,domain=imgur.com
 ||adeventtracker.spotify.com^
 ||adeventtrackermonitoring.spotify.com^
-||adfox.yandex.ru^$domain=d3ward.github.io
 ||adguard.com/-/event/
 ||adobedtm.com^*/satelliteLib-$script,domain=euronews.com
 ||adpai.thepaper.cn^
 ||adpai.thepaper.cn^$xmlhttprequest,redirect-rule=nooptext,domain=thepaper.cn
-||ads$domain=d3ward.github.io
 ||ads*-normal*.zijieapi.com^
 ||ads*-normal-*.zijieapi.com^
 ||ads*-normal-hl.zijieapi.com^
@@ -8437,7 +8345,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||ads-api.twitter.com/|$xhr,3p,redirect=nooptext
 ||ads-api.twitter.com^
 ||ads-api.twitter.com^$app=com.twitter.android
-||ads-api.twitter.com^$domain=d3ward.github.io
 ||ads-bidder-api.twitter.com^
 ||ads-union.jd.com^
 ||ads.reddit.com/|$xhr,3p,redirect=noop.txt
@@ -8451,17 +8358,10 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||adservex.media.net/videoAds.js$script,redirect=noopjs,domain=forbes.com
 ||adservice.google.com^
 ||adstrategy.biz.weibo.com^
-||adtech.yahooinc.com^$domain=d3ward.github.io
-||advertising-api-eu.amazon.com^$domain=d3ward.github.io
 ||advertising.apple.com^
-||advertising.apple.com^$domain=d3ward.github.io
-||advertising.yahoo.com^$domain=d3ward.github.io
-||advertising.yandex.ru^$domain=d3ward.github.io
-||advice-ads.s3.amazonaws.com^$domain=d3ward.github.io
 ||adxcel.com^$media,redirect=noop-1s.mp4:10,domain=open.spotify.com
 ||adxlog-adnet.vivo.com.cn^
 ||afd.baidu.com^
-||afs.googlesyndication.com^$domain=d3ward.github.io
 ||aim.cloudflare.com/__log
 ||airtable.com/internal/
 ||aixuntupian.oss-cn-hongkong.aliyuncs.com^
@@ -8765,7 +8665,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bbc.com^$removeparam=xtor
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bbvaar.zeabur.app^$all,to=~bbva.com
-||bcebos.com^$image,domain=pan.baidu.com
 ||bdcpro*.techweb.com.cn^
 ||bdstatic.eastmoney.com^
 ||beacon-api.aliyuncs.com^
@@ -8863,6 +8762,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cbjs.baidu.com^
 ||cc/scriptAD/$script
 ||cdn-settings.appsflyersdk.com^
+||cdn.adsninja.ca/adsninja_worker.js^$important,domain=androidpolice.com
+||cdn.adsninja.ca/an_sn.js^$script,domain=androidpolice.com
+||cdn.adsninja.ca/biddertypelibrary/$script,domain=androidpolice.com
 ||cdn.branch.io^$domain=medium.com
 ||cdn.coingape.com/wp-content/uploads/2020/05/21173509/Br-min.jpg
 ||cdn.cookielaw.org/consent/*/otSDKStub.js$important,domain=kraken.com
@@ -9179,7 +9081,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||excess.duolingo.com/batch
 ||exp.notion.so^
 ||ext.chtbl.com/trackable.js
-||extmaps-api.yandex.net^$domain=d3ward.github.io
 ||facai383.oss-cn-guangzhou.aliyuncs.com^
 ||facebook.com/ads/ig_redirect/$popup,domain=instagram.com
 ||facebook.com/plugins/$3p,domain=instagram.com
@@ -9236,7 +9137,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||gamersky.com/wap/js/gs/gsAllOpenAppBtn.
 ||geekbang.org/public/serving/
 ||geekupdates.notion.site/Ultra-Security$doc
-||gemini.yahoo.com^$domain=d3ward.github.io
 ||geolocation.forbes.com^
 ||geotrust.com^$third-party
 ||getpocket.com/web-utilities/public/static/te.js
@@ -9789,7 +9689,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||pan.baidu.com/recent/report?
 ||pan.baidu.com/rest/*/adx?$image
 ||papi.look.360.cn^
-||partnerads.ysm.yahoo.com^$domain=d3ward.github.io
 ||pay.google.com^$3p
 ||payments.google.com/gp/w/*/PaymentsPortals/web-reports?
 ||payments.google.com/payments/jslogs?
