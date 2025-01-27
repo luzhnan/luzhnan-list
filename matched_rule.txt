@@ -114,6 +114,7 @@ $websocket,domain=pornhub.com
 /^https?:\/\/cdn\.[a-z]{3,8}\.[a-z]{2,6}\/app\.js$/$script,3p,match-case,domain=edu
 /^https?:\/\/chatgpt\.com\/ces\/v1\/[a-z]$/$xhr,domain=chatgpt.com,method=post
 /^https?:\/\/chatgpt\.com\/ces\/v1\/[a-z]$/$xhr,domain=openai.com,method=post
+/^https?:\/\/reddit-\d{1,2}\.[a-z]{4}\.(?:net|org|pw)\//$doc,to=net|org|pw|~reddit.com
 /adservice.$domain=github.com
 /adservice.$domain=githubusercontent.com
 /adverts.$~script,~xmlhttprequest,domain=github.com
@@ -293,6 +294,7 @@ $websocket,domain=pornhub.com
 163.com##.fixed_foot_ad
 163.com##.freeVip
 163.com##.gWel-promt
+163.com##.gg200,.gg300,.gg200x300,[class$="_ad"],div.mod_ad_text,#bobo,#layout-bobo,.txt-bobo,#js_a_bobo,.bobo-area,.imglist-bobo-app,#layout-love,#layout-shop,.top-banner,div.post_adtop_main,div.post_adtop_side,a.tie-ad-bar,#fixed_foot_ad,#js-epTabDS,#js-epBobo
 163.com##.gkk_bj_yw
 163.com##.gkk_default_yw
 163.com##.hp_textlink1_ad
@@ -642,8 +644,7 @@ $websocket,domain=pornhub.com
 @@||ads.x.com^$popup
 @@||adserver.juicyads.com/js/jads.js$domain=netflav.com
 @@||adserver.va3.megaphone.cloud.$domain=megaphone.fm
-@@||adsninja.ca/api/cached/$xhr,domain=androidpolice.com
-@@||adsninja.ca/urlmap?$xhr,domain=androidpolice.com
+@@||adsninja.ca^$css,script,xhr,domain=androidpolice.com
 @@||adwords.google.com^$domain=accounts.google.com
 @@||akamaized.net/*.m4s$stealth,domain=bilibili.com
 @@||alibaba.tanx.com^$domain=alidns.com
@@ -760,7 +761,6 @@ $websocket,domain=pornhub.com
 @@||cdn.adguard.com/public/$domain=adguard.com
 @@||cdn.adsninja.ca/adsninja_client.js$domain=androidpolice.com
 @@||cdn.adsninja.ca/adsninja_client_style.css$domain=androidpolice.com
-@@||cdn.adsninja.ca^$script,css,domain=androidpolice.com
 @@||cdn.ampproject.org/*/amp-geo-$script,domain=9to5google.com
 @@||cdn.ampproject.org/*/amp-geo-$script,domain=9to5mac.com
 @@||cdn.apple-cloudkit.com^$domain=apple.com,stealth=referrer
@@ -856,6 +856,7 @@ $websocket,domain=pornhub.com
 @@||developers.google.com^$domain=developers.google.com
 @@||dl.phncdn.com/pics/$domain=pornhub.com
 @@||dlswbr.baidu.com/heicha/mw/abclite-$domain=haoma.baidu.com,script
+@@||dlswbr.baidu.com/heicha/mw/abclite-$script,domain=map.baidu.com
 @@||dnvodcdn.me/*/mp4$stealth,domain=iyf.tv
 @@||docs.google.com/*/viewdata$~third-party
 @@||docs.google.com^$generichide
@@ -875,6 +876,7 @@ $websocket,domain=pornhub.com
 @@||embed.binkies3d.com^$stealth,domain=gsmarena.com
 @@||eslite.com^*/ad
 @@||f*.baidu.com/it/u=*,*&fm=$domain=baidu.com
+@@||f-droid.org/assets/Ads_$~third-party
 @@||feedback-pa.clients*.google.com/*/google.internal.feedback.$stealth
 @@||figma.com^$generichide
 @@||files.bbci.co.uk^*/cookie-banner/$script,domain=bbc.com
@@ -3074,6 +3076,7 @@ douban.com##.subject-banner, div[ad-status]
 douban.com#?#.rec_topics:-abp-has(>.rec_topics_name[href^="https://erebor.douban."])
 douban.com#@#.download-ad
 douyin.com###videoSideBar iframe
+douyin.com##[class*='h5-ad-']
 douyin.com#?##douyin-right-container > div[class] > div[class]:has(> ul[class] > li[class] > a[href][target="_blank"] + div:contains(广告))
 douyin.com#?##videoSideBar:-abp-has(div:-abp-contains(/商品|商家|退款|店铺/))
 douyin.com#?#.xgplayer>div[class]:-abp-has(svg[height="16"][width="30"])
@@ -3272,6 +3275,8 @@ figma.com###progress-indicator-target + div:has(> div > button[class^="react-sha
 figma.com##.base_cookie_banner--container--nUKFl
 figma.com##.css-eouiu8
 figma.com##div[aria-label="Cookie Consent"]
+figma.com##div[class^="meta_container--rightSide--"] > [class^="social_links--"]
+figma.com##div[class^="meta_container--rightSide--"] > hr:has(+ [class^="social_links--"])
 finance.sina.cn##.article-sax
 finance.sina.cn##.m-client-call3
 finance.sina.cn##.s_card.cj_24
@@ -4686,6 +4691,7 @@ m.bilibili.com##.fe-ui-open-app-btn
 m.bilibili.com##.launch-app-btn > a:contains(App)
 m.bilibili.com##.launch-app-btn:contains(打开APP)
 m.bilibili.com##.m-home-float-openapp
+m.bilibili.com##.m-nav-openapp.m-open-app
 m.bilibili.com##.m-video2-awaken-btn
 m.bilibili.com##.m-video2-float-openapp
 m.bilibili.com##.mplayer-widescreen-callapp
@@ -5454,6 +5460,8 @@ nytimes.com#$#ol[data-testid="search-results"] > li[data-testid="search-add-resu
 nytimes.com#$#ol[data-testid="search-results"] > li[data-testid] + li:not([data-testid]) + li[data-testid="search-bodega-result"] > div[class] { border-top:0!important; padding-top:0px!important;}
 nytimes.com#%#//scriptlet("set-constant", "Navigator.prototype.joinParakeetInterestGroup", "noopFunc")
 nytimes.com#%#//scriptlet('remove-attr', 'inert', '#app')
+nytimes.com#%#//scriptlet('remove-class', 'fides-no-scroll', 'body')
+nytimes.com#%#//scriptlet('trusted-click-element', '#complianceOverlay button[data-tpl-type="Button"]', '', '2500')
 nytimes.com#%#//scriptlet('trusted-click-element', '#fides-banner-container .fides-accept-all-button')
 nytimes.com#?##app > #site-content > div[class] > div[class^="css-"] > div[class^="css-"][class*=" "]:has( div[class^="css-"][class*=" "] > .ad)
 nytimes.com#?##app > div > div[data-testid="onsite-messaging-unit-gateway"] > #gateway-content:has(> div[class] > div[data-testid="onsite-messaging-unit-complianceGDPR"])
@@ -6963,6 +6971,7 @@ tool.chinaz.com#?#.backtoTop > div.toItem:has(> a[href="http://my.chinaz.com/too
 tradingview.com###charting-ad
 tradingview.com##+js(no-fetch-if, doubleclick)
 tradingview.com##+js(set-local-storage-item, forcefeaturetoggle.enable_ad_block_detect, false)
+tradingview.com##div[class^="container-"]:has(> div[class^="ad-"])
 tradingview.com##div[class^="js-container-"][class$="-notification"]
 tradingview.com##div[class^="shareButton"]
 tradingview.com##div[data-role="toast-container"]
@@ -7453,6 +7462,7 @@ www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.
 www.youtube.com#%#//scriptlet('set-constant', 'Object.prototype.fetchFn', 'undefined')
 www.zhihu.com##.KfeCollection-VipRecommendCard
 www.zhihu.com##.OpenInAppButton
+www.zhihu.com##.Reward
 www.zhihu.com##A.MBannerAd
 www.zhihu.com##A.MHotFeedAd,.MRelateFeedAd,.WeiboAd-wrap,.AdvertImg.AdvertImg--isLoaded.MBannerAd-image,.Banner-adTag,[href='https://maimai.cn/']
 www.zhihu.com##div[role=list] > .Pc-word:not([tabindex])
@@ -8681,6 +8691,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bbc.com^$removeparam=xtor
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bbvaar.zeabur.app^$all,to=~bbva.com
+||bcebos.com^$image,domain=pan.baidu.com
 ||bdcpro*.techweb.com.cn^
 ||bdstatic.eastmoney.com^
 ||beacon-api.aliyuncs.com^
@@ -8832,11 +8843,11 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cdn.privacy-mgmt.com^$domain=popsci.com
 ||cdn.search.brave.com/serp/*/static/serp-js/telemetry/
 ||cdnjs.cloudflare.com/ajax/libs/font-awesome/$font
-||cf.adxcel.com^$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
 ||cf.adxcel.com^$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
 ||channelusa.samsung.com^
 ||chaoku.oss-cn-chengdu.aliyuncs.com^
 ||chat.deepseek.com/api/v0/events$xhr,method=post
+||chatgpt.com/ces/v1/p
 ||chatgpt.com/ces/v1/t
 ||chinaz.com/2020/0306/2020030616083756.jpg
 ||chinaz.com/c0g/
@@ -9508,7 +9519,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||marketing.mangacopy.com^
 ||mcs.zijieapi.com^
 ||media-amazon.com^$app=com.offerup
-||media-us.amillionads.com/*.mp3$media,redirect=noop-1s.mp4,domain=spotify.com
 ||media-us.amillionads.com/*.mp3$media,redirect=noopmp4-1s,domain=spotify.com
 ||mediav.com^$third-party,domain=dev.360.cn
 ||mediav.com^$third-party,domain=g.360.cn
@@ -10386,7 +10396,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||xpjcg.oss-accelerate.aliyuncs.com^
 ||xuexi.hydcd.com^
 ||xyz/akbank/$doc,to=xyz|~akbank.com
-||xyz/script/www.dolldivine.com.js
 ||yahoo.com/_td/api/resource/NativeAdService
 ||yahoo.com/_td/api/resource/StreamService.ads;ads=
 ||yahoo.com/_td/api/resource/StreamService;ads=
