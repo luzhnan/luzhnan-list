@@ -67,6 +67,7 @@ $websocket,domain=pornhub.com
 -adrevenue.appsflyersdk.com^
 -attr.appsflyersdk.com^
 -launches.appsflyersdk.com^
+-skadsdkless.appsflyersdk.com^
 .baidu.com/cpro/
 .baidu.com/ecom
 .baidu.com/h.
@@ -143,6 +144,7 @@ $websocket,domain=pornhub.com
 /reklam/*$~xmlhttprequest,domain=cloudflare.com
 /reklam/*$~xmlhttprequest,domain=github.com
 /t.paypal.com/*$image
+/traffic.megaphone.fm/*.mp3^$media,domain=open.spotify.com,urlskip=/(traffic\.megaphone\.fm\/\w+\.mp3)/ +https
 /web-vitals.$script,redirect=noopjs,domain=amazon.com
 /wp-content/uploads/pum/*$domain=linuxbabe.com
 /wrapperMessagingWithoutDetection.js$domain=androidcentral.com
@@ -343,6 +345,9 @@ $websocket,domain=pornhub.com
 163.com##div[class^="gg"]
 163.com##span[class^="gg"]
 163.com#@#.s-btns
+1688.com###cpm-ad
+1688.com###cpm-ad-2
+1688.com##.sm-offer-item[p4p*=".1688."]
 189.cn#@##linkShare
 189.cn#@##share_list
 189.cn#@#.adLink
@@ -512,7 +517,6 @@ $websocket,domain=pornhub.com
 ?*=*=*=$subdocument,domain=shenchuang.com
 ?*=*=*=$subdocument,domain=xiachufang.com
 @@$generichide,domain=androidpolice.com
-@@*$ghide,domain=androidpolice.com
 @@.vmall.com/oauth
 @@/Tag.rb$domain=github.com
 @@/Themes/SamsungShop/Scripts/shop/cookie-notice.js$domain=shop.samsung.com
@@ -542,6 +546,7 @@ $websocket,domain=pornhub.com
 @@/pubads*theguardian.com
 @@/sensorsdata.$domain=binance.com
 @@/sensorsdata.$domain=modian.com
+@@/traffic.megaphone.fm/*.mp3^$media,domain=open.spotify.com
 @@/video/*$media,stealth,domain=douyin.com
 @@/videos/*$domain=pornhub.com
 @@/wp-content/plugins/blockalyzer-adblock-counter/*$image,script,~third-party,domain=pornhub.com
@@ -656,7 +661,7 @@ $websocket,domain=pornhub.com
 @@||adserver.va3.megaphone.cloud.$domain=megaphone.fm
 @@||adsninja.ca/ads_$script,domain=androidpolice.com
 @@||adsninja.ca/adsninja_client.js$script,domain=androidpolice.com
-@@||adsninja.ca^$css,script,xhr,domain=androidpolice.com
+@@||adsninja.ca^$script,domain=androidpolice.com
 @@||adsninja.ca^$stylesheet,xmlhttprequest,domain=androidpolice.com
 @@||adwords.google.com^$domain=accounts.google.com
 @@||akamaized.net/*.m4s$stealth,domain=bilibili.com
@@ -872,6 +877,7 @@ $websocket,domain=pornhub.com
 @@||dl.phncdn.com/pics/$domain=pornhub.com
 @@||dlswbr.baidu.com/heicha/mw/abclite-$domain=haoma.baidu.com,script
 @@||dlswbr.baidu.com/heicha/mw/abclite-$script,domain=map.baidu.com
+@@||dnspod.cn/static/common/js/analytics.js
 @@||dnvodcdn.me/*/mp4$stealth,domain=iyf.tv
 @@||docs.google.com/*/viewdata$~third-party
 @@||docs.google.com^$generichide
@@ -1123,8 +1129,10 @@ $websocket,domain=pornhub.com
 @@||medium.com^$stealth
 @@||meet.google.com^$generichide
 @@||meituan.com^$cookie=device_uuid
+@@||mgln.ai/e/$media,domain=open.spotify.com
 @@||mixpanel.com/site_media/js/api/mixpanel.js$domain=blog.cloudflare.com
 @@||mixpanel.com/track/?data=$xmlhttprequest,domain=kickstarter.com
+@@||mmstat.com/eg.js$domain=1688.com
 @@||mmstat.com/eg.js$domain=taobao.com
 @@||mmstat.com/eg.js$domain=tmall.com
 @@||mozilla.org/api$removeparam
@@ -1619,6 +1627,7 @@ anandtech.com##.twitter
 android.com##.devsite-badger-award, devsite-snackbar
 android.com##.devsite-notification-eu-cookie
 android.com##.glue-cookie-notification-bar
+androidauthority.com###__next > div[class*=" "]:has(> a[data-sel][target="_blank"]:only-child)
 androidauthority.com###aa-subscribe-widget-wrap
 androidauthority.com###text-44
 androidauthority.com##+js(href-sanitizer, 'a[href*="?"][href*="url=http"]:is([href^="https://cc."][href*=".com/v1/otc/"][href*="merchant="],[href^="https://go.skimresources.com"],[href^="https://go.redirectingat.com"],[href^="https://shop-links.co/link"],[href^="https://track.effiliation.com/servlet/effi.redir?"],[href*=".com/a.ashx?"],[href^="https://www."][href*=".com/t/"],[href*=".prsm1.com/r?"],[href*=".com/click-"],[href*=".net/click-"],a[href*=".com/t/t?a="],a[href*=".dk/t/t?a="])', ?url)
@@ -1650,6 +1659,7 @@ androidauthority.com##main > div > div:empty:matches-css(min-height: 250px):matc
 androidauthority.com##main > div:last-child > div:has(> .ad)
 androidauthority.com##main > div:last-child > div:has(> div:only-child:empty)
 androidauthority.com##main > script + div:has(> div:only-child:empty)
+androidauthority.com##main button[type="button"]:has(+ div[class] > .viafoura > div[data-widget="sharebar"])
 androidauthority.com#$#div[data-spotim-slot-size="300x250"] { position: absolute!important; left: -3000px!important; }
 androidauthority.com#%#//scriptlet('remove-class', 'has-dealbar')
 androidauthority.com#?#.post-sidebar > div:has(> div[data-nc="nc-ad"])
@@ -2735,6 +2745,8 @@ careers.google.com##.gc-cookie-bar
 cdn-settings.appsflyersdk.com^
 chat.deepseek.com##.ds-modal-overlay
 chat.deepseek.com##.ds-theme.ds-modal-wrapper:has-text(uBlock)
+chat.deepseek.com##div:has(> .ds-icon + span)
+chat.deepseek.com##div:has(> .ds-icon[style*="width: 28px"][style*="height: 28px"])
 chat.deepseek.com#?#.ds-theme.ds-modal-wrapper:contains(AdGuard)
 chat.mozilla.org##.mx_ToastContainer
 chatgpt.com##+js(no-fetch-if, method:/post/i url:/^https?:\/\/chatgpt\.com\/ces\/v1\/[a-z]$/)
@@ -2831,7 +2843,7 @@ cn.bing.com##.bnp_rich_div_visible.bottom
 cn.bing.com##.bnp_rich_div_visible.top
 cn.bing.com#$#hide-if-contains 360 #b_results>li .b_adProvider
 cn.bing.com#?##b_results > li:-abp-has(.b_adProvider)
-cn.bing.com#?#.b_algo:-abp-has(p:-abp-properties(content:*Jr8IbslwuuoZ9kr8cTrXXkY8lfZL5p8v2TTht91DQxXZU9AB6BpwzkAAU2AAAAAElFTkSuQmCC))
+cn.bing.com#?#.b_algo:-abp-has(p:-abp-properties(content:*hgAbj3WJSu83ynLkuUc6pXNStPcP2lmm6yyOWqGmKXKfgGsPJ4MmXjD6wAAAABJRU5ErkJggg))
 cna.com.tw###left_socail
 cna.com.tw##.Subscription
 cna.com.tw##.ad_336_2
@@ -3350,11 +3362,11 @@ flickr.com##.nav-banner-container
 flickr.com##.sub-photo-submoola-banner-view
 flickr.com##.sub-photo-submoola-view
 flickr.com##div[class^="main view"]:has(a[href$="&ref=sponsored"])
-flickr.com##div[class^="view sub-photo-right-view"] > div.photo-charm-exif-scrappy-view + div
 flickr.com##section:has([href*="istockphoto.com"])
 flickr.com#%#//scriptlet('adjust-setTimeout', 'adTimerStartCount', '1000')
 flickr.com#?#.photo-list-view > div.photo-list-getty-item-view:has(> div.photo-list-static-item-container a[href^="/account/upgrade/pro?"])
 flickr.com#?#.search-container-w-sidebar-content > div.view:has(> div[id^="yui_"] a[href^="/account/upgrade/pro?"])
+flickr.com#@#div[class^="view sub-photo-right-view"] > div.photo-charm-exif-scrappy-view + div
 fm.douban.com##.left
 fmprc.gov.cn#@#.adbox2
 fonts.google.com#%#//scriptlet('trusted-set-local-storage-item', 'bannersDismissed', '["cookieBar","privacyBanner"]')
@@ -4198,6 +4210,7 @@ image.baidu.com#?#.newfcImgli:-abp-has(.fc-ad-tip)
 imazing.com#$#body.modal-open { overflow: auto !important; }
 imazing.com#$#div#cookie-consent-modal { display: none !important; }
 imazing.com#$#div.modal-backdrop { display: none !important; }
+imgur.com###getAppButton
 imgur.com###share-button
 imgur.com##+js(adjust-setTimeout, /function\(\)\{try\{|adBegan/, 5000, 0.02)
 imgur.com##+js(remove-attr, style, .GalleryPage-bg)
@@ -4573,6 +4586,7 @@ kickstarter.com##.facebook
 kickstarter.com##.mobile > .shadow-high.relative:first-child
 kickstarter.com##.react_share_icons
 kickstarter.com##.twitter
+kimi.moonshot.cn##.app-download
 kraken.com###smart-app-banner
 kraken.com##div[class^="fc-94f32b27"]
 labs.google.com#@##google-hats-survey
@@ -5478,7 +5492,7 @@ nytimes.com#$#ol[data-testid="search-results"] > li[data-testid] + li:not([data-
 nytimes.com#%#//scriptlet("set-constant", "Navigator.prototype.joinParakeetInterestGroup", "noopFunc")
 nytimes.com#%#//scriptlet('remove-attr', 'inert', '#app')
 nytimes.com#%#//scriptlet('remove-class', 'fides-no-scroll', 'body')
-nytimes.com#%#//scriptlet('trusted-click-element', '#complianceOverlay button[data-tpl-type="Button"]', '', '2500')
+nytimes.com#%#//scriptlet('trusted-click-element', '#complianceOverlay button[data-tpl-type="Button"]', '', '3000')
 nytimes.com#%#//scriptlet('trusted-click-element', '#fides-banner-container .fides-accept-all-button')
 nytimes.com#?##app > #site-content > div[class] > div[class^="css-"] > div[class^="css-"][class*=" "]:has( div[class^="css-"][class*=" "] > .ad)
 nytimes.com#?##app > div > div[data-testid="onsite-messaging-unit-gateway"] > #gateway-content:has(> div[class] > div[data-testid="onsite-messaging-unit-complianceGDPR"])
@@ -5963,7 +5977,7 @@ reddit.com#$#.m-blurred { filter: none !important; }
 reddit.com#$#.theme-beta .sidebar-grid.fixed { position: unset !important;}
 reddit.com#$#body > .footer-parent { height: calc(100%)!important; padding:0px!important; }
 reddit.com#$#body > div[style*="backdrop-filter: blur"] { display: none !important; }
-reddit.com#$#body:not([style^="overflow:"]) { pointer-events: auto !important; overflow: auto !important; }
+reddit.com#$#body:not([style^="overflow:"]):not([class="rpl-scroll-lock"]) { pointer-events: auto !important; overflow: auto !important; }
 reddit.com#$#div[class="NavFrame"] div.XPromoBottomBar { display: none !important; }
 reddit.com#$#shreddit-app > div.sidebar-grid.pdp { filter: unset !important; }
 reddit.com#$#shreddit-async-loader[paint-group="xpromo"][bundlename="app_selector"] { display: none !important; }
@@ -6438,6 +6452,7 @@ substack.com##.navbar-buttons > div > button.pencraft:has(> svg.lucide-share)
 substack.com##.navbar-buttons div.pencraft  > span + button[aria-controls="dialog2"]
 substack.com##.newsletter-post > div[class*="background_"]
 substack.com##.newsletter-post > div[class*="subscribeDialog"]
+substack.com##.newsletter-post > div[class*="subscribeDialog"] ~ div[class^="background-"]
 substack.com##.pencraft  > div.style-compressed  > a.no-label.post-ufi-button[href^="javascript"] > svg
 substack.com##.pencraft + div.pencraft > a.no-icon[role="button"]
 substack.com##.post-ufi > a.post-ufi-comment-button + a[href^="javascript:void"]
@@ -6984,6 +6999,8 @@ tomshardware.com#$#.xenforo-comment-widget { height: auto !important; }
 tomshardware.com#@#.sponsored-article
 tongren.gov.cn###tanchukuang
 tongren.gov.cn##.ads
+tongyi.aliyun.com##div[class^="downloadWrap"]
+tongyi.aliyun.com##li:has(> i > svg[data-spm-anchor-id])
 tool.chinaz.com#?#.backtoTop > div.toItem:has(> a[href="http://my.chinaz.com/toolvip/vip"])
 tradingview.com###charting-ad
 tradingview.com##+js(no-fetch-if, doubleclick)
@@ -7476,7 +7493,6 @@ www.youtube.com#%#(()=>{const t={apply:(t,e,n)=>{const o=Reflect.apply(t,e,n);tr
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
 www.youtube.com#%#(()=>{window.JSON.parse=new Proxy(JSON.parse,{apply(r,e,t){const n=Reflect.apply(r,e,t);if(!location.pathname.startsWith("/shorts/"))return n;const a=n?.entries;return a&&Array.isArray(a)&&(n.entries=n.entries.filter((r=>{if(!r?.command?.reelWatchEndpoint?.adClientParams?.isAd)return r}))),n}});})();
 www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.001')
-www.youtube.com#%#//scriptlet('set-constant', 'Object.prototype.fetchFn', 'undefined')
 www.zhihu.com##.KfeCollection-VipRecommendCard
 www.zhihu.com##.OpenInAppButton
 www.zhihu.com##.Reward
@@ -7682,6 +7698,8 @@ xiaohongshu.com##.wx-open-launch-app-container
 xiaohongshu.com#?#.note-view-container > div.nav-bar-box:has(> div.reds-box div.reds-text:contains(小红书App))
 xiaomiyoupin.com##.fixed-nav > li:nth-of-type(2)
 xiaomiyoupin.com##.site-item.m-download.fl
+xinghuo.xfyun.cn##div[class*="download_btn"]
+xinghuo.xfyun.cn##div[class*="jump_btn"]:contains(下载APP)
 xingqu.baidu.com###activity_countdown_head
 xingqu.baidu.com###attention-game-wraper_dialog
 xingqu.baidu.com###baiduweishiDown
@@ -8314,6 +8332,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||163.com/special/*_netease
 ||163.com/wap/special/article_cooper_piapia/
 ||163.com^*/boboData
+||1688.com/b2bxad?
 ||189.cn/actpush/$popup,third-party
 ||189.cn/dns/
 ||189.cn^*/push/$third-party
@@ -8511,6 +8530,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||api.twitter.com/*/count.json$third-party
 ||api.twitter.com^$3p,domain=twitter.com
 ||api.twitter.com^$3p,domain=x.com
+||api2.bybit.com/v2/public/metrics
 ||apk-01.oss-cn-beijing.aliyuncs.com/dp/
 ||app-analytics-services.com^
 ||app.appsflyer.com^
@@ -8808,8 +8828,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cc/scriptAD/$script
 ||cdn-settings.appsflyersdk.com^
 ||cdn.adsninja.ca/adsninja_worker.js^$important,domain=androidpolice.com
-||cdn.adsninja.ca/an_sn.js^$script,domain=androidpolice.com
-||cdn.adsninja.ca/biddertypelibrary/$script,domain=androidpolice.com
+||cdn.adsninja.ca/an_sn.js^$important,domain=androidpolice.com
+||cdn.adsninja.ca/biddertypelibrary/$important,domain=androidpolice.com
 ||cdn.branch.io^$domain=medium.com
 ||cdn.coingape.com/wp-content/uploads/2020/05/21173509/Br-min.jpg
 ||cdn.cookielaw.org/consent/*/otSDKStub.js$important,domain=kraken.com
@@ -9361,6 +9381,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||imasdk.googleapis.com/js/sdkloader/ima3.js^$script,redirect=google-ima.js,domain=androidpolice.com
 ||img.ithome.com/file/js/wap/apprecommend.js
 ||img.response.digicert.com^
+||img.uu1001.cn^$third-party,domain=1688.com
 ||img.uu1001.cn^$third-party,domain=taobao.com
 ||imgsrc.baidu.com/tieba/pic/item/$image
 ||imgstat.baidu.com^
@@ -9427,6 +9448,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||jianshu.com/asimov/ab_test/info$xmlhttprequest,redirect=nooptext
 ||jiaoyu.baidu.com/tieba/
 ||jpg1.oss-cn-beijing.aliyuncs.com^
+||jpush.io^
 ||jsdelivr.net/*/adb-analytics$script,3p
 ||jsdelivr.net/*/levelmaxblock.js$script,3p
 ||jsdelivr.net/gh/*/%E7%89%9B960-80.gif
@@ -9667,7 +9689,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||notion.so/api/v*/teV1
 ||notion.so/api/v*/teV1|
 ||nsclick.baidu.com^
-||nstool.netease.com^
 ||nyt.com/ads/tpc-check.html$domain=nytimes.com
 ||nytimes.com/v1/purr-cache
 ||nytimes.com^$removeparam=impression_id
@@ -9748,6 +9769,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||paypal.com/webapps/mch/cmd/?
 ||paypal.com/xoplatform/logger/api/logger
 ||paypal.com^*/pixel.gif$third-party
+||pbc.wsj.com^
 ||pc-mon.zijieapi.com^
 ||pcsupport.lenovo.com/esv*/plugins/contactus/livefloatchat
 ||pdst.fm^$script,third-party
@@ -9934,6 +9956,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||sascdn.com/diff/$script,redirect=noopjs,domain=imgur.com
 ||saveu5-normal-lq.zijieapi.com^
 ||sc-attache.forbes.com^
+||sc-forbes.forbes.com^
 ||scdn.co/audio/$media,redirect=noop-1s.mp4:10,domain=open.spotify.com
 ||scdn.co/mp3-ad/$media,redirect=noop-1s.mp4:10,domain=open.spotify.com
 ||scholar.google.com^$ping
@@ -10109,6 +10132,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||support.github.com/_stats
 ||support.github.com/session/event
 ||support.github.com/session/user
+||support.google.com/apis/logjourney
 ||supportmetrics.apple.com^
 ||surveygizmobeacon.s3.amazonaws.com^$domain=support.mozilla.org
 ||swwwxww.oss-cn-hangzhou.aliyuncs.com^
@@ -10131,6 +10155,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||tags.tiqcdn.com/utag/*/prod/utag.js$domain=louisvuitton.com
 ||tags.tiqcdn.com/utag/*/utag.$domain=louisvuitton.com
 ||tampermonkey.net/s.js
+||tanx.com^$third-party,domain=1688.com
 ||tanx.com^$third-party,domain=tmall.com
 ||tanx.com^$third-party,domain=www.taobao.com
 ||taobao.com/api/data/v2/d9543feac7c9433a98bc85be3ba856b1.js
