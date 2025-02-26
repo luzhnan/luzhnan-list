@@ -148,6 +148,7 @@ $websocket,domain=pornhub.com
 /reklam/*$~xmlhttprequest,domain=github.com
 /t.paypal.com/*$image
 /traffic.megaphone.fm/*.mp3^$media,domain=open.spotify.com,urlskip=/(traffic\.megaphone\.fm\/\w+\.mp3)/ +https
+/web-vitals.$script,redirect-rule=noopjs,domain=amazon.com
 /web-vitals.$script,redirect=noopjs,domain=amazon.com
 /wp-content/uploads/pum/*$domain=linuxbabe.com
 /wrapperMessagingWithoutDetection.js$domain=androidcentral.com
@@ -861,6 +862,7 @@ $websocket,domain=pornhub.com
 @@||contacts.google.com^$generichide
 @@||content.jwplatform.com^$domain=tomshardware.com
 @@||count.taobao.com/counter$script
+@@||coveo.com/rest/search/$stealth=3p-auth,domain=lg.com
 @@||cpro.baidustatic.com/cpro/ui/cm.js$domain=ali213.net
 @@||create.jd.com/ad/
 @@||creativecloud-deliver.bytedance.com/api/webardeliver/verify$stealth,domain=capcut.cn
@@ -1442,6 +1444,8 @@ accuweather.com###connatix
 accuweather.com###eu-cookie-notify-wrap
 accuweather.com###mid-ad
 accuweather.com###top
+accuweather.com##+js(set, Navigator.prototype.globalPrivacyControl, false)
+accuweather.com##+js(set, navigator.globalPrivacyControl, false)
 accuweather.com##.ad-lr
 accuweather.com##.adhesion-ad-frame
 accuweather.com##.adhesion-header
@@ -2859,7 +2863,6 @@ cn.bing.com##.bnp_rich_div_visible.top
 cn.bing.com#$#hide-if-contains 360 #b_results>li .b_adProvider
 cn.bing.com#?##b_results > li:-abp-has(.b_adProvider)
 cn.bing.com#?#.b_algo:-abp-has(p:-abp-properties(content:*Jr8IbslwuuoZ9kr8cTrXXkY8lfZL5p8v2TTht91DQxXZU9AB6BpwzkAAU2AAAAAElFTkSuQmCC))
-cn.bing.com#?#.b_algo:-abp-has(p:-abp-properties(content:*hgAbj3WJSu83ynLkuUc6pXNStPcP2lmm6yyOWqGmKXKfgGsPJ4MmXjD6wAAAABJRU5ErkJggg))
 cna.com.tw###left_socail
 cna.com.tw##.Subscription
 cna.com.tw##.ad_336_2
@@ -4643,6 +4646,11 @@ lestore.lenovo.com##.pin-banner
 lesuobingdu.360.cn##.top-banner
 letsencrypt.org##.custom-dbox-popup
 letsencrypt.org##.footer-newsletter-col
+lg.com##.feedback-floating-wrap
+lg.com##.sns-area
+lg.com#@#.cookie-check
+lg.com#@#.eprivacy-cookie
+lg.com#@#div.cookie-eu
 libsyn.com###share
 lineageos.org##.footer-icons
 link.com##.LinkNotificationCenter
@@ -5587,6 +5595,7 @@ perplexity.ai#%#//scriptlet('set-local-storage-item', 'appDownloadBannerDismisse
 perplexity.ai#%#//scriptlet('set-session-storage-item', 'shouldShowAuthBannerAfterQuery', 'true')
 perplexity.ai#%#//scriptlet('set-session-storage-item', 'signUpBannerDismissed', 'false')
 perplexity.ai#?#.mx-auto > div.fixed:has(> div > div.text-center:contains(Sign in or create an account))
+perplexity.ai#?#.py-sm.group:-abp-contains(Sponsored)
 philips-hue.com#$#.guideBody { display: block !important; }
 photopea.com##+js(no-fetch-if, uniconsent.com, length:2300)
 photopea.com##+js(trusted-rpnt, script, added=false;, "added=false;if (typeof localStorage !== 'undefined' && typeof JSON.parse(localStorage._ppp)['0_uid'] === 'undefined' && window.visualViewport.width != document.documentElement.offsetWidth+320) {const originalvisualViewport=window.visualViewport; Object.defineProperty(window, 'visualViewport', {value: new Proxy(originalvisualViewport, {get(target,property) {if (property === 'width') {return document.documentElement.offsetWidth+320} return target[property]}}), configurable:true});}")
@@ -5680,6 +5689,7 @@ pornhub.com##.cookiesBanner
 pornhub.com##.eudsaLink
 pornhub.com##.hd.clear
 pornhub.com##.inesuch
+pornhub.com##.js_promoItem
 pornhub.com##.middleAdContainer
 pornhub.com##.ml-subscribe-form
 pornhub.com##.nonesuch
@@ -5744,6 +5754,7 @@ pornhub.com#@#iframe[width][height*="px"]
 pos.baidu.com##body
 power.baidu.com##.wgt-clew[data-type="goods"]
 power.baidu.com##style[id*="s-m"] + div[id^="m"]
+powerelectronicsnews.com##.masthead-banner
 preview.redd.it##shreddit-async-loader[bundlename="reddit_cookie_banner"]
 privacy.samsung.com##.cookie-noneu
 privacy.samsung.com#$#body { overflow: auto !important; }
@@ -6060,6 +6071,8 @@ roblox.com#@#.inline-social
 roguefitness.com##.newsletter
 rou.video##.grid > div[class^="col-span"]:has(> div[class] > div[id^="ts_ad_native"])
 rou.video##.grid > div[class^="col-span"]:has(> div[class] > ins)
+rushop.lg.com##.cookie-mode__wrap
+rushop.lg.com##body > div[id="wrapper"] + section.subsub
 saas.360.cn##.promotion-entry-logo
 saas.360.cn#$#.home-activity { display: none !important; }
 saas.360.cn#$#.productIntroduce { top: 60px !important; }
@@ -6367,6 +6380,8 @@ somniumspace.medium.com#?#div[role="dialog"] ~ div[class*=" "]:has(> div[class*=
 sonos.com##.sonoscontent-banner
 soundcloud.com###onetrust-consent-sdk
 soundcloud.com##+js(href-sanitizer, a[href^="https://gate.sc"][href*="?url=http"], ?url)
+soundcloud.com##+js(set, Navigator.prototype.globalPrivacyControl, false)
+soundcloud.com##+js(set, navigator.globalPrivacyControl, false)
 soundcloud.com##.activity > .streamHTUpsell
 soundcloud.com##.announcement
 soundcloud.com##.announcements
@@ -6407,6 +6422,8 @@ speedtest.cn##div[class^="speed-activity"][class$="wrap-index"]
 speedtest.cn##div[class^="speed-twoads"]
 sports.sohu.com##.allsee-list > .bd-wrap
 spotify.com###onetrust-consent-sdk
+spotify.com##+js(set, Navigator.prototype.globalPrivacyControl, false)
+spotify.com##+js(set, navigator.globalPrivacyControl, false)
 spotify.com##.ads-container
 spotify.com##.mh-message-bar
 spotify.com##.onetrust-pc-dark-filter
@@ -7066,6 +7083,8 @@ twitter.com##+js(json-prune-xhr-response, data.immersiveMedia.timeline.instructi
 twitter.com##+js(json-prune-xhr-response, data.search_by_raw_query.search_timeline.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/SearchTimeline)
 twitter.com##+js(json-prune-xhr-response, data.threaded_conversation_with_injections_v2.instructions.[].entries.[-].content.items.[].item.itemContent.promotedMetadata, , propsToMatch, url:/TweetDetail)
 twitter.com##+js(json-prune-xhr-response, data.user.result.timeline_v2.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/UserTweets)
+twitter.com##+js(set, Navigator.prototype.globalPrivacyControl, false)
+twitter.com##+js(set, navigator.globalPrivacyControl, false)
 twitter.com##.gdpr-privacy-banner
 twitter.com##.js-signup-call-out
 twitter.com##.presented
@@ -7315,6 +7334,7 @@ wk.baidu.com##a[href^="http://www.baidu.com/cpro.php?"]
 world.taobao.com##div[data-spm="banner_above"]
 wq.jd.com###id-pcprompt-mask
 www.163.com##.float-bar
+www.3dmgame.com##.head_ent
 www.amazon.com##+js(json-prune, cuepointPlaylist vodPlaybackUrls.result.playbackUrls.cuepoints)
 www.amazon.com##+js(xml-prune, xpath(//*[name()="Period"][.//*[@value="Ad"]] | //*[name()="Period"]/@start), [value="Ad"], .mpd)
 www.baidu.com###banner_call + div[id]
@@ -7610,6 +7630,7 @@ www1.baidu.com#@##results > div[class]:not(.result):not(.result-op):not(.sp-rslt
 x-mol.com###floatWindow
 x-mol.com###rightAllJournal
 x-mol.com##.news-white-content-right
+x.ai##section[class^="cookie-banner_"]
 x.com###layers > div[class] > div[class] > div[class] > div[class]:has(> div[class] > div[class] > div[class] > div[class] > div[class] > a[href="/login"])
 x.com###layers > div[class] > div[class]:has(> div[class] > div[data-testid="BottomBar"] a[href$="/privacy"])
 x.com###layers div[class="css-1dbjc4n r-l5o3uw r-97e31f"]
@@ -7620,6 +7641,8 @@ x.com##+js(json-prune-xhr-response, data.immersiveMedia.timeline.instructions.[]
 x.com##+js(json-prune-xhr-response, data.search_by_raw_query.search_timeline.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/SearchTimeline)
 x.com##+js(json-prune-xhr-response, data.threaded_conversation_with_injections_v2.instructions.[].entries.[-].content.items.[].item.itemContent.promotedMetadata, , propsToMatch, url:/TweetDetail)
 x.com##+js(json-prune-xhr-response, data.user.result.timeline_v2.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/UserTweets)
+x.com##+js(set, Navigator.prototype.globalPrivacyControl, false)
+x.com##+js(set, navigator.globalPrivacyControl, false)
 x.com##.css-175oi2r.r-12vffkv[style^="position: absolute; bottom: 0px; width: 100%;"]:has-text(data protection)
 x.com##.css-1dbjc4n.r-12vffkv > .r-12vffkv > .css-1dbjc4n[data-testid="BottomBar"] > .css-1dbjc4n.r-1awozwy.r-1sw30gj.r-15ce4ve
 x.com##.gdpr-privacy-banner
@@ -8762,6 +8785,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bbc.com^$removeparam=xtor
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bbvaar.zeabur.app^$all,to=~bbva.com
+||bcebos.com^$image,domain=pan.baidu.com
 ||bdcpro*.techweb.com.cn^
 ||bdstatic.eastmoney.com^
 ||beacon-api.aliyuncs.com^
@@ -9449,6 +9473,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||ip.sb/assets/images/rivencloud_ads.gif
 ||ipaddress.com/shariff/
 ||ipsw.me/assets/images/external/slide.png
+||is.lg.com^
 ||itdog.cn/upload/images/*.gif
 ||ithome.com/api/lapin/
 ||ithome.com/block/headerline$subdocument
@@ -9545,6 +9570,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||lenovo.com.cn/lenovo/bid?clientType=
 ||lenovo.com/_ui/desktop/common/js/common/youtubeVideoAnalytic.js
 ||lf9-static.bytednsdoc.com/obj/tos-cn-i-0813
+||lg.com/lg5-common-gp/js*/e-privacy.min.js
 ||lianmeng.360.cn^$domain=~lianmeng.360.cn
 ||lightboxcdn.com^$domain=androidauthority.com
 ||link.medium.com^
@@ -9554,6 +9580,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||live.bilibili.com^$removeparam=is_room_feed
 ||live.bilibili.com^$removeparam=session_id
 ||live.bilibili.com^$removeparam=visit_id
+||livetex.ru/js/client.js$third-party,domain=lg.com
 ||lms.roblox.com^
 ||loc.map.baidu.com^$app=com.xiaomi.metoknlp
 ||log*-misc-lf.amemv.com^
@@ -9738,6 +9765,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||okx.com/jsstat/sb?
 ||omni.commercial.pccw.com^
 ||omni.conferencing.pccw.com^
+||omniture.lg.com^
 ||oms.wsj.com^
 ||onelink.me/*&af_web_dp=$doc
 ||onelink.me^$image,script,third-party
@@ -9992,6 +10020,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||samsung.com^*/scripts/tracking.js
 ||sascdn.com/diff/$script,redirect=noopjs,domain=imgur.com
 ||saveu5-normal-lq.zijieapi.com^
+||sc-forbes.forbes.com^
 ||scdn.co/audio/$media,redirect=noop-1s.mp4:10,domain=open.spotify.com
 ||scdn.co/mp3-ad/$media,redirect=noop-1s.mp4:10,domain=open.spotify.com
 ||scholar.google.com^$ping
@@ -10070,7 +10099,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||skimresources.com^$third-party
 ||skk.moe/*.js?$image
 ||skk.moe/*.png$xmlhttprequest
-||smetrics.accuweather.com^
 ||smetrics.digicert.com^
 ||smetrics.marketing.meethue.com^
 ||smetrics.marketing.philips-hue.com^
@@ -10111,6 +10139,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||soundcloud.com/v*/events
 ||soundcloud.com^$ping
 ||source.chromium.org/v1/logging
+||soxnwz.lg.com^
 ||sp0.baidu.com^
 ||sp1.baidu.com^
 ||sp2.baidu.com^
@@ -10332,6 +10361,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||tracking.bloomberg.com^
 ||tracking.europe.business.samsung.com^
 ||tracking.lenovo.com^
+||tracking.lg.com^
 ||tracking.smartbusiness.samsung.com^
 ||tracking3.lenovo.com^
 ||tradingview.com/ping
