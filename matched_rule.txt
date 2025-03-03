@@ -7,15 +7,16 @@ $cookie=wuuid,domain=duolingo.com
 $domain=browserleaks.com,permissions=geolocation=()
 $removeparam=FORM,domain=bing.com
 $removeparam=aid,domain=adguard-dns.io
-$removeparam=aid,domain=adguard-vpn.com
 $removeparam=aid,domain=adguard.com
 $removeparam=cvid,domain=bing.com,document
+$removeparam=cvid,domain=microsoft.com,document
 $removeparam=cxt,domain=twitter.com
 $removeparam=cxt,domain=x.com
 $removeparam=dt_dapp,domain=163.com
 $removeparam=dt_dapp,domain=douban.com
 $removeparam=embeds_referring_euri,domain=youtube.com
 $removeparam=embeds_referring_origin,domain=youtube.com
+$removeparam=epi,domain=microsoft.com
 $removeparam=feature,domain=youtu.be
 $removeparam=feature,domain=youtube.com
 $removeparam=gclid,domain=youtu.be
@@ -24,6 +25,7 @@ $removeparam=igshid,domain=instagram.com
 $removeparam=igshid,domain=threads.net
 $removeparam=kw,domain=youtu.be
 $removeparam=kw,domain=youtube.com
+$removeparam=nclid,domain=microsoft.com
 $removeparam=ns_campaign,domain=bbc.com
 $removeparam=ns_fee,domain=bbc.com
 $removeparam=ns_linkname,domain=bbc.com
@@ -774,6 +776,7 @@ $websocket,domain=pornhub.com
 @@||bugsnag.com^$~third-party,domain=app.bugsnag.com
 @@||c.amazon-adsystem.com/aax2/apstag.js$domain=androidpolice.com
 @@||c.paypal.com/da/r/fb.js$script
+@@||c.s-microsoft.com/mscc/statics/*$css,domain=microsoft.com
 @@||calendar.google.com^$generichide
 @@||captcha.su.baidu.com^
 @@||cd.connatix.com/connatix.playspace.js$domain=theverge.com
@@ -832,6 +835,7 @@ $websocket,domain=pornhub.com
 @@||chemicalbook.com^$stealth
 @@||chinacourt.gov.cn/share/jquery/plugins/adbox/
 @@||chrome.google.com/webstore/detail/$stealth
+@@||clicktale.net/wrb.js$domain=microsoft.com
 @@||clients4.google.com/chrome-sync/$stealth
 @@||cloud.189.cn/web/subapp/main.html$jsinject,elemhide,extension
 @@||cloud.189.cn^$xmlhttprequest,elemhide,jsinject,extension
@@ -1106,6 +1110,7 @@ $websocket,domain=pornhub.com
 @@||jstatic.3.cn^$domain=m.jd.com
 @@||keep.google.com^$jsinject
 @@||kh.google.com/rt/earth/$stealth,xmlhttprequest
+@@||learn.microsoft.com/video/media/*_960.jpg|$image,domain=learn.microsoft.com
 @@||lenovo.com/_ui/desktop/common/js/AdobeAnalyticsEvent.js$script,~third-party
 @@||lenovo.com/fea/js/adobeAnalytics/$script,~third-party,xmlhttprequest
 @@||link.adtidy.org/forward.html
@@ -1147,6 +1152,7 @@ $websocket,domain=pornhub.com
 @@||mpsnare.iesnare.com/snare.js$domain=samsung.com
 @@||mpsnare.iesnare.com/snare.js$script,domain=lenovo.com
 @@||mraw*.cyou^$image,stealth=referrer,domain=manhwa-raw.com
+@@||msecnd.net/scripts/jsll-$domain=microsoft.com
 @@||mssl.fwmrm.net/p/nbcu_sports_tp_live/AdManager.js$domain=yahoo.com
 @@||music.youtube.com^$generichide
 @@||my.nextdns.io^$stealth=dpi
@@ -1236,6 +1242,7 @@ $websocket,domain=pornhub.com
 @@||reseguiden.se^*.siteCatalyst.js! url: https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt
 @@||right.com.cn/forum/*300*250$image
 @@||rm.sina.com.cn/minisite/*/css/art_normal.css$domain=client.sina.cn
+@@||s-microsoft.com/mscc/statics/$script,domain=microsoft.com
 @@||s.206ads.com/core.js$domain=androidauthority.com
 @@||s.206ads.com/helper.js$domain=androidauthority.com
 @@||s.206ads.com/js/data/androidauthority.com.js$domain=androidauthority.com
@@ -1307,6 +1314,7 @@ $websocket,domain=pornhub.com
 @@||talkgadget.google.com^$jsinject
 @@||taobao.com/go/app/tmall/login-api.php?
 @@||taobao.com^*&adgroupid=
+@@||target.microsoft.com/rest/$xmlhttprequest,domain=microsoft.com
 @@||tbcdn.cn^*/click_track.js
 @@||tbskip.taobao.com/json/
 @@||teslamotorsclub.com/tmc/js/audentio/funbox/advertisement.js
@@ -1337,6 +1345,7 @@ $websocket,domain=pornhub.com
 @@||video.adsninja.ca/valnetinc/AndroidPolice/*-projectRssVideoFile.mp4$domain=androidpolice.com
 @@||virtualearth.net^$stealth,domain=bing.com
 @@||virtualearth.net^*/LoggingService.svc/Log?$script,domain=bing.com
+@@||vlscppe.microsoft.com/fp/tags.js$domain=microsoft.com
 @@||vo.msecnd.net^$domain=gsmarena.com
 @@||vod*.myqcloud.com^$stealth,domain=cloud.tencent.com
 @@||vox-cdn.com/packs/concert_ads-$script,domain=theverge.com
@@ -1418,6 +1427,7 @@ abplive.com##.app-download-lnk
 abplive.com##.article div.uk-background-muted[style^="min-height:"]
 abplive.com##.article-data > p[style="text-align: justify;"] + div.section.uk-padding-small
 abplive.com##.cb-container
+abplive.com##.ccp-container
 abplive.com##.join-channels
 abplive.com##.mt-4 > a[href^="https://www.youtube.com/"]
 abplive.com##.policy_event
@@ -1488,8 +1498,6 @@ addons.mozilla.org##.blogpost-meta-share-social
 adguard-dns.io##.annoyance
 adguard-dns.io##.cookie-terms
 adguard-dns.io##.sticky-bar--cookie
-adguard-vpn.com##.annoyance
-adguard-vpn.com##.cookie-terms
 adguard.com##.annoyance
 adguard.com##.blog-comments__social
 adguard.com##.blog-subscribe-notify
@@ -1516,8 +1524,6 @@ adguard.com##.hello_from_adguard_tracking_protection_ext
 adguard.com##.share
 adguard.com##.theme-back-to-top-button
 adguard.com#$#.hello_from_adguard_advanced_protection_ios { display: none !important; }
-adguardvpn-help.com##.annoyance
-adguardvpn-help.com##.cookie-terms
 adlock.com##.adl__spec__disc
 adlock.com##.download-panel
 adlock.com##.panel > div.aside__cta
@@ -1567,6 +1573,8 @@ almayadeen.net##+js(set-constant, videojsIma, noopFunc)
 almayadeen.net##.social-bar
 almayadeen.net#%#//scriptlet("set-constant", "videojsContribAds", "noopFunc")
 almayadeen.net#%#//scriptlet("set-constant", "videojsIma", "noopFunc")
+amap.com##.app-download-panel
+amap.com##.app_download_box
 amazon.cn###Share
 amazon.cn##.maple-banner
 amazon.cn##.moduleBookmarkLinks
@@ -1800,7 +1808,7 @@ androidpolice.com#@#.ad-zone-container
 androidpolice.com#@#.adsninja-ad-zone
 androidpolice.com#@#.div-gpt-ad
 androidpolice.com#@#.ima-ad-container
-anthropic.com##.ConsentBanner_consentBanner__bLexV
+anthropic.com##[class^="ConsentBanner_"]
 anthropic.com##div[class^="ConsentBanner_"]
 api.so.lianmeng.360.cn##body
 app##center#yangchen > iframe#external-frame[src="https://im136.mom/"]:not([class])
@@ -2743,6 +2751,8 @@ browserleaks.com##.twt
 bugsnag.com^$domain=adblock-tester.com
 business.instagram.com#$#body.hasCookieBanner > ._li._31e { position: sticky !important; }
 business.instagram.com#$#div[data-testid="cookie-policy-manage-dialog"] { display: none !important; }
+bybit.com##.art-layer-signUpTips
+bybit.com##.user-guide-modal
 bybit.com##[class^="style_gdpr"]
 bybit.com##div[class^="style_gdpr-cookie-notice"]
 c.m.163.com##.commentBar
@@ -2763,7 +2773,6 @@ calendar.google.com#?#iframe[src^="https://ogs.google.com"][src*="/widget/callou
 careers.google.com##.gc-cookie-bar
 cdn-settings.appsflyersdk.com^
 chat.deepseek.com##.ds-modal-overlay
-chat.deepseek.com##.ds-theme.ds-modal-wrapper:has-text(uBlock)
 chat.deepseek.com##div:has(> .ds-icon + span)
 chat.deepseek.com##div:has(> .ds-icon[style*="width: 28px"][style*="height: 28px"])
 chat.deepseek.com#?#.ds-theme.ds-modal-wrapper:contains(AdGuard)
@@ -3027,6 +3036,7 @@ ctee.com.tw##.cookie-concent
 ctee.com.tw##.qxd
 daily.zhihu.com##.Daily
 daily.zhihu.com##.active
+daringfireball.net###SidebarMartini
 darkreader.org##.adblock-pro
 darkreader.org##.ddgr
 darkreader.org##.heading
@@ -3402,7 +3412,7 @@ forbes.com###tool-tip.following
 forbes.com##+js(trusted-click-element, [aria-labelledby="banner-title"] > div[class^="buttons_"] > button[class*="secondaryButton_"] + button, , 1500)
 forbes.com##.ad-rail
 forbes.com##.ad-unit
-forbes.com##.ad-unit:not(.text-ad):not(.textads)
+forbes.com##.ad-unit:not(.text-ad):not(.textads):not([style=""width: 1px; height: 1px; position: absolute; left: -999px;"])
 forbes.com##.adblock-unused
 forbes.com##.amp-ad-container
 forbes.com##.article-body .tp-container-inner
@@ -3425,6 +3435,7 @@ forbes.com##.for-you__component:empty
 forbes.com##.grid__ad-container--amp
 forbes.com##.incontent-placeholder-row
 forbes.com##.inline-article-ed-placeholder
+forbes.com##.inlineAdMobileContainer
 forbes.com##.inline__zephr
 forbes.com##.ju_Con[data-title="Daily%20Dozen"]
 forbes.com##.ju_overlay
@@ -3445,6 +3456,7 @@ forbes.com##.rtb-top-wrapper
 forbes.com##.social-expand-control
 forbes.com##.social-icon
 forbes.com##.social:not(body)
+forbes.com##.socialShareContainer
 forbes.com##.sticky-cta
 forbes.com##.table-ad
 forbes.com##.top-ad-container
@@ -3461,6 +3473,7 @@ forbes.com##article-body-container.article-body > tweet-quotes
 forbes.com##body fbs-ad:not(#style_important)
 forbes.com##div[article-sharing]
 forbes.com##div[class^="fbs-ad--"]
+forbes.com##div[data-testid="ad-container"]
 forbes.com##div[id^="google_ads_iframe_"]
 forbes.com##fbs-ad
 forbes.com#$##forbes-dv { display: none !important; }
@@ -4611,6 +4624,7 @@ kraken.com###smart-app-banner
 kraken.com##div[class^="fc-94f32b27"]
 labs.google.com#@##google-hats-survey
 larksuite.com###sc-cookie-banner
+learn.microsoft.com###banner-holder
 lena.lenovo.com##.prompt_Privacy
 lena.lenovo.com##.slider-advertise
 lenovo.com###_evidon-barrier-wrapper
@@ -5141,6 +5155,34 @@ mi.com##.item-image.item
 mi.com##span.sep:nth-of-type(10)
 mi.com#$#body { overflow: visible !important; }
 mi.com#$#div[id^="J_cookie_settings_"] { display: none !important; }
+microsoft.com###app-link-banner
+microsoft.com###btl-blog-social-media
+microsoft.com###cookie-consent-holder
+microsoft.com###cookie-consent-markup
+microsoft.com###cookie-prompt
+microsoft.com###divNRMain
+microsoft.com###epb
+microsoft.com###ms-cookie-banner
+microsoft.com###msccBanner
+microsoft.com###social-bar
+microsoft.com###uhfCookieAlert
+microsoft.com###wcp-consent-banner
+microsoft.com###wcpConsentBannerCtrl
+microsoft.com##.blog-post-info-bar-share
+microsoft.com##.feedback-visible
+microsoft.com##.jetpack_widget_social_icons
+microsoft.com##.lia-panel-dialog-modal-valuesurvey
+microsoft.com##.lia-panel-dialog-modal-valuesurvey ~ .ui-widget-overlay
+microsoft.com##.mwf-area-heading-ctas
+microsoft.com##.newsletter-pop-up
+microsoft.com##.ocArticleFooterShareContainer
+microsoft.com##.pad-social
+microsoft.com##.social-footer-wrap
+microsoft.com##.switchOfficeHeroFirst
+microsoft.com##div[data-bi-an="social-share"]
+microsoft.com##section[aria-label="download center details page banner - Internet Explorer"]
+microsoft.com#$##email-newsletter-dialog { display: none!important; }
+microsoft.com#$#body[style*="overflow: hidden;"] { overflow: visible !important; }
 mirror.xyz##div[class]:has(> div[class]:only-child > div[class]:first-child + form:last-child > div[class]:first-child > input[name="email"])
 missav.ws##.lg\:block
 missav.ws##.lg\:hidden
@@ -5320,6 +5362,7 @@ news.abplive.com###cookieViewApp
 news.abplive.com##._viewInApp
 news.abplive.com##.ad-container-outer
 news.abplive.com##.join-channels-wrap
+news.abplive.com##.premium-banner
 news.abplive.com##div[style="min-height:280px;"]
 news.baidu.com###detail-HotScrollNews-wrapper
 news.baidu.com###favoriteTips
@@ -5731,12 +5774,6 @@ pornhub.com##img[srcset]
 pornhub.com##img[width="300"]
 pornhub.com#$#.playerFlvContainer > div#pb_template[style] { position: absolute!important; left: -3000px!important; }
 pornhub.com#$#.video-wrapper > div#player~div[class$=" hd clear"] { position: absolute!important; left: -3000px!important; }
-pornhub.com#$#abort-current-inline-script Object.defineProperty trafficjunky
-pornhub.com#$#abort-current-inline-script document.documentElement /atob|break|JSON.parse/; abort-current-inline-script String.fromCharCode /atob|break/; abort-current-inline-script Math /atob|break/;
-pornhub.com#$#abort-on-property-read HTMLElement.prototype.attachShadow; override-property-read page_params.holiday_promo_prem true;
-pornhub.com#$#hide-if-matches-xpath './/div[contains(text(),"TrafficJunky")]/parent::div[@style]/ancestor::div[@class][@style]/parent::*[not(self::body) and not(self::div[@class])][1]'
-pornhub.com#$#hide-if-matches-xpath '//img[contains(@style, "position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;")]//preceding-sibling::video/parent::div/ancestor-or-self::div[contains(@style,"position:")]'; hide-if-matches-xpath '//img[contains(@src, "data:image/png;base64") or contains(@src,"data:image/gif;base64")]/parent::*/ancestor::div[contains(@style,"position:")]/parent::*[1]'
-pornhub.com#$#ide-if-contains-and-matches-style 'TrafficJunky' 'div[class][style]' '.tj-inban-container'
 pornhub.com#$#iframe[title*="Campaign"] { position: absolute!important; left: -3000px!important; }
 pornhub.com#%#//scriptlet('prevent-setTimeout', '\x41\x64\x62\x6c\x6f\x63\x6b\x20\x66\x6f\x72\x20\x70\x6f\x72\x6e\x68\x75\x62')
 pornhub.com#%#//scriptlet('set-constant', 'abp1', '0')
@@ -6662,6 +6699,7 @@ theregister.com#?##index_page > .srow > .faux-article > .newsletter_signup_unit:
 theregister.com#?##right-col > .rhs_eagle_container > .adun:upward(1)
 theverge.com###kYgI66 > .c-read-more
 theverge.com###notice.p-notice
+theverge.com###zephr-footer-container
 theverge.com##.ad__athena_internal
 theverge.com##.article__share-buttons
 theverge.com##.c-comments, .c-read-more, .c-recirc-module, .has-content.p-comment-notification, .c-related-list
@@ -6672,6 +6710,7 @@ theverge.com##.duet--article--lede-share-tools-separator
 theverge.com##.duet--article--share-buttons
 theverge.com##.duet--cta--cookie-banner
 theverge.com##.duet--cta--newsletter
+theverge.com##.duet--layout--rail > div[class]:has(> div > form > div.duet--cta--newsletter)
 theverge.com##.feature-photos-share-tool
 theverge.com##.l-sidebar-fixed > div[data-analytics-placement]
 theverge.com##.m-ad
@@ -6682,6 +6721,7 @@ theverge.com##.tab-bar-fixed
 theverge.com##.zephr-zone-footer
 theverge.com##amp-iframe[src^="https://widgets.outbrain.com/hub/amp.html"]
 theverge.com##div.flex-auto:nth-of-type(even)
+theverge.com##div[class]:has(> div[data-concert])
 theverge.com##div[class^="adblock-allowlist-messaging"]
 theverge.com##div[data-concert]
 theverge.com##iframe[src="https://www.platformer.news/embed"]
@@ -7078,6 +7118,7 @@ twitter.com###layers > div[class] > div[class] > div[class] > div[class]:has(> d
 twitter.com###layers > div[class] > div[class]:has(> div[class] > div[data-testid="BottomBar"] a[href$="/privacy"])
 twitter.com###layers div[class="css-1dbjc4n r-l5o3uw r-97e31f"]
 twitter.com###layers>div:last-of-type:has-text(Switch to the app)
+twitter.com###layers[style="z-index: 1;"]:has(div[role="dialog"] a[href="/i/premium_sign_up"][style])
 twitter.com##+js(json-prune-xhr-response, data.home.home_timeline_urt.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/Home)
 twitter.com##+js(json-prune-xhr-response, data.immersiveMedia.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/ImmersiveMedia)
 twitter.com##+js(json-prune-xhr-response, data.search_by_raw_query.search_timeline.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/SearchTimeline)
@@ -7119,6 +7160,7 @@ twitter.com##article [d$="2.66 6 1H5z"]:upward(article)
 twitter.com##article [role=group] [href$="/analytics"]:upward(div:not(:only-child))
 twitter.com##article div>svg>g>[d^="M17.863 13.44c1.477"]:upward(article)
 twitter.com##article>div:first-child>div:first-child>div:first-child>div:first-child [d$="4.17-.514 6.67z"]:upward(article)
+twitter.com##article[data-testid="tweet"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"]:has(> div[style^="background-color:"] > button ~ div[class^="css-"] > a[href="/i/account_analytics"])
 twitter.com##article[data-testid="tweet"]:has(path[d$="10H8.996V8h7v7z"])
 twitter.com##aside[role="complementary"]:has(> a[href="/i/premium_sign_up"])
 twitter.com##div#layers div[data-testid="sheetDialog"]:upward(div[role="group"][tabindex="0"])
@@ -7461,6 +7503,9 @@ www.jianshu.com##[aria-label='lwa-ad-one']
 www.jianshu.com#@#div[class$="_0"]
 www.lenovo.com##+js(trusted-replace-argument, history.replaceState, 2, "''", condition, ?orgRef)
 www.linuxbabe.com##.widgets
+www.microsoft.com#$##emailSup-modal { display: none!important; }
+www.microsoft.com#$#.modal-backdrop { display: none!important; }
+www.microsoft.com#$#body { overflow: auto !important; padding-right: 0 !important; }
 www.nature.com##[data-cc-banner]
 www.nmpa.gov.cn##+js(sukka-defuse-devtools-detector)
 www.nytimes.com##+js(trusted-click-element, button.fides-reject-all-button, , 1500)
@@ -7635,6 +7680,7 @@ x.com###layers > div[class] > div[class] > div[class] > div[class]:has(> div[cla
 x.com###layers > div[class] > div[class]:has(> div[class] > div[data-testid="BottomBar"] a[href$="/privacy"])
 x.com###layers div[class="css-1dbjc4n r-l5o3uw r-97e31f"]
 x.com###layers>div:last-of-type:has-text(Switch to the app)
+x.com###layers[style="z-index: 1;"]:has(div[role="dialog"] a[href="/i/premium_sign_up"][style])
 x.com###react-root > div > div > .rn-gvpnoh
 x.com##+js(json-prune-xhr-response, data.home.home_timeline_urt.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/Home)
 x.com##+js(json-prune-xhr-response, data.immersiveMedia.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/ImmersiveMedia)
@@ -7695,6 +7741,7 @@ x.com##article [role=group] [href$="/analytics"]:upward(div:not(:only-child))
 x.com##article div>svg>g>[d^="M17.863 13.44c1.477"]:upward(article)
 x.com##article>div:first-child:not(:last-child):upward([style*="position: absolute"])
 x.com##article>div:first-child>div:first-child>div:first-child>div:first-child [d$="4.17-.514 6.67z"]:upward(article)
+x.com##article[data-testid="tweet"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"]:has(> div[style^="background-color:"] > button ~ div[class^="css-"] > a[href="/i/account_analytics"])
 x.com##article[data-testid="tweet"]:has(path[d$="10H8.996V8h7v7z"])
 x.com##aside[role="complementary"]:has(> a[href="/i/premium_sign_up"])
 x.com##div#layers div[data-testid="sheetDialog"]:upward(div[role="group"][tabindex="0"])
@@ -8519,7 +8566,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||aliyuncs.com/wjy99re/
 ||als-svc.nytimes.com^
 ||als.baidu.com^
+||amap.com$domain=amap.com
 ||amap.com$domain=bigdata.speedtest.cn
+||amap.com$domain=www.amap.com
 ||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=androidpolice.com
 ||amazon.com/*/cerberus/log/
 ||amazon.com/aan/
@@ -8613,6 +8662,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||appsflyer.com^$3p
 ||appsflyer.com^$badfilter
 ||appsflyer.com^$third-party,badfilter
+||apsrgeo.amap.com^
 ||archive.org/includes/analytics.js
 ||arms-retcode-sg.aliyuncs.com/r.png?
 ||arms-retcode.aliyuncs.com^$removeparam=_v
@@ -8785,7 +8835,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bbc.com^$removeparam=xtor
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bbvaar.zeabur.app^$all,to=~bbva.com
-||bcebos.com^$image,domain=pan.baidu.com
 ||bdcpro*.techweb.com.cn^
 ||bdstatic.eastmoney.com^
 ||beacon-api.aliyuncs.com^
@@ -8841,6 +8890,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||bing.com/rewardsapp/reportactivity?$badfilter
 ||bing.com/widget/render/$third-party
 ||bing.com^$3p,domain=bing.com
+||bing.com^$3p,domain=microsoft.com
 ||bing.com^$app=com.offerup
 ||bing.com^$cookie=ABDEF
 ||bing.com^*/GLinkPingPost.aspx$ping,xmlhttprequest
@@ -8941,10 +8991,10 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cdn.search.brave.com/serp/*/static/serp-js/telemetry/
 ||cdnjs.cloudflare.com/ajax/libs/font-awesome/$font
 ||cf.adxcel.com^$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
+||cgicol.amap.com^
 ||channelusa.samsung.com^
 ||chaoku.oss-cn-chengdu.aliyuncs.com^
 ||chat.deepseek.com/api/v0/events
-||chat.deepseek.com/api/v0/events$xhr,method=post
 ||chatgpt.com/ces/v1/p
 ||chatgpt.com/ces/v1/t
 ||chinaz.com/2020/0306/2020030616083756.jpg
@@ -9145,6 +9195,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||drmcmm.baidu.com^
 ||dsp.lenovo.com.cn^*&clientType=api|
 ||dt.xfyun.cn^
+||dualstack-cgicol.amap.com^
+||dualstack-logs.amap.com^
 ||duckduckgo.com/*/reportAnalytics
 ||duckduckgo.com/*/reportAnalytics$xmlhttprequest,redirect-rule=noopjson
 ||duckduckgo.com/t/
@@ -9184,6 +9236,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||effirst.com^$third-party
 ||eiv.baidu.com^
 ||embed.reddit.com/svc/shreddit
+||embed.typeform.com/next/embed.js$domain=forbes.com
 ||embed.typeform.com^$domain=theregister.com
 ||emdcadvertise.eastmoney.com^
 ||entry.baidu.com/rp/home?
@@ -9434,6 +9487,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||images.sohu.com/ytv/*.jpg
 ||images.ssbusiness.samsung.com^
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=androidpolice.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=theguardian.com
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=androidpolice.com
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=theguardian.com
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=noopjs,domain=bloomberg.com
@@ -9566,6 +9620,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||ky891.oss-*.aliyuncs.com^
 ||l.threads.net/?u=http$doc,urlskip=?u
 ||launches.appsflyersdk.com^
+||learn.microsoft.com/static/third-party/adobe-target/at-js/*/at.js
 ||lenovo.com.cn/cms/2018-07-20/201807201014498251793.png
 ||lenovo.com.cn/lenovo/bid?clientType=
 ||lenovo.com/_ui/desktop/common/js/common/youtubeVideoAnalytic.js
@@ -9597,6 +9652,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||loggw-ex.alipay.com^
 ||loggw-exsdk.alipay.com^
 ||loggw.alipay.com^
+||logs.amap.com^
 ||logs.netflix.com^
 ||lp.americas.business.samsung.com^
 ||lp.apac.business.samsung.com^
@@ -9655,6 +9711,11 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||miao.baidu.com^
 ||miaozhen.com^
 ||miaozhen.com^$third-party
+||microsoft.com/beacon/
+||microsoft.com/etc.clientlibs/microsoft/clientlibs/exp-analytics/
+||microsoft.com^$removeparam=ocid
+||microsoft.com^$removeparam=ranEAID
+||microsoft.com^$removeparam=ranSiteID
 ||minigame5-normal-hl.zijieapi.com^
 ||minigame5-normal-lq.zijieapi.com^
 ||mipengine.baidu.com/common?
@@ -9708,6 +9769,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||music.apple.com^$removeparam=itsct
 ||mwcm.nytimes.com/capi/metered_assets/?plat=*&areas=welcomeAd
 ||mxtoolbox.com/Public/Lookup.aspx/GetNextInlineAd
+||myqcloud.com/ad/
+||myqcloud.com/uploads/m3u8/*.ts$third-party
+||myqcloud.com/wp-content/uploads/huoxingyun.
 ||narrativ.com^$domain=androidauthority.com
 ||nature.com/platform/track/
 ||nbsdk-baichuan.taobao.com^
@@ -10274,6 +10338,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||tbskip.taobao.com^$script
 ||tcbox.baidu.com^
 ||tci.oss-ap-southeast-1.aliyuncs.com^
+||teams.microsoft.com^$3p,domain=microsoft.com
 ||techain.baidu.com^
 ||techcrunch.com/wp-json/wp/v*/tc_events
 ||techcrunch.com^$removeparam=ncid
