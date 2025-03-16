@@ -140,6 +140,7 @@ $websocket,domain=pornhub.com
 /i/api/graphql/*/TweetDetail$jsonprune=\$.data.threaded_conversation_with_injections_v2.instructions..entries.[?(has "\$.content.items..item.itemContent.promotedMetadata.advertiser_results")],domain=x.com
 /icloud2022-esp.php^$doc,to=~edu|~gov|~apple.com
 /isignesp.php^$doc,to=~edu|~gov|~apple.com
+/log?format=$domain=~meet.google.com
 /matomo/*$domain=github.com
 /notifications.google.com/g/img/*$image
 /perimeterx/*$domain=github.com
@@ -804,6 +805,7 @@ $websocket,domain=pornhub.com
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=newyorker.com
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=npr.org
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=sonos.com
+@@||cdn.cookielaw.org^$xhr,domain=soundcloud.com
 @@||cdn.jsdelivr.net/*/clappr^
 @@||cdn.jsdelivr.net/clappr
 @@||cdn.jsdelivr.net/combine/npm/jquery
@@ -1171,8 +1173,6 @@ $websocket,domain=pornhub.com
 @@||microsoft.com/translate/auth
 @@||microsoft.com^$cookie=MUIDB
 @@||microsoftedge.microsoft.com/addons^$stealth
-@@||mixpanel.com/site_media/js/api/mixpanel.js$domain=blog.cloudflare.com
-@@||mixpanel.com/track/?data=$xmlhttprequest,domain=kickstarter.com
 @@||mmstat.com/eg.js$domain=1688.com
 @@||mmstat.com/eg.js$domain=taobao.com
 @@||mmstat.com/eg.js$domain=tmall.com
@@ -1837,7 +1837,7 @@ androidpolice.com#$#body { overflow-y: auto !important; }
 androidpolice.com#$#html { overflow: visible !important; }
 androidpolice.com#$#main ~ .adsninja-ad-zone ~ .adsninja-ad-zone ~ div[class][style*="z-index"] { display: none !important; }
 androidpolice.com#%#//scriptlet("abort-on-property-write", "ai_adb")
-androidpolice.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', '/admiral|String\.fromCharCode\(97,( )*?100,( )*?109,( )*?105,( )*?114,( )*?97,( )*?108\)|a%64%6d%69%72%61%6c|adm%69%72%61l|%61%64m%69r%61l|-engaged[\s\S]*?googletag[\s\S]*?decodeURI|ad%6dr%6c%4c%6fa%64%65%64|succeedscene\.com/')
+androidpolice.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', '/admiral|String\.fromCharCode\(97,( )*?100,( )*?109,( )*?105,( )*?114,( )*?97,( )*?108\)|a%64%6d%69%72%61%6c|adm%69%72%61l|%61%64m%69r%61l|-engaged[\s\S]*?googletag[\s\S]*?decodeURI|ad%6dr%6c%4c%6fa%64%65%64|%256%31d%6d%256%39%72%25%361l|succeedscene\.com/')
 androidpolice.com#%#//scriptlet('prevent-addEventListener', 'error', 'admiral')
 androidpolice.com#%#//scriptlet('prevent-element-src-loading', 'script', '/succeedscene\.com|ads\.load\.js/')
 androidpolice.com#%#//scriptlet('remove-cookie', 'articlesLimitDepth')
@@ -2577,7 +2577,6 @@ bing.com##.text-ads-container
 bing.com##.tob_calcontainer > .slide:has(.rtb_ad_caritem_mvtr)
 bing.com##.wpt_bc_container
 bing.com##:matches-path(~/shop) a[href*="/aclick?"]:not(.vsp_ads)
-bing.com##DIV#bnp_container
 bing.com##[id$="adsMvCarousel"]
 bing.com##a.sb_meta[href^="http://advertise.bingads.microsoft.com"]
 bing.com##a[h$=",Ads"]
@@ -2690,6 +2689,7 @@ blog.csdn.net##dl[id^="yd_a_d_feed_"]
 blog.csdn.net#$#.article_content { overflow: auto !important; height: auto !important; }
 blog.csdn.net#$#.weixin-shadowbox { display: none !important; }
 blog.csdn.net#%#//scriptlet('prevent-addEventListener', 'scroll', 'scrollTop())+n-i>o/2')
+blog.csdn.net#%#//scriptlet('set-cookie', 'loginbox_strategy', '1')
 blog.csdn.net#%#//scriptlet('set-cookie', 'popShowed10s', 'yes')
 blog.csdn.net#%#//scriptlet('set-cookie', 'unlogin_scroll_step', '1')
 blog.jetbrains.com###custom_html-29
@@ -2786,6 +2786,7 @@ bloomberg.com#@#.textAd
 bloomberg.com#@#.text_ad
 bloomberg.com#@#.text_ads
 books.apple.com##.we-share
+bose.cn##.bose-infoBar2016--cookie
 boxnovel.baidu.com##.popup_mask
 boxnovel.baidu.com##.wechat-wrapper
 brave.com###notice
@@ -2794,11 +2795,13 @@ browserleaks.com###vpn_text
 browserleaks.com##.adsbygoogle
 browserleaks.com##.twt
 bugsnag.com^$domain=adblock-tester.com
+bugzilla.mozilla.org##.moz-consent-banner
 business.instagram.com#$#body.hasCookieBanner > ._li._31e { position: sticky !important; }
 business.instagram.com#$#div[data-testid="cookie-policy-manage-dialog"] { display: none !important; }
 bybit.com##.art-layer-signUpTips
 bybit.com##.user-guide-modal
 bybit.com##[class^="style_gdpr"]
+bybit.com##div[class^="index_post-detail-register_"]
 bybit.com##div[class^="style_gdpr-cookie-notice"]
 c.m.163.com##.commentBar
 c.m.163.com##.fixedOpenNewsapp
@@ -3109,6 +3112,7 @@ darkreader.org##darkreader-ios-static
 deals.neowin.net#$#.fb_lightbox-overlay { display: none !important; }
 deals.neowin.net#$#div[aria-label="Modal Overlay Box"] { display: none !important; }
 deals.neowin.net#$?#style#dghstyles { remove: true; }
+deepseek.com##.cookie_banner-wrap
 devblogs.microsoft.com###subscribe_form
 devblogs.microsoft.com##.social-panel > .d-flex:has(> .evo-dropdown-menu > button[data-bi-id="post_page_sidebar_left_social_share"])
 devblogs.microsoft.com##.stayinformedtitle
@@ -3402,6 +3406,7 @@ figma.com##.css-eouiu8
 figma.com##div[aria-label="Cookie Consent"]
 figma.com##div[class^="meta_container--rightSide--"] > [class^="social_links--"]
 figma.com##div[class^="meta_container--rightSide--"] > hr:has(+ [class^="social_links--"])
+finance.eastmoney.com###ContentBody > p[style="text-align:center;"]:has(> a[href^="https://acttg.eastmoney.com/pub/"])
 finance.sina.cn##.article-sax
 finance.sina.cn##.m-client-call3
 finance.sina.cn##.s_card.cj_24
@@ -3518,6 +3523,7 @@ forbes.com##.newsletter-inline-flex
 forbes.com##.ntv-loading
 forbes.com##.open-web-anchor-standard-topline.open-web_anchor--desktop.open-web_anchor
 forbes.com##.profile-sidebar__sticky-container
+forbes.com##.recirc-right-rail
 forbes.com##.ribbon-mobile-ad-wrapper
 forbes.com##.rtb-top-wrapper
 forbes.com##.social-expand-control
@@ -3539,8 +3545,10 @@ forbes.com##amp-consent
 forbes.com##article-body-container.article-body > tweet-quotes
 forbes.com##body fbs-ad:not(#style_important)
 forbes.com##div[article-sharing]
+forbes.com##div[class^="fbs-ad"]
 forbes.com##div[class^="fbs-ad--"]
 forbes.com##div[data-testid="ad-container"]
+forbes.com##div[data-testid^="fbs-ad"]
 forbes.com##div[id^="google_ads_iframe_"]
 forbes.com##fbs-ad
 forbes.com#$##forbes-dv { display: none !important; }
@@ -4397,6 +4405,7 @@ instagram.com#@?#div[style="max-height: inherit; max-width: inherit;"]:-abp-has(
 intellij-support.jetbrains.com##.g-row > .margin-bottom-vertical-unit-half:not(.g-col)
 interactive.libsyn.com##.container > div.alert:has(ul.social-list)
 interactive.libsyn.com#@#iframe[width="100%"][height="90"]
+interactivebrokers.com###cookie-modal
 interactivebrokers.com###cookie-modal ~ .modal-backdrop:not(.modal-backdrop + .modal-backdrop)
 interactivebrokers.com##.modal-backdrop
 interactivebrokers.com.au##.modal-backdrop
@@ -4600,6 +4609,8 @@ jetbrains.com###social-footer
 jetbrains.com##.alertContainer_c7b
 jetbrains.com##.jetbrains-cookies-banner
 jetbrains.com##.slideup-banner
+jetbrains.com#$#.jetbrains-cookies-banner-lock-scroll { overflow: auto !important; }
+jetbrains.com#$#div[class^="jetbrains-cookies-"] { display: none !important; }
 jetbrains.com.cn##.devecosystem-2023
 jianshu.com###index-aside-download-qrbox
 jianshu.com###note-fixed-ad-container
@@ -5025,7 +5036,8 @@ m.youtube.com#$#override-property-read ytInitialPlayerResponse.adSlots undefined
 m.youtube.com#$#override-property-read ytInitialPlayerResponse.playerAds undefined;
 m.youtube.com#$#override-property-read ytInitialPlayerResponse.playerConfig.ssapConfig undefined
 m.youtube.com#$#simulate-mouse-event 'span.ytp-ad-preview-container$delay=0'; simulate-mouse-event 'button.ytp-ad-skip-button-modern$continue,delay=100'; simulate-mouse-event 'button.ytp-skip-ad-button$continue,delay=100';
-m.youtube.com#$#simulate-mouse-event 'span.ytp-ad-preview-container$delay=0'; simulate-mouse-event 'button.ytp-ad-skip-button-modern$continue,delay=100'; simulate-mouse-event 'button.ytp-skip-ad-button$continue,delay=100';! url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt
+m.youtube.com#$#simulate-mouse-event 'yt-formatted-string.line-text.style-scope.yt-confirm-dialog-renderer[respect-html-dir][split-lines]' 'button.yt-spec-button-shape-next.yt-spec-button-shape-next--text.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--size-m[aria-label="Yes"]$delay=0'
+m.youtube.com#$#simulate-mouse-event 'yt-formatted-string.line-text.style-scope.yt-confirm-dialog-renderer[respect-html-dir][split-lines]' 'button.yt-spec-button-shape-next.yt-spec-button-shape-next--text.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--size-m[aria-label="Yes"]$delay=0'! url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt
 m.youtube.com#$#skip-video 'video.html5-main-video' './/div[@id="ytlr-player__player-container"]//div[contains(@class,"ad-interrupting") or contains(@class,"ad-showing")]';
 m.youtube.com#%#//scriptlet('json-prune', 'overlay.bottomSheetOverlayRenderer', 'overlay.bottomSheetOverlayRenderer.displayImmediately')
 m.youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots')
@@ -5662,7 +5674,6 @@ open.spotify.com##section[data-testid="cookie-notice"]
 open.spotify.com#$#.Root > div > div[class][aria-live="polite"] { display: none!important; }
 open.spotify.com#$#.Root__top-container--has-notice-bar .SearchInputBox--feedback-bar { top: 0!important; }
 open.spotify.com#$#.Root__top-container--has-notice-bar { padding-top: 0!important; }
-open.spotify.com#$#div[data-testid="lyrics-container"] p.encore-text { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 open.spotify.com#$#div[data-testid="lyrics-container"] p:is(.encore-text, [data-encore-id="text"]) { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 open.spotify.com#$#span[dir="auto"][draggable="true"] { user-select: auto!important;-webkit-touch-callout: default!important;-webkit-user-select: auto!important;-moz-user-select: text!important;-ms-user-select: text!important; }
 open.spotify.com#?#aside[aria-label="Now playing view"] > div > div[data-overlayscrollbars-viewport="scrollbarHidden"] div[style="--trans-x: 0px;"] > h1:contains(Advertisement)
@@ -6829,6 +6840,7 @@ theverge.com#@##privacy-consent
 threadreaderapp.com##.cookies
 threadreaderapp.com##.promo
 threads.net##+js(json-prune, require.0.3.0.__bbox.define.[].2.is_linkshim_supported)
+threads.net#%#//scriptlet('trusted-click-element', 'div[role="dialog"] div[role="button"]', 'containsText:Continue in browser')
 threads.net#%#//scriptlet('trusted-set-cookie-reload', 'cb', '1_2023_07_05_2-3')
 threads.net#?#div[class*=" "][style^="width:"] > div + div[class*=" "]:has(> div:last-child > a[href^="/download"])
 threads.net#?#header + div[class^="x"] div[class^="x"]:has(> div[class^="x"] > a[href="/download/redirect"])
@@ -9676,6 +9688,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||metrics.apple.com^
 ||metrics.bloomberg.com^
 ||metrics.icloud.com^
+||metrics.npr.org^
 ||metrics.roblox.com^
 ||mg21.com/wp-content/uploads/ad/
 ||mi.com/stat/
@@ -9871,6 +9884,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||pev-files.oss-cn-beijing.aliyuncs.com^$app=com.chaozhuo.gameassistant
 ||photopea.com^$doc,replace=/<head>/<head><script>if (typeof localStorage !== 'undefined' && typeof JSON.parse(localStorage._ppp)['0_uid'] === 'undefined' && window.visualViewport.width != document.documentElement.offsetWidth+320) {const originalvisualViewport=window.visualViewport; Object.defineProperty(window, 'visualViewport', {value: new Proxy(originalvisualViewport, {get(target,property) {if (property === 'width') {return document.documentElement.offsetWidth+320} return target[property]}}), configurable:true});}<\/script>/
 ||photopea.com^$document,replace=/<head>/<script>if (localStorage.length === 0 || typeof JSON.parse(localStorage._ppp)['0_uid'] === 'undefined') {Object.defineProperty(window\, 'innerWidth'\, {get() { return document.documentElement.offsetWidth + 320 }\,});}<\/script><head>/
+||piano.io^$domain=bbc.com
 ||piano.io^$domain=npr.org
 ||pimlog.baidu.com^
 ||pixel-config.reddit.com^
@@ -10340,6 +10354,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||timejs.game.163.com^
 ||timon.zijieapi.com^
 ||tinypass.com/checkout/template/show?displayMode=modal&templateId=*$domain=bbc.com
+||tinypass.com^$domain=bbc.com
 ||tinypass.com^$domain=npr.org
 ||tmall.com^$removeparam=/^scm[_a-z-]*=/
 ||tmall.com^$removeparam=abbucket
