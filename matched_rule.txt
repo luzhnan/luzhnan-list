@@ -1290,6 +1290,7 @@ $websocket,domain=pornhub.com
 @@||s.ntv.io/serve/load.js$domain=bloomberg.com
 @@||s.youtube.com/api/stats/playback?
 @@||scdn.co/cdn/js/gtag.$script,domain=spotify.com
+@@||sciencedirectassets.com^$stealth=useragent,domain=sciencedirect.com
 @@||sdk.privacy-center.org/*/loader.js?$domain=euronews.com
 @@||sdk.privacy-center.org/sdk/*/modern/*.js$domain=euronews.com
 @@||sdk.privacy-center.org^$script,domain=euronews.com
@@ -2611,7 +2612,7 @@ bing.com#?#.insights > .insml > li > .ins_exp > div > ul > li > .ta_c > a[href*=
 bing.com#?#.sb_form_placeholder:-abp-has(>.ad-ghost-slug)
 bing.com#?#.slide:has(> .tobitem > a > .rtb_ad_caritem_mvtr)
 bing.com#?#.tob_calcontainer > div.slide:has(> div.tobitem > a[href*="/tracking?adUnit="])
-bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^(Amazon|Best Buy|Booking\.com|eBay|eDreams|Lenovo US|Trip\.com|Tripadvisor|Walmart)$/))
+bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^([Aa]mazon(\.[acdefinps][aeglnorst]m?\.?[abjmtu]?[kprux]?)?|Best Buy|Booking\.com|eBay|eDreams|Lenovo US|Trip\.com|Tripadvisor|Walmart)$/))
 bing.com#?#li[class="b_algo"]:-abp-has(.b_attribution[data-partnertag]+p[class])
 bing.com#?#li[class="b_algo"]:-abp-has(>[class="ad_ml1ESLItem"])
 bing.com#?#li[class="b_algo"]:-abp-has(>h2 + div[class="b_caption"] > [class^="b_attribution "])
@@ -5860,6 +5861,7 @@ pro.m.jd.com##.download-pannel
 producthunt.com##.app_1151c > div.container_3300b
 producthunt.com##.mt-12.direction-row.flex
 producthunt.com##.styles_item__hNPI1
+producthunt.com##[data-sentry-component='Ad']
 producthunt.com##[data-test^="ad-slot"]
 producthunt.com##div[class*="styles_descriptionContent_"] div[class*="styles_socialButtons_"] > button[class*="Button_"]:not([data-test="collect-button"])
 producthunt.com##div[class*="styles_mobilePopoutAd_"]
@@ -6051,6 +6053,7 @@ reddit.com##[data-testid="bottom-cell-wrapper"]
 reddit.com##[data-testid="bottom-sheet-upsell-wrapper"]
 reddit.com##[href="/user/AutoModerator/"]:upward(shreddit-comment)
 reddit.com##[id^="t3"].promotedlink:upward(.rpBJOHq2PR60pnwJlUyP0 > div)
+reddit.com##[post-type="crosspost"]
 reddit.com##[reddit-cookie-banner]
 reddit.com##[slot="use-app"]
 reddit.com##[style^="filter:"]:style(filter: none !important;)
@@ -6228,6 +6231,7 @@ science.org##.show-recommended
 science.org##.st-header__share
 science.org##a[href="#core-collateral-share"]
 science.org##body .adplaceholder
+sciencedirect.com##.journal-advert-container
 screenshots.firefox.com##.alt-notification
 sd.360.cn##div[style$="height: 60px;width: 100%;"]
 search.bilibili.com##.video-list > div.col_3:has(> div.bili-video-card > div.bili-video-card__wrap > a[href*="&csource="])
@@ -7521,7 +7525,7 @@ www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-ric
 www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) ytd-rich-grid-media { max-width: unset !important; }
 www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) { --ytd-rich-grid-items-per-row: 1 !important; }
 www.youtube.com#$#override-property-read Object.prototype.args.raw_player_response.playerAds undefined; override-property-read Object.prototype.args.raw_player_response.adSlots undefined;
-www.youtube.com#$#override-property-read Object.prototype.onAbnormalityDetected noopFunc
+www.youtube.com#$#override-property-read Object.prototype.globalCallbacks.onAbnormalityDetected noopFunc
 www.youtube.com#$#override-property-read Object.prototype.videoSkipJob_ noopFunc; override-property-read Object.prototype.web_playlist_queue_multiple_skips_ks false;
 www.youtube.com#$#override-property-read playerResponse.adPlacements undefined;
 www.youtube.com#$#override-property-read ytInitialPlayerResponse.adPlacements undefined;
@@ -8212,6 +8216,7 @@ youtube.com#$#override-property-read Object.prototype.onAdSkip undefined
 youtube.com#%#(()=>{const wrapper=(target,thisArg,args)=>{let result=Reflect.apply(target,thisArg,args);try{const decoded=atob(result);if(decoded.includes('ssapPrerollEnabled')){const modifiedContent=decoded.replace(/\n.\n.playerConfig\.ssapConfig\.ssapPrerollEnabled.{2}(?:tru|fals)e/,'');const encodeToBase64=btoa(modifiedContent);return encodeToBase64}}catch(e){} return result};const handler={apply:wrapper};window.Array.prototype.join=new Proxy(window.Array.prototype.join,handler)})();
 youtube.com#%#(function(){try{var time=(new Date).getTime();var cookieDate=new Date(time+1314E6);var hostname=location.host;var locSubString=null;if(!hostname.startsWith("google.")&&!hostname.startsWith("youtube."))locSubString=hostname.substring(hostname.indexOf(".")+1);var loc=locSubString||hostname;if(document.cookie.indexOf("CONSENT=YES")!==-1)return;document.cookie="CONSENT=YES+; domain="+loc+"; path=/; expires="+cookieDate.toUTCString()}catch(ex){console.error("AG: failed to set consent cookie: "+ex)}})();
 youtube.com#%#(function(){window.self!==window.top||document.cookie.includes("visitor=")||(document.cookie="visitor=1; path=/;",document.cookie&&location.reload())})();
+youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.adSlots', 'playerResponse.streamingData.serverAbrStreamingUrl')
 youtube.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=|get_watch\?/')
 youtube.com#%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=|get_watch\?/')
 youtube.com#%#//scriptlet('set-constant', 'google_ad_status', '1')
@@ -8325,6 +8330,7 @@ zx.sina.cn##.j_wbrecommend_wrap.j_article_relevent.s_card
 zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 |http*://*?$popup,third-party,domain=pornhub.com
 |http://$image,third-party,domain=pornhub.com
+||127.0.0.1^$third-party,domain=sciencedirect.com
 ||163.com/*/__utm.gif?
 ||163.com/get.do?*=themeHandler.
 ||163.com/ntes/special/*_papa.
@@ -9427,6 +9433,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||jsdelivr.net/gh/*/960-80.gif
 ||jsdelivr.net/gh/*/960x100.gif
 ||jsdelivr.net/gh/InteractiveAdvertisingBureau/
+||jsdelivr.net/gh/Mark-1215/CDN/uploads/ad/$image
 ||jsdelivr.net/gh/RockBlogger/Anti-AdBlocker@main/
 ||jsdelivr.net/gh/a901361/
 ||jsdelivr.net/gh/accept-all/cdn/banner-2024.js
@@ -9485,6 +9492,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||lianmeng.360.cn^$domain=~lianmeng.360.cn
 ||lightboxcdn.com^$domain=androidauthority.com
 ||link.medium.com^
+||links.duckduckgo.com/d.js?q=
 ||links.e.response.mayoclinic.org^
 ||linktr.ee/events
 ||live.bilibili.com^$removeparam=broadcast_type
@@ -10528,7 +10536,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||zhushou.360.cn/script/plugin_tiper.js
 ||zuowen.hydcd.com^
 ||zx.docin.com^
-~ads.google.com#%#navigator.getBattery = undefined;
 ~cbachina.sports.sohu.com##sohuadcode
 ~love.163.com##a[href^="http://love.163.com/"]
 ~m.gsmarena.com##.share-buttons
