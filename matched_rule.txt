@@ -755,6 +755,7 @@ $websocket,domain=pornhub.com
 @@||bc.marfeelcache.com/statics/marfeel/prebid-worker/webworker.js$domain=cleantechnica.com
 @@||bdimg.com/advert/js/advert.js$domain=music.baidu.com
 @@||bgp.he.net/images/flags/*.gif?$image,~third-party
+@@||bigwon-*.aliyuncs.com/product-pic/$image,stealth=referrer
 @@||bilibili.com/*/newplayer.html$stealth=referrer
 @@||bilibili.com^*/web_page_view?$domain=message.bilibili.com
 @@||bilivideo.com^$stealth,domain=bilibili.com
@@ -2861,6 +2862,8 @@ chromewebstore.google.com##[role="dialog"][aria-labelledby="promo-header"]
 chromewebstore.google.com##div[aria-labelledby="promo-header"]
 chromewebstore.google.com#?#section[class] > div[jsaction][jscontroller]:has(button > span:contains(Install Chrome))
 ci.chromium.org###cookie-consent-prompt
+cj.sina.cn##.m-guss-caijing
+cj.sina.cn##.snp-callup-app-wrap
 cleantechnica.com###omc-full-article > center
 cleantechnica.com###text-165
 cleantechnica.com###zox-top-head-wrap
@@ -3199,7 +3202,6 @@ douban.com##.rec_topics_name[href^="https://erebor.douban."]
 douban.com#?#.rec_topics:-abp-has(>.rec_topics_name[href^="https://erebor.douban."])
 douban.com#@#.download-ad
 douyin.com###videoSideBar iframe
-douyin.com##[class*='h5-ad-']
 douyin.com#?##douyin-right-container > div[class] > div[class]:has(> ul[class] > li[class] > a[href][target="_blank"] + div:contains(广告))
 douyin.com#?##videoSideBar:-abp-has(div:-abp-contains(/商品|商家|退款|店铺/))
 douyin.com#?#.xgplayer>div[class]:-abp-has(svg[height="16"][width="30"])
@@ -3343,6 +3345,7 @@ euronews.com##.article__social--links
 euronews.com##.base-leaderboard
 euronews.com##.bottom-meta--share
 euronews.com##.c-ad
+euronews.com##.c-ad-mpu
 euronews.com##.c-card-sponsor
 euronews.com##.c-leaderboard
 euronews.com##.c-social--share
@@ -6421,6 +6424,9 @@ smzdm.com##.side-stuff
 smzdm.com##.top-applink
 smzdm.com##a[class^="fixed-logo"]
 smzdm.com#@#.comment_share
+so.douyin.com##X-VIEW.container
+so.douyin.com##[class*='h5-ad-']
+so.douyin.com##[class^='layout-']
 so.lenovo.com.cn##.AdSite
 so.m.jd.com###mDownload
 sohu.com###abroad-share-box
@@ -7525,13 +7531,12 @@ www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-ric
 www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) ytd-rich-grid-media { max-width: unset !important; }
 www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) { --ytd-rich-grid-items-per-row: 1 !important; }
 www.youtube.com#$#override-property-read Object.prototype.args.raw_player_response.playerAds undefined; override-property-read Object.prototype.args.raw_player_response.adSlots undefined;
-www.youtube.com#$#override-property-read Object.prototype.globalCallbacks.onAbnormalityDetected noopFunc
 www.youtube.com#$#override-property-read Object.prototype.videoSkipJob_ noopFunc; override-property-read Object.prototype.web_playlist_queue_multiple_skips_ks false;
 www.youtube.com#$#override-property-read playerResponse.adPlacements undefined;
 www.youtube.com#$#override-property-read ytInitialPlayerResponse.adPlacements undefined;
 www.youtube.com#$#race start; skip-video '.video-stream' './/ytd-player/div[@id]//div[contains(@class,"ad-interrupting")]' '-start-from:1003' '-stop-on-video-end:true'; skip-video 'video.html5-main-video' './/div[@id="player"]/div[@id]//div[contains(@class,"ad-interrupting")]' '-start-from:1005' '-stop-on-video-end:true'; skip-video 'video.html5-main-video' './/div[@id="player"]//div[contains(@class,"ad-interrupting")]' '-start-from:1010' '-stop-on-video-end:true'; race stop;
 www.youtube.com#$#skip-video 'video.html5-main-video' './/div[@id="ytlr-player__player-container"]//div[contains(@class,"ad-interrupting") or contains(@class,"ad-showing")]';
-www.youtube.com#%#(()=>{const t={apply:(t,e,n)=>{const o=Reflect.apply(t,e,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch)}catch(t){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,t)})();
+www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch,o.contentWindow.Request=window.Request)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e)})();
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
 www.youtube.com#%#(()=>{window.JSON.parse=new Proxy(JSON.parse,{apply(r,e,t){const n=Reflect.apply(r,e,t);if(!location.pathname.startsWith("/shorts/"))return n;const a=n?.entries;return a&&Array.isArray(a)&&(n.entries=n.entries.filter((r=>{if(!r?.command?.reelWatchEndpoint?.adClientParams?.isAd)return r}))),n}});})();
 www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.001')
@@ -8212,6 +8217,7 @@ youtube.com#$##ticker.ytd-masthead { display: none!important; }
 youtube.com#$#array-override push BISCOTTI_BASED_DETECTION_STATE_IS_CLICK_EVENT_NOT_TRUSTED
 youtube.com#$#override-property-read Object.prototype.ab_det_sc_inj_enf false
 youtube.com#$#override-property-read Object.prototype.ab_sa_ef undefined
+youtube.com#$#override-property-read Object.prototype.onAbnormalityDetected noopFunc; array-override includes onAbnormalityDetected false
 youtube.com#$#override-property-read Object.prototype.onAdSkip undefined
 youtube.com#%#(()=>{const wrapper=(target,thisArg,args)=>{let result=Reflect.apply(target,thisArg,args);try{const decoded=atob(result);if(decoded.includes('ssapPrerollEnabled')){const modifiedContent=decoded.replace(/\n.\n.playerConfig\.ssapConfig\.ssapPrerollEnabled.{2}(?:tru|fals)e/,'');const encodeToBase64=btoa(modifiedContent);return encodeToBase64}}catch(e){} return result};const handler={apply:wrapper};window.Array.prototype.join=new Proxy(window.Array.prototype.join,handler)})();
 youtube.com#%#(function(){try{var time=(new Date).getTime();var cookieDate=new Date(time+1314E6);var hostname=location.host;var locSubString=null;if(!hostname.startsWith("google.")&&!hostname.startsWith("youtube."))locSubString=hostname.substring(hostname.indexOf(".")+1);var loc=locSubString||hostname;if(document.cookie.indexOf("CONSENT=YES")!==-1)return;document.cookie="CONSENT=YES+; domain="+loc+"; path=/; expires="+cookieDate.toUTCString()}catch(ex){console.error("AG: failed to set consent cookie: "+ex)}})();
@@ -8916,6 +8922,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||chinaz.com/zz_img/
 ||chinaz.com^*_g/
 ||chongdiantou.com/wp-content/uploads/2019/02/pzb.jpg
+||chromewebstore.google.com/*/ChromeWebStoreConsumerFeUi/web-reports?
 ||chtbl.com^$script,third-party,xmlhttprequest
 ||cir-smart.baidu.com^
 ||click.bokecc.com^
@@ -9466,7 +9473,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||jsdelivr.net/snowplow/
 ||jsdelivr.net^*/fp.min.js
 ||jsdelivr.net^*/fp.min.js$script,redirect-rule=fingerprint3.js:10
-||jslibs.blackmagicdesign.com/static/lib/misc/google-analytics-service.js
 ||juejin.cn/content_api/v1/advert/query_adverts?
 ||jun01.oss-cn-beijing.aliyuncs.com^
 ||jwplayer.com^$domain=tomshardware.com
@@ -9492,7 +9498,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||lianmeng.360.cn^$domain=~lianmeng.360.cn
 ||lightboxcdn.com^$domain=androidauthority.com
 ||link.medium.com^
-||links.duckduckgo.com/d.js?q=
 ||links.e.response.mayoclinic.org^
 ||linktr.ee/events
 ||live.bilibili.com^$removeparam=broadcast_type
@@ -9548,7 +9553,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||marketing.mangacopy.com^
 ||mcs.zijieapi.com^
 ||media-amazon.com^$app=com.offerup
-||media-us.amillionads.com/*.mp3$media,redirect=noop-1s.mp4,domain=spotify.com
 ||media-us.amillionads.com/*.mp3$media,redirect=noopmp4-1s,domain=spotify.com
 ||mediav.com^$third-party,domain=dev.360.cn
 ||mediav.com^$third-party,domain=g.360.cn
