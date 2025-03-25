@@ -140,6 +140,7 @@ $websocket,domain=pornhub.com
 /icloud2022-esp.php^$doc,to=~edu|~gov|~apple.com
 /isignesp.php^$doc,to=~edu|~gov|~apple.com
 /log?format=$domain=~meet.google.com
+/lvcsm/abck-banners/*^$domain=xvideos.com
 /matomo/*$domain=github.com
 /notifications.google.com/g/img/*$image
 /perimeterx/*$domain=github.com
@@ -527,7 +528,9 @@ $websocket,domain=pornhub.com
 ?*=*=*=$subdocument,domain=shenchuang.com
 ?*=*=*=$subdocument,domain=xiachufang.com
 @@$generichide,domain=androidpolice.com
+@@$websocket,domain=xvideos.com
 @@.vmall.com/oauth
+@@//*.xvideos.com^$domain=xvideos.com
 @@/Tag.rb$domain=github.com
 @@/Themes/SamsungShop/Scripts/shop/cookie-notice.js$domain=shop.samsung.com
 @@/adpic/*$domain=baike.baidu.com
@@ -866,6 +869,7 @@ $websocket,domain=pornhub.com
 @@||cmp.uniconsent.com^$domain=photopea.com
 @@||cmp.uniconsent.com^$xhr,domain=photopea.com
 @@||combo.staticflickr.com/zz/*/cookie-banner-view/cookie-banner-view-min.js$domain=flickr.com
+@@||commons.wikimedia.org/w/api.php?$~third-party,xmlhttprequest
 @@||community.brave.com/t/$xmlhttprequest
 @@||community.mozilla.org/wp-content/uploads/$image
 @@||concertads-configs.vox-cdn.com/sbn/verge/config.json$domain=theverge.com
@@ -958,6 +962,7 @@ $websocket,domain=pornhub.com
 @@||forbes.com^$generichide
 @@||forbes.com^$ghide
 @@||forum.djicdn.com/static/js/sensorsdata.min.js$script,domain=forum.dji.com
+@@||fundingchoicesmessages.google.com/b/pub-$script,3p,redirect-rule
 @@||fundingchoicesmessages.google.com/i/$script,domain=9to5mac.com
 @@||fundingchoicesmessages.google.com^$script,domain=bbc.com
 @@||fundingchoicesmessages.google.com^$script,xmlhttprequest,subdocument
@@ -1291,6 +1296,7 @@ $websocket,domain=pornhub.com
 @@||s.ntv.io/serve/load.js$domain=bloomberg.com
 @@||s.youtube.com/api/stats/playback?
 @@||scdn.co/cdn/js/gtag.$script,domain=spotify.com
+@@||sciencedirect.com^$stealth
 @@||sciencedirectassets.com^$stealth=useragent,domain=sciencedirect.com
 @@||sdk.privacy-center.org/*/loader.js?$domain=euronews.com
 @@||sdk.privacy-center.org/sdk/*/modern/*.js$domain=euronews.com
@@ -1332,6 +1338,7 @@ $websocket,domain=pornhub.com
 @@||stacksocial.com^$cookie=ajs_anonymous_id
 @@||stacksocial.com^$stealth=referrer
 @@||static*.nytimes.com/newsgraphics/*/_assets/graphics/$xmlhttprequest,elemhide,jsinject,extension
+@@||static-*.xvideos.com/*/js/
 @@||static-ppp.portalcdn.com/$script,domain=pornhub.com
 @@||static.adsafeprotected.com/vans-adapter-google-ima.js$domain=forbes.com
 @@||static.doubleclick.net/instream/ad_status.js$domain=youtube.com
@@ -1415,6 +1422,8 @@ $websocket,domain=pornhub.com
 @@||xfreehd.com^$generichide! url: https://filters.adtidy.org/windows/filters/224.txt
 @@||xfreehd.com^$generichide! url: https://filters.adtidy.org/windows/filters/3.txt
 @@||xhscdn.com^$image,stealth,domain=xiaohongshu.com
+@@||xvideos.com/*/?_=$document
+@@||xvideos.com/video-get-comments/
 @@||xweb.instagram.com/ads/preferences/
 @@||xweb.instagram.com/ads/preferences/ad_topics/$frame,1p
 @@||yimg.com/bm/lib/fi/common/*/yfi_comscore.js$domain=finance.yahoo.com
@@ -1825,6 +1834,7 @@ androidpolice.com##.homepage-sponsor
 androidpolice.com##.nav-right > div.nav-elements
 androidpolice.com##.newsletter-container
 androidpolice.com##.sharing-btn:not(.btn-comments)
+androidpolice.com##.small.article-card.article.display-card, .article-widget-feed
 androidpolice.com##.social-media
 androidpolice.com##.w-affiliate
 androidpolice.com##.w-pencil-banner
@@ -2815,6 +2825,17 @@ c.mi.com#$#.xm-header.app-down .top { top: 0 !important; }
 c.mi.com#$#.xm-header.app-down { margin-top: 0 !important; }
 caifuhao.eastmoney.com##.share
 calendar.google.com#?#iframe[src^="https://ogs.google.com"][src*="/widget/callout/"]:upward(div[style^="overflow: hidden; position: absolute; top: 0px; width:"])
+cams.xvideos.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
+cams.xvideos.com#%#//scriptlet("prevent-fab-3.2.0")
+cams.xvideos.com#@#.pub_300x250
+cams.xvideos.com#@#.pub_300x250m
+cams.xvideos.com#@#.pub_728x90
+cams.xvideos.com#@#.text-ad
+cams.xvideos.com#@#.text-ad-links
+cams.xvideos.com#@#.text-ads
+cams.xvideos.com#@#.textAd
+cams.xvideos.com#@#.text_ad
+cams.xvideos.com#@#.text_ads
 careers.google.com##.gc-cookie-bar
 careers.microsoft.com##.ph-cookie-popup-v2-default-default
 cdn-settings.appsflyersdk.com^
@@ -3647,7 +3668,11 @@ foundation.mozilla.org##.d-print-none.container
 friends.figma.com##.cookie-consent-acknowledgement-conatiner
 fujixweekly.com#$?#span[data-ez-ph-id] { display: none !important; }
 fund.eastmoney.com##div[data-url^="//same.eastmoney.com/"]
+gadgethacks.com###sticky-footer--container
+gadgethacks.com##.ad-placement
 gadgethacks.com##.fixed-height-features+aside.whtaph-rightbox.whtaph-600
+gadgethacks.com##.hide-on-empty
+gadgethacks.com##.set-placement-height
 gadgethacks.com##.whtaph
 gadgethacks.com#%#//scriptlet("set-constant", "WHT.ShowConsentForm", "trueFunc")
 galaxystore.samsung.com##div[class^="CookieBanner_"]
@@ -5144,6 +5169,7 @@ mayoclinic.org##.internalads
 mayoclinic.org##.mayoad
 mayoclinic.org##.mayoad > .policy
 mayoclinic.org##.myc-subscription-form
+mayoclinic.org##.placeHolder
 mayoclinic.org##.social:not(body)
 mbd.baidu.com###content_wrapper + div + .default-container
 mbd.baidu.com##.related-news > section:first-child + div
@@ -5356,6 +5382,7 @@ neowin.net##.deals
 neowin.net##.footer-banner
 neowin.net##.header-banner-ads
 neowin.net##.ipsLayout_sidebarright  > div.cWidgetContainer > ul.ipsList_reset > li[data-blocktitle="block_LatestNews"] > div[class^="widget-"]
+neowin.net##.promos, .widget-content, .post-nav-links, .comments
 neowin.net##.sidebar-col .ad
 neowin.net##.sidebar-col > a[href^="https://www.neowin.net/subscribe/"][target]
 neowin.net##.social
@@ -5500,6 +5527,7 @@ notebookcheck.net###contenta
 notebookcheck.net###sncmp-container
 notebookcheck.net##+js(abort-current-script, navigator, Flags.autoRecov)
 notebookcheck.net##+js(abort-on-property-read, Object.prototype.autoRecov)
+notebookcheck.net##+js(href-sanitizer, 'a[href*="?"][href*="u=http"]:is([href*=".com/c/"],[href*=".io/c/"],[href*=".net/c/"],[href*="?subId1="],[href^="https://affportal.bhphoto.com/dl/redventures/?"])', ?u)
 notebookcheck.net##.nbc-right-float
 notebookcheck.net##.socialarea
 notebookcheck.net#%#//scriptlet("abort-current-inline-script", "navigator", "Flags.autoRecov")
@@ -6065,7 +6093,6 @@ reddit.com##a[href^="/rpan/"] > h3:has-text(/Top (livestream|broadcast)/):upward
 reddit.com##a[href^="https://PornGameFree.fun"]
 reddit.com##article[id] > a[href^="https://alb.reddit.com/"] ~ *
 reddit.com##bottom-bar[app-link-params]
-reddit.com##div._2vEf-C2keJaBMY9qk_BxVn:nth-of-type(4)
 reddit.com##div[class*="EUCookieNotice"]
 reddit.com##div[class][data-before-content="Werbung"]:not([id])
 reddit.com##div[class][data-before-content="advertisement"]:not([id])
@@ -6424,7 +6451,7 @@ smzdm.com##.side-stuff
 smzdm.com##.top-applink
 smzdm.com##a[class^="fixed-logo"]
 smzdm.com#@#.comment_share
-so.douyin.com##X-VIEW.container
+so.douyin.com##X-VIEW.inner.PrimaryBG-light
 so.douyin.com##[class*='h5-ad-']
 so.douyin.com##[class^='layout-']
 so.lenovo.com.cn##.AdSite
@@ -6695,6 +6722,7 @@ techcrunch.com##.post-block + a[href="/events/tc-early-stage-2023/"]
 techcrunch.com##.rightrail--promo
 techcrunch.com##.surveymonkey-popup
 techcrunch.com##.upcoming-events
+techcrunch.com##.wp-block-group-is-layout-constrained.is-layout-constrained.wp-block-techcrunch-most-popular-posts
 techcrunch.com##.wp-block-tc23-newsletter-signup-compact
 techcrunch.com##.wp-block-techcrunch-newsletter-signup-compact
 techcrunch.com##.wp-block-techcrunch-social-share
@@ -7149,6 +7177,7 @@ twitter.com##div[aria-label="Trending"] > div div:has(>aside[aria-label="Subscri
 twitter.com##div[aria-label] > div[class]:only-child > div[class]:only-child > div[class]:not([class*=" "]):has(> div[style="display: none !important;"])
 twitter.com##div[data-testid="UserCell"]:has(path[d$="10H8.996V8h7v7z"])
 twitter.com##div[data-testid="cellInnerDiv"] > div > div[class] > div[class][data-testid="placementTracking"]
+twitter.com##div[data-testid="cellInnerDiv"] a[aria-label="Follow the action"]
 twitter.com##div[data-testid="eventHero"]:first-child
 twitter.com##div[data-testid="eventHero"]:first-child + div:last-child
 twitter.com##div[data-testid="eventHero"]:has(path[d$="10H8.996V8h7v7z"])
@@ -7472,6 +7501,7 @@ www.reddit.com###COIN_PURCHASE_DROPDOWN_ID
 www.reddit.com##+js(json-prune, data.*.elements.edges.[].node.outboundLink)
 www.reddit.com##+js(json-prune, data.children.[].data.outbound_link)
 www.reddit.com##._23q1waDr4n_2fR5A7zcZzb.x0hiXHicn7r3BG9m1FJH4
+www.reddit.com##.block > award-button
 www.reddit.com##.block.xs\:pt-md.pdp
 www.reddit.com##.icon-coins
 www.reddit.com##.icon-popular.icon
@@ -7480,6 +7510,7 @@ www.reddit.com##:xpath(//button[contains(text(),'Shop Avatars')])
 www.reddit.com##[data-id="user-hover-card"] a[href="/user/AutoModerator/"]:upward(shreddit-comment)
 www.reddit.com##[role="menu"] button:has-text(Online Status)
 www.reddit.com##community-highlight-card[subreddit-prefixed-name="r/uBlockOrigin"][src]:remove-attr(src)
+www.reddit.com##div._2vEf-C2keJaBMY9qk_BxVn:nth-of-type(4)
 www.reddit.com##header [aria-label="Advertise"]
 www.reddit.com##header [href="/r/Popular/"]
 www.reddit.com##header [href="/r/all/"]
@@ -7492,6 +7523,8 @@ www.sina.com.cn##.secondtj-wrapper
 www.sohu.com##.article-allsee
 www.sohu.com##.swiper
 www.sohu.com#?#.list16 > ul > li:-abp-contains(广告)
+www.xvideos.com###ad-footer
+www.xvideos.com##.thumb-ad
 www.yahoo.com###act-ad-parallax
 www.yahoo.com##.sticky[class*="top-"]:has(style)
 www.yahoo.com##[id^="mid-center-ad"]
@@ -7679,6 +7712,7 @@ x.com##div[aria-label="Trending"] > div div:has(>aside[aria-label="Subscribe to 
 x.com##div[aria-label] > div[class]:only-child > div[class]:only-child > div[class]:not([class*=" "]):has(> div[style="display: none !important;"])
 x.com##div[data-testid="UserCell"]:has(path[d$="10H8.996V8h7v7z"])
 x.com##div[data-testid="cellInnerDiv"] > div > div[class] > div[class][data-testid="placementTracking"]
+x.com##div[data-testid="cellInnerDiv"] a[aria-label="Follow the action"]
 x.com##div[data-testid="eventHero"]:first-child
 x.com##div[data-testid="eventHero"]:first-child + div:last-child
 x.com##div[data-testid="eventHero"]:has(path[d$="10H8.996V8h7v7z"])
@@ -7946,6 +7980,37 @@ xueshu.baidu.com#?#div:not([id]) > style[id^="s-"] + style + div + div[id]
 xueshu.baidu.com#?#div:not([id]) > style[id^="s-"] + style + div[id]
 xueshu.baidu.com#?#div[id$="_canvas"]
 xueshu.baidu.com#@##results > div[class]:not(.result):not(.result-op):not(.sp-rslt-bar):not(.s-group-result)
+xvideos.com###ad-footer
+xvideos.com###ad-header-mobile
+xvideos.com###content > div.mobile-hide + div[class]:not([id*="video"])
+xvideos.com###cookies-use-alert
+xvideos.com###tabComments_bottom_page
+xvideos.com###video-right
+xvideos.com###video-sponsor-links
+xvideos.com##+js(abort-on-property-read, popns)
+xvideos.com##+js(aeld, click, ShouldShow)
+xvideos.com##+js(nowoif)
+xvideos.com##+js(remove-class, has-banner, #page > #main > #profile-title)
+xvideos.com##.player-video.xv-cams-block
+xvideos.com##.premium-results-line
+xvideos.com##.related-content
+xvideos.com##.share
+xvideos.com##.thumb-ad
+xvideos.com##.video-ad
+xvideos.com##.x-message
+xvideos.com##[href*="base64"]
+xvideos.com##[href*="data:"]
+xvideos.com##div[id^="video-ad"]+div[class]
+xvideos.com##img[src*="blob:" i]:not(video)
+xvideos.com#$#prevent-listener DOMContentLoaded PopUnder; json-prune 'banners'
+xvideos.com#%#//scriptlet('abort-on-property-read', 'popns')
+xvideos.com#%#//scriptlet('remove-class', 'has-banner', '#page > #main > #profile-title')
+xvideos.com#%#//scriptlet('trusted-click-element', 'span#disclaimer-reject_cookies')
+xvideos.com#?##tabShareAndEmbed > h4:has(> span.icf-share)
+xvideos.com#?#:-abp-properties(*data:image*)
+xvideos.com#?#:-abp-properties(base64)
+xvideos.com#?#:-abp-properties(data:)
+xvideos.com#?#:-abp-properties(image/)
 yahoo.com###ACT_crazy
 yahoo.com###ACT_takeover
 yahoo.com###ACT_takeover2
@@ -8336,6 +8401,7 @@ zx.sina.cn##.j_wbrecommend_wrap.j_article_relevent.s_card
 zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 |http*://*?$popup,third-party,domain=pornhub.com
 |http://$image,third-party,domain=pornhub.com
+|https://$script,third-party,xmlhttprequest,domain=xvideos.com,badfilter
 ||127.0.0.1^$third-party,domain=sciencedirect.com
 ||163.com/*/__utm.gif?
 ||163.com/get.do?*=themeHandler.
@@ -8542,6 +8608,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||api.bilibili.com/x/vip/ads/$redirect=noop.txt
 ||api.bilibili.com/x/web-interface/bgroup/$redirect=noop.txt
 ||api.bugsnag.com^
+||api.diffchecker.com/external/mixpanel/user-properties|
 ||api.github.com/_private/browser/stats$important
 ||api.ip.sb/geoip$third-party
 ||api.live.bilibili.com/*/Banner
@@ -8839,6 +8906,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||c.sayhi.360.cn^
 ||c.wired.com^
 ||caclick.baidu.com^
+||cams.xvideos.com^
 ||cb.baidu.com^
 ||cbjs.baidu.com^
 ||cdn-settings.appsflyersdk.com^
@@ -9573,6 +9641,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||metrics.icloud.com^
 ||metrics.npr.org^
 ||metrics.roblox.com^
+||metrics.sciencedirect.com^
 ||mg21.com/wp-content/uploads/ad/
 ||mi.com/stat/
 ||miao.baidu.com^
@@ -9892,7 +9961,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||reddit.com^$removeparam=/^\x243p=/
 ||reddit.com^$removeparam=/^\x24deep_link=/
 ||reddit.com^$removeparam=/^\x24original_url=/
-||reddit.com^$removeparam=/deep_link|3p/
 ||reddit.com^$removeparam=_branch_match_id
 ||reddit.com^$removeparam=correlation_id
 ||reddit.com^$removeparam=post_fullname
@@ -10458,6 +10526,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||xpj08.oss-cn-beijing.aliyuncs.com^
 ||xpjcg.oss-accelerate.aliyuncs.com^
 ||xuexi.hydcd.com^
+||xvideos.com/lvcsm/abck-banners/
+||xvideos.com/picserror/
+||xvideos.com/zoneload/
 ||xyz/akbank/$doc,to=xyz|~akbank.com
 ||yahoo.com/_td/api/resource/NativeAdService
 ||yahoo.com/_td/api/resource/StreamService.ads;ads=
