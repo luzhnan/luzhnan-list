@@ -255,7 +255,6 @@
 ###CookieBannerMessageContainer
 ###CookieBannerNew
 ###CookieBar
-###CookieBox
 ###CookieButton
 ###CookieCheck
 ###CookieCheck_injected
@@ -20669,6 +20668,7 @@
 ##.advInfoElem
 ##.advInt
 ##.advLeaderboard
+##.advMasterSlot
 ##.advMasthead
 ##.advRightBig
 ##.advSquare
@@ -25233,7 +25233,6 @@
 ##.cookie-fade
 ##.cookie-fb-title
 ##.cookie-fb-top
-##.cookie-fix
 ##.cookie-fixed
 ##.cookie-fixed-footer
 ##.cookie-fixed-hint
@@ -25333,7 +25332,6 @@
 ##.cookie-layerbody
 ##.cookie-layers
 ##.cookie-lb-bottom
-##.cookie-legal
 ##.cookie-legal-banner
 ##.cookie-legal-box
 ##.cookie-legal-content
@@ -25903,7 +25901,6 @@
 ##.cookiePolicyB
 ##.cookiePolicyBannerOuter
 ##.cookiePolicyBnr
-##.cookiePolicyBox
 ##.cookiePolicyContainer
 ##.cookiePolicyCustom
 ##.cookiePolicyGomag
@@ -30598,6 +30595,7 @@
 ##.header_ad_center
 ##.header_ad_div
 ##.header_ad_space
+##.header_adbox
 ##.header_ads
 ##.header_ads-container
 ##.header_ads_box
@@ -31386,6 +31384,7 @@
 ##.insert_advertisement
 ##.insertad
 ##.inside-cookie
+##.inside-post-ad
 ##.insideArticleShare
 ##.inside_ad
 ##.insideads
@@ -40796,6 +40795,7 @@
 ##.tnw-ad
 ##.tnw_cookieconsent
 ##.tnzcookie_container
+##.to-be-async-loaded-ad
 ##.to-pagetop
 ##.to-the-top
 ##.to-top-btn
@@ -42507,6 +42507,7 @@
 ##.wpgdprc
 ##.wpgdprc-consent-bar
 ##.wphack-cookie-wrapper
+##.wplite-banner-ads
 ##.wplogout-float-social-wrapper
 ##.wplogout-social-wrapper
 ##.wpmaster-cookie-content
@@ -47753,10 +47754,7 @@ $removeparam=ysclid
 /^https?:\/\/[-a-z]{5,13}\.[a-z]{3,6}\/[0-9a-h]{1,17}\?[0-9a-zA-Z]{1,22}=[%0-9a-zA-Z]{200,1300}/$xhr,3p,match-case,method=get
 /^https?:\/\/[-a-z]{5,13}\.[a-z]{3,}\/[0-9a-z]{1,20}\?(?=[A-Za-z]{0,21}\d?)(?=[0-9a-z]{0,21}[A-Z])[0-9A-Za-z]{15,23}=(?=[%a-z]*[0-9A-Z])[%0-9A-Za-z]{35,2000}$/$xhr,3p,match-case,method=get,header=Via:/^2\.\d (apache|nginx)$/,to=~com|~dev|~net|~org|~edu|~gov|~tv
 /^https?:\/\/[-a-z]{5,13}\.[a-z]{3,}\/[0-9a-z]{1,20}\?(?=[A-Za-z]{0,21}\d?)(?=[0-9a-z]{0,21}[A-Z])[0-9A-Za-z]{15,23}=(?=[%a-z]*[0-9A-Z])[%0-9A-Za-z]{35,2000}$/$xhr,3p,match-case,method=get,header=via:/^2\.\d (apache|nginx)$/,to=~com|~dev|~net|~org|~edu|~gov|~tv
-/^https?:\/\/[-a-z]{6,}\.com?\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$script,xhr,3p,match-case,to=co|com
-/^https?:\/\/[-a-z]{6,}\.info\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$script,xhr,3p,match-case,to=info
-/^https?:\/\/[-a-z]{6,}\.pro\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$script,xhr,3p,match-case,to=pro
-/^https?:\/\/[-a-z]{6,}\.xyz\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$script,xhr,3p,match-case,to=xyz
+/^https?:\/\/[-a-z]{6,}\.(?:com?|info|pro|xyz)\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$script,xhr,3p,match-case,to=co|com|info|pro|xyz
 /^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/400\/\d{7}(?:\?v=\d+)?$/$script,3p
 /^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/401\/\d{7}(?:\?v=\d+)?$/$script,3p
 /^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/500\/\d{7}\?/$xhr,3p
@@ -53011,6 +53009,7 @@ $removeparam=ysclid
 /sayac.html
 /sayacff.html
 /sbar.json?key=
+/sbar.json?key=$script
 /sbhf.js$script,third-party
 /sbtt.js
 /sc-gdpr-popup.js
