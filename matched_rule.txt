@@ -55,6 +55,7 @@ $removeparam=union_lens,domain=tmall.com
 $script,redirect-rule=noop.js,domain=sammobile.com
 $script,redirect-rule=noopjs,domain=sammobile.com
 $websocket,domain=pornhub.com
+&http_referer=$script,xmlhttprequest,domain=facebook.com
 *$domain=googleads.g.doubleclick.net
 *$frame,domain=csdn.net
 *$frame,domain=sina.cn
@@ -102,6 +103,8 @@ $websocket,domain=pornhub.com
 .doubleclick.net/$image
 .duolingo.com/open/
 .epicgames.com/O/
+.facebook.com/tr/$image
+.facebook.com/tr?$image
 .js$domain=csdn.net
 .js$domain=sina.cn
 .mgmailer.binance.com/o/$image
@@ -117,8 +120,13 @@ $websocket,domain=pornhub.com
 .substack.com/o/$image
 .substackcdn.com/open?$image
 /*/*/*/*/*$third-party,script,denyallow=cdn.jsdelivr.net|cloudflare.com|cloudflare.net|disqus.com|disquscdn.com|widgetlogic.org,_____,domain=totalsportek-streams.blogspot.com
+/\.(?:boats|cfd)\/contract\/\d{14,19}\b/$doc,match-case,to=boats|cfd|~facebook.com
+/\.(?:click|pages\.dev|surge\.sh)\/help\/contact\/\d{14,19}\b/$doc,match-case,to=click|pages.dev|surge.sh|~facebook.com
 /\.com\/watch\?|\.com\/playlist\?list=|\/youtubei\/v.*\/(get_watch|player)\?/$xmlhttprequest,replace=/"(adPlacements|adSlots|playerAds)"/"no_ads"/,domain=youtube.com
+/\.workers\.dev\/help\/\d{14,19}\b/$doc,to=workers.dev|~facebook.com
+/\/contract\/support-case-id=\d{14,19}\b/$doc,match-case,to=~facebook.com
 /\/js\/\d{2,3}eka\d{2,3}\.js$/$script,1p,domain=com
+/^https:\/\/(?:appeal|contact|page)\.[a-z]{15,}\.com\/appeal_case_id\b/$doc,to=com|~facebook.com
 /^https:\/\/(?:www\.)?roblox(?:\.com)?\.[a-z]{2}\//$doc,to=roblox.*|~roblox.com
 /^https:\/\/[a-z0-9]{2,}\.[a-z0-9]{4,11}\.com\/[a-zA-Z0-9]{30,}\?[a-zA-Z0-9]{25,}$/$doc,to=com|~google.com|~microsoft.com
 /^https:\/\/[a-z]\d{3}\.[a-z]+\.com\/script\.js$/$script,1p,strict3p,domain=com,redirect=noopjs
@@ -126,6 +134,9 @@ $websocket,domain=pornhub.com
 /^https:\/\/[a-z]{10,14}\.com\/(?=[%=\?_0-9a-zA-Z]*\*)(?=[%\*=\?_a-zA-Z]*\d)(?=[%\*=\?_0-9a-z]*[A-Z])[%\*=\?_0-9a-zA-Z]{1000,}$/$xhr,3p,domain=jp
 /^https:\/\/[a-z]{4,}\.(?:com)\/z-[a-z0-9]{7,10}(\.js)?$/$script,1p,strict1p,domain=com
 /^https:\/\/[a-z]{4,}\.(?:to)\/z-[a-z0-9]{7,10}(\.js)?$/$script,1p,strict1p,domain=to
+/^https:\/\/business-component\.[a-z]+(-[a-z]+){2}\.com\//$doc,to=com|~facebook.com
+/^https:\/\/business\.[a-z]+confii?rm\.com\/meta-community-standard\d{14,15}[^\d]?/$doc,match-case,to=com|~facebook.com
+/^https:\/\/help-\d{8}\.[a-z0-9]{6}-\d{2}\.click\//$doc,to=click|~facebook.com
 /^https:\/\/help\.[a-z]{3,}-x-[a-z]{3,}\.com\//$doc,to=com|~x.com
 /^https:\/\/telegram-[a-z]{2}\.[a-z]{2,3}\//$doc,to=~gov|~edu|~com|~net|~org|~telegram.org
 /^https:\/\/telegram-[a-z]{3,4}\.com\//$doc,to=com|~telegram.org
@@ -213,6 +224,7 @@ $websocket,domain=pornhub.com
 /wrapperMessagingWithoutDetection.js$script,domain=d3f6gjnauy613m.cloudfront.net
 /youtubei/v*/get_watch?$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtube.com
 /youtubei/v*/player?$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtube.com
+0.facebook.com##div[role="article"][data-ft*='"originated_from_recommendation":"1"']
 0mniscient.github.io##+js(nobab)
 0mniscient.github.io#%#//scriptlet("prevent-bab")
 10086.cn###bottomBigBanner
@@ -714,6 +726,7 @@ $websocket,domain=pornhub.com
 @@https://www.google.*/adwords$document,domain=google.com.sg
 @@jd.com/*ad_
 @@|http://ie.microsoft.com/testdrive/Performance/FishBowl/Default.html|$document
+@@||-instagram.*.facebook.com^$subdocument
 @@||0mniscient.github.io^$generichide
 @@||1.1.1.1/cdn-cgi/trace$xmlhttprequest,domain=one.one.one.one
 @@||10086.cn/framework/modules/sdc.js
@@ -744,6 +757,7 @@ $websocket,domain=pornhub.com
 @@||acgvideo.com^$stealth,domain=bilibili.com
 @@||ad-emea.doubleclick.net/clk
 @@||ad.3.cn/ads/mgets?$domain=jd.com
+@@||ad.atdmt.com/m/*account_id=*&source=cm&step=1^$domain=facebook.com
 @@||ad.doubleclick.net/*/adi/com.ytbc/$domain=youtube.com
 @@||ad.doubleclick.net/*/pfadx/$domain=m.youtube.com
 @@||ad.doubleclick.net/clk*&destinationURL=$popup
@@ -811,6 +825,7 @@ $websocket,domain=pornhub.com
 @@||ads.x.com^$popup
 @@||adserver.juicyads.com/js/jads.js$domain=netflav.com
 @@||adserver.va3.megaphone.cloud.$domain=megaphone.fm
+@@||adsmanager.facebook.com^$generichide
 @@||adsninja.ca/ads_$script,domain=androidpolice.com
 @@||adsninja.ca/adsninja_client.js$script,domain=androidpolice.com
 @@||adsninja.ca^$script,domain=androidpolice.com
@@ -1205,6 +1220,36 @@ $websocket,domain=pornhub.com
 @@||events.appsflyer.com^$app=com.mapswithme.maps.pro
 @@||f*.baidu.com/it/u=*,*&fm=$domain=baidu.com
 @@||f-droid.org/assets/Ads_$~third-party
+@@||facebook.com/*/dialog/oauth$stealth
+@@||facebook.com/*/plugins/comments.php
+@@||facebook.com/*/plugins/login_button.
+@@||facebook.com/*/plugins/post.php
+@@||facebook.com/*/plugins/video.php
+@@||facebook.com/ads/profile/$~third-party,xmlhttprequest
+@@||facebook.com/adsmanager/$generichide
+@@||facebook.com/adsmanager^
+@@||facebook.com/bluebar/modern_settings_menu^$stealth
+@@||facebook.com/connect/xd_arbiter.php$jsinject,elemhide
+@@||facebook.com/dialog/oauth$document
+@@||facebook.com/groupcall/$stealth=webrtc
+@@||facebook.com/groups/member_bio/bio_dialog/$removeparam
+@@||facebook.com/login.php$stealth
+@@||facebook.com/photo.php?$removeparam
+@@||facebook.com/photo/download/$removeparam
+@@||facebook.com/plugins/comment_embed.php
+@@||facebook.com/plugins/comments
+@@||facebook.com/plugins/feedback.php
+@@||facebook.com/plugins/livefeed.php$document
+@@||facebook.com/plugins/login_button.php$document
+@@||facebook.com/plugins/post
+@@||facebook.com/plugins/video.php
+@@||facebook.com/privacy/specific_audience_selector_dialog/$removeparam
+@@||facebook.com/qr/$stealth=referrer
+@@||facebook.com/videocall/$stealth=webrtc
+@@||facebook.com^$generichide
+@@||facebook.com^$generichide,badfilter
+@@||facebook.com^$xhr,removeparam=/^__s=[A-Za-z0-9]{6\,}/
+@@||fbcdn.net/safe_image.php?$image,domain=facebook.com
 @@||feedback-pa.clients*.google.com/*/google.internal.feedback.$stealth
 @@||figma.com^$generichide
 @@||file.myqcloud.com/*.mp4?token=$stealth
@@ -1335,6 +1380,7 @@ $websocket,domain=pornhub.com
 @@||google-analytics.com/analytics.js$domain=theverge.com
 @@||google-analytics.com/analytics.js$script,domain=ads.spotify.com
 @@||google-analytics.com/analytics.js$script,domain=developers.google.com
+@@||google-analytics.com/ga.js$domain=apps.facebook.com
 @@||google-analytics.com/ga.js$domain=google.com
 @@||google-analytics.com/ga.js$domain=jetbrains.com
 @@||google-analytics.com/ga.js$domain=newyorker.com
@@ -1671,6 +1717,7 @@ $websocket,domain=pornhub.com
 @@||mssl.fwmrm.net/crossdomain.xml$domain=msn.com
 @@||mssl.fwmrm.net/p/msn_live/AdManager.swf$domain=msn.com
 @@||mssl.fwmrm.net/p/nbcu_sports_tp_live/AdManager.js$domain=yahoo.com
+@@||mtouch.facebook.com/ads/api/preview/$domain=business.facebook.com
 @@||music.youtube.com^$generichide
 @@||mvastorage.microsoft.com/public/scripts/cookieConsent-*.js
 @@||mxpnl.com^$domain=mixpanel.com
@@ -1781,6 +1828,9 @@ $websocket,domain=pornhub.com
 @@||pingjs.qq.com^$~third-party
 @@||pipe.aria.microsoft.com^$domain=outlook.live.com
 @@||pipe.aria.microsoft.com^$domain=outlook.office.com
+@@||pixel.facebook.com/ajax/gigaboxx/endpoint/UpdateLastSeenTime.php?$image
+@@||pixel.facebook.com/ajax/notifications/mark_read.php?*&alert_ids%$image
+@@||pixel.facebook.com^$domain=pixel.facebook.com
 @@||platform.twitter.com/embed/$subdocument
 @@||platform.twitter.com/widgets/$subdocument
 @@||platform.twitter.com^$stylesheet,image,script
@@ -1836,6 +1886,7 @@ $websocket,domain=pornhub.com
 @@||quantcast.mgr.consensu.org^$domain=t3.com
 @@||quantcast.mgr.consensu.org^*/cmp2.js$script,domain=t3.com
 @@||quantcast.mgr.consensu.org^*/cmp2.js$script,domain=tomshardware.com
+@@||quantserve.com/quant.js$domain=apps.facebook.com
 @@||quick-edit-cny.pages.dev^$domain=dash.cloudflare.com,stealth=useragent
 @@||r.bing.com/rp^
 @@||rad.msn.com/ADSAdClient31.dll$domain=msn.com
@@ -1884,6 +1935,7 @@ $websocket,domain=pornhub.com
 @@||scdn.co/cdn/js/gtag.$script,domain=spotify.com
 @@||sciencedirect.com^$stealth
 @@||sciencedirectassets.com^$stealth=useragent,domain=sciencedirect.com
+@@||scontent.xx.fbcdn.net/hads-ak-prn2/*.png$domain=facebook.com
 @@||sdk.privacy-center.org/*/loader.js?$domain=euronews.com
 @@||sdk.privacy-center.org/sdk/*/modern/*.js$domain=euronews.com
 @@||sdk.privacy-center.org^$script,domain=euronews.com
@@ -2073,6 +2125,7 @@ $websocket,domain=pornhub.com
 @@||wappass.baidu.com/static/touch/js/lib/fingerprint.js$domain=tieba.baidu.com
 @@||ware.shop.jd.com^$genericblock,generichide
 @@||web.archive.org/*/http$removeparam
+@@||web.facebook.com^$generichide
 @@||web.telegram.org^$generichide
 @@||webcache.googleusercontent.com^$generichide
 @@||webtrendslive.com^*/wtid.js?$domain=att.yahoo.com
@@ -2084,6 +2137,7 @@ $websocket,domain=pornhub.com
 @@||wojtekczytawh40k.blogspot.com^$generichide
 @@||wpmu2.azurewebsites.net/nlt/wp-content/plugins/webtoffee-gdpr-cookie-consent/public/js/cookie-law-info-public.js
 @@||www-daftarharga.blogspot.com^$generichide
+@@||www.facebook.com^$generichide
 @@||www.google.*/search?$domain=google.co.jp
 @@||www.google.*/search?$domain=google.com
 @@||www.google.*/search?$domain=google.com.hk
@@ -2145,8 +2199,15 @@ $websocket,domain=pornhub.com
 @@||zone.msn.com/js/gameplayer/admanager.js$domain=zone.msn.com
 @@||zopim.com$domain=account.ui.com
 @@||zopim.com$domain=ui.com
+@@||zynga.com/current/iframe/track.php?$domain=apps.facebook.com
 [$path=/embed/playlist/]open.spotify.com#?#div[data-testid="embed-widget-container"] > div[style^="--background-color:"]:has(button[data-testid="upsell-close-button"])
 [$path=/m]consent.youtube.com#%#//scriptlet('trusted-click-element', 'form[action="https://consent.youtube.com/save"][jsaction] button[jsname="b3VHJd"]')
+[$path=/search/top]m.facebook.com##div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"])
+[$path=/search/top]m.facebook.com##div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]
+[$path=/search/top]m.facebook.com##div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"] + div[data-mcomponent="MContainer"]:not([data-actual-height="2"])
+[$path=/search/top]m.facebook.com##div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"] + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="65"])
+[$path=/search/top]m.facebook.com##div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"] + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="65"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="65"])
+[$path=/search/top]m.facebook.com#?#div[data-mcomponent="MContainer"]:has(> .intersection-observer:first-child + div[data-mcomponent="MContainer"] + div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"] + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="65"]):last-child)
 a.9game.cn##.DownBox
 a.9game.cn##.JS_xlyx_down.down-app
 a.9game.cn##.JS_xlyx_down.zq-down-box
@@ -2310,6 +2371,7 @@ ahdafnews.blogspot.com##+js(rmnt, script, /h=decodeURIComponent|popundersPerIP/)
 ahdafnews.blogspot.com##^script[data-cfasync]:has-text(/h=decodeURIComponent|popundersPerIP/)
 ahdafnews.blogspot.com#%#//scriptlet("abort-on-property-write", "_pop")
 ahdafnews.blogspot.com#%#//scriptlet('abort-current-inline-script', 'atob', '/popundersPerIP[\s\S]*?Date[\s\S]*?getElementsByTagName[\s\S]*?insertBefore|w47DisKcw5g/')
+ai.facebook.com#?#a[href^="https://www.facebook.com/sharer/sharer.php"]:upward(1)
 ainamulyana.blogspot.com#%#//scriptlet("remove-attr", "oncontextmenu|onkeydown|onmousedown", "body")
 aiqicha.baidu.com##.float-banner
 aiqicha.baidu.com#@#.share-label
@@ -2365,6 +2427,9 @@ almayadeen.net##+js(set-constant, videojsIma, noopFunc)
 almayadeen.net##.social-bar
 almayadeen.net#%#//scriptlet("set-constant", "videojsContribAds", "noopFunc")
 almayadeen.net#%#//scriptlet("set-constant", "videojsIma", "noopFunc")
+alpha.facebook.com##article[data-ft*="quick_promotion_id"]
+alpha.facebook.com##article[data-store*="quick_promotion_id"]
+alpha.facebook.com##article[data-xt*="originated_from_recommendation"]
 altebwsneno.blogspot.com##+js(aopw, adBlockDetected)
 amap.com##.app-download-panel
 amap.com##.app_download_box
@@ -2793,6 +2858,13 @@ axu.pages.dev##a[href="https://mp.weixin.qq.com/s/3n44gissr4Jzx3E_EaO4Xw"]
 axu.pages.dev##body > :is(div, aside)[id]:has(> ul[class] > li > img.icon + a[href])
 axu.pages.dev#%#//scriptlet('prevent-setTimeout', '/getCookie|checkCK|checkCookie/')
 axu.pages.dev#%#//scriptlet('trusted-suppress-native-method', 'document.write', '/ul class.*icon.*href/', 'prevent')
+b-m.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+b-m.facebook.com##.storyStream > .fullwidth.carded
+b-m.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+b-m.facebook.com##article[data-sigil*="AdStory"]
+b-m.facebook.com##article[data-store*="is_sponsored.1"]
+b-m.facebook.com##div[role="article"][data-ft*='"originated_from_recommendation":"1"']
+b-m.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
 baidu.com###J-super-layer-promote
 baidu.com###activateGuidePopupOuter
 baidu.com###adCard
@@ -3186,6 +3258,8 @@ beef1999.blogspot.com#?#.popup
 belkin.com###pagebanner
 best4hack.blogspot.com##+js(acs, Math, zfgloaded)
 best4hack.blogspot.com##+js(acs, atob, decodeURI)
+beta.facebook.com##article[data-ft*="quick_promotion_id"]
+beta.facebook.com##article[data-store*="quick_promotion_id"]
 bgp.he.net###graph4 img:style(max-width: 100% !important;)
 bgp.he.net###graph6 img:style(max-width: 100% !important;)
 bilibili.com###app > DIV.bili-header-m.report-wrap-module:first-child > DIV.nav-menu:first-child > DIV.nav-wrapper.clearfix.bili-wrapper:last-child > DIV.nav-con.fl:first-child > UL > LI.nav-item.mobile:last-child
@@ -4000,6 +4074,8 @@ cuatrolatastv.blogspot.com##+js(acs, navigator, break;case $.)
 cuatrolatastv.blogspot.com##+js(aeld, , break;case $.)
 cuatrolatastv.blogspot.com##+js(nobab)
 cuttlefish.baidu.com##.link-pc-client
+d.facebook.com##article[data-ft*="quick_promotion_id"]
+d.facebook.com##div[role="article"][data-ft*='"originated_from_recommendation":"1"']
 d3f6gjnauy613m.cloudfront.net##.huge-notification
 daily.zhihu.com##.Daily
 daily.zhihu.com##.active
@@ -4074,6 +4150,7 @@ developer.samsung.com#$#.common-backdrop:not(.full-backdrop) { display: none !im
 developer.samsung.com#$#body { position: static !important; }
 developer.twitter.com##.u12-data-protection-notice__item
 developer.x.com##.u12-data-protection-notice__item
+developers.facebook.com##._97mk._9ao6
 developers.google.com##.devsite-devprofile-callout
 developers.google.com#@##google-ads
 developers.googleblog.com###social-button
@@ -4390,6 +4467,104 @@ exotictgirl.blogspot.com#%#//scriptlet('abort-current-inline-script', 'document.
 ezgif.com###hdr
 ezgif.com##.ads
 ezgif.com##div[style$="min-height:90px;display:block"]
+facebook.com###contentCol > div > div > div[class="_5hn6"][style]
+facebook.com###fbVideoStreamingReactionsTray
+facebook.com###globalContainer > div.fb_content > div > div#mainContainer > div.homeWiderContent > div#headerArea > div[id^="u_0_"][style^="height:"]
+facebook.com###megamall_rhc_ssfy_pagelet
+facebook.com###pagelet_ego_pane > .pagelet:not(.egoOrganicColumn)
+facebook.com###pagelet_growth_expanding_cta
+facebook.com###ssrb_stories_end ~ div[class] > div[class] > div[class*=" "] > div[class] > div[class] > div[style*="border-radius"][class]
+facebook.com###stream_pagelet [id^="hyperfeed_story_id_"]:has(span._4dcu)
+facebook.com###stream_pagelet div[id^="hyperfeed_story_id_"]:has(a.uiStreamSponsoredLink)
+facebook.com###stream_pagelet div[id^="hyperfeed_story_id_"]:if(h6:has-text(People You May Know))
+facebook.com###watch_feed div:not([class]) > div:not([class]) div[class] [class] > a[href*="utm_source=facebook"] span[class] > span[class][style*="-webkit-line-clamp"]:has-text(広告):upward(div:not([class]) > div:not([class])):style(height: 0 !important; overflow: hidden !important;)
+facebook.com###watch_feed div:not([class]) > div:not([class]) div[class] span[class] > a span[aria-labelledby]:has(> span[style="display: flex;"] > span[class]:has-text(/^S$/)):has(> span[style="display: flex;"] > span[class]:has-text(/^p$/)):has(> span[style="display: flex;"] > span[class]:has-text(/^d$/)):upward(div:not([class]) > div:not([class])):style(height: 0 !important; overflow: hidden !important;)
+facebook.com###watch_feed div:not([class]) > div:not([class]) div[class] span[class] > a[aria-label="広告"]:upward(div:not([class]) > div:not([class])):style(height: 0 !important; overflow: hidden !important;)
+facebook.com##.RectangleAd
+facebook.com##._5pcr.fbUserPost._4nef._5pcr
+facebook.com##._6y8t:has(a[href="/ads/about/?entry_product=ad_preferences"])
+facebook.com##.aclb > div._4b-b
+facebook.com##.ego_column:if(a[href^="/campaign/landing"])
+facebook.com##.ego_section:has(a.adsCategoryTitleLink)
+facebook.com##.ego_section:has(a[href*="campaign_id"])
+facebook.com##.ego_section:if(a[href^="/ad_campaign"])
+facebook.com##.userContentWrapper:has(a[href*="/ads/"]):not(:has(a[href*="/ads/preferences"]))
+facebook.com##.userContentWrapper>div div>span>span:has-text(/^Suggested Post$/)
+facebook.com##:matches-path(/^\/(\?[a-z]+=\w+)?$/) div[aria-posinset] :is(h3, h4) span > a[href]:not([href^="/groups/"]):not([href*="section_header_type"]):matches-attr(href="/__cft__\[0\]=[-\w]{290,}/"):upward(div[aria-posinset]):style(height: 0 !important; overflow: hidden !important;)
+facebook.com##:matches-path(/marketplace/item)a[href*="ads/about"]
+facebook.com##:matches-path(/marketplace/item)a[href*="ads/about"] + div[class]
+facebook.com##:matches-path(/search/) div[role="article"] span > a[href]:not([href^="/groups/"]):not([href*="section_header_type"]):matches-attr(href="/__cft__\[0\]=[-\w]{265,}/"):upward([role="article"]):style(height: 0 !important; overflow: hidden !important;)
+facebook.com##a[ajaxify*="&eid="] + a[href^="https://l.facebook.com/l.php?u="]
+facebook.com##a[aria-label="Advertiser link"]
+facebook.com##a[aria-label="Advertiser"]
+facebook.com##a[href="/ads/about/?entry_product=ad_preferences"]
+facebook.com##a[title*="AdChoices"]
+facebook.com##article[data-ft*="\"ei\":\""]
+facebook.com##body:not([style^="margin-bottom"]) div[data-testid="cookie-policy-banner"]
+facebook.com##div._10c_ > div[class="_3n40 _2jl2"][id="u_0_1s"]
+facebook.com##div[aria-describedby]:not([aria-posinset]) :is(h3, h4) span > a[href]:not([href^="/groups/"]):not([href*="section_header_type"]):matches-attr(href="/__cft__\[0\]=[-\w]{290,}/"):upward(div[aria-describedby]):style(height: 0 !important; overflow: hidden !important;)
+facebook.com##div[aria-label="Message from Facebook"]
+facebook.com##div[aria-posinset]:has(a[aria-label="広告"]):style(height: 0 !important; overflow: hidden !important;)
+facebook.com##div[data-cookiebanner="banner"]
+facebook.com##div[data-mcomponent="MContainer"][class="m fixed-container bottom"][data-actual-height="53"]
+facebook.com##div[data-pagelet="ProfileTimeline"] a[href^="https://www.facebook.com/coronavirus_info"]
+facebook.com##div[data-pagelet^="BrowseFeedUpsell_"] div[class][style^="max-width:"] > span
+facebook.com##div[id^="hyperfeed_story_id_"]:has(div > span:has(abbr .timestampContent):matches-css(display: none))
+facebook.com##div[id^=hyperfeed_story_id_]:has(span[data-ft="{\"tn\":\"j\"}"])
+facebook.com##div[role="complementary"] div:not([class]):not([id]) > span:not([class]):not([id]):not([aria-labelledby])
+facebook.com##div[role="feed"] div[style="border-radius: max(0px, min(8px, ((100vw - 4px) - 100%) * 9999)) / 8px;"] div[style="border-radius: max(0px, min(8px, ((100vw - 4px) - 100%) * 9999)) / 8px;"]
+facebook.com##div[role="main"] div[data-pagelet="VideoChatHomeUnit"]
+facebook.com##div[role="progressbar"] ~ div[class] div div[data-instancekey] > div[data-visualcompletion="ignore"] a[aria-label][href*="l.php?u="][target="_blank"]
+facebook.com##div[role="region"] + div[role="main"] div[role="article"] div[style="border-radius: max(0px, min(8px, ((100vw - 4px) - 100%) * 9999)) / 8px;"] > div[class]:not([class*=" "])
+facebook.com##div[style="max-width: 390px; min-width: 190px;"]:has(a[href^="/ads/"])
+facebook.com##strong > a[href*="facebook.com"][href*="/shop/?ref"]:not([href*="l.php"])
+facebook.com#$#.ssr #screen-root img { pointer-events: auto !important; }
+facebook.com#$#.ssr #screen-root { pointer-events: auto !important; }
+facebook.com#$#:matches-path(/adsmanager)body > .AdBox.Ad.advert { display: block !important; }
+facebook.com#$#:matches-path(/adsmanager)body > .AdBox.Ad.advert ~ div[class] { display: block !important; }
+facebook.com#$#:matches-path(/adsmanager)body { display: block !important; }
+facebook.com#$#:matches-path(/gaming)body > .AdBox.Ad.advert { display: block !important; }
+facebook.com#$#:matches-path(/gaming)body > .AdBox.Ad.advert ~ div[class] { display: block !important; }
+facebook.com#$#div[data-testid="cookie-policy-dialog"] { display: none !important; }
+facebook.com#$#div[data-testid="cookie-policy-manage-dialog"] { display: none !important; }
+facebook.com#$?#div[data-type="vscroller"] div[data-tracking-duration-id]:has(> div[data-focusable="true"] div[data-mcomponent*="TextArea"] .native-text > span:contains(/(Sponsored|Gesponsert|Sponsorlu|Sponsorowane|Ispoonsara godhameera|Geborg|Bersponsor|Ditaja|Disponsori|Giisponsoran|Sponzorováno|Sponsoreret|Publicidad|May Sponsor|Sponsorisée|Oipytyvôva|Ɗaukar Nayin|Sponzorirano|Uterwa inkunga|Sponsorizzato|Imedhaminiwa|Hirdetés|Misy Mpiantoka|Gesponsord|Sponset|Patrocinado|Patrocinado|Sponsorizat|Sponzorované|Sponsoroitu|Sponsrat|Được tài trợ|Χορηγούμενη|Спонсорирано|Спонзорирано|Ивээн тэтгэсэн|Реклама|Спонзорисано|במימון|سپانسرڈ|دارای پشتیبانی مالی|ስፖንሰር የተደረገ|प्रायोजित|ተደረገ|प|प्रायोजित|স্পনসর্ড|ਪ੍ਰਯੋਜਿਤ|પ્રાયોજિત|ପ୍ରାୟୋଜିତ|செய்யப்பட்ட செய்யப்பட்ட|చేయబడినది చేయబడినది|ಪ್ರಾಯೋಜಿಸಲಾಗಿದೆ|ചെയ്‌തത് ചെയ്‌തത്|ලද ලද ලද|สนับสนุน สนับสนุน รับ สนับสนุน สนับสนุน|ကြော်ငြာ ကြော်ငြာ|ឧបត្ថម្ភ ឧបត្ថម្ភ ឧបត្ថម្ភ|광고|贊助|赞助内容|広告|സ്‌പോൺസർ ചെയ്‌തത്)/)) { position: absolute !important; left: -3000px !important; }
+facebook.com#%#!function(){(new MutationObserver(function(){window.location.href.includes("/watch")&&document.querySelectorAll('#watch_feed div:not([class]):not([id]) > div[class*=" "]:not([style*="display: none !important"]) div[class^="_"] > div[class*=" "]').forEach(function(b){Object.keys(b).forEach(function(a){if(a.includes("__reactFiber")){a=b[a];try{var c,d,e,f;if(null==(c=a)?0:null==(d=c["return"])?0:null==(e=d.memoizedProps)?0:null==(f=e.story)?0:f.sponsored_data){var g=b.closest('#watch_feed div[class*=" "] div:not([class]):not([id]) > div[class*=" "]:not([style*="display: none !important"])');g.style="display: none !important;"}}catch(h){}}})})})).observe(document,{childList:!0,subtree:!0,attributeFilter:["style"]})}();
+facebook.com#%#!function(){if(location.href.includes("marketplace/item")){var b=0,d=[];new MutationObserver(function(){document.querySelectorAll("div[aria-label='Marketplace listing viewer'] > div div + div + span:not([style*='display: none']), #ssrb_feed_start + div > div div + div + span:not([style*='display: none'])").forEach(function(e){Object.keys(e).forEach(function(a){if(a.includes("__reactEvents")||a.includes("__reactProps")){a=e[a];try{if(a.children?.props?.children?.props?.adId){b++,e.style="display: none !important;";var f=e.querySelector("a[href][aria-label]:not([aria-hidden])");f&&(d.push(["Ad blocked based on property ["+b+"] -> "+f.ariaLabel]),console.table(d))}}catch(a){}}})})}).observe(document,{childList:!0,subtree:!0})}}();
+facebook.com#%#!function(){if(window.location.href.includes("/marketplace/")){new MutationObserver(function(){document.querySelectorAll('div[data-testid="marketplace_home_feed"] div[class][data-testid^="MarketplaceUpsell-"] > div > div').forEach(function(e){var t=e.outerHTML;t&&void 0!==t&&!0===t.includes("/ads/about/")&&(e.style="display:none!important;")})}).observe(document,{childList:!0,subtree:!0})}}();
+facebook.com#%#!function(){new MutationObserver(function(){document.querySelectorAll("div[role=\"main\"] div[class][style^=\"max-width:\"] div[class][style*=\"max-width:\"]:not([style*=\"display: none\"])").forEach(function(c){Object.keys(c).forEach(function(a){if(a.includes("__reactEvents")||a.includes("__reactProps")){a=c[a];try{a.children?.props?.adSurface?.startsWith("Marketplace")&&(c.style="display: none !important;")}catch(a){}}})})}).observe(document,{childList:!0,subtree:!0})}();
+facebook.com#%#!function(){var b=0,d=[];new MutationObserver(function(){document.querySelectorAll("#ssrb_feed_start + div > div[class]:not([style*=\"display: none\"]), #ssrb_feed_start + div span > h3 ~ div[class]:not([style*=\"display: none\"]), #ssrb_feed_start + div h3~ div[class]:not([style*=\"display: none\"]), #ssrb_feed_start + div h3 ~ div > div[class]:not([style*=\"display: none\"]), div[role=\"main\"] div > h3 ~ div > div[class]:not([style*=\"display: none\"])").forEach(function(e){Object.keys(e).forEach(function(a){if(a.includes("__reactEvents")||a.includes("__reactProps")){a=e[a];try{if(a.children?.props?.category?.includes("SHOWCASE")||a.children?.props?.children?.props?.category?.includes("SHOWCASE")||a.children?.props?.children?.props?.feedEdge?.category?.includes("SHOWCASE")||a.children?.props?.category?.includes("FB_SHORTS")||a.children?.props?.children?.props?.category?.includes("FB_SHORTS")||a.children?.props?.children?.props?.feedEdge?.category?.includes("FB_SHORTS")){b++,e.style="display: none !important;";var f=e.querySelector("a[href][aria-label]:not([aria-hidden])");f&&(d.push(["SHOWCASE post blocked based on property ["+b+"] -> "+f.ariaLabel]),console.table(d))}}catch(a){}}})})}).observe(document,{childList:!0,subtree:!0})}();
+facebook.com#%#!function(){var b=0,d=[];new MutationObserver(function(){document.querySelectorAll("div[data-pagelet^=\"FeedUnit\"]:not([style*=\"display: none\"]), div[role=\"feed\"] > div:not([style*=\"display: none\"]), div[role=\"feed\"] > span:not([style*=\"display: none\"]), #ssrb_feed_start + div > div[class]:not([style*=\"display: none\"]), #ssrb_feed_start + div span > h3 ~ div[class]:not([style*=\"display: none\"]), #ssrb_feed_start + div h3~ div[class]:not([style*=\"display: none\"]), #ssrb_feed_start + div h3 ~ div > div[class]:not([style*=\"display: none\"]), div[role=\"main\"] div[class] > #ssrb_feed_start ~ div > h3 ~ div > div[class]:not([style*=\"display: none\"]), div[role=\"main\"] div > h3 ~ div > div[class]:not([style*=\"display: none\"]), #ssrb_feed_start + div > div > div[class]:not([style*=\"display: none\"]), div[role=\"main\"] div > h2 ~ div > div[class]:not([style*=\"display: none\"]), #ssrb_feed_start + div > div > div[class] > div:not([class], [id]) div:not([class], [id]):not([style*=\"display: none\"]), div[role=\"main\"] div > h3 ~ div > div[class] > div:not([class], [id]) div:not([class], [id], [dir], [data-0], [style]), div[role=\"main\"] div > h2 ~ div > div[class] > div > div:not([style*=\"display: none\"]), div[role=\"main\"] h3[dir=\"auto\"] + div > div[class]:not([style*=\"display: none\"]), div[role=\"main\"] div > h2 ~ div > div[class] > div > div:not([style*=\"display: none\"]) > div:not([style*=\"display: none\"]), div[role=\"main\"] div > h2 ~ div > div > div > div:not([style*=\"display: none\"]) > div:not([style*=\"display: none\"]), div[role=\"main\"] div > h3 ~ div > div > div > div:not([style*=\"display: none\"]) > div:not([style*=\"display: none\"])").forEach(function(e){Object.keys(e).forEach(function(a){if(a.includes?.("__reactEvents")||a.includes?.("__reactProps")){a=e[a];try{if(a.children?.props?.category?.includes("SPONSORED")||a.children?.props?.children?.props?.category?.includes("SPONSORED")||a.children?.props?.feedEdge?.category?.includes("SPONSORED")||a.children?.props?.children?.props?.feedEdge?.category?.includes("SPONSORED")||a.children?.props?.children?.props?.children?.props?.feedEdge?.category?.includes("SPONSORED")||a.children?.props?.children?.props?.children?.props?.children?.props?.feedEdge?.category?.includes("SPONSORED")||a.children?.props?.children?.props?.children?.props?.children?.props?.feedEdge?.feed_story_category?.includes("SPONSORED")||a.children?.props?.children?.props?.children?.props?.children?.props?.feedEdge?.story_category?.includes("SPONSORED")||a.children?.props?.children?.props?.children?.props?.children?.props?.feedEdge?.story_cat?.includes("SPONSORED")||a.children?.props?.children?.props?.children?.props?.children?.props?.feedEdge?.category_sensitive?.cat?.includes("SPONSORED")||a.children?.props?.children?.props?.children?.props?.children?.props?.feedEdge?.node?.sponsored_data?.brs_filter_setting||a.children?.props?.children?.props?.children?.props?.children?.props?.feedUnit?.lbl_sp_data?.ad_id||a.children?.props?.children?.props?.minGapType?.includes("SPONSORED")||a.children?.props?.children?.props?.children?.props?.children?.props?.children?.props?.feedEdge?.node?.sponsored_data?.brs_filter_setting||a.children?.props?.children?.props?.children?.props?.children?.props?.children?.props?.feedEdge?.node?.spons_data?.brs_filter_setting||a.children?.props?.children?.props?.feedEdge?.cat_sensitive?.cat?.includes("SPONSORED")||a.children?.props?.children?.props?.feedEdge?.node?.sponso_dat_flag?.brs_filter_setting||a.children?.props?.children?.props?.children?.props?.children?.props?.children?.props?.feedEdge?.node?.sponso_dat_flag?.brs_filter_setting){b++,e.style="display: none !important;";var f=e.querySelector("a[href][aria-label]:not([aria-hidden])");f&&(d.push(["Ad blocked based on property ["+b+"] -> "+f.ariaLabel]),console.table(d))}}catch(a){}}})})}).observe(document,{childList:!0,subtree:!0})}();
+facebook.com#%#!function(){var e,o;0<window.location.href.indexOf("marketplace")&&(e=new MutationObserver(function(){document.querySelectorAll('div[role="main"] div[class][style^="max-width:"] div[class][style^="max-width:"]').forEach(function(e){var l,t=e.querySelectorAll('a[href*="ads/about"]');"display: none !important;"==e.getAttribute("style")||e.classList.contains("hidden_elem")||0<t.length&&(o+=1,""==(l=e.querySelectorAll("a[href]")[0].innerText)&&(l=e.querySelectorAll("a[href]")[1].innerText),""==l&&(l=e.querySelectorAll("a[href]")[0].querySelectorAll("a[aria-label]")[0]?.getAttribute("aria-label")),console.log("--------"),console.log("Ad hidden from: "+l),console.log("Total ads hidden: "+o),console.log("H length: "+t.length),console.log("--------"),e.style="display:none!important;")})}),o=0,e.observe(document,{childList:!0,subtree:!0}))}();
+facebook.com#%#!function(){var e=new MutationObserver(function(){document.querySelectorAll('[id^="substream"] > div:not(.hidden_elem) div[id^="hyperfeed_story_id"]').forEach(function(e){function t(e,t){for(s=e.querySelectorAll('.userContentWrapper h5 + div[data-testid*="sub"] a [class] [class]'),socheck=0;socheck<s.length;socheck++)s[socheck].innerText.contains(t)&&(c=["1"],d=["1"],i=["1"],r=l=a=1,socheck=s.length)}function o(e,t,o,n,a){s=e.querySelectorAll('.userContentWrapper h5 + div[data-testid*="sub"] a [data-content='+t+"]"),c=e.querySelectorAll('.userContentWrapper h5 + div[data-testid*="sub"] a [data-content='+o+"]"),d=e.querySelectorAll('.userContentWrapper h5 + div[data-testid*="sub"] a [data-content='+n+"]"),i=e.querySelectorAll('.userContentWrapper h5 + div[data-testid*="sub"] a [data-content='+a+"]"),0==s.length&&(s=e.querySelectorAll('.userContentWrapper h5 + div[data-testid*="label"] a [data-content='+t+"]"),c=e.querySelectorAll('.userContentWrapper h5 + div[data-testid*="label"] a [data-content='+o+"]"),d=e.querySelectorAll('.userContentWrapper h5 + div[data-testid*="label"] a [data-content='+n+"]"),i=e.querySelectorAll('.userContentWrapper h5 + div[data-testid*="label"] a [data-content='+a+"]"))}var n=0,a=0,l=0,r=0,s=0,c=0,d=0,i=0,u=e.querySelectorAll("div[style='width: 100%'] > a[href*='oculus.com/quest'] > div"),h=document.querySelector("[lang]").lang,g=e.querySelectorAll('a[ajaxify*="ad_id"] > span'),p=e.querySelectorAll('a[href*="ads/about"]');if("display: none !important;"!=e.getAttribute("style")&&!e.classList.contains("hidden_elem")){if(0<g.length||0<p.length){f+=1;var y=e.querySelectorAll("a[href]")[2].innerText;console.log("--------"),console.log("Ad hidden from: "+y),console.log("Total ads hidden: "+f),console.log("F length: "+g.length),console.log("H length: "+p.length),console.log("--------"),e.style="display:none!important;"}else if(0<u.length){f+=1;y="Facebook";console.log("--------"),console.log("Ad hidden from: "+y),console.log("Total ads hidden: "+f),console.log("Non-declared ad"),console.log("--------"),e.style="display:none!important;"}else"af"==h?t(e,"Geborg"):"de"==h||"nl"==h?o(e,"G","e","s","n"):"am"==h?t(e,"የተከፈለበት ማስታወቂያ"):"ar"==h?t(e,"مُموَّل"):"as"==h?t(e,"পৃষ্ঠপোষকতা কৰা"):"az"==h?t(e,"Sponsor dəstəkli"):"co"==h?t(e,"Spunsurizatu"):"bs"==h||"sl"==h||"cs"==h?o(e,"S","p","z","n"):"da"==h||"en"==h||"et"==h||"fy"==h||"it"==h||"ku"==h||"nb"==h||"nn"==h||"pl"==h||"sq"==h||"sv"==h||"zz"==h?document.querySelector("body").className.includes("Locale_en_UD")?t(e,"pəɹosuodS"):o(e,"S","p","s","n"):"be"==h?t(e,"Рэклама"):"bg"==h?t(e,"Спонсорирано"):"mk"==h?t(e,"Спонзорирано"):"br"==h?t(e,"Paeroniet"):"ca"==h?t(e,"Patrocinat"):"gl"==h||"pt"==h?t(e,"Patrocinado"):"bn"==h?t(e,"সৌজন্যে"):"cb"==h?t(e,"پاڵپشتیکراو"):"cx"==h?o(e,"G","i","s","n"):"cy"==h?t(e,"Noddwyd"):"el"==h?t(e,"Χορηγούμενη"):"eo"==h?t(e,"Reklamo"):"es"==h?o(e,"P","u","c","d"):"eu"==h?t(e,"Babestua"):"fa"==h?t(e,"دارای پشتیبانی مالی"):"ff"==h?t(e,"Yoɓanaama"):"fi"==h?t(e,"Sponsoroitu"):"fo"==h?t(e,"Stuðlað"):"fr"==h?document.querySelector("body").className.includes("Locale_fr_FR")?o(e,"S","p","s","n"):o(e,"C","o","m","n"):"ga"==h?t(e,"Urraithe"):"gn"==h?t(e,"Oñepatrosinapyre"):"gu"==h?t(e,"પ્રાયોજિત"):"ha"==h?t(e,"Daukar Nauyi"):"he"==h?t(e,"ממומן"):"hr"==h?t(e,"Plaćeni oglas"):"ht"==h?t(e,"Peye"):"ne"==h||"mr"==h||"hi"==h?t(e,"प्रायोजित"):"hu"==h?o(e,"H","i","r","d"):"hy"==h?t(e,"Գովազդային"):"id"==h?o(e,"B","e","p","n"):"is"==h?t(e,"Kostað"):"ja"==h?t(e,"広告"):"ms"==h?t(e,"Ditaja"):"jv"==h?t(e,"Disponsori"):"ka"==h?t(e,"რეკლამა"):"kk"==h?t(e,"Демеушілік көрсеткен"):"km"==h?t(e,"បានឧបត្ថម្ភ"):"kn"==h?t(e,"ಪ್ರಾಯೋಜಿತ"):"ko"==h?t(e,"Sponsored"):"ky"==h?t(e,"Демөөрчүлөнгөн"):"lo"==h?t(e,"ຜູ້ສະໜັບສະໜູນ"):"lt"==h?t(e,"Remiama"):"lv"==h?t(e,"Apmaksāta reklāma"):"mg"==h?t(e,"Misy Mpiantoka"):"ml"==h?t(e,"സ്പോൺസർ ചെയ്തത്"):"mn"==h?t(e,"Ивээн тэтгэсэн"):"mt"==h?t(e,"Sponsorjat"):"my"==h?t(e,"ပံ့ပိုးထားသည်"):"or"==h?t(e,"ପ୍ରଯୋଜିତ"):"pa"==h?t(e,"ਸਰਪ੍ਰਸਤੀ ਪ੍ਰਾਪਤ"):"ps"==h?t(e,"تمويل شوي"):"ro"==h?t(e,"Sponsorizat"):"ru"==h||"uk"==h?t(e,"Реклама"):"rw"==h?t(e,"Icyamamaza ndasukirwaho"):"sc"==h?t(e,"Patronadu de"):"si"==h?t(e,"අනුග්‍රාහක"):"sk"==h?t(e,"Sponzorované"):"sn"==h?t(e,"Zvabhadharirwa"):"so"==h?t(e,"La maalgeliyey"):"sr"==h?t(e,"Спонзорисано"):"sw"==h?t(e,"Imedhaminiwa"):"sy"==h?t(e,"ܒܘܕܩܐ ܡܡܘܘܢܐ"):"sz"==h?t(e,"Szpōnzorowane"):"ta"==h?t(e,"விளம்பரம்"):"te"==h?t(e,"ప్రాయోజితం చేయబడింది"):"tg"==h?t(e,"Бо сарпарастӣ"):"th"==h?t(e,"ได้รับการสนับสนุน"):"tl"==h?t(e,"May Sponsor"):"tr"==h?t(e,"Sponsorlu"):"tt"==h?t(e,"Хәйрияче"):"tz"==h?t(e,"ⵉⴷⵍ"):"ur"==h?t(e,"سپانسرڈ"):"uz"==h?t(e,"Reklama"):"vi"==h?t(e,"Được tài trợ"):"zh-Hans"==h?t(e,"赞助内容"):"zh-Hant"==h&&t(e,"贊助");if(0<s.length&&0<c.length&&0<d.length&&0<i.length){for(cont=0;cont<s.length;cont++)0<s[cont].offsetHeight&&(cont=s.length,n=1);for(cont1=0;cont1<c.length;cont1++)0<c[cont1].offsetHeight&&(cont1=c.length,a=1);for(cont2=0;cont2<d.length;cont2++)0<d[cont2].offsetHeight&&(cont2=d.length,l=1);for(cont3=0;cont3<i.length;cont3++)0<i[cont3].offsetHeight&&(cont3=i.length,r=1);if(1==n&&1==a&&1==l&&1==r){y=e.querySelectorAll("a[href]")[2].innerText;f+=1,console.log("--------"),console.log("Ad hidden from: "+y),console.log("Total ads hidden: "+f),console.log("--------"),e.style="display:none!important;"}}}})}),f=0;e.observe(document,{childList:!0,subtree:!0,characterData:!0,attributes:!0})}();
+facebook.com#%#!function(){var e=new MutationObserver(function(){document.querySelectorAll('div[id^="substream_"] div[id^="hyperfeed_story_id"]').forEach(function(e){var n=e.querySelectorAll(".userContentWrapper > div[class] > div[class] > div[class]"),o=e.querySelectorAll(".userContentWrapper > div[class] > div > div span");if("display: none !important;"!=e.getAttribute("style")){if(0<n.length&&n[0].innerText.contains("Suggested")){console.log("--------"),t+=1;var l=e.querySelectorAll("a[href]")[2].innerText;console.log("Annoyance hidden from: "+l),console.log("Total annoyances Hidden: "+t),console.log("F length: "+n.length),console.log("--------"),e.style="display:none!important;"}if(0<o.length&&o[0].innerText.contains("People you may know"))console.log("--------"),t+=1,""==(l=e.querySelectorAll("a[href]")[2].innerText)&&(l="Facebook"),console.log("Annoyance hidden from: "+l),console.log("Total annoyances Hidden: "+t),console.log("F length: "+n.length),console.log("--------"),e.style="display:none!important;"}})}),t=0;e.observe(document,{childList:!0,subtree:!0})}();
+facebook.com#%#!function(){var e=new MutationObserver(function(){var m=document.querySelectorAll("div[id^='mount_']");{var e;e=0<m.length?document.querySelectorAll('div[role="feed"] > div[data-pagelet^="FeedUnit"] > div[class]:not([style*="height"])'):document.querySelectorAll('[id^="substream"] > div:not(.hidden_elem) div[id^="hyperfeed_story_id"]')}e.forEach(function(e){function n(e,n){for(0<m.length?"0"==(h=e.querySelectorAll('div[role="article"] span[dir="auto"] > a > span > span > span[data-content]')).length&&(h=e.querySelectorAll('div[role="article"] span[dir="auto"] > a > span[aria-label]')):h=e.querySelectorAll(".userContentWrapper h5 + div[data-testid] a [class] [class]"),socheck=0;socheck<h.length;socheck++)h[socheck].innerText.contains(n)&&(p=["1"],d=["1"],u=["1"],i=r=l=1,socheck=h.length)}function t(e,n,t,c,a){for(0<m.length?"0"==(h=e.querySelectorAll('div[role="article"] span[dir="auto"] > a > span > span > span[data-content]')).length&&(h=e.querySelectorAll('div[role="article"] span[dir="auto"] div[role="button"][tabindex]')):h=e.querySelectorAll(".userContentWrapper h5 + div[data-testid] > span a > [class] [class]"),"0"==h.length&&(h=e.querySelectorAll('div[role="article"] span[dir="auto"] > a > span[aria-label]')),socheck=0;socheck<h.length;socheck++){spancheck=0,1<h.length?(spancheck=h[socheck].querySelectorAll("span")[0],0==spancheck&&(spancheck=h[socheck].querySelectorAll("b")[0])):(spancheck=h[0].querySelectorAll("span")[socheck],0==spancheck&&(spancheck=h[0].querySelectorAll("b")[socheck]));var o=h[0];if(0!=spancheck&&spancheck){if(2==spancheck.children.length&&0<m.length)for(spancheck=spancheck.querySelectorAll("span:not([style])"),spcheck=0;spcheck<spancheck.length;spcheck++)spancheck[spcheck].innerText.contains(n)?s=1:!spancheck[spcheck].innerText.contains(t)||0!=spancheck[spcheck].offsetTop||spancheck[spcheck].innerText.contains(n)||spancheck[spcheck].innerText.contains(c)||spancheck[spcheck].innerText.contains(a)?!spancheck[spcheck].innerText.contains(c)||0!=spancheck[spcheck].offsetTop||spancheck[spcheck].innerText.contains(t)||spancheck[spcheck].innerText.contains(n)||spancheck[spcheck].innerText.contains(a)?!spancheck[spcheck].innerText.contains(a)||0!=spancheck[spcheck].offsetTop||spancheck[spcheck].innerText.contains(t)||spancheck[spcheck].innerText.contains(c)||spancheck[spcheck].innerText.contains(n)||(u=["1"],i=1):(d=["1"],r=1):(p=["1"],l=1);0==m.length&&((!(spancheck.innerText.contains(n)&&0==spancheck.offsetTop||h[0].innerText.contains(n)&&0==h[0].offsetTop)||spancheck.innerText.contains(t)&&!h[0].innerText.contains(t)||spancheck.innerText.contains(c)&&!h[0].innerText.contains(c)||spancheck.innerText.contains(a)&&!h[0].innerText.contains(a))&&(!o.innerText.contains(n)||0!=o.offsetTop||o.innerText.contains(t)||o.innerText.contains(c)||o.innerText.contains(a))?!spancheck.innerText.contains(t)||0!=spancheck.offsetTop||spancheck.innerText.contains(n)||spancheck.innerText.contains(c)||spancheck.innerText.contains(a)?!spancheck.innerText.contains(c)||0!=spancheck.offsetTop||spancheck.innerText.contains(t)||spancheck.innerText.contains(n)||spancheck.innerText.contains(a)?!spancheck.innerText.contains(a)||0!=spancheck.offsetTop||spancheck.innerText.contains(t)||spancheck.innerText.contains(c)||spancheck.innerText.contains(n)||(u=["1"],i=1):(d=["1"],r=1):(p=["1"],l=1):s=1)}}}function c(e,n,t,c,a){u=0<m.length?(h=e.querySelectorAll('div[role="article"] span[dir="auto"] > a > span span[data-content='+n+"]"),p=e.querySelectorAll('div[role="article"] span[dir="auto"] > a > span span[data-content='+t+"]"),d=e.querySelectorAll('div[role="article"] span[dir="auto"] > a > span span[data-content='+c+"]"),e.querySelectorAll('div[role="article"] span[dir="auto"] > a > span span[data-content='+a+"]")):(h=e.querySelectorAll(".userContentWrapper h5 + div[data-testid] a [data-content="+n+"]"),p=e.querySelectorAll(".userContentWrapper h5 + div[data-testid] a [data-content="+t+"]"),d=e.querySelectorAll(".userContentWrapper h5 + div[data-testid] a [data-content="+c+"]"),e.querySelectorAll(".userContentWrapper h5 + div[data-testid] a [data-content="+a+"]"))}var s=0,l=0,r=0,i=0,h=0,p=0,d=0,u=0,a=e.querySelectorAll("div[style='width: 100%'] > a[href*='oculus.com/quest'] > div"),o=document.querySelector("[lang]"),k=document.querySelectorAll("link[rel='preload'][href*='/l/']");o=o?document.querySelector("[lang]").lang:"en";var y,g=e.querySelectorAll('a[ajaxify*="ad_id"] > span'),f=e.querySelectorAll('a[href*="ads/about"]'),S=e.querySelectorAll('a[href*="https://www.facebook.com/business/help"]');if("display: none !important;"!=e.getAttribute("style")&&!e.classList.contains("hidden_elem")&&(0<g.length||0<f.length||0<S.length?(T+=1,0<m.length?(""==(y=e.querySelectorAll("a[href]")[0].innerText)&&(y=e.querySelectorAll("a[href]")[1].innerText),""==y&&(y=e.querySelectorAll("a[href]")[0].querySelectorAll("a[aria-label]")[0].getAttribute("aria-label"))):y=e.querySelectorAll("a[href]")[2].innerText,console.log("--------"),console.log("Ad hidden from: "+y),console.log("Total ads hidden: "+T),console.log("F length: "+g.length),console.log("H length: "+f.length),console.log("I length (Paid partnership): "+S.length),console.log("--------"),e.style="display:none!important;"):0<a.length?(T+=1,y="Facebook",console.log("--------"),console.log("Ad hidden from: "+y),console.log("Total ads hidden: "+T),console.log("Non-declared ad"),console.log("--------"),e.style="display:none!important;"):"af"==o?n(e,"Geborg"):"de"==o||"nl"==o?c(e,"G","e","s","n"):"am"==o?n(e,"የተከፈለበት ማስታወቂያ"):"ar"==o?n(e,"مُموَّل"):"as"==o?n(e,"পৃষ্ঠপোষকতা কৰা"):"az"==o?n(e,"Sponsor dəstəkli"):"co"==o?n(e,"Spunsurizatu"):"bs"==o||"sl"==o||"cs"==o?c(e,"S","p","z","n"):"da"==o||"en"==o||"et"==o||"fy"==o||"it"==o||"ku"==o||"nb"==o||"nn"==o||"pl"==o||"sq"==o||"sv"==o||"zz"==o?0<m.length?k[0].href.contains("en_UD")?n(e,"pəɹosuodS"):k[0].href.contains("ja_KS")?n(e,"広告"):k[0].href.contains("tz_MA")?n(e,"ⵉⴷⵍ"):k[0].href.contains("sy_SY")?n(e,"ܒܘܕܩܐ ܡܡܘܘܢܐ"):k[0].href.contains("cb_IQ")?n(e,"پاڵپشتیکراو"):k[0].href.contains("ar_AR")?n(e,"مُموَّل"):k[0].href.contains("sz_PL")?n(e,"Szpōnzorowane"):k[0].href.contains("eo_EO")?n(e,"Reklamo"):k[0].href.contains("es_LA")?c(e,"P","u","c","d"):(c(e,"S","p","s","n"),"0"==h.length&&t(e,"S","p","s","n"),"0"==h.length&&n(e,"Sponsored")):document.querySelector("body").className.includes("Locale_en_UD")?n(e,"pəɹosuodS"):document.querySelector("body").className.includes("ja_KS")?n(e,"広告"):document.querySelector("body").className.includes("tz_MA")?n(e,"ⵉⴷⵍ"):document.querySelector("body").className.includes("sy_SY")?n(e,"ܒܘܕܩܐ ܡܡܘܘܢܐ"):document.querySelector("body").className.includes("cb_IQ")?n(e,"پاڵپشتیکراو"):document.querySelector("body").className.includes("ar_AR")?n(e,"مُموَّل"):document.querySelector("body").className.includes("sz_PL")?n(e,"Szpōnzorowane"):document.querySelector("body").className.includes("eo_EO")?n(e,"Reklamo"):document.querySelector("body").className.includes("es_LA")?c(e,"P","u","c","d"):(c(e,"S","p","s","n"),"0"==h.length&&t(e,"S","p","s","n")):"be"==o?n(e,"Рэклама"):"bg"==o?n(e,"Спонсорирано"):"mk"==o?n(e,"Спонзорирано"):"br"==o?n(e,"Paeroniet"):"ca"==o?n(e,"Patrocinat"):"gl"==o||"pt"==o?(n(e,"Patrocinado"),"0"==l&&c(e,"P","a","c","o")):"bn"==o?n(e,"সৌজন্যে"):"cb"==o?n(e,"پاڵپشتیکراو"):"cx"==o?c(e,"G","i","s","n"):"cy"==o?n(e,"Noddwyd"):"el"==o?n(e,"Χορηγούμενη"):"eo"==o?n(e,"Reklamo"):"es"==o?c(e,"P","u","c","d"):"eu"==o?n(e,"Babestua"):"fa"==o?n(e,"دارای پشتیبانی مالی"):"ff"==o?n(e,"Yoɓanaama"):"fi"==o?n(e,"Sponsoroitu"):"fo"==o?n(e,"Stuðlað"):"fr"==o?0<m.length?k[0].href.contains("fr_FR")?c(e,"S","p","s","n"):c(e,"C","o","m","n"):document.querySelector("body").className.includes("Locale_fr_FR")?c(e,"S","p","s","n"):c(e,"C","o","m","n"):"ga"==o?n(e,"Urraithe"):"gn"==o?n(e,"Oñepatrosinapyre"):"gu"==o?n(e,"પ્રાયોજિત"):"ha"==o?n(e,"Daukar Nauyi"):"he"==o?n(e,"ממומן"):"hr"==o?n(e,"Plaćeni oglas"):"ht"==o?n(e,"Peye"):"ne"==o||"mr"==o||"hi"==o?n(e,"प्रायोजित"):"hu"==o?c(e,"H","i","r","d"):"hy"==o?n(e,"Գովազդային"):"id"==o?c(e,"B","e","p","n"):"is"==o?n(e,"Kostað"):"ja"==o?n(e,"広告"):"ms"==o?n(e,"Ditaja"):"jv"==o?n(e,"Disponsori"):"ka"==o?n(e,"რეკლამა"):"kk"==o?n(e,"Демеушілік көрсеткен"):"km"==o?n(e,"បានឧបត្ថម្ភ"):"kn"==o?n(e,"ಪ್ರಾಯೋಜಿತ"):"ko"==o?n(e,"Sponsored"):"ky"==o?n(e,"Демөөрчүлөнгөн"):"lo"==o?n(e,"ຜູ້ສະໜັບສະໜູນ"):"lt"==o?n(e,"Remiama"):"lv"==o?n(e,"Apmaksāta reklāma"):"mg"==o?n(e,"Misy Mpiantoka"):"ml"==o?n(e,"സ്പോൺസർ ചെയ്തത്"):"mn"==o?n(e,"Ивээн тэтгэсэн"):"mt"==o?n(e,"Sponsorjat"):"my"==o?(n(e,"ပံ့ပိုးထားသည်"),"0"==l&&n(e,"အခပေးကြော်ငြာ")):"or"==o?n(e,"ପ୍ରଯୋଜିତ"):"pa"==o?n(e,"ਸਰਪ੍ਰਸਤੀ ਪ੍ਰਾਪਤ"):"ps"==o?n(e,"تمويل شوي"):"ro"==o?n(e,"Sponsorizat"):"ru"==o||"uk"==o?n(e,"Реклама"):"rw"==o?n(e,"Icyamamaza ndasukirwaho"):"sc"==o?n(e,"Patronadu de"):"si"==o?n(e,"අනුග්රාහක"):"sk"==o?n(e,"Sponzorované"):"sn"==o?n(e,"Zvabhadharirwa"):"so"==o?n(e,"La maalgeliyey"):"sr"==o?n(e,"Спонзорисано"):"sw"==o?n(e,"Imedhaminiwa"):"sy"==o?n(e,"ܒܘܕܩܐ ܡܡܘܘܢܐ"):"sz"==o?n(e,"Szpōnzorowane"):"ta"==o?n(e,"விளம்பரம்"):"te"==o?n(e,"ప్రాయోజితం చేయబడింది"):"tg"==o?n(e,"Бо сарпарастӣ"):"th"==o?n(e,"ได้รับการสนับสนุน"):"tl"==o?n(e,"May Sponsor"):"tr"==o?n(e,"Sponsorlu"):"tt"==o?n(e,"Хәйрияче"):"tz"==o?n(e,"ⵉⴷⵍ"):"ur"==o?n(e,"سپانسرڈ"):"uz"==o?n(e,"Reklama"):"vi"==o?n(e,"Được tài trợ"):"zh-Hans"==o?n(e,"赞助内容"):"zh-Hant"==o&&n(e,"贊助"),0<h.length&&0<p.length&&0<d.length&&0<u.length)){for(cont=0;cont<h.length;cont++)0<h[cont].offsetHeight&&(cont=h.length,s=1);for(cont1=0;cont1<p.length;cont1++)0<p[cont1].offsetHeight&&(cont1=p.length,l=1);for(cont2=0;cont2<d.length;cont2++)0<d[cont2].offsetHeight&&(cont2=d.length,r=1);for(cont3=0;cont3<u.length;cont3++)0<u[cont3].offsetHeight&&(cont3=u.length,i=1);1==s&&1==l&&1==r&&1==i&&(0<m.length&&""!=(y=e.querySelectorAll("a[href]")[1].innerText)||(y=e.querySelectorAll("a[href]")[2].innerText),T+=1,console.log("--------"),console.log("Ad hidden from: "+y),console.log("Total ads hidden: "+T),console.log("--------"),e.style="display:none!important;")}})}),T=0;e.observe(document,{childList:!0,subtree:!0})}();
+facebook.com#%#(()=>{const e=new MutationObserver((()=>{const n=document.querySelectorAll('div[role="complementary"] div[class*=" "] > div[class] > div:not([class]) > div:not([class], [style*="display: none"]), div[role="complementary"] div[class*=" "] > div[class] > div:not([class]) > span[class] > div[class]:not([style*="display: none"]), div[role="complementary"] div:has(+ div[data-visualcompletion]) > div:not([style*="display: none"])');for(const s of n){const n=Object.keys(s).find((e=>e.includes("__reactFiber")));if(n){const t=s[n];if(t?.pendingProps?.children?.props?.match?.__fragmentPropName?.includes("adsSideFeedUnit"))return s.style.display="none",void e.disconnect()}}}));e.observe(document.documentElement,{childList:!0,subtree:!0})})();
+facebook.com#%#//scriptlet("remove-class", "_31e", "body > ._li")
+facebook.com#%#//scriptlet('prevent-addEventListener', 'scroll', 'showPopup')
+facebook.com#%#//scriptlet('trusted-click-element', 'body.hasCookieBanner div[class][data-testid="cookie-policy-dialog"] button[data-cookiebanner="accept_button"]')
+facebook.com#%#//scriptlet('trusted-click-element', 'div[class]:not([aria-hidden]) > div[aria-label*="cookie" i][role="button"]:not([aria-label*="picture"]):not([data-mcomponent="ImageArea"]):not([aria-label*="story"])')
+facebook.com#%#new MutationObserver(function(){document.querySelectorAll('div[role="feed"] > div[data-pagelet^="FeedUnit"] > div[class]:not([style*="height"])').forEach(function(e){"display: none !important;"==e.getAttribute("style")||e.classList.contains("hidden_elem")||e.querySelectorAll("div[aria-posinset] div[style] div[class] > div[class] > div[class] > div[class] > span")[0].innerText.contains("Suggested for you")&&(console.log("--------"),console.log("Annoyances hidden (Suggested for you)"),e.style="display:none!important;")})}).observe(document,{childList:!0,subtree:!0});
+facebook.com#%#new MutationObserver(function(){var t=["&eid=","%26eid%3D","?eid=","%3Feid%3D","?__tn__=","%3F%5F%5Ftn%5F%5F%3D","&__tn__=","%26%5F%5Ftn%5F%5F%3D","?source=","%3Fsource%3D","?__xts__","%3F%5F%5Fxts%5F%5F","&__xts__","%26%5F%5Fxts%5F%5F","&amp;__xts__%5B","?ref=","%3Fref%3D","?fref=","%3Ffref%3D","?epa=","%3Fepa%3D","&ifg=","%26ifg%3D","?comment_tracking=","%3Fcomment_tracking%3D","?av=","%3Fav%3D","&av=","%26av%3D","?acontext=","%3Facontext%3D","&session_id=","%26session_id%3D","&amp;session_id=","?hc_location=","%3Fhc_location%3D","&fref=","%26fref%3D","?__cft","%3f__cft"];document.querySelectorAll('a:not([target="_blank"]):not([href*="2fac/"])').forEach(function(e){for(i=0;i<t.length;i++)e.href.includes(t[i])&&e.setAttribute("href",e.href.split(t[i])[0])})}).observe(document,{childList:!0,subtree:!0});
+facebook.com#%#new MutationObserver(function(){var t=["?fbclid","%3Ffbclid","&fbclid","%26fbclid","&__tn__","%__26tn__","%3Futm","?utm","&fbc=","%26fbc%3D","?share=","%3Fshare%3D","%3F__twitter_impression%3D","?__twitter_impression=","?wtmc=","%3Fwtmc%3D","?originalReferrer=","%3ForiginalReferrer%3D","?wtrid=","%3Fwtrid%3D","?trbo=","%3Ftrbo%3D","?GEPC=","%3FGEPC%3D","?whatsapp=","%3Fwhatsapp%3D","?fbc=","%3Ffbc%3D","?dmcid=","%3Fdmcid%3D"];document.querySelectorAll('a[target="_blank"]').forEach(function(e){for(i=0;i<t.length;i++){var r;e.href.includes(t[i])&&(r=(r=(r=e.href.split("#!")[1])||e.href.split("%23%21")[1])||"",e.href.includes("#!")&&(r="#!"+r),e.href.includes("%23%21")&&(r="%23%21"+r),r=(r=(r=e.href.split("&feature=share&")[1])||e.href.split("%26feature%3Dshare%26")[1])||"",e.href.includes("&feature=share&")&&(r="?"+r),e.href.includes("%26feature%3Dshare%26")&&(r="%3F"+r),r=(r=(r=e.href.split("&h=")[1])||e.href.split("%26h%3D")[1])||"",e.href.includes("&h=")&&(r="&h="+r),e.href.includes("%26h%3D")&&(r="%26h%3D"+r),e.setAttribute("href",e.href.split(t[i])[0]+r))}})}).observe(document,{childList:!0,subtree:!0});
+facebook.com#?##ssrb_rhc_start + div[class] > div > div[class] > div[class] > div[class]:has(> div[class] > div[style="border-radius:max(0px, min(8px, calc((100vw - 4px - 100%) * 9999))) / 8px"] > div[class] > div[class] > div[class]:first-child > div[class] > div[class] > img[src="https://static.xx.fbcdn.net/rsrc.php/v3/yX/r/vjmAaUJlZz5.png"])
+facebook.com#?##ssrb_top_nav_end + div[class] > div[class] > div[class] > div[class] > div[class] > div[class] > div[class] > div[class] > div[class]:has(> div[class] > div[class] > div[class] > div[class] > div[class] > div[class] > div > div[class] > div[aria-label="People you may know"])
+facebook.com#?#.pagelet-group .pagelet:has(a:has-text(/Sponsored|Create ad|Crear un anuncio|Publicidad/))
+facebook.com#?#div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"]:has(> div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"] div[data-mcomponent="TextArea"] .native-text > span:contains(/(Sponsored|Gesponsert|Sponsorlu|Sponsorowane|Ispoonsara godhameera|Geborg|Bersponsor|Ditaja|Disponsori|Giisponsoran|Sponzorováno|Sponsoreret|Publicidad|May Sponsor|Sponsorisée|Oipytyvôva|Ɗaukar Nayin|Sponzorirano|Uterwa inkunga|Sponsorizzato|Imedhaminiwa|Hirdetés|Misy Mpiantoka|Gesponsord|Sponset|Patrocinado|Patrocinado|Sponsorizat|Sponzorované|Sponsoroitu|Sponsrat|Được tài trợ|Χορηγούμενη|Спонсорирано|Спонзорирано|Ивээн тэтгэсэн|Реклама|Спонзорисано|במימון|سپانسرڈ|دارای پشتیبانی مالی|ስፖንሰር የተደረገ|प्रायोजित|ተደረገ|प|प्रायोजित|স্পনসর্ড|ਪ੍ਰਯੋਜਿਤ|પ્રાયોજિત|ପ୍ରାୟୋଜିତ|செய்யப்பட்ட செய்யப்பட்ட|చేయబడినది చేయబడినది|ಪ್ರಾಯೋಜಿಸಲಾಗಿದೆ|ചെയ്‌തത് ചെയ്‌തത്|ලද ලද ලද|สนับสนุน สนับสนุน รับ สนับสนุน สนับสนุน|ကြော်ငြာ ကြော်ငြာ|ឧបត្ថម្ភ ឧបត្ថម្ភ ឧបត្ថម្ភ|광고|贊助|赞助内容|広告|സ്‌പോൺസർ ചെയ്‌തത്)/)):not(:has([data-tracking-duration-id]))
+facebook.com#?#div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"]:has(> div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"] div[data-mcomponent="TextArea"] .native-text > span:contains(/(Sponsored|Gesponsert|Sponsorlu|Sponsorowane|Ispoonsara godhameera|Geborg|Bersponsor|Ditaja|Disponsori|Giisponsoran|Sponzorováno|Sponsoreret|Publicidad|May Sponsor|Sponsorisée|Oipytyvôva|Ɗaukar Nayin|Sponzorirano|Uterwa inkunga|Sponsorizzato|Imedhaminiwa|Hirdetés|Misy Mpiantoka|Gesponsord|Sponset|Patrocinado|Patrocinado|Sponsorizat|Sponzorované|Sponsoroitu|Sponsrat|Được tài trợ|Χορηγούμενη|Спонсорирано|Спонзорирано|Ивээн тэтгэсэн|Реклама|Спонзорисано|במימון|سپانسرڈ|دارای پشتیبانی مالی|ስፖንሰር የተደረገ|प्रायोजित|ተደረገ|प|प्रायोजित|স্পনসর্ড|ਪ੍ਰਯੋਜਿਤ|પ્રાયોજિત|ପ୍ରାୟୋଜିତ|செய்யப்பட்ட செய்யப்பட்ட|చేయబడినది చేయబడినది|ಪ್ರಾಯೋಜಿಸಲಾಗಿದೆ|ചെയ്‌തത് ചെയ്‌തത്|ලද ලද ලද|สนับสนุน สนับสนุน รับ สนับสนุน สนับสนุน|ကြော်ငြာ ကြော်ငြာ|ឧបត្ថម្ភ ឧបត្ថម្ភ ឧបត្ថម្ភ|광고|贊助|赞助内容|広告|സ്‌പോൺസർ ചെയ്‌തത്)/)):not(:has([data-tracking-duration-id])) + .m:is(.bg-s2, .bg-s3, .bg-s4) + .m:is(.bg-s2, .bg-s3, .bg-s4) + .m:not(:has(.m:empty))
+facebook.com#?#div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"]:has(> div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"] div[data-mcomponent="TextArea"] .native-text > span:contains(/(Sponsored|Gesponsert|Sponsorlu|Sponsorowane|Ispoonsara godhameera|Geborg|Bersponsor|Ditaja|Disponsori|Giisponsoran|Sponzorováno|Sponsoreret|Publicidad|May Sponsor|Sponsorisée|Oipytyvôva|Ɗaukar Nayin|Sponzorirano|Uterwa inkunga|Sponsorizzato|Imedhaminiwa|Hirdetés|Misy Mpiantoka|Gesponsord|Sponset|Patrocinado|Patrocinado|Sponsorizat|Sponzorované|Sponsoroitu|Sponsrat|Được tài trợ|Χορηγούμενη|Спонсорирано|Спонзорирано|Ивээн тэтгэсэн|Реклама|Спонзорисано|במימון|سپانسرڈ|دارای پشتیبانی مالی|ስፖንሰር የተደረገ|प्रायोजित|ተደረገ|प|प्रायोजित|স্পনসর্ড|ਪ੍ਰਯੋਜਿਤ|પ્રાયોજિત|ପ୍ରାୟୋଜିତ|செய்யப்பட்ட செய்யப்பட்ட|చేయబడినది చేయబడినది|ಪ್ರಾಯೋಜಿಸಲಾಗಿದೆ|ചെയ്‌തത് ചെയ്‌തത്|ලද ලද ලද|สนับสนุน สนับสนุน รับ สนับสนุน สนับสนุน|ကြော်ငြာ ကြော်ငြာ|ឧបត្ថម្ភ ឧបត្ថម្ភ ឧបត្ថម្ភ|광고|贊助|赞助内容|広告|സ്‌പോൺസർ ചെയ്‌തത്)/)):not(:has([data-tracking-duration-id])) + .m:is(.bg-s2, .bg-s3, .bg-s4) + .m:is(.bg-s2, .bg-s3, .bg-s4) + .m:not(:has(.m:empty)) + .m:not(:has(.m:empty)):has(+ .m .m[data-mcomponent$="TextArea"]:empty)
+facebook.com#?#div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"]:has(> div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"] div[data-mcomponent="TextArea"] .native-text > span:contains(/(Sponsored|Gesponsert|Sponsorlu|Sponsorowane|Ispoonsara godhameera|Geborg|Bersponsor|Ditaja|Disponsori|Giisponsoran|Sponzorováno|Sponsoreret|Publicidad|May Sponsor|Sponsorisée|Oipytyvôva|Ɗaukar Nayin|Sponzorirano|Uterwa inkunga|Sponsorizzato|Imedhaminiwa|Hirdetés|Misy Mpiantoka|Gesponsord|Sponset|Patrocinado|Patrocinado|Sponsorizat|Sponzorované|Sponsoroitu|Sponsrat|Được tài trợ|Χορηγούμενη|Спонсорирано|Спонзорирано|Ивээн тэтгэсэн|Реклама|Спонзорисано|במימון|سپانسرڈ|دارای پشتیبانی مالی|ስፖንሰር የተደረገ|प्रायोजित|ተደረገ|प|प्रायोजित|স্পনসর্ড|ਪ੍ਰਯੋਜਿਤ|પ્રાયોજિત|ପ୍ରାୟୋଜିତ|செய்யப்பட்ட செய்யப்பட்ட|చేయబడినది చేయబడినది|ಪ್ರಾಯೋಜಿಸಲಾಗಿದೆ|ചെയ്‌തത് ചെയ്‌തത്|ලද ලද ලද|สนับสนุน สนับสนุน รับ สนับสนุน สนับสนุน|ကြော်ငြာ ကြော်ငြာ|ឧបត្ថម្ភ ឧបត្ថម្ភ ឧបត្ថម្ភ|광고|贊助|赞助内容|広告|സ്‌പോൺസർ ചെയ്‌തത്)/)):not(:has([data-tracking-duration-id])) + .m:is(.bg-s2, .bg-s3, .bg-s4) + .m:is(.bg-s2, .bg-s3, .bg-s4):has(+ .m:not(:has(.m:empty)))
+facebook.com#?#div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"]:has(> div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"] div[data-mcomponent="TextArea"] .native-text > span:contains(/(Sponsored|Gesponsert|Sponsorlu|Sponsorowane|Ispoonsara godhameera|Geborg|Bersponsor|Ditaja|Disponsori|Giisponsoran|Sponzorováno|Sponsoreret|Publicidad|May Sponsor|Sponsorisée|Oipytyvôva|Ɗaukar Nayin|Sponzorirano|Uterwa inkunga|Sponsorizzato|Imedhaminiwa|Hirdetés|Misy Mpiantoka|Gesponsord|Sponset|Patrocinado|Patrocinado|Sponsorizat|Sponzorované|Sponsoroitu|Sponsrat|Được tài trợ|Χορηγούμενη|Спонсорирано|Спонзорирано|Ивээн тэтгэсэн|Реклама|Спонзорисано|במימון|سپانسرڈ|دارای پشتیبانی مالی|ስፖንሰር የተደረገ|प्रायोजित|ተደረገ|प|प्रायोजित|স্পনসর্ড|ਪ੍ਰਯੋਜਿਤ|પ્રાયોજિત|ପ୍ରାୟୋଜିତ|செய்யப்பட்ட செய்யப்பட்ட|చేయబడినది చేయబడినది|ಪ್ರಾಯೋಜಿಸಲಾಗಿದೆ|ചെയ്‌തത് ചെയ്‌തത്|ලද ලද ලද|สนับสนุน สนับสนุน รับ สนับสนุน สนับสนุน|ကြော်ငြာ ကြော်ငြာ|ឧបត្ថម្ភ ឧបត្ថម្ភ ឧបត្ថម្ភ|광고|贊助|赞助内容|広告|സ്‌പോൺസർ ചെയ്‌തത്)/)):not(:has([data-tracking-duration-id])) + .m:is(.bg-s2, .bg-s3, .bg-s4):has(+ .m:is(.bg-s2, .bg-s3, .bg-s4) + .m:not(:has(.m:empty)))
+facebook.com#?#div[data-testid="marketplace_pdp_component"] div[style^="max-height:"] div[style^="max-height:"] > div[class] > div > div:not([class]):has(> div[class] > div[class] > a[href^="/ads/"])
+facebook.com#?#div[role="complementary"] > div[class] > div[class] > div[class] span > div > div:not([aria-label]):not([data-visualcompletion]):has(> div[class] > div[class] div[class] > a[href^="https://l."][href*="facebook.com/l.php?u="][target="_blank"])
+facebook.com#?#div[role="main"] ~ div[data-nosnippet]:has(a[aria-label="Accessible login button"])
+facebook.com#@##fb_header
+facebook.com#@##share_feed
+facebook.com#@#.post-fb-like
+facebook.com#@#.shareLink
+facebook.com#@#a[href^="/ads/"]
+facebook.com#@#div[data-testid="cookie-policy-banner"]
+facebook.com#@#div[id^="hyperfeed_story_id_"]:has(a[href*="utm_campaign"])
+facebook.com#@#script:not([src]) + style + div[id]:not([class]):not([style])
 familydoctor.com.cn##.adExtra
 familydoctor.com.cn##.global-top-links-wrap
 fanyi-app.baidu.com#$#body.sharepage-new.out-fy-app .top-bn { display: none !important; }
@@ -4702,6 +4877,7 @@ forums.tomshardware.com##.shareButtons
 forums.tomshardware.com##a[data-xf-init="share-tooltip"]
 foundation.mozilla.org##.d-print-none.container
 framer.com##.--framer-cookie-banner-container
+free.facebook.com##div[role="article"][data-ft*='"originated_from_recommendation":"1"']
 freeapps4y.blogspot.com##+js(abort-current-script, String.fromCharCode, zfgloaded)
 freeapps4y.blogspot.com##+js(nobab)
 freeapps4y.blogspot.com#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "zfgloaded")
@@ -5403,6 +5579,7 @@ hortonanderfarom.blogspot.com##+js(nostif, pop)
 hortonanderfarom.blogspot.com#$#override-property-read setTimeout noopFunc
 house.qq.com###yf
 house.qq.com##.bm
+href^="https://facebook.com/sharer?u=
 html.duckduckgo.com##+js(href-sanitizer, a[href^="//duckduckgo.com/l/?uddg="], ?uddg)
 https://github.com/AdguardTeam/AdguardFilters/issues/51221
 huatuo*.weiyun.com
@@ -5593,6 +5770,24 @@ ipaddress.com###cc-wrapper
 ipaddress.com##.btt
 ipaddress.com##body .ad
 ipaddress.com##body > footer + #cc
+iphone.alpha.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+iphone.alpha.facebook.com##.storyStream > .fullwidth.carded
+iphone.alpha.facebook.com##article[data-sigil*="AdStory"]
+iphone.alpha.facebook.com##article[data-store*="is_sponsored.1"]
+iphone.alpha.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
+iphone.beta.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+iphone.beta.facebook.com##.storyStream > .fullwidth.carded
+iphone.beta.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+iphone.beta.facebook.com##article[data-sigil*="AdStory"]
+iphone.beta.facebook.com##article[data-store*="is_sponsored.1"]
+iphone.beta.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
+iphone.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+iphone.facebook.com##.storyStream > .fullwidth.carded
+iphone.facebook.com##article > .story_body_container + div[class]
+iphone.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+iphone.facebook.com##article[data-sigil*="AdStory"]
+iphone.facebook.com##article[data-store*="is_sponsored.1"]
+iphone.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
 ipsw.me##.frameForMoney
 ipsw.me##div[class="col-md-12 alert alert-info"][style="background-color: #0a84ff; margin-top: 10px;"]
 iptvdroid1.blogspot.com###subscription-button
@@ -6041,6 +6236,11 @@ m.163.com##footer > span
 m.accuweather.com###app-store-links
 m.alibaba.com###corner-download-app-wrap
 m.alibaba.com###force-download-app-wrap
+m.alpha.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+m.alpha.facebook.com##.storyStream > .fullwidth.carded
+m.alpha.facebook.com##article[data-sigil*="AdStory"]
+m.alpha.facebook.com##article[data-store*="is_sponsored.1"]
+m.alpha.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
 m.autohome.com.cn###s2205
 m.autohome.com.cn##.recommend-envelope
 m.autohome.com.cn##.wrapper > section[class^="box_"]
@@ -6077,6 +6277,12 @@ m.baidu.com#?#div:-abp-has(>.openBox-container)
 m.baidu.com#?#div:-abp-has(>div[id$="_1"]+div[id$="_5"])
 m.baidu.com#@##results > div[class]:not(.result):not(.result-op):not(.sp-rslt-bar):not(.s-group-result)
 m.baidu.com#@##results > div[class]:not(.result):not(.result-op):not(.sp-rslt-bar):not(.s-group-result):not(.hint-unsafe)
+m.beta.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+m.beta.facebook.com##.storyStream > .fullwidth.carded
+m.beta.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+m.beta.facebook.com##article[data-sigil*="AdStory"]
+m.beta.facebook.com##article[data-store*="is_sponsored.1"]
+m.beta.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
 m.bilibili.com##.bottom-tab:contains(App)
 m.bilibili.com##.container:contains(打开App)
 m.bilibili.com##.fe-ui-open-app-btn
@@ -6132,6 +6338,55 @@ m.douban.com#$#.TalionNav { padding-bottom: 30px !important; }
 m.douban.com#$#.TalionNav-static { display: none !important; }
 m.douban.com#?#a:contains(用App看更多)
 m.douban.com#?#div:matches-css(width:68px)
+m.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+m.facebook.com###msite-pages-header-contents > div[class="_4b-b"][style]
+m.facebook.com##.bottom.fixed-container.m:has-text(Get the best experience)
+m.facebook.com##.storyStream > .fullwidth.carded
+m.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(+ .m + :is(.bg-s2, .bg-s3, .bg-s4) > .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"]) div[data-mcomponent$="TextArea"]:not(:empty))
+m.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(+ :is(.bg-s2, .bg-s3, .bg-s4) > .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"]):not(:empty))
+m.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(> .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"]))
+m.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(> .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"])) + .m:not(:has(.m:empty))
+m.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(> .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"])) + .m:not(:has(.m:empty)) + .m:has(div[data-mcomponent$="TextArea"]:not(:empty)):has(+ .m .m[data-mcomponent$="TextArea"]:empty)
+m.facebook.com##[data-ft*="quick_promotion_instance_log_data_encoded"]
+m.facebook.com##article > .story_body_container + div[class]
+m.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+m.facebook.com##article[data-ft*='originated_from_recommendation":"1']
+m.facebook.com##article[data-sigil*="AdStory"]
+m.facebook.com##article[data-store*="is_sponsored.1"]
+m.facebook.com##article[data-store*="quick_promotion_id"]
+m.facebook.com##article[data-xt*="originated_from_recommendation"]
+m.facebook.com##div[data-mcomponent="MScreen"] > div[data-type="vscroller"] > div[data-mcomponent="MContainer"][style*="height:574px; z-index:0; width:"]
+m.facebook.com##div[data-sigil="m-promo"]
+m.facebook.com##div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="1"])
+m.facebook.com##div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="1"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"])
+m.facebook.com##div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="1"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"])
+m.facebook.com##div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="1"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="65"]):not([data-actual-height="64"])
+m.facebook.com##div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="1"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="65"]):not([data-actual-height="64"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="65"]):not([data-actual-height="64"])
+m.facebook.com##div[data-status-bar-color] > div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"][style*="display: none !important;"]:not([data-actual-height="26"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="1"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="65"]):not([data-actual-height="64"]) + div[data-mcomponent="MContainer"]:not([data-actual-height="2"]):not([data-actual-height="65"]):not([data-actual-height="64"]) + div[data-mcomponent="MContainer"][data-actual-height="58"]
+m.facebook.com##div[data-status-bar-color]:not(.vscroller) > div[data-is-pull-to-refresh-allowed="true"] + .fixed-container.bottom
+m.facebook.com##div[data-type="vscroller"] > div[data-mcomponent="MContainer"][style*="display: none !important;"] + div[style*="height:1px;"]
+m.facebook.com##div[data-type="vscroller"] > div[data-tti-phase][data-mcomponent="MContainer"][style*="height:449px; z-index:0; width:"]
+m.facebook.com##div[data-type="vscroller"] > div[style="margin-top:5px; height:167px; z-index:0; width:360px;"][data-mcomponent="MContainer"][data-tti-phase]
+m.facebook.com##div[data-type="vscroller"] > div[style^="margin-top:"][style*="px; height:35px; z-index:0; width:"]
+m.facebook.com##div[data-type="vscroller"] > div[style^="margin-top:"][style*="px; height:35px; z-index:0; width:"] + div[data-tti-phase]
+m.facebook.com##div[data-type="vscroller"] > div[style^="margin-top:"][style*="px; height:35px; z-index:0; width:"] + div[data-tti-phase] + div[data-tti-phase][data-actual-height="2"]
+m.facebook.com##div[data-type="vscroller"] > div[style^="margin-top:"][style*="px; height:35px; z-index:0; width:"] + div[data-tti-phase] + div[data-tti-phase][data-actual-height="2"] + div[data-tti-phase]
+m.facebook.com##div[data-type="vscroller"] > div[style^="margin-top:"][style*="px; height:35px; z-index:0; width:"] + div[data-tti-phase] + div[data-tti-phase][data-actual-height="2"] + div[data-tti-phase] + div[data-tti-phase]:not([data-actual-height="2"]):not([data-actual-height="64"])
+m.facebook.com##div[data-type="vscroller"] > div[style^="margin-top:"][style*="px; height:35px; z-index:0; width:"] + div[data-tti-phase] + div[data-tti-phase][data-actual-height="2"] + div[data-tti-phase] + div[data-tti-phase]:not([data-actual-height="2"]):not([data-actual-height="64"]) + div[class*="otf-"]
+m.facebook.com##div[data-type="vscroller"][data-comp-id] > div.bg-s3[tabindex][data-focusable="true"] + div[style]:not([data-action-id]):not([data-focusable="true"]):not([style*="1px"]):not([data-actual-height="27"]):not([data-mcomponent="MContainer"])
+m.facebook.com##div[role="article"][data-ft*='"originated_from_recommendation":"1"']
+m.facebook.com##span[data-top-of-feed-unit-type="megaphone_story"] > div[data-sigil="m-megaphone"]
+m.facebook.com#$#.touch a[href*="story.php"] { position: relative !important; }
+m.facebook.com#$#div[data-type] { -moz-user-select: text !important; -webkit-user-select: text !important; }
+m.facebook.com#$#div[dir="auto"] > span { -moz-user-select: text !important; -webkit-user-select: text !important; }
+m.facebook.com#$#div[dir="auto"] { -moz-user-select: text !important; -webkit-user-select: text !important; }
+m.facebook.com#$?#div[data-pull-to-refresh-action-id] > div[data-focusable="true"][data-action-id][data-mcomponent="MContainer"]:not([role="button"]):has(> div[data-mcomponent="TextArea"] > div > .native-text) { position: absolute !important; left: -3000px !important; }
+m.facebook.com#$?#div[data-pull-to-refresh-action-id] > div[data-focusable="true"][data-action-id][data-mcomponent="MContainer"]:not([role="button"])[style*="position: absolute !important; left: -3000px !important;"] + div[data-tracking-duration-id]:not([data-actual-height="1"]) { position: absolute !important; left: -3000px !important; }
+m.facebook.com#?#.filler ~ div:not([data-srat]) > div > div[data-mcomponent="MContainer"][style*="height:"][style*="px; z-index:"][style*="0; width:"]:has(> div[data-is-snappable-in-h-scroll="true"])
+m.facebook.com#?#article[data-store*="encrypted_tracking_data"]:has(.story_body_container div[data-sigil="m-feed-voice-subtitle"] > span:contains(/(Sponsored|Gesponsert|Sponsorlu|Sponsorowane|Ispoonsara godhameera|Geborg|Bersponsor|Ditaja|Disponsori|Giisponsoran|Sponzorováno|Sponsoreret|Publicidad|May Sponsor|Sponsorisée|Oipytyvôva|Ɗaukar Nayin|Sponzorirano|Uterwa inkunga|Sponsorizzato|Imedhaminiwa|Hirdetés|Misy Mpiantoka|Gesponsord|Sponset|Patrocinado|Patrocinado|Sponsorizat|Sponzorované|Sponsoroitu|Sponsrat|Được tài trợ|Χορηγούμενη|Спонсорирано|Спонзорирано|Ивээн тэтгэсэн|Реклама|Спонзорисано|במימון|سپانسرڈ|دارای پشتیبانی مالی|ስፖንሰር የተደረገ|प्रायोजित|ተደረገ|प|प्रायोजित|স্পনসর্ড|ਪ੍ਰਯੋਜਿਤ|પ્રાયોજિત|ପ୍ରାୟୋଜିତ|செய்யப்பட்ட செய்யப்பட்ட|చేయబడినది చేయబడినది|ಪ್ರಾಯೋಜಿಸಲಾಗಿದೆ|ചെയ്‌തത് ചെയ്‌തത്|ලද ලද ලද|สนับสนุน สนับสนุน รับ สนับสนุน สนับสนุน|ကြော်ငြာ ကြော်ငြာ|ឧបត្ថម្ភ ឧបត្ថម្ភ ឧបត្ថម្ភ|광고|贊助|赞助内容|広告|സ്‌പോൺസർ ചെയ്‌തത്)/))
+m.facebook.com#?#div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"]:has(> div[data-mcomponent="TextArea"] > div > .native-text:contains(Sugggested Videos))
+m.facebook.com#?#div[data-type="vscroller"] > div[data-mcomponent="MContainer"]:has(> div[data-actual-height] > div[data-actual-height] > div[data-mcomponent*="TextArea"] > .native-text:contains(Suggested post from a public group))
+m.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
 m.gsmarena.com###specs-list > .align-center:has(> pgs-ad)
 m.gsmarena.com##.adv-bottom
 m.gsmarena.com##.adv-mid
@@ -6498,6 +6753,8 @@ mayoclinic.org##.mayoad > .policy
 mayoclinic.org##.myc-subscription-form
 mayoclinic.org##.placeHolder
 mayoclinic.org##.social:not(body)
+mbasic.facebook.com##[data-ft*="quick_promotion_instance_log_data_encoded"]
+mbasic.facebook.com##div[role="article"][data-ft*='"originated_from_recommendation":"1"']
 mbd.baidu.com###content_wrapper + div + .default-container
 mbd.baidu.com##.related-news > section:first-child + div
 mbd.baidu.com##div[class^="_"][style="visibility: visible;"]
@@ -6669,6 +6926,15 @@ mobi.yahoo.com##.smart-app-banner
 mobile.baidu.com##.detail-banner
 mobile.baidu.com##.p_fixed_lb
 mobile.baidu.com##SECTION.detail-banner.banner-ck
+mobile.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+mobile.facebook.com##.storyStream > .fullwidth.carded
+mobile.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+mobile.facebook.com##article[data-sigil*="AdStory"]
+mobile.facebook.com##article[data-store*="is_sponsored.1"]
+mobile.facebook.com##article[data-xt*="originated_from_recommendation"]
+mobile.facebook.com##div[role="article"][data-ft*='"originated_from_recommendation":"1"']
+mobile.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
+mobile.facebook.com#@#div[data-sigil$="m-layer-root"][class$="accelerate"]:has(> div[data-sigil$="m-overlay-layer"] a[data-cookiebanner="accept_button"])
 mobile.mi.com##.agree-tokens-modal
 mobile.mi.com##.header-storeapp
 mobile.mi.com##.product-information__share
@@ -6929,6 +7195,23 @@ msn.com#@#a[href^="https://afflnk.microsoft.com/"]
 msn.com#@#a[href^="https://clk.tradedoubler.com/"]
 msn.com#@#iframe[width="300"][height="250"]
 msn.com#@#iframe[width="728"][height="90"]
+mtouch.alpha.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+mtouch.alpha.facebook.com##.storyStream > .fullwidth.carded
+mtouch.alpha.facebook.com##article[data-sigil*="AdStory"]
+mtouch.alpha.facebook.com##article[data-store*="is_sponsored.1"]
+mtouch.alpha.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
+mtouch.beta.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+mtouch.beta.facebook.com##.storyStream > .fullwidth.carded
+mtouch.beta.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+mtouch.beta.facebook.com##article[data-sigil*="AdStory"]
+mtouch.beta.facebook.com##article[data-store*="is_sponsored.1"]
+mtouch.beta.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
+mtouch.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+mtouch.facebook.com##.storyStream > .fullwidth.carded
+mtouch.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+mtouch.facebook.com##article[data-sigil*="AdStory"]
+mtouch.facebook.com##article[data-store*="is_sponsored.1"]
+mtouch.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
 mumu.163.com##.pic-con
 murf.ai###murfCookiePrompt
 music.163.com###g_backtop
@@ -8225,6 +8508,18 @@ sharelinkgamepc.blogspot.com##+js(abort-current-script, document.createElement, 
 sharelinkgamepc.blogspot.com#$##levelmaxblock { display: none !important; }
 sharelinkgamepc.blogspot.com#$#body { overflow: auto !important; }
 sharelinkgamepc.blogspot.com#%#//scriptlet("abort-current-inline-script", "document.createElement", "adsbygoogle")
+shazam.com##.follow
+shazam.com##.info
+shazam.com##.phones
+shazam.com##.policy-label
+shazam.com##.share
+shazam.com##.shz-frame-apps-banner
+shazam.com##.shz-frame-promotionbanner
+shazam.com##a[class^="AppleMusicLink_link__"]
+shazam.com##a[data-test-id="artist_userevent_redirectAppleMusic"]
+shazam.com##div[class^="FloatingContentContainer_promotionBarContainer__"]
+shazam.com##div[data-shz-beacon="section=get-app-banner"]
+shazam.com#$#div[data-test-id$="_shareButton"] { visibility: hidden !important; }
 shenisha.substack.com##.available-content div.captioned-image-container:has(> figure > a[href="https://amzn.to/4gMrRzj"])
 shenisha.substack.com##[href^="https://amzn.to/"]
 shoegames.blogspot.com###HTML5
@@ -8662,6 +8957,7 @@ t.cj.sina.cn#$#.module-finance-client3 { display: none !important; }
 t.cj.sina.cn#$#header.hd_s1 { margin-top: -70px !important; }
 t.cj.sina.com.cn###sina-cont000
 t.cj.sina.com.cn##.yyy-wrap-2021
+t.facebook.com#%#new MutationObserver(function(){document.querySelectorAll('div[role="feed"] > span').forEach(function(e){"display: none !important;"==e.getAttribute("style")||e.classList.contains("hidden_elem")||e.querySelectorAll("div[aria-posinset] div[style] div[class] > div[class] > div[class] > div[class] > span")[0].innerText.contains("Suggested for you")&&(console.log("--------"),console.log("Annoyances hidden (Suggested for you)"),e.style="display:none!important;")})}).observe(document,{childList:!0,subtree:!0});
 t.hubspotemail.net/e2t/o$image
 t.qq.com###homeBannerNew
 t.qq.com###talkList > li[ispopula="1"][tv="2"]
@@ -9190,6 +9486,23 @@ tool.chinaz.com##.Sponsor
 tool.chinaz.com#?#.backtoTop > div.toItem:has(> a[href="http://my.chinaz.com/toolvip/vip"])
 torrentsmd.eu.org##+js(abort-current-script, String.fromCharCode, zfgloaded)
 torrentsmd.eu.org#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "zfgloaded")
+touch.alpha.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+touch.alpha.facebook.com##.storyStream > .fullwidth.carded
+touch.alpha.facebook.com##article[data-sigil*="AdStory"]
+touch.alpha.facebook.com##article[data-store*="is_sponsored.1"]
+touch.alpha.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
+touch.beta.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+touch.beta.facebook.com##.storyStream > .fullwidth.carded
+touch.beta.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+touch.beta.facebook.com##article[data-sigil*="AdStory"]
+touch.beta.facebook.com##article[data-store*="is_sponsored.1"]
+touch.beta.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
+touch.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+touch.facebook.com##.storyStream > .fullwidth.carded
+touch.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+touch.facebook.com##article[data-sigil*="AdStory"]
+touch.facebook.com##article[data-store*="is_sponsored.1"]
+touch.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
 tpc.googlesyndication.com#@#.img_ad
 tradingview.com###charting-ad
 tradingview.com##+js(no-fetch-if, doubleclick)
@@ -9489,6 +9802,28 @@ wapwenku.baidu.com##a[href^="http://www.baidu.com/cpro.php?"]
 war.163.com##.hotset
 watchonlinemovies.vercel.app##+js(acs, EventTarget.prototype.addEventListener, delete window)
 web.archive.org###wm-share
+web.facebook.com###seo_pivots ~ div > div[style^="max-width"] > div[class] > div[style^="max-width"]:has(a[href^="/ads/about/?"])
+web.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.marketplace_search.feed_units.edges.[-].node.story.sponsored_data.ad_id)
+web.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.story.sponsored_data.ad_id)
+web.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.serpResponse.results.edges.[-].relay_rendering_strategy.view_model.story.sponsored_data.ad_id)
+web.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.marketplace_feed_stories.edges.[-].node.story.sponsored_data.ad_id)
+web.facebook.com##+js(json-prune-xhr-response, data.viewer.instream_video_ads data.scrubber, , propsToMatch, /api/graphql)
+web.facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"__typename":"MarketplaceFeedAdStory"[^\n]+?"cursor":(?:null|"\{[^\n]+?\}"|[^\n]+?MarketplaceSearchFeedStoriesEdge")\}/g, {}, /api/graphql)
+web.facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"__typename":"VideoHomeFeedUnitSectionComponent"[^\n]+?"sponsored_data":\{"ad_id"[^\n]+?"cursor":null\}/, {}, /api/graphql)
+web.facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"role":"SEARCH_ADS"[^\n]+?cursor":[^}]+\}/g, {}, /api/graphql)
+web.facebook.com#$#hide-if-matches-xpath './/div[@aria-labelledby and @aria-describedby]//*[name()="use" and substring(@*,2)=//*[name()="svg"]/*[name()="text"][text()[.="Anzeige" or .="Sponsored" or .="Sponsorlu" or .="Gesponsert" or .="Patrocinado" or .="Sponsorisé" or .="Commandité" or .="Gesponsord" or .="Sponsorowane" or .="Publicidad" or .="Sponsrad" or .="Sponsoreret" or .="Sponsoroitu" or .="Sponsa" or .="Sponset" or .="Sponsorizat" or .="Bersponsor" or .="Ditaja" or .="Sponsorizzato" or .="May Sponsor" or .="Hirdetés" or .="Sponsitud" or .="Sponzorováno" or .="Реклама" or .="贊助" or .="赞助内容" or .="ได้รับการสนับสนุน" or .="Được tài trợ" or .="प्रायोजित" or .="دارای پشتیبانی مالی" or .="تمويل شوي" or .="সৌজন্যে" or .="مُموَّل" or .="سپانسرڈ" or .="ממומן"]]/@id]/ancestor::div[@aria-labelledby and @aria-describedby]'
+web.facebook.com#$#hide-if-matches-xpath './/div[@aria-labelledby and @aria-describedby]//span//div[@class][@role][contains(., "Anzeige") or contains(., "Sponsored") or contains(., "Sponsorlu") or contains(., "Gesponsert") or contains(., "Patrocinado") or contains(., "Sponsorisé") or contains(., "Commandité") or contains(., "Gesponsord") or contains(., "Sponsorowane") or contains(., "Publicidad") or contains(., "Sponsrad") or contains(., "Sponsoreret") or contains(., "Sponsoroitu") or contains(., "Sponsa") or contains(., "Sponset") or contains(., "Sponsorizat") or contains(., "Bersponsor") or contains(., "Ditaja") or contains(., "Sponsorizzato") or contains(., "May Sponsor") or contains(., "Реклама") or contains(., "贊助") or contains(., "赞助内容") or contains(., "ได้รับการสนับสนุน") or contains(., "Được tài trợ") or contains(., "प्रायोजित") or contains(., "دارای پشتیبانی مالی") or contains(., "تمويل شوي") or contains(., "সৌজন্যে") or contains(., "مُموَّل") or contains(., "سپانسرڈ") or contains(., "ממומן") or contains(., "Hirdetés") or contains(., "ಪ್ರಾಯೋಜಿತ")]/ancestor::div[@aria-labelledby and @aria-describedby]'
+web.facebook.com#$#hide-if-matches-xpath './/div[@role="feed"]//div[@role="article"]//a[@aria-label[.="Patrocinado" or .="Sponsa" or .="Bersponsor" or .="Commandité" or .="Ditaja" or .="Gesponsert" or .="Gesponsord" or .="Sponsrad" or .="Publicidad" or .="Sponsoreret" or .="Sponset" or .="Sponsored" or .="Sponsorisé" or .="Sponsorizat" or .="Sponsorizzato" or .="Anzeige" or .="Sponsorlu" or .="Sponsorowane" or .="Реклама" or .="ממומן" or .="تمويل شوي" or .="دارای پشتیبانی مالی" or .="سپانسرڈ" or .="مُموَّل" or .="प्रायोजित" or .="সৌজন্যে" or .="ได้รับการสนับสนุน" or .="内容" or .="贊助" or .="Sponsoroitu" or .="May Sponsor" or .="Được tài trợ" or .="ಪ್ರಾಯೋಜಿತ" or .="स्पॉन्सर्ड" or .="広告" or .="赞助内容" or .="Рэклама" or .="Sponzorované" or .="La maalgeliyey" or .="Geborg" or .="Reklam" or .="Plaćeni oglas" or .="광고" or .="Χορηγούμενη" or .="স্পনসর্ড" or .="സ്പോൺസർ ചെയ്തത്" or .="ਸਰਪ੍ਰਸਤੀ ਪ੍ਰਾਪਤ" or .="මුදල් ගෙවා ප්‍රචාරය කරන ලදි" or .="விளம்பரம்" or .="ప్రాయోజితం చేయబడింది" or .="Спонсорирано" or .="Спонзорисано" or .="ܒܘܕܩܐ ܡܡܘܘܢܐ" or .="Reklamo" or .="Hirdetés" or .="Sponsitud" or .="Sponzorováno"]]/ancestor::div[@role="article"]'
+web.facebook.com#$#hide-if-matches-xpath './/div[contains(@aria-label,"Marketplace")][@role="main"]//following::a[@aria-label][@aria-labelledby]//preceding::a[contains(@href,"/ads/about/?entry_product=ad_preferences")]/ancestor-or-self::span[3]'
+web.facebook.com#$#hide-if-matches-xpath './/div[contains(@aria-label,"Marketplace")][@role="main"]//following::a[@aria-label][@attributionsrc][@role]/ancestor-or-self::div[contains(@style,"max-width") and contains(@style,"min-width")][1]'
+web.facebook.com#$#hide-if-matches-xpath './/div[contains(@aria-label,"Marketplace")][@role="main"]//span[text()]/ancestor-or-self::a[contains(@href,"ad_preferences")]/parent::div[1]'
+web.facebook.com#$#hide-if-matches-xpath './/object[@type="nested/pressable"]/a[@role="link"]/span[contains("|Sponsoreret|Sponsrad|Patrocinado|Sponsa|Bersponsor|Commandité|Ditaja|Gesponsert|Gesponsord|Publicidad|Sponset|Sponsored|Sponsorisé|Sponsorizat|Sponsorizzato|Sponsorlu|Sponsorowane|Реклама|ממומן|تمويل شوي|دارای پشتیبانی مالی|سپانسرڈ|مُموَّل|प्रायोजित|সৌজন্যে|ได้รับการสนับสนุน|内容|贊助|Sponsoroitu|May Sponsor|Được tài trợ|", concat("|", text(), "|"))]/ancestor::span[2]'
+web.facebook.com#$#json-prune 'require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.sideFeed.nodes.0.ads'
+web.facebook.com#$#race start; hide-if-contains /Anzeige|Sponsored|Sponsorlu|Gesponsert|Patrocinado|Sponsorisé|Commandité|Gesponsord|Sponsorowane|Publicidad|Sponsrad|Sponsoreret|Sponsoroitu|Sponsa|Sponset|Sponsorizat|Bersponsor|Ditaja|Sponsorizzato/ 'div[aria-describedby][aria-labelledby]' 'span[aria-labelledby] svg[style] * ^^svg^^ * ^^svg^^'; hide-if-contains /Anzeige|Sponsored|Sponsorlu|Gesponsert|Patrocinado|Sponsorisé|Commandité|Gesponsord|Sponsorowane|Publicidad|Sponsrad|Sponsoreret|Sponsoroitu|Sponsa|Sponset|Sponsorizat|Bersponsor|Ditaja|Sponsorizzato/ 'div[aria-describedby][aria-labelledby]' 'span[aria-labelledby] svg[style] * ^^svg^^'; race stop;
+web.facebook.com#$#race start; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrizato]{11}|[Sponsrowane]{11}|[Anzeig]{6}|[Patrocnado]{11}|स्पॉन्सर्ड/ 'div#watch_feed div[class^="_"]' 'a[href="#"][role="link"]'; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrizato]{11}|[Sponsrowane]{11}|[Anzeig]{6}|[Patrocnado]{11}|स्पॉन्सर्ड/ 'div#watch_feed div[class^="_"]' 'a[href^="?__cft__"] span'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[aria-label][attributionsrc][href^="?__cft__"][role="link"]>span>span[aria-labelledby]'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[attributionsrc][href*="/ads/about/"][role="link"][tabindex="0"]>span'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[attributionsrc][href="#"][role="link"][tabindex="0"]>span>span[aria-labelledby]>span[style]'; race stop;
+web.facebook.com#$#race start; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrwae]{12}|[Patrocind]{11}|[Sponsrizat]{13}|[Anzeig]{6}/ 'div[role=feed] div[role=article]' a[href^="?__cft__"]; race stop;
+web.facebook.com#$#race start; hide-if-matches-xpath '//div[@role="complementary"]//div[not(@class) and not(@id)]/span[not(@class) and not(@id) and not(@aria-labelledby)]'; hide-if-matches-xpath './/div[@role="complementary"]//span/following::div[@aria-labelledby][@role][@tabindex]/ancestor-or-self::span'; race stop;
+web.facebook.com#$#replace-xhr-response '/\{"(the_br_s_cnt_label|the_br_s_cont_label|br_lb_label|br_lb_label_co|lbl_content_brs|labe_br_con_the|br_safety_content_label|br_con_label_for_safety|content_lbl_brs|content_label_brs|cont_label_brs|con_label_brs|new_con_label_brs|lbl_la_br_cont|new_lbl_la_br_cont|br_safety_con_label|new_br_safety_con_label|brs_con_label|brs_content_label)[^\n]+?("sponsored_data"|"data_spon"|"spon_dat"|ads_data)[^\n]+?("SponsoredData"|"ad_id")[^\n]+"cursor":"[^"]+"\}/' '{}' '/(sponsored_auction_distance|sp_auct_dis|flag_distan_spon_auc|of_distanc_auctio_spons|auction_distance_sp|auct_distance_sponsored|auc_distance_sponsored|auction_sponsored_dist|new_auction_sponsored_dist|auct_dis_of_sponsored|the_auct_dis_of_sponsored|auc_dis_sponsored|the_auc_dis_sponsored|spon_auct_dis|spons_dista_auc|dist_spons_auctio|sponsor_for_dis_au|distanc_auct_the_sponsor|spon_lbl_aucti_dista|label_auctio_spons_distanc|auct_dis_sponso|auc_dist_sponso|auc_dis_sponso|new_auc_dis_sponso|spon_lbl_dist_auct|spon_lbl_dis_auct)/'
 web.telegram.org##.SponsoredMessage
 web.telegram.org##div.bubbles > div.scrollable > div.bubbles-inner > div.is-sponsored
 web.telegram.org#?#.bubbles-inner > div.bubble:has(> div.bubble-content-wrapper > div.bubble-content > div.message > span > span:contains(/^sponsored$/))
@@ -9679,6 +10014,40 @@ www.bing.com###b_mrs_BelowBOPAds
 www.bing.com##.l_ecrd_twoimgset
 www.cloudflare.com##+js(no-fetch-if, method:POST body:zaraz)
 www.cnbeta.com.tw##+js(aopr, Math)
+www.facebook.com###seo_pivots ~ div > div[style^="max-width"] > div[class] > div[style^="max-width"]:has(a[href^="/ads/about/?"])
+www.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.marketplace_search.feed_units.edges.[-].node.story.sponsored_data.ad_id)
+www.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.ad_id)
+www.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.story.sponsored_data.ad_id)
+www.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.serpResponse.results.edges.[-].relay_rendering_strategy.view_model.story.sponsored_data.ad_id)
+www.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.marketplace_feed_stories.edges.[-].node.story.sponsored_data.ad_id)
+www.facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.[-].__bbox.result.data.node.sponsored_data.ad_id)
+www.facebook.com##+js(json-prune-xhr-response, data.viewer.instream_video_ads data.scrubber, , propsToMatch, /api/graphql)
+www.facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"__typename":"MarketplaceFeedAdStory"[^\n]+?"cursor":(?:null|"\{[^\n]+?\}"|[^\n]+?MarketplaceSearchFeedStoriesEdge")\}/g, {}, /api/graphql)
+www.facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"__typename":"VideoHomeFeedUnitSectionComponent"[^\n]+?"sponsored_data":\{"ad_id"[^\n]+?"cursor":null\}/, {}, /api/graphql)
+www.facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"role":"SEARCH_ADS"[^\n]+?cursor":[^}]+\}/g, {}, /api/graphql)
+www.facebook.com##.bottom.fixed-container.m:has-text(Get the best experience)
+www.facebook.com##:is([aria-posinset],[aria-describedby]:not([aria-posinset])):has([aria-label="Reels"]):style(height: 0 !important; overflow: hidden !important;)
+www.facebook.com##:is([aria-posinset],[aria-describedby]:not([aria-posinset])):has([aria-label="Suggested pages"]):style(height: 0 !important; overflow: hidden !important;)
+www.facebook.com##:is([aria-posinset],[aria-describedby]:not([aria-posinset])):has([href="/friends/"]):style(height: 0 !important; overflow: hidden !important;)
+www.facebook.com##:is([aria-posinset],[aria-describedby]:not([aria-posinset])):has([href="/groups/discover/"]):style(height: 0 !important; overflow: hidden !important;)
+www.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(+ .m + :is(.bg-s2, .bg-s3, .bg-s4) > .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"]) div[data-mcomponent$="TextArea"]:not(:empty))
+www.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(+ :is(.bg-s2, .bg-s3, .bg-s4) > .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"]):not(:empty))
+www.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(> .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"]))
+www.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(> .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"])) + .m:not(:has(.m:empty))
+www.facebook.com##:matches-path(/^\/(\?locale=[a-z]+_[A-Z]+)?$/) #screen-root > :not(.bg-s2) .m[data-type="vscroller"] > :is(.bg-s2, .bg-s3, .bg-s4):has(> .m > .m .nb[style*="inset(0"] > .m[style*="margin-top:1px;"][style*="margin-left:1px;"]:is([style*="height:32px;"], [style*="height:35px;"])) + .m:not(:has(.m:empty)) + .m:has(div[data-mcomponent$="TextArea"]:not(:empty)):has(+ .m .m[data-mcomponent$="TextArea"]:empty)
+www.facebook.com#$#hide-if-matches-xpath './/div[@aria-labelledby and @aria-describedby]//*[name()="use" and substring(@*,2)=//*[name()="svg"]/*[name()="text"][text()[.="Anzeige" or .="Sponsored" or .="Sponsorlu" or .="Gesponsert" or .="Patrocinado" or .="Sponsorisé" or .="Commandité" or .="Gesponsord" or .="Sponsorowane" or .="Publicidad" or .="Sponsrad" or .="Sponsoreret" or .="Sponsoroitu" or .="Sponsa" or .="Sponset" or .="Sponsorizat" or .="Bersponsor" or .="Ditaja" or .="Sponsorizzato" or .="May Sponsor" or .="Hirdetés" or .="Sponsitud" or .="Sponzorováno" or .="Реклама" or .="贊助" or .="赞助内容" or .="ได้รับการสนับสนุน" or .="Được tài trợ" or .="प्रायोजित" or .="دارای پشتیبانی مالی" or .="تمويل شوي" or .="সৌজন্যে" or .="مُموَّل" or .="سپانسرڈ" or .="ממומן"]]/@id]/ancestor::div[@aria-labelledby and @aria-describedby]'
+www.facebook.com#$#hide-if-matches-xpath './/div[@aria-labelledby and @aria-describedby]//span//div[@class][@role][contains(., "Anzeige") or contains(., "Sponsored") or contains(., "Sponsorlu") or contains(., "Gesponsert") or contains(., "Patrocinado") or contains(., "Sponsorisé") or contains(., "Commandité") or contains(., "Gesponsord") or contains(., "Sponsorowane") or contains(., "Publicidad") or contains(., "Sponsrad") or contains(., "Sponsoreret") or contains(., "Sponsoroitu") or contains(., "Sponsa") or contains(., "Sponset") or contains(., "Sponsorizat") or contains(., "Bersponsor") or contains(., "Ditaja") or contains(., "Sponsorizzato") or contains(., "May Sponsor") or contains(., "Реклама") or contains(., "贊助") or contains(., "赞助内容") or contains(., "ได้รับการสนับสนุน") or contains(., "Được tài trợ") or contains(., "प्रायोजित") or contains(., "دارای پشتیبانی مالی") or contains(., "تمويل شوي") or contains(., "সৌজন্যে") or contains(., "مُموَّل") or contains(., "سپانسرڈ") or contains(., "ממומן") or contains(., "Hirdetés") or contains(., "ಪ್ರಾಯೋಜಿತ")]/ancestor::div[@aria-labelledby and @aria-describedby]'
+www.facebook.com#$#hide-if-matches-xpath './/div[@role="feed"]//div[@role="article"]//a[@aria-label[.="Patrocinado" or .="Sponsa" or .="Bersponsor" or .="Commandité" or .="Ditaja" or .="Gesponsert" or .="Gesponsord" or .="Sponsrad" or .="Publicidad" or .="Sponsoreret" or .="Sponset" or .="Sponsored" or .="Sponsorisé" or .="Sponsorizat" or .="Sponsorizzato" or .="Anzeige" or .="Sponsorlu" or .="Sponsorowane" or .="Реклама" or .="ממומן" or .="تمويل شوي" or .="دارای پشتیبانی مالی" or .="سپانسرڈ" or .="مُموَّل" or .="प्रायोजित" or .="সৌজন্যে" or .="ได้รับการสนับสนุน" or .="内容" or .="贊助" or .="Sponsoroitu" or .="May Sponsor" or .="Được tài trợ" or .="ಪ್ರಾಯೋಜಿತ" or .="स्पॉन्सर्ड" or .="広告" or .="赞助内容" or .="Рэклама" or .="Sponzorované" or .="La maalgeliyey" or .="Geborg" or .="Reklam" or .="Plaćeni oglas" or .="광고" or .="Χορηγούμενη" or .="স্পনসর্ড" or .="സ്പോൺസർ ചെയ്തത്" or .="ਸਰਪ੍ਰਸਤੀ ਪ੍ਰਾਪਤ" or .="මුදල් ගෙවා ප්‍රචාරය කරන ලදි" or .="விளம்பரம்" or .="ప్రాయోజితం చేయబడింది" or .="Спонсорирано" or .="Спонзорисано" or .="ܒܘܕܩܐ ܡܡܘܘܢܐ" or .="Reklamo" or .="Hirdetés" or .="Sponsitud" or .="Sponzorováno"]]/ancestor::div[@role="article"]'
+www.facebook.com#$#hide-if-matches-xpath './/div[contains(@aria-label,"Marketplace")][@role="main"]//following::a[@aria-label][@aria-labelledby]//preceding::a[contains(@href,"/ads/about/?entry_product=ad_preferences")]/ancestor-or-self::span[3]'
+www.facebook.com#$#hide-if-matches-xpath './/div[contains(@aria-label,"Marketplace")][@role="main"]//following::a[@aria-label][@attributionsrc][@role]/ancestor-or-self::div[contains(@style,"max-width") and contains(@style,"min-width")][1]'
+www.facebook.com#$#hide-if-matches-xpath './/div[contains(@aria-label,"Marketplace")][@role="main"]//span[text()]/ancestor-or-self::a[contains(@href,"ad_preferences")]/parent::div[1]'
+www.facebook.com#$#hide-if-matches-xpath './/object[@type="nested/pressable"]/a[@role="link"]/span[contains("|Sponsoreret|Sponsrad|Patrocinado|Sponsa|Bersponsor|Commandité|Ditaja|Gesponsert|Gesponsord|Publicidad|Sponset|Sponsored|Sponsorisé|Sponsorizat|Sponsorizzato|Sponsorlu|Sponsorowane|Реклама|ממומן|تمويل شوي|دارای پشتیبانی مالی|سپانسرڈ|مُموَّل|प्रायोजित|সৌজন্যে|ได้รับการสนับสนุน|内容|贊助|Sponsoroitu|May Sponsor|Được tài trợ|", concat("|", text(), "|"))]/ancestor::span[2]'
+www.facebook.com#$#json-prune 'require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.sideFeed.nodes.0.ads'
+www.facebook.com#$#race start; hide-if-contains /Anzeige|Sponsored|Sponsorlu|Gesponsert|Patrocinado|Sponsorisé|Commandité|Gesponsord|Sponsorowane|Publicidad|Sponsrad|Sponsoreret|Sponsoroitu|Sponsa|Sponset|Sponsorizat|Bersponsor|Ditaja|Sponsorizzato/ 'div[aria-describedby][aria-labelledby]' 'span[aria-labelledby] svg[style] * ^^svg^^ * ^^svg^^'; hide-if-contains /Anzeige|Sponsored|Sponsorlu|Gesponsert|Patrocinado|Sponsorisé|Commandité|Gesponsord|Sponsorowane|Publicidad|Sponsrad|Sponsoreret|Sponsoroitu|Sponsa|Sponset|Sponsorizat|Bersponsor|Ditaja|Sponsorizzato/ 'div[aria-describedby][aria-labelledby]' 'span[aria-labelledby] svg[style] * ^^svg^^'; race stop;
+www.facebook.com#$#race start; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrizato]{11}|[Sponsrowane]{11}|[Anzeig]{6}|[Patrocnado]{11}|स्पॉन्सर्ड/ 'div#watch_feed div[class^="_"]' 'a[href="#"][role="link"]'; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrizato]{11}|[Sponsrowane]{11}|[Anzeig]{6}|[Patrocnado]{11}|स्पॉन्सर्ड/ 'div#watch_feed div[class^="_"]' 'a[href^="?__cft__"] span'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[aria-label][attributionsrc][href^="?__cft__"][role="link"]>span>span[aria-labelledby]'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[attributionsrc][href*="/ads/about/"][role="link"][tabindex="0"]>span'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[attributionsrc][href="#"][role="link"][tabindex="0"]>span>span[aria-labelledby]>span[style]'; race stop;
+www.facebook.com#$#race start; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrwae]{12}|[Patrocind]{11}|[Sponsrizat]{13}|[Anzeig]{6}/ 'div[role=feed] div[role=article]' a[href^="?__cft__"]; race stop;
+www.facebook.com#$#race start; hide-if-matches-xpath '//div[@role="complementary"]//div[not(@class) and not(@id)]/span[not(@class) and not(@id) and not(@aria-labelledby)]'; hide-if-matches-xpath './/div[@role="complementary"]//span/following::div[@aria-labelledby][@role][@tabindex]/ancestor-or-self::span'; race stop;
+www.facebook.com#$#replace-xhr-response '/\{"(the_br_s_cnt_label|the_br_s_cont_label|br_lb_label|br_lb_label_co|lbl_content_brs|labe_br_con_the|br_safety_content_label|br_con_label_for_safety|content_lbl_brs|content_label_brs|cont_label_brs|con_label_brs|new_con_label_brs|lbl_la_br_cont|new_lbl_la_br_cont|br_safety_con_label|new_br_safety_con_label|brs_con_label|brs_content_label)[^\n]+?("sponsored_data"|"data_spon"|"spon_dat"|ads_data)[^\n]+?("SponsoredData"|"ad_id")[^\n]+"cursor":"[^"]+"\}/' '{}' '/(sponsored_auction_distance|sp_auct_dis|flag_distan_spon_auc|of_distanc_auctio_spons|auction_distance_sp|auct_distance_sponsored|auc_distance_sponsored|auction_sponsored_dist|new_auction_sponsored_dist|auct_dis_of_sponsored|the_auct_dis_of_sponsored|auc_dis_sponsored|the_auc_dis_sponsored|spon_auct_dis|spons_dista_auc|dist_spons_auctio|sponsor_for_dis_au|distanc_auct_the_sponsor|spon_lbl_aucti_dista|label_auctio_spons_distanc|auct_dis_sponso|auc_dist_sponso|auc_dis_sponso|new_auc_dis_sponso|spon_lbl_dist_auct|spon_lbl_dis_auct)/'
 www.google.co.jp###div[jscontroller="MaoVMd"][jsdata*="nTLyye;"]
 www.google.co.jp##[aria-label="Search by voice"]
 www.google.co.jp##div.nD2EKb.VEELad
@@ -9889,6 +10258,17 @@ x-mol.com###floatWindow
 x-mol.com###rightAllJournal
 x-mol.com##.news-white-content-right
 x.ai##section[class^="cookie-banner_"]
+x.alpha.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+x.alpha.facebook.com##.storyStream > .fullwidth.carded
+x.alpha.facebook.com##article[data-sigil*="AdStory"]
+x.alpha.facebook.com##article[data-store*="is_sponsored.1"]
+x.alpha.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
+x.beta.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+x.beta.facebook.com##.storyStream > .fullwidth.carded
+x.beta.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+x.beta.facebook.com##article[data-sigil*="AdStory"]
+x.beta.facebook.com##article[data-store*="is_sponsored.1"]
+x.beta.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
 x.com###layers > div[class] > div[class]:has(> div[class] > div[data-testid="BottomBar"] a[href$="/privacy"])
 x.com###layers div[class="css-1dbjc4n r-l5o3uw r-97e31f"]
 x.com###layers>div:last-of-type:has-text(Switch to the app)
@@ -9968,6 +10348,14 @@ x.com#?#h2[role="heading"]:-abp-contains(/Promoted|Gesponsert|Promocionado|Spons
 x.com#?#section[aria-labelledby][role="region"] > div[aria-label] > div[style] > div[style^="transform: translate"] article[data-testid="tweet"]:has(> div[class] > div[class] > div[class] a[href^="/i/topics"][dir="auto"])
 x.com#?#section[aria-labelledby^="accessible-list"] div[style^="transform"]:has(div[data-testid="tweetText"] > a:contains(/jp\.cooki(?:e-food|cway)\.com/))
 x.com/*/videoads/
+x.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+x.facebook.com##.storyStream > .fullwidth.carded
+x.facebook.com##article:has(footer > div > div > a[href^="/friends/center/?fb_ref="])
+x.facebook.com##article[data-ft*="quick_promotion_id"]
+x.facebook.com##article[data-sigil*="AdStory"]
+x.facebook.com##article[data-store*="is_sponsored.1"]
+x.facebook.com##article[data-store*="originated_from_recommendation"]
+x.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
 xda-developers-android.blogspot.com##+js(nobab)
 xda-developers-android.blogspot.com#%#//scriptlet("prevent-bab")
 xda-developers-forum.blogspot.com##.post-share-buttons
@@ -9994,6 +10382,8 @@ xiaohongshu.com##.wx-open-launch-app-container
 xiaohongshu.com#?#.note-view-container > div.nav-bar-box:has(> div.reds-box div.reds-text:contains(小红书App))
 xiaomiyoupin.com##.fixed-nav > li:nth-of-type(2)
 xiaomiyoupin.com##.site-item.m-download.fl
+ximalaya.com##.change-logo.S_q,.packet-container._PC,.less-tips._PC *
+ximalaya.com##.dl-pc
 xinghuo.xfyun.cn##div[class*="download_btn"]
 xinghuo.xfyun.cn##div[class*="jump_btn"]:contains(下载APP)
 xingqu.baidu.com###activity_countdown_head
@@ -10856,6 +11246,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||ads-sg.tiktok.com^
 ||ads-union.jd.com^
 ||ads-verification-for-pay.vercel.app^$all
+||ads.facebook.com/|$xhr,3p,redirect=noop.txt
 ||ads.reddit.com/|$xhr,3p,redirect=noop.txt
 ||ads.samsung.com^
 ||ads.sohu.com^
@@ -11111,6 +11502,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||amdcopen.m.taobao.com^
 ||ampcid.google.com^$important
 ||ams-pageview-public.s3.amazonaws.com^
+||an.facebook.com^
 ||analy.qq.com^
 ||analytics-api.smzdm.com^
 ||analytics-prod-alb-292764149.us-west-2.elb.amazonaws.com^
@@ -11123,6 +11515,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||analytics.bloomberg.com^
 ||analytics.brave.com^
 ||analytics.cnblogs.com^
+||analytics.facebook.com^$third-party
 ||analytics.githubassets.com^
 ||analytics.google.com/g/collect?
 ||analytics.google.com^
@@ -11170,6 +11563,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||api-js.mixpanel.com/track/?
 ||api-js.mixpanel.com^
 ||api-pravoved.s3.amazonaws.com^$third-party
+||api-read.facebook.com/restserver.php?api_key=$third-party
 ||api-v*.soundcloud.com/audio-ads?
 ||api-visitor-analytics.intercom.com^
 ||api.*.com/p/report?$domain=bybit.com
@@ -11184,6 +11578,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||api.brs.intl.miui.com^
 ||api.bugsnag.com^
 ||api.diffchecker.com/external/mixpanel/user-properties|
+||api.facebook.com/method/logging.clientevent
 ||api.ffbbbdc6d3c353211fe2ba39c9f744cd.com^$third-party
 ||api.github.com/_private/browser/stats$important
 ||api.installer.xiaomi.com^
@@ -11346,6 +11741,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||azurewebsites.net^*/telemetry.js
 ||babes-mansion.s3.amazonaws.com^
 ||badding.oss-ap-southeast-1.aliyuncs.com^
+||badge.facebook.com^$third-party
 ||badges.instagram.com^$third-party
 ||baidu.com/*/mwb2.gif?
 ||baidu.com/*/track.gif?$image,redirect=1x1-transparent.gif
@@ -11495,6 +11891,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||beacon.cdn.qq.com^
 ||beacon.netflix.com^
 ||beacon.qq.com^
+||beacon.shazam.com^
 ||beacon.sina.com.cn^
 ||beacon.www.theguardian.com^
 ||beaconcdn.qq.com^
@@ -11865,7 +12262,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||config.jpush.cn^
 ||config.parsely.com^$third-party
 ||connatix.com^$domain=androidheadlines.com
+||connect.facebook.com^$3p,domain=facebook.com
 ||connect.facebook.com^$3p,domain=instagram.com
+||connect.facebook.net^$3p,domain=facebook.com
 ||connect.facebook.net^$3p,domain=instagram.com
 ||consent.cookiebot.com/*&referer=www.lidl.de$script
 ||consent.cookiebot.com/*/cc.js?*&referer=www.knappschaft.de
@@ -11909,6 +12308,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||csstools.chinaz.com/tools/images/*
 ||cstm.baidu.com^
 ||ctfassets.net^$media,redirect=noopmp3-0.1s,domain=app.idagio.com
+||ctobsnssdk.com^
 ||curiosity-seven.vercel.app^
 ||customerevents.netflix.com^
 ||d-test.39.net^
@@ -13265,6 +13665,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||dltvkwr7nbdlj.cloudfront.net^
 ||dlvds9i67c60j.cloudfront.net^
 ||dlxk2dj1h3e83.cloudfront.net^
+||dm.pstatp.com^
 ||dm0acvguygm9h.cloudfront.net^
 ||dm0ly9ibqkdxn.cloudfront.net^
 ||dm0t14ck8pg86.cloudfront.net^
@@ -13564,8 +13965,109 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||exp.notion.so^
 ||ext.chtbl.com/trackable.js
 ||facai383.oss-cn-guangzhou.aliyuncs.com^
+||facebook.com/*/instream/vast.xml?*&pageurl=http*.4gtv.tv$script,xmlhttprequest,other,redirect=noopvast-2.0
+||facebook.com/*/plugins/page.php$third-party
+||facebook.com/*/plugins/share_button.php$third-party
+||facebook.com/a/bz?
+||facebook.com/adnw_request?
 ||facebook.com/ads/ig_redirect/$popup,domain=instagram.com
+||facebook.com/ai.php?
+||facebook.com/ajax/*/log.php
+||facebook.com/ajax/*_logging/
+||facebook.com/ajax/*logging.
+||facebook.com/ajax/bnzai*__comet_req=
+||facebook.com/ajax/bz?*__comet_req=
+||facebook.com/ajax/mtouch_perf_page_load_timings/
+||facebook.com/ajax/qm/
+||facebook.com/api/graphql/$xhr,replace=/\{"node":\{"__typename":"MarketplaceFeedAdStory"[^\n]+?"cursor":(?:null|"\{[^\n]+?\}"|[^\n]+?MarketplaceSearchFeedStoriesEdge")\}/{}/g,domain=web.facebook.com
+||facebook.com/api/graphql/$xhr,replace=/\{"node":\{"__typename":"MarketplaceFeedAdStory"[^\n]+?"cursor":(?:null|"\{[^\n]+?\}"|[^\n]+?MarketplaceSearchFeedStoriesEdge")\}/{}/g,domain=www.facebook.com
+||facebook.com/api/graphql/$xhr,replace=/\{"node":\{"__typename":"VideoHomeFeedUnitSectionComponent"[^\n]+?"sponsored_data":\{"ad_id"[^\n]+?"cursor":null\}/{}/,domain=web.facebook.com
+||facebook.com/api/graphql/$xhr,replace=/\{"node":\{"__typename":"VideoHomeFeedUnitSectionComponent"[^\n]+?"sponsored_data":\{"ad_id"[^\n]+?"cursor":null\}/{}/,domain=www.facebook.com
+||facebook.com/api/graphql/$xhr,replace=/\{"node":\{"role":"SEARCH_ADS"[^\n]+?cursor":[^}]+\}/{}/g,domain=web.facebook.com
+||facebook.com/api/graphql/$xhr,replace=/\{"node":\{"role":"SEARCH_ADS"[^\n]+?cursor":[^}]+\}/{}/g,domain=www.facebook.com
+||facebook.com/async/wbloks/log/
+||facebook.com/audiencenetwork/$third-party
+||facebook.com/audiencenetwork/web/?
+||facebook.com/brandlift.php
+||facebook.com/common/cavalry_endpoint.php?
+||facebook.com/connect/connect.php$third-party
+||facebook.com/email_open_log_
+||facebook.com/impression.php
+||facebook.com/marketplace/$removeparam=tracking
+||facebook.com/method/links.getStats$third-party
+||facebook.com/method/links.getstats?
+||facebook.com/network_ads_common
+||facebook.com/platform/cavalry_endpoint.php?
+||facebook.com/platform/scribe_endpoint.php/
+||facebook.com/plugins/$3p,domain=facebook.com
 ||facebook.com/plugins/$3p,domain=instagram.com
+||facebook.com/plugins/activity.php?$third-party
+||facebook.com/plugins/facepile.php?$third-party
+||facebook.com/plugins/fan.php?$third-party
+||facebook.com/plugins/follow.php$third-party
+||facebook.com/plugins/like.php?$third-party
+||facebook.com/plugins/like_box.php$third-party
+||facebook.com/plugins/likebox/$third-party
+||facebook.com/plugins/page.php?$third-party
+||facebook.com/plugins/recommendations.php?$third-party
+||facebook.com/plugins/send.php?$third-party
+||facebook.com/plugins/share_button.php?$third-party
+||facebook.com/plugins/subscribe.php$third-party
+||facebook.com/privacy_sandbox/pixel/
+||facebook.com/restserver.php?*.getStats&$third-party
+||facebook.com/rtb_impression/?tr=
+||facebook.com/security/hsts-pixel.gif
+||facebook.com/sem_campaigns/sem_pixel_test/?
+||facebook.com/sem_mpixel/
+||facebook.com/sharer/sharer.php$third-party
+||facebook.com/sw/log/init/
+||facebook.com/tr$third-party
+||facebook.com/tr/
+||facebook.com/tr/?
+||facebook.com/tr/|
+||facebook.com/tr?
+||facebook.com/w/$third-party
+||facebook.com/whitepages/wpminiprofile.php?partner_id=$third-party
+||facebook.com/widgets/$third-party
+||facebook.com/widgets/activity.php?$third-party
+||facebook.com/widgets/fan.php?$third-party
+||facebook.com/widgets/like.php?$third-party
+||facebook.com/widgets/recommendations.php?$third-party
+||facebook.com/xti.php?
+||facebook.com^$app=com.veraxen.colorbynumber.oilpainting|com.veraxen.jigsaw|com.veraxen.jigsawpuzzlescollectionhd
+||facebook.com^$removeparam=/^[a-z]*ref[a-z]*=/
+||facebook.com^$removeparam=/^__(xts|cft)__(\[|%5B)\d(\]|%5D)=/
+||facebook.com^$removeparam=/^hc_[a-z_%\[\]0-9]*=/
+||facebook.com^$removeparam=__tn__
+||facebook.com^$removeparam=_nc_x
+||facebook.com^$removeparam=_rdr
+||facebook.com^$removeparam=action_history
+||facebook.com^$removeparam=app
+||facebook.com^$removeparam=comment_tracking
+||facebook.com^$removeparam=dti
+||facebook.com^$removeparam=eav
+||facebook.com^$removeparam=eid
+||facebook.com^$removeparam=extid
+||facebook.com^$removeparam=ftentidentifier
+||facebook.com^$removeparam=idorvanity
+||facebook.com^$removeparam=ls_ref
+||facebook.com^$removeparam=mibextid
+||facebook.com^$removeparam=padding
+||facebook.com^$removeparam=pageid
+||facebook.com^$removeparam=paipv
+||facebook.com^$removeparam=rdc
+||facebook.com^$removeparam=rdr
+||facebook.com^$removeparam=referral_code
+||facebook.com^$removeparam=referral_story_type
+||facebook.com^$removeparam=sfnsn
+||facebook.com^$removeparam=tracking
+||facebook.com^$removeparam=video_source
+||facebook.com^$removeparam=wtsid
+||facebook.com^*/impression_logging/
+||facebook.com^*/logging/
+||facebook.com^*/plugins/like.php?$third-party
+||facebook.com^*/plugins/page.php?$third-party
+||facebook.com^*/plugins/share_button.php?$third-party
 ||facture-pdf-secure-*.vercel.app^$all
 ||familydoctor.com.cn/c/a/000/ggw_
 ||fanyi.baidu.com/ait/config/cms/list?
@@ -13829,7 +14331,341 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||govern-assessment-validation-*.vercel.app^$all
 ||gpm-mon-sg.byteoversea.com^
 ||gpt.mail.yahoo.net/sandbox$subdocument,domain=mail.yahoo.com
+||graph.facebook.com/*/activities?access_token=&event=
+||graph.facebook.com/*?fields=supports_implicit_sdk_logging
+||graph.facebook.com/?*id=http://$third-party
+||graph.facebook.com/?*id=https://$third-party
+||graph.facebook.com/?callback=*&ids=http://$third-party
+||graph.facebook.com/?callback=*&ids=https://$third-party
+||graph.facebook.com/?id=$third-party
+||graph.facebook.com/?ids=*&callback=$script,3p
+||graph.facebook.com/?ids=*&callback=$script,third-party
+||graph.facebook.com/?ids=*&fields=*share_count
+||graph.facebook.com/fql?q=SELECT$third-party
+||graph.facebook.com/logging_client_events
+||graph.facebook.com/network_ads
+||graph.facebook.com^$3p,domain=facebook.com
 ||graph.facebook.com^$3p,domain=instagram.com
+||graph.facebook.com^$app=Draziw.Button.Mines
+||graph.facebook.com^$app=Orion.Soft
+||graph.facebook.com^$app=abs.workout.bellyfatworkout.waistworkout.stomach|armworkout.armworkoutformen.armexercises|bodyfast.zero.fastingtracker.weightloss|buttocksworkout.hipsworkout.bootyworkout.legworkouts|com.eyefilter.nightmode.bluelightfilter|com.northpark.drinkwater|com.northpark.periodtracker|com.popularapp.thirtydayfitnesschallenge|downloader.vitmate.downloaderapp|fat.burnning.plank.fitness.loseweight|hd.video.downloader.app.hdvideodownloaderapp|homeworkout.homeworkouts.noequipment|hydration.watertracker.waterreminder.drinkwaterreminder|increaseheightworkout.heightincreaseexercise.tallerexercise|kegel.kegelexercises.pelvicfloor.pfm|legsworkout.slimlegs.fatburning.stronglegs|losebellyfat.flatstomach.absworkout.fatburning|loseweightapp.loseweightappforwomen.womenworkoutathome|maybebaby.getpregnant.getbaby.flo|menloseweight.loseweightappformen.weightlossformen|nightfilter.bluelightfilter.nightshift|pedometer.steptracker.calorieburner.stepcounter|periodtracker.pregnancy.ovulationtracker|runningforweightloss.runningapp.runningtracker|sixpack.sixpackabs.absworkout|sleepsounds.relaxandsleep.whitenoise|splits.splitstraining.dothesplits.splitsin30days|steptracker.healthandfitness.walkingtracker.pedometer|stretching.stretch.exercises.back|walking.weightloss.walk.tracker|women.workout.female.fitness|workoutforwomen.femalefitness.womenworkout.loseweight
+||graph.facebook.com^$app=ace.jun.shortcuts
+||graph.facebook.com^$app=all.video.downloader.allvideodownloader|applock.lockapps.fingerprint.password.locker|breastenlarger.bodyeditor.photoeditor|cast.video.screenmirroring.casttotv|castwebbrowsertotv.castwebvideo.webvideocaster|com.camerasideas.trimmer|com.downloader.privatebrowser|com.inshot.neonphotoeditor|files.fileexplorer.filemanager|freemusic.download.musicplayer.mp3player|freeringtonesforandroid.bestringtoneapp.ringtone|gallery.hidepictures.photovault.lockgallery|glitchvideoeditor.videoeffects.glitchvideoeffect|mp3videoconverter.videotomp3.videotomp3converter|musicplayer.musicapps.music.mp3player|photo.editor.photoeditor.filtersforpictures|photo.editor.photoeditor.photoeditorpro|photoeditor.cutout.backgrounderaser|qrscanner.barcodescanner.barcodereader.qrcodereader|ringtone.maker.mp3.cutter.audio|screen.mirroring.screenmirroring|sharefiles.sharemusic.shareapps.filetransfer|video.downloader.videodownloader|video.player.videoplayer|videoeditor.videomaker.videoeditorforyoutube|videoeditor.videorecorder.screenrecorder|videostory.template.animatedstorymaker|air.com.jogatina.domino.android
+||graph.facebook.com^$app=an.Radio80
+||graph.facebook.com^$app=anews.com
+||graph.facebook.com^$app=aplicacion.tiempo
+||graph.facebook.com^$app=app.source.getcontact
+||graph.facebook.com^$app=balls.glow.bricks.breaker.brounce.ballz.puzzle.free
+||graph.facebook.com^$app=best.hd.uhd.amoled.wallpapers
+||graph.facebook.com^$app=booster.optimizer.cleaner|com.assistivetouch.controlcenter|com.att.assistivetouch2|com.att.swipe.assistivetouch|com.easytouch.assistivetouch|com.team.assistivetouch.easytouch|screen.recorder.videorecorder.screenrecorder
+||graph.facebook.com^$app=br.com.aleluiah_apps.hinario.harpa_crista
+||graph.facebook.com^$app=bubble.game.shooter.bird.pop
+||graph.facebook.com^$app=bubble.shoot.fruit.splash.game2
+||graph.facebook.com^$app=cache.optimize.cleancache.clearcache.cachecleaner.clean.clear.boost.booster.junk
+||graph.facebook.com^$app=cast.video.screenmirroring.casttotv
+||graph.facebook.com^$app=cat.blackcatapp.u2
+||graph.facebook.com^$app=cl.android
+||graph.facebook.com^$app=cl.racional.app|com.mercadolibre|com.mercadopago.wallet|com.openmygame.games.android.crossword.plants|com.openmygame.games.android.fillwordsoffline|com.openmygame.games.android.jigsawpuzzle|com.openmygame.games.android.jsurvive|com.openmygame.games.android.swipeelements|com.openmygame.games.android.wordpizza|com.openmygame.games.android.wordsearchsea|com.openmygame.games.kr.client|com.openmygame.magicwordsearch
+||graph.facebook.com^$app=cn.wps.moffice_eng
+||graph.facebook.com^$app=co.leanremote.universalremotecontrol.remotecontrol
+||graph.facebook.com^$app=codetivelab.macfinder.bluetooth.bluetoothmacfinder|codetivelab.bluetoothaurdino
+||graph.facebook.com^$app=com.Avalon.amazingrun|com.Bingo.Football|com.Bingo.MatchGame|com.Jxy.BeachVolleyball|com.cargame.fanaticalcar|com.cg.fighting|com.chris.fruitball|com.doodlemobile.robotstrike|com.dxm.superCarRumble|com.escape.puzzle.prison.bank.steal.money.fun|com.fangjieli.diving|com.flyingcat.pixelcolor|com.fyy.neonhockey|com.gsr.npuzzle|com.gsr.wordcross|com.icarus.carball|com.jzb.adventurer|com.lyd.lineconnect|com.smilerlee.jewels|com.wanxing.restaurant|com.wordmobile.prisonstorm|com.wordmobile.waterslide|com.wordmobiles.bikeRacing|com.wordsmobile.gunsimulator|com.wordsmobile.musichero|com.yecheng.hundredRooms|com.yinyuya.idlecar|cos.mos.drumpad|myandroid.fphoenix.fastspinner
+||graph.facebook.com^$app=com.DTA.trigon
+||graph.facebook.com^$app=com.Egybest.app
+||graph.facebook.com^$app=com.FruitBump
+||graph.facebook.com^$app=com.HealthFitnessAndTutorials.UnixTutorial
+||graph.facebook.com^$app=com.PSVStudio.HippoDentist
+||graph.facebook.com^$app=com.Project100Pi.themusicplayer
+||graph.facebook.com^$app=com.RenownEntertainment.BallHopAE
+||graph.facebook.com^$app=com.Seriously.Phoenix|com.Seriously.BestFiends
+||graph.facebook.com^$app=com.acg.manga
+||graph.facebook.com^$app=com.advancedprocessmanager
+||graph.facebook.com^$app=com.allenmm.archery
+||graph.facebook.com^$app=com.allgoritm.youla
+||graph.facebook.com^$app=com.altshift.notnot
+||graph.facebook.com^$app=com.amber.launcher
+||graph.facebook.com^$app=com.amdroidalarmclock.amdroid
+||graph.facebook.com^$app=com.anddoes.launcher
+||graph.facebook.com^$app=com.androidmkab.telugu
+||graph.facebook.com^$app=com.aniclear.app
+||graph.facebook.com^$app=com.antutu.ABenchMark
+||graph.facebook.com^$app=com.appandroid.peliskul2020|com.tikmate.tiktokvideodownloader.videodownloaderfortiktok|com.zico.opencamera|com.threemajors.national.geo|com.smarthflixs.app|com.playit.videoplayer
+||graph.facebook.com^$app=com.appdlab.radarexpress
+||graph.facebook.com^$app=com.appside.bongcal
+||graph.facebook.com^$app=com.appynation.occw
+||graph.facebook.com^$app=com.apxsoft.dodonpachi_gg
+||graph.facebook.com^$app=com.armeniatoday.rss
+||graph.facebook.com^$app=com.art.blast.jigsaw|com.fruitheroes.legend|com.fruitblast.friendslegend
+||graph.facebook.com^$app=com.avast.android.mobilesecurity
+||graph.facebook.com^$app=com.avira.android
+||graph.facebook.com^$app=com.balysv.loop
+||graph.facebook.com^$app=com.banglalink.toffee
+||graph.facebook.com^$app=com.bbfilm.app
+||graph.facebook.com^$app=com.bbm
+||graph.facebook.com^$app=com.betterforsol.solitaire.card.games.free
+||graph.facebook.com^$app=com.billiards.city.pool.nation.club
+||graph.facebook.com^$app=com.bloodyluna.TaipeiMetroTimeAndFace
+||graph.facebook.com^$app=com.bloodyluna.TaipeiMetroTimeAndFare
+||graph.facebook.com^$app=com.booking
+||graph.facebook.com^$app=com.bprogrammers.cryptorize
+||graph.facebook.com^$app=com.braindom2riddle|com.braindom
+||graph.facebook.com^$app=com.brainium.blackjack|com.brainium.freecellfree|com.brainium.jumbline2free|com.brainium.solitaire|com.brainium.spiderfree|com.brainium.sudoku.free
+||graph.facebook.com^$app=com.brainpuzzles.roperescue.physicsgames
+||graph.facebook.com^$app=com.bricksbreaker.balls.crusher.bricks
+||graph.facebook.com^$app=com.candl.athena
+||graph.facebook.com^$app=com.candl.chronos
+||graph.facebook.com^$app=com.cct.hingeit|com.gjg.colorfill3d|com.gym.racegame|com.slippy.linerusher|com.painter.cutandpaint|com.colorup.game|com.mgc.runnergame|com.colorhole.game|com.gjg.egg1|com.surgeon.master3d|com.games.colorballs3d|com.game.beerpong|com.mnightt.slices|com.suji.spinner|com.game.colorcut|com.colorsaw.game|com.magjg.roundhit|com.puzzleupgjg.game|com.pimpmycar.game|com.hyperball.multiplayer|com.ct2018|com.gmail.bulupe.Scale
+||graph.facebook.com^$app=com.cerminara.yazzy
+||graph.facebook.com^$app=com.chess
+||graph.facebook.com^$app=com.chocolabs.app.chocotv
+||graph.facebook.com^$app=com.cisana.guidatv
+||graph.facebook.com^$app=com.cmcm.locker
+||graph.facebook.com^$app=com.cmplay.cellconnect
+||graph.facebook.com^$app=com.code.bluegeny.myhomeview
+||graph.facebook.com^$app=com.commsource.beautyplus
+||graph.facebook.com^$app=com.conjoinix.smartparent
+||graph.facebook.com^$app=com.contapps.android
+||graph.facebook.com^$app=com.createlogo.logomaker|com.flyerdesign.banner.postermaker|com.birthday.birthdayinvitation|com.visitingcardmaker.businesscardmaker|com.flyermaker.bannermaker|com.squarepic.instafit.nocrop.instasquare.profilephoto.coverphoto.squarephoto|com.logomaker.eSportsLogoMaker|com.invitation.invitationcardmaker|com.quotescreator.picturequotes.textonphoto.quotes.quotesmaker
+||graph.facebook.com^$app=com.cricbuzz.android
+||graph.facebook.com^$app=com.crossword.bible.cookies.find.english|four.pics.one.words.quiz.guess.word.games.search.puzzle.free|klondike.solitaire.card.games.free.patience.spider.freecell.classic|emoji.word.games.four.pics.one.words.quiz.guess.twopics.free|word.riddles.guess.brain.test.tricky.puzzle.quiz.game.free|pic.word.parts.scrabble.combine.four.pics.guess.emoji.quiz.logo.merge.puzzle|pic.game.guess.word.four.picture.one.brain.emoji.quiz.logo.puzzle.free|word.think.hidden.words.find.brain.train.scrabble.crush.swipe.search.puzzle.game
+||graph.facebook.com^$app=com.dencreak.spbook
+||graph.facebook.com^$app=com.devexpert.weather
+||graph.facebook.com^$app=com.devsisters.gb|com.devsisters.cookiepuzzle|com.devsisters.icepixel.tapeit|com.devsisters.SolitaireDeckedOut
+||graph.facebook.com^$app=com.differencetenderwhite.skirt
+||graph.facebook.com^$app=com.digidust.elokence.akinator.freemium
+||graph.facebook.com^$app=com.digitalchemy.calculator.freedecimal
+||graph.facebook.com^$app=com.dotnbeat.dancing.music.rhythm.handspeed
+||graph.facebook.com^$app=com.droid27.transparentclockweather
+||graph.facebook.com^$app=com.dubox.drive
+||graph.facebook.com^$app=com.dumplingsandwich.pencilsketch
+||graph.facebook.com^$app=com.dv.adm
+||graph.facebook.com^$app=com.easybrain.make.music|com.agminstruments.drumpadmachine|com.easybrain.brain.test.easy.game|com.europosit.pixelcoloring|com.easybrain.nonogram|com.easybrain.block.puzzle.games|com.easybrain.jigsaw.puzzles|com.easybrain.sudoku.android|com.easybrain.chamy|com.easybrain.word.search
+||graph.facebook.com^$app=com.eco.fastcharger
+||graph.facebook.com^$app=com.eenadu
+||graph.facebook.com^$app=com.erudite.ecdict
+||graph.facebook.com^$app=com.estmob.android.sendanywhere
+||graph.facebook.com^$app=com.eterno
+||graph.facebook.com^$app=com.evozi.network
+||graph.facebook.com^$app=com.ezhld.recipe
+||graph.facebook.com^$app=com.fdgentertainment.tentaclewars.gp.free
+||graph.facebook.com^$app=com.finallevel.radiobox
+||graph.facebook.com^$app=com.flyersoft.moonreader
+||graph.facebook.com^$app=com.forshared.files
+||graph.facebook.com^$app=com.fourdesire.spacewalk
+||graph.facebook.com^$app=com.fragileheart.alarmclock
+||graph.facebook.com^$app=com.fugo.wow
+||graph.facebook.com^$app=com.futbin
+||graph.facebook.com^$app=com.game.JewelsStar
+||graph.facebook.com^$app=com.game.collection.puzzleking
+||graph.facebook.com^$app=com.gameloft.android.ANMP.GloftM5HM
+||graph.facebook.com^$app=com.games.noodleman.io2
+||graph.facebook.com^$app=com.geecko.QuickLyric
+||graph.facebook.com^$app=com.geekslab.eyeprotection
+||graph.facebook.com^$app=com.genmini.drivingtest.dmv
+||graph.facebook.com^$app=com.geumson.nookslist
+||graph.facebook.com^$app=com.hangodjin.animal_crossing_guide
+||graph.facebook.com^$app=com.hb.dialer.free
+||graph.facebook.com^$app=com.hdwallpaper.wallpaper
+||graph.facebook.com^$app=com.homemade.ffm2
+||graph.facebook.com^$app=com.hornet.android
+||graph.facebook.com^$app=com.hyperionics.avar
+||graph.facebook.com^$app=com.icreativeidea
+||graph.facebook.com^$app=com.idea.backup.smscontacts
+||graph.facebook.com^$app=com.iend.hebrewcalendar
+||graph.facebook.com^$app=com.imo.android.imoimhd
+||graph.facebook.com^$app=com.indiamart.m
+||graph.facebook.com^$app=com.indiez.amaze|com.indiez.monsters.puzzles|com.indiez.nonogram|com.indiez.pet.run|com.indiez.tile.connect|com.nostel.color.page|com.nostel.dot.line.puzzle|com.nostel.parking.car|com.nostel.pikachu|com.nostel.taxi.run
+||graph.facebook.com^$app=com.infraware.office.link
+||graph.facebook.com^$app=com.instanza.baba
+||graph.facebook.com^$app=com.inswall.wallpaper
+||graph.facebook.com^$app=com.intsig.camscanner
+||graph.facebook.com^$app=com.iposedon.bricksbreakerballs
+||graph.facebook.com^$app=com.ivanGavrilov.CalcKit
+||graph.facebook.com^$app=com.jmsgame.jackpotmastercasino|com.jackpotfriends.slots|com.topultragame.slotlasvega
+||graph.facebook.com^$app=com.jrtstudio.AnotherMusicPlayer
+||graph.facebook.com^$app=com.jrummyapps.rootchecker
+||graph.facebook.com^$app=com.kayenworks.mcpeaddons
+||graph.facebook.com^$app=com.ketchapp.donttouchthespikes
+||graph.facebook.com^$app=com.kokteyl.mackolik
+||graph.facebook.com^$app=com.kroegerama.appchecker
+||graph.facebook.com^$app=com.kubix.creative
+||graph.facebook.com^$app=com.l
+||graph.facebook.com^$app=com.labs367.fbvideodownloader|com.harry.wallpie|com.harry.stokie
+||graph.facebook.com^$app=com.laurencedawson.reddit_sync
+||graph.facebook.com^$app=com.lazymasters.wordweekend
+||graph.facebook.com^$app=com.lenovo.anyshare.gps
+||graph.facebook.com^$app=com.lfp.laligafantasy
+||graph.facebook.com^$app=com.lft.password.manager.accounts
+||graph.facebook.com^$app=com.linkdesks.iBubble
+||graph.facebook.com^$app=com.liveearthcamview.satelliteview.worldmap3d.liveearthmap.mylocation.streetview.gpsnavigation|com.liveearthmap.livecam.streetview.gpsnavigation.routeplanner.satelliteviewmap
+||graph.facebook.com^$app=com.lookandfeel.qrcodescanner
+||graph.facebook.com^$app=com.lyoomatch.glowpuzzleblock.blockgame
+||graph.facebook.com^$app=com.magicv.airbrush
+||graph.facebook.com^$app=com.mail.mobile.android.mail
+||graph.facebook.com^$app=com.make.it.fly|com.slingshot.basketball|com.slingshot.biker|com.slingshot.car|com.slingshot.train
+||graph.facebook.com^$app=com.manevolves.android.mandontfapstreakbasedwallpaper
+||graph.facebook.com^$app=com.mapswithme.maps.pro
+||graph.facebook.com^$app=com.maybeyou|com.curvydating|com.evermatch
+||graph.facebook.com^$app=com.merigotech.fillwords
+||graph.facebook.com^$app=com.mi.android.globalFileexplorer
+||graph.facebook.com^$app=com.microsoft.microsoftsolitairecollection
+||graph.facebook.com^$app=com.mind.quiz.brain.out
+||graph.facebook.com^$app=com.mindmill.pipes.loops.plumber.puzzle
+||graph.facebook.com^$app=com.mobikolik.tumgazeteler
+||graph.facebook.com^$app=com.mobilefootie.wc2010
+||graph.facebook.com^$app=com.mobilesrepublic.appy
+||graph.facebook.com^$app=com.mobilesrepublic.appygeek
+||graph.facebook.com^$app=com.mobilexsoft.ezanvakti
+||graph.facebook.com^$app=com.mobilityware.AddictionSolitaire|com.mobilityware.BlackJackFree|com.mobilityware.CastleSolitaire|com.mobilityware.CrownSolitaire|com.mobilityware.destinationsolitaire|com.mobilityware.freecell|com.mobilityware.MahjongSolitaire|com.mobilityware.PyramidFree|com.mobilityware.Slots|com.mobilityware.spider|com.mobilityware.SpiderGo|com.mobilityware.TriPeaksFree|com.mobilityware.TropicalTreats
+||graph.facebook.com^$app=com.mobisystems.fileman
+||graph.facebook.com^$app=com.mobond.mindicator
+||graph.facebook.com^$app=com.moonactive.coinmaster
+||graph.facebook.com^$app=com.movieshubinpire.android
+||graph.facebook.com^$app=com.msmobile.hb
+||graph.facebook.com^$app=com.musicplayer.music
+||graph.facebook.com^$app=com.musixmatch.android.lyrify
+||graph.facebook.com^$app=com.mxtech.videoplayer.ad|com.mxtech.videoplayer.beta
+||graph.facebook.com^$app=com.nice.accurate.weather
+||graph.facebook.com^$app=com.niceapp.instasave
+||graph.facebook.com^$app=com.nightmode.darkmode|com.tiktok.video.videodownloader|gfxtool.gamebooster.gfx|com.avalon.quicksave|free.gfxtool.freefire.gamebooster
+||graph.facebook.com^$app=com.notizie.libere
+||graph.facebook.com^$app=com.oddlyspaced.burnermedia.burnerguard|com.techburner.freshwalls|com.techburner.wallpaper|com.techburner.scanner.pdfeditor.android|com.techburner.burnerbits
+||graph.facebook.com^$app=com.ogqcorp.bgh
+||graph.facebook.com^$app=com.okaeriapp.kabesan
+||graph.facebook.com^$app=com.openmygame.games.android.wordsearchsea
+||graph.facebook.com^$app=com.outfit7.mytalkingtom2|com.outfit7.mytalkingtomfree
+||graph.facebook.com^$app=com.outfit7.talkinggingerfree
+||graph.facebook.com^$app=com.outfit7.talkingtomgoldrun
+||graph.facebook.com^$app=com.p74.player
+||graph.facebook.com^$app=com.pdfviewer.scanner|com.download.center.goodtool|com.alldocument.focus|com.holy.bible.hbs
+||graph.facebook.com^$app=com.phototools.freeup.space.turbo.speed.gamebooster
+||graph.facebook.com^$app=com.piriform.ccleaner
+||graph.facebook.com^$app=com.pixel.art.coloring.color.number
+||graph.facebook.com^$app=com.pixelpoint
+||graph.facebook.com^$app=com.plugmind.cbtest
+||graph.facebook.com^$app=com.plurk.android
+||graph.facebook.com^$app=com.popularapp.periodcalendar
+||graph.facebook.com^$app=com.pss.line
+||graph.facebook.com^$app=com.psy.chigs7.psychologyfacts
+||graph.facebook.com^$app=com.puzzle.miniworld
+||graph.facebook.com^$app=com.q1.breakbricks
+||graph.facebook.com^$app=com.quoord.tapatalkpro.activity
+||graph.facebook.com^$app=com.radiolight.etatsunis
+||graph.facebook.com^$app=com.radiolight.russie
+||graph.facebook.com^$app=com.rcplatform.nocrop
+||graph.facebook.com^$app=com.resultadosfutbol.mobile
+||graph.facebook.com^$app=com.ryzenrise.seffct
+||graph.facebook.com^$app=com.s.antivirus
+||graph.facebook.com^$app=com.sail.advanced.booster
+||graph.facebook.com^$app=com.scienze.notizie
+||graph.facebook.com^$app=com.scores365
+||graph.facebook.com^$app=com.seekingalpha.webwrapper
+||graph.facebook.com^$app=com.senspark.android.domino|com.senspark.android.tank1990|com.senspark.android.tank1990pvp|com.senspark.bombsquad.bombbomb.free.arcade.contra.classicgame|com.senspark.goldminerclassic|com.senspark.goldminerclassicorigin|com.senspark.goldminerdeluxe|com.senspark.goldrush.goldminer.worldtour|com.senspark.mine.build.block.craft.free.game|com.senspark.stickwar
+||graph.facebook.com^$app=com.shanga.walli
+||graph.facebook.com^$app=com.shivam.torrent_search
+||graph.facebook.com^$app=com.shubhobrata.roy.bdixtester
+||graph.facebook.com^$app=com.skype.raider
+||graph.facebook.com^$app=com.sofascore.results
+||graph.facebook.com^$app=com.softinit.urlshortner
+||graph.facebook.com^$app=com.softissimo.reverso.context
+||graph.facebook.com^$app=com.sonyericsson.trackid
+||graph.facebook.com^$app=com.spacegame.basic3|com.spacegame.basic5|com.spacegame.basic7
+||graph.facebook.com^$app=com.spicags.ballsort
+||graph.facebook.com^$app=com.sports.schedules.basketball.nba|com.sports.schedules.college.basketball.ncaa|com.sports.schedules.football.ncaa|com.sports.schedules.ncaaw.college.basketball.women|com.sports.schedules.scores.baseball.mlb|com.sports.schedules.scores.basketball.women.wnba|com.sports.schedules.scores.hockey.nhl|com.sports.schedules.football.nfl
+||graph.facebook.com^$app=com.stream.drakorindoawet
+||graph.facebook.com^$app=com.strict.mkenin.agf.cardgames2|com.Andrey.ElementsofNature|com.strict.mkenin.redball.spikeball2|com.strict.mkenin.spaceattack|com.strict.mkenin.spikeball|com.kaptan.blockpuzzlegame|com.strict.mkenin.angryfarm|com.strict.mkenin.redball.runnerball3|com.AlekseySudakov.LamberMilIdle|com.strict.mkenin.redball.runnerball|com.asmr.relaxing.anti.stress.games|com.GardenofDreams.SpeciesEvolution|com.strict.mkenin.redball.runnerball2
+||graph.facebook.com^$app=com.supergame.ultrasharp.cutitdown
+||graph.facebook.com^$app=com.teeonsoft.ztorrent
+||graph.facebook.com^$app=com.tenqube.notisave
+||graph.facebook.com^$app=com.textra
+||graph.facebook.com^$app=com.thinkyeah.galleryvault
+||graph.facebook.com^$app=com.toi.reader.activities
+||graph.facebook.com^$app=com.touchtao.soccerkinggoogle|com.mobirix.zumaking2|com.mobirix.swipebrick2|com.mobirix.mahjongking2|com.mobirix.hit7.casino.slots|com.mobirix.gmm|com.mobirix.fishingchampionship|com.mobirix.airhockey|com.mobirix.abmon|com.mobirix.MultiplyWar
+||graph.facebook.com^$app=com.tourbillon.freeappsnow
+||graph.facebook.com^$app=com.trendmicro.dr.booster
+||graph.facebook.com^$app=com.triple.voicerecorder
+||graph.facebook.com^$app=com.truecaller
+||graph.facebook.com^$app=com.trungpt.video.download
+||graph.facebook.com^$app=com.ttxapps.dropsync
+||graph.facebook.com^$app=com.ultra.applock
+||graph.facebook.com^$app=com.urbandroid.sleep
+||graph.facebook.com^$app=com.vidmix.app
+||graph.facebook.com^$app=com.vyroai.AutoCutCut
+||graph.facebook.com^$app=com.wikitech.autosilentscheduler
+||graph.facebook.com^$app=com.womanlog
+||graph.facebook.com^$app=com.word.game.crossword.brain.puzzle.scapes.connect
+||graph.facebook.com^$app=com.wordoftheday.en
+||graph.facebook.com^$app=com.worldboardgames.seabattleworld
+||graph.facebook.com^$app=com.worldradios.roumanie
+||graph.facebook.com^$app=com.worldradios.ukraine
+||graph.facebook.com^$app=com.xda.labs.play
+||graph.facebook.com^$app=com.xmonetize.quizzland
+||graph.facebook.com^$app=com.xoopsoft.apps.bundesliga.free
+||graph.facebook.com^$app=com.youdao.hindict
+||graph.facebook.com^$app=com.yytpro.chipdom|com.puzzle.rings|roll.unblock.ball.block.puzzle|com.dicedom.mergepuzzle|com.solitaire.kingdom|com.wood.color.rings|com.unblock.wood.pgame4
+||graph.facebook.com^$app=com.zombodroid.MemeGenerator
+||graph.facebook.com^$app=com.zynga.crosswordswithfriends
+||graph.facebook.com^$app=com.zynga.words3
+||graph.facebook.com^$app=dictionary.ofamerican.english|advanced3nd.ofamerican.english|adv.american.dictionary|thesaurus.collocations.english.one_premium|dictionary.english.applearningac_premium|dictionary.ofamerican.english_premium|dictstudy.english.japanese|dictionary.english.applearningac|vocabulary.englishprofile.english.study|dictadv.english.britishmacmillan_premium|learnerapp.dictionary.english_premium|essential.british.english.ebe|dictadv.english.britishmacmillan|essential.american.english.ebe|thesaurusof.american.english|vocabulary.englishprofile.american.study|studyafc.american.dictionary|dictstudy.english.korean|pronounce.britishmacmillan.english.vi|thesaurus.collocations.english.one|newmacmillan.american.dictionary|learnerapp.dictionary.english|thesaurus.collocations.english.appfree|cambri.learnerenglish.english.hiac|dictstudy.english.spanish|learnerapp.dictionary.american_english_premium
+||graph.facebook.com^$app=do.multiple.cloner
+||graph.facebook.com^$app=dot.photo.compress.app
+||graph.facebook.com^$app=drug.vokrug
+||graph.facebook.com^$app=es.rafalense.themes
+||graph.facebook.com^$app=es.socialpoint.wordlife
+||graph.facebook.com^$app=ferp.android
+||graph.facebook.com^$app=fm.castbox.radio.music
+||graph.facebook.com^$app=fr.meteo
+||graph.facebook.com^$app=fr.playsoft.teleloisirs
+||graph.facebook.com^$app=fr.redshift.nrj
+||graph.facebook.com^$app=free.vpn.unblock.proxy.vpn.master.pro
+||graph.facebook.com^$app=game.bubble.shooter.dragon.pop
+||graph.facebook.com^$app=game.puzzle.woodypuzzle
+||graph.facebook.com^$app=game2048.b2048game.twozerofoureight2048.game
+||graph.facebook.com^$app=hcom.buta.caculator
+||graph.facebook.com^$app=hd.uhd.live.wallpapers.topwallpapers
+||graph.facebook.com^$app=ibecsystems.kz.zakonkz
+||graph.facebook.com^$app=idm.internet.download.manager
+||graph.facebook.com^$app=il.co.smedia.callrecorder.yoni
+||graph.facebook.com^$app=imoblife.toolbox.full
+||graph.facebook.com^$app=info.vazquezsoftware.animated.funny.stickers|info.vazquezsoftware.animated.love.stickers|info.vazquezsoftware.animated.memes.stickers|info.vazquezsoftware.animated.pixels.stickers|info.vazquezsoftware.animated.retro.stickers|info.vazquezsoftware.anime|info.vazquezsoftware.big.letters.whatsapp|info.vazquezsoftware.binaural|info.vazquezsoftware.calculator|info.vazquezsoftware.cats|info.vazquezsoftware.chat.master|info.vazquezsoftware.cool.fonts|info.vazquezsoftware.cool.fonts|info.vazquezsoftware.daily.horoscope|info.vazquezsoftware.danna.paola.stickers|info.vazquezsoftware.horoscope.dialy|info.vazquezsoftware.horoscopo|info.vazquezsoftware.love|info.vazquezsoftware.lullabies|info.vazquezsoftware.nickname.creator|info.vazquezsoftware.quicksquares|info.vazquezsoftware.shooter|info.vazquezsoftware.stickers|info.vazquezsoftware.tarot|info.vazquezsoftware.tasks|info.vazquezsoftware.testcapitales|info.vazquezsoftware.trivia|info.vazquezsoftware.wastickerapps|info.vazquezsoftware.wastickerapps.cars|info.vazquezsoftware.weatheralarms|info.vazquezsoftware.whitenoise|info.wazquezsoftware.sticker.maker
+||graph.facebook.com^$app=intelligems.torrdroid
+||graph.facebook.com^$app=io.casper.android
+||graph.facebook.com^$app=io.github.nekotachi.easynews
+||graph.facebook.com^$app=io.kodular.anujanand301201.Dribbble
+||graph.facebook.com^$app=it.mirko.beta
+||graph.facebook.com^$app=japanese.free.english.dictionary|dictionary.english.keywords5000|dictionary.english.freeapptck|dictionary.english.freeapptck_premium
+||graph.facebook.com^$app=jp.gocro.smartnews.android
+||graph.facebook.com^$app=kjv.bible.kingjamesbible|holy.bible.biblegame.bibleverse.color.by.number.colorbynumber.paint.pixel.art|bible.wordgame.words.connect.crossword.cookies|bible.wordgame.story.verse.words.connect.puzzle|bible.wordgames.wordcross.crossword.verse
+||graph.facebook.com^$app=mediavision.handwallet
+||graph.facebook.com^$app=mobi.drupe.app
+||graph.facebook.com^$app=mong.moptt
+||graph.facebook.com^$app=net.b92.android.brisbane
+||graph.facebook.com^$app=net.tsapps.appsales
+||graph.facebook.com^$app=net.wordbit.enru
+||graph.facebook.com^$app=net.wordbit.entw
+||graph.facebook.com^$app=net.zedge.android
+||graph.facebook.com^$app=org.aastudio.games.longnards
+||graph.facebook.com^$app=org.whiteglow.keepmynotes
+||graph.facebook.com^$app=org.yccheok.jstock.gui
+||graph.facebook.com^$app=pedometer.stepcounter.calorieburner.pedometerforwalking
+||graph.facebook.com^$app=pl.videostar
+||graph.facebook.com^$app=princ.lifestyle.CoupleWidget|princ.lifestyle.DDay|princ.care.bwidget
+||graph.facebook.com^$app=puzzle.wood.block.cube.music.box
+||graph.facebook.com^$app=radio.taiwan.hichannel.radiotuner
+||graph.facebook.com^$app=ru.idaprikol
+||graph.facebook.com^$app=ru.mail.horo.android
+||graph.facebook.com^$app=ru.sports.f1
+||graph.facebook.com^$app=simple.babytracker.newbornfeeding.babycare|absworkout.bellyfatworkout.waistworkout.abdominalworkout|homeworkout.homeworkouts.workoutathome.musclebuilding|simplemath.math.games.subtractiongames.mathgames|sixpack.absworkout.abexercises.abs|workout.homeworkouts.workouttrainer|strong.vibrator.massage.vibration.forwomen
+||graph.facebook.com^$app=tr.com.apps.kk
+||graph.facebook.com^$app=tv.fourgtv.fourgtv
+||graph.facebook.com^$app=tv.fourgtv.mobile|tv.fourgtv.video|tv.fourgtv.car
+||graph.facebook.com^$app=tv.peel.app
+||graph.facebook.com^$app=tweeter.gif.twittervideodownloader
+||graph.facebook.com^$app=ua.in.citybus.lviv
+||graph.facebook.com^$app=video.player.videoplayer
+||graph.facebook.com^$app=vip.app.karaoke
+||graph.facebook.com^$app=xyz.gl.animevsub
+||graph.facebook.com^$app=xyz.wmfall.phim
 ||graph.instagram.com/logging_client_events
 ||greenplanner.substack.com/embed|$subdocument
 ||gridsumdissector.com^$third-party
@@ -14234,6 +15070,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||m.baidu.com/tc?tcreq4log=
 ||m.bilibili.com^$removeparam=bbid
 ||m.bilibili.com^$removeparam=ts
+||m.facebook.com/ajax/weblite_load_logging/
+||m.facebook.com/ajax/weblite_resources_timing_logging/
 ||m.imgur.com/js/share.*.bundle.js
 ||m.ithome.com/api/lapin/
 ||m.xiangce.baidu.com/mobileapp/motu-*?guid=
@@ -14679,6 +15517,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||pix.spot.im^
 ||pixel-config.reddit.com^
 ||pixel-static.spotify.com^
+||pixel.byspotify.com^
+||pixel.facebook.com^
 ||pixel.reddit.com^
 ||pixel.wp.com^
 ||pixels.spotify.com^
@@ -14734,6 +15574,18 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||promoted.soundcloud.com^
 ||property-rental-seven.vercel.app^$all,to=~airbnb.com
 ||ps.azurewaf.microsoft.com/*/event
+||pstatp.com/growth/fe_sdk/bannersdk
+||pstatp.com/growth/mobile_list/image/bonus_
+||pstatp.com/origin/137370002e7fbe11b296a
+||pstatp.com/origin/1381500009611bc201d61
+||pstatp.com/origin/13816000374e83a453717.jpg
+||pstatp.com/origin/fef20000e7013b3511b6
+||pstatp.com/site/reads-sdk*/*.js
+||pstatp.com/toutiao/push.js
+||pstatp.com^*/bannersdk/
+||pstatp.com^*/push.js
+||pstatp.com^*/raven.js
+||pstatp.com^*/ttstatistics.
 ||ptyw.yiche.com/ssp/
 ||pubads.g.doubleclick.net/gampad/ads?*&description_url=https%3A%2F%2Fani.gamer.com.tw$xmlhttprequest,redirect=noopvast-3.0
 ||pubads.g.doubleclick.net/gampad/ads?*&output=xml_vast*&url=http*.4gtv.tv$script,xmlhttprequest,other,redirect=noopvast-2.0
@@ -14956,6 +15808,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||s3.eu-central-1.amazonaws.com^$app=ru.yandex.metro
 ||s3.eu-west-2.amazonaws.com/675.88.u6.8878/index.html$all
 ||s3.us-west-1.amazonaws.com/security.uni.firewall.$all
+||s3a.pstatp.com/toutiao/push.js
 ||sa.sina.cn^
 ||safebrowsing.urlsec.qq.com
 ||safety-profiles-fb-ads-*.vercel.app^$all
@@ -15028,6 +15881,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||sh.sina.com.cn/js/441/ZwyArticle_commo_23.js
 ||shaquevip.oss-cn-zhangjiakou.aliyuncs.com^
 ||share.baidu.com^$third-party
+||shazam.com/services/metrics/
 ||shui5.cn^*/ima/gg
 ||sia.internet.apps.samsung.com^
 ||sidearm-syndication.s3.amazonaws.com^$script,redirect=noopjs,3p
@@ -15435,6 +16289,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||tnc3-bjlgy.snssdk.com^
 ||tnc3-bjlgy.zijieapi.com^
 ||tns.simba.taobao.com^
+||tobapplog.ctobsnssdk.com^
+||toblog.ctobsnssdk.com^
 ||toggle.qq.com^
 ||tomarket-rewards.vercel.app^$doc,to=~tomarket.ai
 ||tomtom.pages.dev^$all
