@@ -669,6 +669,8 @@ $websocket,domain=pornhub.com
 @@/videos/*$domain=pornhub.com
 @@/wp-content/plugins/blockalyzer-adblock-counter/*$image,script,~third-party,domain=pornhub.com
 @@://analytics.google.com/analytics/$domain=analytics.google.com
+@@://googleadservices.com^|
+@@://www.googleadservices.com^|
 @@://www3.doubleclick.net^|$xmlhttprequest
 @@?sid=ads$domain=mail.163.com
 @@doubleclick.net/ads/preferences/
@@ -989,6 +991,7 @@ $websocket,domain=pornhub.com
 @@||bizpacreview.com^$csp=script-src 'self' *.leadpages.net *.gstatic.com *.google.com *.googleapis.com *.playwire.com *.facebook.com *.bootstrapcdn.com *.twitter.com *.spot.im
 @@||blogger.*.google.com^$domain=blogspot.com
 @@||blogger.*.google.com^$subdocument
+@@||blogger.com/comment-iframe.$subdocument
 @@||blogs.microsoft.com/wp-content/plugins/microsoft-oembeds/cookie-consent.css
 @@||blogs.microsoft.com/wp-content/plugins/microsoft-oembeds/cookie-consent.js
 @@||blogs.microsoft.com/wp-content/plugins/microsoft-oembeds/cookie-consent.js$~third-party
@@ -1262,6 +1265,7 @@ $websocket,domain=pornhub.com
 @@||flickr.com/register_cookies.gne?$stealth
 @@||flickr.com/signin/$stealth
 @@||fonts.googleapis.com$domain=android.com
+@@||fonts.googleapis.com$domain=blogger.com
 @@||fonts.googleapis.com$domain=chromium.org
 @@||fonts.googleapis.com$domain=google.com
 @@||fonts.googleapis.com$domain=googlesource.com
@@ -1273,6 +1277,7 @@ $websocket,domain=pornhub.com
 @@||fonts.googleapis.com/css?$domain=translate.google.com.hk
 @@||fonts.gstatic.com$domain=about.google
 @@||fonts.gstatic.com$domain=android.com
+@@||fonts.gstatic.com$domain=blogger.com
 @@||fonts.gstatic.com$domain=chromium.org
 @@||fonts.gstatic.com$domain=codingfont.com
 @@||fonts.gstatic.com$domain=google.com
@@ -1425,10 +1430,13 @@ $websocket,domain=pornhub.com
 @@||googleads.g.doubleclick.net^$app=com.google.android.apps.cultural
 @@||googleads.g.doubleclick.net^$app=com.thoptv.livetvstream
 @@||googleads.g.doubleclick.net^|$app=com.ftt.boxingstar.gl.aos
+@@||googleadservices.com/pagead/aclk?
+@@||googleadservices.com^$app=com.google.android.music
 @@||googleadservices.com^$domain=google.co.jp
 @@||googleadservices.com^$domain=google.com
 @@||googleadservices.com^$domain=google.com.hk
 @@||googleadservices.com^$domain=google.com.sg
+@@||googleadservices.com^|$app=com.google.android.youtube
 @@||googleapis.com/identitytoolkit^$stealth=referrer
 @@||googleapis.com/xxx-mightyparty.appspot.com/$3p,xhr,script,frame
 @@||googleapis.com/youtube/*/search?key=$stealth
@@ -3156,6 +3164,10 @@ baike.baidu.com##a[onclick="page.Mixedor.mixedOpen(this,0)"]
 baike.baidu.com##div[class^="index-module_drawerHand__"]
 baike.baidu.com##div[style="height: 57px;"]
 baike.baidu.com#?#.BK-after-content-wrapper > ul[class][id] > li:has(> a[onclick^="page.Mixedor.mixedOpen"][target="_blank"])
+baike.com###ad-xnsc
+baike.com###newsfix-on
+baike.com##.ad
+baike.com##.ad_xuanban
 balog18.blogspot.com##+js(abort-current-script, document.addEventListener, /google_ad_client/)
 balog18.blogspot.com#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '/google_ad_client/')
 baobao.baidu.com##.qb-relate-box
@@ -11838,6 +11850,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||baidu.com^*/w.gif?
 ||baidu.com^*/wb.gif?
 ||baifen.music.baidu.com^
+||baike.com/iframeheightforad.
+||baike.com/newtop/news.html
 ||banner.appsflyer.com^
 ||base-swap-frontend-*.vercel.app^$doc
 ||bat.bing.com^
@@ -11895,6 +11909,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||beacon.sina.com.cn^
 ||beacon.www.theguardian.com^
 ||beaconcdn.qq.com^
+||beacons*.gvt3.com^
 ||beap-bc.yahoo.com^
 ||beap.gemini.yahoo.com^
 ||bellsecuredloginfom-net.vercel.app^$all,to=~webmail.bell.net
@@ -11968,6 +11983,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||blockworks.co/_vercel/insights/
 ||blog.sina.com.cn/lm/mini/
 ||blog.skk.moe/_nuxt/static/manifest$xmlhttprequest
+||blogblog.com/tracker/
+||blogger.com/followers.g?blogID
 ||blogspot.com^*/s1600/drug.gif
 ||bloomberg.com/8FCGYgk4/init.js
 ||bloomberg.com^$removeparam=in_source
@@ -14238,6 +14255,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||google.com/buzz/api$third-party
 ||google.com/dssw.js
 ||google.com/favicon.ico$popup
+||google.com/friendconnect/script$domain=blogger.com
 ||google.com/friendconnect/script$domain=blogspot.com
 ||google.com/gen_204?
 ||google.com/gsi/log?
@@ -14269,6 +14287,10 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||googleads.g.doubleclick.net/pagead/id$script,xmlhttprequest,redirect=noopjs,domain=javindo.eu.org
 ||googleads.g.doubleclick.net^$app=world.cup|com.ludo.king|com.dubox.drive
 ||googleads.github.io^
+||googleadservices.com/pagead/conversion_async.js
+||googleadservices.com^
+||googleadservices.com^$3p
+||googleadservices.com^$third-party
 ||googleapis.com/aam.js
 ||googleapis.com/ajax/libs/webfont/$3p
 ||googleapis.com/ajax/libs/webfont/$third-party
@@ -15416,6 +15438,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||p16-ad.byteoversea.com^
 ||p4p.sina.com.cn^
 ||pacontainer.s3.amazonaws.com^
+||pagead2.googleadservices.com^
 ||pagead2.googlesyndication.com/pagead/$script,domain=gsmarena.com
 ||pagead2.googlesyndication.com/pagead/imgad?$image,redirect=1x1.gif
 ||pagead2.googlesyndication.com/pagead/imp.gif$image,redirect=1x1.gif
@@ -15469,6 +15492,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||parsely.com/keys/$script,third-party
 ||parsely.com^$3p
 ||parsely.com^$badfilter
+||partner.googleadservices.com^$third-party
 ||partner.video.syndication.msn.com^$~object,third-party
 ||partnerad.l.doubleclick.net^$third-party
 ||partnerads.ysm.yahoo.com^
@@ -16022,6 +16046,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||star-seo.oss-ap-northeast-1.aliyuncs.com^
 ||starkgame.zijieapi.com^
 ||stat.alibaba.com^
+||stat.baike.com^
 ||stat.cnmo.com^
 ||stat.m.360.cn^
 ||stat.y.qq.com^
