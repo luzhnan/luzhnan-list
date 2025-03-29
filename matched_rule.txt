@@ -98,12 +98,9 @@ $websocket,domain=pornhub.com
 .com./$popup,domain=pornhub.com
 .com/*/status/$removeparam=t,domain=twitter.com
 .com/*/status/$removeparam=t,domain=x.com
-.com/bilder/*.jpg|$script,1p,domain=com
 .com/playlist?list=$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtube.com
 .com/watch?$xmlhttprequest,jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtube.com
 .ct.sendgrid.net/$image
-.de/bilder/*.jpg|$script,1p,domain=de
-.de/image/*.gif|$script,1p,domain=de
 .doubleclick.net/$image
 .duolingo.com/open/
 .epicgames.com/O/
@@ -959,6 +956,7 @@ $websocket,domain=pornhub.com
 @@||assets.ctfassets.net^$media,domain=ads.spotify.com
 @@||assets.msn.com/bundles/*/social-bar-$~third-party
 @@||assets.msn.com/bundles/v*/edgeChromium/latest/native-ad-sales-highlight-v*.js$domain=ntp.msn.com
+@@||assets.msn.com/resolver/api/resolve/v3/config/?expType=AppConfig&expInstance=default&apptype=finance&$domain=msn.com
 @@||assets.msn.com/staticsb/statics/latest/adboxes/$script,~third-party
 @@||astyle.alicdn.com/??
 @@||atanx.alicdn.com/t/tanxssp.js$domain=alimarket.tmall.com
@@ -4488,6 +4486,7 @@ duolingo.com#?#section > div:has(> div > div[class] > div[class] > ins.adsbygoog
 duolingo.com#@#ins.adsbygoogle[data-ad-client]
 duolingo.com#@#ins.adsbygoogle[data-ad-slot]
 dushu.baidu.com##.openBox-shareEntry
+dynamic-report-api.appsflyersdk.com^
 e-didaskalia.blogspot.com###popupFbLikeBox
 e-didaskalia.blogspot.com##+js(abort-current-script, document.addEventListener, /google_ad_client/)
 e-didaskalia.blogspot.com#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '/google_ad_client/')
@@ -4717,8 +4716,13 @@ facebook.com#?#div[role="complementary"] > div[class] > div[class] > div[class] 
 facebook.com#?#div[role="main"] ~ div[data-nosnippet]:has(a[aria-label="Accessible login button"])
 facebook.com#@##fb_header
 facebook.com#@##share_feed
+facebook.com#@#.AdBox
+facebook.com#@#.advertising_widget
+facebook.com#@#.post-ads
 facebook.com#@#.post-fb-like
 facebook.com#@#.shareLink
+facebook.com#@#.sponsorPost
+facebook.com#@#.widgetSponsors
 facebook.com#@#a[href^="/ads/"]
 facebook.com#@#div[data-testid="cookie-policy-banner"]
 facebook.com#@#div[id^="hyperfeed_story_id_"]:has(a[href*="utm_campaign"])
@@ -5663,6 +5667,10 @@ gravatar.com##.custom-cookie-banner
 greasyfork.org###share
 greasyfork.org##.ad-entry
 greasyfork.org#@#body .ad
+greatergood.berkeley.edu###donation-fixed-bottom
+greatergood.berkeley.edu##.article-mobile-ad
+greatergood.berkeley.edu##.article-subscribe
+greatergood.berkeley.edu##.section-subscribe-secondary
 gsmarena.com###subHeader
 gsmarena.com###subHeader2
 gsmarena.com###topAdv
@@ -6063,6 +6071,7 @@ ipv6.baidu.com#@##results > div[class]:not(.result):not(.result-op):not(.sp-rslt
 irasutoya.blogspot.com##+js(abort-current-script, document.addEventListener, /google_ad_client/)
 irasutoya.blogspot.com##+js(acs, document.addEventListener, google_ad_client)
 irasutoya.blogspot.com#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '/google_ad_client/')
+ischoolonline.berkeley.edu##.main-content > div.wp-block-twoyou-cta
 ishare.iask.sina.com.cn##.loginRedPacket-dialog
 itdog.cn##.card[style="padding: 6px 10px 5px 5px;"]
 itdog.cn##.col-12 > .card.mb-3[style="padding: 5px;"]
@@ -10093,7 +10102,7 @@ web.facebook.com#$#race start; hide-if-contains /Anzeige|Sponsored|Sponsorlu|Ges
 web.facebook.com#$#race start; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrizato]{11}|[Sponsrowane]{11}|[Anzeig]{6}|[Patrocnado]{11}|स्पॉन्सर्ड/ 'div#watch_feed div[class^="_"]' 'a[href="#"][role="link"]'; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrizato]{11}|[Sponsrowane]{11}|[Anzeig]{6}|[Patrocnado]{11}|स्पॉन्सर्ड/ 'div#watch_feed div[class^="_"]' 'a[href^="?__cft__"] span'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[aria-label][attributionsrc][href^="?__cft__"][role="link"]>span>span[aria-labelledby]'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[attributionsrc][href*="/ads/about/"][role="link"][tabindex="0"]>span'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[attributionsrc][href="#"][role="link"][tabindex="0"]>span>span[aria-labelledby]>span[style]'; race stop;
 web.facebook.com#$#race start; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrwae]{12}|[Patrocind]{11}|[Sponsrizat]{13}|[Anzeig]{6}/ 'div[role=feed] div[role=article]' a[href^="?__cft__"]; race stop;
 web.facebook.com#$#race start; hide-if-matches-xpath '//div[@role="complementary"]//div[not(@class) and not(@id)]/span[not(@class) and not(@id) and not(@aria-labelledby)]'; hide-if-matches-xpath './/div[@role="complementary"]//span/following::div[@aria-labelledby][@role][@tabindex]/ancestor-or-self::span'; race stop;
-web.facebook.com#$#replace-xhr-response '/\{"(the_br_s_cnt_label|the_br_s_cont_label|br_lb_label|br_lb_label_co|lbl_content_brs|labe_br_con_the|br_safety_content_label|br_con_label_for_safety|content_lbl_brs|content_label_brs|cont_label_brs|con_label_brs|new_con_label_brs|lbl_la_br_cont|new_lbl_la_br_cont|br_safety_con_label|new_br_safety_con_label|brs_con_label|brs_content_label)[^\n]+?("sponsored_data"|"data_spon"|"spon_dat"|ads_data)[^\n]+?("SponsoredData"|"ad_id")[^\n]+"cursor":"[^"]+"\}/' '{}' '/(sponsored_auction_distance|sp_auct_dis|flag_distan_spon_auc|of_distanc_auctio_spons|auction_distance_sp|auct_distance_sponsored|auc_distance_sponsored|auction_sponsored_dist|new_auction_sponsored_dist|auct_dis_of_sponsored|the_auct_dis_of_sponsored|auc_dis_sponsored|the_auc_dis_sponsored|spon_auct_dis|spons_dista_auc|dist_spons_auctio|sponsor_for_dis_au|distanc_auct_the_sponsor|spon_lbl_aucti_dista|label_auctio_spons_distanc|auct_dis_sponso|auc_dist_sponso|auc_dis_sponso|new_auc_dis_sponso|spon_lbl_dist_auct|spon_lbl_dis_auct)/'
+web.facebook.com#$#replace-xhr-response '/\{"(the_br_s_cnt_label|the_br_s_cont_label|br_lb_label|br_lb_label_co|lbl_content_brs|labe_br_con_the|br_safety_content_label|br_con_label_for_safety|content_lbl_brs|content_label_brs|cont_label_brs|con_label_brs|new_con_label_brs|lbl_la_br_cont|new_lbl_la_br_cont|br_safety_con_label|new_br_safety_con_label|brs_con_label|brs_content_label|bran_lbl_cont)[^\n]+?("sponsored_data"|"data_spon"|"spon_dat"|ads_data)[^\n]+?("SponsoredData"|"ad_id")[^\n]+"cursor":"[^"]+"\}/' '{}' '/(sponsored_auction_distance|sp_auct_dis|flag_distan_spon_auc|of_distanc_auctio_spons|auction_distance_sp|auct_distance_sponsored|auc_distance_sponsored|auction_sponsored_dist|new_auction_sponsored_dist|auct_dis_of_sponsored|the_auct_dis_of_sponsored|auc_dis_sponsored|the_auc_dis_sponsored|spon_auct_dis|spons_dista_auc|dist_spons_auctio|sponsor_for_dis_au|distanc_auct_the_sponsor|spon_lbl_aucti_dista|label_auctio_spons_distanc|auct_dis_sponso|auc_dist_sponso|auc_dis_sponso|new_auc_dis_sponso|spon_lbl_dist_auct|spon_lbl_dis_auct)/'
 web.telegram.org##.SponsoredMessage
 web.telegram.org##div.bubbles > div.scrollable > div.bubbles-inner > div.is-sponsored
 web.telegram.org#?#.bubbles-inner > div.bubble:has(> div.bubble-content-wrapper > div.bubble-content > div.message > span > span:contains(/^sponsored$/))
@@ -10409,7 +10418,7 @@ www.facebook.com#$#race start; hide-if-contains /Anzeige|Sponsored|Sponsorlu|Ges
 www.facebook.com#$#race start; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrizato]{11}|[Sponsrowane]{11}|[Anzeig]{6}|[Patrocnado]{11}|स्पॉन्सर्ड/ 'div#watch_feed div[class^="_"]' 'a[href="#"][role="link"]'; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrizato]{11}|[Sponsrowane]{11}|[Anzeig]{6}|[Patrocnado]{11}|स्पॉन्सर्ड/ 'div#watch_feed div[class^="_"]' 'a[href^="?__cft__"] span'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[aria-label][attributionsrc][href^="?__cft__"][role="link"]>span>span[aria-labelledby]'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[attributionsrc][href*="/ads/about/"][role="link"][tabindex="0"]>span'; hide-if-contains-visible-text /./ 'div#watch_feed div[class^="_"]' 'span>a[attributionsrc][href="#"][role="link"][tabindex="0"]>span>span[aria-labelledby]>span[style]'; race stop;
 www.facebook.com#$#race start; hide-if-contains-visible-text /[Sponsred]{9}|[Gesponrtd]{10}|[Sponrisé]{10}|[Comandité]{9}|[Publicda]{10}|[Sponsrwae]{12}|[Patrocind]{11}|[Sponsrizat]{13}|[Anzeig]{6}/ 'div[role=feed] div[role=article]' a[href^="?__cft__"]; race stop;
 www.facebook.com#$#race start; hide-if-matches-xpath '//div[@role="complementary"]//div[not(@class) and not(@id)]/span[not(@class) and not(@id) and not(@aria-labelledby)]'; hide-if-matches-xpath './/div[@role="complementary"]//span/following::div[@aria-labelledby][@role][@tabindex]/ancestor-or-self::span'; race stop;
-www.facebook.com#$#replace-xhr-response '/\{"(the_br_s_cnt_label|the_br_s_cont_label|br_lb_label|br_lb_label_co|lbl_content_brs|labe_br_con_the|br_safety_content_label|br_con_label_for_safety|content_lbl_brs|content_label_brs|cont_label_brs|con_label_brs|new_con_label_brs|lbl_la_br_cont|new_lbl_la_br_cont|br_safety_con_label|new_br_safety_con_label|brs_con_label|brs_content_label)[^\n]+?("sponsored_data"|"data_spon"|"spon_dat"|ads_data)[^\n]+?("SponsoredData"|"ad_id")[^\n]+"cursor":"[^"]+"\}/' '{}' '/(sponsored_auction_distance|sp_auct_dis|flag_distan_spon_auc|of_distanc_auctio_spons|auction_distance_sp|auct_distance_sponsored|auc_distance_sponsored|auction_sponsored_dist|new_auction_sponsored_dist|auct_dis_of_sponsored|the_auct_dis_of_sponsored|auc_dis_sponsored|the_auc_dis_sponsored|spon_auct_dis|spons_dista_auc|dist_spons_auctio|sponsor_for_dis_au|distanc_auct_the_sponsor|spon_lbl_aucti_dista|label_auctio_spons_distanc|auct_dis_sponso|auc_dist_sponso|auc_dis_sponso|new_auc_dis_sponso|spon_lbl_dist_auct|spon_lbl_dis_auct)/'
+www.facebook.com#$#replace-xhr-response '/\{"(the_br_s_cnt_label|the_br_s_cont_label|br_lb_label|br_lb_label_co|lbl_content_brs|labe_br_con_the|br_safety_content_label|br_con_label_for_safety|content_lbl_brs|content_label_brs|cont_label_brs|con_label_brs|new_con_label_brs|lbl_la_br_cont|new_lbl_la_br_cont|br_safety_con_label|new_br_safety_con_label|brs_con_label|brs_content_label|bran_lbl_cont)[^\n]+?("sponsored_data"|"data_spon"|"spon_dat"|ads_data)[^\n]+?("SponsoredData"|"ad_id")[^\n]+"cursor":"[^"]+"\}/' '{}' '/(sponsored_auction_distance|sp_auct_dis|flag_distan_spon_auc|of_distanc_auctio_spons|auction_distance_sp|auct_distance_sponsored|auc_distance_sponsored|auction_sponsored_dist|new_auction_sponsored_dist|auct_dis_of_sponsored|the_auct_dis_of_sponsored|auc_dis_sponsored|the_auc_dis_sponsored|spon_auct_dis|spons_dista_auc|dist_spons_auctio|sponsor_for_dis_au|distanc_auct_the_sponsor|spon_lbl_aucti_dista|label_auctio_spons_distanc|auct_dis_sponso|auc_dist_sponso|auc_dis_sponso|new_auc_dis_sponso|spon_lbl_dist_auct|spon_lbl_dis_auct)/'
 www.google.co.jp###div[jscontroller="MaoVMd"][jsdata*="nTLyye;"]
 www.google.co.jp##[aria-label="Search by voice"]
 www.google.co.jp##div.nD2EKb.VEELad
@@ -10521,6 +10530,7 @@ www.youtube.com##ytlr-banner-cta-renderer
 www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) > #contents:first-child { max-width: unset !important; }
 www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) ytd-rich-grid-media { max-width: unset !important; }
 www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) { --ytd-rich-grid-items-per-row: 1 !important; }
+www.youtube.com#$#override-property-read Object.prototype.raw_player_response.adSlots emptyArray; override-property-read Object.prototype.raw_player_response.playerAds emptyArray; override-property-read Object.prototype.raw_player_response.adPlacements emptyArray;
 www.youtube.com#$#override-property-read Object.prototype.videoSkipJob_ noopFunc; override-property-read Object.prototype.web_playlist_queue_multiple_skips_ks false;
 www.youtube.com#$#override-property-read playerResponse.adPlacements undefined;
 www.youtube.com#$#override-property-read ytInitialPlayerResponse.adPlacements undefined;
@@ -11301,7 +11311,6 @@ youtube.com#$##ticker.ytd-masthead { display: none!important; }
 youtube.com#$#array-override push BISCOTTI_BASED_DETECTION_STATE_IS_CLICK_EVENT_NOT_TRUSTED
 youtube.com#$#override-property-read Object.prototype.ab_det_sc_inj_enf false
 youtube.com#$#override-property-read Object.prototype.ab_sa_ef undefined
-youtube.com#$#override-property-read Object.prototype.onAbnormalityDetected noopFunc; array-override includes onAbnormalityDetected false
 youtube.com#$#override-property-read Object.prototype.onAdSkip undefined
 youtube.com#%#(()=>{const wrapper=(target,thisArg,args)=>{let result=Reflect.apply(target,thisArg,args);try{const decoded=atob(result);if(decoded.includes('ssapPrerollEnabled')){const modifiedContent=decoded.replace(/\n.\n.playerConfig\.ssapConfig\.ssapPrerollEnabled.{2}(?:tru|fals)e/,'');const encodeToBase64=btoa(modifiedContent);return encodeToBase64}}catch(e){} return result};const handler={apply:wrapper};window.Array.prototype.join=new Proxy(window.Array.prototype.join,handler)})();
 youtube.com#%#(function(){try{var time=(new Date).getTime();var cookieDate=new Date(time+1314E6);var hostname=location.host;var locSubString=null;if(!hostname.startsWith("google.")&&!hostname.startsWith("youtube."))locSubString=hostname.substring(hostname.indexOf(".")+1);var loc=locSubString||hostname;if(document.cookie.indexOf("CONSENT=YES")!==-1)return;document.cookie="CONSENT=YES+; domain="+loc+"; path=/; expires="+cookieDate.toUTCString()}catch(ex){console.error("AG: failed to set consent cookie: "+ex)}})();
@@ -11611,6 +11620,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||adpai.thepaper.cn^
 ||adpai.thepaper.cn^$xmlhttprequest,redirect-rule=nooptext,domain=thepaper.cn
 ||adpublisher.s3.amazonaws.com^
+||adrepository.opoxv.com^
 ||adrevenue.appsflyer.com^
 ||ads*-normal*.zijieapi.com^
 ||ads*-normal-*.zijieapi.com^
@@ -12394,6 +12404,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||btrace.qq.com^
 ||bugly.qq.com^
 ||bugsnag.com^$third-party
+||bullwhip.cloud^$third-party
 ||business-api.tiktok.com^
 ||business-facebook-*.pages.dev^$all
 ||buttons.github.io/buttons.js$third-party
@@ -12501,7 +12512,6 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cdn.onesignal.com^$badfilter
 ||cdn.pdst.fm/ping.min.js
 ||cdn.piano.io/api/tinypass.min.js$domain=npr.org
-||cdn.privacy-mgmt.com^$domain=popsci.com
 ||cdn.rawgit.com/Abdo-Hegazi/wdbloog/*/wdbloogablock.js
 ||cdn.rawgit.com/Arlina-Design/quasar/*/arlinablock.js
 ||cdn.rawgit.com/BinLate/*/arlinablock.js
@@ -12529,6 +12539,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cdnjs.cloudflare.com/ajax/libs/font-awesome/$font
 ||cdnweb3.pages.dev^
 ||ce-global-track-*.amazonaws.com^
+||cevanu.ripley.com.pe.cdn.cloudflare.net^
 ||cf.adxcel.com^$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
 ||cfg.imtt.qq.com^
 ||cgicol.amap.com^
@@ -12707,6 +12718,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||connect.facebook.net^$3p,domain=instagram.com
 ||consent.cookiebot.com/*&referer=www.lidl.de$script
 ||consent.cookiebot.com/*/cc.js?*&referer=www.knappschaft.de
+||consent.irvinecompany.com.cdn.cloudflare.net^
 ||containers.appdomain.cloud/api/send-log$domain=ibm.com
 ||content.jwplatform.com^$domain=tomshardware.com
 ||content.jwplatform.com^$domain=www-techradar-com.cdn.ampproject.org
@@ -13238,6 +13250,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||d25m254rjp3rii.cloudfront.net^
 ||d25sca3heoa1so.cloudfront.net^
 ||d25xkbr68qqtcn.cloudfront.net^
+||d25yl3zz7cfmzs.cloudfront.net^
 ||d261u4g5nqprix.cloudfront.net^
 ||d263ut03kf37wj.cloudfront.net^
 ||d264dxqvolp03e.cloudfront.net^
@@ -14542,6 +14555,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||fcmatch.youtube.com/pixel
 ||fcmatch.youtube.com^
 ||fdt.kraken.com^
+||featureassets.org^
 ||feed.baidu.com^
 ||feedback-c.zijieapi.com^
 ||ffbbbdc6d3c353211fe2ba39c9f744cd.com^
@@ -14573,6 +14587,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||fonts.googleapis.com^
 ||fonts.gstatic.com^$3p
 ||fonts.gstatic.com^$third-party
+||fonts.shopify.com^$3p
 ||fonts.shopifycdn.com^$3p
 ||forbes.com^$cookie=client_id
 ||forbes.com^$cookie=fadvuke2etid
@@ -14621,6 +14636,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||gaming.amazon.com^$removeparam=twitchReferral
 ||gaming.amazon.com^$removeparam=yTwchPos
 ||ganon.yahoo.com^
+||gateway.bingviz.microsoftapp.net^$app=com.microsoft.bing
 ||gateway.dev/log
 ||gcd-s2s.appsflyer.com^
 ||gcdsdk.appsflyer.com^
@@ -14812,6 +14828,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||govern-assessment-validation-*.vercel.app^$all
 ||gpm-mon-sg.byteoversea.com^
 ||gpt.mail.yahoo.net/sandbox$subdocument,domain=mail.yahoo.com
+||gqjppj.rentcafe.com.cdn.cloudflare.net^
 ||graph.facebook.com/*/activities?access_token=&event=
 ||graph.facebook.com/*?fields=supports_implicit_sdk_logging
 ||graph.facebook.com/?*id=http://$third-party
@@ -15303,6 +15320,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||images.ssbusiness.samsung.com^
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=androidpolice.com
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=theguardian.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=zone.msn.com
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,from=sport5.co.il
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,from=winfuture.de
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=androidpolice.com
@@ -15392,6 +15410,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||iyf.tv/a/$xmlhttprequest
 ||iyf.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/
 ||iyf.tv/play/$xmlhttprequest
+||izatcloud.net^$third-party
 ||ja*.gamersky.com^
 ||jable.tv/assets/*0.gif
 ||jable.tv/assets/images/*-slider.
@@ -15886,8 +15905,11 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||openx.net^
 ||ophan.theguardian.com/a.gif
 ||ophan.theguardian.com^
+||opoxv.com^
+||opoxv.com^$popup
 ||oppo.com/api/country
 ||optaim.com^$third-party
+||orbsrv.com^
 ||order.buywithprime.amazon.com/log|
 ||os-mon.zijieapi.com^
 ||oss-ap-southeast-1.aliyuncs.com/js/copy.js
@@ -16072,6 +16094,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||prebid-*.rubiconproject.com^
 ||presentationtracking.netflix.com^
 ||primer.typekit.net^$xmlhttprequest
+||privacy-mgmt.com^$domain=popsci.com
 ||privacy-sandbox.appsflyersdk.com^
 ||privacymanager.io^$third-party
 ||prodregistryv2.org^
@@ -16281,6 +16304,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||s.go.sohu.com^*/?callback=
 ||s.ipaddress.com/shariff/shariff.complete.js
 ||s.lenovo.com^
+||s.opoxv.com^
+||s.orbsrv.com^
 ||s.shopify.com/visit/record.gif?
 ||s.so.360.cn^
 ||s.union.360.cn^
@@ -16346,6 +16371,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||samsung.com/us/web/internal/logger
 ||samsung.com^$removeparam=cid
 ||samsung.com^*/scripts/tracking.js
+||sapphire.api.microsoftapp.net^$app=com.microsoft.bing
 ||sascdn.com/diff/$script,redirect=noopjs,domain=imgur.com
 ||saveu5-normal-lq.zijieapi.com^
 ||sbeacon.sina.com.cn^
@@ -16591,6 +16617,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||static-cdn.spot.im/production/conversation/tags/*/styles.css$replace=/(Menu__menuButtonWrapper--.*})/\$1 button[data-testid="ShareBtn"]\, div[data-spot-im-class="vote-links"] + span[class\\$="index__dot"] { display: none !important; }/
 ||static-cdn.spot.im/production/social/tags/*/conversation/styles.css$replace=/(Menu__menuButtonWrapper--.*})/\$1 button[data-testid="ShareBtn"]\, div[data-spot-im-class="vote-links"] + span[class\\$="index__dot"] { display: none !important; }/
 ||static-cdn.spot.im/production/topic-tracker/tags/*/topic-tracker.js
+||static-ss.xvideos-cdn.com/*/js/skins/min/default.pp.static.js
 ||static.adsafeprotected.com/vans-adapter-google-ima.js$script,redirect=noopjs,domain=forbes.com
 ||static.cloudflareinsights.com/beacon.min.js
 ||static.cloudflareinsights.com^
@@ -17175,6 +17202,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||xpjcg.oss-accelerate.aliyuncs.com^
 ||xronos.fra1.cdn.digitaloceanspaces.com/dev/*/xronos.gr-skin-ad-specs*.jpg
 ||xuexi.hydcd.com^
+||xvideos-cdn.com/*/js/static/header/sda/ppsuma*.js
 ||xvideos.com/lvcsm/abck-banners/
 ||xvideos.com/picserror/
 ||xvideos.com/zoneload/
