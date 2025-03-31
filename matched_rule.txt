@@ -60,6 +60,7 @@ $websocket,domain=pornhub.com
 *$domain=googleads.g.doubleclick.net
 *$frame,domain=csdn.net
 *$frame,domain=sina.cn
+*$image,redirect-rule=1x1.gif,domain=youku.com
 *$image,redirect-rule=2x2.png,domain=tel-emporio10.blogspot.com
 *$media,3p,redirect-rule=noop-1s.mp4:10,domain=open.spotify.com
 *$media,redirect=noopmp3-0.1s,domain=imdb.com,3p
@@ -870,6 +871,7 @@ $websocket,domain=pornhub.com
 @@||alicdn.com^$stealth,domain=developer.aliyun.com
 @@||alicdn.com^*/click_track.js
 @@||alicdn.com^*/log.js,
+@@||alicdn.com^*yksdk/*sdk.js$script,domain=youku.com
 @@||alimama.com^$domain=tanx.com
 @@||aliyun.com/nocaptcha/analyze.js
 @@||aliyun.com/scratchCardSlide/analyze.jsonp?
@@ -1129,6 +1131,7 @@ $websocket,domain=pornhub.com
 @@||chemicalbook.com^$stealth
 @@||choice.microsoft.com/*/opt-out$urlblock
 @@||chrome.google.com/webstore/detail/$stealth
+@@||cibntv.net/youku/*.mp4?$domain=v.youku.com
 @@||cirokun.blogspot.com^$generichide
 @@||cle0desktop.blogspot.com^$generichide
 @@||click.simba.taobao.com^|
@@ -1298,6 +1301,7 @@ $websocket,domain=pornhub.com
 @@||facebook.com^$xhr,removeparam=/^__s=[A-Za-z0-9]{6\,}/
 @@||fbcdn.net/safe_image.php?$image,domain=facebook.com
 @@||feedback-pa.clients*.google.com/*/google.internal.feedback.$stealth
+@@||fengkongcloud.com/fpv2.js
 @@||figma.com^$generichide
 @@||file.myqcloud.com/*.mp4?token=$stealth
 @@||files.bbci.co.uk^*/cookie-banner/$script,domain=bbc.com
@@ -1712,6 +1716,7 @@ $websocket,domain=pornhub.com
 @@||livew.l.qq.com/livemsg?pf=H5&ad$domain=m.v.qq.com
 @@||local.adguard.org^
 @@||localhost$domain=skk.moe
+@@||log.mmstat.com/eg.js$script,domain=youku.com
 @@||log.mmstat.com^|
 @@||login.live.com/ppsecure/$document
 @@||login.live.com^$stealth
@@ -1775,8 +1780,10 @@ $websocket,domain=pornhub.com
 @@||miui.com/unlock/$stealth
 @@||mixpanel.com^$domain=mixpanel.com
 @@||mmstat.com/eg.js$domain=1688.com
+@@||mmstat.com/eg.js$domain=player.youku.com
 @@||mmstat.com/eg.js$domain=taobao.com
 @@||mmstat.com/eg.js$domain=tmall.com
+@@||mmstat.com/eg.js$domain=youku.com
 @@||mohanlalmovieshub.blogspot.com^$generichide
 @@||money.cnn.com/*/ad_policy.xml
 @@||moneywar2.blogspot.com^$generichide
@@ -2077,6 +2084,7 @@ $websocket,domain=pornhub.com
 @@||snigelweb-com.videoplayerhub.com/videoloader.js$domain=notebookcheck.net
 @@||snssdk.com/video/drm/v*/play_licenses
 @@||sobootlogo.blogspot.com^$generichide
+@@||sobot.com^
 @@||sohu.com/cityjson$domain=skk.moe
 @@||sohu.com/cityjson$domain=vivo.com.cn
 @@||sohu.com/integration-api/mix/region/*&refer=http
@@ -2220,6 +2228,9 @@ $websocket,domain=pornhub.com
 @@||uu.res.netease.com/pc/zt/*/img/ad_
 @@||v.fwmrm.net/ad/g/1?csid=vcbs_cbsnews_*_web_vod&*&host=https%3A%2F%2Fwww.cbsnews.com&$domain=imasdk.googleapis.com
 @@||v.redd.it^$xhr,domain=reddit.com
+@@||valf.atm.youku.com/vf?site=1&rst=mp4&
+@@||vali.cp*.ott.cibntv.net^$domain=m.youku.com,third-party
+@@||valipl.cp31.ott.cibntv.net^$xhr,domain=youku.com
 @@||video-api.yql.yahoo.com/*/video/alias/channels/$xhr,domain=sports.yahoo.com
 @@||video.adsninja.ca/valnetinc/AndroidPolice/*-projectRssVideoFile.mp4$domain=androidpolice.com
 @@||video.qq.com/getvinfo$script,1p
@@ -2290,6 +2301,8 @@ $websocket,domain=pornhub.com
 @@||yimg.com/ss/rapid-3.7.js$domain=deals.yahoo.com
 @@||yimg.com/ss/rapid3.js$domain=tw.answers.yahoo.com
 @@||yimg.com^*/ywa.js$domain=yahoo.com
+@@||youku.com/cms/player/userinfo/
+@@||youku.com/cms/playlog/get?
 @@||youtube-ui.*.google.com^$subdocument,script
 @@||youtube-ui.l.google.com^$frame
 @@||youtube.com/$stealth,app=MicrosoftEdgeCP.exe
@@ -6894,6 +6907,14 @@ m.you.163.com##.m-userTypeModal
 m.you.163.com##.mask
 m.you.163.com##.modal
 m.you.163.com##.w-button
+m.youku.com###banner
+m.youku.com##.cmt-more
+m.youku.com##.cmt-more-cont
+m.youku.com##.download
+m.youku.com##.hdwrap
+m.youku.com##.recommend
+m.youku.com##body > [style="width: 100px; height: 100px; position: fixed; top: auto; right: 0px; bottom: 0px; left: auto; z-index: 188;"]:not([class]):not([id])
+m.youku.com#%#//scriptlet('set-constant', 'Object.prototype._adData', 'emptyObj')
 m.youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important)
 m.youtube.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots)
 m.youtube.com##+js(json-prune-fetch-response, reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd, , propsToMatch, url:/reel_watch_sequence?)
@@ -7926,6 +7947,7 @@ nio.com##div[class^="GlobalSiteGAGTMGDPR_GDPRConsent_"]
 nir-oz.blogspot.com##+js(abort-current-script, document.addEventListener, /google_ad_client/)
 nir-oz.blogspot.com#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '/google_ad_client/')
 noicetranslations.blogspot.com##+js(aopr, checkAdsStatus)
+nomadgoods.com##.DataPrivacyBanner
 notability.zendesk.com###safari-warning-callout
 notebookcheck.net###content > .ttcl_0 > .tx-nbc2fe-incontent-column > .first_incontent
 notebookcheck.net###contenta
@@ -10149,6 +10171,7 @@ utorrentgamesps2.blogspot.com##+js(nobab)
 utorrentgamesps2.blogspot.com#%#//scriptlet("abort-current-inline-script", "document.onkeyup")
 utorrentgamesps2.blogspot.com#%#//scriptlet("prevent-bab")
 utorrentgamesps2.blogspot.com#%#//scriptlet("remove-attr", "onselectstart", "body")
+v-wb.youku.com#%#//scriptlet('set-constant', 'Object.prototype.adData', 'emptyObj')
 v.163.com###v_shapeLeft_divId
 v.163.com###v_shapeRight_divId
 v.163.com##div[style^="width: 140px; height: 199px;"]
@@ -10175,6 +10198,14 @@ v.qq.com#%#//scriptlet('json-prune', 'ads')
 v.qq.com#%#//scriptlet('set-constant', 'CreativePlayerwebPlugin.AD_EVENT.AD_DESTROY', '')
 v.qq.com#%#//scriptlet('set-constant', 'CreativePlayerwebPlugin.AD_EVENT.AD_LOAD_START', '')
 v.qq.com#?#div.nav-wrap > div > div:has(> a[href^="https://iwan.video.qq.com"])
+v.youku.com###kui_dashboard_vip-layer_vipLayer
+v.youku.com###player-advertise
+v.youku.com##.advertise-layer
+v.youku.com##.fee-wrap-new
+v.youku.com##.laifeng
+v.youku.com##.youku-advertise-layer
+v.youku.com#%#(()=>{const e="cna",t=()=>null!==document.cookie.match(new RegExp(`^${e}=|; ${e}=`));if(t())return;const o=new MutationObserver((()=>{const o=document.querySelector("preplay-layer > error-layer .preLayer-title");o&&o.textContent.includes("请关闭VPN代理软件或广告拦截插件后重试")&&!t()&&(document.cookie=`${e}=MwCHGEQKugYCAWoLKcbU0UGk;`,window.location.reload())})),n=document.documentElement;o.observe(n,{attributes:!0,childList:!0,subtree:!0}),setTimeout((()=>o.disconnect()),1e4)})();
+v.youku.com#%#//scriptlet('set-constant', 'Object.prototype._adData', 'emptyObj')
 v2ex.com##.fr > a[href^="https://www.digitalocean.com/"]
 v2ex.com##.sidebar_compliance
 v2ex.com##.sidebar_units
@@ -11396,6 +11427,32 @@ you.163.com##.m-appDownloadGuide
 you.163.com##[href^="/downloadapp"]
 you.163.com##a[href^="https://you.163.com/downloadapp?"]
 you.163.com#?#.m-app > div.m-indexFocus:has(> div.m-focus a[href^="https://you.163.com/downloadapp?"])
+youku.com###app .callEnd_box
+youku.com###bt-banner
+youku.com###download_btn
+youku.com###ykBottomBanner
+youku.com##+js(nano-stb, , ,0)
+youku.com##.ad-banner-wrapper
+youku.com##.callEnd_content
+youku.com##.callEnd_fixed_box
+youku.com##.downloadApp.icon
+youku.com##.newtrochanter_trochantercontent > .g-row > .g-col:has(> .g-box > .pack_yk_pack > .pack_pack_cover > .aplus_exp > .pack_p_rt_ad)
+youku.com##.pop-prompt-box
+youku.com##.src_adwrap
+youku.com##.sub-slides-wrap .swiper-wrapper > .swiper-slide:has(> a[data-intactspm*="drawer1.d_yk_ad_"])
+youku.com##.sub-slides-wrap .swiper-wrapper > .swiper-slide:has(> a[target-url])
+youku.com##.videolist_s_body > div.common_container > div[id^="ab_"]
+youku.com##a[href^="http://cps.laifeng.com/"]
+youku.com##a[href^="http://cps.laifeng.com/"] + .bg + img
+youku.com##div[class*="Corner-container"]
+youku.com##div[class^="clip"]
+youku.com##div[data-adext]
+youku.com##div[id$="_ykbanner"]
+youku.com##div[name="m_pos"] > #FullPromotion
+youku.com#$#.swiper-wrapper > .swiper-slide:has(> a[target-url]) { visibility: hidden !important; }
+youku.com#$?#.newswiper_big_swiper_container > div.swiper-container-horizontal > div.swiper-wrapper > div.swiper-slide:has(> a[data-href]:not([data-href^="https://v.youku.com/"]):not([data-scm])) { remove: true; }
+youku.com#$?#.swiper-container-horizontal > div.swiper-wrapper > div.swiper-slide:has(a[href*="/tg.602.com/"]) { remove: true; }
+youku.com#%#//scriptlet('adjust-setTimeout', '', '', '0.02')
 youtrack.jetbrains.com##.alertContainer_f7cb
 youtrack.jetbrains.com##div[class="alertContainer_c80e"]
 youtube.com###alert-banner > .ytd-browse > .yt-alert-with-actions-renderer
@@ -11749,6 +11806,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||accounts.google.com^$3p,domain=x.com
 ||accounts.google.com^$3p,domain=youtube.com
 ||accscdn.m.taobao.com^
+||acg.youku.com/webfile/*.jpg
+||acs.youku.com/*.youku.play.$replace=/("ad":{).+"(\}\,"(?:playlog|watermark)")/\$1\$2/
+||acs.youku.com/*/mtop.youku.play.ups.appinfo.get/*/?jsv=$replace=/("ad":\{)[\s\S]*?(\}\,"playlog")/\$1\$2/
 ||acs4baichuan.m.taobao.com^
 ||activity.browser.intl.miui.com^
 ||ad-*.amazonaws.com^
@@ -11763,6 +11823,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||ad.intl.xiaomi.com^
 ||ad.weibo.com^
 ||ad.xiaomi.com^
+||ad.youku.com/vp?
+||ad.youku.com^
 ||ad.zijieapi.com^
 ||ad4point.*.digitaloceanspaces.com/afp_p.js
 ||ad4point.nyc3.digitaloceanspaces.com^
@@ -11857,6 +11919,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||advertising.yahoo.com^
 ||advice-ads.s3.amazonaws.com/|$xhr,3p,redirect=noop.txt
 ||advice-ads.s3.amazonaws.com^
+||adx-open-service.youku.com^
 ||adx1js.s3.amazonaws.com^
 ||adxcel.com^$media,redirect=noop-1s.mp4:10,domain=open.spotify.com
 ||adxlog-adnet.vivo.com.cn^
@@ -11882,6 +11945,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||aktrack.pubmatic.com^
 ||akumeha.onelink.me^$popup
 ||al.autohome.com.cn^
+||alarm.youku.com/api/sendAlarm
 ||alb.reddit.com^
 ||alexa-mobile-analytics-configuration-prod.s3.amazonaws.com^
 ||ali-bj-pcdn-*.biliapi.net^
@@ -11977,6 +12041,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||alicdn.com/tps/*-950-90.
 ||alicdn.com/tps/i3/T19NaCFKFaXXckTCTS-300-100.jpg
 ||alicdn.com^*_!!3361094544.
+||alicdn.com^*yksdk/*sdk.js$script,domain=youku.com
 ||alienxchain*.pages.dev^$doc,to=~alienxchain.io
 ||alimama.alicdn.com^
 ||alimama.cn^$third-party,domain=tanx.com
@@ -12309,6 +12374,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||at*.doubanio.com^
 ||atanx.alicdn.com^
 ||atlassian.net^$removeparam=atlOrigin
+||atm.youku.com^
 ||atom-log.3.cn^
 ||atom-log.3.cn^$third-party
 ||attr.appsflyer.com^
@@ -12337,6 +12403,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||azurewebsites.net/TrackView/
 ||azurewebsites.net/api/views?
 ||azurewebsites.net^*/telemetry.js
+||b-gtc.getui.net^
 ||babes-mansion.s3.amazonaws.com^
 ||badding.oss-ap-southeast-1.aliyuncs.com^
 ||badge.facebook.com^$third-party
@@ -12623,6 +12690,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||byteoversea.com^$app=com.square_enix.android_googleplay.dqwalkj
 ||bzclk.baidu.com^
 ||c-5uwzmx78pmca09x24aiux2euavx2ekwu.g00.msn.com^
+||c-gtc.getui.net^
 ||c.arstechnica.com^
 ||c.bing.com/c.gif
 ||c.ipaddress.com^
@@ -12639,6 +12707,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||c2shb.pubgw.yahoo.com/admax/bid/partners/PBJS
 ||c2shb.pubgw.yahoo.com^
 ||caclick.baidu.com^
+||cad.youku.com^
 ||cams.xvideos.com^
 ||cancelaciondeseguros-*.azurewebsites.net^$doc,to=~grupobancolombia.com
 ||carrefour-enbacktoschool4.pages.dev^$all,to=~carrefour.com
@@ -12778,6 +12847,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||chtbl.com^$script,third-party,xmlhttprequest
 ||chuyentienquocte1313.vercel.app^
 ||chuyentienquoctenhanh.vercel.app^
+||cibntv.net/youku/*$media,redirect=noopmp3-0.1s,domain=youku.com
+||cibntv.net/youku/*.mp4?$media,redirect=noopmp4-1s,domain=v.youku.com
 ||cir-smart.baidu.com^
 ||claimspaace.pages.dev^$doc,to=~lingocoin.io
 ||clarity.ms^
@@ -12801,6 +12872,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cloud.baidu.com^$removeparam=from
 ||cloud.tencent.com/developer/api/common/getAds
 ||cloud.tencent.com/developer/api/common/getOneAds
+||cloudconf.fengkongcloud.com^
 ||clouderrorreporting.googleapis.com^
 ||cloudflare.com/_cf/analytics.js
 ||cloudflareinsights.com^$third-party
@@ -14654,6 +14726,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||embed.typeform.com^$domain=theregister.com
 ||emdcadvertise.eastmoney.com^
 ||emea.flow.microsoft.com/providers/Internal.Telemetry
+||ems.youku.com/event?
+||ems.youku.com^
 ||emta-ee-authst.firebaseapp.com^$all,to=~ria.ee
 ||engagements.appsflyer.com^
 ||entrecard.s3.amazonaws.com^
@@ -14870,6 +14944,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||forum.djicdn.com/static/js/sensorsdata.min.js$script,domain=forum.dji.com
 ||fourier.alibaba.com^
 ||fourier.taobao.com^
+||fp-*it*.fengkongcloud.com^
+||fp-it-acc.portal101.cn/deviceprofile/
 ||fp-upload.dun.163.com^
 ||fp.measure.office.com^
 ||fp.measure.office.com^$badfilter,domain=outlook.office.com
@@ -14939,14 +15015,22 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 ||geolocation.onetrust.com^$third-party
 ||geotrust.com^$third-party
+||gepush.com^
 ||germanytechsupport.pages.dev^$all
+||getelevar.com/shops/*/events.js
 ||getpocket.com/web-utilities/public/static/te.js
 ||getsentry.com^$third-party,domain=sentry.io
+||getui.com^
+||getui.com^$third-party
+||getui.net^
+||getui.net^$third-party
 ||ggtp-1255424916.cos.ap-chengdu.myqcloud.com^
 ||gia.jd.com^
 ||giaodichquoctes.vercel.app^
 ||gias.jd.com/js/td.js
 ||gillian-guide.github.io^$removeparam=ref
+||giocdn.com^
+||giocdn.com^$third-party
 ||github.com/_private/browser/errors
 ||github.com/_private/browser/stats
 ||github.com/_stats
@@ -15523,6 +15607,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||herokudns.com^$xhr,domain=darkreader.org
 ||hiad.vmall.com^
 ||hijack.baidu.com^
+||hits.getelevar.com^
 ||hits.theguardian.com^
 ||hktracker.hankookilbo.com^
 ||hm.baidu.com/hm.gif
@@ -15552,6 +15637,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||humblebundle.com^$removeparam=mcID
 ||humblebundle.com^$removeparam=partner
 ||hw-sh-pcdn-*.biliapi.net^
+||hz.youku.com/red/
 ||i.alipayobjects.com/i/ecmng/$image,domain=my.alipay.com
 ||i.gyazo.com^$domain=insurancexblog.blogspot.com
 ||i.imgur.com/4Pi4CHD.png
@@ -15684,6 +15770,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||ip.sb/assets/images/*_ads.
 ||ip.sb/assets/images/rivencloud_ads.gif
 ||ipaddress.com/shariff/
+||ipm.atm.youku.com^
 ||ipsw.me/assets/images/external/slide.png
 ||iptracker-lb-*.amazonaws.com^
 ||is.lg.com^
@@ -15714,6 +15801,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||iwanad.baidu.com^
 ||iwq.pages.dev^$all,to=~yahoo.com
 ||ixigua.com/at/log/
+||iyes.youku.com^
 ||iyf.tv/a/$xmlhttprequest
 ||iyf.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/
 ||iyf.tv/play/$xmlhttprequest
@@ -15887,6 +15975,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||lp.smartbusiness.samsung.com^
 ||ltassrv.com.s3.amazonaws.com^
 ||lxbjs.baidu.com^$third-party
+||m.atm.youku.com^
 ||m.aty.sohu.com^
 ||m.autohome.com.cn/news/cdn_20180706/view/ah/nsee.html
 ||m.baidu.com/tc?tcreq4log=
@@ -16241,6 +16330,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||opoxv.com^$popup
 ||oppo.com/api/country
 ||optaim.com^$third-party
+||orange-dc.youku.com^
 ||orbsrv.com^
 ||order.buywithprime.amazon.com/log|
 ||os-mon.zijieapi.com^
@@ -16249,6 +16339,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||otheve.beacon.qq.com^
 ||otlp-http-production.shopifysvc.com/v1/logs|
 ||otlp-http-production.shopifysvc.com/v1/metrics|
+||ott.cibntv.net/*/ad/*.ts?ccode=$xmlhttprequest,domain=v.youku.com
 ||outlook-1.cdn.office.net/owamini/*/resources/analytics-ping.js
 ||outlook.live.com/ows/*/OutlookOptions/AdsAggregate
 ||outlookads.live.com^
@@ -16350,6 +16441,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||pbc.wsj.com^
 ||pbmp.ali213.net/js/
 ||pc-mon.zijieapi.com^
+||pcapp-data-collect.youku.com^
 ||pclick.yahoo.com^
 ||pcmx.autohome.com.cn/impress?
 ||pcsupport.lenovo.com/esv*/plugins/contactus/livefloatchat
@@ -16469,6 +16561,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||puds.ucweb.com^
 ||pulseapp-24x7-service.github.io^$all
 ||purr.nytimes.com/*/purr-cache
+||push.m.youku.com/collect-api/
+||push.m.youku.com^
 ||push.zhanzhang.baidu.com/push.js
 ||push.zhanzhang.baidu.com^
 ||pv.hd.sohu.com^
@@ -16739,6 +16833,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||seal.globalsign.com^$third-party
 ||seal.godaddy.com^
 ||seal.godaddy.com^$third-party
+||sealine.youku.com^
 ||seao.business.samsung.com^
 ||search.anonymous.ads.brave.com^
 ||search.bilibili.com^$removeparam=from_source
@@ -16781,6 +16876,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||share.baidu.com^$third-party
 ||shazam.com/services/metrics/
 ||shop.app^$3p
+||shopify-gtm-suite.getelevar.com/getelevar/*/dl-web-pixel-lax-custom.js
 ||shopify.com/*/site-tracking.php?
 ||shopify.com/__dux|
 ||shopify.com/shopifycloud/consent-tracking-api/
@@ -16981,9 +17077,12 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||static.cloudflareinsights.com/beacon.min.js
 ||static.cloudflareinsights.com^
 ||static.doubleclick.net^
+||static.fengkongcloud.com^
 ||static.gridsumdissector.com^
 ||static.parsely.com^
 ||static.parsely.com^$third-party
+||static.youku.com/*/index/js/iresearch.js
+||static.youku.com/*/js/cps.js
 ||static.zhihu.com/heifetz/main.signflow.*.js$script,domain=zhihu.com
 ||staticflickr.com/ap/build/javascripts/prbd-$script,domain=flickr.com
 ||statistic.qzone.qq.com^
@@ -17284,6 +17383,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||tracker.ai.xiaomi.com^
 ||tracker.anandtech.com^
 ||tracker.dcdn.baidu.com^
+||tracker.fengkongcloud.com^
 ||tracking.*.miui.com^
 ||tracking.americas.business.samsung.com^
 ||tracking.apac.business.samsung.com^
@@ -17368,6 +17468,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||umengacs.m.taobao.com^
 ||umengcloud.com^
 ||umengjmacs.m.taobao.com^
+||un-acs.youku.com^
 ||undersite.pages.dev^
 ||uniproject.substack.com^$all
 ||unitelogreport.reader.qq.com^$redirect=noopjs
@@ -17398,10 +17499,14 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||v.blog.sohu.com/dostat.do?
 ||v.icbc.com.cn/userfiles/ADResources/$domain=icbc.com.cn
 ||v.shopify.com^
+||v.youku.com^$removeparam=ptag
+||v.youku.com^$removeparam=scm
+||v.youku.com^$removeparam=spm
 ||v16-ad.byteoversea.com^
 ||v2.gdt.qq.com^
 ||v9banners-com.cdn.ampproject.org^
 ||validate.appsflyer.com^
+||valipl.cp31.ott.cibntv.net^$media,redirect=noopmp3-0.1s,domain=youku.com
 ||vay24h.vercel.app^
 ||vaytinviet.vercel.app^
 ||vcs.zijieapi.com^
@@ -17636,7 +17741,13 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||yimg.com/nn/lib/metro/g/sda/$domain=yahoo.com
 ||yimg.com/rq/darla/$domain=yahoo.com
 ||yimg.com/uu/api/*/ads/$redirect=nooptext,image,domain=yahoo.com
+||yk-ssp.ad.youku.com^
+||ykad-data.youku.com^
 ||you.163.com^$removeparam=from
+||youku.com/compvlog?
+||youku.com/dress/
+||youku.com/log/
+||youku.com^$removeparam=tpa
 ||youtu.be^$removeparam=si
 ||youtube.com/_get_ads?
 ||youtube.com/api/stats/ads
@@ -17707,6 +17818,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||zz.bdstatic.com^
 ||zz.bdstatic.com^$third-party
 ~cbachina.sports.sohu.com##sohuadcode
+~laifeng.youku.com##a[href^="http://cps.laifeng.com/"]
+~laifeng.youku.com##a[href^="http://cps.laifeng.com/"] + .bg + img
 ~love.163.com##a[href^="http://love.163.com/"]
 ~m.gsmarena.com##.share-buttons
 ~platform.twitter.com##+js(json-prune-xhr-response, data.home.home_timeline_urt.instructions.[].entries.[-].content.itemContent.promotedMetadata, , propsToMatch, url:/Home)
