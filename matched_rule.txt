@@ -240,6 +240,7 @@ $websocket,domain=pornhub.com
 /i/api/graphql/*/TweetDetail$jsonprune=\$.data.threaded_conversation_with_injections_v2.instructions..entries.[?(has "\$.content.items..item.itemContent.promotedMetadata.advertiser_results")],domain=x.com
 /icloud2022-esp.php^$doc,to=~edu|~gov|~apple.com
 /isignesp.php^$doc,to=~edu|~gov|~apple.com
+/journey/compiler/build-*.js$script,~third-party,domain=newyorker.com
 /link.oneplus.com/mo$image
 /log?entry=$badfilter,domain=outlook.office.com
 /log?format=$domain=~meet.google.com
@@ -961,6 +962,7 @@ $websocket,domain=pornhub.com
 @@||amazonaws.com/static.madlan.co.il/*/heatmap.json?$xmlhttprequest
 @@||amazonaws.com^$stealth,domain=console.aws.amazon.com
 @@||amazonwebservicesinc.tt.omtrdc.net/m2/amazonwebservicesinc/ubox/raw$xhr,3p,domain=aws.amazon.com
+@@||ampproject.org/v0/amp-consent-$script
 @@||ampproject.org^*/amp-consent-$domain=9to5google.com
 @@||ampproject.org^*/amp-consent-$domain=9to5mac.com
 @@||ampproject.org^*/amp-consent-$domain=amp-lasexta-com.cdn.ampproject.org
@@ -3165,6 +3167,7 @@ aws.amazon.com#?#.lb-row > div.lb-col:has(> div.lb-tiny-iblock[style="background
 axios.com###main-content > .hp-margins > .block > .hidden > .flex > .pb-40:has(> .sticky > .border-t > .sideRailAd)
 axios.com###referrerModalCTA--modal_ampm
 axios.com###referrerModalCTA--modal_prorata
+axios.com##+js(ra, style, html[style], stay)
 axios.com##.StoryPageCTA_story-page-cta__mfCH7
 axios.com##.apexAd
 axios.com##.bg-tertiary.gtmView
@@ -3178,6 +3181,7 @@ axios.com##.shortFormNativeAd
 axios.com##[data-cy="injected-promo"]
 axios.com##div[class^="Modal_ctaContainer"]
 axios.com##div[class^="SubscribeStreamCap__"]
+axios.com##div[data-cy="pro-paywall"],div[class^="Modal_paywall"],div[class^="Modal_cta"]
 axios.com##div[data-cy="tab-content-top-stories"] ul[class^="space-"] > li.border-accent-blue-tint:has(> .shortFormNativeAd)
 axios.com##div[data-cy^="social-share-"]
 axios.com##div[data-testid="social-share-button"]
@@ -4000,6 +4004,8 @@ bloomberg.com###paywall-banner
 bloomberg.com###plug-banner-outlet
 bloomberg.com###plug-overlay
 bloomberg.com###story_social_toolbar_top_container
+bloomberg.com##+js(ra, data-paywall-overlay-status, body[data-paywall-overlay-status], stay)
+bloomberg.com##+js(set-local-storage-item, history, $remove$)
 bloomberg.com##+js(trusted-click-element, button[title="Reject All"], , 2000)
 bloomberg.com##.BaseAd_baseAd-dXBqvbLRJy0-
 bloomberg.com##.adWrapper
@@ -4037,6 +4043,7 @@ bloomberg.com##div[class^="share-article-button__"]
 bloomberg.com##div[data-ad-placeholder="Advertisement"]
 bloomberg.com##div[data-ad-placeholder]
 bloomberg.com##div[data-component="inline-recirc"]
+bloomberg.com##div[id^="fortress-"]
 bloomberg.com#$##newsletter-modal { display: none !important; }
 bloomberg.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
 bloomberg.com#$#body[class^="noScroll"] { overflow: visible !important; }
@@ -4302,9 +4309,12 @@ cnn.com###optanon
 cnn.com###partner-zone
 cnn.com###social-share_gig_containerParent .PartnerZone
 cnn.com###sponsored-outbrain-1
+cnn.com##+js(ra, style, body[style], stay)
+cnn.com##+js(ra, style, html[style], stay)
 cnn.com##+js(set, FAVE.settings.ads.ssai.prod.clips.enabled, false)
 cnn.com##+js(set, FAVE.settings.ads.ssai.prod.liveAuth.enabled, false)
 cnn.com##+js(set, FAVE.settings.ads.ssai.prod.liveUnauth.enabled, false)
+cnn.com##+js(set-local-storage-item, /reg_?wall/i, $remove$)
 cnn.com##.Article__component .SocialBar__component
 cnn.com##.TermsOfService__component
 cnn.com##._2dc7d020
@@ -4343,6 +4353,7 @@ cnn.com##.zn-story-bottom
 cnn.com##.zone__ads
 cnn.com##[data-zone-label="Paid Partner Content"]
 cnn.com##body,html:style(overflow: auto !important; position: initial !important;)
+cnn.com##div[data-component-id="subwall"]
 cnn.com##section[data-zone-label$="Paid partner content"]
 cnn.com#$#override-property-read Object.prototype._setAdsConfigurations noopFunc;
 cnn.com#$#strip-fetch-query-parameter caid warnermediacdn.com; strip-fetch-query-parameter afid warnermediacdn.com; strip-fetch-query-parameter conf_csid warnermediacdn.com; strip-fetch-query-parameter app_csid warnermediacdn.com
@@ -5152,6 +5163,7 @@ financialexpress.com###append_cubebox_box
 financialexpress.com###id_newsletter_subscription
 financialexpress.com###id_newsletter_subscription_popup
 financialexpress.com###whatsapp_button
+financialexpress.com##+js(rc, paywall, .paywall)
 financialexpress.com##.ad-bg-container
 financialexpress.com##.adsbox990x90
 financialexpress.com##.app-btn
@@ -5159,6 +5171,7 @@ financialexpress.com##.follow-us-on
 financialexpress.com##.ie-google-news
 financialexpress.com##.ie-network-taboola
 financialexpress.com##a[href*="/sponsored/"]
+financialexpress.com##div.pcl-wrap
 financialexpress.com##header > .fewrapper
 financialexpress.com#$#.wp-block-group.auto-header { min-height: auto !important; }
 find.vivo.com.cn#@#.share-list
@@ -5207,6 +5220,8 @@ forbes.com###onsite-notifications
 forbes.com###stackForbesAdvoice
 forbes.com###subscribeToNewsLetters
 forbes.com###tool-tip.following
+forbes.com##+js(ra, class, body[class], stay)
+forbes.com##+js(ra, class, html[class], stay)
 forbes.com##+js(trusted-click-element, [aria-labelledby="banner-title"] > div[class^="buttons_"] > button[class*="secondaryButton_"] + button, , 1500)
 forbes.com##.ad-rail
 forbes.com##.ad-unit
@@ -8406,6 +8421,7 @@ nytimes.com##div[data-gtm-element="newsletter_loaf_form"]
 nytimes.com##div[data-scp="newsletter"]
 nytimes.com##div[data-testid="gdprDock"]
 nytimes.com##div[data-testid="inline-message"]
+nytimes.com##div[data-testid="inline-message"],div[id^="ad-"],div#dock-container,div.pz-ad-box
 nytimes.com##div[data-testid="onsite-messaging-unit-dock"]
 nytimes.com##div[data-testid="share-tools"] li:not([class^="css-"])
 nytimes.com##div[id*="_MAIN_CONTENT_"][data-testid="region"]
@@ -9235,6 +9251,7 @@ santatracker.google.com##SANTA-NOTICE
 santatracker.google.com##santa-notice
 sarkariyojana-com.cdn.ampproject.org##.amp-adv
 sataniabatch.blogspot.com##+js(nofab)
+science.org##+js(rc, alert-read-limit__overlay, body.alert-read-limit__overlay, stay)
 science.org##.alert-donation
 science.org##.news-article-content-aside__webinar-alerts
 science.org##.news-article__newsletter
@@ -9244,6 +9261,7 @@ science.org##.show-recommended
 science.org##.st-header__share
 science.org##a[href="#core-collateral-share"]
 science.org##body .adplaceholder
+science.org##div.alert-read-limit
 sciencedirect.com##.journal-advert-container
 screenshots.firefox.com##.alt-notification
 scrubson.blogspot.com##+js(aopr, adcashMacros)
@@ -9908,6 +9926,7 @@ theguardian.com##.top-banner-ad-container
 theguardian.com##.top-fronts-banner-ad-container
 theguardian.com##[data-spacefinder-type="model.dotcomrendering.pageElements.NewsletterSignupBlockElement"]
 theguardian.com##[name="SlotBodyEnd"]
+theguardian.com##[name="SlotBodyEnd"],div[data-cy="contributions-liveblog-epic"]
 theguardian.com##[name="StickyBottomBanner"]
 theguardian.com##a[aria-label^="Share "]
 theguardian.com##div > gu-island[name="ShareButton"]
@@ -12898,6 +12917,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||amdc.m.taobao.com^$app=~com.eg.android.AlipayGphone
 ||amdcopen.m.taobao.com^
 ||ampcid.google.com^$important
+||ampproject.org/*/amp-subscriptions-$script
 ||ampproject.org/preconnect.gif
 ||amptrack-dailymail-co-uk.cdn.ampproject.org^
 ||ams-pageview-public.s3.amazonaws.com^
@@ -13139,7 +13159,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||assets.alicdn.com/g/alilog/aplus_plugin_xwj/index.js
 ||assets.bwbx.io/*/initialize_ads-*.js$domain=bloomberg.com
 ||assets.bwbx.io/s3/foundation/event-recorder-client/1.0/event-recorder-client.min.js
+||assets.bwbx.io/s3/javelin/public/javelin/js/foundation/transporter/foundation_transporter-*.js$script,domain=bloomberg.com
 ||assets.getpocket.com/web-utilities/public/static/te.js
+||assets.guim.co.uk/assets/SignInGate*.js$script,domain=theguardian.com
 ||assets.lemonsqueezy.com/lemon.js
 ||assets.msn.com/bundles/*/weather/latest/river-feed.
 ||assets.msn.com/bundles/v1/microsoftNews/latest/placement-manager.*.js$domain=microsoftnews.msn.com
@@ -13788,6 +13810,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cm.baidu.com^
 ||cm.bilibili.com/cm/api$redirect=noop.txt
 ||cm.bilibili.com/cm/api/$xhr
+||cm.bloomberg.com^$xmlhttprequest,~third-party
 ||cm.g.doubleclick.net/pixel$image,redirect=1x1-transparent.gif,domain=tpc.googlesyndication.com
 ||cm.g.doubleclick.net^
 ||cm.pos.baidu.com^
@@ -13887,6 +13910,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cookiebot.com^$third-party
 ||cookielaw.org^$third-party
 ||cookiex.ngd.yahoo.com^
+||cooking.nytimes.com/api/*/access$xmlhttprequest,~third-party
 ||cooking.nytimes.com/api/*/access?
 ||copilot-telemetry.githubusercontent.com^
 ||count.vrs.sohu.com^
@@ -15854,6 +15878,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||filamentapp-assets.s3.amazonaws.com^$third-party
 ||filamentapp.s3.amazonaws.com^$third-party
 ||final-claim.pages.dev^$doc
+||financialexpress.com/*/min/premiumStoryContent.js$script,~third-party
 ||firebase.googleapis.com^
 ||firebaseinstallations.googleapis.com^
 ||firebaselogging-pa.googleapis.com^
@@ -17120,6 +17145,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||mermaid.ximalaya.com^
 ||merriam-webster.com/lapi/v1/mwol-search/stats/lookup
 ||messaging-notifications.api.nytimes.com^
+||meter-svc.nytimes.com/meter.js$xmlhttprequest,~third-party
 ||meter-svc.nytimes.com^
 ||metok.sys.miui.com^
 ||metrics-cbslocal-com.cdn.ampproject.org^
@@ -17275,6 +17301,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||music.apple.com^$removeparam=itscg
 ||music.apple.com^$removeparam=itsct
 ||music.httpdns.c.163.com^
+||mwcm.nyt.com/$script,domain=nytimes.com
 ||mwcm.nytimes.com/capi/metered_assets/?plat=*&areas=welcomeAd
 ||mxpnl.com^
 ||mxpnl.com^$third-party
@@ -17386,6 +17413,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||ns.weibo.cn^
 ||nsclick.baidu.com^
 ||nyt.com/ads/tpc-check.html$domain=nytimes.com
+||nytimes.com/svc/onsite-messaging/query$xmlhttprequest,~third-party
 ||nytimes.com/v1/purr-cache
 ||nytimes.com^$removeparam=impression_id
 ||nytimes.com^$removeparam=referringSource
