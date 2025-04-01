@@ -35856,7 +35856,6 @@
 ##.privacy-policy-prompt--modal
 ##.privacy-policy-toast
 ##.privacy-policyis-sticky
-##.privacy-popup
 ##.privacy-popup-overlay
 ##.privacy-popup-wrapper
 ##.privacy-prompt-wrapper
@@ -44783,10 +44782,12 @@
 ##div[id^="img_"] > svg[style$="overflow:visible;z-index:0;box-shadow:none;"]
 ##div[id^="img_"]:first-child > div[aria-hidden="true"] + div[id^="img_"]
 ##div[id^="img_"][class^="img_"][lang][style="overflow: hidden; width: 100%; height: 100%;"]
+##div[id^="img_"][class^="img_"][mode]
 ##div[id^="img_"][coupang]
 ##div[id^="img_"][ggnoclick]
 ##div[id^="img_"][ontouchend$="touchEnd(event)"]
 ##div[id^="img_"][role="button"]
+##div[id^="img_"][style$="height:90px;overflow:hidden;"]
 ##div[id^="img_"][style$="overflow:hidden; display:inline-block;"]
 ##div[id^="img_"][style$="padding: 0px; display: inline-block;"]
 ##div[id^="img_"][style$="position: sticky; top: 0; z-index: 1;"]
@@ -45821,7 +45822,6 @@ $removeparam=ysclid
 *#*/ad/$image,redirect-rule=1x1.gif
 *$doc,csp=script-src-attr 'none',to=badmouth1.com|freemcserver.net
 *$doc,csp=script-src-attr 'none',to=m.economictimes.com|ondemandkorea.com
-*$doc,csp=worker-src 'self',to=androidpolice.com|babygaga.com|backyardboss.net|carbuzz.com|cbr.com|collider.com|dualshockers.com|footballfancast.com|footballleagueworld.co.uk|gamerant.com|givemesport.com|hardcoregamer.com|hotcars.com|howtogeek.com|makeuseof.com|moms.com|movieweb.com|pocket-lint.com|pocketnow.com|screenrant.com|simpleflying.com|thegamer.com|therichest.com|thesportster.com|thethings.com|thetravel.com|topspeed.com|xda-developers.com
 *$frame,3p,from=jacquieetmicheltv.net|jacquieetmicheltv2.net,to=~my18pass.com
 *$permissions=attribution-reporting=(),from=~localhost|~127.0.0.1|~[::1]|~0.0.0.0|~[::]|~local
 *$permissions=browsing-topics=(),from=~localhost|~127.0.0.1|~[::1]|~0.0.0.0|~[::]|~local
@@ -47183,6 +47183,7 @@ $removeparam=ysclid
 /?pl=*&sm=$doc
 /?pl=*&sm=$document
 /?placement=*&redirect$popup
+/?pnoorg=1^$doc
 /?publisherId=*&hostId=$all
 /?r=dir&zoneid=$all
 /?r=dir&zoneid=$removeparam
@@ -47830,6 +47831,7 @@ $removeparam=ysclid
 /^https?:\/\/[www.0-9a-z]{7,}\.com\/.*\/invoke\.js$/$script,3p,badfilter
 /^https?:\/\/a\.[-0-9a-z]{4,21}\.[a-z]{2,5}\/(?=[a-z]*[0-9A-Z])[0-9a-zA-Z]{5,7}\.js$/$script,match-case
 /^https?:\/\/aa\.[-0-9a-z]{4,21}\.[a-z]{2,5}\/(?=[a-z]*[0-9A-Z])[0-9a-zA-Z]{5,7}\.js$/$script,match-case
+/^https?:\/\/amazo[a-z]{2}\d\.com\//$doc,to=com|~amazon.com
 /^https?:\/\/asg\.[-0-9a-z]{4,21}\.[a-z]{2,5}\/(?=[a-z]*[0-9A-Z])[0-9a-zA-Z]{5,7}\.js$/$script,match-case
 /^https?:\/\/cdn\.[0-9a-z]{3,6}\.xyz\/[a-z0-9]{8,}\.js$/$script,third-party
 /^https?:\/\/dienmayxanh[-a-z0-9]+\.com\//$doc,to=com|~dienmayxanh.com
@@ -48528,6 +48530,7 @@ $removeparam=ysclid
 /api/click/*?c=
 /api/click/*?c=$image
 /api/cmp_tracker|
+/api/direct/*?s1=$script
 /api/drpStats
 /api/event-rfkj/*
 /api/events|$ping,~third-party
@@ -48546,6 +48549,7 @@ $removeparam=ysclid
 /api/models/vast?
 /api/models/vast?userId=*&adblocked=$xhr,1p
 /api/pageactivity
+/api/pageview/*$ping
 /api/pageview?
 /api/pagevisits
 /api/ping?$~xmlhttprequest
@@ -48574,6 +48578,7 @@ $removeparam=ysclid
 /api/v1/stat?
 /api/v1/streamtelemetry
 /api/v2/collector
+/api/v2/items/*?ev=
 /api/v2/jsonlogger
 /api/v3/getPageVisits
 /api/v3/trackSegmentEvent
@@ -51080,8 +51085,10 @@ $removeparam=ysclid
 /increment_page_counter.jsp
 /index-ad-$stylesheet
 /index-ad.js$script
+/index.html?Aniph=1-$doc
 /index.html?channelCode=
 /index.html?ph0n=1-$doc
+/index.html?ph0nq=$doc
 /index.php/Customize/list?params=
 /index.php/Statistics/ads_show?
 /index.php?key=*&t1=$doc
@@ -52757,7 +52764,6 @@ $removeparam=ysclid
 /pvlog.js
 /pvmax.js
 /pvnoju.js
-/pw/waWQiOjEw*=eyJ.js^$script
 /pwafeeds/amazon_$subdocument
 /pwcookielaw.js
 /pwd-cookie-consent.js
@@ -54932,6 +54938,7 @@ $removeparam=ysclid
 ://click-v4.*.com/click?$doc
 ://client.rum.
 ://cmpworker.
+://cnstrc.com/js/
 ://collect.*/pageview
 ://collector.*/event
 ://creative.*/widgets/Spot/lib.js$3p
