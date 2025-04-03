@@ -194,6 +194,7 @@ $websocket,domain=pornhub.com
 /adguard.$domain=adguard-com.cdn.ampproject.org
 /adguard.$domain=adguard.com
 /admanager.$~object,domain=~admanager.google.com
+/adobe-analytics-$domain=~business.adobe.com
 /ads.criteo.com.js
 /adsense.$domain=adsense.googleblog.com
 /adsense_$domain=adsense.googleblog.com
@@ -751,9 +752,11 @@ $websocket,domain=pornhub.com
 @@/otBannerSdk.js$domain=newyorker.com
 @@/otBannerSdk.js$domain=npr.org
 @@/otBannerSdk.js$domain=soundcloud.com
+@@/pdc_s_code.js$domain=adobe.com
 @@/pingd?$domain=qq.com
 @@/piwik-$domain=github.com
 @@/pubads*theguardian.com
+@@/s_code_acdc.js$domain=adobe.com
 @@/sensorsdata.$domain=binance.com
 @@/sensorsdata.$domain=modian.com
 @@/show_ad_$domain=wb.qq.com
@@ -848,6 +851,9 @@ $websocket,domain=pornhub.com
 @@||a.pub.network/core/imgs/1.png$domain=androidheadlines.com
 @@||a.pub.network/core/prebid-universal-creative.js$domain=androidheadlines.com
 @@||a1.itc.cn/pv/js/spv.
+@@||account.adobe.com/newrelic.js$~third-party
+@@||account.adobe.com^
+@@||account.adobe.com^$document,domain=services.adobe.com,stealth=useragent
 @@||account.aliyun.com^$document
 @@||account.microsoft.com/?refd=$stealth
 @@||account.microsoft.com/auth/$stealth
@@ -895,6 +901,9 @@ $websocket,domain=pornhub.com
 @@||adnet.qq.com^$~third-party
 @@||adnxs.com/ast/ast.js$domain=zone.msn.com
 @@||adnxs.com/ast/static/$domain=outlook.live.com
+@@||adobe.com^$cookie=/^AMCVS?_.*AdobeOrg/
+@@||adobe.io^$domain=adobe.com,stealth=3p-auth
+@@||adobe.tt.omtrdc.net/rest/v1/delivery?client=adobe&sessionId=$domain=acrobat.adobe.com
 @@||adobeactivators.blogspot.com^$generichide
 @@||adobedtm.com*/launch-$script,xmlhttprequest
 @@||adobedtm.com*/s-code-$script
@@ -908,6 +917,7 @@ $websocket,domain=pornhub.com
 @@||adobedtm.com^*/s-code-$script
 @@||adobedtm.com^*/satellite-$script
 @@||adobedtm.com^*/satelliteLib-$script,domain=lenovo.com
+@@||adobeid-*.services.adobe.com^
 @@||adocean.pl/*ad.xml$domain=imasdk.googleapis.com,badfilter
 @@||adocean.pl/ad.xml$domain=imasdk.googleapis.com,badfilter
 @@||ads-api.twitter.com/*/accounts/$domain=analytics.twitter.com
@@ -1394,6 +1404,7 @@ $websocket,domain=pornhub.com
 @@||euronewsgroup.demdex.net/event?d_event=$~third-party
 @@||europeanclassiccomic.blogspot.com^$generichide
 @@||events.appsflyer.com^$app=com.mapswithme.maps.pro
+@@||experienceleague.adobe.com^$~third-party
 @@||f*.baidu.com/it/u=*,*&fm=$domain=baidu.com
 @@||f-droid.org/assets/Ads_$~third-party
 @@||facebook.com/*/dialog/oauth$stealth
@@ -2685,6 +2696,13 @@ adlock.com##.panel > div.aside__cta
 adlock.com##.share
 adlock.com#$#.adl__spec__disc__content { display: none !important; }
 adlock.com#$#body[style^="filter: blur"] { filter: unset !important; }
+adobe.com###onetrust-consent-sdk
+adobe.com##.extension-modal
+adobe.com##.message
+adobe.com##.onetrust-pc-dark-filter
+adobe.com##.promobarModal
+adobe.com##body > div.message
+adobe.com##div[daa-lh="share"]
 adobeactivators.blogspot.com##+js(abort-current-script, document.addEventListener, /google_ad_client/)
 adobeactivators.blogspot.com#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '/google_ad_client/')
 ads-ti9ni4.blogspot.com##+js(abort-current-script, document.addEventListener, /google_ad_client/)
@@ -3183,6 +3201,7 @@ artsandculture.google.com##.iMnvWc
 artsandculture.google.com##div[jscontroller="Ax0JBf"] > a
 assets.alicdn.com/g/alilog*$redirect=noop.js
 au.tv.yahoo.com#@#.y7-advertisement
+auth.services.adobe.com#@#.SocialButtons
 auto.163.com##div[class^="ga ga"]
 auto.qq.com###tips
 auto.sina.com.cn###bottomInquryBar
@@ -3967,6 +3986,7 @@ blog.163.com###topbar_randShowArea
 blog.163.com###topbar_yxpArea
 blog.163.com##.m-regGuideLayer.f-trans
 blog.163.com##.postadlayer
+blog.adobe.com##.article-byline-sharing
 blog.chromium.org##.share
 blog.cloudflare.com###cloudflare-tv-embed
 blog.cloudflare.com##+js(no-fetch-if, method:POST body:zaraz)
@@ -5533,6 +5553,7 @@ gemini.google.com#$#body .share-button { display: block !important; }
 gemini.yahoo.com#@#.ads
 geograpik.blogspot.com#$#.post-body { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 get-click2.blogspot.com##[href^="http://bit.ly"]
+get.adobe.com###adChoice_div
 getlec.blogspot.com##+js(abort-current-script, document.addEventListener, /google_ad_client/)
 getlec.blogspot.com##+js(abort-on-property-read, zfgloadedpopup)
 getlec.blogspot.com#%#//scriptlet("abort-on-property-read", "zfgloadedpopup")
@@ -6178,6 +6199,8 @@ help.twitter.com##div[class*="-share-tweet"]
 help.twitter.com##main > div.twtr-container > div.twtr-grid > div.twtr-grid__yang > div[class^="twtr-component-space"] + div[class^="ap"]
 help.twitter.com#?#.b01__copy > h4:contains(/Поделиться этой статьей|Share this article|Partagez cet article|Compartir este artículo|Compartilhe este artigo|Condividi questo articolo|Diesen Artikel teilen|この記事を共有する|이 문서 공유하기|Bu makaleyi paylaşın|Bagikan artikel ini|مشاركة هذه المقالة/)
 help.x.com##.b17-scroll-top-button
+helpx.adobe.com##.feedbackV2-target.fixed
+helpx.adobe.com##.socialmediashare
 hentai-vl.blogspot.com##+js(aeld, load, 2000)
 hentaiforce.net##+js(set-constant, show_popup, false)
 hentaiforce.net##+js(window.open-defuser)
@@ -6356,6 +6379,7 @@ in.news.yahoo.com###module-featurebar
 in.search.yahoo.com##.reg:has([href*="aclick"])
 in.search.yahoo.com##.reg:has([href*="clk"])
 inapps.appsflyersdk.com^
+indd.adobe.com##.ga-consent-banner
 influencermarketinghub.com###ccl_ppu
 influencermarketinghub.com###cta_popup
 influencermarketinghub.com##.signup-banner-right
@@ -11528,6 +11552,7 @@ x.facebook.com##article[data-sigil*="AdStory"]
 x.facebook.com##article[data-store*="is_sponsored.1"]
 x.facebook.com##article[data-store*="originated_from_recommendation"]
 x.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":\""]
+xd.adobe.com##.column-4
 xda-developers-android.blogspot.com##+js(nobab)
 xda-developers-android.blogspot.com#%#//scriptlet("prevent-bab")
 xda-developers-forum.blogspot.com##.post-share-buttons
@@ -12463,6 +12488,11 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||3dmgame.com/templets/index/js/huandeng.js
 ||3dmgame.com/templets/xiazai/g
 ||3dmgame.com/tools/gamead?
+||3dns-1.adobe.com^
+||3dns-2.adobe.com^
+||3dns-3.adobe.com^
+||3dns-4.adobe.com^
+||3dns.adobe.com^
 ||3g.qq.com/lview?
 ||3lift.com^
 ||3p-geo.yahoo.com^
@@ -12542,6 +12572,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||acs4baichuan.m.taobao.com^
 ||act.ds.kakao.com^
 ||act.qq.com^
+||activate-sea.adobe.com^
+||activate-sjc0.adobe.com^
+||activate.adobe.com^
 ||actives.youku.com^
 ||activity.browser.intl.miui.com^
 ||acttg.eastmoney.com^
@@ -12653,8 +12686,18 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||adnxs.com^$app=com.soundcloud.android
 ||adnxs.com^$redirect=noop.txt,image,media,subdocument,stylesheet,script,xmlhttprequest,other
 ||adnxs.com^$redirect=nooptext
+||adobe-dns-2.adobe.com^
+||adobe-dns-3.adobe.com^
+||adobe-dns.adobe.com^
+||adobe.com/*/analytics.js
+||adobe.com/*/pdc_s_code.js
+||adobe.com/*/s_code*.js
+||adobe.com/experienceedge/*/collect?
+||adobe.com/newrelic.js$script,redirect=noopjs,1p
+||adobe.com/td_redirect.html$popup
 ||adobedc.demdex.net^
 ||adobedc.net/collector/
+||adobedtm.com^$third-party,domain=adobe.com
 ||adobedtm.com^*/satelliteLib-$script,domain=euronews.com
 ||adolphusisomlycyou.pages.dev^$all
 ||adoric-static.*.amazonaws.com/adoric.ads.js
@@ -12800,6 +12843,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||ae01.alicdn.com^$app=yqtrack.app
 ||aedns.weixin.qq.com^
 ||aegis.qq.com^
+||aepxlg.adobe.com^
 ||afd.baidu.com^
 ||afd.l.google.com^
 ||affiliate.googleusercontent.com^
@@ -13093,6 +13137,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||analytics.bigdata.samsung.com^
 ||analytics.bloomberg.com^
 ||analytics.brave.com^
+||analytics.cloud.coveo.com^
 ||analytics.cnblogs.com^
 ||analytics.facebook.com^$third-party
 ||analytics.githubassets.com^
@@ -13121,7 +13166,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||analytics.yicai.com^
 ||analytics.zhihu.com^
 ||analyticsengine.s3.amazonaws.com^
+||analyticshipaa.cloud.coveo.com^
 ||analyze-82dfgsi2.m-w.com^$domain=merriam-webster.com
+||anapp.adobe.com^
 ||android.bugly.qq.com^
 ||androidauth.wpengine.com/wp-json/api/advanced_placement
 ||androidauth.wpengine.com/wp-json/api/advanced_placement/api-$domain=androidauthority.com
@@ -13260,6 +13307,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||app.mi.com/download/*?id=$removeparam=appSignature
 ||app.mi.com/download/*?id=$removeparam=nonce
 ||app.mi.com/download/*?id=$removeparam=ref
+||app.scene7info.adobe.com^
 ||app.ssp.yahoo.com^
 ||app.update.lenovo.com^
 ||app.updates.digicert.com^
@@ -13370,6 +13418,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||atm.youku.com^
 ||atom-log.3.cn^
 ||atom-log.3.cn^$third-party
+||atsmetrics.adobe.com^
 ||attr.appsflyer.com^
 ||aty.hd.sohu.com^
 ||aty.sohu.com/v?
@@ -13381,6 +13430,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||audio-ak*-*.akamaized.net/audio/$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
 ||audio.ali.xmcdn.com^
 ||auth.be.sec.miui.com^
+||auth.services.adobe.com/signin/v1/audit
 ||authbe.sec.intl.miui.com^
 ||auto-deploy.pages.dev^
 ||autohome.com.cn/Topic/RobotVideo?
@@ -13406,6 +13456,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||azurewebsites.net^*/telemetry.js
 ||b-gtc.getui.net^
 ||b.smartvideo.youku.com^
+||b2binsider.adobe.com^
 ||babes-mansion.s3.amazonaws.com^
 ||badding.oss-ap-southeast-1.aliyuncs.com^
 ||badge.facebook.com^$third-party
@@ -13807,6 +13858,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||c.wired.com^
 ||c.yes.youku.com^
 ||c.za.msn.com^
+||c00.adobe.com^
 ||c0nt4ct-me.pages.dev^
 ||c0nt4ct-me.pages.dev^$all
 ||c1-stats.shopifysvc.com^
@@ -13818,6 +13870,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cad.youku.com^
 ||calameo-beacon.global.ssl.fastly.net^$third-party
 ||cambrian-images.cdn.bcebos.com^$domain=~zhidao.baidu.com
+||campaign.adobe.com^
 ||cams.xvideos.com^
 ||cancelaciondeseguros-*.azurewebsites.net^$doc,to=~grupobancolombia.com
 ||carrefour-enbacktoschool4.pages.dev^$all,to=~carrefour.com
@@ -13976,6 +14029,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||cibntv.net/youku/*$media,redirect=noopmp3-0.1s,domain=youku.com
 ||cibntv.net/youku/*.mp4?$media,redirect=noop-1s.mp4,domain=v.youku.com
 ||cibntv.net/youku/*.mp4?$media,redirect=noopmp4-1s,domain=v.youku.com
+||cimage.adobe.com^
 ||cir-smart.baidu.com^
 ||citycash2.blogspot.com^
 ||cjhq.baidu.com^
@@ -14205,6 +14259,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||count.vrs.sohu.com^
 ||counter.csdn.net^
 ||counter.sina.com.cn^
+||coveo.com/coveo.analytics.js/
 ||cp-jobmacha-servicemacha-widgets.*.aliyuncs.com/chinapress-jobads-prod.js
 ||cp.eastmoney.com/wap/*.js
 ||cp2.eastmoney.com^
@@ -14228,6 +14283,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||crashlyticsreports-pa.googleapis.com^
 ||crayon.meishichina.com^
 ||cre.dp.sina.cn^
+||creativecloud.adobe.com^$removeparam=trackingid
 ||creatives-1301677708.file.myqcloud.com/images/placeholder/wwads-friendly-ads.png
 ||creativeservice-production.scdn.co/mp3-ad/*.mp3$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
 ||creditsoffer.blogspot.com^
@@ -15479,12 +15535,39 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||data-d4dfa4bc2c.weather.com^
 ||data-sdk-uuid-log.d.meituan.net^
 ||data-sdk-uuid-report.dreport.meituan.net^
+||data.1337.test.ajo.adobe.com^
+||data.acsappsvcs1.test.ajo.adobe.com^
 ||data.adobedc.net^$third-party
+||data.adobedemoamericas305.test.ajo.adobe.com^
+||data.aem-showcase-internal.adobe.com^
+||data.aem-sites-internal.adobe.com^
+||data.aepcomms.cjm.adobe.com^
+||data.b2bmail.adobe.com^
 ||data.bilibili.com^
 ||data.bilibili.com^$redirect=noop.txt
+||data.cip.test.ajo.adobe.com^
+||data.codeandtheoryamerptrsd.campaign-sandbox.adobe.com^
+||data.customer-success-apac.adobe.com^
 ||data.diagnostics.office.com^
+||data.digital.adobe.com^
+||data.digitalmedia.adobe.com^
+||data.e.adobe.com^
 ||data.em2.cloudflare.com^
+||data.email-discovery.cjm.adobe.com^
+||data.email-disney.cjm.adobe.com^
+||data.email-kpn.cjm.adobe.com^
+||data.email-lightroom.cjm.adobe.com^
+||data.email-merkle.cjm.adobe.com^
+||data.email-mobiledx.cjm.adobe.com^
+||data.email-signify.cjm.adobe.com^
+||data.email-tsb.cjm.adobe.com^
+||data.email.podcast.adobe.com^
+||data.emaillpb.adobe.com^
+||data.employeecommunications.adobe.com^
+||data.gm.test.ajo.adobe.com^
 ||data.kuiniuca.com^
+||data.mail.contentauthenticity.adobe.com^
+||data.mayo.test.ajo.adobe.com^
 ||data.microsoft.com/OneCollector/
 ||data.microsoft.com/OneCollector/$badfilter,domain=outlook.office.com
 ||data.mistat.india.xiaomi.com^
@@ -15492,9 +15575,23 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||data.mistat.rus.xiaomi.com^
 ||data.mistat.xiaomi.com^
 ||data.news.paypal.com^
+||data.notifications.campaign.adobe.com^
+||data.premierleague.test.ajo.adobe.com^
+||data.rahu.test.ajo.adobe.com^
+||data.rtcdpsummitlab.test.ajo.adobe.com^
+||data.sbux.test.ajo.adobe.com^
 ||data.sec.intl.miui.com^
 ||data.sec.miui.com^
 ||data.service.paypal.com^
+||data.shrm.test.ajo.adobe.com^
+||data.starbucks.test.ajo.adobe.com^
+||data.summit-l336.adobe.com^
+||data.tep.test.ajo.adobe.com^
+||data.tesco.test.ajo.adobe.com^
+||data.test3.test.ajo.adobe.com^
+||data.tsbuat.test.ajo.adobe.com^
+||data.ultimate-success-emea.test.ajo.adobe.com^
+||data.wunderman-email.cjm.adobe.com^
 ||datadoghq-browser-agent.com^
 ||datadoghq-browser-agent.com^$third-party
 ||dataflow.biliapi.com^
@@ -15547,10 +15644,12 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||demdex.net^
 ||demdex.net^$third-party
 ||demkc32bq01ah.cloudfront.net^
+||demo.emaillpb.adobe.com^
 ||derangedadage91wis.files.wordpress.com^
 ||desgao1zt7irn.cloudfront.net^
 ||detwzgl8cvciv.cloudfront.net^
 ||dev-push.m.youku.com^
+||dev.email-signify.cjm.adobe.com^
 ||dev.visualwebsiteoptimizer.com^
 ||developer.mozilla.org/pong/
 ||developer.mozilla.org/submit/
@@ -16004,6 +16103,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||epro.sohu.com^
 ||equity.tmall.com^$domain=youku.com
 ||erebor.douban.com^
+||ereg.adobe.com^
 ||error-tracking.reddit.com^
 ||errorordufhwe.s3.ap-south-1.amazonaws.com^$all
 ||ers.baidu.com^
@@ -16219,6 +16319,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||fkrkkmxsqeb5bj9r.s3.amazonaws.com/*.js
 ||fkrkkmxsqeb5bj9r.s3.amazonaws.com^
 ||flash.sec.intl.miui.com^
+||flashplayerfeedback.adobe.com^
 ||flashstats.libsyn.com^
 ||flex.msn.com/mstag/
 ||flex.msn.com^
@@ -16329,10 +16430,12 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||geekupdates.notion.site^
 ||gemini.yahoo.com^
 ||generali-cosweb-tech-prod.s3.eu-central-1.amazonaws.com/website/js/tagcommander/
+||geo.adobe.com^
 ||geo.query.yahoo.com^
 ||geo.query.yahoo.com^$domain=~mail.yahoo.com
 ||geo.query.yahoo.com^$~xmlhttprequest,domain=~mail.yahoo.com
 ||geo.yahoo.com^
+||geo2.adobe.com^
 ||geoedge.be^
 ||geoedge.be^$third-party
 ||geofence.sys.miui.com^
@@ -16342,6 +16445,12 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||geotrust.com^$third-party
 ||gepush.com^
 ||germanytechsupport.pages.dev^$all
+||get.adobe.com^$removeparam=TRILIBIS_EMULATOR_UA
+||get.adobe.com^$removeparam=browser_dist
+||get.adobe.com^$removeparam=browser_type
+||get.adobe.com^$removeparam=promoid
+||get.adobe.com^$removeparam=type
+||get.adobe.com^$removeparam=workflow
 ||getelevar.com/shops/*/events.js
 ||getpocket.com/web-utilities/public/static/te.js
 ||getsentry.com^$third-party,domain=sentry.io
@@ -16979,6 +17088,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||hits.getelevar.com^
 ||hits.theguardian.com^
 ||hktracker.hankookilbo.com^
+||hl2rcv.adobe.com^
+||hlrcv.stage.adobe.com^
 ||hm.baidu.com/hm.gif
 ||hm.baidu.com/mkt.js
 ||hm.baidu.com^
@@ -17281,6 +17392,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||jill.fc.yahoo.com^
 ||jingjia.qq.com^
 ||jingyan.baidu.com^$replace=/(BaiduAds|bottom-ads|bdAdsPrefix|recommend-ads|wgt-popup)//
+||jm.customer-success-apac.adobe.com^
 ||join.zendesk.com^
 ||jp-helplineweb-chrsmjinfgtizonedswebs-01.s3.ap-southeast-2.amazonaws.com^$all
 ||jpg1.oss-cn-beijing.aliyuncs.com^
@@ -17384,6 +17496,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||l.threads.net/?u=http$doc,urlskip=?u
 ||l.youku.com^
 ||labuladong.github.io/algo/pictures/ad/
+||landing.ultimate-success-emea.test.ajo.adobe.com^
+||landingpage.emaillpb.adobe.com^
 ||launches.appsflyer.com^
 ||launches.appsflyersdk.com^
 ||launchpad-wrapper.privacymanager.io/*/launchpad-liveramp.js
@@ -17424,8 +17538,10 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||livep.l.qq.com^
 ||lives.l.qq.com^
 ||livetex.ru/js/client.js$third-party,domain=lg.com
+||lm.licenses.adobe.com^
 ||lm.tv.sohu.com^
 ||lmbsy.qq.com^
+||lmlicenses.wip4.adobe.com^
 ||lms.roblox.com^
 ||lmsjy.qq.com^
 ||loc.map.baidu.com^$app=com.xiaomi.metoknlp
@@ -17490,8 +17606,60 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||look-like-star.myshopify.com^
 ||lp.americas.business.samsung.com^
 ||lp.apac.business.samsung.com^
+||lp.b2bmail.adobe.com^
+||lp.customer-success-apac.adobe.com^
+||lp.demo1.demoamericas275.adobe.com^
+||lp.demo10.demoamericas275.adobe.com^
+||lp.demo11.demoamericas275.adobe.com^
+||lp.demo12.demoamericas275.adobe.com^
+||lp.demo13.demoamericas275.adobe.com^
+||lp.demo14.demoamericas275.adobe.com^
+||lp.demo15.demoamericas275.adobe.com^
+||lp.demo16.demoamericas275.adobe.com^
+||lp.demo17.demoamericas275.adobe.com^
+||lp.demo18.demoamericas275.adobe.com^
+||lp.demo19.demoamericas275.adobe.com^
+||lp.demo2.demoamericas275.adobe.com^
+||lp.demo20.demoamericas275.adobe.com^
+||lp.demo3.demoamericas275.adobe.com^
+||lp.demo4.demoamericas275.adobe.com^
+||lp.demo5.demoamericas275.adobe.com^
+||lp.demo6.demoamericas275.adobe.com^
+||lp.demo7.demoamericas275.adobe.com^
+||lp.demo8.demoamericas275.adobe.com^
+||lp.demo9.demoamericas275.adobe.com^
+||lp.dmillersb.journeyusshared.adobe.com^
+||lp.dmillersbdev.journeyusshared.adobe.com^
+||lp.email-kpn.cjm.adobe.com^
+||lp.email-lightroom.cjm.adobe.com^
+||lp.email-merkle.cjm.adobe.com^
 ||lp.europe.business.samsung.com^
+||lp.hol1.demoamericas275.adobe.com^
+||lp.hol10.demoamericas275.adobe.com^
+||lp.hol11.demoamericas275.adobe.com^
+||lp.hol12.demoamericas275.adobe.com^
+||lp.hol13.demoamericas275.adobe.com^
+||lp.hol14.demoamericas275.adobe.com^
+||lp.hol15.demoamericas275.adobe.com^
+||lp.hol16.demoamericas275.adobe.com^
+||lp.hol17.demoamericas275.adobe.com^
+||lp.hol18.demoamericas275.adobe.com^
+||lp.hol19.demoamericas275.adobe.com^
+||lp.hol2.demoamericas275.adobe.com^
+||lp.hol20.demoamericas275.adobe.com^
+||lp.hol3.demoamericas275.adobe.com^
+||lp.hol4.demoamericas275.adobe.com^
+||lp.hol5.demoamericas275.adobe.com^
+||lp.hol6.demoamericas275.adobe.com^
+||lp.hol7.demoamericas275.adobe.com^
+||lp.hol8.demoamericas275.adobe.com^
+||lp.jkowalskisb.journeyusshared.adobe.com^
+||lp.jkowalskisbdev.journeyusshared.adobe.com^
+||lp.kkaufmansb.journeyusshared.adobe.com^
+||lp.owarnersb.journeyusshared.adobe.com^
+||lp.owarnersbdev.journeyusshared.adobe.com^
 ||lp.smartbusiness.samsung.com^
+||lptest.email-mobiledx.cjm.adobe.com^
 ||lstat.youku.com^
 ||ltassrv.com.s3.amazonaws.com^
 ||lts*.qq.com^*.ts?index=$media,redirect=noop-0.1s.mp3,domain=qq.com
@@ -17846,6 +18014,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||n.gemini.yahoo.com^
 ||n.sinaimg.cn/sinakd10117/*/bd54-kentcvx6065228.png
 ||n4403ad.doubleclick.net^
+||na1r.services.adobe.com^
+||na2m-pr.licenses.adobe.com^
 ||narrativ.com^$domain=androidauthority.com
 ||nativead.s3.amazonaws.com^
 ||nature.com/platform/track/
@@ -17886,6 +18056,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||newsharecounts.s3-us-west-2.amazonaws.com/nsc.js$script
 ||newsource-cdn-static.ns.cnn.com/prd/analytics/1.0.1/cnnvan-omniture.min.js
 ||newspush.sinajs.cn^
+||newtest.wunderman-email.cjm.adobe.com^
 ||newyorker.com^$removeparam=bxid
 ||newyorker.com^$removeparam=cndid
 ||newyorker.com^$removeparam=esrc
@@ -17915,6 +18086,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||notify.wps.cn^
 ||notion.so/api/v*/teV1
 ||notion.so/api/v*/teV1|
+||ns.adobe.com^
 ||ns.weibo.cn^
 ||nsclick.baidu.com^
 ||nsclickvideo.baidu.com^
@@ -17947,6 +18119,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||omni.conferencing.pccw.com^
 ||omniture.lg.com^
 ||oms.wsj.com^
+||omtrdc.net/rest/v*/delivery?client=$replace=/^\{[\s\S]*\}\$/{}/,domain=acrobat.adobe.com
 ||oneid.mmstat.com^
 ||onelink.appsflyer.com^
 ||onelink.me/*&af_web_dp=$doc
@@ -18183,6 +18356,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||pixel.wp.com^
 ||pixels.spotify.com^
 ||pixiu.shangshufang.ksosoft.com^
+||platform-eu.cloud.coveo.com/rest/*/analytics/view?
 ||platform.twitter.com/anywhere.js$third-party
 ||platform.twitter.com/embed/$~stylesheet,~subdocument,third-party
 ||platform.twitter.com/impressions.js
@@ -18214,6 +18388,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||pn.ybp.yahoo.com/ab/secure/true/imp/
 ||pn.ybp.yahoo.com^
 ||pngvnreward.pages.dev^$doc,to=~pngvntoken.com
+||podcast.e.adobe.com^
 ||podtrac.com^*redirect.mp3/$urlskip=/\/redirect\.mp3\/([^?]+\.mp3\b)/ +https
 ||polaris*-normal-*.zijieapi.com^
 ||polaris.zijieapi.com^
@@ -18231,6 +18406,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||pr-bh.ybp.yahoo.com^
 ||pr.comet.yahoo.com^
 ||pr.nss.netease.com^
+||practivate.adobe.com^
 ||prebid-*.rubiconproject.com^
 ||presence.teams.live.com^
 ||presentationtracking.netflix.com^
@@ -18521,6 +18697,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||s.360.cn^
 ||s.baidu.com^
 ||s.bdstatic.com/common/openjs/openBox.js?
+||s.email-mobiledx.cjm.adobe.com^
 ||s.go.sohu.com^*/?callback=
 ||s.ipaddress.com/shariff/shariff.complete.js
 ||s.jpush.cn^
@@ -18648,6 +18825,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||searchads.apple.com^
 ||secure-57v.pages.dev^$all
 ||secure.diet.mayoclinic.org^
+||secureflashplayerfeedback.adobe.com^
 ||securemetrics.apple.com/b/ss/*maps$image
 ||securemetrics.apple.com^$3p
 ||securemetrics.blackrock.com^
@@ -18846,6 +19024,10 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||smetrics.samsung.com^
 ||smetrics.science.org^
 ||smetrics2.nokia.com^
+||sms.email-disney.cjm.adobe.com^
+||sms.email-mobiledx.cjm.adobe.com^
+||sms.rtcdpsummitlab.test.ajo.adobe.com^
+||sms.ultimate-success-emea.test.ajo.adobe.com^
 ||sndcdn.com/audio/*$media,redirect=noopmp3-0.1s,domain=soundcloud.com
 ||sngmta.qq.com^
 ||snowflake.qq.com^
@@ -18919,6 +19101,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||speedtest.cn/api/v2/show?
 ||speedtest.cn/assets/images/ce_
 ||spider-tracker.xiaohongshu.com^
+||spike.email-disney.cjm.adobe.com^
 ||splashqqlive.gtimg.com^
 ||sports.sina.cn^$replace=/isSpecialAd//i
 ||spot.im/analytics/analytics.js
@@ -18949,9 +19132,11 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||sspai.com/attachment/sponsor/
 ||sspapi-prd.samsungrs.com^
 ||sst.cookiebot.com^
+||sstats.adobe.com^
 ||sstats.newyorker.com^
 ||sstats.wired.com^
 ||sstats2.newyorker.com^
+||sstatstest.adobe.com^
 ||ssw.live.com^
 ||st-offlinegame.vivo.com.cn^
 ||stacksocial.com/*/*&partnerid=$removeparam=partnerid
@@ -18999,6 +19184,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||staticiot.cdn.bcebos.com/union/badjs-sdk-min-1.1.1.js
 ||staticxx.facebook.com^
 ||statistic.qzone.qq.com^
+||stats.adobe.com^
 ||stats.appsflyer.com^
 ||stats.autohome.com.cn^
 ||stats.aws.rubiconproject.com^
@@ -19173,6 +19359,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||tapdaq-adverts.global.ssl.fastly.net^
 ||target-us.samsung.com^
 ||target.microsoft.com^
+||targetlr.adobe.com^
 ||tars-file-upload.s3.amazonaws.com^$media
 ||tartannewzealand.myshopify.com^
 ||tat.pandora.xiaomi.com^
@@ -19212,7 +19399,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||tempo-client-metric-prod.s3.amazonaws.com^
 ||tencent.com/developer/api/common/getAds
 ||tencent.com/developer/api/common/getOneAds
+||tepshared.tep.test.ajo.adobe.com^
 ||teredo.ipv6.microsoft.com^
+||test-landing-page-122122.email-disney.cjm.adobe.com^
 ||test-luckydraw.csdn.net^
 ||test.clearurls.xyz/void/index.html$removeparam=test
 ||test.ott.youku.com^
@@ -19519,6 +19708,8 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||us-central1-markuphero.cloudfunctions.net^
 ||us.l.qq.com^
 ||usage.influxdata.com^
+||usageanalytics.coveo.com^
+||use.typekit.net^$font,removeparam=~/^(primer|subset_id)=/,domain=~fonts.adobe.com
 ||userlink.alicdn.com^$app=com.ruanmei.ithome
 ||userscript.zone/s.js
 ||usp1.baidu.com^
@@ -19681,6 +19872,9 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||wetransfer.zendesk.com^$removeparam=amp%3Butm_source
 ||wgo.mmstat.com^
 ||wh.ipaddress.com^
+||whatif.fr.adobe.com^
+||whatif.it.adobe.com^
+||whatif.nl.adobe.com^
 ||whatsapp-32w.pages.dev^$all
 ||widget.intercom.io^$3p
 ||widget.sellwild.com/amp/insideevs$domain=insideevs-com.cdn.ampproject.org
@@ -19694,6 +19888,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||win10.ipv6.microsoft.com^
 ||win1710.ipv6.microsoft.com^
 ||win8.ipv6.microsoft.com^
+||wip3.adobe.com^
 ||wisepush.video.baidu.com^
 ||wit.qq.com^$third-party
 ||wk.baidu.com/view/proxy/xpage/form/getform
@@ -19721,6 +19916,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||ws.progrss.yahoo.com^
 ||wurking.global.ssl.fastly.net/ingestly-ingest/
 ||wvcfg.alicdn.com^$app=com.youku.phone
+||wwis-dubc1-vip60.adobe.com^
 ||www-google-analytics.l.google.com^
 ||www-google-analytics.l.google.com^$third-party
 ||www-googletagmanager.l.google.com^
