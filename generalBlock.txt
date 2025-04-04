@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-04 08:50:29 UTC
+! Updated: 2025-04-04 14:02:11 UTC
 ! Rules starting with #, /, $, :
 ! --- Generated rules below ---
 /advanced-ads-$domain=~wordpress.org
@@ -17526,7 +17526,6 @@
 ##a[href^="https://slkmis.com/"]
 ##a[href^="https://snowdayonline.xyz/"]
 ##a[href^="https://softwa.cfd/"]
-##a[href^="https://startgaming.net/tienda/" i]
 ##a[href^="https://static.fleshlight.com/images/banners/"]
 ##a[href^="https://streamate.com/landing/click/"]
 ##a[href^="https://svb-analytics.trackerrr.com/"]
@@ -21963,6 +21962,7 @@ $~third-party,xmlhttprequest,script,redirect-rule=nooptext,domain=zertalious.xyz
 /in.getclicky.com/*
 /in.gif?url=
 /in.php?referer=
+/in/?tour=$third-party
 /in/p/?spot_id=$subdocument,third-party
 /in/show/?mid=$third-party
 /in/show/?tag_ab=*&site_id=
@@ -26336,12 +26336,14 @@ $cookie=adb,domain=iprima.cz
 ##body > div:not([class]):not([id]) > script + div[id^="img_"] > div[id^="img_"][visibility="visible"]
 ##body > div:not([class]):not([id]) > script + div[id^="img_"] > script + span[id^="img_"][style] > a[href^="https://html-load.com/content"]
 ##body > div[class^="img_"] > a[href^="https://html-load.com/content"][target="_blank"]
+##body > div[class^="img_"] > style + div[id^="img_"] + div[class^="img_"]
 ##body > div[class^="img_"][id^="img_"] > button[type="button"][class^="img_"][id^="img_"]
 ##body > div[id^="img_"] > div[style$="height:280px;"][class*=" img_"]
 ##body > div[id^="img_"]:has(+ amp-pixel + amp-analytics)
 ##body > div[id^="img_"]:has(+ amp-pixel + div[style^="bottom:0;right:0;width"])
 ##body > div[style="display:inline"] > div[class^="img_"][id^="img_"]
 ##body > iframe[src*="html-load.com/"] + div[id^="img_"]
+##body > iframe[src*="html-load.com/"] ~ script + div[class^="img_"]
 ##body > script + div + div[style="display:inline"] > a[target="_blank"][href^="https://html-load.com/content"]
 ##body > script + script + script + div + div[style="display:inline"] > div:not([id]):not([class])
 ##body > script + script + script + div + div[style="display:inline"] > div[class^="img_"][id^="img_"] > div[class^="img_"] > div[class^="img_"] > div[class*=" img_"] > a[href^="https://html-load.com/content"][target="_blank"][rel="nofollow"]
@@ -26486,7 +26488,6 @@ $popup,third-party,domain=adblockeronstape.me|adblockeronstreamtape.me|adblocker
 /\/\/s5o.ru\/source\/_desktop\/assets\/[0-9][0-9][0-9][0-9].(png)/$domain=sports.ru,image
 /\/\/s5o.ru\/source\/_desktop\/assets\/[0-9].(png)/$domain=sports.ru,image
 /\:\/\/[a-z0-9]*.[a-z]*\/[0-9]*\//$third-party,domain=mintmanga.com
-/in/?tour=$third-party
 /\/\/([0-9a-z]+\.)?([0-9a-z]+\.)?[0-9a-z]+\.[0-9a-z]+\.[a-z][a-z]+\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]\.js\?st=[0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z]?[0-9A-Z]?$/$~third-party,match-case
 $removeparam=uzcid
 $removeparam=beyond_uzcvid
