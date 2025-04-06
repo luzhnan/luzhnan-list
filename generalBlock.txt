@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-06 02:09:10 UTC
+! Updated: 2025-04-06 02:13:49 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g., $domain=~example.com)
@@ -17195,6 +17195,7 @@
 ##a[href*=".bjty7.vip"]
 ##a[href*=".bright.cn/?utm_"]
 ##a[href*=".bsy3.xyz"]
+##a[href*=".cfm?domain="][href*="&fp="]
 ##a[href*=".com/?Extend="]
 ##a[href*=".com/Register.aspx?aid="]
 ##a[href*=".com/Register/?a="]
@@ -18986,6 +18987,7 @@ $removeparam=ysclid
 /^94\.242\.247\.(2[0-9]|3[0-2]):/$network
 /^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{5}$/$script,third-party,match-case
 /^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$script,third-party
+/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[a-f0-9]+\/\d+\?version_name=\w&domain=/$xmlhttprequest,third-party
 /^https:\/\/[0-9a-z]{5,}\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,~third-party
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{20,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
 /^https:\/\/[0-9a-z]{7,25}\.com\/[a-z]{0,7}\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{20,120}(?:[-.][a-z0-9]{2,6})?(?:\.js)?$/$script,3p,match-case,to=com,header=x-datacenter
@@ -20491,6 +20493,8 @@ $removeparam=ysclid
 /counter.js.php
 /counter.php?width=
 /counter.pl?
+/counter/?domain=$image,1p
+/counter/?domain=$image,~third-party
 /counter/acnt.php?
 /counter/collect?
 /counter/stat.php
@@ -22542,6 +22546,7 @@ $removeparam=ysclid
 /pus2/app.js
 /push-analytics.js
 /push-skin/skin.min.js$script
+/push.js?utm_source=*&domain=$script
 /push/p.js?$third-party
 /push/p.js?u=$third-party
 /pushJs/*$third-party,script
@@ -23385,6 +23390,7 @@ $removeparam=ysclid
 /track.interestingfacts.com/?xol=
 /track.octanemail.in/sapi/*$image
 /track.php?
+/track.php?domain=
 /track.php?toggle=
 /track.png?
 /track.sp.actionkit.com/*
@@ -64275,6 +64281,7 @@ $$script[tag-content="adsbygoogle"]
 /track?*&ref=
 /track?*http$image
 /track?browserId
+/track?ts=*&domain=
 /track?wm_
 /trackAdHit.
 /trackClickAsync.
