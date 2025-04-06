@@ -1,8 +1,9 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-06 02:13:49 UTC
+! Updated: 2025-04-06 14:08:26 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
-! Excluded rules containing $domain= (unless the domain is an exception, e.g., $domain=~example.com)
+! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
+! Excluded rules containing ,domain= (unless the domain is an exception, e.g. ,domain=~example.com)
 ! --- Generated rules below ---
 /advanced-ads-$domain=~wordpress.org
 /adservice.$domain=~adservice.io|~github.com|~githubusercontent.com
@@ -24808,6 +24809,7 @@ $image,3p,denyallow=cdn77.org|fpbns.net|globalcdn.co|others-cdn.com|rncdn7.com|s
 ##a[id][href="https://toolkitspro.com"][rel^="noopener noreferrer"]
 ###go-to-top + div[id][class*=" "]
 ###st-ami + div[id][class*=" "]
+##a[href="#"][title^="Scroll "] + div[id][class*=" "]
 ##.close-btn[onclick="closeAd()"]
 ##.close-btn3[onclick="closeAd3()"]
 ##iframe.lazyloaded[data-src^="https://rcm-fe.amazon-adsystem.com/"]
