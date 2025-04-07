@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-06 14:08:26 UTC
+! Updated: 2025-04-07 02:18:48 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -25266,10 +25266,12 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##amp-ad-exit + div[class^="img_"]:has(+ div[aria-hidden="true"] + amp-pixel + amp-pixel)
 ##amp-ad-exit + div[class^="img_"]:has(+ div[aria-hidden="true"] + amp-pixel + div[style^="bottom:0;right:0;width"])
 ##amp-ad-exit + div[class^="img_"]:has(+ div[aria-hidden="true"] + div[style^="bottom:0;right:0;width"])
+##amp-img[class^="img_"][style="width:300px;height:250px;"]
 ##a[href^="https://html-load.com/content"] > amp-img[src^="https://tpc.googlesyndication.com/daca_images/simgad/"]
 ##a[href^="https://html-load.com/content"]:has(+ amp-pixel + div[aria-hidden="true"]) > amp-img.aspw
 ##a[href^="https://html-load.com/content"][attributionsrc^="https://track.u.send.microad.jp"]
 ##a[href^="https://html-load.com/content"][style$="margin:0px auto;text-decoration:none;"]
+##a[href^="https://html-load.com/content"][attributiondestination="https://appier.net"]
 ##a[href^="https://html-load.com/content"][style="display:inline-block;"]
 ##a[href="javascript:void(window.open(clickTag))"] > div[id^="img_"]
 ##a[style="text-decoration:none;"] > div[style^="border: none; margin: 0px;"]
@@ -25295,6 +25297,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##body > script[src]:first-child + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
 ##body > script[src]:first-child + script + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
 ##body.aspw[width="320"]
+##body[class^="img_"] > div[style$="-webkit-tap-highlight-color:rgba(0,0,0,0);"]
 ##body[class^="img_"][style$="running none;"]
 ##body[onclick="ExitApi.exit();"][style="cursor:pointer"] > a[href="javascript:(function(){open(window.clickTag)})()"]
 ##div[class^="img_"] > table[class^="img_"]
@@ -25319,12 +25322,14 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##div[id^="img_"][ontouchend$="touchEnd(event)"]
 ##div[id^="img_"][role="button"]
 ##div[id^="img_"][style*="font-family: arial, helvetica, sans-serif;"]
+##div[id^="img_"][style$="height: 248px; overflow: hidden;"]
 ##div[id^="img_"][style$="height:100px;"]
 ##div[id^="img_"][style$="height:90px;overflow:hidden;"]
 ##div[id^="img_"][style$="overflow:hidden; display:inline-block;"]
 ##div[id^="img_"][style$="padding: 0px; display: inline-block;"]
 ##div[id^="img_"][style$="position: sticky; top: 0; z-index: 1;"]
 ##div[id^="img_"][style$="width: 100%; z-index: 2147483647; display: block;"]
+##div[id^="img_"][style$="width: 100%; z-index: 2147483647;"]
 ##div[id^="img_"][style$="width:100%;height:250px;overflow:hidden;"]
 ##div[id^="img_"][style="cursor: pointer;"]
 ##div[id^="img_"][style="opacity: 1;"]
@@ -25340,6 +25345,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##div[id^="img_"][style^="position:absolute;width:100%;height:100%;"]
 ##div[id^="img_"][style^="width: 100%; height: 100px; position: fixed; bottom: 0; left: 0; z-index:"]
 ##div[id^="img_"][style^="width: 100%; min-height: 430px;"]
+##div[id^="img_"][style^="width: 100vw; height: 100vh;"]
 ##div[id^="img_"][style^="width: 300px; height: 250px; left: 0px;"]
 ##div[id^="img_"][visibility="visible"]
 ##div[id^="img_"][x-frame-height="53"]
