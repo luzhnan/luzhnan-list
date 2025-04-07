@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-07 02:18:48 UTC
+! Updated: 2025-04-07 03:36:17 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -24553,14 +24553,6 @@ $image,3p,denyallow=cdn77.org|fpbns.net|globalcdn.co|others-cdn.com|rncdn7.com|s
 /ajax/banner/list?page=$xhr,1p
 /^https:\/\/[0-9a-z]{8,}\.[a-z0-9]{7,}\.[a-z]{4,}\/[0-9a-f]{32}\/a4\/[0-9a-f]{13}\.js$/$script,3p,match-case
 /^https:\/\/[0-9a-z]{8,}\.[a-z0-9]{7,}\.[a-z]{4,}\/[0-9a-f]{32}\/b4\/[0-9a-f]{13}\.js$/$script,3p,match-case
-/assets/jquery/css.js^$script,1p,strict1p
-/^https?:\/\/[a-z]{8,15}\.xyz\/$/$xhr,3p,to=xyz,method=head,header=access-control-expose-headers:/X-DirectionPartner-Id/
-/^https?:\/\/[a-z]{8,15}\.com\/$/$xhr,3p,to=com,method=head,header=access-control-expose-headers:/X-DirectionPartner-Id/
-/^https?:\/\/[a-z]{6,15}\.[a-z]{2,3}\/5\/\d{6,7}(?:\?_=\d+|\/\??)?$/$script,xhr,3p
-/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/400\/\d{7}(?:\?v=\d+)?$/$script,3p,to=com|net
-/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/401\/\d{7}(?:\?v=\d+)?$/$script,3p,to=com|net
-/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/500\/\d{7}\?/$xhr,3p,to=com|net
-/^https?:\/\/[a-z]{8,15}\.(?:com|net)\/tag\.min\.js$/$script,3p,to=com|net,redirect=noopjs
 /player/html.php?aid=post_roll_html^$redirect=noopframe,frame,1p
 /player/html.php?aid=start_html&*&referer=$frame,1p
 /player/html.php?aid=pause_html&*&referer=$frame,1p
