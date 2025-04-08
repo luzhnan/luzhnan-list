@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-07 03:36:17 UTC
+! Updated: 2025-04-08 00:45:35 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -647,6 +647,8 @@
 ##.module-ad
 ##.module_home_ads
 ##.module_single_ads
+##.mrf-adv
+##.mrf-adv__wrapper
 ##.mpu-ad
 ##.multiad2
 ##.mvp-ad-label
@@ -14478,6 +14480,8 @@
 ##.mlad
 ##.mmads
 ##.mnd-cookie-bar
+##.mntl-block.article__broad-video
+##.mntl-jwplayer-broad.article__broad-video--jw
 ##.moads-top-banner
 ##.moads-widget
 ##.mob-ad-break-text
@@ -14625,8 +14629,6 @@
 ##.mrec-scrollable-cont
 ##.mrecAds
 ##.mrec_advert
-##.mrf-adv
-##.mrf-adv__wrapper
 ##.ms-cookie-ok
 ##.msg-ad
 ##.msg-adblock
@@ -16307,6 +16309,7 @@
 ##.topright_ad
 ##.topside_ad
 ##.topsidebarad
+##.torimochi-widget
 ##.tout-ad
 ##.tout-ad-embed
 ##.tower-ad
@@ -18951,8 +18954,6 @@ $removeparam=ysclid
 /Web_JS_Stats.
 /Web_JS_Stats.js
 /Win0xixm07/?phone=$document
-/[0-9a-f]{32}\/invoke\.js/$script,third-party,redirect-rule=noop.js
-/[0-9a-f]{32}\/invoke\.js/$script,third-party,redirect-rule=noopjs
 /\.(cc|com|top|xyz)\/i\/v$/$third-party,xmlhttprequest
 /\.(com|cn|top|xyz)\/(j|K)\/[0-9]{6}$/$script,third-party
 /\.(cyou|ink)\/[a-z]{4}_[0-9]{5}_[a-z]{5}js\?/$script,third-party
@@ -18967,6 +18968,8 @@ $removeparam=ysclid
 /\.[a-z]{2,3}:\d{4}\/[a-z]{2}\/\d+\?[a-z]+=[a-z0-9]{5,}/$script,third-party
 /\/(public|resources|static|assets)\/([a-f0-9]){28,31}$/$script,xmlhttprequest,~third-party
 /\/[0-9a-f]{32}\/invoke\.js/$script,third-party
+/\/[0-9a-f]{32}\/invoke\.js/$script,third-party,redirect-rule=noop.js
+/\/[0-9a-f]{32}\/invoke\.js/$script,third-party,redirect-rule=noopjs
 /\/[a-z0-9]{12}\/[a-zA-Z0-9\/\+\-]{97,106}$/$match-case,script,1p,strict1p
 /\/[a-z0-9]{12}\/[a-zA-Z0-9\/\+\-]{97,106}$/$match-case,script,~third-party
 /\/[a-z]{8}\.js\?st=[0-9A-Z]{6,8}$/$script,1p,strict3p,match-case
@@ -24861,7 +24864,7 @@ $image,3p,denyallow=cdn77.org|fpbns.net|globalcdn.co|others-cdn.com|rncdn7.com|s
 ##div[style="position: fixed; inset: 0px; z-index: 2147483647; pointer-events: auto;"]
 /^https?:\/\/[-a-z]{5,13}\.[a-z]{3,6}\/[0-9a-h]{1,17}\?[0-9a-zA-Z]{1,22}=[%0-9a-zA-Z]{200,1300}/$xhr,3p,match-case,method=get
 ###player div[style$="cursor: pointer; position: absolute; width: 100%; height: 100%; padding: 1rem; z-index: 2147483647;"]
-$frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin allow-scripts,to=~buymeacoffee.com|~cbox.ws|~chatango.com|~cloudflare.com|~d21.team|~dailymotion.com|~discord.com|~disqus.com|~dood.*|~edgecastcdn.net|~facebook.com|~filemoon.*|~frembed.*|~google.*|~hcaptcha.com|~ko-fi.com|~mixdrop.*|~moviesapi.*|~nontongo.win|~ok.ru|~primewire.*|~recaptcha.net|~sport-tv-guide.live|~strcdn.org|~streambucket.net|~streamingnow.*|~twitter.com|~vidbinge.*|~vidlink.*|~vidmoly.*|~vidsrc.nl|~vixcloud.co|~youtu.be|~youtube.com|~youtube-nocookie.com,from=1jour1film.*|456movie.com|animefever.cc|animeunity.to|anitaku.bz|antennasports.ru|bingemaster.netlify.app|bluphim.*|broflix.cc|cinemadeck.com|dailypudding.com|detodopeliculas.nu|dlhd.so|euro2024direct.ru|freek.to|freeshot.live|hydrahd.cc|javx.cc|kaas.ro|kickassanime.*|kipflix.vercel.app|kissanime.*|lk21official.pics|moflix-stream.day|movie3k.net|netplayz.ru|novafork.com|osteusfilmestuga.online|phimmoifhd.com|popcornmovies.to|primeflix-web.vercel.app|putlockers.*|rivestream.*|roselife.site|roshy.tv|seriescultes.store|smashystream.com|soccerinhd.com|visualnewshub.com|xsportbox.com
+$frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin allow-scripts,to=~buymeacoffee.com|~cbox.ws|~chatango.com|~cloudflare.com|~d21.team|~dailymotion.com|~discord.com|~disqus.com|~dood.*|~edgecastcdn.net|~facebook.com|~filemoon.*|~frembed.*|~google.*|~hcaptcha.com|~ko-fi.com|~mixdrop.*|~moviesapi.*|~nontongo.win|~ok.ru|~primewire.*|~recaptcha.net|~sport-tv-guide.live|~strcdn.org|~streambucket.net|~streamingnow.*|~twitter.com|~vidbinge.*|~vidlink.*|~vidmoly.*|~vidsrc.nl|~vixcloud.co|~youtu.be|~youtube.com|~youtube-nocookie.com,from=1jour1film.*|456movie.com|animefever.cc|animeunity.to|anitaku.bz|antennasports.ru|bingemaster.netlify.app|bluphim.*|broflix.cc|cinemadeck.com|dailypudding.com|detodopeliculas.nu|dlhd.so|euro2024direct.ru|freek.to|freeshot.live|hydrahd.cc|javx.*|kaas.ro|kickassanime.*|kipflix.vercel.app|kissanime.*|lk21official.pics|moflix-stream.day|movie3k.net|netplayz.ru|novafork.com|osteusfilmestuga.online|phimmoifhd.com|popcornmovies.to|primeflix-web.vercel.app|putlockers.*|rivestream.*|roselife.site|roshy.tv|seriescultes.store|smashystream.com|soccerinhd.com|visualnewshub.com|xsportbox.com
 $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin allow-scripts,to=~buymeacoffee.com|~cbox.ws|~chatango.com|~cloudflare.com|~d21.team|~dailymotion.com|~discord.com|~disqus.com|~dood.*|~edgecastcdn.net|~embed.su|~emturbovid.com|~facebook.com|~filemoon.*|~frembed.*|~google.*|~hcaptcha.com|~ko-fi.com|~mixdrop.*|~moviesapi.*|~nontongo.win|~ok.ru|~ply4.com|~primewire.*|~recaptcha.net|~sport-tv-guide.live|~strcdn.org|~streambucket.net|~streamingnow.*|~topembed.pw|~twitter.com|~vidbinge.*|~vidlink.*|~vidmoly.*|~vidsrc.*|~vixcloud.co|~youtu.be|~youtube.com|~youtube-nocookie.com,from=456movie.com|animefever.cc|animeunity.to|bluphim.*|broflix.cc|cinemadeck.com|dailypudding.com|detodopeliculas.nu|freeshot.live|hydrahd.cc|kaas.ro|kickassanime.*|kipflix.vercel.app|kissanime.*|netplayz.ru|novafork.com|phimmoifhd.com|primeflix-web.vercel.app|seriescultes.store|soccerinhd.com|visualnewshub.com|xsportbox.com
 /aclib.js$script
 /^https:\/\/[a-z]{8}\.(?:cfd|pro|xyz)\/\?params=aD[01][a-zA-Z0-9]{43}Z1c2VyPT[a-zA-Z0-9]{40}/$doc,script,popup,to=cfd|pro|xyz
@@ -25246,6 +25249,8 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /idnes.cz\/[-_a-zA-Z0-9]{20,}\/[-_a-zA-Z0-9]{20,}\/[-_a-zA-Z0-9]{20,}\/[-_a-zA-Z0-9]{20,}/$subdocument,image
 /^https:\/\/[a-z][a-z][a-z][a-z]?[a-z]?\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\.top\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\/[a-z][a-z][a-z][a-z][a-z][a-z]?(\?d=[0-9])?$/$script,third-party,match-case
 /^https?:\/\/[0-9a-z]*\.?[-0-9a-z][-0-9a-z][-0-9a-z]+\.[a-z][a-z]+\.?[a-z]*\/([0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]+\/)?\/?(article[0-9][0-9][0-9][0-9]\.doc)?\?(cid=[0-9a-z]+&)?[ou]=[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z](&t=[0-9]+)?&[ou]=[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]/$document,match-case
+/\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\/invoke\.js/$script,third-party
+/^https:\/\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.com\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js$/$script,third-party
 /^https:\/\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]+\.com\/en\/([a-z][a-z]+\/)?([a-z][a-z]+\/)?[a-z][a-z]+\?([a-z]+=[0-9a-z]+&)*id=[12][0-9][0-9][0-9][0-9][0-9][0-9]/$script,third-party,match-case
 /\/[0-9][0-9][0-9][0-9][0-9]\?version_name=[a-z]$/$xmlhttprequest
 /?&pid=*&subid=
@@ -25259,38 +25264,42 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##amp-ad-exit + div[class^="img_"]:has(+ div[aria-hidden="true"] + amp-pixel + div[style^="bottom:0;right:0;width"])
 ##amp-ad-exit + div[class^="img_"]:has(+ div[aria-hidden="true"] + div[style^="bottom:0;right:0;width"])
 ##amp-img[class^="img_"][style="width:300px;height:250px;"]
-##a[href^="https://html-load.com/content"] > amp-img[src^="https://tpc.googlesyndication.com/daca_images/simgad/"]
-##a[href^="https://html-load.com/content"]:has(+ amp-pixel + div[aria-hidden="true"]) > amp-img.aspw
-##a[href^="https://html-load.com/content"][attributionsrc^="https://track.u.send.microad.jp"]
-##a[href^="https://html-load.com/content"][style$="margin:0px auto;text-decoration:none;"]
-##a[href^="https://html-load.com/content"][attributiondestination="https://appier.net"]
-##a[href^="https://html-load.com/content"][style="display:inline-block;"]
+##amp-img[class^="img_"][style="width:336px;height:280px;"]
+##a[href*="-load"][href*=".com/content/"] > amp-img[src^="https://tpc.googlesyndication.com/daca_images/simgad/"]
+##a[href*="-load"][href*=".com/content/"]:has(+ amp-pixel + div[aria-hidden="true"]) > amp-img.aspw
+##a[href*="-load"][href*=".com/content/"][attributionsrc^="https://track.u.send.microad.jp"]
+##a[href*="-load"][href*=".com/content/"][style$="margin:0px auto;text-decoration:none;"]
+##a[href*="-load"][href*=".com/content/"][attributiondestination="https://appier.net"]
+##a[href*="-load"][href*=".com/content/"][style="display:inline-block;"]
 ##a[href="javascript:void(window.open(clickTag))"] > div[id^="img_"]
 ##a[style="text-decoration:none;"] > div[style^="border: none; margin: 0px;"]
 ##a[style^="background:transparent url"][style*="html-load.com/"]
 ##body > a[attributionsrc*="html-load.com/"]
+##body > a[href^="https://content-loader.com/content"][target="_top"]
 ##body > a[href^="https://html-load.com/content"][target="_top"]
 ##body > a[target="_blank"][rel="noopener noreferrer"][href^="https://07c225f3.online/content"][href*="/0/"]
-##body > a[target="_blank"][rel="noopener noreferrer"][href^="https://html-load.com/content"][href*="/0/"]
+##body > a[target="_blank"][rel="noopener noreferrer"][href*="-load"][href*=".com/content/"][href*="/0/"]
 ##body > div:not([class]):not([id]) > script + div[id^="img_"] > div[id^="img_"][visibility="visible"]
-##body > div:not([class]):not([id]) > script + div[id^="img_"] > script + span[id^="img_"][style] > a[href^="https://html-load.com/content"]
-##body > div[class^="img_"] > a[href^="https://html-load.com/content"][target="_blank"]
+##body > div:not([class]):not([id]) > script + div[id^="img_"] > script + span[id^="img_"][style] > a[href*="-load"][href*=".com/content/"]
+##body > div[class^="img_"] > a[href*="-load"][href*=".com/content/"][target="_blank"]
 ##body > div[class^="img_"] > style + div[id^="img_"] + div[class^="img_"]
 ##body > div[class^="img_"][id^="img_"] > button[type="button"][class^="img_"][id^="img_"]
 ##body > div[id^="img_"] > div[style$="height:280px;"][class*=" img_"]
 ##body > div[id^="img_"]:has(+ amp-pixel + amp-analytics)
 ##body > div[id^="img_"]:has(+ amp-pixel + div[style^="bottom:0;right:0;width"])
 ##body > div[style="display:inline"] > div[class^="img_"][id^="img_"]
-##body > iframe[src*="html-load.com/"] + div[id^="img_"]
-##body > iframe[src*="html-load.com/"] ~ script + div[class^="img_"]
-##body > script + div + div[style="display:inline"] > a[target="_blank"][href^="https://html-load.com/content"]
+##body > iframe[src*="-load"][src*=".com/content/"] + div[id^="img_"]
+##body > iframe[src*="-load"][src*=".com/content/"] ~ script + div[class^="img_"]
+##body > script + div + div[style="display:inline"] > a[target="_blank"][href*="-load"][href*=".com/content/"]
 ##body > script + script + script + div + div[style="display:inline"] > div:not([id]):not([class])
-##body > script + script + script + div + div[style="display:inline"] > div[class^="img_"][id^="img_"] > div[class^="img_"] > div[class^="img_"] > div[class*=" img_"] > a[href^="https://html-load.com/content"][target="_blank"][rel="nofollow"]
+##body > script + script + script + div + div[style="display:inline"] > div[class^="img_"][id^="img_"] > div[class^="img_"] > div[class^="img_"] > div[class*=" img_"] > a[href*="-load"][href*=".com/content/"][target="_blank"][rel="nofollow"]
 ##body > script[src]:first-child + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
 ##body > script[src]:first-child + script + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
 ##body.aspw[width="320"]
 ##body[class^="img_"] > div[style$="-webkit-tap-highlight-color:rgba(0,0,0,0);"]
 ##body[class^="img_"][style$="running none;"]
+##body[class^="img_"][style^="background-color"]
+##body[class^="img_"][style^="opacity: 1;"]
 ##body[onclick="ExitApi.exit();"][style="cursor:pointer"] > a[href="javascript:(function(){open(window.clickTag)})()"]
 ##div[class^="img_"] > table[class^="img_"]
 ##div[class^="img_"][onclick^="handleClick(event, 'https:"]
@@ -25332,6 +25341,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##div[id^="img_"][style^="height: 250px; width: 300px;"]
 ##div[id^="img_"][style^="margin: 0px; padding: 0px; position: fixed; top: 0px; left: 0px; width: 100%; z-index: 2147483647;"]
 ##div[id^="img_"][style^="margin:0;padding:0;display:block;position:fixed;left:0;"]
+##div[id^="img_"][style^="overflow: hidden; width: 320px;"]
 ##div[id^="img_"][style^="position: fixed; bottom: 0; left: 0; width: 100%; z-index:2147483647;"]
 ##div[id^="img_"][style^="position: fixed; bottom: 0px; left: 0px; width: 100%; z-index: 2147483647;"]
 ##div[id^="img_"][style^="position:absolute;width:100%;height:100%;"]
@@ -25349,7 +25359,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##div[js_error_track_url^="https://uncn.jp/0/data/js_error_track/"][click_trackers]
 ##div[lang] [x-remove="false"]
 ##div[style$="-10000px; position: absolute;"] + div[id^="img_"]
-##div[style$="text-indent: 0px !important;"] > a[href^="https://html-load.com/content"]
+##div[style$="text-indent: 0px !important;"] > a[href*="-load"][href*=".com/content/"]
 ##div[style*="left: 0px; z-index: 1000000000"] > div > div[id^="img_"]
 ##div[style="display:inline"][class^="img_"] > div[style="display:flex;"]
 ##div[style^="position:absolute;left:0px;"] + div[class^="img_"]
@@ -25357,31 +25367,36 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##div[style^="transition-duration:0ms!important;margin:0px!important;padding:0px!important;border:none!important;position:absolute!important;top:0px!important;"]
 ##div[style] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##div[style^="position:"][ontouchstart="fCidsp(event)"]
-##div[style^="v"] > a[href^="https://html-load.com/content"][target][style="text-decoration:none;"]
+##div[style^="v"] > a[href*="-load"][href*=".com/content/"][target][style="text-decoration:none;"]
 ##div[x-frame-height="100"] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##div[x-frame-height$="50"] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##gwd-google-ad
 ##html[lang*="-"] > body[style="width:100%;height:100%;margin:0;"] > div[class^="img_"][style="width:100%; height:100%;"]
-##iframe[src*="html-load.com/"] + div[id^="img_"]:empty
+##iframe[src*="-load"][src*=".com/content/"] + div[id^="img_"]:empty
+##iframe[src*="content-loader.com/"] + style + div
 ##iframe[src*="html-load.com/"] + style + div
-##iframe[src*="html-load.com/"][style="display:none"][aria-hidden="true"] + div:not([class]):not([id])
+##iframe[src*="-load"][src*=".com/content/"][style="display:none"][aria-hidden="true"] + div:not([class]):not([id])
 ##iframe[src="javascript:false"] ~ div[style="display:inline"]
 ##iframe[id^="img_"][style^="cursor: pointer; display: block; position: absolute; overflow: hidden; margin: 0px; padding: 0px; pointer-events: auto; opacity: 0.8;"]
+##img[height^="10"][src*="content-loader.com/"]
 ##img[height^="10"][src*="html-load.com/"]
 ##img[id^="img_"][style$="margin:0px;padding:0px;border:none;opacity:0.8;"]
-##img[src*="html-load.com/"][onclick^="window.open('https://www.inmobi.com"]
+##img[src*="-load"][src*=".com/content/"][onclick^="window.open('https://www.inmobi.com"]
+##img[src*="-load"][src*=".com/content/"][width="100%"][alt=""][style="display: block;"]
+##img[src*="content-loader.com/"][style^="border-style:"]
+##img[src*="content-loader.com/"][style^="position: absolute; left: 0px;"]
 ##img[src*="html-load.com/"][style^="border-style:"]
 ##img[src*="html-load.com/"][style^="position: absolute; left: 0px;"]
-##img[src*="html-load.com/"][width="100%"][alt=""][style="display: block;"]
 ##ins[class^="img_"][style^="display:inline-block;"]
 ##ins[id^="img_"][style*="--gn-ov-ad-height"]
 ##link + div[class^="img_"][style="width: 300px; height: 250px;"]
-##link + style + script + a[href^="https://html-load.com/content"]
-##link[rel="stylesheet"][href*="html-load.com/"] + script + script + div[id^="img_"]
-##link[rel="stylesheet"][href*="html-load.com/"][media="screen"] + script + div[class^="img_"]
+##link + style + script + a[href*="-load"][href*=".com/content/"]
+##link[rel="stylesheet"][href*="-load"][href*=".com/content/"] + script + script + div[id^="img_"]
+##link[rel="stylesheet"][href*="-load"][href*=".com/content/"][media="screen"] + script + div[class^="img_"]
 ##meta + title + script + div[id^="img_"]
 ##meta + title + script + script + div[id^="img_"]
 ##meta[charset="utf-8"] + meta[name="viewport"] + div[class^="img_"]
+##meta[content] + a[href^="https://content-loader.com/content"]
 ##meta[content] + a[href^="https://html-load.com/content"]
 ##p[id^="img_"][onclick]
 ##section[class^="img_"] > div[id^="img_"][class^="img_"][draggable="false"]
@@ -25389,13 +25404,13 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##script[attributionsrc] + div[id^="img_"]
 ##script[id^="img_"] + div[id^="img_"]
 ##script[name="scrbnr"] + div[class^="img_"]
-##script[src*="html-load.com/"] + div[id^="img_"]:empty
-##script[src*="html-load.com/"] + div[id^="img_"][style="width: auto;"]
+##script[src*="-load"][src*=".com/content/"] + div[id^="img_"]:empty
+##script[src*="-load"][src*=".com/content/"] + div[id^="img_"][style="width: auto;"]
 ##span[class^="img_"] > svg.aspw
-##style + script[src*="html-load.com/"] + script + div[id^="img_"]
+##style + script[src*="-load"][src*=".com/content/"] + script + div[id^="img_"]
 ##style + title + script + div[id^="img_"]
 ##video[class^="img_"][playsinline]
-##video[poster*="html-load.com/"]
+##video[poster*="-load"][poster*=".com/content/"]
 /^https:\/\/[a-z]{2}\.[a-z]{7,14}\.com\/r[0-9A-Za-z]{10,16}\/[A-Za-z]{5}$/$script,third-party
 /^https:\/\/[a-z]{2}\.[a-z]{7,14}\.com\/[a-z][0-9A-Za-z]{10,16}\/\d{4,6}$/$script,third-party,match-case
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js/$script,xmlhttprequest,third-party
@@ -26596,9 +26611,9 @@ $$amp-ad
 /lite2/ads/infeed.js
 /m.realgfporn.com\/[a-z]{1,13}[0-9]{1,13}[a-z]{1,13}.js/
 ://*.rbc.ru/*/?target-ref=*&
-/^77\.88\./$network,app=com.pomogalka.fiveplus|software.clover.physicsformulas|kz.kundelik.mobile|com.strict.mkenin.agf.cardgames2|com.Andrey.ElementsofNature|com.strict.mkenin.redball.spikeball2|com.strict.mkenin.spaceattack|com.strict.mkenin.spikeball|com.kaptan.blockpuzzlegame|com.strict.mkenin.angryfarm|com.strict.mkenin.redball.runnerball3|com.AlekseySudakov.LamberMilIdle|com.strict.mkenin.redball.runnerball|com.asmr.relaxing.anti.stress.games|com.GardenofDreams.SpeciesEvolution|com.strict.mkenin.redball.runnerball2|park.car.parking.games.master.mania|com.nektome.chatruletka.voice|com.mobilefootie.wc2010|com.gallery.photosgallery.videogallery.galaxy|com.apkpure.aegon|uz.avtoelon|kz.kolesa|com.byril.alchemy|com.byril.alchemyanimals|com.byril.doodlebasket|com.byril.doodlebasket2|com.byril.doodlejewels|com.byril.dots|com.byril.drawingmaster|com.byril.planes|com.byril.seabattle|com.byril.seabattle2|com.byril.stickmanarcher|com.byril.tictactoe2|ru.babyk.android|ru.full.khd.app|com.droid27.transparentclockweather|com.candygrill.coinboom|com.electricfoal.buildingsformcpe|ru.mangalib.lite|one.belousov.wordgame|one.track.app|ru.photostrana.mobile|ru.cardsmobile.mw3|altergames.intellect_battle|altergames.carlauncher|altergames.strong_link|altergames.recreverse|altergames.recreverse_fortwo|altergames.neurodraw|com.anoshenko.android.solitaires|com.anoshenko.android.fav_solitaires|com.anoshenko.android.mahjong|su.solovey.app|com.maxxt.pcradio|com.vvf.fmcube|com.sneig.livedrama|com.kursx.booze|photo.editor.ai.photoeditor|filemanager.files.fileexplorer|com.applock.applocker.lockapps.password.locker|recovermessages.restoredeleteddata.recoverdata.notifyme|com.shadowbiz.semechki|ru.livelib.client|ru.etalon.mediafootball|ru.yandex.metro|com.adme.android|com.grif.vmp|com.miui.cleaner|com.oxothuk.bridges|com.oxothuk.dominosa|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.eruditeng|com.oxothuk.infection|com.oxothuk.onetwo|com.oxothuk.qgame|com.oxothuk.qgame|com.oxothuk.sudoku|com.oxothuk.worldpuzzle|com.oxothuk.worldpuzzle|com.oxothuk.worldpuzzlefull|com.oxothuk.worldpuzzlefull|com.oxothukscan|com.oxothukscan|com.dafftin.android.moon_phase|ru.libappc|com.escape.adventure.amnesia|com.edadeal.android
+/^77\.88\./$network,app=com.pomogalka.fiveplus|software.clover.physicsformulas|kz.kundelik.mobile|com.strict.mkenin.agf.cardgames2|com.Andrey.ElementsofNature|com.strict.mkenin.redball.spikeball2|com.strict.mkenin.spaceattack|com.strict.mkenin.spikeball|com.kaptan.blockpuzzlegame|com.strict.mkenin.angryfarm|com.strict.mkenin.redball.runnerball3|com.AlekseySudakov.LamberMilIdle|com.strict.mkenin.redball.runnerball|com.asmr.relaxing.anti.stress.games|com.GardenofDreams.SpeciesEvolution|com.strict.mkenin.redball.runnerball2|park.car.parking.games.master.mania|com.nektome.chatruletka.voice|com.mobilefootie.wc2010|com.gallery.photosgallery.videogallery.galaxy|com.apkpure.aegon|uz.avtoelon|kz.kolesa|com.byril.alchemy|com.byril.alchemyanimals|com.byril.doodlebasket|com.byril.doodlebasket2|com.byril.doodlejewels|com.byril.dots|com.byril.drawingmaster|com.byril.planes|com.byril.seabattle|com.byril.seabattle2|com.byril.stickmanarcher|com.byril.tictactoe2|ru.babyk.android|ru.full.khd.app|com.droid27.transparentclockweather|com.candygrill.coinboom|com.electricfoal.buildingsformcpe|ru.mangalib.lite|one.belousov.wordgame|one.track.app|ru.photostrana.mobile|ru.cardsmobile.mw3|altergames.intellect_battle|altergames.carlauncher|altergames.strong_link|altergames.recreverse|altergames.recreverse_fortwo|altergames.neurodraw|com.anoshenko.android.solitaires|com.anoshenko.android.fav_solitaires|com.anoshenko.android.mahjong|su.solovey.app|com.maxxt.pcradio|com.vvf.fmcube|com.sneig.livedrama|com.kursx.booze|photo.editor.ai.photoeditor|filemanager.files.fileexplorer|com.applock.applocker.lockapps.password.locker|recovermessages.restoredeleteddata.recoverdata.notifyme|com.shadowbiz.semechki|ru.livelib.client|ru.etalon.mediafootball|ru.yandex.metro|com.adme.android|com.grif.vmp|com.miui.cleaner|com.oxothuk.bridges|com.oxothuk.dominosa|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.eruditeng|com.oxothuk.infection|com.oxothuk.onetwo|com.oxothuk.qgame|com.oxothuk.qgame|com.oxothuk.sudoku|com.oxothuk.worldpuzzle|com.oxothuk.worldpuzzle|com.oxothuk.worldpuzzlefull|com.oxothuk.worldpuzzlefull|com.oxothukscan|com.oxothukscan|com.dafftin.android.moon_phase|ru.libappc|com.escape.adventure.amnesia|com.edadeal.android|yo.app.free
 /^77\.88\./$network,app=com.hb.dialer.free|com.onecwireless.mahjong|com.kostosha.poliglot16.pro|armworkout.armworkoutformen.armexercises|bloodpressuremonitor.bloodpressureapp.bpmonitor|bloodsugartracker.bloodsugartracking.diabetesapp|bmicalculator.bmi.calculator.weightlosstracker|bodyfast.zero.fastingtracker.weightloss|coach.leap.fitness.home.workout.training|com.eyefilter.nightmode.bluelightfilter|com.eyefilter.nightmode.bluelightfilterpro|com.northpark.drinkwater|com.popularapp.thirtydayfitnesschallenge|com.popularapp.thirtydayfitnesschallengepro|downloader.vitmate.downloaderapp|dumbbellworkout.dumbbellapp.homeworkout|fat.burnning.plank.fitness.loseweight|fitnesscoach.workoutplanner.weightloss|gymworkout.gym.gymlog.gymtrainer|habittracker.todolist.tickit.daily.planner|hd.video.downloader.app.hdvideodownloaderapp|heartrate.heartratemonitor.heartrateapp.heartratetracker|homeworkout.homeworkouts.noequipment|increaseheightworkout.heightincreaseexercise.tallerexercise|losebellyfat.flatstomach.absworkout.fatburning|loseweightapp.loseweightappforwomen.womenworkoutathome|menloseweight.loseweightappformen.weightlossformen|nightfilter.bluelightfilter.nightshift|pedometer.steptracker.calorieburner.stepcounter|periodtracker.pregnancy.ovulationtracker|qrcode.reader.qrscanner.barcode.scanner.qrcodereader|running.tracker.gps.map|runningforweightloss.runningapp.runningtracker|sixpack.sixpackabs.absworkout|sleepsounds.relaxandsleep.whitenoise|sleeptrakcer.sleeprecorder.sleepapp.sleep|splits.splitstraining.dothesplits.splitsin30days|steptracker.healthandfitness.walkingtracker.pedometer|stretching.stretch.exercises.back|walking.weightloss.walk.tracker|women.workout.female.fitness|workoutforwomen.femalefitness.womenworkout.loseweight|yogaworkout.dailyyoga.go.weightloss.loseweight|ru.learnwordswithmuttt.multiplicationtable|com.oxothukscan|ru.zen.android|ru.sports.f1|ru.tabor.search|com.balley|flipboard.app|black.wall7Fon|ru.mamba.client|se.scmv.belarus|ru.rp5.rp5weatherhorizontal|com.jagplay.client.android.app.thousand.hd|com.alex_ip.coins|an.osintsev.allcoinrus|an.osintsev.caesar|an.osintsev.flake|an.osintsev.ruscollector|an.osintsev.usaeurocoins|an.osintsev.worldbons|an.osintsev.germany|an.osintsev.bonrus|an.osintsev.sngcoins|an.osintsev.collection|an.osintsev.region|kz.tengrinews|com.DL.war.planes.inc.torpedo.bomber.fighter.aircraft.ww2|com.anyreads.patephone|com.jewels.gems.android|com.petrik.shifshedule|com.droid27.d3flipclockweather|com.infoshell.recradio|ru.topradio|ru.wall7Fon|com.narde.backgammon.game|org.aastudio.games.longnards|com.gazstation|kz.krisha|com.swiftsoft.anixartd|com.sshex.sberometr|com.region|com.metalsoft.trackchecker_mobile|com.indie.bustime|com.WildDrewGames.Galaganoid|com.WildDrewGames.BlockPuzzleClayWorld|com.WildDrewGames.SweetPopIt|ru.innim.my_finance|ru.idaprikol|com.olvic.gigiprikol|jabi.pdd2|ru.ria.ria|limehd.ru.ctv|ru.swc.yaplakalcom|ru.sports|com.nektome.talk|com.avito.android|ru.gdeposylka.delta|ru.alexeydubinin.holidays|ru.pikabu.android|molokov.TVGuide|com.zigzag_mobile.skorolek|ru.mail.love|ru.sports.primera|ru.sports.spartak|ru.sports.epl|ru.sports.barcelona|ru.sports.real|ru.sports.zenit|ru.sports.manutd|ru.sports.chelsea|ru.hh.android|bubble.shooter.pop.games.pet.rescue|bubble.shooter.pop.puzzle.game|color.sorting.games.ball.sort.puzzle|com.battle.deskmate|conquer.the.city.takeover.battle|sortpuz.water.sort.puzzle.game|tic.tac.toe.xoxo.xo.two.player|two.player.online.games.finger.tap.battle|two.three.four.player.game.mini.games|water.sorting.games.liquid.color.sort.puzzle|com.fingerlab.word.blockpuzzles|com.crypto.currency|com.fusionmedia.investing|com.holden.radio|com.memeglish.learn.english.language.words.by.memes|com.openmygame.games.android.jigsawpuzzle|drug.vokrug|monitor.kmv.multinotes|ru.tutu.etrains|ru.yandex.rasp|by.denchik.assyst|ru.profmedia.avtoradio|com.didenko.and.partners.durak|com.vertaler.rues|net.sit30.calories|ferp.android|ru.ideer.android|ru.centerion.fiesta_images|ru.centerion.beloved_man|ru.centerion.favorite_girl|ru.centerion.funny_greetings|org.aastudio.games.backgammon|video.player.videoplayer|su.stations.record|com.swiftsoft.anixartlt|com.tadiuzzz.tadius.mysalary|com.mobile_infographics_tools.mydrive|com.mobile_infographics_tools.patternmaker|com.mobile_infographics_tools.mydrive_ext|ru.sports.serie_a|com.merigotech.fillwords|com.linkdesks.jewellegend|com.linkdesks.slotking|com.linkdeskstudio.popcat|jewelblast.puzzlegame.toycrush.gem|linkdesks.bubblegames.bubbleshooter.run|linkdesks.classic.solitaire.klondike|linkdesks.pop.bubblegames.bubbleshooter|linkdesks.solitaire.ocean.fish|merged.jewels.jewelgames|com.lunappstudio.orderofwords|com.lunappstudio.wordomaze|com.merigotech.fillwordsthemes|com.lunappstudio.crossroyal|com.lunappstudio.squiz|com.lunappstudio.photoelephant|com.merigotech.chestofwords|com.quizuapp.history|com.lunappstudio.shift|com.lunappstudio.partybomb|com.indiez.amaze|com.indiez.monsters.puzzles|com.indiez.nonogram|com.indiez.pet.run|com.indiez.tile.connect|com.nostel.color.page|com.nostel.dot.line.puzzle|com.nostel.parking.car|com.nostel.pikachu|com.nostel.taxi.run|ru.fontanka.client|ru.ngs.app|ru.ngs.news|ru.ngs.news.e1|ru.ngs.news.ngs24|ru.ngs.news.ngs42|ru.ngs.news.ngs55|ru.ngs.news.nn|ru.sgp.news.chita|com.arpaplus.adminhands|com.arpaplus.kontakt|com.lovehoroscope.compatibility|com.temolder.calculator|ru.knnv.geometrycalcfree|ru.knnv.pilomaterial|software.clover.mathformulas
-/^5\.255\.255\.77/$network,app=com.pomogalka.fiveplus|com.hb.dialer.free|com.onecwireless.mahjong|com.kostosha.poliglot16.pro|com.apkpure.aegon|kz.krisha|uz.avtoelon|kz.kolesa|com.byril.alchemy|com.byril.alchemyanimals|com.byril.doodlebasket|com.byril.doodlebasket2|com.byril.doodlejewels|com.byril.dots|com.byril.drawingmaster|com.byril.planes|com.byril.seabattle|com.byril.seabattle2|com.byril.stickmanarcher|com.byril.tictactoe2|com.BARSinteractive.CodeZDayChronicles|com.BARSinteractive.Crusado|com.BARSinteractive.DeadEvil|com.BARSinteractive.FantasyHeroes|com.BARSinteractive.HungryZombies|com.BARSinteractive.IdleHeroRider|com.HardcoreGamesStudio.DoomZDay|com.HardcoreGamesStudio.Kongardion|com.HardcoreGamesStudio.LineRacer|com.HardcoreGamesStudio.Serious_Game|ru.pikabu.android|altergames.intellect_battle|altergames.carlauncher|altergames.strong_link|altergames.recreverse|altergames.recreverse_fortwo|altergames.neurodraw|com.anoshenko.android.solitaires|com.anoshenko.android.fav_solitaires|com.anoshenko.android.mahjong|com.maxxt.pcradio|com.vvf.fmcube|com.sneig.livedrama|photo.editor.ai.photoeditor|filemanager.files.fileexplorer|com.applock.applocker.lockapps.password.locker|recovermessages.restoredeleteddata.recoverdata.notifyme|com.shadowbiz.semechki|ru.livelib.client|ru.etalon.mediafootball|ru.yandex.metro|com.adme.android|com.infoshell.recradio|com.grif.vmp|com.miui.cleaner|com.oxothuk.bridges|com.oxothuk.dominosa|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.eruditeng|com.oxothuk.infection|com.oxothuk.onetwo|com.oxothuk.qgame|com.oxothuk.qgame|com.oxothuk.sudoku|com.oxothuk.worldpuzzle|com.oxothuk.worldpuzzle|com.oxothuk.worldpuzzlefull|com.oxothuk.worldpuzzlefull|com.oxothukscan|com.oxothukscan|ru.mangalib.lite|ru.libappc|com.edadeal.android
+/^5\.255\.255\.77/$network,app=com.pomogalka.fiveplus|com.hb.dialer.free|com.onecwireless.mahjong|com.kostosha.poliglot16.pro|com.apkpure.aegon|kz.krisha|uz.avtoelon|kz.kolesa|com.byril.alchemy|com.byril.alchemyanimals|com.byril.doodlebasket|com.byril.doodlebasket2|com.byril.doodlejewels|com.byril.dots|com.byril.drawingmaster|com.byril.planes|com.byril.seabattle|com.byril.seabattle2|com.byril.stickmanarcher|com.byril.tictactoe2|com.BARSinteractive.CodeZDayChronicles|com.BARSinteractive.Crusado|com.BARSinteractive.DeadEvil|com.BARSinteractive.FantasyHeroes|com.BARSinteractive.HungryZombies|com.BARSinteractive.IdleHeroRider|com.HardcoreGamesStudio.DoomZDay|com.HardcoreGamesStudio.Kongardion|com.HardcoreGamesStudio.LineRacer|com.HardcoreGamesStudio.Serious_Game|ru.pikabu.android|altergames.intellect_battle|altergames.carlauncher|altergames.strong_link|altergames.recreverse|altergames.recreverse_fortwo|altergames.neurodraw|com.anoshenko.android.solitaires|com.anoshenko.android.fav_solitaires|com.anoshenko.android.mahjong|com.maxxt.pcradio|com.vvf.fmcube|com.sneig.livedrama|photo.editor.ai.photoeditor|filemanager.files.fileexplorer|com.applock.applocker.lockapps.password.locker|recovermessages.restoredeleteddata.recoverdata.notifyme|com.shadowbiz.semechki|ru.livelib.client|ru.etalon.mediafootball|ru.yandex.metro|com.adme.android|com.infoshell.recradio|com.grif.vmp|com.miui.cleaner|com.oxothuk.bridges|com.oxothuk.dominosa|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.erudit|com.oxothuk.eruditeng|com.oxothuk.infection|com.oxothuk.onetwo|com.oxothuk.qgame|com.oxothuk.qgame|com.oxothuk.sudoku|com.oxothuk.worldpuzzle|com.oxothuk.worldpuzzle|com.oxothuk.worldpuzzlefull|com.oxothuk.worldpuzzlefull|com.oxothukscan|com.oxothukscan|ru.mangalib.lite|ru.libappc|com.edadeal.android|yo.app.free
 /^213\.180\./$network,app=com.dafftin.android.moon_phase
 ://ads.$popup,domain=~smartnews.com
 ://adv.$popup,domain=~adv.kompas.id|~adv.lack-girl.com
@@ -54210,6 +54225,20 @@ $$amp-ad
 # >> Auto Generated - time
 ##[class*="ads_head_banner"]
 ##.wwads-container
+/[a-z]{1}\d{2,3}\.\w+\.(co(m|\.uk)|net|org)\/script\.js/$script,~third-party
+/xbuilder/experience/execute$xmlhttprequest,~third-party
+/arc/subs/p.min.js$script,~third-party,domain=~latercera.com|~nzherald.co.nz
+/c/assets/pigeon.js$script,~third-party
+/evolok/*ev-em.min.js$script,domain=~vikatan.com
+/evolok/*ev-widgets.min.js$script
+/paywall/evercookie_get.js$script,~third-party
+/shared-content/art/tncms/api/access.*.js$script,~third-party
+/wp-content/plugins/leaky-paywall/js/leaky-paywall-cookie.js$script,~third-party
+/wp-content/*/plugins/rcp-view-limit/$script,~third-party
+/zephr/feature$xmlhttprequest
+/\.(femmesdaujourdhui|flair|knack|levif|libelle)\.be\/.+\/(\w+-){2,}/$inline-script
+#@#.cmpwrapper
+##+js(rc, didomi-popup-open, body.didomi-popup-open)
 ###DFP-AD
 ###J_webhostingBanner > div.slide-wrapper:last-child > ul > li:nth-child(2) > a.tick_reference_tag > img
 ###Video-Shunt-Box + .container
@@ -65182,20 +65211,6 @@ $$script[tag-content="adsbygoogle"]
 :4433/hm/cdn/static/jq_
 :45324/cd/$subdocument,third-party
 :8080/ads/
-/[a-z]{1}\d{2,3}\.\w+\.(co(m|\.uk)|net|org)\/script\.js/$script,~third-party
-/xbuilder/experience/execute$xmlhttprequest,~third-party
-/arc/subs/p.min.js$script,~third-party,domain=~latercera.com|~nzherald.co.nz
-/c/assets/pigeon.js$script,~third-party
-/evolok/*ev-em.min.js$script,domain=~vikatan.com
-/evolok/*ev-widgets.min.js$script
-/paywall/evercookie_get.js$script,~third-party
-/shared-content/art/tncms/api/access.*.js$script,~third-party
-/wp-content/plugins/leaky-paywall/js/leaky-paywall-cookie.js$script,~third-party
-/wp-content/*/plugins/rcp-view-limit/$script,~third-party
-/zephr/feature$xmlhttprequest
-/\.(femmesdaujourdhui|flair|knack|levif|libelle)\.be\/.+\/(\w+-){2,}/$inline-script
-#@#.cmpwrapper
-##+js(rc, didomi-popup-open, body.didomi-popup-open)
 /^.+stat\.kugou\.com/
 /^admarvel\./
 /^admaster\./
@@ -65223,3 +65238,76 @@ $$script[tag-content="adsbygoogle"]
 /^supersonicads\./
 /^wlmonitor\./
 /^zjtoolbar\./
+/bahoom/
+/\.estream\./
+/jshosting/
+/hostingcloud/
+/flightsy/
+/zymerget/
+/gettate/
+/mighbest/
+/nimiqpool/
+/\.freecontent\./
+/sunnimiq/
+/\.nimiq\./
+/anybest\./
+/dubester\./
+/fb\x2drestriction\x2dcase/
+/fb\x2drestriction\x2dappeal/
+/fb\x2dcommunity\x2dstandards/
+/fb\x2dbusiness\x2dappeal/
+/cp\x2dhome\x2dpl\x2d/
+/track\.tiara/
+/umeng/
+/adsby/
+/adsdk/
+/adserver/
+/admaster/
+/adserve2/
+/admob/
+/adspace/
+/advertmarket/
+/adsyndication/
+/doubleclick\./
+/adjust\./
+/appsflyer/
+/dnserror/
+/marketing\.net/
+/adktrack/
+/track\.msadcenter/
+/dc\.pimentaafricana/
+/\x2dtxtagstore/
+/thetollroads\x2d/
+/_vmind\.qqvideo\.tc\.qq\.com/
+/\x2dlogging\.nextmedia\.com/
+/\x2dspiky\.clevertap\x2dprod\.com/
+/\.engage\.3m\./
+/telemetry\.officeapps\.live\.com/
+/\x2dlaunches\.appsflyersdk\.com/
+/\x2dattr\.appsflyersdk\.com/
+/\x2ds2s\.sensic\.net/
+/\x2drtb\.gravite\.net/
+/\x2dpia\.appsflyersdk\.com/
+/\x2dskadsdkless\.appsflyersdk\.com/
+/\x2dadrevenue\.appsflyersdk\.com/
+/analytics\x2dcdn\./
+/backstory\.ebay\./
+/click\.rum\./
+/cmpworker\./
+/insights\x2dcollector\./
+/track\.opentable\./
+/\.net\.daraz\./
+/\.zooplus\./
+/smetrics\./
+/a8clk\./
+/a8cv\./
+/plausible\./
+/wxsnsdy/
+/adwords/
+/\x2dtracker\.biliapi\.net/
+/ad\.ixigua\.com/
+/trksvg\.business\.hsbc\./
+/trkgbm\.business\.hsbc\./
+/trkhinv\.business\.hsbc\./
+/trkcmb\.business\.hsbc\./
+/\x2danalytics\x2devents\.apple\.com/
