@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-12 04:36:52 UTC
+! Updated: 2025-04-12 11:48:31 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -25058,7 +25058,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https:\/\/booking\.[a-z]{3,}-(?:id)?\d{3,8}\.eu\//$doc,to=eu|~booking.com
 /^https:\/\/booking(-[a-z]{3,}){2}\.(?:baby|lat|lol|xyz)\//$doc,to=baby|lat|lol|xyz|~booking.com
 /^https?:\/\/([a-z]{4,}\.)?support-\d{1,2}\.ru\//$doc,to=ru
-/^https:\/\/[a-z0-9]{5,15}\.shop\/l\/gaz\//$1p,strict1p,match-case,to=shop
+/^https:\/\/[a-z0-9]{5,15}\.shop\/l(?:\/ru\/prelands)?\/gaz\//$1p,strict1p,match-case,to=shop
 /^https:\/\/[a-z0-9]{5,15}\.shop\/uniq$/$xhr,1p,strict1p,match-case,method=get,to=shop
 /^https:\/\/[a-z0-9]{5,15}\.shop\/lead$/$doc,1p,strict1p,match-case,method=post,to=shop
 /^https:\/\/allegro[a-z]{2,}\.shop\//$doc,to=shop
