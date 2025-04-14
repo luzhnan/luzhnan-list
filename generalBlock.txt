@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-13 07:26:18 UTC
+! Updated: 2025-04-14 04:50:25 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -21079,7 +21079,6 @@ $removeparam=ysclid
 /geocc.js
 /geocompteur.php
 /geoip/detect?
-/geoip?
 /geoip_cc
 /geov2.js
 /get/*/inventory|
@@ -22926,7 +22925,6 @@ $removeparam=ysclid
 /sfCounter/*
 /sfdc/networktracking.js
 /sfsafsadfjbbj-dsafjnb-1321533417.
-/sft-prebid.js$script
 /sgtracker.js
 /sh588com888/*
 /shangvsnhfbrq220923.js
@@ -23189,10 +23187,12 @@ $removeparam=ysclid
 /stats/pv.php?
 /stats/record.php?
 /stats/record/*
+/stats/record_visit/*
 /stats/search-log
 /stats/transp.bmp
 /stats/v2/visit?
 /stats/visitors
+/stats/web_vitals/*$ping
 /stats/welcome.php?
 /stats?aid=
 /stats?blog_
@@ -24973,6 +24973,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /bonus/com-*.php?c=$doc
 ://click-v4.*.com/click?$doc
 ://xml-v4.*.online/click?$doc
+/?utm_source=*&j1=1^$doc
 ##html[lang] > body.ishome > div.adult + main.main
 /^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/(?:article\d{4}\.doc)?\?utm_campaign=\w{40,}/$doc,match-case,to=life|live|top|xyz
 /^https:\/\/[a-z]{2,3}\d\.biz\/go\/[0-9a-z]{15,18}$/$doc,to=biz
@@ -39461,7 +39462,6 @@ $$amp-ad
 ###cc_zagiel
 ###ccbar
 ###ccbar_container
-###ccc-overlay
 ###cccenter-overlay-fixed
 ###ccfd-eucookielaw
 ###ccfw-page-banner
@@ -40451,7 +40451,6 @@ $$amp-ad
 ###cookieConsentBlock
 ###cookieConsentBlok
 ###cookieConsentBox
-###cookieConsentDialog
 ###cookieConsentDiv
 ###cookieConsentElId
 ###cookieConsentHolder
@@ -41808,6 +41807,7 @@ $$amp-ad
 ###cookiescript_badge
 ###cookiescript_container
 ###cookiescript_injected_background
+###cookiescript_injected_wrapper
 ###cookiescript_injectedone
 ###cookiescript_main
 ###cookiesdialog
@@ -52334,7 +52334,6 @@ $$amp-ad
 ##div.cookie_visible
 ##div.cookiebackground
 ##div.cookiebanner
-##div.cookiebox
 ##div.cookieconfirm
 ##div.cookieconsent
 ##div.cookieholder
@@ -54170,6 +54169,8 @@ $$amp-ad
 /ajax/libs/nosleep/*
 /*/sign_d?*$all
 /*/resolve?*$all
+/bili-user-fingerprint$script
+/track-collect.js
 ##a[href*="//sjv.io"]
 ##a[href*="//l.labsda.com"]
 ##a[href*="//www.aliyun.com/minisite"]
@@ -54192,6 +54193,8 @@ $$amp-ad
 /apis/api.halo.run/*/trackers/counter
 /goofy/ttzz/push.js$redirect=noop.js
 /pixel/*.gif$redirect=1x1.gif
+/etads_v2
+/twitter-ads.dynamic.js
 /pik.js
 /.netlify/scripts/rum
 ##[class*="ads_head_banner"]
@@ -61996,6 +61999,7 @@ $$script[tag-content="adsbygoogle"]
 /geocompteur.
 /geocounter.
 /geoip.html
+/geoip?
 /geoipAPI.js?
 /geoip_script?
 /geomap.js?
