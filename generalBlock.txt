@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-15 10:51:14 UTC
+! Updated: 2025-04-15 15:19:26 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -24888,6 +24888,26 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https?:\/\/[^\/]+\/_fd$/$xhr,1p,strict1p,ipaddress=199.59.243.228
 ###adbtm[onclick="badr();"]
 /player/v*/vast-no-entitlements.js^
+##.adblock-whitelist-messaging__article-wrapper
+##.adblock-whitelist-messaging__wrapper
+/wp-content/plugins/christmasify/*
+/emma-content-aggregates-prd.
+/wp-content/plugins/content-protector-pack/*
+/wp-content/plugins/rcd-right-click-disabler/*$script,1p
+/wp-content/plugins/secure-copy-content-protection/*$script
+/wp-content/plugins/append-link-on-copy/js/append_link.js$script,1p
+/wp-content/plugins/image-watermark/*$script
+/wp-content/plugins/ungrabber/js/*$script
+/wp-content/themes/*/public/js/detect-adblock.js$script,1p
+/wp-content/plugins/wp-extra/js/copy.min.js$script
+/wp-content/plugins/t42-content-protector/js/protector.min.js$script
+##[class~="mailpoet_form_popup_overlay"]
+/^https:\/\/[a-z0-9]+\.[a-z]{2,}\/blast\.js$/$script,1p,strict1p,to=~gov|~edu
+/wp-content/plugins/disabled-source-disabled-right-click-and-content-protection/*$script,css,1p
+/wp-content/themes/linhminazmovies/assets/js/dev.js$script,1p
+/js/content-protector.min.js$script
+/wp-content/plugins/wpshield-content-protector/dist/app.min.js$script
+/copyprevention.js^$script,1p
 /?track=*&key=$all
 /tds/ae?tds_campaign=$doc
 /bdv_rd.dbm?ownid=$doc
@@ -25414,6 +25434,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.[a-z]{3,7}\/[a-z][0-9A-Za-z]{10,16}\/\d{4,6}$/$script,third-party,match-case
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js/$script,xmlhttprequest,third-party
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\/invoke\.js/$script,third-party
+/delivery/lg.php$image,script,subdocument
 /\/\/([0-9a-z]+\.)?([0-9a-z]+\.)?[0-9a-z]+\.[0-9a-z]+\.[a-z][a-z]+\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]\.js\?st=[0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z]?[0-9A-Z]?$/$~third-party,match-case
 $removeparam=uzcid
 $removeparam=beyond_uzcvid
