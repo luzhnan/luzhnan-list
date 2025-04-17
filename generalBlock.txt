@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-16 13:04:35 UTC
+! Updated: 2025-04-17 00:59:09 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -3970,6 +3970,7 @@
 ###connatix_placeholder_desktop
 ###consent-banner-main
 ###consent-banner-overlay
+###consent-box-lgpd
 ###consent-manager
 ###container > #main.site-main > div > div > a[href^="/"][href$="/"] > img
 ###container > .sectionBanner
@@ -18261,6 +18262,8 @@ $cookie=nQ_userVisitId
 $cookie=nxt_last_visit
 $cookie=obuid
 $cookie=omni_visit_id
+$cookie=optimizely-user-attributes
+$cookie=optimizely-user-id
 $cookie=optimizelyEndUserId,domain=~nintendo.com
 $cookie=outbrain_cid_fetch
 $cookie=pbjs-unifiedid
@@ -22014,6 +22017,7 @@ $removeparam=ysclid
 /msow.aspx?AID=
 /mtc.js
 /mtiFontTrackingCode.js
+/mtifonttracker.js
 /mtracking.
 /mtracking.gif?
 /mtvi_reporting.js
@@ -23296,6 +23300,7 @@ $removeparam=ysclid
 /tagCNIL.js
 /taganalyticscnil.js
 /tagcommander/prd/*
+/tagging?env=
 /tagman/*$domain=~abelssoft.de
 /tagmanager/event?
 /tagmanager/pptm.js
@@ -23506,6 +23511,7 @@ $removeparam=ysclid
 /tracker.ga.
 /tracker.gif?
 /tracker/?key=
+/tracker/base_wp/*
 /tracker/event?
 /tracker/imp?
 /trackerPageAnalytics.js
@@ -25085,6 +25091,8 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /\/contract\/support-case-id=\d{14,19}\b/$doc,match-case,to=~facebook.com
 /^https:\/\/h5\.[a-z0-9]{4}\.com\//$doc,to=com
 /^https?:\/\/[-a-z]{12,}\.vercel\.app\/[^.]+?g_ep=?EgoyMDI/$doc,match-case,to=vercel.app|~facebook.com
+/^https?:\/\/[-a-z]{12,}\.vercel\.app\/[^.]+?=D400e/$doc,match-case,to=vercel.app|~facebook.com
+/^https?:\/\/[-a-z0-9]{25,}\.vercel\.app\/id\/\d{15,17}\.html\b/$doc,match-case,to=vercel.app|~facebook.com
 /api/user/do_login|$xhr,1p,to=com|info,method=post,header=access-control-allow-headers:/authorization\,content-type\,if-match\,if-modified-since\,if-none-match\,if-unmodified-since\,x-requested-with/i
 /api/user/do_login|$xhr,1p,to=com|info,method=post,header=Access-Control-Allow-Headers:/authorization\,content-type\,if-match\,if-modified-since\,if-none-match\,if-unmodified-since\,x-requested-with/i
 /api/webapi/login|$xhr,3p,to=online|vip,method=post,header=access-control-allow-headers:Origin, X-Requested-With, Content-Type, Accept, Authorization
@@ -25436,6 +25444,10 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.[a-z]{3,7}\/[a-z][0-9A-Za-z]{10,16}\/\d{4,6}$/$script,third-party,match-case
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js/$script,xmlhttprequest,third-party
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\/invoke\.js/$script,third-party
+##.bs-sneaker-container
+##.newspack-broadstreet-ad
+##.newspack_global_ad_new
+##broadstreet-zone-container
 /\/\/([0-9a-z]+\.)?([0-9a-z]+\.)?[0-9a-z]+\.[0-9a-z]+\.[a-z][a-z]+\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]\.js\?st=[0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z]?[0-9A-Z]?$/$~third-party,match-case
 $removeparam=uzcid
 $removeparam=beyond_uzcvid
