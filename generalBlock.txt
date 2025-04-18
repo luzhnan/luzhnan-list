@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-17 13:01:38 UTC
+! Updated: 2025-04-18 01:32:24 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -19003,7 +19003,6 @@ $removeparam=ysclid
 /\.[a-z]oubli[a-z].top\//$script,third-party
 /\.[a-z]weisi[a-z].top\//$script,third-party
 /\.[a-z]yjqgp[a-z].top\//$script,third-party
-/\.[a-z]{2,3}:\d{4}\/[a-z]{2}\/\d+\?[a-z]+=[a-z0-9]{5,}/$script,third-party
 /\/(public|resources|static|assets)\/([a-f0-9]){28,31}$/$script,xmlhttprequest,~third-party
 /\/[0-9a-f]{32}\/invoke\.js/$script,third-party
 /\/[0-9a-f]{32}\/invoke\.js/$script,third-party,redirect-rule=noop.js
@@ -19013,6 +19012,7 @@ $removeparam=ysclid
 /\/[a-z]{8}\.js\?st=[0-9A-Z]{6,8}$/$script,1p,strict3p,match-case
 /\/\/([0-9a-z]+\.){1,}[0-9a-z]+\.[a-z]{2,}\/[a-z]{8}\.js\?st=[0-9A-Z]{6,8}$/$script,~third-party,match-case
 /\/t\/[0-9]{3}\/[0-9]{3}\/a[0-9]{4,9}\.js$/$script
+/^(https|ws|wss):\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z]{2,3}:\d{1,6}\/([a-z]{1,3}\/){0,1}\d+\?[a-z]+=[a-z0-9]+($|&)/$script,websocket,third-party
 /^(mon|tue|wed|thu|fri|sat|sun)\d{1,2}\.\w{2}\d{1,6}\w{4}\.com$/
 /^139\.45\.197\.2(4[0-9]|5[0-4])/
 /^139\.45\.197\.2(4[0-9]|5[0-4]):/$network
@@ -19038,6 +19038,8 @@ $removeparam=ysclid
 /^https:\/\/[a-z-]{5,13}\.[a-z]{2,6}\/[a-z0-9]{1,20}\?[A-Za-z0-9]{15,26}=(?=.*[A-Z])[A-Za-z0-9%]{35,2000}$/$xmlhttprequest,third-party,match-case
 /^https:\/\/[a-z-]{6,15}\.(?:com|net|tv|xyz)\/(?:40[01]|50?0?)\/\d{6,7}\??\S*$/$script,xmlhttprequest,third-party
 /^https:\/\/[a-z0-9-]{3,12}\.[a-z0-9]+\.com\/([A-Za-z0-9.]+)(?:\/([A-Za-z0-9.]+))?\.\d{4}\.(doc|docx|html|jpeg|jpg|js|json|odf|pdf|png|ppt|psd|rtf|shtml|sxml|txt|wedp|wps|xml|xps)\?\d{13}$/$third-party,match-case
+/^https:\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z]{2,3}:\d{1,6}\/[a-z]{1,3}\/\d+\?is_not=/$all
+/^https:\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z]{2,3}:\d{1,6}\/bug\?i=\d+$/
 /^https:\/\/[a-z]{10,12}\.com\/[a-z\/]{2,}\?id=[12]\d{6}$/$script,third-party,match-case
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,third-party,match-case
 /^https:\/\/[a-z]{6,13}\.(cloud|xyz)\/[A-Za-z0-9_-]{48}[A-Z]{3}$/$document
@@ -25331,6 +25333,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##body[class^="img_"][style^="background-color"]
 ##body[class^="img_"][style^="opacity: 1;"]
 ##body[onclick="ExitApi.exit();"][style="cursor:pointer"] > a[href="javascript:(function(){open(window.clickTag)})()"]
+##body[style$="transform-origin: left top;"] > div[id^="img_"]
 ##div[class^="img_"] > table[class^="img_"]
 ##div[class^="img_"][onclick^="handleClick(event, 'https:"]
 ##div[class^="img_"][started="true"]
@@ -25352,6 +25355,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##div[id^="img_"][coupang]
 ##div[id^="img_"][ggnoclick]
 ##div[id^="img_"][onclick="fireClickHandler()"]
+##div[id^="img_"][onclick^="window.open"]
 ##div[id^="img_"][ontouchend$="touchEnd(event)"]
 ##div[id^="img_"][role="button"]
 ##div[id^="img_"][style*="font-family: arial, helvetica, sans-serif;"]
@@ -25394,6 +25398,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##div[style$="text-indent: 0px !important;"] > a[href*="-load"][href*=".com/content/"]
 ##div[style*="left: 0px; z-index: 1000000000"] > div > div[id^="img_"]
 ##div[style="display:inline"][class^="img_"] > div[style="display:flex;"]
+##div[style^="bottom:0;right:0;width:300px;height:250px;background:initial!important;"]
 ##div[style^="position:absolute;left:0px;"] + div[class^="img_"]
 ##div[style^="position:absolute;"] > div[id^="img_"]
 ##div[style^="transition-duration:0ms!important;margin:0px!important;padding:0px!important;border:none!important;position:absolute!important;top:0px!important;"]
@@ -38304,7 +38309,6 @@ $$amp-ad
 ###CoockieAlert
 ###CoockiesPage
 ###Cookie-Append
-###Cookie-Banner
 ###Cookie-Consent
 ###Cookie-Popup
 ###Cookie-container_outer
@@ -54227,6 +54231,7 @@ $$amp-ad
 /wp-content/plugins/leaky-paywall/js/leaky-paywall-cookie.js$script,~third-party
 /wp-content/*/plugins/rcp-view-limit/$script,~third-party
 /zephr/feature$xmlhttprequest
+/www\.vogue\.co\.uk\/[-\w]+/$script,~third-party
 /\.(femmesdaujourdhui|flair|knack|levif|libelle)\.be\/.+\/(\w+-){2,}/$inline-script
 #@#.cmpwrapper
 ##+js(rc, didomi-popup-open, body.didomi-popup-open)
