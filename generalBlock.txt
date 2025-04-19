@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-18 01:32:24 UTC
+! Updated: 2025-04-19 02:41:47 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -24535,7 +24535,6 @@ $image,3p,denyallow=cdn77.org|fpbns.net|globalcdn.co|others-cdn.com|rncdn7.com|s
 ##.brs-block
 /quwet.js$script,1p
 ##.advboxemb
-/sw-vodlocker.to.js$script
 /?r=dir&zoneid=$all
 ##[href^="//look.utndln.com/offer"]
 /adu.php$frame,3p
@@ -24837,6 +24836,7 @@ $image,3p,denyallow=cdn77.org|fpbns.net|globalcdn.co|others-cdn.com|rncdn7.com|s
 /^https:\/\/[a-z]{7}\.com\/sub\/(?=[a-z]{0,9}[0-9A-Z])[0-9A-Za-z]{10}$/$frame,3p,match-case
 /wpsafelink.js|$script
 /safelink.js|$script
+/sw-vodlocker.to.js$script
 /adblock_detector.$badfilter
 /cuid/?f=https%$xhr,3p
 /adpia_click_popup_after.js
@@ -24902,6 +24902,8 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https?:\/\/[^\/]+\/[a-zA-Z]{9}\.js$/$script,1p,strict1p,ipaddress=199.59.243.228
 /^https?:\/\/[^\/]+\/_fd$/$xhr,1p,strict1p,ipaddress=199.59.243.228
 ###adbtm[onclick="badr();"]
+###clickCatcher31
+###clickCatcher32
 /player/v*/vast-no-entitlements.js^
 ##.adblock-whitelist-messaging__article-wrapper
 ##.adblock-whitelist-messaging__wrapper
@@ -25108,8 +25110,6 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https:\/\/s[cfntz]y?[ace][aemnu][a-z]{1,4}or?[mn][a-z]{4,8}[iy][a-z]?\.ru\//$doc,to=ru|~steamcommunity.com
 /^https:\/\/steam\.(?:community)?workshop-?[a-z]+\.com\//$doc,to=com|~steamcommunity.com
 /redeemwalletcode/gift/*$doc,to=~steamcommunity.com|~steampowered.com
-/^https:\/\/(?:www\.)?(?:ff[-.])?member[-.]gare[a-z]+a(?:\.pro)?\.vn\//$doc,to=vn|~garena.vn
-/^https:\/\/(?:www\.)?(?:ff[-.])?men?mber[-.]garena\.vn\//$doc,to=vn|~garena.vn
 /volt/*?nox=$doc,to=ai|com
 /^https:\/\/(?:[a-f0-9]+\.)?[a-f0-9]{58}\.pages\.dev\//$doc,to=pages.dev
 :8443/impact?impact=$doc
@@ -55177,6 +55177,7 @@ $removeparam=_rdr
 $doc,removeparam=_ft_
 $removeparam=m_entstream_source
 $removeparam=_nc_cat,domain=~instagram.com
+$removeparam=_rdc
 $removeparam=cp_ksver
 $removeparam=biw
 $removeparam=bih
