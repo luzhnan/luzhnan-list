@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-21 01:45:08 UTC
+! Updated: 2025-04-21 14:38:07 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -286,6 +286,7 @@
 ##.sponsored-items
 ##.top-banners
 ##img[title^="advertisement"]
+/captha/cap/|$document,popup
 /^https:\/\/[a-z]{6,13}\.(cloud|xyz)\/[A-Za-z0-9_-]{48}[A-Z]{3}$/$document
 /billing?_ts=$document
 /player/html.php?aid=*&video_id=*&referer=
@@ -323,7 +324,6 @@
 /s/s/js/ssu.v2.
 /_xa/ads_batch?ads=$xmlhttprequest,script
 /a/ipn/js/*
-/a/pop/js/*
 /s/s/supc.php
 /s/su.php?t=
 /_a_ta/s/s/*
@@ -414,6 +414,7 @@
 /ad/images/*$image,domain=~studiocalling.it
 /ad/img/*$image,domain=~eki-net.com|~jiji.com
 /ad?count=
+/ad_728.js$script
 /ad_banner/*$image,domain=~ccf.com.cn
 /ad_counter.aspx$ping
 /ad_home.js$script
@@ -450,6 +451,7 @@
 /ads-front.min.js$script
 /ads-frontend.min.js$script
 /ads-native.js$script
+/ads-templateslist.$script
 /ads-vast-vpaid.js?$script
 /ads.bundle.min.js$script
 /ads.pl?$~xmlhttprequest
@@ -539,7 +541,6 @@
 /banner-ad.$~script,~xmlhttprequest
 /banner-ads-rotator/*$script,stylesheet
 /banner-ads/*$image,domain=~1agosto.com
-/banner-affiliate-$image
 /banner.cgi?$image
 /banner.php$~xmlhttprequest,domain=~research.hchs.hc.edu.tw
 /banner_ads/*$~xmlhttprequest,domain=~clickbd.com
@@ -561,6 +562,7 @@
 /code/native.js?h=$script
 /common/ad.js$script
 /concert_ads-$script
+/content-ads.js$script
 /content/ads/*$~xmlhttprequest
 /css/ads-$stylesheet
 /css/adsense.$stylesheet
@@ -1003,6 +1005,7 @@
 /jump/next.php?$popup
 /redirect?tid=$popup
 /smartpop/*$popup
+/^https:\/\/[0-9a-z]+\.pro\/[0-9a-z]+\?[0-9A-Za-z]+=c[0-9A-Za-z]+%3D%3D$/$popup,third-party
 ###AC_ad
 ###AD_L
 ###AD_Top
@@ -1022,7 +1025,6 @@
 ###AdsContent
 ###AdsDiv
 ###Ads_BA_BS
-###Ads_BA_BUT
 ###Ads_BA_CAD
 ###Ads_BA_CAD2
 ###Ads_BA_FLB
@@ -1187,6 +1189,7 @@
 ###ad_left
 ###ad_left_1
 ###ad_left_2
+###ad_left_3
 ###ad_leftslot
 ###ad_link
 ###ad_main
@@ -1238,7 +1241,6 @@
 ###admobiletop
 ###admobiletopinside
 ###admpubottom
-###admpubottom2
 ###admpufoot
 ###admpumiddle
 ###admputop2
@@ -1454,7 +1456,6 @@
 ###divAdLeft
 ###divAdRight
 ###div_ad_float
-###div_advt_right
 ###dsk-banner-ad-a
 ###dsk-banner-ad-b
 ###dsk-box-ad-c
@@ -1465,7 +1466,6 @@
 ###floatAd
 ###floatads
 ###floatingAd
-###floating_ad
 ###floating_ads_bottom_textcss_container
 ###footad
 ###footer-ad
@@ -1608,6 +1608,7 @@
 ###sky-left
 ###sky-right
 ###skyscraper_ad
+###slideAd
 ###slide_ad
 ###slider_ad
 ###sponsorAdDiv
@@ -1621,6 +1622,7 @@
 ###sticky-ads
 ###sticky-rail-ad
 ###stickyAd
+###stickyBottomAd
 ###stickyad
 ###stickyads
 ###td-ad-placeholder
@@ -1657,7 +1659,6 @@
 ###topad728
 ###topadblock
 ###topadzone
-###topbannerad
 ###video-ad
 ###video-advert
 ###video-sponsor-links
@@ -1673,7 +1674,6 @@
 ##.Ad--empty
 ##.Ad-Advert_Container
 ##.Ad-label
-##.AdBar
 ##.AdBox
 ##.AdCompactheader
 ##.AdContainer
@@ -1724,7 +1724,6 @@
 ##._popIn_recommend_article_ad_reserved
 ##.a-d-250
 ##.a-d-90
-##.ad--article
 ##.ad--banner
 ##.ad--banniere_basse
 ##.ad--banniere_haute
@@ -1885,6 +1884,7 @@
 ##.ad-lat2
 ##.ad-layer
 ##.ad-lazy
+##.ad-lead
 ##.ad-leader
 ##.ad-leader-plus-top
 ##.ad-leaderboard
@@ -2194,7 +2194,6 @@
 ##.ad_desktop
 ##.ad_div
 ##.ad_element
-##.ad_feature
 ##.ad_float
 ##.ad_footer
 ##.ad_gam
@@ -2219,7 +2218,6 @@
 ##.ad_module
 ##.ad_news
 ##.ad_notice
-##.ad_one_one
 ##.ad_pic
 ##.ad_placeholder
 ##.ad_position
@@ -2351,7 +2349,6 @@
 ##.ads-here
 ##.ads-holder
 ##.ads-home
-##.ads-horizontal
 ##.ads-image
 ##.ads-inline
 ##.ads-inner
@@ -2660,6 +2657,7 @@
 ##.adverts
 ##.adviewDFPBanner
 ##.advt
+##.advt-block
 ##.advtBlock
 ##.advtext
 ##.advtop
@@ -2743,7 +2741,6 @@
 ##.banner_240x400
 ##.banner_300_250
 ##.banner_300x250
-##.banner_468x60
 ##.banner_ad_link
 ##.banner_ad_wrapper
 ##.bannerad
@@ -2771,7 +2768,6 @@
 ##.block-ads2
 ##.block-adsense
 ##.block-advert
-##.block-advertisement
 ##.block-dfp
 ##.block-fusion-ads
 ##.block-openx
@@ -2875,7 +2871,6 @@
 ##.custom-ad
 ##.custom-ad-container
 ##.custom-ads
-##.d3-c-adblock
 ##.d3-o-adv-block
 ##.dcmads
 ##.demand-supply
@@ -3006,6 +3001,7 @@
 ##.googleAd
 ##.googleAdSense
 ##.googleAds
+##.googleAdsContainer
 ##.googleAdsense
 ##.google_ad
 ##.google_ads
@@ -3073,6 +3069,7 @@
 ##.html-advertisement
 ##.hyperAd
 ##.iAdserver
+##.iframe-ads
 ##.ima-ad-container
 ##.image-advertisement
 ##.image-viewer-ad
@@ -3287,7 +3284,6 @@
 ##.parent-ad-desktop
 ##.partner_ads
 ##.pc-ad
-##.pdpads
 ##.penci-google-adsense
 ##.penci-google-adsense-1
 ##.penci-promo-link
@@ -3428,6 +3424,7 @@
 ##.sidebar_ad
 ##.sidebar_ad_container
 ##.sidebar_ads
+##.sidebar_sponsors
 ##.sidebox-ad
 ##.signad
 ##.simple_ads_manager_widget
@@ -3439,6 +3436,7 @@
 ##.single_ad
 ##.single_ad_300x250
 ##.site-ads
+##.site_ads
 ##.sky-ad
 ##.sky_ad
 ##.skyscraper-ad
@@ -3449,7 +3447,6 @@
 ##.slider-ads
 ##.small-ad
 ##.smallAd
-##.smallad
 ##.smartad
 ##.smn-new-gpt-ad
 ##.speakol-widget
@@ -3518,7 +3515,6 @@
 ##.sub-ad
 ##.subAdBannerArea
 ##.subAdBannerHeader
-##.tabAds
 ##.table-ad
 ##.tablet-ad
 ##.tadm_ad_unit
@@ -3736,6 +3732,7 @@
 ##a[href^="https://click.linksynergy.com/fs-bin/"] > img
 ##a[href^="https://clickadilla.com/"]
 ##a[href^="https://clicks.pipaffiliates.com/"]
+##a[href^="https://combodef.com/"]
 ##a[href^="https://ctjdwm.com/"]
 ##a[href^="https://ctosrd.com/"]
 ##a[href^="https://ctrdwm.com/"]
@@ -3784,7 +3781,6 @@
 ##a[href^="https://t.acam.link/"]
 ##a[href^="https://t.ajrkm1.com/"]
 ##a[href^="https://t.ajrkm3.com/"]
-##a[href^="https://tatrck.com/"]
 ##a[href^="https://tm-offers.gamingadult.com/"]
 ##a[href^="https://tour.mrskin.com/"]
 ##a[href^="https://track.adform.net/"]
@@ -3930,7 +3926,6 @@
 ##.outbrain-module
 ##.outbrain-placeholder
 ##.outbrain-widget
-##.outbrain-wrap
 ##.outbrain-wrapper
 ##.single__outbrain
 ##a[href^="https://paid.outbrain.com/network/redir?"]
@@ -9201,7 +9196,6 @@ $ping,third-party
 ##.ad-callout-wrapper
 ##.ad-giga
 ##.ad-header-pencil
-##.ad-lead
 ##.ad-left-top
 ##.ad-mobile-dynamic
 ##.ad-mount
@@ -9534,6 +9528,7 @@ $ping,third-party
 ##.outbrain-recommended
 ##.outbrain-reserved-space
 ##.outbrain-single-bottom
+##.outbrain-wrap
 ##.outbrain-wrapper-container
 ##.outbrain-wrapper-outer
 ##.outbrainAdHeight
@@ -9833,6 +9828,7 @@ $ping,third-party
 ###AdsSky
 ###AdsTopContainer
 ###AdsWrap
+###Ads_BA_BUT
 ###Ads_BA_BUT2
 ###Ads_BA_BUT_box
 ###Ads_TFM_BS
@@ -10612,7 +10608,6 @@ $ping,third-party
 ###ad_leader
 ###ad_leaderBoard
 ###ad_leaderboard_top
-###ad_left_3
 ###ad_left_skyscraper
 ###ad_left_top
 ###ad_links
@@ -10849,6 +10844,7 @@ $ping,third-party
 ###adlrec
 ###admid
 ###admod2
+###admpubottom2
 ###admpumiddle2
 ###admsg
 ###adnorth
@@ -12500,6 +12496,7 @@ $ping,third-party
 ###div_ad_TopRight
 ###div_ad_holder
 ###div_ad_leaderboard
+###div_advt_right
 ###div_belowAd
 ###div_bottomad
 ###div_bottomad_container
@@ -12603,6 +12600,7 @@ $ping,third-party
 ###floating-ads
 ###floating-advert
 ###floatingAds
+###floating_ad
 ###floating_ad_container
 ###floorAdWrapper
 ###fnAdblockingOverlay
@@ -13883,7 +13881,6 @@ $ping,third-party
 ###skyscraperadblock
 ###skyscrapper-ad
 ###slashboxes > .deals-rail
-###slideAd
 ###slidead
 ###slideboxad
 ###slider-ad
@@ -14032,7 +14029,6 @@ $ping,third-party
 ###sticky-footer-ads
 ###sticky-left-ad
 ###stickyAdBlock
-###stickyBottomAd
 ###stickySidebarAd
 ###stickySkyAd
 ###sticky_sidebar_ads
@@ -14215,6 +14211,7 @@ $ping,third-party
 ###topadz
 ###topbanner_ad
 ###topbanner_sponsor
+###topbannerad
 ###topbanneradtitle
 ###topbar-ad
 ###topbarAd
@@ -14449,6 +14446,7 @@ $ping,third-party
 ##.Ad300
 ##.Ad3Tile
 ##.Ad728x90
+##.AdBar
 ##.AdBody:not(body)
 ##.AdBorder
 ##.AdBottomPage
@@ -14746,6 +14744,7 @@ $ping,third-party
 ##.ad--728x90
 ##.ad--970-750-336-300
 ##.ad--970-90
+##.ad--article
 ##.ad--article-top
 ##.ad--articlemodule
 ##.ad--b
@@ -16113,6 +16112,7 @@ $ping,third-party
 ##.ad_div_box
 ##.ad_div_box2
 ##.ad_embed
+##.ad_feature
 ##.ad_floating_box
 ##.ad_fluid
 ##.ad_footer_super_banner
@@ -16186,6 +16186,7 @@ $ping,third-party
 ##.ad_oms
 ##.ad_on_article
 ##.ad_one
+##.ad_one_one
 ##.ad_one_third
 ##.ad_outer
 ##.ad_overlays
@@ -16706,6 +16707,7 @@ $ping,third-party
 ##.ads-header-right
 ##.ads-hints
 ##.ads-homepage-2
+##.ads-horizontal
 ##.ads-horizontal-banner
 ##.ads-inarticle
 ##.ads-instance
@@ -17803,7 +17805,6 @@ $ping,third-party
 ##.advslideshow
 ##.advspot
 ##.advt-banner-3
-##.advt-block
 ##.advt-right
 ##.advt-sec
 ##.advt300
@@ -18109,6 +18110,7 @@ $ping,third-party
 ##.banner_250x250
 ##.banner_300x600
 ##.banner_468_60
+##.banner_468x60
 ##.banner_728_90
 ##.banner_ad-728x90
 ##.banner_ad_300x250
@@ -18209,6 +18211,7 @@ $ping,third-party
 ##.block-ads_top
 ##.block-adtech
 ##.block-adv
+##.block-advertisement
 ##.block-advertising
 ##.block-adzerk
 ##.block-bg-advertisement
@@ -18926,6 +18929,7 @@ $ping,third-party
 ##.cwcookielaw
 ##.cws-cookies-notification
 ##.cxAdvertisement
+##.d3-c-adblock
 ##.dCookiesAlert
 ##.da-custom-ad-box
 ##.daftplugPublic
@@ -19498,7 +19502,6 @@ $ping,third-party
 ##.googleAdSearch
 ##.googleAdWrapper
 ##.googleAdd
-##.googleAdsContainer
 ##.googleAdv
 ##.google_ad_container
 ##.google_ad_label
@@ -19785,7 +19788,6 @@ $ping,third-party
 ##.idxrcookies-block-user-nav::before
 ##.ie-adtext
 ##.iframe-ad
-##.iframe-ads
 ##.iframeAd
 ##.iframeAds
 ##.igas-widget
@@ -20611,6 +20613,7 @@ $ping,third-party
 ##.pcookie
 ##.pd-ads-mpu
 ##.pd-cookie-banner-window
+##.pdpads
 ##.pea_cook_more_info_popover
 ##.pea_cook_wrapper
 ##.penci-ad-box
@@ -21089,7 +21092,6 @@ $ping,third-party
 ##.sidebar_box_ad
 ##.sidebar_right_ad
 ##.sidebar_skyscraper_ad
-##.sidebar_sponsors
 ##.sidebarad
 ##.sidebarad_bottom
 ##.sidebaradbox
@@ -21140,7 +21142,6 @@ $ping,third-party
 ##.site_ad
 ##.site_ad--gray
 ##.site_ad--label
-##.site_ads
 ##.site_sponsers
 ##.sitesponsor
 ##.skinAd
@@ -21183,6 +21184,7 @@ $ping,third-party
 ##.small_ad
 ##.small_ad_bg
 ##.small_ads
+##.smallad
 ##.smalladblock
 ##.smallads
 ##.smalladscontainer
@@ -21426,6 +21428,7 @@ $ping,third-party
 ##.sys_cc-cookies
 ##.tCook
 ##.tabAd
+##.tabAds
 ##.tab_ad
 ##.tab_ad_area
 ##.tableAd1
@@ -22422,7 +22425,6 @@ $ping,third-party
 ##a[href^="https://click.hoolig.app/"]
 ##a[href^="https://clickins.slixa.com/"]
 ##a[href^="https://clixtrac.com/"]
-##a[href^="https://combodef.com/"]
 ##a[href^="https://copytoon"][href*="/bannerhit.php?bn_id="]
 ##a[href^="https://datewhisper.life/"]
 ##a[href^="https://disobediencecalculatormaiden.com/"]
@@ -22501,6 +22503,7 @@ $ping,third-party
 ##a[href^="https://t.ajump1.com/"]
 ##a[href^="https://t.aslnk.link/"]
 ##a[href^="https://t.hrtye.com/"]
+##a[href^="https://tatrck.com/"]
 ##a[href^="https://tc.tradetracker.net/"] > img
 ##a[href^="https://torguard.net/aff.php"] > img
 ##a[href^="https://track.1234sd123.com/"]
@@ -23183,6 +23186,7 @@ $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
 $removeparam=fbclid
+$removeparam=gad_source
 $removeparam=gbraid
 $removeparam=gclid
 $removeparam=gclsrc
@@ -23407,6 +23411,7 @@ $removeparam=ysclid
 /a-ads.$third-party
 /a/?ad=
 /a/display.php?$popup
+/a/pop/js/*
 /aadb/script.js|$script
 /aas/r45d/vki/*$script,redirect=noopjs
 /ab-a.js?v=
@@ -23431,7 +23436,6 @@ $removeparam=ysclid
 /adClick/*$popup
 /adClick?$popup
 /ad_728.jpg$image
-/ad_728.js$script
 /ad_bottom.jpg$image
 /ad_bottom.js$script
 /ad_header.js$script
@@ -23491,7 +23495,6 @@ $removeparam=ysclid
 /adpreview?$popup
 /adrecover-new.js$script
 /ads-250.$image
-/ads-templateslist.$script
 /ads.bundle.js$script
 /ads.cfm?$subdocument
 /ads.criteo.com.js
@@ -23612,6 +23615,7 @@ $removeparam=ysclid
 /ban728x90.$image
 /bandeaucookie.
 /banman/ad.aspx$image
+/banner-affiliate-$image
 /banner.asp?$third-party
 /banner/affiliate/*$image,subdocument
 /banner/html/zone?zid=
@@ -23684,7 +23688,6 @@ $removeparam=ysclid
 /common/templates/dfp/dfp-component-template.html$~third-party,other,xmlhttprequest,redirect=nooptext
 /common_ad.js$script
 /components/js/analytics.js$~third-party,script,xmlhttprequest,redirect=noopjs
-/content-ads.js$script
 /cookie-accept.js
 /cookie-alert.
 /cookie-bandeau.
@@ -25059,21 +25062,21 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /zclkredirect?visitid=$doc
 /mc-test/*/index.php?cid=$doc
 /?l=*&ymid=$doc
-/video_app/adult/*/index.html?*p1=$doc
+/video_app/adult/*/index.html?$doc
 /downloadapp/*/index.html?*p1=$doc
-/dating/adult/*/index.html?*p1=$doc
+/dating/adult/*/index.html?$doc
 /video-app-default/adult/*/index.html?*p1=$doc
-/gambling/main/default/*/index.html?*p1=$doc
+/gambling/main/default/*/index.html?$doc
 /?p=*5gi3bp*$doc,to=biz|com
 /click.php?key=*&price=$doc
-/vpn/adult/*/index.html?*p1=$doc
-/utility/adult/*/index.html?*p1=$doc
+/vpn/adult/*/index.html?$doc
+/utility/adult/*/index.html?$doc
 /1/index.html?c=$doc
 /2/index.html?c=$doc
 /protectme_new1/index.html?$doc
 /other/btn/*/index.html?*p1=$doc
 /1/index.html?p1=$doc
-/fb_video_googleplay/*/index.html?*p1=$doc
+/fb_video_googleplay/*/index.html?$doc
 /click.php?key=*&type=push&$doc
 /?z=*&syncedCookie=true&rhd=false$doc,popup
 /post/FileRotator_ID*/download.php?subid=$xhr
@@ -25081,6 +25084,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ://click-v4.*.com/click?$doc
 ://xml-v4.*.online/click?$doc
 /?utm_source=*&j1=1^$doc
+/video_app/new/adult/*/index.html?$doc
 ##html[lang] > body.ishome > div.adult + main.main
 /^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/(?:article\d{4}\.doc)?\?utm_campaign=\w{40,}/$doc,match-case,to=life|live|top|xyz
 /^https:\/\/[a-z]{2,3}\d\.biz\/go\/[0-9a-z]{15,18}$/$doc,to=biz
@@ -25624,7 +25628,6 @@ $removeparam=utm_term
 $removeparam=utm_umguk
 $removeparam=utm_userid
 $removeparam=utm_viz_id
-$removeparam=gad_source
 $removeparam=usqp
 $removeparam=dpg_source
 $removeparam=dpg_campaign
