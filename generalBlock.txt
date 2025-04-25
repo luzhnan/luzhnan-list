@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-25 01:27:53 UTC
+! Updated: 2025-04-25 07:11:22 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -415,6 +415,7 @@
 /ad_side.$~xmlhttprequest
 /ad_top.js$script
 /adaptive_components.ashx?type=ads&
+/adaptvadplayer.js$script
 /adasync.min.js$script
 /adbanners/*$image
 /adchoice.png$image
@@ -606,11 +607,10 @@
 /infinity.js.aspx?$script
 /jquery.ad.js
 /jquery.adx.js?
-/jquery.dfp.js?
 /jquery.dfp.min.js?
-/jquery.lazyload-ad.js
 /jquery.overlayad.js
 /jquery.popunder.js
+/js/ad_common.js$script
 /js/adpopup.js$script
 /js/dfp.js$script
 /js/flyad.js
@@ -643,6 +643,7 @@
 /page-peel$~xmlhttprequest
 /pagead/1p-user-list/*$image
 /pagead/conversion.js$script
+/pageear.js$script
 /pageear/*$script
 /pagepeel.$~xmlhttprequest
 /partnerads/js/*$script
@@ -728,6 +729,7 @@
 /spacedesc=
 /spc.php?$script
 /spcjs.php$script
+/sponsors/ads/*$image
 /stickyads.js$script
 /suurl5.php$third-party
 /suv4.js$third-party
@@ -988,6 +990,7 @@
 /80x468_
 /960_60_
 /980x90.
+/ad.php?tag=$popup
 /adclick.$popup
 /adServe/*$popup
 /api/users?token=$popup
@@ -1064,6 +1067,7 @@
 ###ad-bottom-fixed
 ###ad-box
 ###ad-box-1
+###ad-box-2
 ###ad-carousel
 ###ad-code
 ###ad-display-ad
@@ -1115,6 +1119,7 @@
 ###adBottom
 ###adBox
 ###adCarousel
+###adColumn3
 ###adContainer
 ###adContent
 ###adDiv
@@ -1391,6 +1396,7 @@
 ###bgad
 ###big_ad
 ###billboard-ad
+###billboard_ad
 ###bm-HeaderAd
 ###body_ad
 ###body_centered_ad
@@ -1454,6 +1460,7 @@
 ###divAdLeft
 ###divAdRight
 ###div_ad_float
+###div_advt_right
 ###dsk-banner-ad-a
 ###dsk-banner-ad-b
 ###dsk-box-ad-c
@@ -1556,6 +1563,7 @@
 ###pause-ads
 ###pauseAd
 ###player-ads
+###player-advertising
 ###player_ad
 ###playerad
 ###pop.div_pop
@@ -1591,6 +1599,7 @@
 ###sideAd2
 ###sideAd3
 ###sideAd4
+###sideAds
 ###side_ad
 ###sidead
 ###sidebar-ad
@@ -1621,6 +1630,7 @@
 ###sticky-ad
 ###sticky-ad-container
 ###sticky-ads
+###sticky-footer-ad
 ###sticky-rail-ad
 ###stickyAd
 ###stickyBottomAd
@@ -1631,6 +1641,7 @@
 ###teaser3[style="width: 100%;text-align: center;display: scroll;position:fixed;bottom: 0;margin: 0 auto;z-index: 103;"]
 ###text-ad
 ###textAd
+###textAd1
 ###text_ad
 ###textad
 ###tile-ad
@@ -1651,7 +1662,9 @@
 ###top_AD
 ###top_ad
 ###top_ad_banner
+###top_ad_container
 ###top_ad_wrapper
+###top_add
 ###top_ads
 ###top_ads_box
 ###top_adspace
@@ -1662,6 +1675,7 @@
 ###topad728
 ###topadblock
 ###topadzone
+###topbannerad
 ###video-ad
 ###video-advert
 ###video-sponsor-links
@@ -1691,6 +1705,7 @@
 ##.AdTitle
 ##.AdTop
 ##.AdUnit
+##.AdWidget_ImageWidget
 ##.Ads-slot
 ##.AdsBox
 ##.AdsSlot
@@ -1715,6 +1730,7 @@
 ##.NativeAdContainerRegion
 ##.OcelotAdModule
 ##.OcelotAdModule-ad
+##.Page-ad
 ##.PcSideBarAd
 ##.Post__ad
 ##.RectangleAd
@@ -1728,6 +1744,7 @@
 ##._popIn_recommend_article_ad_reserved
 ##.a-d-250
 ##.a-d-90
+##.ad--article
 ##.ad--banner
 ##.ad--banniere_basse
 ##.ad--banniere_haute
@@ -1750,6 +1767,7 @@
 ##.ad--outstream
 ##.ad--placeholder
 ##.ad--rail
+##.ad--rectangle
 ##.ad--sidebar
 ##.ad--skyscraper
 ##.ad--slot
@@ -1784,6 +1802,7 @@
 ##.ad-background
 ##.ad-background-center
 ##.ad-background-container
+##.ad-ban
 ##.ad-banner-2
 ##.ad-banner-box
 ##.ad-banner-container
@@ -1839,6 +1858,7 @@
 ##.ad-container-left
 ##.ad-container-top
 ##.ad-container-wrapper
+##.ad-container1
 ##.ad-content
 ##.ad-cover
 ##.ad-cta
@@ -1960,6 +1980,7 @@
 ##.ad-siderail
 ##.ad-skeleton
 ##.ad-sky
+##.ad-sky-left
 ##.ad-skyscraper
 ##.ad-slider
 ##.ad-slot
@@ -2034,6 +2055,7 @@
 ##.ad-warp
 ##.ad-wgt
 ##.ad-wide
+##.ad-wide-wrap
 ##.ad-widget
 ##.ad-widget-area
 ##.ad-widget-wrapper
@@ -2158,6 +2180,7 @@
 ##.ad_300x600
 ##.ad_336
 ##.ad_728
+##.ad_728_90
 ##.ad__300x250
 ##.ad__300x600
 ##.ad__align
@@ -2337,6 +2360,7 @@
 ##.ads-below-view-content
 ##.ads-bg
 ##.ads-block
+##.ads-block-panel-tipo-1
 ##.ads-block-rightside
 ##.ads-block-top
 ##.ads-bottom
@@ -2475,6 +2499,7 @@
 ##.adsbygoogle-noablate
 ##.adsbygoogle-wrapper
 ##.adsbypublift
+##.adsbypubmax
 ##.adsbytrafficjunky
 ##.adsbyvli
 ##.adsclick
@@ -2590,6 +2615,7 @@
 ##.advert-content
 ##.advert-detail
 ##.advert-head
+##.advert-image
 ##.advert-info
 ##.advert-inner
 ##.advert-label
@@ -2679,6 +2705,7 @@
 ##.adwidget
 ##.adwords
 ##.adwrap
+##.adx-ads
 ##.adzone
 ##.affcodes
 ##.affiliate-footer
@@ -2853,6 +2880,7 @@
 ##.cazAd
 ##.centerAd
 ##.center_ad
+##.centered-ad
 ##.channel-ad
 ##.channel_ad_2016
 ##.cl-ad-billboard
@@ -3132,6 +3160,7 @@
 ##.isAd
 ##.ise-ad
 ##.item-ad
+##.item-advertising
 ##.j-ad
 ##.js-ad
 ##.js-ad-buttons
@@ -3163,6 +3192,7 @@
 ##.lazyload_ad
 ##.leader-ad
 ##.leaderAd
+##.leaderAdvert
 ##.leaderboard-ad
 ##.leaderboard-ad-container
 ##.leaderboard-ads
@@ -3212,7 +3242,6 @@
 ##.masthead-ad
 ##.menu-ad
 ##.meta_ad
-##.metabet-sponsored
 ##.meteored-ads
 ##.mf-adsense-leaderboard
 ##.mf-adsense-rightrail
@@ -3269,6 +3298,7 @@
 ##.native-ad-item
 ##.native.ad
 ##.nativeAd
+##.native_ad
 ##.native_ads
 ##.nav-ad
 ##.nav-ad-gpt-container
@@ -3510,6 +3540,7 @@
 ##.sponsoredLinks
 ##.sponsoredProduct
 ##.sponsored_ad
+##.sponsored_link
 ##.sponsored_title
 ##.sponsoredlinks
 ##.square-ad
@@ -3591,6 +3622,7 @@
 ##.top-ads-container
 ##.top-adv
 ##.top-advertisement
+##.top-banner-ad
 ##.top-banner-ad-container
 ##.top-banner-ads
 ##.top-post-ad
@@ -3742,6 +3774,7 @@
 ##a[href^="http://adultfriendfinder.com/go/"]
 ##a[href^="http://bongacams.com/track?"]
 ##a[href^="http://cam4com.go2cloud.org/aff_c?"]
+##a[href^="http://com-1.pro/"]
 ##a[href^="http://li.blogtrottr.com/click?"]
 ##a[href^="http://troopsassistedstupidity.com/"]
 ##a[href^="http://www.iyalc.com/"]
@@ -3751,6 +3784,7 @@
 ##a[href^="https://a.bestcontentweb.top/"]
 ##a[href^="https://a.candyai.love/"]
 ##a[href^="https://a.medfoodsafety.com/"]
+##a[href^="https://a2.adform.net/"]
 ##a[href^="https://ad.doubleclick.net/"]
 ##a[href^="https://adclick.g.doubleclick.net/"]
 ##a[href^="https://ads.betfair.com/redirect.aspx?"]
@@ -3897,6 +3931,7 @@
 ##.click-track.shop-window-affiliate
 ###gnt_atomsnc
 ##.gnt_em_vp__tavp
+##.gnt_em_vp_c[data-g-s="vp_dk"]
 ##.gnt_flp
 ##.gnt_rr_xpst
 ##.gnt_rr_xst
@@ -3965,6 +4000,7 @@
 ##.outbrain-wrapper
 ##.single__outbrain
 ##a[href^="https://paid.outbrain.com/network/redir?"]
+##a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"]
 ###component-taboola-below-article-feed
 ###js-Taboola-Container-0
 ###original_taboola
@@ -9176,7 +9212,6 @@ $ping,third-party
 ###credential_picker_iframe
 ###ad--article-top-wrapper
 ###ad-block-2
-###ad-box-2
 ###ad-halfpage
 ###ad-mpu
 ###ad-standard-wrap
@@ -9300,7 +9335,6 @@ $ping,third-party
 ##.c-ad--bigbox
 ##.c-posts__ad
 ##.center_add
-##.centered-ad
 ##.channel--ad
 ##.channel-sidebar-big-box-ad
 ##.cnx-player-wrapper
@@ -9587,7 +9621,6 @@ $ping,third-party
 ##.widget_outbrain_widget
 ##a[data-oburl^="https://paid.outbrain.com/network/redir?"]
 ##a[data-redirect^="https://paid.outbrain.com/network/redir?"]
-##a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"]
 ##a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"] + .ob_source
 ###block-boxes-taboola
 ###block-taboolablock
@@ -9670,7 +9703,6 @@ $ping,third-party
 ###gpt-dynamic_native_article_4
 ###gpt-high_impact
 ###gpt-poster
-##.gnt_em_vp_c[data-g-s="vp_dk"]
 /beardeddragon/armadillo.js$script
 /beardeddragon/tortoise.js$script
 /detroitchicago/cmbdv2.js$script
@@ -10399,7 +10431,6 @@ $ping,third-party
 ###adChoicesLogo
 ###adCol
 ###adColumn
-###adColumn3
 ###adComponentWrapper
 ###adContainer_1
 ###adContainer_2
@@ -11635,7 +11666,6 @@ $ping,third-party
 ###bigboard_ad
 ###bigsidead
 ###billboard-atf
-###billboard_ad
 ###bingadcontainer2
 ###bkCookieBanner
 ###bl_mobile_float[style='height: 152px;']
@@ -12527,7 +12557,6 @@ $ping,third-party
 ###div_ad_TopRight
 ###div_ad_holder
 ###div_ad_leaderboard
-###div_advt_right
 ###div_belowAd
 ###div_bottomad
 ###div_bottomad_container
@@ -13493,7 +13522,6 @@ $ping,third-party
 ###pjAcceptCookieBar
 ###pl_cookies
 ###player-advert
-###player-advertising
 ###player-below-advert
 ###player-midrollAd
 ###playerAd
@@ -13784,7 +13812,6 @@ $ping,third-party
 ###sideAdLarge
 ###sideAdSmall
 ###sideAdSub
-###sideAds
 ###sideBannerAd
 ###sideBar-ads
 ###sideBarAd
@@ -14053,7 +14080,6 @@ $ping,third-party
 ###sticky-add-side-block
 ###sticky-ads-top
 ###sticky-custom-ads
-###sticky-footer-ad
 ###sticky-footer-ads
 ###sticky-left-ad
 ###stickyAdBlock
@@ -14097,7 +14123,6 @@ $ping,third-party
 ###text-ads
 ###text-intext-ads
 ###text-link-ads
-###textAd1
 ###textAds
 ###textAdsTop
 ###text_ads
@@ -14184,11 +14209,9 @@ $ping,third-party
 ###top_ad_area
 ###top_ad_block
 ###top_ad_box
-###top_ad_container
 ###top_ad_td
 ###top_ad_unit
 ###top_ad_zone
-###top_add
 ###top_ads_container
 ###top_ads_region
 ###top_ads_wrap
@@ -14237,7 +14260,6 @@ $ping,third-party
 ###topadz
 ###topbanner_ad
 ###topbanner_sponsor
-###topbannerad
 ###topbanneradtitle
 ###topbar-ad
 ###topbarAd
@@ -14498,7 +14520,6 @@ $ping,third-party
 ##.AdSenseLeft
 ##.AdSpace
 ##.AdSpeedWP
-##.AdWidget_ImageWidget
 ##.Ad_C
 ##.Ad_D
 ##.Ad_Label
@@ -14648,7 +14669,6 @@ $ping,third-party
 ##.O-CookieLaw
 ##.OAS_wrap
 ##.PPD_ADS_JS
-##.Page-ad
 ##.PencilAd
 ##.PortletGestionDesCookiesCNIL
 ##.PostAdvertisementBeforePost
@@ -14769,7 +14789,6 @@ $ping,third-party
 ##.ad--728x90
 ##.ad--970-750-336-300
 ##.ad--970-90
-##.ad--article
 ##.ad--article-top
 ##.ad--articlemodule
 ##.ad--b
@@ -14813,7 +14832,6 @@ $ping,third-party
 ##.ad--p7
 ##.ad--pubperform
 ##.ad--pushdown
-##.ad--rectangle
 ##.ad--rectangle1
 ##.ad--rectangle2
 ##.ad--right
@@ -14928,7 +14946,6 @@ $ping,third-party
 ##.ad-article-wrapper
 ##.ad-aside-pc-billboard
 ##.ad-atf-top
-##.ad-ban
 ##.ad-banner-250x600
 ##.ad-banner-300
 ##.ad-banner-300x250
@@ -15067,7 +15084,6 @@ $ping,third-party
 ##.ad-container-single
 ##.ad-container-tool
 ##.ad-container-topad
-##.ad-container1
 ##.ad-container3x
 ##.ad-container__ad-slot
 ##.ad-container__leaderboard
@@ -15421,7 +15437,6 @@ $ping,third-party
 ##.ad-size-medium-rectangle-flex
 ##.ad-size-mpu
 ##.ad-skin-link
-##.ad-sky-left
 ##.ad-sky-right
 ##.ad-sky-wrap
 ##.ad-skyscr
@@ -15549,7 +15564,6 @@ $ping,third-party
 ##.ad-warning
 ##.ad-watermark
 ##.ad-wide-bottom
-##.ad-wide-wrap
 ##.ad-widget-box
 ##.ad-widget-list
 ##.ad-widget-sizes
@@ -16032,7 +16046,6 @@ $ping,third-party
 ##.ad_640x480
 ##.ad_72890
 ##.ad_728Home
-##.ad_728_90
 ##.ad_728_90_1
 ##.ad_728_90b
 ##.ad_728_top
@@ -16690,7 +16703,6 @@ $ping,third-party
 ##.ads-bing-top
 ##.ads-block-bottom-wrap
 ##.ads-block-link-text
-##.ads-block-panel-tipo-1
 ##.ads-block-top-right
 ##.ads-block-warning
 ##.ads-border
@@ -17022,7 +17034,6 @@ $ping,third-party
 ##.adsbyexoclick-wrapper
 ##.adsbygoogle-box
 ##.adsbygoogle2
-##.adsbypubmax
 ##.adsbyxa
 ##.adscaleTop
 ##.adscenter
@@ -17512,7 +17523,6 @@ $ping,third-party
 ##.advert-group
 ##.advert-header-728
 ##.advert-horizontal
-##.advert-image
 ##.advert-leaderboard2
 ##.advert-loader
 ##.advert-mini
@@ -17864,7 +17874,6 @@ $ping,third-party
 ##.adwrappercls1
 ##.adx-300x250-container
 ##.adx-300x600-container
-##.adx-ads
 ##.adx-wrapper
 ##.adx-wrapper-middle
 ##.adx_center
@@ -19904,7 +19913,6 @@ $ping,third-party
 ##.islandad
 ##.item--ad
 ##.item-ad-leaderboard
-##.item-advertising
 ##.item-container-ad
 ##.itemAdvertise
 ##.item_ads
@@ -20036,7 +20044,6 @@ $ping,third-party
 ##.lead-ads
 ##.leader-ad-728
 ##.leaderAdTop
-##.leaderAdvert
 ##.leaderBoardAdWrapper
 ##.leaderBoardAdvert
 ##.leader_ad
@@ -20247,6 +20254,7 @@ $ping,third-party
 ##.message-modal-cookie
 ##.message_ads
 ##.meta-ad
+##.metabet-sponsored
 ##.mg_box_ads
 ##.mgid-wrapper
 ##.mi_btcon.ad
@@ -20430,7 +20438,6 @@ $ping,third-party
 ##.native-advts
 ##.native-leaderboard-ad
 ##.native-sidebar-ad
-##.native_ad
 ##.native_ad_inline
 ##.native_ad_wrap
 ##.nativead
@@ -21296,7 +21303,6 @@ $ping,third-party
 ##.sponsored_bar_text
 ##.sponsored_box
 ##.sponsored_by
-##.sponsored_link
 ##.sponsored_links
 ##.sponsored_links2
 ##.sponsored_links_box
@@ -21539,7 +21545,6 @@ $ping,third-party
 ##.top-adv-container
 ##.top-adverbox
 ##.top-banner-468
-##.top-banner-ad
 ##.top-banner-ad-wrapper
 ##.top-banner-add
 ##.top-bar-ad-related
@@ -22360,7 +22365,6 @@ $ping,third-party
 ##a[href^="http://annulmentequitycereals.com/"]
 ##a[href^="http://avthelkp.net/"]
 ##a[href^="http://coefficienttolerategravel.com/"]
-##a[href^="http://com-1.pro/"]
 ##a[href^="http://dragfault.com/"]
 ##a[href^="http://dragnag.com/"]
 ##a[href^="http://eighteenderived.com/"]
@@ -22389,7 +22393,6 @@ $ping,third-party
 ##a[href^="https://a.bestcontentfood.top/"]
 ##a[href^="https://a.bestcontentoperation.top/"]
 ##a[href^="https://a.medfoodhome.com/"]
-##a[href^="https://a2.adform.net/"]
 ##a[href^="https://ab.advertiserurl.com/aff/"]
 ##a[href^="https://activate-game.com/"]
 ##a[href^="https://ad.22betpartners.com/redirect.aspx?"]
@@ -23420,7 +23423,6 @@ $removeparam=ysclid
 /ad-blocking-advisor/*
 /ad-blocking-alert/*$stylesheet
 /ad-blocking-detector/*
-/ad.php?tag=$popup
 /ad.php?zone$popup
 /ad/ad?p=$popup
 /ad/display.php$popup
@@ -23442,7 +23444,6 @@ $removeparam=ysclid
 /ad_skyscraper.gif$image
 /ad_top.jpg$image
 /adanalytics.js$script
-/adaptvadplayer.js$script
 /adasync.js$script
 /adb-watch.
 /adbDetect.
@@ -23982,12 +23983,13 @@ $removeparam=ysclid
 /jquery.antiadsblock.js|$script
 /jquery.bs.gdpr.cookies.js
 /jquery.bs.gdpr.cookies.min.js
+/jquery.dfp.js?
 /jquery.js?*&rx=*&foxtail=$image,1p
 /jquery.lazyload-ad-$script
+/jquery.lazyload-ad.js
 /jquery.openxtag.js
 /jqueryCookieGuard.
 /js-cookie-master/*$script
-/js/ad_common.js$script
 /js/adbuddy.min.js$script
 /js/ads
 /js/advRotator.js$script
@@ -24089,7 +24091,6 @@ $removeparam=ysclid
 /oiopub-direct/js.php$script
 /out?zoneId=$popup
 /p13n/batch/action/*$image
-/pageear.js$script
 /pagepeelpro.js?$script
 /pandectes-core.js
 /partneradwidget.$subdocument
@@ -24237,7 +24238,6 @@ $removeparam=ysclid
 /sponsorad.jpg$image
 /sponsorad.png$image,domain=~hmassoc.org
 /sponsored_link.gif$image
-/sponsors/ads/*$image
 /squaread.jpg$image
 /ssp/req/*/?pb=$third-party
 /static.leadia.ru/js/*
