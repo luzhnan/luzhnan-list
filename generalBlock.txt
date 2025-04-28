@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-27 01:53:30 UTC
+! Updated: 2025-04-28 01:27:28 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -226,6 +226,7 @@
 ##body > div[style^="position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01"][style*=";cursor:pointer"]:empty
 ##.wps-player__happy-inside
 ##.ad970
+##.div-gpt-ad:not([style^="width: 1px; height: 1px;"])
 ##[class^="div-gpt-ad"]:not([style^="width: 1px; height: 1px;"], .div-gpt-ad_adblock_test)
 ##button[data-openuri="|BTN_URL|"]
 ##aside[data-aqa="widget-breaking-banner"]
@@ -443,6 +444,7 @@
 /ads-native.js$script
 /ads-templateslist.$script
 /ads-vast-vpaid.js?$script
+/ads.bundle.js$script
 /ads.bundle.min.js$script
 /ads.pl?$~xmlhttprequest
 /ads/300.$subdocument
@@ -531,6 +533,7 @@
 /banner-ad.$~script,~xmlhttprequest
 /banner-ads-rotator/*$script,stylesheet
 /banner-ads/*$image,domain=~1agosto.com
+/banner-affiliate-$image
 /banner.cgi?$image
 /banner.php$~xmlhttprequest,domain=~research.hchs.hc.edu.tw
 /banner_ads/*$~xmlhttprequest,domain=~clickbd.com
@@ -624,6 +627,7 @@
 /livejasmin.$~xmlhttprequest,domain=~livejasmin.com
 /lmaz-ads-bannesr/*$script
 /media/ads/*$image
+/microad.js$script
 /mnpw3.js$script
 /mod_ijoomla_adagency_zone/*$~xmlhttprequest
 /module-ads-html-$script
@@ -706,7 +710,6 @@
 /revopush_v2.js
 /right_ads.$~xmlhttprequest
 /rightad.js$script
-/sbar.json?key=$script
 /sc-tagmanager/*$script
 /script/aclib.js$third-party
 /script/atg.js$third-party
@@ -996,6 +999,7 @@
 /980x90.
 /ad.php?tag=$popup
 /adclick.$popup
+/adpreview?$popup
 /adServe/*$popup
 /api/users?token=$popup
 /gtm.js?$popup
@@ -1086,6 +1090,7 @@
 ###ad-index
 ###ad-lead
 ###ad-leaderboard
+###ad-leaderboard-top
 ###ad-lrec
 ###ad-main
 ###ad-main-top
@@ -1107,6 +1112,7 @@
 ###ad-slot
 ###ad-slot-502
 ###ad-slot-top
+###ad-slot1
 ###ad-slug-wrapper
 ###ad-space
 ###ad-text
@@ -1217,6 +1223,7 @@
 ###ad_wallpaper
 ###ad_wide
 ###ad_wrapper
+###adbar
 ###adbody
 ###adbottom
 ###adbox
@@ -1231,6 +1238,7 @@
 ###adframe:not(frameset)
 ###adheader
 ###adhesion
+###adhome
 ###adlabelheader
 ###adleaderboard
 ###adleft
@@ -1447,6 +1455,7 @@
 ###dfp-leaderboard
 ###dfp-masthead
 ###dfp-mtf
+###dfp-ros-res-header_container
 ###dfp-tlb
 ###dfp_bigbox_2
 ###dfp_bigbox_recipe_top
@@ -1478,6 +1487,7 @@
 ###floatingAd
 ###floating_ad
 ###floating_ads_bottom_textcss_container
+###footAd
 ###footad
 ###footer-ad
 ###footer-ads
@@ -1559,6 +1569,7 @@
 ###middle-ad
 ###middleAd
 ###mobile-adhesion
+###mobile-footer-ad-wrapper
 ###mpu1_parent
 ###mpu2
 ###mpu_top
@@ -1589,6 +1600,7 @@
 ###rhsads
 ###right-ad
 ###right-ads
+###right-rail-ad-slot-content-top
 ###rightAd
 ###right_ad
 ###right_side_ad
@@ -1620,6 +1632,7 @@
 ###sidebar_ad_2
 ###sidebar_ads
 ###sidebar_topad
+###sidebarad
 ###skin-ad
 ###skin-ad-left-rail-container
 ###skin-ad-right-rail-container
@@ -1646,6 +1659,7 @@
 ###stickyads
 ###td-ad-placeholder
 ###teaser1[style^="width:autopx;"]
+###teaser2[style^="width:autopx;"]
 ###teaser3[style="width: 100%;text-align: center;display: scroll;position:fixed;bottom: 0;margin: 0 auto;z-index: 103;"]
 ###text-ad
 ###textAd
@@ -1839,6 +1853,7 @@
 ##.ad-box-wrapper
 ##.ad-box1
 ##.ad-box2
+##.ad-box3
 ##.ad-box:not(#ad-banner):not(:empty)
 ##.ad-break
 ##.ad-bt
@@ -2057,6 +2072,7 @@
 ##.ad-type
 ##.ad-type-cube
 ##.ad-type-flex-leaderboard
+##.ad-unit-container
 ##.ad-unit-label
 ##.ad-unit-text
 ##.ad-unit-wrapper
@@ -2256,6 +2272,7 @@
 ##.ad_label
 ##.ad_left
 ##.ad_link
+##.ad_lrec
 ##.ad_margin
 ##.ad_marker
 ##.ad_mobile
@@ -2475,6 +2492,7 @@
 ##.ads_3
 ##.ads_300x250
 ##.ads_728
+##.ads_728x90
 ##.ads__container
 ##.ads__horizontal
 ##.ads__top
@@ -2503,6 +2521,7 @@
 ##.ads_sidebar
 ##.ads_slot
 ##.ads_text
+##.ads_title
 ##.ads_top
 ##.ads_video
 ##.ads_wide
@@ -2654,6 +2673,7 @@
 ##.advert.mobile
 ##.advert.mpu
 ##.advert.skyscraper
+##.advert2
 ##.advertBlock
 ##.advertBox
 ##.advertSlot
@@ -2763,6 +2783,7 @@
 ##.article_bottom_ad
 ##.articlead
 ##.aside-ad
+##.aside-ad-wrapper
 ##.aside-ads
 ##.aside_ad
 ##.at-header-ad
@@ -2901,6 +2922,7 @@
 ##.cazAd
 ##.centerAd
 ##.center_ad
+##.centerad
 ##.centered-ad
 ##.channel-ad
 ##.channel_ad_2016
@@ -2986,6 +3008,7 @@
 ##.double-ads
 ##.doubleClickAd
 ##.download-ad
+##.dtads-desktop
 ##.e-advertise
 ##.e3lan
 ##.e3lan-top
@@ -3051,6 +3074,7 @@
 ##.gad-right2
 ##.gad_container
 ##.gallery-ad
+##.gallery-ad-container
 ##.gallery-ad-lazyload-placeholder
 ##.gallery_ad
 ##.gam-ad
@@ -3754,6 +3778,7 @@
 ##.wrap-ad
 ##.wrap-ads
 ##.wrapper-ad
+##.wt-cli-cookie-bar-container
 ##.xpot-horizontal
 ##.ympb_target
 ##.zmgad-full-width
@@ -3846,6 +3871,7 @@
 ##a[href^="https://go.rmhfrtnd.com/"]
 ##a[href^="https://go.rmishe.com/"]
 ##a[href^="https://go.skinstrip.net"][href*="?campaignId="]
+##a[href^="https://go.strpjmp.com/"]
 ##a[href^="https://go.xlirdr.com"]
 ##a[href^="https://go.xlivrdr.com"]
 ##a[href^="https://go.xlviiirdr.com"]
@@ -3935,6 +3961,7 @@
 ##.newspack-broadstreet-ad
 ##.newspack_global_ad
 ##.newspack_global_ad_new
+##.widget_newspack-ads-widget
 ##broadstreet-zone-container
 ##.Ad-Container:not(.adsbygoogle)
 ##.ad-area:not(.text-ad)
@@ -4352,6 +4379,7 @@
 /api/log-visit
 /api/metrics/collect
 /api/metrics/event
+/api/metrics|$xmlhttprequest
 /api/pageactivity
 /api/pageview/*$ping
 /api/pageview?
@@ -4700,6 +4728,7 @@
 /count.php?
 /count.png?
 /count/count.cgi?
+/count/logcount.html?
 /count?pid=
 /count_js.php
 /counter-js.php
@@ -4975,6 +5004,7 @@
 /fsrscripts/triggerParams.js
 /fusion/lucid/data/*
 /g_track.php?
+/ga-audiences?
 /ga-events.js
 /ga-links.js
 /ga-lite.js
@@ -5166,6 +5196,8 @@
 /hmapxy.js
 /hnpprivacy-min.js
 /hockeystack.min.js
+/home-insight/ad_placements$xmlhttprequest
+/home-insight/initial_analytics$xmlhttprequest
 /homeCounter.php
 /honeybadger.js
 /honeybadger.min.js
@@ -6534,6 +6566,7 @@
 /uutils.fcg?
 /v.gif?
 /v1/adn/visit|
+/v1/log/web-vitals$xmlhttprequest
 /v1/pixel.js
 /v1/pixel?
 /v1/stats/track
@@ -6747,6 +6780,7 @@
 /zhugeio.js
 /ztracker.js
 ://a869.$~image
+://analytics-beacon.
 ://analytics-cdn.
 ://analytics.*/collect
 ://analytics.*/event
@@ -9125,6 +9159,7 @@ $ping,third-party
 /static/23wx/idd.js
 /static/2biqu/twgdh.js
 /js/pfad*.js
+/static/idingdian/idd.
 /dbhf.js$script,third-party
 /js/db.js$script,third-party
 /js/lm.js$script,third-party
@@ -9393,7 +9428,6 @@ $ping,third-party
 ##.dfp-ad-top-wrapper
 ##.dfp-ad-hideempty
 ##.dfp_ad--outbrain
-##.dtads-desktop
 ##.ezo_ad
 ##.ezoic-ad-adaptive
 ##.ezoic-adpicker-ad
@@ -9408,7 +9442,6 @@ $ping,third-party
 ##.themonic-ad6
 ##.fs_ad
 ##.glacier-ad
-##.gallery-ad-container
 ##.grid-advertisement
 ##.header-adslot-container
 ##.headerAds250
@@ -9886,6 +9919,7 @@ $ping,third-party
 /script/suv5.js
 /script/suurl.php
 /d3.php?m=
+/sbar.json?key=$script
 /pixel/sbe?
 /lv/esnk/*$script,3p
 /pixel/purst?
@@ -10282,7 +10316,6 @@ $ping,third-party
 ###ad-leaderboard-footer
 ###ad-leaderboard-header
 ###ad-leaderboard-spot
-###ad-leaderboard-top
 ###ad-leaderboard970x90home
 ###ad-leaderboard970x90int
 ###ad-leaderboard_bottom
@@ -10361,7 +10394,6 @@ $ping,third-party
 ###ad-slot-5
 ###ad-slot-lb
 ###ad-slot-right
-###ad-slot1
 ###ad-slot2
 ###ad-slot4
 ###ad-small-banner
@@ -10854,7 +10886,6 @@ $ping,third-party
 ###adbannerleft
 ###adbannerright
 ###adbannerwidget
-###adbar
 ###adbcontainer-popup
 ###adbig
 ###adblade
@@ -10934,7 +10965,6 @@ $ping,third-party
 ###adhide
 ###adholder
 ###adholderContainerHeader
-###adhome
 ###adhomepage
 ###adjacency
 ###adlabel
@@ -12517,7 +12547,6 @@ $ping,third-party
 ###dfp-mtf-desktop
 ###dfp-rectangle
 ###dfp-rectangle1
-###dfp-ros-res-header_container
 ###dfp-top-banner
 ###dfpAd
 ###dfp_ad_mpu
@@ -12704,7 +12733,6 @@ $ping,third-party
 ###fondAdblock
 ###foot-ad-wrap
 ###foot-ad2-wrap
-###footAd
 ###footAdArea
 ###footAds
 ###footer-ad-728
@@ -13403,7 +13431,6 @@ $ping,third-party
 ###mobile-ad-container
 ###mobile-ad.hidden-md
 ###mobile-ads-ad
-###mobile-footer-ad-wrapper
 ###mobile-index > div#vodbm
 ###mobile-index > div[id^="ins"]
 ###mobileAdContainer
@@ -13722,7 +13749,6 @@ $ping,third-party
 ###right-box-ad
 ###right-content-ad
 ###right-featured-ad
-###right-rail-ad-slot-content-top
 ###right-widget-b-ads_widget-9
 ###right-widget-c-ads_widget-7
 ###right-widget-d-ads_widget-36
@@ -13903,7 +13929,6 @@ $ping,third-party
 ###sidebar_ad_wrapper
 ###sidebar_adblock
 ###sidebar_box_add
-###sidebarad
 ###sidebarad0
 ###sidebaradpane
 ###sidebarads
@@ -14150,7 +14175,6 @@ $ping,third-party
 ###td_adunit2
 ###td_sponsorAd
 ###team_ad
-###teaser2[style^="width:autopx;"]
 ###teaser3[style^="width:autopx;"]
 ###termly-code-snippet-support
 ###tescoCookieNotification
@@ -15051,7 +15075,6 @@ $ping,third-party
 ##.ad-box-title
 ##.ad-box-up
 ##.ad-box-video
-##.ad-box3
 ##.ad-box_h
 ##.ad-boxamp-wrapper
 ##.ad-boxbottom
@@ -15576,7 +15599,6 @@ $ping,third-party
 ##.ad-unit-2
 ##.ad-unit-300
 ##.ad-unit-300-wrapper
-##.ad-unit-container
 ##.ad-unit-horisontal
 ##.ad-unit-inline-center
 ##.ad-unit-mpu
@@ -16222,7 +16244,6 @@ $ping,third-party
 ##.ad_lnks
 ##.ad_loc
 ##.ad_long
-##.ad_lrec
 ##.ad_lrgsky
 ##.ad_lt
 ##.ad_main
@@ -16938,7 +16959,6 @@ $ping,third-party
 ##.ads_468
 ##.ads_468x60
 ##.ads_720x90
-##.ads_728x90
 ##.ads_Header
 ##.ads__article__header
 ##.ads__aside
@@ -17015,7 +17035,6 @@ $ping,third-party
 ##.ads_square
 ##.ads_takeover
 ##.ads_tit
-##.ads_title
 ##.ads_top_1
 ##.ads_top_banner
 ##.ads_top_both
@@ -17579,7 +17598,6 @@ $ping,third-party
 ##.advert1
 ##.advert120
 ##.advert1Banner
-##.advert2
 ##.advert300
 ##.advert4
 ##.advert5
@@ -18051,7 +18069,6 @@ $ping,third-party
 ##.artnet-ads-ad
 ##.as-oil
 ##.aside-ad-space
-##.aside-ad-wrapper
 ##.aside-ads-top
 ##.asideAd
 ##.aside_ad_large
@@ -18517,7 +18534,6 @@ $ping,third-party
 ##.center_ads
 ##.center_cookies
 ##.center_inline_ad
-##.centerad
 ##.centerads
 ##.centeradv
 ##.ch-ad-item
@@ -19094,7 +19110,6 @@ $ping,third-party
 ##.dispositifAdblockContent
 ##.dispositifAdblockMessageBox
 ##.div-gpt-ad-adhesion-leaderboard-wrap
-##.div-gpt-ad:not([style^="width: 1px; height: 1px;"])
 ##.div-insticator-ad
 ##.divAd
 ##.divAdright
@@ -21896,7 +21911,6 @@ $ping,third-party
 ##.widget_island_ad
 ##.widget_joblo_complex_ad
 ##.widget_long_ads_widget
-##.widget_newspack-ads-widget
 ##.widget_njads_single_widget
 ##.widget_openxwpwidget
 ##.widget_plugrush_widget
@@ -22459,7 +22473,6 @@ $ping,third-party
 ##a[href^="https://go.hpyjmp.com"]
 ##a[href^="https://go.hpyrdr.com/"]
 ##a[href^="https://go.markets.com/visit/?bta="]
-##a[href^="https://go.strpjmp.com/"]
 ##a[href^="https://go.tmrjmp.com"]
 ##a[href^="https://go.trackitalltheway.com/"]
 ##a[href^="https://go.xtbaffiliates.com/"]
@@ -23506,10 +23519,8 @@ $removeparam=ysclid
 /admgr.js$script
 /admiral_worker_caller.js
 /adpartner.min.js$script
-/adpreview?$popup
 /adrecover-new.js$script
 /ads-250.$image
-/ads.bundle.js$script
 /ads.cfm?$subdocument
 /ads.criteo.com.js
 /ads.jplayer.$stylesheet
@@ -23629,7 +23640,6 @@ $removeparam=ysclid
 /ban728x90.$image
 /bandeaucookie.
 /banman/ad.aspx$image
-/banner-affiliate-$image
 /banner.asp?$third-party
 /banner/affiliate/*$image,subdocument
 /banner/html/zone?zid=
@@ -24077,7 +24087,6 @@ $removeparam=ysclid
 /media_ads/*$image
 /mellowpresence.com^$script
 /merrx01/^$document
-/microad.js$script
 /mlxhl/v2/for-page?$xmlhttprequest
 /mobiquo/smartbanner/ads.js^
 /mobiquo/smartbanner/appbanner.js
@@ -26668,7 +26677,6 @@ $removeparam=action_type_map
 #$?#meta[name="apple-itunes-app"] { remove: true; }
 $$script:contains(_mJd5Y2FNOfYm62LY5FuY7O5Yc6)
 $$script:contains(/document\.write[^|&%$#@!]{0,400}:8007"\+"\/cc\//)
-/static/idingdian/idd.
 /videojs8/nuevo.min.js
 /videojs/plugins/vastpro.js
 $$amp-ad
@@ -37471,6 +37479,7 @@ $$amp-ad
 /consent-modal.js
 /consent-tracking-api.js
 /consent/app.js?
+/consent/consent-manager/*$script
 /consent/cookie.js
 /consent/public/app.js
 /consent_banner.js
@@ -37840,7 +37849,7 @@ $$amp-ad
 /eu-cookielaw.min.js
 /eu-notice.js
 /eu_cookie.js
-/eu_cookie_compliance.js
+/eu_cookie_compliance.$script
 /eu_cookies.js
 /euConsentConfig.json
 /eucookie.js
@@ -37980,6 +37989,7 @@ $$amp-ad
 /jquery.erigo-cookies.js
 /jquery.eu-cookie-consent.js
 /jquery.fscookieconsent.js
+/jquery.ihavecookies.js
 /jquery.tipsy.cookie.
 /js/CookieManager.js
 /js/cookiePolicy?
@@ -41274,6 +41284,7 @@ $$amp-ad
 ###cookiejar
 ###cookiejarconsentfullwidth
 ###cookiekezeles
+###cookieklaro
 ###cookielaura
 ###cookielaw-banner
 ###cookielaw-bar
@@ -47922,6 +47933,7 @@ $$amp-ad
 ##.cookiebar-panel
 ##.cookiebar-tpl
 ##.cookiebar-wrapper
+##.cookiebar[aria-live="polite"]
 ##.cookiebar__overlay
 ##.cookiebar_container
 ##.cookiebar_wrapper
@@ -48865,6 +48877,7 @@ $$amp-ad
 ##.eu-compliance-message
 ##.eu-cookie-banner
 ##.eu-cookie-bar-notification
+##.eu-cookie-compliance-banner
 ##.eu-cookie-div-initial
 ##.eu-cookie-info
 ##.eu-cookie-law
