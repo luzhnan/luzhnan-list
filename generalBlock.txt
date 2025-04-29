@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-28 01:27:28 UTC
+! Updated: 2025-04-29 01:36:47 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -224,6 +224,7 @@
 ##body > div[style="position: fixed; display: block; width: 100%; height: 100%; inset: 0px; background-color: rgba(0, 0, 0, 0); z-index: 300000;"]
 ##body > div[style^="position: fixed; inset: 0px; z-index: 2147483647; background: black; opacity: 0.01;"]
 ##body > div[style^="position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01"][style*=";cursor:pointer"]:empty
+##.full-ave-pl
 ##.wps-player__happy-inside
 ##.ad970
 ##.div-gpt-ad:not([style^="width: 1px; height: 1px;"])
@@ -286,6 +287,7 @@
 /^https?:\/\/[a-z]{8,15}\.xyz\/$/$xmlhttprequest,third-party,method=head,to=xyz
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,third-party,match-case
 /^https:\/\/[a-z]{10,12}\.com\/[a-z\/]{2,}\?id=[12]\d{6}$/$script,third-party,match-case
+/tds/ae?*&clickid=$document
 /?pl=*&sm=$document
 /script/frustration.js|$script
 /page/bouncy.php?&bpae=*&redirectType=js&inIframe=$all
@@ -473,6 +475,7 @@
 /ads?zone=
 /ads?zone_id=
 /ads_bg.$image
+/ads_image/*$image
 /ads_images/*$image,domain=~wildlifeauctions.co.za
 /adsbanner-$image
 /adsbanner/*$image
@@ -725,6 +728,7 @@
 /show_ad.js$script
 /showbanner.js$script
 /side-ads-$~xmlhttprequest
+/sidead1.js$script
 /sideads.js$script
 /site=*/size=*/viewid=
 /site=*/viewid=*/size=
@@ -1100,6 +1104,7 @@
 ###ad-overlay
 ###ad-placeholder
 ###ad-popup
+###ad-rect
 ###ad-rectangle
 ###ad-right
 ###ad-right-top
@@ -1110,6 +1115,7 @@
 ###ad-skin
 ###ad-skyscraper
 ###ad-slot
+###ad-slot-1
 ###ad-slot-502
 ###ad-slot-top
 ###ad-slot1
@@ -1129,6 +1135,7 @@
 ###adBottom
 ###adBox
 ###adCarousel
+###adColumn
 ###adColumn3
 ###adContainer
 ###adContent
@@ -1405,6 +1412,7 @@
 ###banner300x250
 ###bannerAd
 ###banner_ads
+###bannerads
 ###bannerplayer-wrap
 ###bgad
 ###big_ad
@@ -1588,6 +1596,7 @@
 ###pop.div_pop
 ###popupAd
 ###pr_ad
+###pre-adv
 ###premiumAdTop
 ###preroll_ads
 ###pub728x90
@@ -1761,6 +1770,7 @@
 ##.Sidebar-ad
 ##.SovrnAd
 ##.TopAd
+##.TopAdContainer
 ##.TrackedSidebarPromo
 ##._ads
 ##._popIn_recommend_article_ad
@@ -1796,6 +1806,7 @@
 ##.ad--slot
 ##.ad--sponsor-content
 ##.ad--sticky
+##.ad--stroeer
 ##.ad--top
 ##.ad--wallpaper
 ##.ad-1
@@ -1992,6 +2003,7 @@
 ##.ad-result
 ##.ad-right
 ##.ad-right2
+##.ad-root
 ##.ad-row
 ##.ad-s
 ##.ad-scroll
@@ -2131,6 +2143,7 @@
 ##.adArea
 ##.adAreaNative
 ##.adAreaTopTitle
+##.adBillboard
 ##.adBlock
 ##.adBorder
 ##.adBox
@@ -2150,6 +2163,7 @@
 ##.adHalfPage
 ##.adHeader
 ##.adHeading
+##.adHeight280
 ##.adImg
 ##.adInfo
 ##.adInner
@@ -2277,6 +2291,7 @@
 ##.ad_marker
 ##.ad_mobile
 ##.ad_module
+##.ad_mr
 ##.ad_news
 ##.ad_note
 ##.ad_notice
@@ -2291,6 +2306,7 @@
 ##.ad_response
 ##.ad_right
 ##.ad_row
+##.ad_scroll
 ##.ad_side
 ##.ad_sidebar
 ##.ad_sidebar_left
@@ -2355,6 +2371,7 @@
 ##.adhesion-block
 ##.adhesion:not(body)
 ##.adhide
+##.adhint
 ##.adholder
 ##.adholder2
 ##.adinfo
@@ -2937,6 +2954,7 @@
 ##.columnAd
 ##.comment-ad
 ##.connatix
+##.connatix-container
 ##.connatix-wrapper
 ##.cont-ad
 ##.container--ad
@@ -3066,6 +3084,7 @@
 ##.fullWidthAd
 ##.full_AD
 ##.fullbanner_ad
+##.fullpage-ad
 ##.g-ad
 ##.g1-advertisement
 ##.g_ad
@@ -3115,6 +3134,7 @@
 ##.gridlove-ad
 ##.guj-ad--placeholder
 ##.gujAd
+##.h-ads
 ##.head-ad
 ##.head-ads
 ##.headAd
@@ -3487,6 +3507,7 @@
 ##.rightadHeightBottom
 ##.rightads
 ##.rightrail-ad-placed
+##.rj-ads-wrapper
 ##.root-ad-anchor
 ##.rotating-ads
 ##.row-ad
@@ -3581,6 +3602,7 @@
 ##.sponsored-ad
 ##.sponsored-article
 ##.sponsored-container
+##.sponsored-header
 ##.sponsored-link
 ##.sponsored-links
 ##.sponsored-post
@@ -3706,6 +3728,7 @@
 ##.vdvwad
 ##.vert-ad
 ##.vertical-ad
+##.vertical-ads
 ##.verticalAd
 ##.verticalAdText
 ##.vf-ad-comments
@@ -3727,6 +3750,7 @@
 ##.videoad
 ##.videoad-base
 ##.view-ad
+##.view_ad
 ##.vjs-ima3-ad-container
 ##.waf-ad
 ##.wall-ads-left
@@ -4020,6 +4044,7 @@
 ##.add-box-side
 ##.add-box-top
 ##.partner-loading-shown.partner-label
+##div[id*="MarketGid"]
 ##div[id*="ScriptRoot"]
 ##.amp-ad-container
 ##.amp-ads
@@ -6653,6 +6678,7 @@
 /w.gif?
 /wa.gif?
 /wa_tracker.js
+/watchdog/hits/collect$xmlhttprequest
 /wcount.php?
 /web-analytics.js
 /web-api/log/*
@@ -9160,14 +9186,6 @@ $ping,third-party
 /static/2biqu/twgdh.js
 /js/pfad*.js
 /static/idingdian/idd.
-/dbhf.js$script,third-party
-/js/db.js$script,third-party
-/js/lm.js$script,third-party
-/js/xb.js$script,third-party
-/js/zb.js$script,third-party
-/sbhf.js$script,third-party
-/ttgg/*.js$script,third-party
-/xbhf.js$script,third-party
 ##.txp_ad_center
 ###asx_text
 ###wp > .V-video-float
@@ -9363,7 +9381,6 @@ $ping,third-party
 ##.ad-wrapper__ad-slug
 ##.adComponent
 ##.adElement
-##.adHeight280
 ##.adHolderStory
 ##.adMinHeight280
 ##.adModule
@@ -9514,7 +9531,6 @@ $ping,third-party
 ##.right_ad_1
 ##.right_ad_2
 ##.right_ad_4
-##.rj-ads-wrapper
 ##.sidebar-ad-top
 ##.sidebar-advert
 ##.single-post-ad
@@ -9620,7 +9636,6 @@ $ping,third-party
 ###rightrail_top_ddb_0
 ###story_bottom_ddb_1
 ##.premium_PremiumPlacement__2dEp0
-##div[id*="MarketGid"]
 ###ezmob_footer
 ##.rec-sponsored
 ##.rec_article_footer
@@ -10361,7 +10376,6 @@ $ping,third-party
 ###ad-rec-atf
 ###ad-rec-btf
 ###ad-rec-btf-top
-###ad-rect
 ###ad-rectangle1
 ###ad-rectangle1-outer
 ###ad-rectangle2
@@ -10387,7 +10401,6 @@ $ping,third-party
 ###ad-sky
 ###ad-slideshow
 ###ad-slideshow2
-###ad-slot-1
 ###ad-slot-2
 ###ad-slot-3
 ###ad-slot-4
@@ -10500,7 +10513,6 @@ $ping,third-party
 ###adChoicesIcon
 ###adChoicesLogo
 ###adCol
-###adColumn
 ###adComponentWrapper
 ###adContainer_1
 ###adContainer_2
@@ -11685,7 +11697,6 @@ $ping,third-party
 ###bannerad-top
 ###bannerad2
 ###banneradrow
-###bannerads
 ###banneradspace
 ###banneradvert3
 ###banneradvertise
@@ -13631,7 +13642,6 @@ $ping,third-party
 ###ppcAdverts
 ###pr_advertising
 ###pravda-cookie-usage
-###pre-adv
 ###pre-footer-ad
 ###preAds_ad_mrec_intext
 ###preAds_ad_mrec_intext2
@@ -14787,7 +14797,6 @@ $ping,third-party
 ##.TextAdds
 ##.Textads
 ##.TopAdBox
-##.TopAdContainer
 ##.TopAdL
 ##.TopAdR
 ##.TopAds
@@ -14900,7 +14909,6 @@ $ping,third-party
 ##.ad--slider
 ##.ad--square-rectangle
 ##.ad--stripe
-##.ad--stroeer
 ##.ad--subcontainer
 ##.ad--top-desktop
 ##.ad--top-leaderboard
@@ -15457,7 +15465,6 @@ $ping,third-party
 ##.ad-right1
 ##.ad-right3
 ##.ad-roadblock
-##.ad-root
 ##.ad-rotation
 ##.ad-rotator
 ##.ad-row-box
@@ -15825,7 +15832,6 @@ $ping,third-party
 ##.adBan
 ##.adBanner300x250
 ##.adBanner728x90
-##.adBillboard
 ##.adBkgd
 ##.adBlock-banner
 ##.adBlock728
@@ -16262,7 +16268,6 @@ $ping,third-party
 ##.ad_mp
 ##.ad_mpu
 ##.ad_mpu_top
-##.ad_mr
 ##.ad_mrec
 ##.ad_native
 ##.ad_native_xrail
@@ -16306,7 +16311,6 @@ $ping,third-party
 ##.ad_right_cell
 ##.ad_right_col
 ##.ad_rightside
-##.ad_scroll
 ##.ad_secondary
 ##.ad_segment
 ##.ad_sense_01
@@ -16608,7 +16612,6 @@ $ping,third-party
 ##.adhesiveWrapper
 ##.adhesive_holder
 ##.adhi
-##.adhint
 ##.adholder-300
 ##.adholderban
 ##.adhoriz
@@ -18592,7 +18595,6 @@ $ping,third-party
 ##.component-ar-horizontal-bar-ad
 ##.components-Ad-___Ad__ad
 ##.con_ads
-##.connatix-container
 ##.connatix-hodler
 ##.connatix-holder
 ##.consent-container
@@ -19411,7 +19413,6 @@ $ping,third-party
 ##.full-ad-wrapper
 ##.full-ads
 ##.full-adv
-##.full-ave-pl
 ##.full-bleed-ad-container
 ##.full-page-ad
 ##.full-top-ad-area
@@ -19425,7 +19426,6 @@ $ping,third-party
 ##.full_width_ad
 ##.fulladblock
 ##.fullbannerad
-##.fullpage-ad
 ##.fullsize-ad-square
 ##.fullwidth-advertisement
 ##.fusion-ads
@@ -19623,7 +19623,6 @@ $ping,third-party
 ##.gutterads
 ##.gw-ad
 ##.h-adholder
-##.h-ads
 ##.h-adver
 ##.h-large-ad-box
 ##.h-top-ad
@@ -21304,7 +21303,6 @@ $ping,third-party
 ##.sponsored-container-bottom
 ##.sponsored-default
 ##.sponsored-display-ad
-##.sponsored-header
 ##.sponsored-home-page-inner
 ##.sponsored-post-container
 ##.sponsored-result
@@ -21749,7 +21747,6 @@ $ping,third-party
 ##.verbum-simple-subscribe-modal
 ##.vert-ads
 ##.vertad
-##.vertical-ads
 ##.vertical-adsense
 ##.vertical-trending-ads
 ##.vertical_ad
@@ -21785,7 +21782,6 @@ $ping,third-party
 ##.view-id-advertisement
 ##.view-image-ads
 ##.view-site-ads
-##.view_ad
 ##.views-field-field-ad
 ##.visibleAd
 ##.vjs-ad-iframe
@@ -23542,7 +23538,6 @@ $removeparam=ysclid
 /ads_banners/*$image
 /ads_controller.js$script
 /ads_iframe.$subdocument
-/ads_image/*$image
 /adsdelivery/*$subdocument
 /adsen.php
 /adserver.$popup
@@ -24239,7 +24234,6 @@ $removeparam=ysclid
 /side-ads/*$~xmlhttprequest
 /side_ads/*$~xmlhttprequest
 /sidead.js$script
-/sidead1.js$script
 /sidebar_ad.jpg$image
 /sidebar_ad.png$image
 /sidebar_ads/*$~xmlhttprequest
@@ -24291,7 +24285,6 @@ $removeparam=ysclid
 /tb/_/video_frs_head_
 /tb/img/hg/hg.gif?
 /tc-under.min.js
-/tds/ae?*&clickid=$document
 /template/bingfeng/statics/js/pingbi.js
 /template/conch/asset/js/hlhtml.
 /template/mytheme/statics/js/listing.js
@@ -25337,6 +25330,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https?:\/\/[-a-z]{4,}\.gov[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{4,}\.org[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
 /^https:\/\/[a-z]{8}\.[a-z]{2,8}\/[!+=][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|cam|click|coupons|digital|diy|food|forum|gay|guru|life|live|living|my|property|pw|rocks|run|shop|tattoo|tech|today|uno|work,match-case
+/door/?ad_campaign_id=$doc
 /edgemesh.*.js$script,domain=~edgemesh.com|~edgeno.de
 /adsensebase.js$script
 ://api.*/lib/native.wasm$3p
@@ -25399,6 +25393,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##body[class^="img_"][style^="opacity: 1;"]
 ##body[onclick="ExitApi.exit();"][style="cursor:pointer"] > a[href="javascript:(function(){open(window.clickTag)})()"]
 ##body[style$="transform-origin: left top;"] > div[id^="img_"]
+##div:not([class]) + style + div[class^="img_"] > img[src*=".com/content/"]
 ##div[class^="img_"] > table[class^="img_"]
 ##div[class^="img_"][onclick^="handleClick(event, 'https:"]
 ##div[class^="img_"][started="true"]
@@ -26687,6 +26682,7 @@ $$amp-ad
 ://ads.$popup,domain=~smartnews.com
 ://adv.$popup,domain=~adv.kompas.id|~adv.lack-girl.com
 ##[class^="div-gpt-ad"]
+##a[href^=""https://best-experience-cool.com/"]
 /1-popupally-pro-code.js
 /amp-apester-
 /arscode-ninja-popups/*$~stylesheet
@@ -37639,7 +37635,6 @@ $$amp-ad
 /cookieconsent.latest.min.js
 /cookieconsent.min.$~stylesheet
 /cookieconsent.umd.js
-/cookieconsent?
 /cookieconsent_.min.js
 /cookieconsentbar.js
 /cookieconsentpopup.js
@@ -45547,8 +45542,6 @@ $$amp-ad
 ##.acceptCookiesWrapper
 ##.accept_adatvedelem
 ##.accept_cookie_slot
-##.accept_cookies-wrapper
-##.accept_cookies_action
 ##.accepterCookie
 ##.acceptmycookie-bar
 ##.acceptsitecookies
@@ -46973,6 +46966,7 @@ $$amp-ad
 ##.cookie-consent-bar-overlay
 ##.cookie-consent-bar-wrap
 ##.cookie-consent-bottom
+##.cookie-consent-bottom-corner
 ##.cookie-consent-comp
 ##.cookie-consent-component
 ##.cookie-consent-container-v2
@@ -54263,7 +54257,7 @@ $$amp-ad
 ##[class*="ads_head_banner"]
 ##.wwads-container
 /[a-z]{1}\d{2,3}\.\w+\.(co(m|\.uk)|net|org)\/script\.js/$script,~third-party
-/xbuilder/experience/execute$xmlhttprequest,~third-party
+/xbuilder/experience/execute$xmlhttprequest,~third-party,domain=~fortune.com
 /arc/subs/p.min.js$script,~third-party,domain=~nzherald.co.nz
 /c/assets/pigeon.js$script,~third-party
 /evolok/*ev-em.min.js$script,domain=~vikatan.com
@@ -61265,6 +61259,7 @@ $$script[tag-content="adsbygoogle"]
 /davad_ad_
 /dbdm-events.
 /dbdm-events/*
+/dbhf.js$script,third-party
 /dblclick.
 /dblclickad.
 /dc-storm-track.
@@ -62847,12 +62842,14 @@ $$script[tag-content="adsbygoogle"]
 /js/analitics.
 /js/analitycs_
 /js/antiblock.js
+/js/db.js$script,third-party
 /js/dcstorm/*
 /js/ddx/*
 /js/doubleclick/*
 /js/google_stats.
 /js/indextools/*
 /js/livestats_
+/js/lm.js$script,third-party
 /js/oas-
 /js/oas.
 /js/ppu.$script
@@ -62870,7 +62867,9 @@ $$script[tag-content="adsbygoogle"]
 /js/tracking_
 /js/trk_
 /js/uoeuoem&12_tt.js
+/js/xb.js$script,third-party
 /js/youmuffpu.js
+/js/zb.js$script,third-party
 /js2.ad/size=
 /jsAds/*
 /jsVideoPopAd.
@@ -64523,6 +64522,7 @@ $$script[tag-content="adsbygoogle"]
 /sb-relevance.js
 /sb.logger.js
 /sb.trackers.js
+/sbhf.js$script,third-party
 /sbnr.ads?
 /sbtracking/pageview2?
 /sc/httpdns_config*
@@ -65663,6 +65663,7 @@ $$script[tag-content="adsbygoogle"]
 /tse/tracking.
 /tsrHitCounter.
 /tt_gb/skin_js/gg.js
+/ttgg/*.js$script,third-party
 /ttt.gif?
 /ttz_ad.
 /tubeadvertising.
@@ -66150,6 +66151,7 @@ $$script[tag-content="adsbygoogle"]
 /xadvertisement.
 /xbanner.js
 /xbanner.php?
+/xbhf.js$script,third-party
 /xboxcom_pv?c=$image
 /xclicks.
 /xfiles/ads/*
