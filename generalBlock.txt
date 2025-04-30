@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-29 14:50:09 UTC
+! Updated: 2025-04-30 01:28:14 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -4167,7 +4167,7 @@
 ##div[id^="zergnet-widget"]
 /\/[0-9a-f]{32}\/invoke\.js/$script,third-party
 /^https?:\/\/.*(com|net|top|xyz)\/(bundle|warning|style|bootstrap|brand|reset|jquery-ui|styles|error|logo|index|favicon|star|header)\.(png|css)\?[A-Za-z0-9]{30,}.*/$third-party
-/^https?:\/\/[0-9a-z]{5,}\.(digital|website|life|guru|uno|cfd)\/[a-z0-9]{6,}\//$script,third-party,xmlhttprequest,domain=~127.0.0.1|~bitrix24.life|~ccc.ac|~jacksonchen666.com|~lemmy.world|~localhost|~scribble.ninja|~scribble.website|~traineast.co.uk
+/^https?:\/\/[0-9a-z]{5,}\.(digital|website|life|guru|uno|cfd)\/[a-z0-9]{6,}\//$script,third-party,xmlhttprequest,domain=~127.0.0.1|~bitrix24.life|~ccc.ac|~embedcanaistv.com|~jacksonchen666.com|~lemmy.world|~localhost|~scribble.ninja|~scribble.website|~traineast.co.uk
 /rest/carbon/api/scripts.js?
 /^https?:\/\/.*\/sw\.js\?[a-zA-Z0-9%]{50,}/$script,~third-party
 ##.ad-fallback
@@ -4397,6 +4397,7 @@
 /analytics/visit.jsp
 /analytics/visit.php
 /analytics/visit?
+/analytics4.php$ping
 /analytics?http_referer
 /analytics?token=
 /analytics?ver=*&referrer=
@@ -5282,6 +5283,7 @@
 /if/services/tdg?hs=
 /IIQUniversalID.min.js
 /image.ng/*
+/images/tingyun.js$script
 /iMAWebCookie.js
 /img?eid=
 /imgcount.cgi?
@@ -6499,6 +6501,7 @@
 /tracking/referrer?
 /tracking/thirdpartytag.js
 /tracking/trackpageview
+/tracking/uct?v=
 /tracking/universalJSRequest.php
 /tracking/user_sync_widget?
 /tracking/views/*
@@ -23401,7 +23404,7 @@ $removeparam=ysclid
 /^23\.109\.73\.\d{3}/$network
 /^94\.242\.247\.(2[0-9]|3[0-2]):/$network
 /^https:\/\/[0-9a-z]{5,}\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,~third-party
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{16,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{12,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
 /^https:\/\/[0-9a-z]{7,25}\.com\/[a-z]{0,7}\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{20,120}(?:[-.][a-z0-9]{2,6})?(?:\.js)?$/$script,3p,match-case,to=com,header=x-datacenter
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[-_0-9a-z]{0,84}[A-Z])(?=[-_a-zA-Z]{0,84}[0-9])[-_0-9a-zA-Z]{54,85}(#\?v=[0-9a-f]{32})?$/$script,xhr,3p,match-case
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[0-9a-z_-]{0,84}[A-Z])(?=[a-zA-Z_-]{0,84}[0-9])[0-9a-zA-Z_-]{54,85}(#\?v=[0-9a-f]{32})?$/$ping,script,xmlhttprequest,third-party,match-case
@@ -38020,6 +38023,7 @@ $$amp-ad
 /MarkupCookieConsent.min.js
 /mb_cookies.js
 /mco-consent.js
+/mcs-cookie-permission.js
 /mdv.cookie.js
 /mea-legal-consent.
 /mediamus-cookie.js
@@ -38236,7 +38240,7 @@ $$amp-ad
 /wpjslib-sgap.js
 /wpjslib-stat.js
 /wps-cookie-consent/public/assets/js/main.js
-/ws5_eucookie/frontend/js/dist/main.js
+/ws5_eucookie/*$script
 /wx-cookie-
 /x13eucookies/views/js/front.js
 /xt_cookie_consent.js
@@ -41660,6 +41664,7 @@ $$amp-ad
 ###cookiesOverlay
 ###cookiesPP
 ###cookiesPage
+###cookiesPanelTrayIcon
 ###cookiesPanelWrapper
 ###cookiesPermission
 ###cookiesPolicy
@@ -46509,6 +46514,7 @@ $$amp-ad
 ##.cmp-teaser__subcontent
 ##.cmpBoxWelcomeOptIn
 ##.cmp_cookies_usage_wr
+##.cmplz-cookiebanner
 ##.cmplz-show-banner
 ##.cmplz-tcf-banner-hidden
 ##.cms-cookie-layer
