@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-04-30 01:28:14 UTC
+! Updated: 2025-05-01 01:15:20 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -277,6 +277,7 @@
 ##.sidebar-ads-container
 ##.sponsored-items
 ##.top-banners
+/banner.go?spaceid=
 /captha/cap/|$document,popup
 /^https:\/\/[a-z]{6,13}\.(cloud|xyz)\/[A-Za-z0-9_-]{48}[A-Z]{3}$/$document
 /billing?_ts=$document
@@ -498,6 +499,7 @@
 /adultdvdparadisecompopinsecound.js$script
 /adunit/track-view|
 /adv-banner-$image
+/adv-scroll-sidebar.js$script
 /adv-scroll.$script
 /adv_vert.js$script
 /advanced-ads-$script,stylesheet,domain=~transinfo.pl|~wordpress.org
@@ -615,6 +617,7 @@
 /jquery.ad.js
 /jquery.adx.js?
 /jquery.dfp.min.js?
+/jquery.openxtag.js
 /jquery.overlayad.js
 /jquery.popunder.js
 /js/ad_common.js$script
@@ -1038,6 +1041,7 @@
 ###Ads_BA_SKY
 ###Ads_BA_VID
 ###AdvContainer
+###AdvertMpu
 ###BottomAdContainer
 ###BottomRightAdWrapper
 ###DFP_top_leaderboard
@@ -1224,6 +1228,7 @@
 ###ad_rightslot
 ###ad_sidebar
 ###ad_square
+###ad_superbanner
 ###ad_table
 ###ad_top
 ###ad_topslot
@@ -1493,6 +1498,7 @@
 ###div_advt_right
 ###dsk-banner-ad-a
 ###dsk-banner-ad-b
+###dsk-banner-ad-c
 ###dsk-box-ad-c
 ###dsk-box-ad-d
 ###ezmobfooter
@@ -1511,6 +1517,7 @@
 ###footerAd
 ###footerAds
 ###footer_ad
+###footer_adcode
 ###footer_ads
 ###footerad
 ###footerads
@@ -1539,6 +1546,7 @@
 ###headerAds
 ###header_ad
 ###header_ads
+###header_adv
 ###headerad
 ###headerads
 ###hearst-autos-ad-wrapper
@@ -1549,6 +1557,7 @@
 ###iframe-ad
 ###imgAddDirectLink
 ###index_ad
+###inline_ad
 ###insticator-container
 ###interstitialAd
 ###interstitial_ad
@@ -1700,6 +1709,7 @@
 ###topAd728x90
 ###topAdContainer
 ###topAdDiv
+###topAds
 ###topAdv
 ###top_AD
 ###top_ad
@@ -1820,6 +1830,7 @@
 ##.ad--stroeer
 ##.ad--top
 ##.ad--wallpaper
+##.ad--widget
 ##.ad-1
 ##.ad-160x600
 ##.ad-2
@@ -1828,6 +1839,7 @@
 ##.ad-300X250
 ##.ad-300x250
 ##.ad-300x600
+##.ad-336
 ##.ad-336x280
 ##.ad-4
 ##.ad-5
@@ -1862,6 +1874,7 @@
 ##.ad-bigbox
 ##.ad-billboard
 ##.ad-block
+##.ad-block-banner-container
 ##.ad-block-bottom
 ##.ad-block-container
 ##.ad-block-header
@@ -1914,6 +1927,7 @@
 ##.ad-detail
 ##.ad-disclaimer
 ##.ad-display
+##.ad-displayed
 ##.ad-dt
 ##.ad-element
 ##.ad-entity-container
@@ -2309,6 +2323,7 @@
 ##.ad_note
 ##.ad_notice
 ##.ad_one_one
+##.ad_outer
 ##.ad_pic
 ##.ad_placeholder
 ##.ad_position
@@ -2347,6 +2362,7 @@
 ##.ad_widget_title
 ##.ad_wrap
 ##.ad_wrapper
+##.ad_wrapper_top
 ##.ad_zone
 ##.adace-slideup-slot-wrap
 ##.adace-slot
@@ -2354,6 +2370,7 @@
 ##.adarea
 ##.adblk
 ##.adblock__banner
+##.adbot
 ##.adbottom
 ##.adbox-rectangle
 ##.adbox1
@@ -2393,6 +2410,7 @@
 ##.adisland
 ##.adk-slot
 ##.adlayer
+##.adline
 ##.adlink
 ##.adlist
 ##.admiddle
@@ -2466,6 +2484,7 @@
 ##.ads-movie
 ##.ads-one
 ##.ads-panel
+##.ads-pholder
 ##.ads-placeholder
 ##.ads-placeholder-wrapper
 ##.ads-placment
@@ -2476,6 +2495,7 @@
 ##.ads-side
 ##.ads-sidebar
 ##.ads-single
+##.ads-social-box
 ##.ads-sticky
 ##.ads-stripe
 ##.ads-system
@@ -2753,6 +2773,7 @@
 ##.advertisement__label
 ##.advertisement__wrapper
 ##.advertisement_box
+##.advertisement_text
 ##.advertiser
 ##.advertising-banner
 ##.advertising-block
@@ -2849,6 +2870,7 @@
 ##.banner-advertising
 ##.banner-adverts
 ##.banner-asd__title
+##.banner160x600
 ##.banner300
 ##.banner300x250
 ##.banner468
@@ -2870,6 +2892,7 @@
 ##.bg-ads-space
 ##.bg_ad
 ##.bgcolor_ad
+##.bidbarrel-ad
 ##.big-ad
 ##.bigAd
 ##.big_ad
@@ -3137,6 +3160,7 @@
 ##.google-dfp-ad-wrapper
 ##.google-right-ad
 ##.googleAd
+##.googleAdContainer
 ##.googleAdSense
 ##.googleAds
 ##.googleAdsContainer
@@ -3252,6 +3276,7 @@
 ##.iqadlinebottom
 ##.iqadmarker
 ##.is-ad
+##.is-preload-ad
 ##.is-sponsored
 ##.isAd
 ##.ise-ad
@@ -3382,6 +3407,7 @@
 ##.mpu_wrapper
 ##.mrec-ads
 ##.msg-ad
+##.msgad
 ##.mvp-ad-label
 ##.mvp-flex-ad
 ##.mvp-post-ad-wrap
@@ -3794,6 +3820,7 @@
 ##.wide-advert
 ##.wide_ad
 ##.wide_adBox_footer
+##.widget--ad
 ##.widget--local-ads
 ##.widget-ad
 ##.widget-ad-image
@@ -3824,6 +3851,7 @@
 ##.widget_wp-bannerize-widget
 ##.widget_wp_insert_ad_widget
 ##.wp-block-gamurs-ad
+##.wp_bannerize
 ##.wp_bannerize_banner_box
 ##.wp_bannerize_container
 ##.wpadcenter-ad-container
@@ -9456,7 +9484,6 @@ $ping,third-party
 ##.banner_ads
 ##.banner-ad-wrap
 ##.banner-ads
-##.bidbarrel-ad
 ##.block-advertisement-banner-block
 ##.bottomAds
 ##.br-ad-wrapper
@@ -9592,7 +9619,6 @@ $ping,third-party
 ##.variableHeightAd
 ##.vf-promo-wrapper
 ##.video-ad
-##.widget--ad
 ##.widget-videoad
 ##.wp-block-ad-slot
 ##.zmgad-right-rail
@@ -10881,7 +10907,6 @@ $ping,third-party
 ###ad_stck
 ###ad_sticky_wrap
 ###ad_strip
-###ad_superbanner
 ###ad_takeover
 ###ad_tall
 ###ad_tbl
@@ -12685,7 +12710,6 @@ $ping,third-party
 ###dragads
 ###ds-mpu
 ###dsStoryAd
-###dsk-banner-ad-c
 ###dsk-banner-ad-d
 ###dsk-box-ad-f
 ###dsk-box-ad-g
@@ -12813,7 +12837,6 @@ $ping,third-party
 ###footer_ad_frame
 ###footer_ad_holder
 ###footer_ad_modules
-###footer_adcode
 ###footer_add
 ###footer_addvertise
 ###footer_ads_holder
@@ -13027,7 +13050,6 @@ $ping,third-party
 ###header_adcode
 ###header_ads2
 ###header_adsense
-###header_adv
 ###header_advert
 ###header_advertisement
 ###header_advertisement_top
@@ -13174,7 +13196,6 @@ $ping,third-party
 ###inlineAdtop
 ###inlineAdvertisement
 ###inlineBottomAd
-###inline_ad
 ###inline_ad_section
 ###inlinead
 ###inlineads
@@ -14277,7 +14298,6 @@ $ping,third-party
 ###topAdSpace_div
 ###topAdWrapper
 ###topAdcontainer
-###topAds
 ###topAds1
 ###topAds2
 ###topAdsContainer
@@ -14938,7 +14958,6 @@ $ping,third-party
 ##.ad--top-slot
 ##.ad--topmobile2
 ##.ad--topmobile3
-##.ad--widget
 ##.ad-120-60
 ##.ad-120x60
 ##.ad-120x600
@@ -14965,7 +14984,6 @@ $ping,third-party
 ##.ad-300x
 ##.ad-300x100
 ##.ad-300x200
-##.ad-336
 ##.ad-336x280B
 ##.ad-350
 ##.ad-468
@@ -15069,7 +15087,6 @@ $ping,third-party
 ##.ad-block--300
 ##.ad-block--leader
 ##.ad-block-300
-##.ad-block-banner-container
 ##.ad-block-big
 ##.ad-block-btf
 ##.ad-block-detected
@@ -15196,7 +15213,6 @@ $ping,third-party
 ##.ad-dfp-column
 ##.ad-dfp-row
 ##.ad-disclaimer-text
-##.ad-displayed
 ##.ad-diver
 ##.ad-divider
 ##.ad-dx_wrp
@@ -16297,7 +16313,6 @@ $ping,third-party
 ##.ad_on_article
 ##.ad_one
 ##.ad_one_third
-##.ad_outer
 ##.ad_overlays
 ##.ad_p360
 ##.ad_pagebody
@@ -16429,7 +16444,6 @@ $ping,third-party
 ##.ad_wrapper_box
 ##.ad_wrapper_false
 ##.ad_wrapper_fixed
-##.ad_wrapper_top
 ##.ad_wrp
 ##.ad_xrail
 ##.ad_xrail_top
@@ -16505,7 +16519,6 @@ $ping,third-party
 ##.adborder
 ##.adborderbottom
 ##.adbordertop
-##.adbot
 ##.adbot_postbit
 ##.adbot_showthread
 ##.adbottomright
@@ -16663,7 +16676,6 @@ $ping,third-party
 ##.adleft1
 ##.adleftph
 ##.adlgbox
-##.adline
 ##.adlinkdiv
 ##.adlinks
 ##.adlinks-class
@@ -16833,7 +16845,6 @@ $ping,third-party
 ##.ads-note
 ##.ads-outer
 ##.ads-parent
-##.ads-pholder
 ##.ads-placeholder-inside
 ##.ads-post-closing
 ##.ads-post-footer
@@ -16865,7 +16876,6 @@ $ping,third-party
 ##.ads-small-horizontal
 ##.ads-small-squares
 ##.ads-smartphone
-##.ads-social-box
 ##.ads-sponsored-title
 ##.ads-sponsors
 ##.ads-square
@@ -17764,7 +17774,6 @@ $ping,third-party
 ##.advertisement_part
 ##.advertisement_post
 ##.advertisement_section_top
-##.advertisement_text
 ##.advertisement_top
 ##.advertisement_wrapper
 ##.advertisements-link
@@ -18166,7 +18175,6 @@ $ping,third-party
 ##.banner-top-ads
 ##.banner120x600
 ##.banner160
-##.banner160x600
 ##.banner200x200
 ##.banner336
 ##.banner336x280
@@ -19562,7 +19570,6 @@ $ping,third-party
 ##.google-sponsored-links
 ##.google468
 ##.googleAdBox
-##.googleAdContainer
 ##.googleAdSearch
 ##.googleAdWrapper
 ##.googleAdd
@@ -19943,7 +19950,6 @@ $ping,third-party
 ##.is-carbon-ad
 ##.is-desktop-ads
 ##.is-mpu
-##.is-preload-ad
 ##.is-script-ad
 ##.is-sticky-ad
 ##.isAdPage
@@ -20455,7 +20461,6 @@ $ping,third-party
 ##.mrec_advert
 ##.ms-cookie-ok
 ##.msg-adblock
-##.msgad
 ##.mt-ad-container
 ##.mt_ad
 ##.mt_ads
@@ -21945,7 +21950,6 @@ $ping,third-party
 ##.wp125ad
 ##.wp125ad_2
 ##.wp_adblock_detect
-##.wp_bannerize
 ##.wpadvert
 ##.wpcc-container
 ##.wpex-ads-widget
@@ -23553,7 +23557,6 @@ $removeparam=ysclid
 /adstream_sx.ads/*$popup
 /adtools.js$script
 /adutil.js$script
-/adv-scroll-sidebar.js$script
 /adv_out.js$third-party
 /advbanner.frontend.js$script
 /advrotator_banner_largo.htm$subdocument
@@ -24016,7 +24019,6 @@ $removeparam=ysclid
 /jquery.js?*&rx=*&foxtail=$image,1p
 /jquery.lazyload-ad-$script
 /jquery.lazyload-ad.js
-/jquery.openxtag.js
 /jqueryCookieGuard.
 /js-cookie-master/*$script
 /js/adbuddy.min.js$script
@@ -24031,6 +24033,10 @@ $removeparam=ysclid
 /js/chat/edu_chat.js
 /js/content-protector.min.js$script
 /js/fpu3/pu4.min.js
+/js/htmlk*.js$~third-party
+/js/htmlka.js
+/js/htmlkb.js
+/js/htmlkc.js
 /js/jquery.smartbanner.js
 /js/js4.js
 /js/lmdas.js
@@ -24497,6 +24503,7 @@ $removeparam=ysclid
 ://*.powvideo.net/*&zoneid=
 ://*.streamplay.to/*&zoneid=$popup
 ://*.yinghua*.*/bar$~third-party
+://*banzhu*/js/cdn.js$~third-party
 ://*mp4*/js/wcount.js$~third-party
 ://adn.*/zone/$popup
 ://adn.*/zone/$subdocument
@@ -40501,7 +40508,6 @@ $$amp-ad
 ###cookieConatiner
 ###cookieConf
 ###cookieConfigForm
-###cookieConfirm
 ###cookieConfirmDiv
 ###cookieConfirmation
 ###cookieConfirmationBar
@@ -41996,6 +42002,7 @@ $$amp-ad
 ###csm-optin-bar
 ###cssFConsentCookie
 ###css_cookies_note
+###ct-consent.ct-consent-bar
 ###ct-uber-gdpr-cookie-popup
 ###ct-ultimate-gdpr-cookie-open-shaddow
 ###ct-ultimate-gdpr-cookie-popup
@@ -45421,6 +45428,7 @@ $$amp-ad
 ##.PopupGDPR
 ##.PositionBottom.as-oil
 ##.PrivacyCookieAccepted
+##.PrivacyDialog-container
 ##.PrivacyModeHeader
 ##.PrivacyNote
 ##.PrivacyPolicyNotice
@@ -46376,9 +46384,7 @@ $$amp-ad
 ##.cc-banner-granular
 ##.cc-banner-popup-wrap
 ##.cc-banner-wrapper
-##.cc-bottom-left.cc-window
 ##.cc-bottom.cc-banner
-##.cc-bottom.cc-floating.cc-window
 ##.cc-cookie-banner
 ##.cc-cookie-consent-banner-modal
 ##.cc-cookiecontainer
@@ -47157,6 +47163,7 @@ $$amp-ad
 ##.cookie-message-bar
 ##.cookie-message-blocking-background
 ##.cookie-message-box
+##.cookie-message-overlay-1
 ##.cookie-message-wrapper
 ##.cookie-message__wrap
 ##.cookie-message__wrapper
@@ -47794,7 +47801,6 @@ $$amp-ad
 ##.cookie_information--bar
 ##.cookie_information--overlay
 ##.cookie_information--top
-##.cookie_inner
 ##.cookie_law_container
 ##.cookie_law_dialog
 ##.cookie_law_reveal_dialog
@@ -50593,8 +50599,6 @@ $$amp-ad
 ##.nu-cookies-alert-container
 ##.nux-signup-cookie-notice-content
 ##.nv-cookie-notification
-##.nvcookies
-##.nvcookies-outer
 ##.nvt_cookienotice
 ##.nvx-cookies
 ##.nvx-cookies__wrapper
@@ -51500,7 +51504,6 @@ $$amp-ad
 ##.sticky-cookies-popup
 ##.sticky-footer-cookie-info
 ##.stickyCookiePolicy
-##.sticky_cookie
 ##.sticky_cookie_warning
 ##.stickycookie
 ##.stickyfooter-cookie-alert-box-wrapper
