@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-01 01:15:20 UTC
+! Updated: 2025-05-02 02:42:15 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -438,6 +438,7 @@
 /admanager/*$~object,~xmlhttprequest,domain=~admanager.line.biz|~blog.google|~sevio.com
 /admitad.js$script
 /adocean.js$script
+/adpartner.min.js$script
 /adplayer.$script,domain=~adplayer.pro
 /adrecover.js$script
 /adright.$~xmlhttprequest,domain=~aaahaltontaxi.ca|~adright.com
@@ -490,6 +491,7 @@
 /adsforwp-front.min.css$stylesheet
 /adsimages/*$image,domain=~bdjobstoday.com
 /adsimg/*$image
+/adsmanager.css$stylesheet
 /adsplugin/js/*$script
 /adsscript.$script
 /adsTracking.$script
@@ -518,6 +520,7 @@
 /ajax/embed-4/banners|$xmlhttprequest
 /ajs.php?$script
 /ajs?zoneid=
+/amazon-ad-link-$stylesheet
 /amazonjs.css?
 /amp-ad-$script
 /amp-auto-ads-$script
@@ -579,6 +582,7 @@
 /dmcads_$script
 /doubleclick.min$script
 /ec5bcb7487ff.js$script
+/exitpop.js$script
 /exitpopup.js$script
 /exoads/*$script
 /exonb/*$script
@@ -612,6 +616,7 @@
 /in/?tour=$third-party
 /include/ad/*$script
 /includes/ads/*$script
+/index_ad/*$image
 /index_ads.js$script
 /infinity.js.aspx?$script
 /jquery.ad.js
@@ -777,6 +782,7 @@
 /wp-bannerize/*$script,stylesheet
 /wp-content/plugins/amazon-auto-links/*$script,stylesheet
 /wp-content/plugins/m-wp-popup/*$script
+/wp-content/plugins/the-moneytizer/*$script
 /wp-content/plugins/wp-ad-guru/*$script,stylesheet
 /wp-content/uploads/useful_banner_manager_banners/*
 /wpbanners_show.php$script
@@ -827,6 +833,7 @@
 /q/tdl/95/dnt/*$third-party
 /sc4fr/rwff/f9ef/*$third-party
 /tabu/display.js$script
+://rs-stripe.wsj.com/stripe/image?
 /push-skin/skin.min.js$script
 /search/tsc.php?ses=
 /full-page-script.js$script
@@ -1011,6 +1018,7 @@
 /api/users?token=$popup
 /gtm.js?$popup
 /jump/next.php?$popup
+/redirect/?spot_id=$popup
 /redirect?tid=$popup
 /smartpop/*$popup
 ###AC_ad
@@ -1099,6 +1107,7 @@
 ###ad-index
 ###ad-lead
 ###ad-leaderboard
+###ad-leaderboard-bottom
 ###ad-leaderboard-top
 ###ad-lrec
 ###ad-main
@@ -1140,6 +1149,7 @@
 ###adBottom
 ###adBox
 ###adCarousel
+###adChannel
 ###adColumn
 ###adColumn3
 ###adContainer
@@ -1338,6 +1348,7 @@
 ###adsbottom
 ###adsbox
 ###adsense1
+###adsenseContainer
 ###adsense_r_side_sticky_container
 ###adskeeper
 ###adslot-download-abovefiles
@@ -1357,6 +1368,7 @@
 ###adslot_top
 ###adspace
 ###adspacer
+###adsright
 ###adtext
 ###adtop
 ###adunit
@@ -1400,6 +1412,7 @@
 ###advertisement-text
 ###advertisement_banner
 ###advertorial
+###adverts
 ###adverttop
 ###advtop
 ###adwallpaper
@@ -1962,6 +1975,7 @@
 ##.ad-inline
 ##.ad-inner
 ##.ad-inner-container
+##.ad-inside
 ##.ad-item
 ##.ad-label
 ##.ad-lable
@@ -1975,6 +1989,7 @@
 ##.ad-leaderboard
 ##.ad-leaderboard-base
 ##.ad-leaderboard-container
+##.ad-leaderboard-flex
 ##.ad-leaderboard-footer
 ##.ad-leaderboard-top
 ##.ad-line
@@ -2407,6 +2422,7 @@
 ##.adholder2
 ##.adinfo
 ##.adinner
+##.adinside
 ##.adisland
 ##.adk-slot
 ##.adlayer
@@ -2558,6 +2574,7 @@
 ##.ads_css
 ##.ads_header
 ##.ads_inview
+##.ads_item
 ##.ads_left
 ##.ads_middle
 ##.ads_mobile_vert
@@ -2602,6 +2619,7 @@
 ##.adsense-box
 ##.adsense-container
 ##.adsense-content
+##.adsense-iframe-container
 ##.adsense-left
 ##.adsense-right
 ##.adsense-unit
@@ -2610,6 +2628,7 @@
 ##.adsense_wrapper
 ##.adserving
 ##.adsghori
+##.adsinfo
 ##.adsitem
 ##.adsize728
 ##.adsleft
@@ -2620,6 +2639,7 @@
 ##.adslot_2
 ##.adslot_3
 ##.adslot__ad-container
+##.adslot__ad-wrapper
 ##.adsmessage
 ##.adsmobile
 ##.adsninja-ad-zone
@@ -2699,6 +2719,7 @@
 ##.advert--placeholder
 ##.advert--square
 ##.advert-banner
+##.advert-banner-container
 ##.advert-block
 ##.advert-bottom
 ##.advert-box
@@ -2710,6 +2731,7 @@
 ##.advert-info
 ##.advert-inner
 ##.advert-label
+##.advert-note
 ##.advert-overlay
 ##.advert-panel
 ##.advert-placeholder
@@ -2738,6 +2760,7 @@
 ##.advert_list
 ##.advert_pos
 ##.advert_text
+##.advert_title
 ##.advert_top
 ##.adverticum_container
 ##.adverticum_content
@@ -2765,6 +2788,7 @@
 ##.advertisement-title
 ##.advertisement-top
 ##.advertisement-wrapper
+##.advertisement1
 ##.advertisementBox
 ##.advertisementContainer
 ##.advertisementLabel
@@ -2814,13 +2838,16 @@
 ##.alice-adslot
 ##.alt_ad_block
 ##.am-adslot
+##.am-bazaar-ad
 ##.anchor-ad
 ##.anchor-ad-wrapper
+##.anchored-ad-widget
 ##.anzeige_banner
 ##.ape-ads-container
 ##.app-ad
 ##.arc-ad-wrapper
 ##.arcAdsBox
+##.archive-ad
 ##.area_ad
 ##.area_ad03
 ##.area_ad09
@@ -2835,6 +2862,7 @@
 ##.article-top-ad
 ##.articleADbox
 ##.articleAdvert
+##.article__ad-holder
 ##.article__adhesion
 ##.article_ad
 ##.article_ad_top
@@ -3145,6 +3173,7 @@
 ##.gallery-ad-lazyload-placeholder
 ##.gallery_ad
 ##.gam-ad
+##.game-ads
 ##.gnm-ad-unit
 ##.gnm-ad-unit-container
 ##.google-2ad-m
@@ -3451,6 +3480,7 @@
 ##.p_adv
 ##.package_adBox
 ##.page-ad
+##.page-bottom-fixed-ads
 ##.page-header-ad
 ##.page-top-ads
 ##.pageAdSkin
@@ -3631,6 +3661,7 @@
 ##.skyscraper-ad
 ##.skyscraper-ad-container
 ##.skyscraper.ad
+##.skyscraper_ad
 ##.slate-ad
 ##.slide-ad
 ##.slider-ads
@@ -3655,6 +3686,7 @@
 ##.sponsorText
 ##.sponsorTitle
 ##.sponsor_logo
+##.sponsorads
 ##.sponsored-ad
 ##.sponsored-article
 ##.sponsored-container
@@ -3820,6 +3852,7 @@
 ##.wide-advert
 ##.wide_ad
 ##.wide_adBox_footer
+##.widead
 ##.widget--ad
 ##.widget--local-ads
 ##.widget-ad
@@ -3985,6 +4018,7 @@
 ##a[href^="https://s.zlink3.com/"]
 ##a[href^="https://s.zlinkd.com/"]
 ##a[href^="https://s.zlinkn.com/"]
+##a[href^="https://service.bv-aff-trx.com/"]
 ##a[href^="https://t.acam.link/"]
 ##a[href^="https://t.ajrkm1.com/"]
 ##a[href^="https://t.ajrkm3.com/"]
@@ -4002,6 +4036,7 @@
 ##a[href^="https://www.financeads.net/tc.php?"]
 ##a[href^="https://www.infowarsstore.com/"] > img
 ##a[href^="https://www.nutaku.net/signup/landing/"]
+##a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="]
 ##a[href^="https://www.toprevenuegate.com/"]
 ##ad-slot
 ##app-ad
@@ -4129,6 +4164,7 @@
 ##.index-module_sd_background__Um4w
 ###ultimedia_wrapper
 ##.container-content__container-relatedlinks
+###pubexchange_below_content
 ###outbrain
 ###outbrain-wrapper
 ###outbrain_widget_0
@@ -6122,6 +6158,7 @@
 /segmentify.js
 /segmentio.js
 /sendLogs?cid
+/sendy/t/*$image
 /sensor.modern.ncl.min.js
 /sensor/statistic?
 /sensorsdata-
@@ -9086,7 +9123,6 @@ $ping,third-party
 ##a[href*=".labsda.com"]
 ##a[href*=".nhjhu25hd.com"]
 ##a[href*=".ww1425pw.vip"]
-##a[href*=".zhuijuwa.app"]
 ##a[href*=".zxzjys.com/"]
 ##a[href*="/75333cc.com:"]
 ##a[href*="/bjty96.vip"]
@@ -9097,7 +9133,6 @@ $ping,third-party
 ##a[href*=".bsy3.xyz"]
 ##a[href*=".downok.com"]
 ##a[href*=".imiwang.com/"]
-##a[href*=".rookiego.com"]
 ##a[href*=".sudun.com/"]
 ##a[href*=".uu2123sd.vip"]
 ##a[href*="/2e9c9aa9.com/"]
@@ -9459,7 +9494,6 @@ $ping,third-party
 ##.ad_break_container
 ##.adhesiveAdWrapper
 ##.ad--mpu
-##.ad-leaderboard-flex
 ##.ad-parent-billboard
 ##.ad-parent-halfpage
 ##.ads-global-header
@@ -9477,7 +9511,6 @@ $ping,third-party
 ##.advertise_text
 ##.advertising-top-desktop
 ##.advertising-side-hp
-##.anchored-ad-widget
 ##.apexAd
 ##.arcad-block-container
 ##.article-mid-ad
@@ -10384,7 +10417,6 @@ $ping,third-party
 ###ad-leader-container
 ###ad-leader-wrapper
 ###ad-leaderboard-atf
-###ad-leaderboard-bottom
 ###ad-leaderboard-container
 ###ad-leaderboard-footer
 ###ad-leaderboard-header
@@ -10565,7 +10597,6 @@ $ping,third-party
 ###adBrandDev
 ###adBrandingStation
 ###adBreak
-###adChannel
 ###adChoiceFooter
 ###adChoices
 ###adChoicesIcon
@@ -11266,7 +11297,6 @@ $ping,third-party
 ###adsense6
 ###adsense728
 ###adsenseArea
-###adsenseContainer
 ###adsenseHeader
 ###adsenseLeft
 ###adsenseWrap
@@ -11342,7 +11372,6 @@ $ping,third-party
 ###adspot-top
 ###adsquare
 ###adsquare2
-###adsright
 ###adsside
 ###adsspace
 ###adstext2
@@ -11551,7 +11580,6 @@ $ping,third-party
 ###advertorial-wrap
 ###advertorial1
 ###advertorial_links
-###adverts
 ###adverts--footer
 ###adverts-top-container
 ###adverts-top-left
@@ -13720,7 +13748,6 @@ $ping,third-party
 ###promo_ads
 ###pronamic_cookie_holder
 ###pub468x60
-###pubexchange_below_content
 ###publicidadeLREC
 ###pushAd
 ###pushdownAd
@@ -15306,7 +15333,6 @@ $ping,third-party
 ##.ad-innr
 ##.ad-insert
 ##.ad-inserter-widget
-##.ad-inside
 ##.ad-integrated-display
 ##.ad-internal
 ##.ad-interruptor
@@ -16655,7 +16681,6 @@ $ping,third-party
 ##.adinpost
 ##.adinsert
 ##.adinsert160
-##.adinside
 ##.adintext
 ##.adintro
 ##.adisclaimer
@@ -17037,7 +17062,6 @@ $ping,third-party
 ##.ads_holder
 ##.ads_home
 ##.ads_horizontal
-##.ads_item
 ##.ads_label
 ##.ads_lb
 ##.ads_leader
@@ -17141,7 +17165,6 @@ $ping,third-party
 ##.adsense-googleAds
 ##.adsense-header
 ##.adsense-heading
-##.adsense-iframe-container
 ##.adsense-inline
 ##.adsense-links
 ##.adsense-loading
@@ -17224,7 +17247,6 @@ $ping,third-party
 ##.adsidebox
 ##.adsider
 ##.adsincs2
-##.adsinfo
 ##.adsingle
 ##.adsingle-r
 ##.adsingleph
@@ -17261,7 +17283,6 @@ $ping,third-party
 ##.adslot_3m
 ##.adslot_4
 ##.adslot_728
-##.adslot__ad-wrapper
 ##.adslot_blurred
 ##.adslot_bot_300x250
 ##.adslot_collapse
@@ -17576,7 +17597,6 @@ $ping,third-party
 ##.advert-article-bottom
 ##.advert-autosize
 ##.advert-background
-##.advert-banner-container
 ##.advert-banner-holder
 ##.advert-bannerad
 ##.advert-bar
@@ -17603,7 +17623,6 @@ $ping,third-party
 ##.advert-loader
 ##.advert-mini
 ##.advert-mrec
-##.advert-note
 ##.advert-pane
 ##.advert-placeholder-wrapper
 ##.advert-preview-wrapper
@@ -17686,7 +17705,6 @@ $ping,third-party
 ##.advert_note
 ##.advert_small
 ##.advert_span
-##.advert_title
 ##.advert_txt
 ##.advert_wrapper
 ##.advertbar
@@ -17746,7 +17764,6 @@ $ping,third-party
 ##.advertisement.leaderboard
 ##.advertisement.rectangle
 ##.advertisement.under-article
-##.advertisement1
 ##.advertisement300x250
 ##.advertisement468
 ##.advertisementBackground
@@ -18000,7 +18017,6 @@ $ping,third-party
 ##.alt_ad
 ##.altad
 ##.am-adContainer
-##.am-bazaar-ad
 ##.amAdvert
 ##.am_ads
 ##.amazonads
@@ -18020,7 +18036,6 @@ $ping,third-party
 ##.app_nexus_banners_common
 ##.ar-header-m-ad
 ##.arcAdsContainer
-##.archive-ad
 ##.archive-ads
 ##.archive-radio-ad-container
 ##.arcontactus-message-button
@@ -18076,7 +18091,6 @@ $ping,third-party
 ##.articleHeaderAd
 ##.articleTop-ads
 ##.articleTopAd
-##.article__ad-holder
 ##.article__adblock
 ##.article__adv
 ##.article_ad_1
@@ -19504,7 +19518,6 @@ $ping,third-party
 ##.galleryads
 ##.gam-ad-hz-bg
 ##.gam_ad_slot
-##.game-ads
 ##.game-category-ads
 ##.gameAd
 ##.gameBottomAd
@@ -20624,7 +20637,6 @@ $ping,third-party
 ##.page-ads
 ##.page-advert
 ##.page-advertisement
-##.page-bottom-fixed-ads
 ##.page-box-ad
 ##.page-break-ad
 ##.page-footer-ad
@@ -21202,7 +21214,6 @@ $ping,third-party
 ##.skyad
 ##.skyscraper-ad-1
 ##.skyscraperAd
-##.skyscraper_ad
 ##.skyscrapper-ads-container
 ##.slideAd
 ##.slide_ad
@@ -21301,7 +21312,6 @@ $ping,third-party
 ##.sponsor_units
 ##.sponsorad
 ##.sponsoradlabel
-##.sponsorads
 ##.sponsoradtitle
 ##.sponsored-ad-container
 ##.sponsored-ad-label
@@ -21859,7 +21869,6 @@ $ping,third-party
 ##.wide_google_ads
 ##.wide_grey_ad_box
 ##.wide_sponsors
-##.widead
 ##.wideadbox
 ##.widget--ajdg_bnnrwidgets
 ##.widget-300x250ad
@@ -22520,7 +22529,6 @@ $ping,third-party
 ##a[href^="https://s.ma3ion.com/"]
 ##a[href^="https://s.optzsrv.com/"]
 ##a[href^="https://serve.awmdelivery.com/"]
-##a[href^="https://service.bv-aff-trx.com/"]
 ##a[href^="https://sexynearme.com/"]
 ##a[href^="https://slkmis.com/"]
 ##a[href^="https://snowdayonline.xyz/"]
@@ -22573,7 +22581,6 @@ $ping,third-party
 ##a[href^="https://www.mrskin.com/tour"]
 ##a[href^="https://www.onlineusershielder.com/"]
 ##a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"]
-##a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="]
 ##a[href^="https://www8.smartadserver.com/"]
 ##a[href^="https://x.com/intent/follow?"]
 ##a[href^="https://xbet-4.com/"]
@@ -23522,7 +23529,6 @@ $removeparam=ysclid
 /adlayer.php$script
 /admgr.js$script
 /admiral_worker_caller.js
-/adpartner.min.js$script
 /adrecover-new.js$script
 /ads-250.$image
 /ads.cfm?$subdocument
@@ -23551,7 +23557,6 @@ $removeparam=ysclid
 /adserver.$popup
 /adsimage/*$image,domain=~kamaz-service.kz|~theatreticketsdirect.co.uk
 /adslide.js$script
-/adsmanager.css$stylesheet
 /adsmanager.nsf/*$image
 /adsmatcher-anti-adblock/*
 /adstream_sx.ads/*$popup
@@ -23578,7 +23583,6 @@ $removeparam=ysclid
 /alertcookie.
 /alertcookies.
 /amCookieApproval.
-/amazon-ad-link-$stylesheet
 /amazon-associates-link-$~stylesheet
 /amp-user-notification-
 /amp4ads-host-v0.js$script
@@ -23923,7 +23927,6 @@ $removeparam=ysclid
 /eucookiesk.
 /eucookieslaw/*$script
 /exads-adblock-3.10
-/exitpop.js$script
 /exitsplash.php$script
 /exoclick.$~script,~xmlhttprequest,domain=~exoclick.bamboohr.co.uk|~exoclick.kayako.com
 /exort7.$script,~third-party
@@ -23995,7 +23998,6 @@ $removeparam=ysclid
 /index-ad.js$script
 /index.html?channelCode=
 /index.php?op=ad_click
-/index_ad/*$image
 /inhouse_ads/*$image
 /inlineads.aspx$subdocument
 /insertads.js$script
@@ -24191,7 +24193,6 @@ $removeparam=ysclid
 /rdrr/renderer.js$third-party
 /redbaiduct.com?s=
 /redirect-ads.php
-/redirect/?spot_id=$popup
 /reklama2.jpg$image
 /reklama2.png$image,domain=~aerokuz.ru
 /reklama3.jpg$image
@@ -24447,7 +24448,6 @@ $removeparam=ysclid
 /wp-content/plugins/sorry-adblocker/js/sab.js$script
 /wp-content/plugins/swiftninjapro-inspect-element-console-blocker/assets/*
 /wp-content/plugins/t42-content-protector/js/protector.min.js$script
-/wp-content/plugins/the-moneytizer/*$script
 /wp-content/plugins/thrive-leads/*
 /wp-content/plugins/unblock-adsense/*/adunblock
 /wp-content/plugins/ungrabber/js/*$script
@@ -24529,7 +24529,6 @@ $removeparam=ysclid
 ://pixel.patch.com/
 ://ply.*/?v=$image,3p
 ://rd.remove.bg/CI0/$image
-://rs-stripe.wsj.com/stripe/image?
 ://s3.amazonaws.com/*?trkch=*&visitor_id=*-aff0-*&client=*&u=$redirect=nooptext
 ://sat.*.net/*/script.min.js?sub_1=
 ://snl.patch.com/imp?$image
@@ -24892,23 +24891,6 @@ $image,3p,denyallow=cdn77.org|fpbns.net|globalcdn.co|others-cdn.com|rncdn7.com|s
 ://a.*/warpim?id=$script,3p
 /?rb=*&zoneid=$xhr,popup,3p
 /wp-content/plugins/script-manager/assets/js/script-manager.js?
-/^https?:\/\/[a-z]{7,}\.buzz\/[+\/0-9a-zA-Z]{140,400}$/$image,3p,match-case
-/^https?:\/\/[a-z]{7,}\.buzz\/[+\/0-9a-zA-Z]{400,1000}$/$frame,3p,match-case
-/^https?:\/\/[a-z]{7,}\.co\/(?=[\/a-zA-Z]*[+0-9])(?=[+\/0-9a-z]*[A-Z])[+\/0-9a-zA-Z]{140,400}$/$image,3p,match-case,from=~edu|~gov,to=co
-/^https?:\/\/[a-z]{7,}\.co\/(?=[\/a-zA-Z]*[+0-9])(?=[+\/0-9a-z]*[A-Z])[+\/0-9a-zA-Z]{400,1000}$/$frame,3p,match-case,from=~edu|~gov,to=co,header=x-amz-cf-pop
-/^https?:\/\/[a-z]{7,}\.com\/(?=[\/a-zA-Z]*[+0-9])(?=[+\/0-9a-z]*[A-Z])[+\/0-9a-zA-Z]{140,400}$/$image,3p,match-case,from=~edu|~gov,to=com
-/^https?:\/\/[a-z]{7,}\.com\/(?=[\/a-zA-Z]*[+0-9])(?=[+\/0-9a-z]*[A-Z])[+\/0-9a-zA-Z]{400,1000}$/$frame,3p,match-case,from=~edu|~gov,to=com,header=x-amz-cf-pop
-/^https?:\/\/[a-z]{7,}\.info\/[+\/0-9a-zA-Z]{140,400}$/$image,3p,match-case
-/^https?:\/\/[a-z]{7,}\.info\/[+\/0-9a-zA-Z]{400,1000}$/$frame,3p,match-case
-/^https?:\/\/[a-z]{7,}\.lol\/[+\/0-9a-zA-Z]{140,400}$/$image,3p,match-case
-/^https?:\/\/[a-z]{7,}\.lol\/[+\/0-9a-zA-Z]{400,1000}$/$frame,3p,match-case
-/^https?:\/\/[a-z]{7,}\.one\/[+\/0-9a-zA-Z]{140,400}$/$image,3p,match-case
-/^https?:\/\/[a-z]{7,}\.one\/[+\/0-9a-zA-Z]{400,1000}$/$frame,3p,match-case
-/^https?:\/\/[a-z]{7,}\.org\/(?=[\/a-zA-Z]*[+0-9])(?=[+\/0-9a-z]*[A-Z])[+\/0-9a-zA-Z]{140,400}$/$image,3p,match-case,domain=~edu|~gov
-/^https?:\/\/[a-z]{7,}\.org\/(?=[\/a-zA-Z]*[+0-9])(?=[+\/0-9a-z]*[A-Z])[+\/0-9a-zA-Z]{400,1000}$/$frame,3p,match-case,domain=~edu|~gov
-/^https?:\/\/[a-z]{7,}\.xyz\/[+\/0-9a-zA-Z]{140,400}$/$image,3p,match-case
-/^https?:\/\/[a-z]{7,}\.xyz\/[+\/0-9a-zA-Z]{400,1000}$/$frame,3p,match-case
-##body > div[style$="z-index: 2147483647; top: 0px; left: 0px; position: fixed; display: block;"]
 ##.adde_modal_detector
 ##.adde_modal-overlay
 ###video-id_fluid_html_on_pause
@@ -24988,10 +24970,6 @@ $image,3p,denyallow=cdn77.org|fpbns.net|globalcdn.co|others-cdn.com|rncdn7.com|s
 ###vidcloud-player > #overlay-container
 /embed-1/ajax/e-1/banners|$xhr,1p,strict1p
 /theme/002/js/application.js?2.0|$script,1p,replace=/video\.maxPop/0/
-/^https?:\/\/[-a-z]{5,13}\.[a-z]{3,}\/[0-9a-z]{1,20}\?(?=[A-Za-z]{0,21}\d?)(?=[0-9a-z]{0,21}[A-Z])[0-9A-Za-z]{15,23}=(?=[%a-z]*[0-9A-Z])[%0-9A-Za-z]{35,2000}$/$xhr,3p,match-case,method=get,header=via:/^2\.\d (apache|nginx)$/,to=~com|~dev|~net|~org|~edu|~gov|~tv
-/^https?:\/\/[-a-z]{5,13}\.[a-z]{3,}\/[0-9a-z]{1,20}\?(?=[A-Za-z]{0,21}\d?)(?=[0-9a-z]{0,21}[A-Z])[0-9A-Za-z]{15,23}=(?=[%a-z]*[0-9A-Z])[%0-9A-Za-z]{35,2000}$/$xhr,3p,match-case,method=get,header=Via:/^2\.\d (apache|nginx)$/,to=~com|~dev|~net|~org|~edu|~gov|~tv
-###dontfoid
-/^https?:\/\/[-a-z]{5,13}\.[a-z]{3,6}\/[0-9a-h]{1,17}\?[0-9a-zA-Z]{1,22}=[%0-9a-zA-Z]{200,1300}/$xhr,3p,match-case,method=get
 ###player div[style$="cursor: pointer; position: absolute; width: 100%; height: 100%; padding: 1rem; z-index: 2147483647;"]
 $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin allow-scripts,to=~buymeacoffee.com|~cbox.ws|~chatango.com|~cloudflare.com|~d21.team|~dailymotion.com|~discord.com|~disqus.com|~dood.*|~edgecastcdn.net|~facebook.com|~filemoon.*|~frembed.*|~google.*|~hcaptcha.com|~ko-fi.com|~mixdrop.*|~moviesapi.*|~nontongo.win|~ok.ru|~primewire.*|~recaptcha.net|~sport-tv-guide.live|~strcdn.org|~streambucket.net|~streamingnow.*|~twitter.com|~vidbinge.*|~vidlink.*|~vidmoly.*|~vidsrc.nl|~vixcloud.co|~youtu.be|~youtube.com|~youtube-nocookie.com,from=1jour1film.*|456movie.com|animefever.cc|animeunity.to|anitaku.bz|antennasports.ru|bingemaster.netlify.app|bluphim.*|broflix.cc|cinemadeck.com|dailypudding.com|detodopeliculas.nu|dlhd.so|euro2024direct.ru|flickystream.com|freek.to|freeshot.live|hydrahd.cc|javx.*|kaas.ro|kickassanime.*|kipflix.vercel.app|kissanime.*|lk21official.pics|moflix-stream.day|movie3k.net|netplayz.ru|novafork.com|osteusfilmestuga.online|phimmoifhd.com|popcornmovies.to|primeflix-web.vercel.app|putlockers.*|rivestream.*|roselife.site|roshy.tv|seriescultes.store|smashystream.com|soccerinhd.com|uira.live|visualnewshub.com|xsportbox.com
 $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin allow-scripts,to=~buymeacoffee.com|~cbox.ws|~chatango.com|~cloudflare.com|~d21.team|~dailymotion.com|~discord.com|~disqus.com|~dood.*|~edgecastcdn.net|~embed.su|~emturbovid.com|~facebook.com|~filemoon.*|~frembed.*|~google.*|~hcaptcha.com|~ko-fi.com|~mixdrop.*|~moviesapi.*|~nontongo.win|~ok.ru|~ply4.com|~primewire.*|~recaptcha.net|~sport-tv-guide.live|~strcdn.org|~streambucket.net|~streamingnow.*|~topembed.pw|~twitter.com|~vidbinge.*|~vidlink.*|~vidmoly.*|~vidsrc.*|~vixcloud.co|~youtu.be|~youtube.com|~youtube-nocookie.com,from=456movie.com|animefever.cc|animeunity.to|bluphim.*|broflix.cc|cinemadeck.com|dailypudding.com|detodopeliculas.nu|flickystream.com|freeshot.live|hydrahd.cc|kaas.ro|kickassanime.*|kipflix.vercel.app|kissanime.*|netplayz.ru|novafork.com|phimmoifhd.com|primeflix-web.vercel.app|seriescultes.store|soccerinhd.com|visualnewshub.com|xsportbox.com
@@ -25340,7 +25318,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https?:\/\/[-a-z]{4,}\.com[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{4,}\.gov[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{4,}\.org[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
-/^https:\/\/[a-z]{8}\.[a-z]{2,8}\/[!+=][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|cam|click|coupons|digital|diy|food|forum|gay|guru|life|live|living|my|property|pw|rocks|run|shop|tattoo|tech|today|uno|work,match-case
+/^https:\/\/[a-z]{8}\.[a-z]{2,8}\/[!+=][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|cam|click|coupons|digital|diy|food|forum|gay|guru|life|live|living|my|property|pw|rocks|run|sbs|shop|store|tattoo|tech|today|uno|work,match-case
 /door/?ad_campaign_id=$doc
 /edgemesh.*.js$script,domain=~edgemesh.com|~edgeno.de
 /adsensebase.js$script
@@ -55600,6 +55578,7 @@ $doc,removeparam=ebisOther5
 ##a[href*=".qutaoka.com/"]
 ##a[href*=".red90121.com/"]
 ##a[href*=".revimedia.com/"]
+##a[href*=".rookiego.com"]
 ##a[href*=".rrrmrm.com/"]
 ##a[href*=".sandebg.com/"]
 ##a[href*=".sjzbqnxx.com/"]
