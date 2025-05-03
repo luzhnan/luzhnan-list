@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-02 02:42:15 UTC
+! Updated: 2025-05-03 01:59:15 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -468,6 +468,7 @@
 /ads/show.$script
 /ads/spacer.$image
 /Ads/sponsor.$stylesheet
+/ads/ta_wppas/*$third-party
 /ads/targeted|
 /ads/video/*$script
 /ads1.$~xmlhttprequest,domain=~ads-i.org
@@ -554,6 +555,7 @@
 /banners/ads.$~xmlhttprequest
 /banners/adv/*$~xmlhttprequest
 /bottomad.png$image
+/bsa-plugin-pro-scripteo/frontend/js/script.js$script
 /btag.min.js$third-party
 /buysellads.js$script
 /calcalist_gpt_ads.js$script
@@ -620,6 +622,7 @@
 /index_ads.js$script
 /infinity.js.aspx?$script
 /jquery.ad.js
+/jquery.adi.js
 /jquery.adx.js?
 /jquery.dfp.min.js?
 /jquery.openxtag.js
@@ -630,6 +633,7 @@
 /js/dfp.js$script
 /js/flyad.js
 /jsAds-1.4.min.js$script
+/jspopunder.js$script
 /jspopunder.min.js$script
 /lazyad-loader.min.js$script
 /leftad.png$image
@@ -718,9 +722,9 @@
 /ren.gif?$image
 /resources/ads/*$~xmlhttprequest
 /responsive_ads.js$script
-/revopush_v2.js
 /right_ads.$~xmlhttprequest
 /rightad.js$script
+/sbar.json?key=
 /sc-tagmanager/*$script
 /script/aclib.js$third-party
 /script/atg.js$third-party
@@ -812,9 +816,6 @@
 /render-ad.php?ad_id=
 /render-sidebar-ad.php?ad_id=
 /ad-shield/e/*$script,third-party
-://www.*.xyz/content/*/-1/$script,subdocument,third-party,xmlhttprequest
-://www.*.xyz/content/*/a/$subdocument,third-party
-://www.*.xyz/content/*?h=$script,third-party
 /plugins/ad-ace/assets/js/coupons.js$script
 /plugins/ad-ace/assets/js/slot-slideup.js$script
 /plugins/ad-ace/includes/shoppable-images/*$script
@@ -1145,6 +1146,7 @@
 ###ad160
 ###ad300
 ###ad6
+###ad600
 ###ad728
 ###adBottom
 ###adBox
@@ -1199,6 +1201,7 @@
 ###ad_center
 ###ad_close
 ###ad_container
+###ad_content
 ###ad_contentslot_1
 ###ad_contentslot_2
 ###ad_dfp_rec1
@@ -1319,6 +1322,7 @@
 ###ads-space
 ###ads-superBanner
 ###ads-top
+###ads-wrapper
 ###ads1
 ###ads125
 ###ads2
@@ -1742,6 +1746,7 @@
 ###topadzone
 ###topbannerad
 ###video-ad
+###video-adv
 ###video-advert
 ###video-sponsor-links
 ###videoAd
@@ -1976,6 +1981,7 @@
 ##.ad-inner
 ##.ad-inner-container
 ##.ad-inside
+##.ad-interstitial
 ##.ad-item
 ##.ad-label
 ##.ad-lable
@@ -2163,6 +2169,7 @@
 ##.ad120x600
 ##.ad160x600
 ##.ad160x600GrayBorder
+##.ad18
 ##.ad180
 ##.ad234
 ##.ad250
@@ -2703,6 +2710,7 @@
 ##.advText
 ##.advTop
 ##.adv_300x250
+##.adv__wrapper
 ##.adv_banner
 ##.adv_box
 ##.adv_img
@@ -2995,6 +3003,7 @@
 ##.c-ads
 ##.c-adv3__inner
 ##.c-advert
+##.c-advert-app
 ##.c-advertisement
 ##.c-advertising
 ##.c-gallery-vertical__advert
@@ -3218,8 +3227,10 @@
 ##.headAd
 ##.head_ad
 ##.header-ad
+##.header-ad-area
 ##.header-ad-container
 ##.header-ad-desktop
+##.header-ad-holder
 ##.header-ad-wrap
 ##.header-ad-wrapper
 ##.header-ads
@@ -3362,6 +3373,7 @@
 ##.list-ad
 ##.list-ads
 ##.listad
+##.listicle-instream-ad-holder
 ##.lite-page-ad
 ##.logo-ad
 ##.logoAds
@@ -3776,6 +3788,7 @@
 ##.top-ad-content
 ##.top-ad-module
 ##.top-ad-recirc
+##.top-ad-unit
 ##.top-ad-wrap
 ##.top-ad-wrapper
 ##.top-ads
@@ -3884,6 +3897,7 @@
 ##.widget_wp-bannerize-widget
 ##.widget_wp_insert_ad_widget
 ##.wp-block-gamurs-ad
+##.wp125ad
 ##.wp_bannerize
 ##.wp_bannerize_banner_box
 ##.wp_bannerize_container
@@ -4454,6 +4468,7 @@
 /analytics/metric/*
 /analytics/pagestats
 /analytics/pageview
+/analytics/rakuten.js
 /analytics/searches?
 /analytics/track_event/*
 /analytics/tracker.js
@@ -5379,6 +5394,7 @@
 /inboundAnalytics.min.js
 /include/js/ga-set.js
 /increment_page_counter.jsp
+/index.php/analytics/cookieAnalytics|$xmlhttprequest
 /index.track?
 /indextools.js
 /inline-pixel.js
@@ -5396,6 +5412,7 @@
 /IPbeacon.min.js
 /ipdvdc.min.js
 /ips-invite.iperceptions.com/*
+/iris-t.js
 /iterable/track/views/*
 /itgdtracksdk.js
 /itmdp_code.js
@@ -5925,6 +5942,7 @@
 /plugins/pup-comscore/*
 /plugins/stat-dfp/*
 /plugins/status.gif?
+/plugins/tagging/*
 /plugins/userinfo.gif?
 /plugins/vdz-google-analytics/*
 /plugins/visitors-traffic-
@@ -6196,6 +6214,7 @@
 /sherlock.gif?
 /shinystat.cgi
 /shopify-boomerang-
+/shopify-datalayer-minified.js
 /shopify-event.gif?
 /shopify/track.js
 /shopify_stats.js
@@ -6673,6 +6692,7 @@
 /urchin.html?
 /urchin.js
 /user-context?referrer=
+/user-data-minified.$script
 /userdata_n?
 /userfingerprinttoken/*$xmlhttprequest
 /userfly.js
@@ -6991,10 +7011,15 @@
 /csi_204?$image,other,ping,script
 /gen_204?$image,other,ping,script
 /generate_204?$image
+/*JmVu.js?sp=
+/*JmVu.js?tg=
 /ns.html?id=GTM-
+/tag/proxy?id=G-
 ://gtm.*.js?st=
 ://load.*.js?st=$~third-party
 ://sgtm.*.js?
+://tagging.*.js?aw=
+://tagging.*/settings.js
 /ab_track.js
 /adb.policy.js
 /adblockLogger/*
@@ -7205,6 +7230,7 @@ $ping,third-party
 /^https?:\/\/(?!assets|script|static)(?:[0-9a-z]{10,13}|[0-9a-z]{6})\.[0-9A-Za-z.\-_]+\/(?=[0-9a-z+\/\-]*[A-Z])[0-9A-Za-z+\/\-]{80,106}$/$match-case,script,~third-party
 /^https:\/\/cs\d{3}\.\w+\.com\/cscript\/\d{3}\/[\w\d]+\.js$/$script,third-party,match-case
 /.well-known/private-click-measurement
+/gtag/js?id=
 /tmpixel.min.js|
 ://ss.*.js?st=
 /public/assets/js/track-internal-links.js
@@ -7260,13 +7286,13 @@ $ping,third-party
 /traffic-source-cookie.
 /rdstation-popup.min.js
 /plausible.js
+://sst.*.js?id=GTM-
 /wpm@*/web-pixel-
 /shopifycloud/media-analytics/v*/analytics.js
 /shopifycloud/shopify/assets/shop_events_listener-*.js
 /wp-content/plugins/pixelyoursite/*
 /xhr/api/v2/collector
 /eclytics/*
-://sgtm.*.js?id=GTM-
 /gtm.js?id=GTM-
 ://tagging.*.js?id=GTM-
 ://gtm.*.js?id=GTM-
@@ -9588,7 +9614,6 @@ $ping,third-party
 ##.leaderboard-ad-fixed
 ##.leaderboard_a
 ##.leaderboard_ad
-##.listicle-instream-ad-holder
 ##.longform-ad
 ##.l-article__ad
 ##.mgid_3x2
@@ -10551,7 +10576,6 @@ $ping,third-party
 ###ad468
 ###ad468x60
 ###ad480x60
-###ad600
 ###ad72890
 ###ad728Box
 ###ad728Header
@@ -10800,7 +10824,6 @@ $ping,third-party
 ###ad_container_side
 ###ad_container_sidebar
 ###ad_container_top
-###ad_content
 ###ad_content_1
 ###ad_content_2
 ###ad_content_3
@@ -11143,7 +11166,6 @@ $ping,third-party
 ###ads-vertical
 ###ads-vertical-wrapper
 ###ads-wrap
-###ads-wrapper
 ###ads120
 ###ads1_box
 ###ads2_block
@@ -14476,7 +14498,6 @@ $ping,third-party
 ###vertical_ads
 ###verticalads
 ###video-ad-companion-rectangle
-###video-adv
 ###video-adv-wrapper
 ###video-embed-ads
 ###video-in-player-ad
@@ -15336,7 +15357,6 @@ $ping,third-party
 ##.ad-integrated-display
 ##.ad-internal
 ##.ad-interruptor
-##.ad-interstitial
 ##.ad-island
 ##.ad-item-related
 ##.ad-landscape
@@ -15773,7 +15793,6 @@ $ping,third-party
 ##.ad160x600_1
 ##.ad160x600box
 ##.ad170x30
-##.ad18
 ##.ad180x80
 ##.ad185x100
 ##.ad19
@@ -17534,7 +17553,6 @@ $ping,third-party
 ##.adv_728x90
 ##.adv__box
 ##.adv__leaderboard
-##.adv__wrapper
 ##.adv_aff
 ##.adv_banner_hor
 ##.adv_bg
@@ -18501,7 +18519,6 @@ $ping,third-party
 ##.c-adunit--billboard
 ##.c-adunit--first
 ##.c-adunit__container
-##.c-advert-app
 ##.c-advert-superbanner
 ##.c-advertisement--billboard
 ##.c-advertisement--rectangle
@@ -19685,11 +19702,9 @@ $ping,third-party
 ##.head_adv
 ##.head_advert
 ##.headadcontainer
-##.header-ad-area
 ##.header-ad-banner
 ##.header-ad-box
 ##.header-ad-frame
-##.header-ad-holder
 ##.header-ad-row
 ##.header-ad-space
 ##.header-ad-top
@@ -21583,7 +21598,6 @@ $ping,third-party
 ##.top-ad-slot
 ##.top-ad-space
 ##.top-ad-sticky
-##.top-ad-unit
 ##.top-ad-zone
 ##.top-ad1
 ##.top-ad__sticky-wrapper
@@ -21956,7 +21970,6 @@ $ping,third-party
 ##.wp-block-tpd-block-tpd-ads
 ##.wp-block-xwp-newsletter-subscription
 ##.wp-gdpr-cookie-notice-wrap
-##.wp125ad
 ##.wp125ad_2
 ##.wp_adblock_detect
 ##.wpadvert
@@ -23542,7 +23555,6 @@ $removeparam=ysclid
 /ads/rectangle_$subdocument
 /ads/slideup.$script
 /ads/square-$image,domain=~spoolimports.com
-/ads/ta_wppas/*$third-party
 /ads468.$image
 /ads468x60.$image
 /ads728.$image
@@ -23675,7 +23687,6 @@ $removeparam=ysclid
 /bottom-ads.jpg$image,domain=~saltwaterisland.com
 /bottom-ads.png$image
 /bottomads.js$script
-/bsa-plugin-pro-scripteo/frontend/js/script.js$script
 /bsa-pro-scripteo/frontend/js/script.js$script
 /bugsnag.min.js$third-party
 /bundle/trafee/prelands/*
@@ -24013,7 +24024,6 @@ $removeparam=ysclid
 /jjp_eucookie_
 /jquery.adblock-detector.js|$script
 /jquery.adblock.js|$script
-/jquery.adi.js
 /jquery.antiadsblock.js|$script
 /jquery.bs.gdpr.cookies.js
 /jquery.bs.gdpr.cookies.min.js
@@ -24055,7 +24065,6 @@ $removeparam=ysclid
 /js/statistics/user_ad.js
 /js/tj.js
 /jshexi.hj?lb=
-/jspopunder.js$script
 /karma/karma.js?karma=bs?
 /kasynos_online.png
 /kill-adblock//js/function.js$script
@@ -24201,6 +24210,7 @@ $removeparam=ysclid
 /reklama4.png$image
 /rellect/AdblockDetector/handler.$~third-party,redirect=nooptext
 /responsive/ad_$subdocument
+/revopush_v2.js
 /rss/rss.html$subdocument,~third-party
 /rtb/r/?token=$script
 /rtiCookieLaw.
@@ -24547,6 +24557,9 @@ $removeparam=ysclid
 ://www.*.com/css/$script,third-party,header=popads-node
 ://www.*.com/js/css/$script,third-party,header=link:/adsco\.re\/>;rel=preconnect/
 ://www.*.com/js/css/$script,third-party,header=popads-node
+://www.*.xyz/content/*/-1/$script,subdocument,third-party,xmlhttprequest
+://www.*.xyz/content/*/a/$subdocument,third-party
+://www.*.xyz/content/*?h=$script,third-party
 ://www.*.xyz/script/*.com.js|$script,third-party
 ://www.google.*/async/folsrch?*&async=_basejs:*,_basecomb:*&q=$xmlhttprequest
 ://www.wattpad.com/et?$image
@@ -24962,6 +24975,7 @@ $image,3p,denyallow=cdn77.org|fpbns.net|globalcdn.co|others-cdn.com|rncdn7.com|s
 /css/banr-adstera.html^$frame
 /css/jquerymin-adstera.js^$script
 /ads.js?api_key=*&header=$all
+/vast.php?idzone=
 /mlxhl/v*/for-page?$xhr
 /werbebanner-$badfilter
 /wp-content/client-mu-plugins/src/Paywall/static/js/connext-paywall-analytics.min.js
@@ -25320,6 +25334,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https?:\/\/[-a-z]{4,}\.org[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
 /^https:\/\/[a-z]{8}\.[a-z]{2,8}\/[!+=][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|cam|click|coupons|digital|diy|food|forum|gay|guru|life|live|living|my|property|pw|rocks|run|sbs|shop|store|tattoo|tech|today|uno|work,match-case
 /door/?ad_campaign_id=$doc
+://booking.*.com/sign-in?op_token=$doc
 /edgemesh.*.js$script,domain=~edgemesh.com|~edgeno.de
 /adsensebase.js$script
 ://api.*/lib/native.wasm$3p
@@ -25506,6 +25521,9 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js/$script,xmlhttprequest,third-party
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\/invoke\.js/$script,third-party
 /\/\/([0-9a-z]+\.)?([0-9a-z]+\.)?[0-9a-z]+\.[0-9a-z]+\.[a-z][a-z]+\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]\.js\?st=[0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z]?[0-9A-Z]?$/$~third-party,match-case
+$removeparam=tw_medium
+$removeparam=tw_profile_id
+$removeparam=tw_source
 $removeparam=uzcid
 $removeparam=beyond_uzcvid
 $removeparam=beyond_uzmcvid
@@ -26661,6 +26679,8 @@ $removeparam=action_type_map
 #$?#meta[name="apple-itunes-app"] { remove: true; }
 $$script:contains(_mJd5Y2FNOfYm62LY5FuY7O5Yc6)
 $$script:contains(/document\.write[^|&%$#@!]{0,400}:8007"\+"\/cc\//)
+/7755com-*00x*.gif
+##a[href="/iwagbwfiwehaeyh"]
 /videojs8/nuevo.min.js
 /videojs/plugins/vastpro.js
 $$amp-ad
@@ -38215,6 +38235,7 @@ $$amp-ad
 /wp-content/plugins/borlabs-cookie/*
 /wp-content/plugins/cookies-and-content-security-policy
 /wp-content/plugins/real-cookie-banner-pro/*
+/wp-content/plugins/webtoffee-cookie-consent/*
 /wp-content/plugins/wpconsent-premium/*
 /wp-gdpr-compliance/assets/js/front.min.js
 /wp-tarteaucitron-js-self-hosted/js/main.js
@@ -55155,7 +55176,6 @@ $removeparam=24sata_ref
 $removeparam=adset_id
 $removeparam=affid2
 $removeparam=oid2
-$removeparam=tw_source
 $removeparam=tw_adid
 $removeparam=retailerSlug
 /auto-append-spmid.js
