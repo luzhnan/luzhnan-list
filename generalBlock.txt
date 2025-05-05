@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-04 01:27:28 UTC
+! Updated: 2025-05-05 02:15:40 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -479,6 +479,7 @@
 /ads?param=
 /ads?zone=
 /ads?zone_id=
+/ads_banners/*$image
 /ads_bg.$image
 /ads_image/*$image
 /ads_images/*$image,domain=~wildlifeauctions.co.za
@@ -499,6 +500,7 @@
 /adsTracking.$script
 /ads~adsize~
 /adtech;
+/adtools.js$script
 /adtrack.$domain=~adtrack.ca|~adtrack.yacast.fr
 /adultdvdparadisecompopinsecound.js$script
 /adunit/track-view|
@@ -1143,6 +1145,7 @@
 ###ad-text
 ###ad-top
 ###ad-top-banner
+###ad-top-right
 ###ad-top-wrapper
 ###ad-wrap
 ###ad-wrap2
@@ -1173,6 +1176,7 @@
 ###adRight
 ###adSkinLeft
 ###adSkinRight
+###adSpace
 ###adText
 ###adTile
 ###adTop
@@ -1476,6 +1480,7 @@
 ###commentTopAd
 ###connatix_placeholder_desktop
 ###content-ad
+###content-left-ad
 ###content_ad
 ###content_ad_2
 ###crt-adblock-b
@@ -1539,6 +1544,7 @@
 ###footerAd
 ###footerAds
 ###footer_ad
+###footer_ad_modules
 ###footer_adcode
 ###footer_ads
 ###footerad
@@ -1620,6 +1626,7 @@
 ###mid_ad
 ###middle-ad
 ###middleAd
+###mobile-ad-container
 ###mobile-adhesion
 ###mobile-footer-ad-wrapper
 ###mpu1_parent
@@ -1749,6 +1756,7 @@
 ###top_adspace
 ###top_adv
 ###top_right_ad
+###top_wide_ad
 ###topad
 ###topad1
 ###topad728
@@ -1882,6 +1890,7 @@
 ##.ad-970x250
 ##.ad-970x90
 ##.ad-Advert_Placeholder
+##.ad-SuperBanner
 ##.ad-a
 ##.ad-active
 ##.ad-anchor
@@ -1987,6 +1996,7 @@
 ##.ad-horizontal
 ##.ad-icon
 ##.ad-iframe
+##.ad-iframe-container
 ##.ad-in-content
 ##.ad-in-post
 ##.ad-in-read
@@ -2121,6 +2131,7 @@
 ##.ad-subtitle
 ##.ad-superbanner
 ##.ad-t
+##.ad-t-text
 ##.ad-table
 ##.ad-tag
 ##.ad-tag__inner
@@ -2461,6 +2472,7 @@
 ##.adplaceholder
 ##.adplacement
 ##.adplugg-tag
+##.adpopup
 ##.adpost
 ##.adrechts
 ##.adright
@@ -2649,6 +2661,7 @@
 ##.adsense-unit
 ##.adsense-wrapper
 ##.adsenseBannerArea
+##.adsense_single
 ##.adsense_wrapper
 ##.adserving
 ##.adsghori
@@ -2795,6 +2808,7 @@
 ##.advertise-link
 ##.advertise-pic
 ##.advertiseText
+##.advertise_text
 ##.advertisement-banner
 ##.advertisement-block
 ##.advertisement-bottom
@@ -2834,6 +2848,7 @@
 ##.advertising-section
 ##.advertising-wrapper
 ##.advertisingMob
+##.advertising_banner
 ##.advertising_block
 ##.advertising_widget
 ##.advertisment
@@ -2852,6 +2867,7 @@
 ##.adwords
 ##.adwrap
 ##.adx-ads
+##.adx_center
 ##.adzone
 ##.affcodes
 ##.affiliate-footer
@@ -2974,6 +2990,7 @@
 ##.block-simpleads
 ##.block-yt-ads
 ##.block_ad
+##.block_ads
 ##.blog-ad
 ##.blogAd
 ##.blogads
@@ -3007,6 +3024,7 @@
 ##.breaker-ad
 ##.brn-ads-mobile-container
 ##.brn-ads-sticky-wrapper
+##.btm_ad
 ##.btn_ad
 ##.button-ads
 ##.buttonad
@@ -3506,6 +3524,7 @@
 ##.otd-ad-top
 ##.outer-ad-container
 ##.outer-ad-unit-wrapper
+##.outer_ad_container
 ##.overlay-ad
 ##.overlay-ad-container
 ##.overlay-ads
@@ -3688,6 +3707,7 @@
 ##.singleAd
 ##.single_ad
 ##.single_ad_300x250
+##.singlead
 ##.site-ads
 ##.site-bottom-ad-slot
 ##.site_ads
@@ -3964,6 +3984,7 @@
 ##[href^="https://ad.admitad.com/"]
 ##[href^="https://go.xlrdr.com"]
 ##[href^="https://join.playboyplus.com/track/"]
+##[href^="https://join3.bannedsextapes.com"]
 ##[href^="https://rapidgator.net/article/premium/ref/"]
 ##[href^="https://www.avantlink.com/click.php"] img
 ##[href^="https://www.cloudways.com/en/?id"]
@@ -4022,6 +4043,7 @@
 ##a[href^="https://go.dmzjmp.com"]
 ##a[href^="https://go.goaserv.com/"]
 ##a[href^="https://go.mnaspm.com/"]
+##a[href^="https://go.rmhfrtnd.com"]
 ##a[href^="https://go.rmhfrtnd.com/"]
 ##a[href^="https://go.rmishe.com/"]
 ##a[href^="https://go.skinstrip.net"][href*="?campaignId="]
@@ -4062,6 +4084,7 @@
 ##a[href^="https://tm-offers.gamingadult.com/"]
 ##a[href^="https://tour.mrskin.com/"]
 ##a[href^="https://track.adform.net/"]
+##a[href^="https://track.afcpatrk.com/"]
 ##a[href^="https://track.aftrk3.com/"]
 ##a[href^="https://wittered-mainging.com/"]
 ##a[href^="https://www.adultempire.com/"][href*="?partner_id="]
@@ -9336,6 +9359,7 @@ $ping,third-party
 /static/2biqu/twgdh.js
 /js/pfad*.js
 /static/idingdian/idd.
+/themes/default/wap/images/douyin.gif
 ##.txp_ad_center
 ###asx_text
 ###wp > .V-video-float
@@ -9557,7 +9581,6 @@ $ping,third-party
 ##.advert-mpu
 ##.advert-728
 ##.advert--sticky
-##.advertise_text
 ##.advertising-top-desktop
 ##.advertising-side-hp
 ##.apexAd
@@ -9660,7 +9683,6 @@ $ping,third-party
 ##.mvp-feat1-list-ad
 ##.newsfeed_adunit
 ##.noskim.ad
-##.outer_ad_container
 ##.p-ads-billboard
 ##.p-ads-rec
 ##.pgevoke-story-topads
@@ -10568,7 +10590,6 @@ $ping,third-party
 ###ad-top-left
 ###ad-top-lock
 ###ad-top-low
-###ad-top-right
 ###ad-top-text-low
 ###ad-top-wrap
 ###ad-topper
@@ -10753,7 +10774,6 @@ $ping,third-party
 ###adSlot-leader
 ###adSlot-leaderBottom
 ###adSlug
-###adSpace
 ###adSpaceBottom
 ###adSpaceHeight
 ###adSpacer
@@ -12143,7 +12163,6 @@ $ping,third-party
 ###content-contentad
 ###content-cookies
 ###content-header-ad
-###content-left-ad
 ###content-right-ad
 ###contentAd
 ###contentAdSense
@@ -12906,7 +12925,6 @@ $ping,third-party
 ###footer_ad_container
 ###footer_ad_frame
 ###footer_ad_holder
-###footer_ad_modules
 ###footer_add
 ###footer_addvertise
 ###footer_ads_holder
@@ -13551,7 +13569,6 @@ $ping,third-party
 ###mktg_Cookie_Wrap
 ###mmmmm-cookies
 ###mnd-cookie-bar
-###mobile-ad-container
 ###mobile-ad.hidden-md
 ###mobile-ads-ad
 ###mobile-index > div#vodbm
@@ -14405,7 +14422,6 @@ $ping,third-party
 ###top_span_ad
 ###top_sponsor_ads
 ###top_sponsor_text
-###top_wide_ad
 ###topad-728x90
 ###topad-block
 ###topad-wrap
@@ -15081,7 +15097,6 @@ $ping,third-party
 ##.ad-PENCIL
 ##.ad-S
 ##.ad-Square
-##.ad-SuperBanner
 ##.ad-TOPPER
 ##.ad-W
 ##.ad-ab
@@ -15350,7 +15365,6 @@ $ping,third-party
 ##.ad-hoverable
 ##.ad-hpto
 ##.ad-identifier
-##.ad-iframe-container
 ##.ad-in-content-300
 ##.ad-in-results
 ##.ad-inStory
@@ -15658,7 +15672,6 @@ $ping,third-party
 ##.ad-subnav-container
 ##.ad-summary
 ##.ad-superbanner-node
-##.ad-t-text
 ##.ad-tabs
 ##.ad-tag-square
 ##.ad-tag__wrapper
@@ -16772,7 +16785,6 @@ $ping,third-party
 ##.adplaceholder-top
 ##.adplate-background
 ##.adpod
-##.adpopup
 ##.adpos-300-mobile
 ##.adposter_pos
 ##.adproxy
@@ -17238,7 +17250,6 @@ $ping,third-party
 ##.adsense_right
 ##.adsense_sidebar
 ##.adsense_sidebar_top
-##.adsense_single
 ##.adsense_top
 ##.adsense_top_ad
 ##.adsense_unit
@@ -17863,7 +17874,6 @@ $ping,third-party
 ##.advertisingTable
 ##.advertisingTop
 ##.advertising_300x250
-##.advertising_banner
 ##.advertising_bottom_box
 ##.advertising_box_bg
 ##.advertising_header_1
@@ -17988,7 +17998,6 @@ $ping,third-party
 ##.adx-300x600-container
 ##.adx-wrapper
 ##.adx-wrapper-middle
-##.adx_center
 ##.adxli
 ##.adz-horiz
 ##.adz-horiz-ext
@@ -18363,7 +18372,6 @@ $ping,third-party
 ##.block_ad303x1000_right
 ##.block_ad_middle
 ##.block_ad_top
-##.block_ads
 ##.block_adslot
 ##.block_adv
 ##.block_advert
@@ -18493,7 +18501,6 @@ $ping,third-party
 ##.browse-ad-container
 ##.bs-wrap-gdpr-law
 ##.bst-panel
-##.btm_ad
 ##.bump-ad
 ##.bunyad-ad
 ##.butterBar--privacy
@@ -21195,7 +21202,6 @@ $ping,third-party
 ##.single_advert
 ##.single_bottom_ad
 ##.single_top_ad
-##.singlead
 ##.singleads
 ##.singleadstopcstm2
 ##.singlepageleftad
@@ -22276,7 +22282,6 @@ $ping,third-party
 ##[href^="https://ilovemyfreedoms.com/landing-"]
 ##[href^="https://istlnkcl.com/"]
 ##[href^="https://join.girlsoutwest.com/"]
-##[href^="https://join3.bannedsextapes.com"]
 ##[href^="https://lantianyong"]
 ##[href^="https://mylead.global/stl/"] > img
 ##[href^="https://mypatriotsupply.com/"] > img
@@ -22562,7 +22567,6 @@ $ping,third-party
 ##a[href^="https://tc.tradetracker.net/"] > img
 ##a[href^="https://torguard.net/aff.php"] > img
 ##a[href^="https://track.1234sd123.com/"]
-##a[href^="https://track.afcpatrk.com/"]
 ##a[href^="https://track.totalav.com/"]
 ##a[href^="https://track.ultravpn.com/"]
 ##a[href^="https://track.wg-aff.com"]
@@ -23561,7 +23565,6 @@ $removeparam=ysclid
 /ads728x90.$image
 /adsAPI.js$script
 /adsWrapper.js$script
-/ads_banners/*$image
 /ads_controller.js$script
 /ads_iframe.$subdocument
 /adsdelivery/*$subdocument
@@ -23572,7 +23575,6 @@ $removeparam=ysclid
 /adsmanager.nsf/*$image
 /adsmatcher-anti-adblock/*
 /adstream_sx.ads/*$popup
-/adtools.js$script
 /adutil.js$script
 /adv_out.js$third-party
 /advbanner.frontend.js$script
@@ -35000,6 +35002,7 @@ $$amp-ad
 ##.sharelordhtml
 ##.sharenewsin
 ##.sharenlike
+##.sharenow-buttons
 ##.shareokez
 ##.shareonclick
 ##.shareovanje
@@ -41802,7 +41805,6 @@ $$amp-ad
 ###cookies_men
 ###cookies_message_container
 ###cookies_message_info
-###cookies_modal
 ###cookies_msg_div
 ###cookies_msg_subwrapper
 ###cookies_msg_wrapper
@@ -48564,7 +48566,6 @@ $$amp-ad
 ##.cookiewarning-container
 ##.cookiewarning-inner
 ##.cookiewarning-wrapper
-##.cookiewarning:not(body):not(html)
 ##.cookiewarning_bg
 ##.cookiewarning_fg
 ##.cookiewarning_wrapper
