@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-05 02:15:40 UTC
+! Updated: 2025-05-06 01:26:55 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -609,6 +609,7 @@
 /gpt.js$script
 /gpt_ads-public.js$script
 /house-ads/*$image
+/hoverad.js$script
 /hserver/site=
 /ht.js?site_$script
 /image/ad/*$image
@@ -1155,6 +1156,7 @@
 ###ad6
 ###ad600
 ###ad728
+###ad728x90
 ###adBottom
 ###adBox
 ###adCarousel
@@ -1263,6 +1265,7 @@
 ###adbody
 ###adbottom
 ###adbox
+###adbox2
 ###adcenter
 ###adchoicesBtn
 ###adcode
@@ -1394,6 +1397,7 @@
 ###adv-box
 ###adv-gpt-box-container1
 ###adv-gpt-masthead-skin-container1
+###adv-halfpage
 ###adv-header
 ###advHook-Middle1
 ###adv_BoxBottom
@@ -1473,6 +1477,7 @@
 ###bottomads
 ###boxLREC
 ###box_ads
+###boxad
 ###br-ad-header
 ###btm_ad
 ###btmad
@@ -1682,6 +1687,7 @@
 ###sideAd4
 ###sideAds
 ###side_ad
+###side_ads
 ###sidead
 ###sidebar-ad
 ###sidebar-ad-1
@@ -1719,6 +1725,7 @@
 ###stickyBottomAd
 ###stickyad
 ###stickyads
+###stop_ad3
 ###td-ad-placeholder
 ###teaser1[style^="width:autopx;"]
 ###teaser2[style^="width:autopx;"]
@@ -1778,6 +1785,7 @@
 ###zdcFloatingBtn
 ##.-advertsSidebar
 ##.Ad--empty
+##.Ad--loading
 ##.Ad-Advert_Container
 ##.Ad-label
 ##.AdBar
@@ -1893,6 +1901,7 @@
 ##.ad-SuperBanner
 ##.ad-a
 ##.ad-active
+##.ad-aligncenter
 ##.ad-anchor
 ##.ad-atf
 ##.ad-background
@@ -2060,6 +2069,7 @@
 ##.ad-popup
 ##.ad-position
 ##.ad-post
+##.ad-push
 ##.ad-r
 ##.ad-rail
 ##.ad-reader-con-item
@@ -2606,6 +2616,7 @@
 ##.ads_box
 ##.ads_box_type1
 ##.ads_code
+##.ads_column
 ##.ads_content
 ##.ads_css
 ##.ads_header
@@ -2624,6 +2635,7 @@
 ##.ads_right
 ##.ads_side
 ##.ads_sidebar
+##.ads_single_top
 ##.ads_slot
 ##.ads_text
 ##.ads_title
@@ -2744,6 +2756,7 @@
 ##.adv_banner
 ##.adv_box
 ##.adv_img
+##.adv_right
 ##.adv_title
 ##.adv_txt
 ##.advads-close-button
@@ -2861,6 +2874,7 @@
 ##.advt-block
 ##.advtBlock
 ##.advtext
+##.advtitle
 ##.advtop
 ##.advv_box
 ##.adwidget
@@ -2952,6 +2966,7 @@
 ##.banner_300_250
 ##.banner_300x250
 ##.banner_468x60
+##.banner_728_90
 ##.banner_ad_link
 ##.banner_ad_wrapper
 ##.bannerad
@@ -3042,6 +3057,7 @@
 ##.c-advert-app
 ##.c-advertisement
 ##.c-advertising
+##.c-advertising__banner-area
 ##.c-gallery-vertical__advert
 ##.c-prebid
 ##.c-sidebar-ad-stream__ad
@@ -3258,6 +3274,7 @@
 ##.gridlove-ad
 ##.guj-ad--placeholder
 ##.gujAd
+##.h-adholder
 ##.h-ads
 ##.head-ad
 ##.head-ads
@@ -3619,6 +3636,7 @@
 ##.remove-ads-link
 ##.responsive-ad
 ##.responsive-ad-wrapper
+##.responsive-ads
 ##.result-ad
 ##.results-ads
 ##.reviews-display-ad
@@ -3857,6 +3875,7 @@
 ##.top_ads
 ##.top_adv
 ##.top_adv_content
+##.topadblock
 ##.topads
 ##.tower-ad
 ##.tsm-ad
@@ -4081,6 +4100,7 @@
 ##a[href^="https://t.acam.link/"]
 ##a[href^="https://t.ajrkm1.com/"]
 ##a[href^="https://t.ajrkm3.com/"]
+##a[href^="https://tatrck.com/"]
 ##a[href^="https://tm-offers.gamingadult.com/"]
 ##a[href^="https://tour.mrskin.com/"]
 ##a[href^="https://track.adform.net/"]
@@ -4106,6 +4126,7 @@
 ##display-ad-component
 ##display-ads
 ##div[aria-label="Ads"]
+##div[class$="-adlabel"]
 ##div[class^="Adstyled__AdWrapper-"]
 ##div[data-ad-placeholder]
 ##div[data-ad-region]
@@ -4162,6 +4183,7 @@
 ##.RC-AD-BOX-BOTTOM
 ##.RC-AD-BOX-MIDDLE
 ##.RC-AD-BOX-TOP
+##.RC-AD-TOP-BANNER
 ##ins.adsbygoogle[data-ad-client]
 ###kt_player > div[style$="display: block;"][style*="inset: 0px;"]
 ###slashboxes > .deals-rail
@@ -4383,6 +4405,7 @@
 /adlogger.php
 /adlogger_tracker.php
 /adm_tracking.js
+/admtracker.lib.min.js
 /adobe-analytics-$domain=~business.adobe.com
 /adobe-analytics.js
 /adobe-analytics2.js
@@ -4566,7 +4589,6 @@
 /api/log-visit
 /api/metrics/collect
 /api/metrics/event
-/api/metrics|$xmlhttprequest
 /api/pageactivity
 /api/pageview/*$ping
 /api/pageview?
@@ -9949,7 +9971,6 @@ $ping,third-party
 ##.zergnet-widget__subtitle
 ##.zergnet__container
 ##[class^="tile-picker__CitrusBannerContainer-sc-"]
-##.RC-AD-TOP-BANNER
 ###gpt-dynamic_native_article_4
 ###gpt-high_impact
 ###gpt-poster
@@ -10628,7 +10649,6 @@ $ping,third-party
 ###ad728foot
 ###ad728h
 ###ad728top
-###ad728x90
 ###ad728x90_1
 ###ad90
 ###ad900
@@ -11090,7 +11110,6 @@ $ping,third-party
 ###adbox-inarticle
 ###adbox-topbanner
 ###adbox1
-###adbox2
 ###adbox_content
 ###adbox_right
 ###adbpopup
@@ -11451,7 +11470,6 @@ $ping,third-party
 ###adv-banner-r
 ###adv-companion-iframe
 ###adv-container
-###adv-halfpage
 ###adv-leaderblock
 ###adv-leaderboard
 ###adv-left
@@ -12035,7 +12053,6 @@ $ping,third-party
 ###box_cookie_info
 ###box_cookies_error
 ###box_text_ads
-###boxad
 ###boxads
 ###bpAd
 ###breadcrumb_ad
@@ -14016,7 +14033,6 @@ $ping,third-party
 ###sideSponsors
 ###side_ad_module
 ###side_ad_wrapper
-###side_ads
 ###side_adverts
 ###side_longads
 ###side_skyscraper_ad
@@ -14285,7 +14301,6 @@ $ping,third-party
 ###stickyrightad
 ###sto-cookieMessage
 ###stopAdv
-###stop_ad3
 ###stoppage
 ###story-ad
 ###story-bottom-ad
@@ -14672,7 +14687,6 @@ $ping,third-party
 ##.ADwidget
 ##.Ad--Align
 ##.Ad--header
-##.Ad--loading
 ##.Ad--presenter
 ##.Ad--sidebar
 ##.Ad-Header
@@ -15117,7 +15131,6 @@ $ping,third-party
 ##.ad-alert-message-text
 ##.ad-alert-wrapper
 ##.ad-align-none
-##.ad-aligncenter
 ##.ad-alignment
 ##.ad-alsorectangle
 ##.ad-aps-wide
@@ -15547,7 +15560,6 @@ $ping,third-party
 ##.ad-program-top
 ##.ad-promo
 ##.ad-pub
-##.ad-push
 ##.ad-pushdown
 ##.ad-rac-box
 ##.ad-rail-wrapper
@@ -17084,7 +17096,6 @@ $ping,third-party
 ##.ads_border
 ##.ads_box_headline
 ##.ads_center
-##.ads_column
 ##.ads_container_top
 ##.ads_div
 ##.ads_div1
@@ -17119,7 +17130,6 @@ $ping,third-party
 ##.ads_sideba
 ##.ads_single_center
 ##.ads_single_side
-##.ads_single_top
 ##.ads_singlepost
 ##.ads_slice
 ##.ads_small
@@ -17587,7 +17597,6 @@ $ping,third-party
 ##.adv_message
 ##.adv_msg
 ##.adv_panel
-##.adv_right
 ##.adv_side1
 ##.adv_side2
 ##.adv_sidebar
@@ -17964,7 +17973,6 @@ $ping,third-party
 ##.advtbox
 ##.advtcell
 ##.advtimg
-##.advtitle
 ##.advtop-leaderbord
 ##.advttopleft
 ##.adwap
@@ -18248,7 +18256,6 @@ $ping,third-party
 ##.banner_250x250
 ##.banner_300x600
 ##.banner_468_60
-##.banner_728_90
 ##.banner_ad-728x90
 ##.banner_ad_300x250
 ##.banner_ad_728x90
@@ -18535,7 +18542,6 @@ $ping,third-party
 ##.c-advert-superbanner
 ##.c-advertisement--billboard
 ##.c-advertisement--rectangle
-##.c-advertising__banner-area
 ##.c-adverts
 ##.c-advscrollingzone
 ##.c-box--advert
@@ -19681,7 +19687,6 @@ $ping,third-party
 ##.guide__row--fixed-ad
 ##.gutterads
 ##.gw-ad
-##.h-adholder
 ##.h-adver
 ##.h-large-ad-box
 ##.h-top-ad
@@ -20914,7 +20919,6 @@ $ping,third-party
 ##.res_ad
 ##.resads-adspot
 ##.responsive-ad-header-container
-##.responsive-ads
 ##.responsiveAdsense
 ##.responsive_ad_top
 ##.responsive_ads_468x60
@@ -21712,7 +21716,6 @@ $ping,third-party
 ##.topad1
 ##.topad2
 ##.topadbar
-##.topadblock
 ##.topadbox
 ##.topadcont
 ##.topadrow
@@ -22563,7 +22566,6 @@ $ping,third-party
 ##a[href^="https://t.ajump1.com/"]
 ##a[href^="https://t.aslnk.link/"]
 ##a[href^="https://t.hrtye.com/"]
-##a[href^="https://tatrck.com/"]
 ##a[href^="https://tc.tradetracker.net/"] > img
 ##a[href^="https://torguard.net/aff.php"] > img
 ##a[href^="https://track.1234sd123.com/"]
@@ -23434,6 +23436,9 @@ $removeparam=ysclid
 /^94\.242\.247\.(2[0-9]|3[0-2]):/$network
 /^https:\/\/[0-9a-z]{5,}\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,~third-party
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{12,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,header=etag:/^W\/"[0-9a-f]{64}"$/
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,header=via:/, 1\.1 google$/
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs,ipaddress=/^(34\.(36\.73\.67|144\.195\.245)|2600:1901:0:(bb4f|6b2b)::1)$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/[a-z]{0,7}\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{20,120}(?:[-.][a-z0-9]{2,6})?(?:\.js)?$/$script,3p,match-case,to=com,header=x-datacenter
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[-_0-9a-z]{0,84}[A-Z])(?=[-_a-zA-Z]{0,84}[0-9])[-_0-9a-zA-Z]{54,85}(#\?v=[0-9a-f]{32})?$/$script,xhr,3p,match-case
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[0-9a-z_-]{0,84}[A-Z])(?=[a-zA-Z_-]{0,84}[0-9])[0-9a-zA-Z_-]{54,85}(#\?v=[0-9a-f]{32})?$/$ping,script,xmlhttprequest,third-party,match-case
@@ -23990,7 +23995,6 @@ $removeparam=ysclid
 /hitfile_730_90.png
 /hm.html?s=*=http
 /hm.js?$third-party
-/hoverad.js$script
 /hserver/channel=
 /hunter/alog/*
 /huyass7.$script,~third-party
@@ -25335,7 +25339,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https?:\/\/[-a-z]{4,}\.com[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{4,}\.gov[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{4,}\.org[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
-/^https:\/\/[a-z]{8}\.[a-z]{2,8}\/[!+=][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|cam|click|coupons|digital|diy|food|forum|gay|guru|life|live|living|my|property|pw|rocks|run|sbs|shop|store|tattoo|tech|today|uno|work,match-case
+/^https:\/\/[a-z]{8}\.[a-z]{2,8}\/[!+=][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|cam|click|coupons|digital|diy|food|forum|gay|guru|life|live|living|my|property|pw|rocks|run|sbs|shop|store|tattoo|tech|today|top|uno|work,match-case
 /door/?ad_campaign_id=$doc
 ://booking.*.com/sign-in?op_token=$doc
 /edgemesh.*.js$script,domain=~edgemesh.com|~edgeno.de
