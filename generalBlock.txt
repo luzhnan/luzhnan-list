@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-06 01:26:55 UTC
+! Updated: 2025-05-07 01:48:04 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -420,6 +420,7 @@
 /ad_position=
 /ad_side.$~xmlhttprequest
 /ad_top.js$script
+/adanalytics.js$script
 /adaptive_components.ashx?type=ads&
 /adaptvadplayer.js$script
 /adasync.min.js$script
@@ -557,6 +558,7 @@
 /banners/ads-$~xmlhttprequest
 /banners/ads.$~xmlhttprequest
 /banners/adv/*$~xmlhttprequest
+/banners/affiliate/*$image
 /bottomad.png$image
 /bsa-plugin-pro-scripteo/frontend/js/script.js$script
 /btag.min.js$third-party
@@ -1087,6 +1089,7 @@
 ###ad-728-90
 ###ad-8
 ###ad-9
+###ad-Superbanner
 ###ad-banner-wrap
 ###ad-banner_atf-label
 ###ad-bar
@@ -1199,6 +1202,7 @@
 ###ad_9
 ###ad_LargeRec01
 ###ad_area
+###ad_article2_2
 ###ad_banner
 ###ad_bar
 ###ad_bg
@@ -1401,6 +1405,7 @@
 ###adv-header
 ###advHook-Middle1
 ###adv_BoxBottom
+###adv_Inread
 ###adv_IntropageOvl
 ###adv_LdbMastheadPush
 ###adv_Skin
@@ -1533,6 +1538,7 @@
 ###dsk-banner-ad-c
 ###dsk-box-ad-c
 ###dsk-box-ad-d
+###dsk-box-ad-g
 ###ezmobfooter
 ###featuread
 ###first-ads
@@ -1566,6 +1572,7 @@
 ###google-adsense
 ###googleAds
 ###google_ads
+###google_adsense
 ###googleads
 ###gpt-ad-1
 ###gpt-leaderboard-ad
@@ -1700,11 +1707,13 @@
 ###sidebar_ads
 ###sidebar_topad
 ###sidebarad
+###single-ad-2
 ###skin-ad
 ###skin-ad-left-rail-container
 ###skin-ad-right-rail-container
 ###sky-left
 ###sky-right
+###skyscraper-ad
 ###skyscraper_ad
 ###slideAd
 ###slide_ad
@@ -1991,6 +2000,7 @@
 ##.ad-frame
 ##.ad-frame-container
 ##.ad-full
+##.ad-gpt-vertical
 ##.ad-grid
 ##.ad-group
 ##.ad-halfpage
@@ -2267,6 +2277,7 @@
 ##.adRight
 ##.adSection
 ##.adSense
+##.adSide
 ##.adSizer
 ##.adSky
 ##.adSlide
@@ -2383,6 +2394,7 @@
 ##.ad_outer
 ##.ad_pic
 ##.ad_placeholder
+##.ad_placeholder_d_s
 ##.ad_position
 ##.ad_r
 ##.ad_rectangle
@@ -2453,6 +2465,7 @@
 ##.adcontainer_big
 ##.addiv
 ##.adfooter
+##.adfoxly-wrapper
 ##.adframe
 ##.adfront
 ##.adfull
@@ -2645,6 +2658,7 @@
 ##.ads_wrap
 ##.adsanity-alignnone
 ##.adsarea
+##.adsbar
 ##.adsblock
 ##.adsbox970x90
 ##.adsbyadop
@@ -2869,6 +2883,7 @@
 ##.advertorial
 ##.adverts
 ##.adviewDFPBanner
+##.advr
 ##.advrst
 ##.advt
 ##.advt-block
@@ -3033,6 +3048,7 @@
 ##.box-ads
 ##.box-advertisement
 ##.box-advertising
+##.boxAds
 ##.box_ad
 ##.boxad
 ##.br-ad
@@ -3086,6 +3102,7 @@
 ##.col-ad
 ##.columnAd
 ##.comment-ad
+##.con_ads
 ##.connatix
 ##.connatix-container
 ##.connatix-wrapper
@@ -3132,6 +3149,7 @@
 ##.dfp-ad-container
 ##.dfp-ad-container-box
 ##.dfp-ad-container-wide
+##.dfp-ad-lazy
 ##.dfp-ad-unit
 ##.dfp-ad-widget
 ##.dfp-banner
@@ -3200,6 +3218,7 @@
 ##.footer-ad-section
 ##.footer-ad-wrap
 ##.footer-ads
+##.footer-advert
 ##.footer-advertisement
 ##.footer-advertising
 ##.footerAd
@@ -3304,6 +3323,7 @@
 ##.headerAdvert
 ##.headerTopAd
 ##.header__ad
+##.header__ads
 ##.header_ad
 ##.header_ads
 ##.header_ads-container
@@ -3470,6 +3490,7 @@
 ##.midad
 ##.middle-ad
 ##.middle-ads
+##.middle_ad
 ##.middlead
 ##.min-height-ad
 ##.mini-ad
@@ -3833,6 +3854,7 @@
 ##.text_adv
 ##.textad
 ##.th-ad
+##.themonic-ad1
 ##.themonic-ad2
 ##.third-party-ad
 ##.thread-ad-align
@@ -4001,6 +4023,7 @@
 ##[data-testid="ad_testID"]
 ##[href^="https://aads.com/campaigns/"]
 ##[href^="https://ad.admitad.com/"]
+##[href^="https://ad1.adfarm1.adition.com/"]
 ##[href^="https://go.xlrdr.com"]
 ##[href^="https://join.playboyplus.com/track/"]
 ##[href^="https://join3.bannedsextapes.com"]
@@ -9382,6 +9405,7 @@ $ping,third-party
 /js/pfad*.js
 /static/idingdian/idd.
 /themes/default/wap/images/douyin.gif
+/pa.dajiahao*.top/
 ##.txp_ad_center
 ###asx_text
 ###wp > .V-video-float
@@ -9644,7 +9668,6 @@ $ping,third-party
 ##.freestar-incontent-ad
 ##.freestar-ad-sidebar-container
 ##.freestar-ad-wide-container
-##.themonic-ad1
 ##.themonic-ad3
 ##.themonic-ad6
 ##.fs_ad
@@ -10394,7 +10417,6 @@ $ping,third-party
 ###ad-Content_2
 ###ad-Rectangle_1
 ###ad-Rectangle_2
-###ad-Superbanner
 ###ad-a
 ###ad-ads
 ###ad-advertorial
@@ -10842,7 +10864,6 @@ $ping,third-party
 ###ad_article1_1
 ###ad_article1_2
 ###ad_article2_1
-###ad_article2_2
 ###ad_article3_1
 ###ad_article3_2
 ###ad_banner_1
@@ -11505,7 +11526,6 @@ $ping,third-party
 ###adv_300
 ###adv_728
 ###adv_728x90
-###adv_Inread
 ###adv_Reload
 ###adv_bootom
 ###adv_border
@@ -12818,7 +12838,6 @@ $ping,third-party
 ###dsStoryAd
 ###dsk-banner-ad-d
 ###dsk-box-ad-f
-###dsk-box-ad-g
 ###dv-cookie-notice
 ###dv-gpt-ad-bigbox-wrap
 ###dvCookie
@@ -13056,7 +13075,6 @@ $ping,third-party
 ###google_ads_frame4_anchor
 ###google_ads_frame5_anchor
 ###google_ads_frame6_anchor
-###google_adsense
 ###google_adsense_ad
 ###googlead
 ###googlead2
@@ -14095,7 +14113,6 @@ $ping,third-party
 ###sidepad-ad
 ###sign-ad
 ###single-ad
-###single-ad-2
 ###single-adblade
 ###single-mpu
 ###singleAd
@@ -14139,7 +14156,6 @@ $ping,third-party
 ###skycom-cookie-wrapper
 ###skyline_ad
 ###skyscrapeAd
-###skyscraper-ad
 ###skyscraperAd
 ###skyscraperAdContainer
 ###skyscraperAdWrap
@@ -15340,7 +15356,6 @@ $ping,third-party
 ##.ad-gpt-breaker
 ##.ad-gpt-container
 ##.ad-gpt-main
-##.ad-gpt-vertical
 ##.ad-graphic-large
 ##.ad-gray
 ##.ad-grey
@@ -16115,7 +16130,6 @@ $ping,third-party
 ##.adSepDiv
 ##.adServer
 ##.adSeven
-##.adSide
 ##.adSideBarMPU
 ##.adSideBarMPUTop
 ##.adSidebarButtons
@@ -16403,7 +16417,6 @@ $ping,third-party
 ##.ad_pause
 ##.ad_place
 ##.ad_placeholder_d_b
-##.ad_placeholder_d_s
 ##.ad_placeholder_d_sticky
 ##.ad_placement
 ##.ad_plus
@@ -16702,7 +16715,6 @@ $ping,third-party
 ##.adform__topbanner
 ##.adfoxly-overlay
 ##.adfoxly-place-delay
-##.adfoxly-wrapper
 ##.adframe2
 ##.adframe_banner
 ##.adframe_rectangle
@@ -17163,7 +17175,6 @@ $ping,third-party
 ##.adsbanner1
 ##.adsbanner2
 ##.adsbantop
-##.adsbar
 ##.adsbg300
 ##.adsbillboard
 ##.adsblocked
@@ -17953,7 +17964,6 @@ $ping,third-party
 ##.advimg300250
 ##.advn_zone
 ##.advoice
-##.advr
 ##.advr-wrapper
 ##.advr_top
 ##.advrectangle
@@ -18467,7 +18477,6 @@ $ping,third-party
 ##.box-footer-ad
 ##.box-lgpd
 ##.boxAdContainer
-##.boxAds
 ##.boxAds2
 ##.boxAdvertisement
 ##.boxSponsor
@@ -18665,7 +18674,6 @@ $ping,third-party
 ##.complex-ad
 ##.component-ar-horizontal-bar-ad
 ##.components-Ad-___Ad__ad
-##.con_ads
 ##.connatix-hodler
 ##.connatix-holder
 ##.consent-container
@@ -19108,7 +19116,6 @@ $ping,third-party
 ##.dfm-featured-bottom-flex-container
 ##.dfp-ad-bigbox2-wrap
 ##.dfp-ad-full
-##.dfp-ad-lazy
 ##.dfp-ad-lead2-wrap
 ##.dfp-ad-lead3-wrap
 ##.dfp-ad-midbreaker-wrap
@@ -19404,7 +19411,6 @@ $ping,third-party
 ##.footer-ads_unlocked
 ##.footer-adsbar
 ##.footer-adsense
-##.footer-advert
 ##.footer-advert-large
 ##.footer-advertising-area
 ##.footer-banner-ad
@@ -19756,7 +19762,6 @@ $ping,third-party
 ##.headerCookies
 ##.headerTextAd
 ##.headerTopAds
-##.header__ads
 ##.header__ads-wrapper
 ##.header__advertisement
 ##.header_ad1
@@ -20368,7 +20373,6 @@ $ping,third-party
 ##.middleAds
 ##.middleBannerAd
 ##.middle_AD
-##.middle_ad
 ##.middle_ad_responsive
 ##.middle_ads
 ##.middleadouter
@@ -22273,7 +22277,6 @@ $ping,third-party
 ##[href^="http://mypillow.com/"] > img
 ##[href^="http://www.mypillow.com/"] > img
 ##[href^="https://9996867.com"]
-##[href^="https://ad1.adfarm1.adition.com/"]
 ##[href^="https://affiliate.fastcomet.com/"] > img
 ##[href^="https://antiagingbed.com/discount/"] > img
 ##[href^="https://ap.octopuspop.com/click/"] > img
@@ -23438,7 +23441,7 @@ $removeparam=ysclid
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{12,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,header=etag:/^W\/"[0-9a-f]{64}"$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,header=via:/, 1\.1 google$/
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs,ipaddress=/^(34\.(36\.73\.67|144\.195\.245)|2600:1901:0:(bb4f|6b2b)::1)$/
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs,ipaddress=/^(3[45]\.\d+\.\d{2,3}\.\d{2,3}|2600:1901:0:[a-f0-9]{3,4}::1)$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/[a-z]{0,7}\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{20,120}(?:[-.][a-z0-9]{2,6})?(?:\.js)?$/$script,3p,match-case,to=com,header=x-datacenter
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[-_0-9a-z]{0,84}[A-Z])(?=[-_a-zA-Z]{0,84}[0-9])[-_0-9a-zA-Z]{54,85}(#\?v=[0-9a-f]{32})?$/$script,xhr,3p,match-case
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[0-9a-z_-]{0,84}[A-Z])(?=[a-zA-Z_-]{0,84}[0-9])[0-9a-zA-Z_-]{54,85}(#\?v=[0-9a-f]{32})?$/$ping,script,xmlhttprequest,third-party,match-case
@@ -23506,7 +23509,6 @@ $removeparam=ysclid
 /ad_server.cgi$subdocument
 /ad_skyscraper.gif$image
 /ad_top.jpg$image
-/adanalytics.js$script
 /adasync.js$script
 /adb-watch.
 /adbDetect.
@@ -23670,7 +23672,6 @@ $removeparam=ysclid
 /banner/html/zone?zid=
 /banner_468.$image
 /banners/affil/*$image
-/banners/affiliate/*$image
 /banners/pr_advertising_ads_banner
 /bauer.cookies.
 /bbs/include/javascript/adblock.
@@ -24527,34 +24528,18 @@ $removeparam=ysclid
 ://adsserver.
 ://aff-ads.
 ://affiliates2.$third-party
-://delighted.com/e/$image
-://ecmweb.com/images/shim.png$image
-://email-analytics.meetup.com/$image
 ://gom.ge/cookie.js
 ://journey.*.com/compiler-$script,~third-party
-://link.nzz.ch/v1/emailopen?$image
-://link.patch.com/img/*.gif$image
-://links1.pawns.app/q/$image
-://mg.mail.notion.so/$image
-://myanimelist.net/pixel?$image
-://myanimelist.net/static/logging.gif?$image
 ://news-*/v2-sw.js$third-party
-://newsletter.adnz.co/$image
 ://oascentral.
-://pianoencyclopedia.com/en/email/images/*/pix.gif$image
 ://pic*.com/upload/*.js$third-party
 ://pixel.patch.com/
 ://ply.*/?v=$image,3p
-://rd.remove.bg/CI0/$image
 ://s3.amazonaws.com/*?trkch=*&visitor_id=*-aff0-*&client=*&u=$redirect=nooptext
 ://sat.*.net/*/script.min.js?sub_1=
-://snl.patch.com/imp?$image
-://static.adsugar.ch/img?ord=$image
-://tlr.stripocdn.email/content/guids/$image
 ://trk.*.run^$document
 ://uads.$third-party,xmlhttprequest
 ://vip.*/?pge=$image,3p
-://voz.vn/b/image.gif?p=$image
 ://widgets.spklw.com/v1/data/?*&widget-id=$replace=/(?<=\[)(\{"image":\{"url":"[\s\S]*?"type":"ad"[\s\S]*?\,"service_version":"[\s\S]*?"\}(\,)?)+|(\,)?\{"image":\{"url":"[\s\S]*?"type":"ad"[\s\S]*?\,"service_version":"[\s\S]*?"\}//
 ://www.*.com*/images/*.min.js|$script,third-party,header=link:/adsco\.re\/>;rel=preconnect/
 ://www.*.com*/images/*.min.js|$script,third-party,header=popads-node
@@ -25339,7 +25324,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https?:\/\/[-a-z]{4,}\.com[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{4,}\.gov[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{4,}\.org[-.][-a-z0-9]{2,}\.[a-z]{2,5}\//$doc,to=cc|cfd|cyou|live|top|vip|win|world|xin
-/^https:\/\/[a-z]{8}\.[a-z]{2,8}\/[!+=][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|cam|click|coupons|digital|diy|food|forum|gay|guru|life|live|living|my|property|pw|rocks|run|sbs|shop|store|tattoo|tech|today|top|uno|work,match-case
+/^https:\/\/[a-z]{8}\.[a-z]{2,8}\/[!.+=@][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|cam|click|coupons|digital|diy|food|forum|gay|guru|life|live|living|my|property|pw|rocks|run|sbs|shop|store|tattoo|tech|today|top|uno|work,match-case
 /door/?ad_campaign_id=$doc
 ://booking.*.com/sign-in?op_token=$doc
 /edgemesh.*.js$script,domain=~edgemesh.com|~edgeno.de
@@ -40453,7 +40438,6 @@ $$amp-ad
 ###cookieAuth
 ###cookieBAR
 ###cookieBG
-###cookieBackdrop
 ###cookieBackground
 ###cookieBalk
 ###cookieBan
@@ -48578,7 +48562,6 @@ $$amp-ad
 ##.cookiewidget
 ##.cookiewrap
 ##.cookiez
-##.cookify
 ##.cookillian-alert
 ##.cookpopup
 ##.cooksiediv
