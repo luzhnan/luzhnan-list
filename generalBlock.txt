@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-07 01:48:04 UTC
+! Updated: 2025-05-08 01:51:00 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -69,6 +69,7 @@
 ##.content > aside.ad
 ##.contentmovie > div[class^="ad"]
 ##.right-menu > div.adhl
+##.adace-slideup-slot-wrap
 ##.in_article_ad
 ##.entry_ad
 ###ad-top-right-container
@@ -268,6 +269,7 @@
 ###bp_banner
 ###campaign-banner
 ###footer-banner
+###topBanners
 ###total_banner
 ##.SC_TBlock
 ##.b-header-banner
@@ -334,6 +336,7 @@
 /dynamic-pop-comb.min.js
 /cuid/?f=https%$xmlhttprequest,third-party
 /submit.min.js?abvar=$all
+/direct-link?pubid=$all
 ://creative.*/widgets/Spot/lib.js$third-party
 ://creative.*/widgets/v4/Universal?$subdocument,third-party
 /?oo=1&aab=1|$script,third-party,xmlhttprequest
@@ -390,6 +393,7 @@
 /^https?:\/\/([0-9a-z\-]+\.)?(9anime|animeland|animenova|animeplus|animetoon|animewow|gamestorrent|goodanime|gogoanime|igg-games|kimcartoon|memecenter|readcomiconline|toonget|toonova|watchcartoononline)\.[a-z]{2,4}\/(?!([Ss]cripts|[Uu]ploads|[Ii]mages|assets|combined|content|cover|img|static|thumbs|wp-content|wp-includes))(.*)/$image,other,script,~third-party,xmlhttprequest,badfilter
 /^https?:\/\/([0-9a-z\-]+\.)?(9anime|animeland|animenova|animeplus|animetoon|animewow|gamestorrent|goodanime|gogoanime|igg-games|kimcartoon|memecenter|readcomiconline|toonget|toonova|watchcartoononline)\.[a-z]{2,4}\/(?!([Ss]cripts|[Uu]ploads|[Ii]mages|combined|content|cover|img|static|thumbs|wp-content|wp-includes))(.*)/$image,other,script,~third-party,xmlhttprequest,badfilter
 ://mine.torrent.pw^
+/?fp=*&poru=$subdocument
 /?view=ad
 /_fd?subid1=$xmlhttprequest
 /a/display.php?$script
@@ -713,6 +717,7 @@
 /production/ad-$script
 /production/ads/*$script
 /promo.php?c=$third-party
+/public/ad/*$image
 /public/ads/*$image
 /publicidad/*$~xmlhttprequest
 /publicidade.$~xmlhttprequest
@@ -876,6 +881,7 @@
 /tardisrocinante/austin.js$script
 /tardisrocinante/surgeonv2.js$script
 /tardisrocinante/vitals.js$script
+/ads/prebid8-$script
 /ads_prebid_async.js$script
 /dist/adsPrebid.js$script
 /gpt-prebid.js$script
@@ -1172,6 +1178,7 @@
 ###adDiv1
 ###adFooter
 ###adHeader
+###adIframe
 ###adLeft
 ###adLink
 ###adLink1
@@ -1266,6 +1273,7 @@
 ###ad_wrapper
 ###adbanner1
 ###adbar
+###adblock1
 ###adbody
 ###adbottom
 ###adbox
@@ -1389,6 +1397,7 @@
 ###adspace
 ###adspacer
 ###adsright
+###adsside
 ###adtext
 ###adtop
 ###adunit
@@ -1463,6 +1472,7 @@
 ###bgad
 ###big_ad
 ###billboard-ad
+###billboard-atf
 ###billboard_ad
 ###bm-HeaderAd
 ###body_ad
@@ -1788,6 +1798,7 @@
 ###videoAdContainer
 ###videoad
 ###wpgtr_stickyads_textcss_container
+###wrapper-AD_G
 ###wrapper-AD_L
 ###yandex_ad
 ###yandex_ad2
@@ -2394,6 +2405,7 @@
 ##.ad_outer
 ##.ad_pic
 ##.ad_placeholder
+##.ad_placeholder_d_b
 ##.ad_placeholder_d_s
 ##.ad_position
 ##.ad_r
@@ -2434,10 +2446,10 @@
 ##.ad_wrapper
 ##.ad_wrapper_top
 ##.ad_zone
-##.adace-slideup-slot-wrap
 ##.adace-slot
 ##.adace-slot-wrapper
 ##.adarea
+##.adban
 ##.adblk
 ##.adblock__banner
 ##.adbot
@@ -2701,6 +2713,7 @@
 ##.adslot_1
 ##.adslot_2
 ##.adslot_3
+##.adslot_4
 ##.adslot__ad-container
 ##.adslot__ad-wrapper
 ##.adsmessage
@@ -2858,6 +2871,7 @@
 ##.advertisement1
 ##.advertisementBox
 ##.advertisementContainer
+##.advertisementImg
 ##.advertisementLabel
 ##.advertisement_300x250
 ##.advertisement_728x90
@@ -2873,6 +2887,7 @@
 ##.advertising-content
 ##.advertising-leaderboard
 ##.advertising-section
+##.advertising-top-desktop
 ##.advertising-wrapper
 ##.advertisingMob
 ##.advertising_banner
@@ -2987,6 +3002,7 @@
 ##.bannerad
 ##.bannerads
 ##.bannervcms
+##.base-ad-top
 ##.bbccom_advert
 ##.bg-ads
 ##.bg-ads-space
@@ -3050,6 +3066,7 @@
 ##.box-advertising
 ##.boxAds
 ##.box_ad
+##.box_ads
 ##.boxad
 ##.br-ad
 ##.breaker-ad
@@ -3341,6 +3358,7 @@
 ##.homePageAdSquare
 ##.homepage__native-ad
 ##.horizontal-ad
+##.horizontal-ads
 ##.horizontal-advert-container
 ##.horizontal.ad
 ##.horizontalAd
@@ -3478,6 +3496,8 @@
 ##.mar-block-ad
 ##.mar-leaderboard--bottom
 ##.masthead-ad
+##.masthead__ad
+##.mega-ad
 ##.menu-ad
 ##.meta_ad
 ##.meteored-ads
@@ -3609,6 +3629,7 @@
 ##.post_ad
 ##.postad
 ##.postads
+##.pp-ad-container
 ##.pp_ad_code_adtxt
 ##.ppr_priv_horizon_ad
 ##.premium-ad
@@ -3704,6 +3725,7 @@
 ##.searchad
 ##.secondary-ad-widget
 ##.section-ad
+##.section-ad2
 ##.section-ads
 ##.section-adv
 ##.section-sponsor
@@ -3784,6 +3806,7 @@
 ##.sponsorads
 ##.sponsored-ad
 ##.sponsored-article
+##.sponsored-block
 ##.sponsored-container
 ##.sponsored-header
 ##.sponsored-link
@@ -3976,6 +3999,7 @@
 ##.widget_doubleclick_widget
 ##.widget_evolve_ad_gpt_widget
 ##.widget_pmc-ads-widget
+##.widget_singlead
 ##.widget_supermag_ad
 ##.widget_themoneytizer_widget
 ##.widget_thesun_dfp_ad_widget
@@ -3993,6 +4017,7 @@
 ##.wrap-ad
 ##.wrap-ads
 ##.wrapper-ad
+##.wrapperad
 ##.wt-cli-cookie-bar-container
 ##.xpot-horizontal
 ##.ympb_target
@@ -4199,6 +4224,7 @@
 ##.aspace-300x250
 ###hgiks-middle
 ###hgiks-top
+##.zone.zone--loaded
 ##.happy-under-player
 ##.CitrusBannerWrapper--enollj
 ##citrus-ad-wrapper
@@ -9627,7 +9653,6 @@ $ping,third-party
 ##.advert-mpu
 ##.advert-728
 ##.advert--sticky
-##.advertising-top-desktop
 ##.advertising-side-hp
 ##.apexAd
 ##.arcad-block-container
@@ -10741,7 +10766,6 @@ $ping,third-party
 ###adHolder6
 ###adHome
 ###adHomeTop
-###adIframe
 ###adInhouse
 ###adIsland
 ###adLB
@@ -11103,7 +11127,6 @@ $ping,third-party
 ###adblock-notice
 ###adblock-small
 ###adblock-warning
-###adblock1
 ###adblock2
 ###adblock4
 ###adblockDetect
@@ -11474,7 +11497,6 @@ $ping,third-party
 ###adspot-top
 ###adsquare
 ###adsquare2
-###adsside
 ###adsspace
 ###adstext2
 ###adstrip
@@ -11924,7 +11946,6 @@ $ping,third-party
 ###bigadspot
 ###bigboard_ad
 ###bigsidead
-###billboard-atf
 ###bingadcontainer2
 ###bkCookieBanner
 ###bl_mobile_float[style='height: 152px;']
@@ -14420,7 +14441,6 @@ $ping,third-party
 ###topBanner-ad
 ###topBannerAdContainer
 ###topBannerAdv
-###topBanners
 ###topCookie
 ###topImgAd
 ###topLeaderboardAd
@@ -14643,7 +14663,6 @@ $ping,third-party
 ###wrapAd
 ###wrapAdRight
 ###wrapCommentAd
-###wrapper-AD_G
 ###wrapper-AD_L2
 ###wrapper-AD_L3
 ###wrapper-AD_PUSH
@@ -16416,7 +16435,6 @@ $ping,third-party
 ##.ad_partners
 ##.ad_pause
 ##.ad_place
-##.ad_placeholder_d_b
 ##.ad_placeholder_d_sticky
 ##.ad_placement
 ##.ad_plus
@@ -16552,7 +16570,6 @@ $ping,third-party
 ##.adb-enabled
 ##.adb-top
 ##.adback
-##.adban
 ##.adband
 ##.adbanner-300-250
 ##.adbanner-bottom
@@ -17339,7 +17356,6 @@ $ping,third-party
 ##.adslot_300
 ##.adslot_3d
 ##.adslot_3m
-##.adslot_4
 ##.adslot_728
 ##.adslot_blurred
 ##.adslot_bot_300x250
@@ -17828,7 +17844,6 @@ $ping,third-party
 ##.advertisementBoxBan
 ##.advertisementFull
 ##.advertisementHeader
-##.advertisementImg
 ##.advertisementPanel
 ##.advertisementRotate
 ##.advertisementSection
@@ -18293,7 +18308,6 @@ $ping,third-party
 ##.barre_cookies
 ##.base-ad-mpu
 ##.base-ad-slot
-##.base-ad-top
 ##.base_ad
 ##.baseboard-ad
 ##.basel-cookies-popup
@@ -18485,7 +18499,6 @@ $ping,third-party
 ##.box_ad_horizontal
 ##.box_ad_spacer
 ##.box_ad_wrap
-##.box_ads
 ##.box_adv
 ##.box_adv_728
 ##.box_advert
@@ -19848,7 +19861,6 @@ $ping,third-party
 ##.horizontal-ad-container
 ##.horizontal-ad-holder
 ##.horizontal-ad2
-##.horizontal-ads
 ##.horizontalAdvert
 ##.horizontal_Fullad
 ##.horizontal_ad
@@ -20315,7 +20327,6 @@ $ping,third-party
 ##.master_post_advert
 ##.masthead-ads
 ##.mastheadAds
-##.masthead__ad
 ##.match-ad
 ##.mb-list-ad
 ##.mb_informativa_cookies
@@ -20340,7 +20351,6 @@ $ping,third-party
 ##.medrect-ad2
 ##.medrectAd
 ##.medrect_ad
-##.mega-ad
 ##.member-ads
 ##.menu-ads
 ##.menuAd
@@ -20796,7 +20806,6 @@ $ping,third-party
 ##.postbit-ad
 ##.poster_ad
 ##.posts-ad
-##.pp-ad-container
 ##.ppb_ads
 ##.ppr_priv_footer_banner_ad_billboard
 ##.ppr_priv_header_banner_ad
@@ -21073,7 +21082,6 @@ $ping,third-party
 ##.secondary_ad
 ##.section-ad-unit
 ##.section-ad-wrapper
-##.section-ad2
 ##.section-adtag
 ##.section-advertisement
 ##.section-subheader > .section-hotel-prices-header
@@ -21348,7 +21356,6 @@ $ping,third-party
 ##.sponsored-ads
 ##.sponsored-article-item
 ##.sponsored-article-widget
-##.sponsored-block
 ##.sponsored-buttons
 ##.sponsored-container-bottom
 ##.sponsored-default
@@ -21962,7 +21969,6 @@ $ping,third-party
 ##.widget_sej_sidebar_ad
 ##.widget_sidebar_adrotate_tedo_single_widget
 ##.widget_sidebaradwidget
-##.widget_singlead
 ##.widget_sponsored_content
 ##.widget_supernews_ad
 ##.widget_text_adsense
@@ -22001,7 +22007,6 @@ $ping,third-party
 ##.wrapperCookies
 ##.wrapper_ad
 ##.wrapper_advertisement
-##.wrapperad
 ##.wsa-cookielaw
 ##.ww_ads_banner_wrapper
 ##.wwads_abp
@@ -22022,7 +22027,6 @@ $ping,third-party
 ##.zeusAdWrapper
 ##.zeusAd__container
 ##.zone-advertisement
-##.zone.zone--loaded
 ##.zoneAds
 ##.zox-widget-side-ad
 ##.zox_adv_widget
@@ -23367,7 +23371,6 @@ $removeparam=ysclid
 /?abt_opts=1&
 /?c=propeller&lpid=$all
 /?clck=*&sid=$document
-/?fp=*&poru=$subdocument
 /?h=https%3A%2F%2F*&r=&sid=*&qs=*&cid=$image,1p
 /?l=*&campid=*&ymid=$all
 /?l=*&s=*&mprtr=$~third-party,xmlhttprequest
@@ -23903,7 +23906,6 @@ $removeparam=ysclid
 /di3asdadasdadas.di3asdsa.js
 /dibu.adadadad
 /didomi.js
-/direct-link?pubid=$all
 /direct.hd?n=
 /disable-adblock.
 /discourse-fingerprint-$domain=~btt.community
@@ -24052,6 +24054,7 @@ $removeparam=ysclid
 /js/chat/edu_chat.js
 /js/content-protector.min.js$script
 /js/fpu3/pu4.min.js
+/js/gd.js
 /js/htmlk*.js$~third-party
 /js/htmlka.js
 /js/htmlkb.js
@@ -24194,7 +24197,6 @@ $removeparam=ysclid
 /promotools.$subdocument
 /pub/js_min.js|
 /pub?id=$script,third-party
-/public/ad/*$image
 /public/tingshu/foor.js$~third-party
 /pus2/app.js
 /push.js?utm_source=*&domain=$script
@@ -25600,6 +25602,7 @@ $removeparam=itm_medium
 $removeparam=itm_campaign
 $removeparam=itm_content
 $removeparam=itm_term
+$removeparam=utm_adset
 $removeparam=utm_adgroup
 $removeparam=utm_ad
 $removeparam=utm_affiliate
@@ -54458,7 +54461,7 @@ $removeparam=tctx
 $removeparam=ad_medium
 $doc,removeparam=/^adgroup=.*$/i
 $removeparam=ads_name
-$removeparam=ad_type
+$removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.com.br|~subito.it|~truckscorner.fr|~willhaben.at
 $removeparam=CAWELAID
 $removeparam=partition_id
 $removeparam=adgroup_id
@@ -54962,7 +54965,7 @@ $removeparam=vxii_pdid
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
-$removeparam=taboola_hm
+$doc,removeparam=taboola_hm
 $removeparam=anx_uId
 $removeparam=d_uuid
 $removeparam=_utma
