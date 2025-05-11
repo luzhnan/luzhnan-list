@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-10 02:16:30 UTC
+! Updated: 2025-05-11 01:51:17 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -61,14 +61,8 @@
 ##img[width="720"][height="90"]
 ##img[width="728"][height="90"]
 ##.ainsyndication
-##.adlf > div.adhl
 ##.adlf > div.adt
-##.adcen > div.adt
-##.ad > div.adrg
-##.adcen > div.adb
 ##.content > aside.ad
-##.contentmovie > div[class^="ad"]
-##.right-menu > div.adhl
 ##.adace-slideup-slot-wrap
 ##.in_article_ad
 ##.entry_ad
@@ -282,7 +276,6 @@
 /banner.go?spaceid=
 /captha/cap/|$document,popup
 /^https:\/\/[a-z]{6,13}\.(cloud|xyz)\/[A-Za-z0-9_-]{48}[A-Z]{3}$/$document
-/billing?_ts=$document
 /player/html.php?aid=*&video_id=*&referer=
 /sm/getcode?apiKey=
 /^https:\/\/[a-z]{8,15}\.(?:(com|net)\/(?:\d{1,3}\/)?tag\.min\.js$)/$script,third-party
@@ -781,6 +774,7 @@
 /ttj?id=
 /umd/advertisingWebRenderer.min.js$script
 /ut.js?cb=
+/utx?cb=$third-party
 /vendors~ads.
 /video_ads.$script
 /videoad.$~xmlhttprequest,domain=~videoad.in
@@ -1097,6 +1091,7 @@
 ###ad-8
 ###ad-9
 ###ad-Superbanner
+###ad-banner-top
 ###ad-banner-wrap
 ###ad-banner_atf-label
 ###ad-bar
@@ -1134,6 +1129,7 @@
 ###ad-middle
 ###ad-mrec
 ###ad-overlay
+###ad-panel
 ###ad-placeholder
 ###ad-popup
 ###ad-rect
@@ -1445,6 +1441,7 @@
 ###adverticum_r_side_container
 ###advertise
 ###advertisement-text
+###advertisement1
 ###advertisement_banner
 ###advertorial
 ###adverts
@@ -1465,6 +1462,7 @@
 ###article_ad
 ###aside_ad
 ###ax-billboard
+###ax-billboard-sub
 ###banner-ad
 ###banner-ad-container
 ###banner-skyscraper
@@ -1489,6 +1487,7 @@
 ###bottom-not-ads
 ###bottomAd
 ###bottomAdWrapper
+###bottomAds
 ###bottom_ad
 ###bottom_ad_wrapper
 ###bottom_ads
@@ -1666,6 +1665,7 @@
 ###native_ads
 ###nav-ad-container
 ###newAd
+###overlay_ad
 ###pause-ads
 ###pauseAd
 ###player-ads
@@ -1702,6 +1702,7 @@
 ###search-ad
 ###search_ad
 ###show-ad
+###show-sticky-ad
 ###showAd
 ###side-ad
 ###side-ads
@@ -1720,6 +1721,7 @@
 ###sidebar-ad-1
 ###sidebar-ad-2
 ###sidebar-ads
+###sidebar-left-ad
 ###sidebarAd
 ###sidebar_ad
 ###sidebar_ad_1
@@ -2257,12 +2259,14 @@
 ##.ad300x600
 ##.ad336
 ##.ad400
+##.ad450
 ##.ad468
 ##.ad530
 ##.ad600
 ##.ad728
 ##.ad728x90
 ##.ad970_250
+##.adActive
 ##.adArea
 ##.adAreaNative
 ##.adAreaTopTitle
@@ -2568,6 +2572,7 @@
 ##.ads-div
 ##.ads-el
 ##.ads-footer
+##.ads-google
 ##.ads-header
 ##.ads-here
 ##.ads-holder
@@ -2874,6 +2879,7 @@
 ##.advertise-link
 ##.advertise-pic
 ##.advertiseText
+##.advertise_box
 ##.advertise_text
 ##.advertisement-banner
 ##.advertisement-block
@@ -3251,6 +3257,7 @@
 ##.ezmob-footer
 ##.ezoic-ad
 ##.f-ad
+##.f-item-ad
 ##.featured-ad
 ##.featured-ads
 ##.feed-ad
@@ -3258,6 +3265,7 @@
 ##.fixed-ads
 ##.fixed_ad
 ##.fixed_adslot
+##.fjs-ad-hide-empty
 ##.flex-ad
 ##.floatad
 ##.floating-ads
@@ -3354,6 +3362,7 @@
 ##.header-ad-container
 ##.header-ad-desktop
 ##.header-ad-holder
+##.header-ad-widget
 ##.header-ad-wrap
 ##.header-ad-wrapper
 ##.header-ads
@@ -4320,6 +4329,7 @@
 ##.amp-ad-container
 ##.amp-ads
 ##.amp-unresolved
+##.amp_ad_1
 ##amp-ad
 ###banner_pos1_ddb_0
 ###banner_pos2_ddb_0
@@ -4459,6 +4469,7 @@
 /_i?type=event&
 /_lib/ga.js
 /_owa.gif?
+/_servix/webid.aspx?$script
 /_sess/script.js
 /_stat/log/*
 /_stat/log_
@@ -6322,6 +6333,7 @@
 /script/pixel.js
 /scriptAnalytics.js
 /scripts.kissmetrics.com/*
+/scripts/click.js.php
 /scripts/clickjs.php
 /scripts/hbx.js
 /scripts/statistics/*
@@ -7134,6 +7146,7 @@
 ://posthog.$script,domain=~posthog.com
 ://segment-api.
 ://segment-cdn.
+://t.targito.
 ://track.*/collect
 ://track.*/dye
 ://track.*/visitor/
@@ -9935,7 +9948,6 @@ $ping,third-party
 ##.amp-flying-carpet-text-border
 ##.amp-sticky-ad-custom
 ##.amp-sticky-ads
-##.amp_ad_1
 ##.amp_ad_header
 ##.ampad
 ##.ct_ampad
@@ -10190,6 +10202,8 @@ $ping,third-party
 ##.webAds
 ##.wplite-banner-ads
 /edgesystem*.js$from=cuevana.*|cuevana2espanol.*|cuevana3.*|gnula.*|pelispedia.life|poseidonhd2.co|cuevana.is|cuevana.biz|cuevana2espanol.net|cuevana3.to
+###pc-div-gpt-ad_728
+##._mo_recs_cti
 ##.google-2ad
 ###fluct-pc-sticky-ad
 /wp-content/plugins/leaky-paywall/js/leaky-paywall-cookie.js$script,1p,badfilter
@@ -10510,7 +10524,6 @@ $ping,third-party
 ###ad-banner-desktop
 ###ad-banner-image
 ###ad-banner-placement
-###ad-banner-top
 ###ad-base
 ###ad-bb-content
 ###ad-below-content
@@ -10632,7 +10645,6 @@ $ping,third-party
 ###ad-output
 ###ad-page-1
 ###ad-pan3l
-###ad-panel
 ###ad-pencil
 ###ad-performance
 ###ad-performanceFullbanner1
@@ -11687,7 +11699,6 @@ $ping,third-party
 ###advertisement-content
 ###advertisement-large
 ###advertisement-placement
-###advertisement1
 ###advertisement2
 ###advertisement3
 ###advertisement728x90
@@ -11881,7 +11892,6 @@ $ping,third-party
 ###avisoCookiesLayer
 ###avisoLGPD
 ###ax-billboard-bottom
-###ax-billboard-sub
 ###ax-billboard-top
 ###axs_cookie_toggle
 ###ba_eu_cookie_law
@@ -12079,7 +12089,6 @@ $ping,third-party
 ###bottomAdSection
 ###bottomAdSense
 ###bottomAdSenseDiv
-###bottomAds
 ###bottomAdvBox
 ###bottomApp
 ###bottomBannerAd
@@ -13769,7 +13778,6 @@ $ping,third-party
 ###optanon-popup-bg
 ###ovadsense
 ###overlay-ad-bg
-###overlay_ad
 ###overlayad
 ###overlayadd
 ###p-Ad
@@ -14095,7 +14103,6 @@ $ping,third-party
 ###shop-cookie
 ###shoper-foot ~ div.consents
 ###shopify-pc__banner
-###show-sticky-ad
 ###show_ads
 ###showads
 ###showcaseAd
@@ -14138,7 +14145,6 @@ $ping,third-party
 ###sidebar-adv
 ###sidebar-advertise-text
 ###sidebar-advertisement
-###sidebar-left-ad
 ###sidebar-main-ad
 ###sidebar-sponsors
 ###sidebar-top-ad
@@ -15056,6 +15062,7 @@ $ping,third-party
 ##.accept_cookies
 ##.acceptcookies
 ##.acm-ad-tag-unit
+##.ad > div.adrg
 ##.ad--300
 ##.ad--300x250
 ##.ad--468
@@ -15974,7 +15981,6 @@ $ping,third-party
 ##.ad3rdParty
 ##.ad400right
 ##.ad400x40
-##.ad450
 ##.ad468_60
 ##.ad468box
 ##.ad468innerboxadpic
@@ -16008,7 +16014,6 @@ $ping,third-party
 ##.ad728x90-2
 ##.ad728x90box
 ##.ad728x90btf
-##.adActive
 ##.adAlert
 ##.adAreaLC
 ##.adArticleBanner
@@ -16715,6 +16720,8 @@ $ping,third-party
 ##.adbutton-block
 ##.adbuttons
 ##.adcasing
+##.adcen > div.adb
+##.adcen > div.adt
 ##.adchange
 ##.adcode2
 ##.adcode_container
@@ -16812,6 +16819,7 @@ $ping,third-party
 ##.adleader
 ##.adleft1
 ##.adleftph
+##.adlf > div.adhl
 ##.adlgbox
 ##.adlinkdiv
 ##.adlinks
@@ -16948,7 +16956,6 @@ $ping,third-party
 ##.ads-fieldset
 ##.ads-fr
 ##.ads-global-top
-##.ads-google
 ##.ads-google-bottom
 ##.ads-google-top
 ##.ads-grp
@@ -17826,7 +17833,6 @@ $ping,third-party
 ##.advertiseContainer
 ##.advertiseHere
 ##.advertise_ads
-##.advertise_box
 ##.advertise_brand
 ##.advertise_carousel
 ##.advertise_here
@@ -18797,6 +18803,7 @@ $ping,third-party
 ##.contentads2
 ##.contentbox_ad
 ##.contentleftad
+##.contentmovie > div[class^="ad"]
 ##.contest_ad
 ##.context-ads
 ##.contextualAds
@@ -19357,7 +19364,6 @@ $ping,third-party
 ##.ezAdsWidget
 ##.ezmob-footer-desktop
 ##.f-data-policy
-##.f-item-ad
 ##.f-item-ad-inhouse
 ##.fbs-ad--ntv-home-wrapper
 ##.fbs-ad--top-wrapper
@@ -19399,7 +19405,6 @@ $ping,third-party
 ##.fixedLeftAd
 ##.fixedRightAd
 ##.fixed_advert_banner
-##.fjs-ad-hide-empty
 ##.fla-ad
 ##.flashAd
 ##.flash_ad
@@ -19763,7 +19768,6 @@ $ping,third-party
 ##.header-ad-row
 ##.header-ad-space
 ##.header-ad-top
-##.header-ad-widget
 ##.header-ad-zone
 ##.header-adbanner
 ##.header-adbox
@@ -20980,6 +20984,7 @@ $ping,third-party
 ##.right-adv
 ##.right-col-ad
 ##.right-column-ads
+##.right-menu > div.adhl
 ##.right-rail-box-ad-container
 ##.right-side-ads
 ##.right-sidebar-box-ad
@@ -23689,6 +23694,7 @@ $removeparam=ysclid
 /bbs/include/javascript/adblock.
 /bigREDcat.js?$third-party
 /bigREDdog.css?
+/billing?_ts=$document
 /biyys*hh.js$third-party
 /bloackdas.js
 /blockAndInf.js
@@ -24350,7 +24356,6 @@ $removeparam=ysclid
 /unib0ts/unibots*/*/script.js
 /usocookies.
 /uthnafrwy.js
-/utx?cb=$third-party
 /v.gif?logtype=
 /v0/amp-addthis-*.js
 /v2/a/push/js/*$third-party
@@ -39375,6 +39380,7 @@ $$amp-ad
 ###bottomStickyCookiesBox
 ###bottom_cookie
 ###bottom_info_cookies
+###bottombar > #cookies
 ###box-accettazione-cookie
 ###box-agree-gdpr-id
 ###box-alert-cookie
@@ -51867,6 +51873,7 @@ $$amp-ad
 ##.web-cookies
 ##.web-cookies-inline
 ##.webgatha-cookies-info
+##.webona_gdpr_js-banner
 ##.webshop-cookie-warning
 ##.website-cookie-banner
 ##.website-cookie-notification
