@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-12 01:55:11 UTC
+! Updated: 2025-05-12 23:53:01 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -63,6 +63,8 @@
 ##.ainsyndication
 ##.adlf > div.adt
 ##.content > aside.ad
+##.ads970
+###top_google_ads
 ##.adace-slideup-slot-wrap
 ##.in_article_ad
 ##.entry_ad
@@ -422,6 +424,7 @@
 /adanalytics.js$script
 /adaptive_components.ashx?type=ads&
 /adaptvadplayer.js$script
+/adasync.js$script
 /adasync.min.js$script
 /adbanners/*$image
 /adchoice.png$image
@@ -624,6 +627,7 @@
 /in/?tour=$third-party
 /include/ad/*$script
 /includes/ads/*$script
+/index-ad.js$script
 /index_ad/*$image
 /index_ads.js$script
 /infinity.js.aspx?$script
@@ -1060,6 +1064,7 @@
 ###Ads_BA_FLB
 ###Ads_BA_SKY
 ###Ads_BA_VID
+###AdsenseBottom
 ###AdvContainer
 ###AdvertMpu
 ###BottomAdContainer
@@ -1147,6 +1152,7 @@
 ###ad-skyscraper
 ###ad-slot
 ###ad-slot-1
+###ad-slot-2
 ###ad-slot-502
 ###ad-slot-top
 ###ad-slot1
@@ -1357,6 +1363,7 @@
 ###ads7
 ###adsBottom
 ###adsContainer
+###adsContent
 ###adsPanel
 ###adsZone2
 ###ads[style^="position: absolute; z-index: 30; width: 100%; height"]
@@ -1397,6 +1404,7 @@
 ###adslot_1
 ###adslot_2
 ###adslot_top
+###adsonar
 ###adspace
 ###adspacer
 ###adsright
@@ -2023,6 +2031,7 @@
 ##.ad-element
 ##.ad-entity-container
 ##.ad-feedback
+##.ad-fix
 ##.ad-fixed
 ##.ad-flag
 ##.ad-flex
@@ -2308,6 +2317,7 @@
 ##.adPanel
 ##.adPlaceholder
 ##.adPlacement
+##.adRectangle
 ##.adRenderer
 ##.adRendererInfinite
 ##.adResponsive
@@ -2423,6 +2433,7 @@
 ##.ad_lrec
 ##.ad_margin
 ##.ad_marker
+##.ad_middle
 ##.ad_mobile
 ##.ad_module
 ##.ad_mr
@@ -2459,6 +2470,7 @@
 ##.ad_tag
 ##.ad_text
 ##.ad_title
+##.ad_to_list
 ##.ad_top
 ##.ad_top_3
 ##.ad_under
@@ -2555,6 +2567,7 @@
 ##.ads-banner
 ##.ads-below-view-content
 ##.ads-bg
+##.ads-bing-bottom
 ##.ads-bing-top
 ##.ads-block
 ##.ads-block-panel-tipo-1
@@ -2657,6 +2670,7 @@
 ##.adsLabel
 ##.adsLine
 ##.adsNetwork
+##.adsRight
 ##.adsText
 ##.adsWidget
 ##.adsWrap
@@ -3085,6 +3099,7 @@
 ##.body_ad
 ##.bot_ad
 ##.bottom-ad
+##.bottom-ad-box
 ##.bottom-ad-container
 ##.bottom-ad-wrapper
 ##.bottom-ad2
@@ -3270,6 +3285,8 @@
 ##.featured-ads
 ##.feed-ad
 ##.fig-ad-content
+##.firstpost_advert
+##.firstpost_advert_container
 ##.fixed-ads
 ##.fixed_ad
 ##.fixed_adslot
@@ -3630,6 +3647,7 @@
 ##.nx-placeholder-ad
 ##.o-ad
 ##.o-ad-container
+##.ob_ads_header
 ##.ob_dual_right > .ob_ads_header ~ .odb_div
 ##.onet-ad
 ##.opd_adsticky
@@ -3975,14 +3993,17 @@
 ##.top.ad
 ##.topAD
 ##.topAdContainer
+##.topAdWrapper
 ##.topAds
 ##.topAdvertisement
 ##.topAlertAds
 ##.top__ad
 ##.top_ad
 ##.top_ads
+##.top_ads_container
 ##.top_adv
 ##.top_adv_content
+##.topad2
 ##.topadblock
 ##.topads
 ##.tower-ad
@@ -4386,6 +4407,7 @@
 ###original_taboola
 ###possible_taboola
 ###taboola
+###taboola-ad
 ###taboola-below-article-1
 ###taboola-below-article-thumbnails
 ###taboola-below-article-thumbnails-2
@@ -6489,6 +6511,7 @@
 /stat/event?
 /stat/fe?
 /stat/rt/js?
+/stat/stat.php?type=
 /stat2.aspx?
 /stat2.js
 /stat?event=
@@ -6509,6 +6532,7 @@
 /statcounter.js
 /statcountex/count.asp?
 /statistic/pixel?
+/statistiche/stat.php$xmlhttprequest
 /statistics.js?$third-party
 /statistics/pixel/*
 /statistics/visit?id=
@@ -9317,6 +9341,7 @@ $ping,third-party
 ##.content > .module > .small-icon-container > a.small-icon-div[target="_blank"]
 ##.video-ad-item
 ##.ceo_ads
+##.yalayi_box
 ###kp-hid-gb.uk-alert
 ###side_promo.bc_dp
 ##body[ontouchstart] > .wrap > div[id^="content_"][style="display: block;"]
@@ -9505,6 +9530,7 @@ $ping,third-party
 /\.[a-z]weisi[a-z].top\//$script,third-party
 /\.[a-z]dyurli[a-z].top\//$script,third-party
 /\.[a-z]domsi[a-z].top\//$script,third-party
+/83zg/tss.js
 /static/23wx/idd.js
 /static/2biqu/twgdh.js
 /js/pfad*.js
@@ -9684,7 +9710,6 @@ $ping,third-party
 ##.ad-m-mrec
 ##.ad-m-banner
 ##.ad-top-billboard
-##.ad_to_list
 ##.horizontal-full-ad
 ##.sidebar-square-ad
 ##.ad-callout-wrapper
@@ -10025,7 +10050,6 @@ $ping,third-party
 ###component-taboola-below-homepage-feed
 ###moduleTaboolaRightRail
 ###taboola-above-homepage-thumbnails
-###taboola-ad
 ###taboola-adverts
 ###taboola-below
 ###taboola-below-article-thumbnails-express
@@ -10312,7 +10336,6 @@ $ping,third-party
 ###Ads_TFM_BS
 ###Ads_google_bottom_wide
 ###Adsense300x250
-###AdsenseBottom
 ###AdsenseTop
 ###Adsterra
 ###Adv10
@@ -10716,7 +10739,6 @@ $ping,third-party
 ###ad-sky
 ###ad-slideshow
 ###ad-slideshow2
-###ad-slot-2
 ###ad-slot-3
 ###ad-slot-4
 ###ad-slot-5
@@ -11376,7 +11398,6 @@ $ping,third-party
 ###ads728x90_2
 ###ads728x90top
 ###adsBar
-###adsContent
 ###adsDisplay
 ###adsHeader
 ###adsHeading
@@ -11557,7 +11578,6 @@ $ping,third-party
 ###adslot_rect
 ###adsmgid
 ###adsmiddle
-###adsonar
 ###adspace-1
 ###adspace-2
 ###adspace-300x250
@@ -14536,7 +14556,6 @@ $ping,third-party
 ###top_advertising
 ###top_banner_ads
 ###top_container_ad
-###top_google_ads
 ###top_mpu
 ###top_mpu_ad
 ###top_rectangle_ad
@@ -15424,7 +15443,6 @@ $ping,third-party
 ##.ad-filler
 ##.ad-filmstrip
 ##.ad-first
-##.ad-fix
 ##.ad-flex-center
 ##.ad-floor
 ##.ad-footer-empty
@@ -16194,7 +16212,6 @@ $ping,third-party
 ##.adRecommend
 ##.adRecommendRight
 ##.adRect
-##.adRectangle
 ##.adRectangle-pos-large
 ##.adRectangle-pos-small
 ##.adRectangleBanner
@@ -16475,7 +16492,6 @@ $ping,third-party
 ##.ad_megabanner
 ##.ad_message
 ##.ad_mid_post_body
-##.ad_middle
 ##.ad_middle_banner
 ##.ad_mod
 ##.ad_mp
@@ -16955,7 +16971,6 @@ $ping,third-party
 ##.ads-bg.ads-bg-home
 ##.ads-bigbox
 ##.ads-bilboards
-##.ads-bing-bottom
 ##.ads-block-bottom-wrap
 ##.ads-block-link-text
 ##.ads-block-top-right
@@ -17099,7 +17114,6 @@ $ping,third-party
 ##.ads728_90
 ##.ads728b
 ##.ads728x90-1
-##.ads970
 ##.adsAdvert
 ##.adsBannerLink
 ##.adsBot
@@ -17135,7 +17149,6 @@ $ping,third-party
 ##.adsPostquare
 ##.adsPushdown
 ##.adsRectangleMedium
-##.adsRight
 ##.adsRow
 ##.adsSecond
 ##.adsSectionRL
@@ -18497,7 +18510,6 @@ $ping,third-party
 ##.bot_ads
 ##.bottom-ad--bigbox
 ##.bottom-ad-banner
-##.bottom-ad-box
 ##.bottom-ad-desktop
 ##.bottom-ad-large
 ##.bottom-ad-placeholder
@@ -19414,8 +19426,6 @@ $ping,third-party
 ##.firstAd-container
 ##.first_party_ad_wrapper
 ##.firstad
-##.firstpost_advert
-##.firstpost_advert_container
 ##.fix_ad
 ##.fix_swell_banner
 ##.fixadheight
@@ -20677,7 +20687,6 @@ $ping,third-party
 ##.oas_advertisement
 ##.oasad
 ##.oasads
-##.ob_ads_header
 ##.ob_container .item-container-obpd
 ##.obs_cnil
 ##.offads
@@ -21701,7 +21710,6 @@ $ping,third-party
 ##.topAdRight
 ##.topAdSpacer
 ##.topAdWrap
-##.topAdWrapper
 ##.topAdd
 ##.topAdsWrappper
 ##.topAdvBox
@@ -21737,7 +21745,6 @@ $ping,third-party
 ##.top_adbox1
 ##.top_adbox2
 ##.top_adh
-##.top_ads_container
 ##.top_adsense
 ##.top_adspace
 ##.top_advert
@@ -21759,7 +21766,6 @@ $ping,third-party
 ##.topad-bar
 ##.topad-bg
 ##.topad1
-##.topad2
 ##.topadbar
 ##.topadbox
 ##.topadcont
@@ -23542,7 +23548,6 @@ $removeparam=ysclid
 /ad_server.cgi$subdocument
 /ad_skyscraper.gif$image
 /ad_top.jpg$image
-/adasync.js$script
 /adb-watch.
 /adbDetect.
 /adbDetect/*
@@ -24044,7 +24049,6 @@ $removeparam=ysclid
 /in/show/?mid=$third-party
 /inc/antiblock.
 /index-ad-$stylesheet
-/index-ad.js$script
 /index.html?channelCode=
 /index.php?op=ad_click
 /inhouse_ads/*$image
@@ -24138,6 +24142,7 @@ $removeparam=ysclid
 /m.html?rmid=*&yd=
 /m.html?shareName=*&proxyAccount=
 /mads.php$subdocument
+/magellano_webpush.js
 /maven/am.js$script
 /media/plg_system_eprivacy
 /media_ads/*$image
@@ -24351,6 +24356,7 @@ $removeparam=ysclid
 /tencentvideo/script/webtips/*
 /testAB.bundle.
 /tghr.js$script
+/theme/damn_b.js$~third-party
 /theologicalpresentation.com/*$script
 /tianya_recommend?
 /tm.cookie.js
@@ -25663,6 +25669,8 @@ $removeparam=guccounter
 $removeparam=action_object_map
 $removeparam=action_ref_map
 $removeparam=action_type_map
+/viewforum.php?$removeparam=sid
+/viewtopic.php?$removeparam=sid
 /landing.$removeparam=ref
 /landing.$removeparam=clickid
 /landing.$removeparam=pixelid
@@ -42358,7 +42366,6 @@ $$amp-ad
 ###ePrivacy
 ###eac_cookie_message
 ###eafw-cookies
-###eagerly-tools-cookie
 ###easyCookie
 ###easycookieinfo
 ###eawe_cookies_info
@@ -47056,8 +47063,6 @@ $$amp-ad
 ##.cookie-eu-msg
 ##.cookie-event-block
 ##.cookie-fade
-##.cookie-fb-title
-##.cookie-fb-top
 ##.cookie-fixed
 ##.cookie-fixed-footer
 ##.cookie-fixed-hint
@@ -52481,6 +52486,7 @@ $$amp-ad
 ##section.cookie-popup
 ##section.cookie__privacy
 ##section.cookies_banner
+##.cookieBanner-fZ6hup
 ##.gnt_pu
 ##.space-around-cookie-consent-container
 ##.isense-cookieconsent-wrapper
