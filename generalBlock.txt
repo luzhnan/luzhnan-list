@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-14 12:29:08 UTC
+! Updated: 2025-05-15 02:19:04 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -63,6 +63,7 @@
 ##.ainsyndication
 ##.adlf > div.adt
 ##.content > aside.ad
+##.interstitial-ad
 ##.ads970
 ###top_google_ads
 ##.adace-slideup-slot-wrap
@@ -9871,7 +9872,6 @@ $ping,third-party
 ##.ins_adwrap
 ##.instoryAdBlock
 ##.instoryAdNoBlock
-##.interstitial-ad
 ##.js-ad-placement
 ##.js-anchor-ad
 ##.js-lazy-ad
@@ -25531,6 +25531,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.[a-z]{3,7}\/[a-z][0-9A-Za-z]{10,16}\/\d{4,6}$/$script,third-party,match-case
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js/$script,xmlhttprequest,third-party
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\/invoke\.js/$script,third-party
+##[href^="https://url.totaladblock.com/"]
 /\/\/([0-9a-z]+\.)?([0-9a-z]+\.)?[0-9a-z]+\.[0-9a-z]+\.[a-z][a-z]+\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]\.js\?st=[0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z]?[0-9A-Z]?$/$~third-party,match-case
 $removeparam=tw_medium
 $removeparam=tw_profile_id
@@ -54187,6 +54188,7 @@ $$amp-ad
 $doc,removeparam=/^\??utm_.*$/i,domain=~tradedoubler.com|~sendgb.com|~allegro.pl|~tix.axs.com|~transfernow.*|~carrefourpl.snrpage.com|~justdial.com|~pepper.pl|~gaugau.futabanet.jp|~uploadnow.io
 $doc,removeparam=/^itm_.*$/,domain=~redir.tradedoubler.com
 $doc,removeparam=/^stm_.*$/,domain=~redir.tradedoubler.com
+$doc,removeparam=/^mtm_.*$/,domain=~redir.tradedoubler.com
 $doc,removeparam=/^_utm_.*$/i
 $removeparam=logTag,doc
 $removeparam=gclsrc,doc
@@ -54607,6 +54609,7 @@ $doc,removeparam=/^aff_sub\d?=.*$/
 $removeparam=afftrack
 $removeparam=atid
 $doc,removeparam=/^clickref\d?=.*$/
+$removeparam=cuid,domain=~dynamicyield.com
 $removeparam=data1,domain=~web3.cmvm.pt
 $removeparam=data2
 $removeparam=data3
@@ -55080,6 +55083,7 @@ $removeparam=affid2
 $removeparam=oid2
 $removeparam=tw_adid
 $removeparam=retailerSlug
+$removeparam=uls_trackid
 /auto-append-spmid.js
 $removeparam=refRID
 $removeparam=dchild
