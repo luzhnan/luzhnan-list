@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-17 01:32:41 UTC
+! Updated: 2025-05-18 02:19:38 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -358,6 +358,7 @@
 /bannerpop/uploads/*
 /xxx.js|$script,~third-party
 /ld/ifk?zoneid=
+/cdn-cgi/pe/bag2?r[]=*.popmajor.com
 /adsadclient
 /adwolf.$domain=~adwolf.ru
 /banners*swf
@@ -418,6 +419,7 @@
 /ad_banner/*$image,domain=~ccf.com.cn
 /ad_bottom.js$script
 /ad_counter.aspx$ping
+/ad_header.js$script
 /ad_home.js$script
 /ad_images/*$image,domain=~5nd.com|~dietnavi.com
 /ad_img/*$image
@@ -570,6 +572,7 @@
 /banners/adv/*$~xmlhttprequest
 /banners/affiliate/*$image
 /bottomad.png$image
+/bottomads.js$script
 /bsa-plugin-pro-scripteo/frontend/js/script.js$script
 /btag.min.js$third-party
 /buysellads.js$script
@@ -580,6 +583,7 @@
 /code/https-v2.js?uid=
 /code/native.js?h=$script
 /common/ad.js$script
+/common_ad.js$script
 /concert_ads-$script
 /content-ads.js$script
 /content/ads/*$~xmlhttprequest
@@ -755,6 +759,7 @@
 /script/native_server.js$third-party
 /script/wait.php?*=$xmlhttprequest
 /scripts/FlyAd.js
+/scripts/js3caf.js$script
 /sdk/push_web/?zid=$third-party
 /serveads.php$script
 /servlet/view/*$script
@@ -762,6 +767,7 @@
 /show_ad.js$script
 /showbanner.js$script
 /side-ads-$~xmlhttprequest
+/sidead.js$script
 /sidead1.js$script
 /sideads.js$script
 /sidebar_ads/*$~xmlhttprequest
@@ -1160,6 +1166,7 @@
 ###ad-rectangle
 ###ad-right
 ###ad-right-top
+###ad-rotator
 ###ad-section
 ###ad-sidebar
 ###ad-sidebar1
@@ -1306,6 +1313,7 @@
 ###adbody
 ###adbottom
 ###adbox
+###adbox1
 ###adbox2
 ###adcenter
 ###adchoicesBtn
@@ -1623,6 +1631,7 @@
 ###gad300x250
 ###gallery-ad-container
 ###gallery-advert
+###gasense
 ###global_header_ad
 ###google-ad
 ###google-ads
@@ -1633,6 +1642,7 @@
 ###googleads
 ###gpt-ad-1
 ###gpt-leaderboard-ad
+###gpt-mpu
 ###gpt-sticky
 ###halfpagead
 ###head-ad
@@ -1640,6 +1650,7 @@
 ###header-ad
 ###header-ad-container
 ###header-ads
+###header-banner-ad
 ###headerAd
 ###headerAdContainer
 ###headerAds
@@ -1657,6 +1668,7 @@
 ###iframe-ad
 ###imgAddDirectLink
 ###index_ad
+###initializeAd
 ###inline_ad
 ###insticator-container
 ###interstitialAd
@@ -2065,6 +2077,7 @@
 ##.ad-disclaimer
 ##.ad-display
 ##.ad-displayed
+##.ad-divider
 ##.ad-dt
 ##.ad-element
 ##.ad-entity-container
@@ -2382,6 +2395,7 @@
 ##.adStyle
 ##.adTag
 ##.adText
+##.adTile
 ##.adTip
 ##.adTitle
 ##.adTop
@@ -2543,6 +2557,7 @@
 ##.adbox1
 ##.adbox2
 ##.adbox_310x400
+##.adbox_top
 ##.adboxid
 ##.adbreak
 ##.adbtn
@@ -3142,6 +3157,7 @@
 ##.block-dfp
 ##.block-fusion-ads
 ##.block-openx
+##.block-quartz-ads
 ##.block-simpleads
 ##.block-yt-ads
 ##.block_ad
@@ -3230,6 +3246,7 @@
 ##.cms-ad
 ##.cnc-ads
 ##.col-ad
+##.column-ad
 ##.columnAd
 ##.comment-ad
 ##.companion-ad
@@ -3357,8 +3374,10 @@
 ##.foot-ad
 ##.footad
 ##.footer-ad
+##.footer-ad-labeling
 ##.footer-ad-row
 ##.footer-ad-section
+##.footer-ad-unit
 ##.footer-ad-wrap
 ##.footer-ads
 ##.footer-advert
@@ -3452,6 +3471,7 @@
 ##.header-ad-widget
 ##.header-ad-wrap
 ##.header-ad-wrapper
+##.header-adbox
 ##.header-ads
 ##.header-ads-wrap
 ##.header-ads-wrapper
@@ -3517,6 +3537,7 @@
 ##.inline-ad-container
 ##.inline-ad-placeholder
 ##.inline-ad-wrapper
+##.inline-banner-ad
 ##.inlineAd
 ##.inlineAdContainer
 ##.inlinePageAds
@@ -3580,6 +3601,7 @@
 ##.leader-ad
 ##.leaderAd
 ##.leaderAdvert
+##.leaderad
 ##.leaderboard-ad
 ##.leaderboard-ad-container
 ##.leaderboard-ad-wrapper
@@ -3704,6 +3726,7 @@
 ##.nav-ad
 ##.nav-ad-gpt-container
 ##.nav_ad
+##.navbar-ad-section
 ##.news-ad
 ##.news-ad-square-a
 ##.news-ad-square-box
@@ -3768,6 +3791,7 @@
 ##.polaris__ad
 ##.post-ad
 ##.post-ads
+##.post-sponsored
 ##.postAd
 ##.post_ad
 ##.postad
@@ -3837,6 +3861,7 @@
 ##.right-ad-block
 ##.right-ad-wrapper
 ##.right-ads
+##.right-adv
 ##.right-advert
 ##.right-advertisement
 ##.right-column-ad
@@ -3848,6 +3873,7 @@
 ##.rightAds
 ##.rightAdsFix
 ##.rightColAd
+##.rightColumnAd
 ##.right_ad
 ##.right_ad_box
 ##.right_ad_top
@@ -3889,6 +3915,7 @@
 ##.sh-section-ad
 ##.sheknows-infuse-ad
 ##.showAd
+##.showads
 ##.side-ad
 ##.side-ad-container
 ##.side-ads
@@ -4341,7 +4368,9 @@
 ##a[href^="https://www.brazzersnetwork.com/landing/"]
 ##a[href^="https://www.effectiveratecpm.com/"]
 ##a[href^="https://www.financeads.net/tc.php?"]
+##a[href^="https://www.geekbuying.com/dynamic-ads/"]
 ##a[href^="https://www.infowarsstore.com/"] > img
+##a[href^="https://www.mrskin.com/tour"]
 ##a[href^="https://www.nutaku.net/signup/landing/"]
 ##a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="]
 ##a[href^="https://www.toprevenuegate.com/"]
@@ -4386,10 +4415,8 @@
 ##ps-connatix-module
 ##span[data-ez-ph-id]
 ##span[id^="ezoic-pub-ad-placeholder-"]
-##.bs-sneaker-container
 ##.newspack-broadstreet-ad
 ##.newspack_global_ad
-##.newspack_global_ad_new
 ##.widget_newspack-ads-widget
 ##broadstreet-zone-container
 ##.Ad-Container:not(.adsbygoogle)
@@ -9871,7 +9898,6 @@ $ping,third-party
 ##.channel-sidebar-big-box-ad
 ##.cnx-player-wrapper
 ##.collapsed-ad
-##.column-ad
 ##.connatix-main-container
 ##.crain-advertisement
 ##.css--ad
@@ -9975,7 +10001,6 @@ $ping,third-party
 ##.tpd-banner-desktop
 ##.tpd-banner-ad-container
 ##.top-dfp-wrapper
-##.block-quartz-ads
 ##.nn_mobile_mpu_wrapper
 ##.static_mpu_wrap
 ##.tmo-ad
@@ -10812,7 +10837,6 @@ $ping,third-party
 ###ad-right-sidebar
 ###ad-right2
 ###ad-right3
-###ad-rotator
 ###ad-row
 ###ad-separator
 ###ad-shop
@@ -11345,7 +11369,6 @@ $ping,third-party
 ###adbox--page_top_ad
 ###adbox-inarticle
 ###adbox-topbanner
-###adbox1
 ###adbox_content
 ###adbox_right
 ###adbpopup
@@ -13207,7 +13230,6 @@ $ping,third-party
 ###game-ad
 ###gamead
 ###gameads
-###gasense
 ###gb_sm_notification
 ###gccookiemessage
 ###gdpr-banner
@@ -13290,7 +13312,6 @@ $ping,third-party
 ###gpt-ad-side-bottom
 ###gpt-ad-skyscraper
 ###gpt-instory-ad
-###gpt-mpu
 ###grdAds
 ###gridAdSidebar
 ###grid_ad
@@ -13336,7 +13357,6 @@ $ping,third-party
 ###header-adverts
 ###header-advrt
 ###header-banner-728-90
-###header-banner-ad
 ###header-banner-ad-wrapper
 ###header-block-ads
 ###header-box-ads
@@ -13500,7 +13520,6 @@ $ping,third-party
 ###informations-cookies
 ###infos_cookie
 ###inhousead
-###initializeAd
 ###inline-ad
 ###inline-ad-label
 ###inline-advert
@@ -15488,7 +15507,6 @@ $ping,third-party
 ##.ad-dfp-row
 ##.ad-disclaimer-text
 ##.ad-diver
-##.ad-divider
 ##.ad-dx_wrp
 ##.ad-e
 ##.ad-enabled
@@ -16333,7 +16351,6 @@ $ping,third-party
 ##.adTextStreaming
 ##.adTextWrap
 ##.adTicker
-##.adTile
 ##.adTileWrap
 ##.adTiler
 ##.adTitleR
@@ -16742,6 +16759,8 @@ $ping,third-party
 ##.adblock-top-left
 ##.adblock-warning-partial-component
 ##.adblock-warning-teaser
+##.adblock-whitelist-messaging__article-wrapper
+##.adblock-whitelist-messaging__wrapper
 ##.adblock-wide
 ##.adblock300
 ##.adblock300250
@@ -16797,7 +16816,6 @@ $ping,third-party
 ##.adbox_cont
 ##.adbox_largerect
 ##.adbox_left
-##.adbox_top
 ##.adboxbg
 ##.adboxbot
 ##.adboxclass
@@ -18640,6 +18658,7 @@ $ping,third-party
 ##.brn-ads-box
 ##.broker-ad
 ##.browse-ad-container
+##.bs-sneaker-container
 ##.bs-wrap-gdpr-law
 ##.bst-panel
 ##.bump-ad
@@ -19514,9 +19533,7 @@ $ping,third-party
 ##.foot_adsense
 ##.footer-300-ad
 ##.footer-ad-full-wrapper
-##.footer-ad-labeling
 ##.footer-ad-squares
-##.footer-ad-unit
 ##.footer-adrow
 ##.footer-ads-slide
 ##.footer-ads-wrapper
@@ -19843,7 +19860,6 @@ $ping,third-party
 ##.header-ad-top
 ##.header-ad-zone
 ##.header-adbanner
-##.header-adbox
 ##.header-adcode
 ##.header-adplace
 ##.header-ads-area
@@ -20054,7 +20070,6 @@ $ping,third-party
 ##.inline-ad-wrap
 ##.inline-adblock
 ##.inline-advert
-##.inline-banner-ad
 ##.inline-display-ad
 ##.inline-google-ad-slot
 ##.inline-mpu
@@ -20249,7 +20264,6 @@ $ping,third-party
 ##.leaderBoardAdvert
 ##.leader_ad
 ##.leader_aol
-##.leaderad
 ##.leaderboard-ad-belt
 ##.leaderboard-ad-dummy
 ##.leaderboard-ad-grid
@@ -20632,7 +20646,6 @@ $ping,third-party
 ##.nav-ad-plus-leader
 ##.nav-adWrapper
 ##.nav__cookies
-##.navbar-ad-section
 ##.navbar-ads
 ##.navbar-header-ad
 ##.navbar-privacy
@@ -20658,6 +20671,7 @@ $ping,third-party
 ##.newsletter-inbodyContent-slice
 ##.newsletter-simple
 ##.newsletter-slice
+##.newspack_global_ad_new
 ##.nfy-ad
 ##.nfy-ad-teaser
 ##.nfy-ad-tile
@@ -20880,7 +20894,6 @@ $ping,third-party
 ##.post-load-ad
 ##.post-news-ad
 ##.post-sidebar-ad
-##.post-sponsored
 ##.postWideAd
 ##.post_ads
 ##.post_advert
@@ -21037,7 +21050,6 @@ $ping,third-party
 ##.right-ad350px250px
 ##.right-ads2
 ##.right-adsense
-##.right-adv
 ##.right-col-ad
 ##.right-column-ads
 ##.right-menu > div.adhl
@@ -21059,7 +21071,6 @@ $ping,third-party
 ##.rightBoxAd
 ##.rightBoxMidAds
 ##.rightColAdBox
-##.rightColumnAd
 ##.rightColumnAdd
 ##.rightColumnAdsTop
 ##.rightColumnRectAd
@@ -21183,7 +21194,6 @@ $ping,third-party
 ##.show-desk-ad
 ##.show-sticky-ad
 ##.showAdContainer
-##.showads
 ##.showcaseAd
 ##.showcasead
 ##.shr-ads-container
@@ -22286,6 +22296,7 @@ $ping,third-party
 ##[class][style*='px; top: 0px; left: 0px; z-index'][style$='width: 100vw; position: fixed;']
 ##[class][style*='px; top: 0px; left: 0px; z-index'][style$='width: 100vw; position: relative;']
 ##[class^="chapter_"] > .baiduCenter
+##[class~="mailpoet_form_popup_overlay"]
 ##[data-ad-cls]
 ##[data-ad-manager-id]
 ##[data-ad-module]
@@ -22646,7 +22657,6 @@ $ping,third-party
 ##a[href^="https://www.dql2clk.com/"]
 ##a[href^="https://www.endorico.com/Smartlink/"]
 ##a[href^="https://www.friendlyduck.com/AF_"]
-##a[href^="https://www.geekbuying.com/dynamic-ads/"]
 ##a[href^="https://www.get-express-vpn.com/offer/"]
 ##a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="]
 ##a[href^="https://www.googleadservices.com/pagead/aclk?"] > img
@@ -22654,7 +22664,6 @@ $ping,third-party
 ##a[href^="https://www.highperformancecpmgate.com/"]
 ##a[href^="https://www.liquidfire.mobi/"]
 ##a[href^="https://www.mrskin.com/account/"]
-##a[href^="https://www.mrskin.com/tour"]
 ##a[href^="https://www.onlineusershielder.com/"]
 ##a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"]
 ##a[href^="https://www8.smartadserver.com/"]
@@ -23490,14 +23499,15 @@ $removeparam=ysclid
 /^94\.242\.247\.(2[0-9]|3[0-2]):/$network
 /^https:\/\/(?:as(?:loader)?|loader)\.([-0-9A-Za-z]+.[-A-Za-z]{2,30})\/script\/(?:www\.)?\1\.js\?h=\d{9}$/$xmlhttprequest,~third-party,urltransform=/script.+/loader.min.js/
 /^https:\/\/[0-9a-z]{5,}\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,~third-party
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|artforum.com|artnews.com|awkward.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|eater.com|eldiariony.com|fark.com|femestella.com|footwearnews.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|mandatory.com|masslive.com|mlive.com|mmamania.com|naszemiasto.pl|nationalpost.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nothingbutnewcastle.com|nsjonline.com|nypost.com|oregonlive.com|pagesix.com|pennlive.com|playstationlifestyle.net|robbreport.com|rollingstone.com|sbnation.com|sheknows.com|sneakernews.com|sport-fm.gr|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|thecw.com|thedailymeal.com|theflowspace.com|themarysue.com|tokfm.pl|torontosun.com|tvline.com|usmagazine.com|wallup.net|wimp.com|worldstar.com|worldstarhiphop.com|yourcountdown.to
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,redirect=noopjs,ipaddress=/^(3[45]\.\d+\.\d{2,3}\.\d{2,3}|2600:1901:0:[a-f0-9]{3,4}::1)$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{12,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmovie.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|artforum.com|artnews.com|awkward.com|awkwardmom.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|eater.com|eldiariony.com|fark.com|femestella.com|footwearnews.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|mandatory.com|masslive.com|mlive.com|mmamania.com|naszemiasto.pl|nationalpost.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nothingbutnewcastle.com|nsjonline.com|nypost.com|oregonlive.com|pagesix.com|pennlive.com|playstationlifestyle.net|robbreport.com|rollingstone.com|sbnation.com|sheknows.com|sneakernews.com|sport-fm.gr|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|thecw.com|thedailymeal.com|theflowspace.com|themarysue.com|tokfm.pl|torontosun.com|tvline.com|usmagazine.com|wallup.net|wimp.com|worldstar.com|worldstarhiphop.com|yourcountdown.to
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,header=etag:/^W\/"[0-9a-f]{64}"$/
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,header=via:/, 1\.1 google$/
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs,ipaddress=/^(3[45]\.\d+\.\d{2,3}\.\d{2,3}|2600:1901:0:[a-f0-9]{3,4}::1)$/
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,header=etag:/^W\/"[0-9a-f]{64}"$/
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,header=via:/, 1\.1 google$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/[a-z]{0,7}\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{20,120}(?:[-.][a-z0-9]{2,6})?(?:\.js)?$/$script,3p,match-case,to=com,header=x-datacenter
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[-_0-9a-z]{0,84}[A-Z])(?=[-_a-zA-Z]{0,84}[0-9])[-_0-9a-zA-Z]{54,85}(#\?v=[0-9a-f]{32})?$/$script,xhr,3p,match-case
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[0-9a-z_-]{0,84}[A-Z])(?=[a-zA-Z_-]{0,84}[0-9])[0-9a-zA-Z_-]{54,85}(#\?v=[0-9a-f]{32})?$/$ping,script,xmlhttprequest,third-party,match-case
+/^https:\/\/[a-z0-9]+\.[a-z]{2,}\/blast\.js$/$script,1p,strict1p,to=~gov|~edu
 /^https:\/\/[a-z]{8,15}\.(?:(com|net)\/(?:\d{1,3}\/)?tag\.min\.js$)/$script,third-party,redirect=noopjs
 /^https:\/\/cdn\.jsdelivr\.net\/npm\/[-a-z_]{4,22}@latest\/dist\/script\.min\.js$/$script,3p,match-case
 /^https:\/\/grabify\.org\/[A-Z0-9]+$/$doc
@@ -23553,7 +23563,6 @@ $removeparam=ysclid
 /adClick?$popup
 /ad_728.jpg$image
 /ad_bottom.jpg$image
-/ad_header.js$script
 /ad_pop.php?$popup
 /ad_right.$subdocument
 /ad_rotator/*$image,script,domain=~spokane.exchange
@@ -23742,7 +23751,6 @@ $removeparam=ysclid
 /borlabs-cookie/*$~script
 /bottom-ads.jpg$image,domain=~saltwaterisland.com
 /bottom-ads.png$image
-/bottomads.js$script
 /bsa-pro-scripteo/frontend/js/script.js$script
 /bugsnag.min.js$third-party
 /bundle/trafee/prelands/*
@@ -23751,7 +23759,6 @@ $removeparam=ysclid
 /ccm19.js
 /ccnst/ccbundle.min.js
 /cdn-cgi/pe/bag2?r[]=*.mgid.com
-/cdn-cgi/pe/bag2?r[]=*.popmajor.com
 /cdn-cgi/pe/bag2?r[]=*.poptm.com
 /cdn-cgi/pe/bag2?r[]=*bontent.powvideo.net
 /cdn-cgi/pe/bag2?r[]=*cdn.plopx.com
@@ -23783,7 +23790,6 @@ $removeparam=ysclid
 /code/silent.js?h=$script
 /common-js/exit/om2.min.js
 /common/templates/dfp/dfp-component-template.html$~third-party,other,xmlhttprequest,redirect=nooptext
-/common_ad.js$script
 /components/js/analytics.js$~third-party,script,xmlhttprequest,redirect=noopjs
 /cookie-accept.js
 /cookie-alert.
@@ -23927,6 +23933,7 @@ $removeparam=ysclid
 /cookiewarning4.js$script
 /cookiewet.
 /cookiewookie.js
+/copyprevention.js^$script,1p
 /counter/?domain=$image,1p
 /cp2.gif?*=qc_
 /cpmbanners.js$script
@@ -23973,6 +23980,7 @@ $removeparam=ysclid
 /ee-cookies-min.
 /emea-cookie-
 /emh_cookiebanner/*
+/emma-content-aggregates-prd.
 /eroclick.js
 /eu-cookie-
 /eu-cookie.
@@ -24091,6 +24099,7 @@ $removeparam=ysclid
 /js/bsa-script-doctype.js$script
 /js/bsa-script-no-doctype.js$script
 /js/chat/edu_chat.js
+/js/content-protector.min.js$script
 /js/fpu3/pu4.min.js
 /js/gd.js
 /js/htmlk*.js$~third-party
@@ -24286,7 +24295,6 @@ $removeparam=ysclid
 /script/uBlock.js$third-party
 /script/xxAG1.js$third-party
 /scriptonline.js?uin=
-/scripts/js3caf.js$script
 /scripts/snstyle.js?v=2$~third-party
 /sdk/push_web/?zid=
 /senddata?site=banner
@@ -24300,7 +24308,6 @@ $removeparam=ysclid
 /shrinker/js/ionqsnwx2.js$script,~third-party
 /side-ads/*$~xmlhttprequest
 /side_ads/*$~xmlhttprequest
-/sidead.js$script
 /sidebar_ad.jpg$image
 /sidebar_ad.png$image
 /simple-cookies_for_hu.js
@@ -24428,6 +24435,7 @@ $removeparam=ysclid
 /wp-content/plugins/advanced-widget-manage/awm-script.js
 /wp-content/plugins/amazon-product-in-a-post-plugin/*
 /wp-content/plugins/anti_ad_blocker/*
+/wp-content/plugins/append-link-on-copy/js/append_link.js$script,1p
 /wp-content/plugins/arscode-ninja-popups/*
 /wp-content/plugins/automatic-social-locker/*
 /wp-content/plugins/ays-facebook-popup-likebox/*
@@ -24437,10 +24445,12 @@ $removeparam=ysclid
 /wp-content/plugins/bookingcom-banner-creator/*
 /wp-content/plugins/bookingcom-text2links/*
 /wp-content/plugins/chimpmatepro/*
+/wp-content/plugins/christmasify/*
 /wp-content/plugins/click-to-chat-for-whatsapp/new/inc/assets/js/app.js
 /wp-content/plugins/consent-magic-pro/*
 /wp-content/plugins/content-blocker/cb-script.js
 /wp-content/plugins/content-copy-protection-disable-right-click/assets/*
+/wp-content/plugins/content-protector-pack/*
 /wp-content/plugins/creame-whatsapp-me/public/js/joinchat.
 /wp-content/plugins/custom-css-injector/cci-script.js
 /wp-content/plugins/custom-footer-generator/cfg-script.js
@@ -24451,6 +24461,7 @@ $removeparam=ysclid
 /wp-content/plugins/deblocker/js/deblocker.min*.js$~third-party
 /wp-content/plugins/digiproveblog/*$domain=~wordpress.org
 /wp-content/plugins/disable-right-click/*
+/wp-content/plugins/disabled-source-disabled-right-click-and-content-protection/*$script,css,1p
 /wp-content/plugins/dsgvo-tools-cookie-hinweis-datenschutz/*
 /wp-content/plugins/dynamic-sidebar-manager/dsm-script.js
 /wp-content/plugins/easy-cookies-policy/*
@@ -24460,6 +24471,7 @@ $removeparam=ysclid
 /wp-content/plugins/fasterim-optin/*$~xmlhttprequest
 /wp-content/plugins/form-builder-pro/fbp-script.js
 /wp-content/plugins/icegram/*
+/wp-content/plugins/image-watermark/*$script
 /wp-content/plugins/image-watermark/js/no-right-click.js
 /wp-content/plugins/incognito_dectector/*/incognito-detector.
 /wp-content/plugins/ioimedia-app-banner/*
@@ -24480,9 +24492,11 @@ $removeparam=ysclid
 /wp-content/plugins/popupbuilder-adblock/*
 /wp-content/plugins/push-notification/*
 /wp-content/plugins/quick-cache-cleaner/qcc-script.js
+/wp-content/plugins/rcd-right-click-disabler/*$script,1p
 /wp-content/plugins/rdm-daac-notice/*
 /wp-content/plugins/responsive-menu-builder/rmb-script.js
 /wp-content/plugins/right-click-disable-orignal/*
+/wp-content/plugins/secure-copy-content-protection/*$script
 /wp-content/plugins/seo-optimizer-pro/sop-script.js
 /wp-content/plugins/simple-adblock-notice-pro^
 /wp-content/plugins/simple-adblock-notice/*
@@ -24494,21 +24508,27 @@ $removeparam=ysclid
 /wp-content/plugins/sociallocker-
 /wp-content/plugins/sorry-adblocker/js/sab.js$script
 /wp-content/plugins/swiftninjapro-inspect-element-console-blocker/assets/*
+/wp-content/plugins/t42-content-protector/js/protector.min.js$script
 /wp-content/plugins/thrive-leads/*
 /wp-content/plugins/unblock-adsense/*/adunblock
+/wp-content/plugins/ungrabber/js/*$script
 /wp-content/plugins/ungrabber/js/ungrabber.min.js
 /wp-content/plugins/upprev/*
 /wp-content/plugins/useful-banner-manager/*
 /wp-content/plugins/wccp-pro/*
 /wp-content/plugins/wp-adblock-dedect/js/dedect.js^
 /wp-content/plugins/wp-content-copy-protection/assets/*
+/wp-content/plugins/wp-extra/js/copy.min.js$script
 /wp-content/plugins/wp-gdpr-compliance/*
 /wp-content/plugins/wp-super-popup-pro/*$script
 /wp-content/plugins/wp-super-popup/*$script
 /wp-content/plugins/wpadcenter-pro/public/*/wpadcenter-pro-public.min.
+/wp-content/plugins/wpshield-content-protector/dist/app.min.js$script
 /wp-content/plugins/zigcookie/*
+/wp-content/themes/*/public/js/detect-adblock.js$script,1p
 /wp-content/themes/Newspaper-child/*$~stylesheet,domain=~dyvys.info|~capital.de|~inside-digital.de|~expressvpn.com|~botanichka.ru|~misionesonline.net|~probasket.pl
 /wp-content/themes/decibel/javascripts/musc.passive_display_adblockx.js
+/wp-content/themes/linhminazmovies/assets/js/dev.js$script,1p
 /wp-content/themes/mts_ad_sense/js/customscript.js^$replace=/\.blocker-enabled-check/\.EBEWYOgvtboacVhEOGHO/,~third-party
 /wp-content/themes/rehub/js/adblock_notify.js$script
 /wp-content/uploads/an-temp/*$script,stylesheet
@@ -25013,26 +25033,6 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ###clickCatcher31
 ###clickCatcher32
 /player/v*/vast-no-entitlements.js^
-##.adblock-whitelist-messaging__article-wrapper
-##.adblock-whitelist-messaging__wrapper
-/wp-content/plugins/christmasify/*
-/emma-content-aggregates-prd.
-/wp-content/plugins/content-protector-pack/*
-/wp-content/plugins/rcd-right-click-disabler/*$script,1p
-/wp-content/plugins/secure-copy-content-protection/*$script
-/wp-content/plugins/append-link-on-copy/js/append_link.js$script,1p
-/wp-content/plugins/image-watermark/*$script
-/wp-content/plugins/ungrabber/js/*$script
-/wp-content/themes/*/public/js/detect-adblock.js$script,1p
-/wp-content/plugins/wp-extra/js/copy.min.js$script
-/wp-content/plugins/t42-content-protector/js/protector.min.js$script
-##[class~="mailpoet_form_popup_overlay"]
-/^https:\/\/[a-z0-9]+\.[a-z]{2,}\/blast\.js$/$script,1p,strict1p,to=~gov|~edu
-/wp-content/plugins/disabled-source-disabled-right-click-and-content-protection/*$script,css,1p
-/wp-content/themes/linhminazmovies/assets/js/dev.js$script,1p
-/js/content-protector.min.js$script
-/wp-content/plugins/wpshield-content-protector/dist/app.min.js$script
-/copyprevention.js^$script,1p
 /?track=*&key=$all
 /tds/ae?tds_campaign=$doc
 /bdv_rd.dbm?ownid=$doc
@@ -25408,6 +25408,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##body > script[src]:first-child + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
 ##body > script[src]:first-child + script + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
 ##body.aspw[width="320"]
+##body[class^="img_"] > div[class^="img_"] > div[style][class^="img_"]
 ##body[class^="img_"] > div[style$="-webkit-tap-highlight-color:rgba(0,0,0,0);"]
 ##body[class^="img_"][style$="running none;"]
 ##body[class^="img_"][style^="background-color"]
@@ -25446,6 +25447,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##div[id^="img_"][style$="height:100px;"]
 ##div[id^="img_"][style$="height:90px;overflow:hidden;"]
 ##div[id^="img_"][style$="justify-content: center; align-items: center; position: relative;"]
+##div[id^="img_"][style$="max-height:100px;background-color:rgba(128, 128, 128, 0.4);"]
 ##div[id^="img_"][style$="overflow:hidden; display:inline-block;"]
 ##div[id^="img_"][style$="padding: 0px; display: inline-block;"]
 ##div[id^="img_"][style$="position: sticky; top: 0; z-index: 1;"]
@@ -25487,6 +25489,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##div[style^="position:absolute;left:0px;"] + div[class^="img_"]
 ##div[style^="position:absolute;"] > div[id^="img_"]
 ##div[style^="transition-duration:0ms!important;margin:0px!important;padding:0px!important;border:none!important;position:absolute!important;top:0px!important;"]
+##div[style^="width: 300px; height: 256px;"][id^="img_"]
 ##div[style] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##div[style^="position:"][ontouchstart="fCidsp(event)"]
 ##div[style^="v"] > a[href*="-load"][href*=".com/content/"][target][style="text-decoration:none;"]
@@ -38574,36 +38577,19 @@ $$amp-ad
 ###GDPR_warning
 ###GDPRpopup
 ###GDPRtoast
-###GFSticky
-###GRU-cookies-alert-iframe
 ###GcCookieBox
 ###Gdpr
-###Gdpr-policy
 ###GdprCookieBanner
 ###GdprCookieMessage
 ###GdprEyebrow
-###Generictopmenu1_ServiceMenu1_PnlCookie
-###GibsonPrivacy
-###GodBlessEUCookies
 ###GritterContainer
-###GruUiWrapper
-###HCECookieManagerContainer
-###HFS_CookieHint
-###HFS_CookieHintBg
-###HGLCookieWarning
 ###Header_CookiesLegacy_pnCookiesLegacy
 ###Header_Header_ctl00_cookieDisclamer
-###HolderForCookieInfo
 ###HoneywellEUCookie-Banner
-###IBTCookiePolicy
-###ICUserCookie_block
 ###IDRodoPopUp
 ###ID_DIV_GDPR_ALERT
-###ILNbar-cookie-policy
 ###ILNcookieBanner
-###IM_close_cookie_notification_wrapper
 ###IN_cookiebarwrapper
-###IdBannerAcceptPrivacy
 ###InfoCookie
 ###InfoCookieTlo
 ###InformacjaOCookies
@@ -38612,55 +38598,31 @@ $$amp-ad
 ###JDCookieNotifier
 ###JM_Cookie_Container
 ###JM_cookielayer
-###JSEW-cookieDetection
-###JS_cookiesLawAcceptation
 ###JScookieInfo
 ###KBBCookieNotifier
 ###KPNCookie
 ###KPN_cookie
 ###KSCookieConsent
-###KetoDietOz-pro-cookie-ify
-###KisiselVerilerinKorunmasi
-###Klick-cookie-consent-div
 ###LB_cookies
 ###LCookieBar
 ###LGPDdisclaimer
 ###LSCookiePolicyPopup
 ###Lab0cookie_pres
-###LabelAnzeigeCookie
 ###LegalCookies
 ###LegalsCookieHinweis
-###LleiCookies
-###LoggingCookie
-###MAFIADOCCOM_cookie_box
-###MCcookieChoiceInfo
-###MDCMSCookieNote
-###MODAL_lgpd
-###MSoftCookieWarn
-###M_cookieWarning
 ###MainCookieBanner
 ###MainCookies
-###Managebase_CookieBar_Container
-###MemoGadgetCookiebotDialog
-###MensajeCompruebaCookieSite
-###MensajeCompruebaCookieSiteTealium
 ###MessageCookie
 ###MessageInfo_panelCookie
 ###Modal-cookie-alert
 ###MsgCookie
 ###MsjCookies
-###NJI-EmeaCookie
-###NLC_opaqueLayer
-###NLC_textLayer
-###NXOTool_authorize_cookies
-###NetsNOCookie
 ###NotaCookies
 ###Notifica_cookie
 ###NotificationBar_cookie
 ###ObsCnil
 ###OkCookies
 ###OknoWiadomosciCookie
-###PAcookies_consent_container
 ###PCcookieBar
 ###PConsentimento-Container
 ###PLCookie
@@ -38670,12 +38632,8 @@ $$amp-ad
 ###PanelCookieNotification
 ###PanelCookieOverlay
 ###PanelCookies
-###PersonalDataInfoBar
-###Piper-Consent
-###PlayCookieInformationRoot
 ###PnlCookie
 ###PnlPrivacyAlert
-###PolitykaPrywatnosciCookie
 ###PopUpCookie
 ###PopUpCookies
 ###PopupCookiesContainer
