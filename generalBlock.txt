@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-18 02:19:38 UTC
+! Updated: 2025-05-20 02:41:03 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -306,6 +306,7 @@
 /^https:\/\/[a-z]{8,12}\.com\/en\/(?:[a-z]{2,10}\/){0,2}[a-z]{2,}\?(?:[a-z]+=[^&=?\s]*?&)*?id=[12]\d{6}/$script,third-party,match-case
 /get/*?zoneid=*&jp=$script
 /assets/jwplayer-*/vast.js$script,~third-party
+/azazaz7.$script,~third-party
 /duayn7.$script,~third-party
 /howone7.$script,~third-party
 /teo7.$script,~third-party
@@ -503,6 +504,7 @@
 /adserver.$~stylesheet,~xmlhttprequest
 /adserver3.$image,script
 /adsforwp-front.min.css$stylesheet
+/adsimage/*$image,domain=~kamaz-service.kz|~theatreticketsdirect.co.uk
 /adsimages/*$image,domain=~bdjobstoday.com
 /adsimg/*$image
 /adsmanager.css$stylesheet
@@ -661,6 +663,7 @@
 /jspopunder.min.js$script
 /lazyad-loader.min.js$script
 /left_ads.js$script
+/leftad.js$script
 /leftad.png$image
 /legion-advertising-atlasastro/*$script
 /li.blogtrottr.com/imp?$image
@@ -721,6 +724,7 @@
 /plugins/ultimate-popunder/*$~stylesheet
 /pop_8/pop_8_$script
 /popin-min.js$script
+/popunder1.js$script
 /popunder1000.js$script
 /popup-domination/*$script
 /popup2.js$script
@@ -780,6 +784,7 @@
 /spc.php?$script
 /spcjs.php$script
 /sponsors/ads/*$image
+/sticky_ads.js$script
 /stickyad.js$script
 /stickyads.js$script
 /suurl5.php$third-party
@@ -787,6 +792,7 @@
 /taboola-footer.js$script
 /taboola-header.js$script
 /targetingAd.js$script
+/targetpushad.js$script
 /tmbi-a9-header-$script
 /tncms/ads/*$script
 /tnt.ads.$script
@@ -830,12 +836,12 @@
 ://a.ads.
 ://ad-api-
 ://ad1.
-://ads.$~image,~xmlhttprequest,domain=~ads.8designers.com|~ads.ac.uk|~ads.adstream.com.ro|~ads.allegro.pl|~ads.am|~ads.amazon|~ads.apple.com|~ads.atmosphere.copernicus.eu|~ads.axon.ai|~ads.band|~ads.bestprints.biz|~ads.bikepump.com|~ads.brave.com|~ads.buscaempresas.co|~ads.business.bell.ca|~ads.cafebazaar.ir|~ads.chewy.com|~ads.colombiaonline.com|~ads.comeon.com|~ads.cvut.cz|~ads.doordash.com|~ads.dosocial.ge|~ads.dosocial.me|~ads.elevateplatform.co.uk|~ads.finance|~ads.fund|~ads.google.cn|~ads.google.com|~ads.gree.net|~ads.gurkerl.at|~ads.harvard.edu|~ads.instacart.com|~ads.jiosaavn.com|~ads.kaipoke.biz|~ads.kazakh-zerno.net|~ads.kifli.hu|~ads.knuspr.de|~ads.listonic.com|~ads.luarmor.net|~ads.magalu.com|~ads.mercadolivre.com.br|~ads.mgid.com|~ads.microsoft.com|~ads.midwayusa.com|~ads.mobilebet.com|~ads.mojagazetka.com|~ads.msstate.edu|~ads.mst.dk|~ads.mt|~ads.nc|~ads.nipr.ac.jp|~ads.olx.pl|~ads.pinterest.com|~ads.realizeperformance.com|~ads.remix.es|~ads.rohlik.cz|~ads.rohlik.group|~ads.route.cc|~ads.safi-gmbh.ch|~ads.scotiabank.com|~ads.selfip.com|~ads.shopee.cn|~ads.shopee.co.th|~ads.shopee.com.br|~ads.shopee.com.mx|~ads.shopee.com.my|~ads.shopee.kr|~ads.shopee.ph|~ads.shopee.pl|~ads.shopee.sg|~ads.shopee.tw|~ads.shopee.vn|~ads.siriusxmmedia.com|~ads.smartnews.com|~ads.snapchat.com|~ads.socialtheater.com|~ads.spotify.com|~ads.studyplus.co.jp|~ads.taboola.com|~ads.tiktok.com|~ads.tuver.ru|~ads.twitter.com|~ads.typepad.jp|~ads.us.tiktok.com|~ads.viksaffiliates.com|~ads.vk.com|~ads.vk.ru|~ads.watson.ch|~ads.x.com|~ads.yandex|~reempresa.org
+://ads.$~image,~xmlhttprequest,domain=~ads.8designers.com|~ads.ac.uk|~ads.adstream.com.ro|~ads.allegro.pl|~ads.am|~ads.amazon|~ads.apple.com|~ads.atmosphere.copernicus.eu|~ads.axon.ai|~ads.band|~ads.bestprints.biz|~ads.bikepump.com|~ads.brave.com|~ads.buscaempresas.co|~ads.business.bell.ca|~ads.cafebazaar.ir|~ads.chewy.com|~ads.colombiaonline.com|~ads.comeon.com|~ads.cvut.cz|~ads.doordash.com|~ads.dosocial.ge|~ads.dosocial.me|~ads.elevateplatform.co.uk|~ads.finance|~ads.fund|~ads.google.cn|~ads.google.com|~ads.gree.net|~ads.gurkerl.at|~ads.harvard.edu|~ads.instacart.com|~ads.jiosaavn.com|~ads.kaipoke.biz|~ads.kifli.hu|~ads.knuspr.de|~ads.listonic.com|~ads.luarmor.net|~ads.magalu.com|~ads.mercadolivre.com.br|~ads.mgid.com|~ads.microsoft.com|~ads.midwayusa.com|~ads.mobilebet.com|~ads.mojagazetka.com|~ads.msstate.edu|~ads.mst.dk|~ads.mt|~ads.nc|~ads.nipr.ac.jp|~ads.olx.pl|~ads.pinterest.com|~ads.realizeperformance.com|~ads.remix.es|~ads.rohlik.cz|~ads.rohlik.group|~ads.route.cc|~ads.safi-gmbh.ch|~ads.scotiabank.com|~ads.selfip.com|~ads.shopee.cn|~ads.shopee.co.th|~ads.shopee.com.br|~ads.shopee.com.mx|~ads.shopee.com.my|~ads.shopee.kr|~ads.shopee.ph|~ads.shopee.pl|~ads.shopee.sg|~ads.shopee.tw|~ads.shopee.vn|~ads.siriusxmmedia.com|~ads.smartnews.com|~ads.snapchat.com|~ads.socialtheater.com|~ads.spotify.com|~ads.studyplus.co.jp|~ads.taboola.com|~ads.tiktok.com|~ads.tuver.ru|~ads.twitter.com|~ads.typepad.jp|~ads.us.tiktok.com|~ads.viksaffiliates.com|~ads.vk.com|~ads.vk.ru|~ads.watson.ch|~ads.x.com|~ads.yandex|~reempresa.org
 ://ads2.
 ://adsbb.
 ://adserving.
 ://adsrv.
-://adv.$domain=~adv.asahi.com|~adv.bet|~adv.blue|~adv.chunichi.co.jp|~adv.cincsys.com|~adv.cryptonetlabs.it|~adv.derfunke.at|~adv.design|~adv.digimatix.ru|~adv.ec|~adv.ee|~adv.gg|~adv.hokkaido-np.co.jp|~adv.kompas.id|~adv.lack-girl.com|~adv.mcr.club|~adv.mcu.edu.tw|~adv.michaelgat.com|~adv.msk.ru|~adv.neosystem.co.uk|~adv.peronihorowicz.com.br|~adv.rest|~adv.ru|~adv.tools|~adv.trinet.ru|~adv.ua|~adv.vg|~adv.yomiuri.co.jp|~advancedradiology.com|~advids.co|~farapp.com|~pracuj.pl|~r7.com|~typeform.com|~welaika.com
+://adv.$domain=~adv.asahi.com|~adv.bet|~adv.blue|~adv.chunichi.co.jp|~adv.cincsys.com|~adv.cryptonetlabs.it|~adv.design|~adv.digimatix.ru|~adv.ec|~adv.ee|~adv.gg|~adv.hokkaido-np.co.jp|~adv.kompas.id|~adv.lack-girl.com|~adv.mcr.club|~adv.mcu.edu.tw|~adv.michaelgat.com|~adv.msk.ru|~adv.neosystem.co.uk|~adv.peronihorowicz.com.br|~adv.rest|~adv.ru|~adv.tools|~adv.trinet.ru|~adv.ua|~adv.vg|~adv.yomiuri.co.jp|~advancedradiology.com|~advids.co|~farapp.com|~pracuj.pl|~r7.com|~typeform.com|~welaika.com
 ://affiliate.$third-party
 ://affiliates.$third-party
 ://banner.$third-party
@@ -1512,6 +1518,7 @@
 ###banner-728x90
 ###banner-ad
 ###banner-ad-container
+###banner-ads
 ###banner-skyscraper
 ###banner300x250
 ###bannerAd
@@ -1536,6 +1543,7 @@
 ###bottomAdWrapper
 ###bottomAds
 ###bottom_ad
+###bottom_ad_area
 ###bottom_ad_wrapper
 ###bottom_ads
 ###bottomad
@@ -1607,6 +1615,7 @@
 ###fixedban
 ###floatAd
 ###floatads
+###floating-ad-wrapper
 ###floating-ads
 ###floatingAd
 ###floating_ad
@@ -1748,6 +1757,7 @@
 ###right-ad
 ###right-ads
 ###right-rail-ad-slot-content-top
+###rightAD
 ###rightAd
 ###rightAdUnit
 ###right_Ads2
@@ -1954,6 +1964,7 @@
 ##.ad--in-content
 ##.ad--inner
 ##.ad--leaderboard
+##.ad--medium_rectangle
 ##.ad--mid-content
 ##.ad--mobile
 ##.ad--native
@@ -2105,6 +2116,7 @@
 ##.ad-hint
 ##.ad-holder
 ##.ad-horizontal
+##.ad-horizontal-top-wrapper
 ##.ad-icon
 ##.ad-iframe
 ##.ad-iframe-container
@@ -2431,6 +2443,7 @@
 ##.ad__item
 ##.ad__label
 ##.ad__placeholder
+##.ad__rectangle
 ##.ad__section-border
 ##.ad__space
 ##.ad__sticky
@@ -2535,6 +2548,7 @@
 ##.ad_under
 ##.ad_unit
 ##.ad_unit_wrapper
+##.ad_w300h450
 ##.ad_warn
 ##.ad_watch_now
 ##.ad_wide
@@ -2572,6 +2586,7 @@
 ##.adcode300x250
 ##.adcode728x90
 ##.adcolumn
+##.adcon
 ##.adcont
 ##.adcontainer2
 ##.adcontainer_big
@@ -2642,6 +2657,7 @@
 ##.ads-carousel
 ##.ads-center
 ##.ads-centered
+##.ads-cnt
 ##.ads-code
 ##.ads-col
 ##.ads-container-250
@@ -2742,6 +2758,7 @@
 ##.ads_2
 ##.ads_3
 ##.ads_300x250
+##.ads_468
 ##.ads_728
 ##.ads_728x90
 ##.ads__container
@@ -2749,9 +2766,11 @@
 ##.ads__top
 ##.ads_ad_box
 ##.ads_area
+##.ads_between_content
 ##.ads_block
 ##.ads_box
 ##.ads_box_type1
+##.ads_center
 ##.ads_code
 ##.ads_column
 ##.ads_content
@@ -2932,6 +2951,7 @@
 ##.advert-panel
 ##.advert-placeholder
 ##.advert-right
+##.advert-row
 ##.advert-sidebar
 ##.advert-text
 ##.advert-title
@@ -2946,6 +2966,7 @@
 ##.advert.mpu
 ##.advert.skyscraper
 ##.advert2
+##.advert4
 ##.advertBlock
 ##.advertBox
 ##.advertSlot
@@ -3179,6 +3200,7 @@
 ##.bottom-adv
 ##.bottom-post-ad-space
 ##.bottomAd
+##.bottomAds
 ##.bottom_ad
 ##.bottom_ads
 ##.bottom_adsense
@@ -3202,6 +3224,7 @@
 ##.brn-ads-sticky-wrapper
 ##.btm_ad
 ##.btn_ad
+##.bunyad-ad
 ##.button-ads
 ##.buttonad
 ##.c-ad
@@ -3229,6 +3252,7 @@
 ##.card-ad
 ##.card-ads
 ##.cardAd
+##.category-ads:not(html):not(body):not(.post)
 ##.cazAd
 ##.centerAd
 ##.centerAds
@@ -3267,6 +3291,7 @@
 ##.content-ad-box
 ##.content-ads
 ##.content-bottom-ad
+##.content-footer-ad
 ##.content-kuss-ads
 ##.content-page-ad_wrap
 ##.contentAd
@@ -3506,6 +3531,7 @@
 ##.homeAd
 ##.homeAd2
 ##.homePageAdSquare
+##.homepageAd
 ##.homepage__native-ad
 ##.horizontal-ad
 ##.horizontal-ads
@@ -3609,6 +3635,7 @@
 ##.leaderboard.advert
 ##.leaderboardAd
 ##.leaderboard_ad_container
+##.lee-track-ilad
 ##.left-ad
 ##.left-ads
 ##.leftAd
@@ -3703,6 +3730,7 @@
 ##.mpuAd
 ##.mpuAdvert
 ##.mpu_ad
+##.mpu_container
 ##.mpu_wrapper
 ##.mrec-ads
 ##.msg-ad
@@ -3897,6 +3925,7 @@
 ##.sagreklam
 ##.sal-adv-gpt
 ##.sam_ad
+##.scad
 ##.scroll-track-ad
 ##.search-ad
 ##.search-results-ad
@@ -3934,6 +3963,7 @@
 ##.sidebar-ad-rect
 ##.sidebar-ads
 ##.sidebar-advertisement
+##.sidebar-square-ad
 ##.sidebar-top-ad
 ##.sidebarAd
 ##.sidebar__ad
@@ -3987,7 +4017,9 @@
 ##.sponsorText
 ##.sponsorTitle
 ##.sponsor_ad
+##.sponsor_image
 ##.sponsor_logo
+##.sponsorad
 ##.sponsorads
 ##.sponsored-ad
 ##.sponsored-article
@@ -4166,6 +4198,7 @@
 ##.when-show-ads
 ##.wide-ad
 ##.wide-advert
+##.wideAd
 ##.wide_ad
 ##.wide_adBox_footer
 ##.widead
@@ -4353,6 +4386,7 @@
 ##a[href^="https://t.adating.link/"]
 ##a[href^="https://t.ajrkm1.com/"]
 ##a[href^="https://t.ajrkm3.com/"]
+##a[href^="https://t.ajump1.com/"]
 ##a[href^="https://tatrck.com/"]
 ##a[href^="https://tc.tradetracker.net/"] > img
 ##a[href^="https://tm-offers.gamingadult.com/"]
@@ -4543,6 +4577,7 @@
 ###taboola-right-rail
 ###taboola-right-rail-thumbnails
 ###taboola_bottom
+##.article-taboola
 ##.grid__module-sizer_name_taboola
 ##.nya-slot[style]
 ##.slottaboola
@@ -4623,6 +4658,7 @@
 /_ga?sponsor_pixel=
 /_gz/counter.php?
 /_hcms/perf
+/_i?referral_url=
 /_i?type=event&
 /_lib/ga.js
 /_owa.gif?
@@ -5167,6 +5203,7 @@
 /collectsysteminfo?
 /com.snowplowanalytics.snowplow/*$domain=~7plus.com.au
 /com_joomlawatch/img.php
+/commerce-events-listener.js
 /common/analytics.js
 /common/ga.js
 /common/tracker.js
@@ -5375,6 +5412,7 @@
 /events/analytics/*
 /events/capture?
 /events/counter?
+/events/events-utils.js
 /Events/Impression?
 /events/page-viewed
 /events/pixelEvent
@@ -5443,6 +5481,7 @@
 /flushimpressions?
 /flv_tracking.
 /flying-analytics/*
+/footer-eventdata.js
 /footer-tracking.js
 /footerpixel.gif?
 /foresee-trigger.js
@@ -6090,6 +6129,7 @@
 /odoscope.js
 /om.gif?
 /omni-tracking.min.js
+/omnitrack-lately.js
 /omniture/uuid.js
 /omniture?
 /omniture_tracking.js
@@ -6546,6 +6586,7 @@
 /set_cookie.php?
 /set_optimizely_cookie.js
 /set_tracking.js
+/sf-recommendations-events-listener.js
 /sfCounter/*
 /sfdc/networktracking.js
 /sgtracker.js
@@ -7287,6 +7328,7 @@
 ://cmpworker.
 ://collect.*/pageview
 ://collector.*/event
+://data.*/v1/interact?
 ://datacollector.*/event
 ://elqtrk.
 ://fallback.*/collector
@@ -9197,6 +9239,8 @@ $ping,third-party
 ##.player + .sponsor
 ##.player-bottom-gg
 ##.player-box > [style*="flex; justify"]
+##.player-box-main > .rm-one > a[start-time]
+##.player-box > .rm-two > a[target="_blank"]
 ##.player-info > .recommend-two.recommend-list
 ##.player-news > .news-list
 ##.player-rm > a[href*="/ad.html?url="]
@@ -9655,9 +9699,15 @@ $ping,third-party
 /\.[a-z]dyurli[a-z].top\//$script,third-party
 /\.[a-z]domsi[a-z].top\//$script,third-party
 /83zg/tss.js
+/static/69shuba/69.js
 /static/23wx/idd.js
 /static/2biqu/twgdh.js
 /js/pfad*.js
+##body > .app + #htmlContenthtml
+##.app > .app_tj
+##body > .zdhf
+##body > .dbfh
+##script + .dbfh
 /static/idingdian/idd.
 /themes/default/wap/images/douyin.gif
 /pa.dajiahao*.top/
@@ -9835,7 +9885,6 @@ $ping,third-party
 ##.ad-m-banner
 ##.ad-top-billboard
 ##.horizontal-full-ad
-##.sidebar-square-ad
 ##.ad-callout-wrapper
 ##.ad-giga
 ##.ad-header-pencil
@@ -9886,7 +9935,6 @@ $ping,third-party
 ##.banner-ad-wrap
 ##.banner-ads
 ##.block-advertisement-banner-block
-##.bottomAds
 ##.br-ad-wrapper
 ##.browsi-ad
 ##.bvp-ad
@@ -10193,7 +10241,6 @@ $ping,third-party
 ###taboola_responsive_wrapper
 ###taboola_side
 ###taboola_wrapper
-##.article-taboola
 ##.divider-taboola
 ##.js-taboola
 ##.m-article-taboola
@@ -12060,7 +12107,6 @@ $ping,third-party
 ###banner-468x60
 ###banner-728
 ###banner-ad-large
-###banner-ads
 ###banner-advert
 ###banner-cookie
 ###banner-lg-ad
@@ -12244,7 +12290,6 @@ $ping,third-party
 ###bottomMPU
 ###bottomRightAd
 ###bottom_ad_728
-###bottom_ad_area
 ###bottom_ad_box
 ###bottom_ad_region
 ###bottom_ad_unit
@@ -13128,7 +13173,6 @@ $ping,third-party
 ###fixed-cookie
 ###fixedAd
 ###flag-cookies
-###floating-ad-wrapper
 ###floating-advert
 ###floatingAds
 ###floating_ad_container
@@ -14135,7 +14179,6 @@ $ping,third-party
 ###right-widget-top-ads_widget-23
 ###right1-ad
 ###right1ad
-###rightAD
 ###rightAd1
 ###rightAdBar
 ###rightAdBlock
@@ -15228,7 +15271,6 @@ $ping,third-party
 ##.ad--large
 ##.ad--loading
 ##.ad--medium-rectangle
-##.ad--medium_rectangle
 ##.ad--medium_rectangle_outstream
 ##.ad--mediumrectangle
 ##.ad--mid
@@ -15578,7 +15620,6 @@ $ping,third-party
 ##.ad-homepage-one
 ##.ad-hor
 ##.ad-horizontal-large
-##.ad-horizontal-top-wrapper
 ##.ad-hoverable
 ##.ad-hpto
 ##.ad-identifier
@@ -16440,7 +16481,6 @@ $ping,third-party
 ##.ad__mobi
 ##.ad__mobile-footer
 ##.ad__mpu
-##.ad__rectangle
 ##.ad__sidebar
 ##.ad__template
 ##.ad_adv
@@ -16695,7 +16735,6 @@ $ping,third-party
 ##.ad_v3
 ##.ad_vertisement
 ##.ad_w
-##.ad_w300h450
 ##.ad_w_us_a300
 ##.ad_warning
 ##.ad_watermark
@@ -16849,7 +16888,6 @@ $ping,third-party
 ##.adcol2
 ##.adcolumn_wrapper
 ##.adcomment
-##.adcon
 ##.adcontainer-Leaderboard
 ##.adcontainer-Rectangle
 ##.adcontainer300x250l
@@ -17060,7 +17098,6 @@ $ping,third-party
 ##.ads-by
 ##.ads-by-google
 ##.ads-callback
-##.ads-cnt
 ##.ads-cols
 ##.ads-decorator
 ##.ads-end-content
@@ -17236,7 +17273,6 @@ $ping,third-party
 ##.ads_300_250
 ##.ads_300x600
 ##.ads_4
-##.ads_468
 ##.ads_468x60
 ##.ads_720x90
 ##.ads_Header
@@ -17262,13 +17298,11 @@ $ping,third-party
 ##.ads_banner
 ##.ads_bar
 ##.ads_before
-##.ads_between_content
 ##.ads_bg
 ##.ads_big
 ##.ads_bigrec
 ##.ads_border
 ##.ads_box_headline
-##.ads_center
 ##.ads_container_top
 ##.ads_div
 ##.ads_div1
@@ -17837,7 +17871,6 @@ $ping,third-party
 ##.advert-pane
 ##.advert-placeholder-wrapper
 ##.advert-preview-wrapper
-##.advert-row
 ##.advert-section
 ##.advert-silver
 ##.advert-sky
@@ -17859,7 +17892,6 @@ $ping,third-party
 ##.advert120
 ##.advert1Banner
 ##.advert300
-##.advert4
 ##.advert5
 ##.advert728_90
 ##.advert728x90
@@ -18662,7 +18694,6 @@ $ping,third-party
 ##.bs-wrap-gdpr-law
 ##.bst-panel
 ##.bump-ad
-##.bunyad-ad
 ##.butterBar--privacy
 ##.buttom_ad
 ##.buttom_ad_size
@@ -18733,7 +18764,6 @@ $ping,third-party
 ##.card-article-ads
 ##.catalog_ads
 ##.category-ad:not(html):not(body):not(.post)
-##.category-ads:not(html):not(body):not(.post)
 ##.categoryMosaic-advertising
 ##.categoryMosaic-advertisingText
 ##.cb-ad-banner
@@ -18859,7 +18889,6 @@ $ping,third-party
 ##.content-advertisment
 ##.content-bottom-mpu
 ##.content-contentad
-##.content-footer-ad
 ##.content-footer-ad-block
 ##.content-header-ad
 ##.content-leaderboard-ad
@@ -19962,7 +19991,6 @@ $ping,third-party
 ##.homepage-page__ff-ad-container
 ##.homepage-page__tag-ad-container
 ##.homepage-page__video-ad-container
-##.homepageAd
 ##.homepage_ads
 ##.homepage_block_ad
 ##.hor-ad
@@ -20293,7 +20321,6 @@ $ping,third-party
 ##.leaderboardadmiddle
 ##.leaderboardadtop
 ##.leaderboardadwrap
-##.lee-track-ilad
 ##.left-advert
 ##.left-rail-ad
 ##.left-sponser-ad
@@ -20603,7 +20630,6 @@ $ping,third-party
 ##.mpuContainer
 ##.mpu_Ad
 ##.mpu_advert
-##.mpu_container
 ##.mpu_holder
 ##.mpu_placeholder
 ##.mpu_side
@@ -21143,7 +21169,6 @@ $ping,third-party
 ##.sb_ad_holder
 ##.sc-ad
 ##.sc-cookies
-##.scad
 ##.scaled-juicyads
 ##.script-ad
 ##.scroll-ad-item-container
@@ -21417,7 +21442,6 @@ $ping,third-party
 ##.sponsor_columns
 ##.sponsor_div
 ##.sponsor_footer
-##.sponsor_image
 ##.sponsor_label
 ##.sponsor_line
 ##.sponsor_links
@@ -21425,7 +21449,6 @@ $ping,third-party
 ##.sponsor_popup
 ##.sponsor_post
 ##.sponsor_units
-##.sponsorad
 ##.sponsoradlabel
 ##.sponsoradtitle
 ##.sponsored-ad-container
@@ -21963,7 +21986,6 @@ $ping,third-party
 ##.wide-footer-ad
 ##.wide-header-ad
 ##.wide-skyscraper-ad
-##.wideAd
 ##.wideAdTable
 ##.widePageAd
 ##.wide_ad_unit
@@ -22328,9 +22350,7 @@ $ping,third-party
 ##[href="//sexcams.plus/"]
 ##[href="/ad/007.html"]
 ##[href="https://jdrucker.com/gold"] > img
-##[href="https://masstortfinancing.com"] img
 ##[href="https://ourgoldguy.com/contact/"] img
-##[href="https://www.masstortfinancing.com/"] > img
 ##[href='/ad.html']
 ##[href='/ad/bfy.html']
 ##[href='/aga2/1661087']
@@ -22501,7 +22521,6 @@ $ping,third-party
 ##a[href^=" https://www.friendlyduck.com/AF_"]
 ##a[href^="//ejitsirdosha.net/"]
 ##a[href^="//go.eabids.com/"]
-##a[href^="//s.st1net.com/splash.php"]
 ##a[href^="//s.zlinkd.com/"]
 ##a[href^="//startgaming.net/tienda/" i]
 ##a[href^="//stighoazon.com/"]
@@ -22509,14 +22528,9 @@ $ping,third-party
 ##a[href^="http://annulmentequitycereals.com/"]
 ##a[href^="http://avthelkp.net/"]
 ##a[href^="http://coefficienttolerategravel.com/"]
-##a[href^="http://dragfault.com/"]
-##a[href^="http://dragnag.com/"]
-##a[href^="http://eighteenderived.com/"]
 ##a[href^="http://eslp34af.click/"]
-##a[href^="http://guestblackmail.com/"]
 ##a[href^="http://handgripvegetationhols.com/"]
 ##a[href^="http://muzzlematrix.com/"]
-##a[href^="http://naggingirresponsible.com/"]
 ##a[href^="http://partners.etoro.com/"]
 ##a[href^="http://premonitioninventdisagree.com/"]
 ##a[href^="http://revolvemockerycopper.com/"]
@@ -22547,7 +22561,6 @@ $ping,third-party
 ##a[href^="https://ak.oalsauwy.net/"]
 ##a[href^="https://ak.psaltauw.net/"]
 ##a[href^="https://allhost.shop/aff.php?"]
-##a[href^="https://auesk.cfd/"]
 ##a[href^="https://ausoafab.net/"]
 ##a[href^="https://aweptjmp.com/"]
 ##a[href^="https://awptjmp.com/"]
@@ -22574,7 +22587,6 @@ $ping,third-party
 ##a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="]
 ##a[href^="https://financeads.net/tc.php?"]
 ##a[href^="https://getmatchedlocally.com/"]
-##a[href^="https://getvideoz.click/"]
 ##a[href^="https://go.cmtaffiliates.com/"]
 ##a[href^="https://go.etoro.com/"] > img
 ##a[href^="https://go.grinsbest.com/"]
@@ -22599,7 +22611,6 @@ $ping,third-party
 ##a[href^="https://kiksajex.com/"]
 ##a[href^="https://lead1.pl/"]
 ##a[href^="https://lijavaxa.com/"]
-##a[href^="https://lobimax.com/"]
 ##a[href^="https://lone-pack.com/"]
 ##a[href^="https://losingoldfry.com/"]
 ##a[href^="https://m.do.co/c/"] > img
@@ -22608,11 +22619,9 @@ $ping,third-party
 ##a[href^="https://mmwebhandler.aff-online.com/"]
 ##a[href^="https://myclick-2.com/"]
 ##a[href^="https://ndt5.net/"]
-##a[href^="https://ngineet.cfd/"]
 ##a[href^="https://offhandpump.com/"]
 ##a[href^="https://osfultrbriolenai.info/"]
 ##a[href^="https://pb-imc.com/"]
-##a[href^="https://play1ad.shop/"]
 ##a[href^="https://playnano.online/offerwalls/?ref="]
 ##a[href^="https://porntubemate.com/"]
 ##a[href^="https://prf.hn/click/"][href*="/adref:"] > img
@@ -22624,14 +22633,12 @@ $ping,third-party
 ##a[href^="https://sexynearme.com/"]
 ##a[href^="https://slkmis.com/"]
 ##a[href^="https://snowdayonline.xyz/"]
-##a[href^="https://softwa.cfd/"]
 ##a[href^="https://static.fleshlight.com/images/banners/"]
 ##a[href^="https://svb-analytics.trackerrr.com/"]
 ##a[href^="https://syndicate.contentsserved.com/"]
 ##a[href^="https://syndication.dynsrvtbg.com/"]
 ##a[href^="https://syndication.exoclick.com/"]
 ##a[href^="https://syndication.optimizesrv.com/"]
-##a[href^="https://t.ajump1.com/"]
 ##a[href^="https://t.aslnk.link/"]
 ##a[href^="https://t.hrtye.com/"]
 ##a[href^="https://torguard.net/aff.php"] > img
@@ -23499,11 +23506,11 @@ $removeparam=ysclid
 /^94\.242\.247\.(2[0-9]|3[0-2]):/$network
 /^https:\/\/(?:as(?:loader)?|loader)\.([-0-9A-Za-z]+.[-A-Za-z]{2,30})\/script\/(?:www\.)?\1\.js\?h=\d{9}$/$xmlhttprequest,~third-party,urltransform=/script.+/loader.min.js/
 /^https:\/\/[0-9a-z]{5,}\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,~third-party
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|artforum.com|artnews.com|awkward.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|eater.com|eldiariony.com|fark.com|femestella.com|footwearnews.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|mandatory.com|masslive.com|mlive.com|mmamania.com|naszemiasto.pl|nationalpost.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nothingbutnewcastle.com|nsjonline.com|nypost.com|oregonlive.com|pagesix.com|pennlive.com|playstationlifestyle.net|robbreport.com|rollingstone.com|sbnation.com|sheknows.com|sneakernews.com|sport-fm.gr|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|thecw.com|thedailymeal.com|theflowspace.com|themarysue.com|tokfm.pl|torontosun.com|tvline.com|usmagazine.com|wallup.net|wimp.com|worldstar.com|worldstarhiphop.com|yourcountdown.to
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,redirect=noopjs,ipaddress=/^(3[45]\.\d+\.\d{2,3}\.\d{2,3}|2600:1901:0:[a-f0-9]{3,4}::1)$/
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,redirect=noopjs,to=com|~aswpsdkus.com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|artforum.com|artnews.com|awkward.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|eater.com|eldiariony.com|fark.com|femestella.com|footwearnews.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|mandatory.com|masslive.com|mlive.com|mmamania.com|naszemiasto.pl|nationalpost.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nothingbutnewcastle.com|nsjonline.com|nypost.com|oregonlive.com|pagesix.com|pennlive.com|playstationlifestyle.net|robbreport.com|rollingstone.com|sbnation.com|sheknows.com|sneakernews.com|sport-fm.gr|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|thecw.com|thedailymeal.com|theflowspace.com|themarysue.com|tokfm.pl|torontosun.com|tvline.com|usmagazine.com|wallup.net|wimp.com|worldstar.com|worldstarhiphop.com|yourcountdown.to
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~aswpsdkus.com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,redirect=noopjs,ipaddress=/^(3[45]\.\d+\.\d{2,3}\.\d{2,3}|2600:1901:0:[a-f0-9]{3,4}::1)$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{12,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,header=etag:/^W\/"[0-9a-f]{64}"$/
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,header=via:/, 1\.1 google$/
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~aswpsdkus.com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,header=etag:/^W\/"[0-9a-f]{64}"$/
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~aswpsdkus.com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,header=via:/, 1\.1 google$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/[a-z]{0,7}\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{20,120}(?:[-.][a-z0-9]{2,6})?(?:\.js)?$/$script,3p,match-case,to=com,header=x-datacenter
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[-_0-9a-z]{0,84}[A-Z])(?=[-_a-zA-Z]{0,84}[0-9])[-_0-9a-zA-Z]{54,85}(#\?v=[0-9a-f]{32})?$/$script,xhr,3p,match-case
 /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[0-9a-z_-]{0,84}[A-Z])(?=[a-zA-Z_-]{0,84}[0-9])[0-9a-zA-Z_-]{54,85}(#\?v=[0-9a-f]{32})?$/$ping,script,xmlhttprequest,third-party,match-case
@@ -23635,7 +23642,6 @@ $removeparam=ysclid
 /adsdelivery/*$subdocument
 /adsen.php
 /adserver.$popup
-/adsimage/*$image,domain=~kamaz-service.kz|~theatreticketsdirect.co.uk
 /adslide.js$script
 /adsmanager.nsf/*$image
 /adsmatcher-anti-adblock/*
@@ -23717,7 +23723,6 @@ $removeparam=ysclid
 /attractivebuilt.com/*$script
 /avisCookies.
 /aws-cookie/*
-/azazaz7.$script,~third-party
 /baidu/189/999.php
 /baidu/tg.js
 /ban728x90.$image
@@ -24134,7 +24139,6 @@ $removeparam=ysclid
 /kzdh7.$script,~third-party
 /larapush_script_
 /lazyad-loader.js$script
-/leftad.js$script
 /legalcookie.
 /lemon7.$script,~third-party
 /levelmaxblock.js
@@ -24229,7 +24233,6 @@ $removeparam=ysclid
 /popunder.$popup
 /popunder/in/click/*
 /popunder/in/click/*$popup
-/popunder1.js$script
 /popunder_$popup
 /popup/adblocker
 /popup_code.php$script
@@ -24345,7 +24348,6 @@ $removeparam=ysclid
 /statics/js/guding.js
 /statics/js/hth1111.html
 /stats.php?adsid=$third-party
-/sticky_ads.js$script
 /storefrontmarketing/webpush/webpush.client.
 /style_ad.css$stylesheet
 /suurl4.php?$third-party
@@ -24355,7 +24357,6 @@ $removeparam=ysclid
 /t/9/heis/svewg/*$third-party
 /t/t?a=*&url=http$doc,to=com|dk,urlskip=?url
 /taboola_8.9.1.js$script
-/targetpushad.js$script
 /tb/_/video_frs_head_
 /tb/img/hg/hg.gif?
 /tc-under.min.js
@@ -25236,7 +25237,6 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https:\/\/telegram-[a-z]{3,4}\.com\//$doc,to=com|~telegram.org
 /^https:\/\/usps\.[-a-z]{6,}\.(?:com|top)\/(?:address\.html|information|verify)\b/$doc,to=com|top|~usps.com
 /^https:\/\/transporta[a-z]{8,9}pro\.top\/i\b/$doc,to=top|~usps.com
-/^https:\/\/[a-z]\.[a-z]{10,}\.top\/us(?:\/|$)/$doc,to=top|~usps.com
 /^https:\/\/[a-z]\.[a-z]{10,}\.top\/l(?:\/|$)/$doc,to=top|~usps.com
 /^https:\/\/(?:[a-z0-9]{2,}-)+10\d{4}\.weeblysite\.com\//$doc,to=weeblysite.com
 /^https:\/\/(?:[a-z0-9]{2,}-)+10\d{4}\.square\.site\//$doc,to=square.site
@@ -25256,7 +25256,6 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https:\/\/da\d{4}\.com\//$doc,to=com|~lazada.vn
 /^https:\/\/tdk[det]0[0-9]\.com\//$doc,to=com|~tiki.vn
 /^https:\/\/(www\.)?sp\d{4,5}p\.com\//$doc,to=com|~shopee.vn
-/^https:\/\/nz[a-z]\d{5}s\.com\//$doc,to=com|~shopee.vn
 /^https:\/\/amazon[a-z]\d\.com\//$doc,to=com
 /^https:\/\/giaohangtietkiem\w+\.com\//$doc,to=com|~giaohangtietkiem.vn
 /^https?:\/\/amazo[a-z]{2}\d\.com\//$doc,to=com|~amazon.com
@@ -27361,7 +27360,6 @@ $$amp-ad
 ##.ga-scrolltop-anchor
 ##.gantry-totop-wrapper
 ##.generate-back-to-top
-##.glyphicon-arrow-up
 ##.gn-backtotop
 ##.go-to-top
 ##.go-to-top--btn
@@ -42691,7 +42689,6 @@ $$amp-ad
 ###gdprsticky
 ###gdprwarning
 ###gdrp-bottom-message
-###gdrp-cookieoverlay
 ###gdrp-wrapper
 ###gds-cookie
 ###gdycn_container
@@ -47081,6 +47078,7 @@ $$amp-ad
 ##.cookie-notify__wrapper
 ##.cookie-operation-message
 ##.cookie-opt-in-overlay
+##.cookie-opt-in-wrapper
 ##.cookie-opt-out
 ##.cookie-optin-modal
 ##.cookie-options-hook
@@ -47883,7 +47881,6 @@ $$amp-ad
 ##.cookienotify
 ##.cookieopt-holder
 ##.cookieoptin
-##.cookieoptions
 ##.cookieoverlay
 ##.cookieoverlay-x
 ##.cookiepanel
@@ -52184,7 +52181,6 @@ $$amp-ad
 ##div.cookie-notice-open
 ##div.cookie-notice-visible
 ##div.cookie-notice-wrapper
-##div.cookie-padding
 ##div.cookie-parent
 ##div.cookie-policy-banner
 ##div.cookie-policy-head
