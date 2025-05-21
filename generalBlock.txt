@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-20 02:41:03 UTC
+! Updated: 2025-05-21 02:11:38 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -232,6 +232,7 @@
 ##aside[data-aqa="widget-breaking-banner"]
 ##.arcad_feature
 ##.gliaplayer-container
+###floating-ad-container
 ##.kt-player > div.spot
 ##div[data-clickadilla-banner]
 ##.video.ad-w
@@ -382,8 +383,8 @@
 /^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{5}$/$script,third-party,match-case
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[0-9a-z-]+)?$/$subdocument,script,xmlhttprequest,third-party,match-case
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[0-9a-z-]+)?$/$popup,third-party,match-case
-/^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.(?:com|bid|link|live|online|top|club)\/\/?(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,xmlhttprequest,third-party
-/^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.(?:com|bid|link|live|online|top|club)\/\/?(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,third-party,redirect=noop.js
+/^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.com\/\/?(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,xmlhttprequest,third-party
+/^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.com\/\/?(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,third-party,redirect=noop.js
 ##.primis-ad
 ##.in-content-ad-wrapper
 ##.oko-adhesion
@@ -1092,6 +1093,7 @@
 ###AdsenseBottom
 ###AdvContainer
 ###AdvertMpu
+###BannerAd
 ###BottomAdContainer
 ###BottomRightAdWrapper
 ###DFP_top_leaderboard
@@ -1280,6 +1282,7 @@
 ###ad_img
 ###ad_interthread
 ###ad_leaderboard
+###ad_leaderboard_top
 ###ad_left
 ###ad_left_1
 ###ad_left_2
@@ -1301,6 +1304,7 @@
 ###ad_rightslot
 ###ad_row
 ###ad_sidebar
+###ad_skin
 ###ad_square
 ###ad_superbanner
 ###ad_table
@@ -1423,6 +1427,7 @@
 ###ads_top_container
 ###adsbottom
 ###adsbox
+###adscontent
 ###adsense1
 ###adsenseContainer
 ###adsense_r_side_sticky_container
@@ -1515,6 +1520,7 @@
 ###aside_ad
 ###ax-billboard
 ###ax-billboard-sub
+###banner-300x250
 ###banner-728x90
 ###banner-ad
 ###banner-ad-container
@@ -2592,6 +2598,7 @@
 ##.adcontainer_big
 ##.add300x250
 ##.addiv
+##.addtitle
 ##.adfooter
 ##.adfoxly-wrapper
 ##.adframe
@@ -2653,6 +2660,7 @@
 ##.ads-bottom
 ##.ads-box
 ##.ads-box-cont
+##.ads-by-google
 ##.ads-card
 ##.ads-carousel
 ##.ads-center
@@ -2709,6 +2717,7 @@
 ##.ads-sidebar
 ##.ads-single
 ##.ads-social-box
+##.ads-square
 ##.ads-sticky
 ##.ads-stripe
 ##.ads-system
@@ -2775,6 +2784,7 @@
 ##.ads_column
 ##.ads_content
 ##.ads_css
+##.ads_footer
 ##.ads_header
 ##.ads_inview
 ##.ads_item
@@ -2857,6 +2867,7 @@
 ##.adspace
 ##.adspop
 ##.adspot
+##.adspot-title
 ##.adspot468x60
 ##.adsright
 ##.adss
@@ -2935,6 +2946,7 @@
 ##.advert--square
 ##.advert-banner
 ##.advert-banner-container
+##.advert-bar
 ##.advert-block
 ##.advert-bottom
 ##.advert-box
@@ -3007,6 +3019,7 @@
 ##.advertisement-title
 ##.advertisement-top
 ##.advertisement-wrapper
+##.advertisement.leaderboard
 ##.advertisement1
 ##.advertisementBox
 ##.advertisementContainer
@@ -3121,6 +3134,7 @@
 ##.banner-ad-container
 ##.banner-ad-image
 ##.banner-ad-skeleton-box
+##.banner-ad-wrap
 ##.banner-ad-wrapper
 ##.banner-adsense
 ##.banner-adv
@@ -3651,6 +3665,7 @@
 ##.listad
 ##.listicle-instream-ad-holder
 ##.lite-page-ad
+##.local-ads
 ##.logo-ad
 ##.logoAds
 ##.long-ads
@@ -3755,6 +3770,7 @@
 ##.nav-ad-gpt-container
 ##.nav_ad
 ##.navbar-ad-section
+##.navbar-ads
 ##.news-ad
 ##.news-ad-square-a
 ##.news-ad-square-box
@@ -4090,6 +4106,7 @@
 ##.td-ad
 ##.td-ad-tp
 ##.td-adspot-title
+##.td_ad
 ##.teaser-advertisement
 ##.text-sponsor
 ##.textAds
@@ -4285,6 +4302,7 @@
 ##[href^="https://url.totaladblock.com/"]
 ##[href^="https://www.avantlink.com/click.php"] img
 ##[href^="https://www.cloudways.com/en/?id"]
+##[href^="https://www.mypatriotsupply.com/"] > img
 ##[href^="https://www.profitablegatecpm.com/"]
 ##[id^="ad-wrap-"]
 ##[id^="ad_sky"]
@@ -9932,7 +9950,6 @@ $ping,third-party
 ##.arcad-block-container
 ##.article-mid-ad
 ##.banner_ads
-##.banner-ad-wrap
 ##.banner-ads
 ##.block-advertisement-banner-block
 ##.br-ad-wrapper
@@ -10527,7 +10544,6 @@ $ping,third-party
 ###BandeauCookie
 ###BandeauInfoCookie
 ###Banner728x90
-###BannerAd
 ###BannerAds
 ###BannerAdvert
 ###BannerAdvertisement
@@ -11239,7 +11255,6 @@ $ping,third-party
 ###ad_ldb
 ###ad_leader
 ###ad_leaderBoard
-###ad_leaderboard_top
 ###ad_left_skyscraper
 ###ad_left_top
 ###ad_links
@@ -11317,7 +11332,6 @@ $ping,third-party
 ###ad_sidebody
 ###ad_site_header
 ###ad_sitebar
-###ad_skin
 ###ad_slot
 ###ad_slot_bottom
 ###ad_slot_leaderboard
@@ -11655,7 +11669,6 @@ $ping,third-party
 ###adscenter
 ###adscolumn
 ###adscontainer
-###adscontent
 ###adsdiv
 ###adsection
 ###adsense-2
@@ -12103,7 +12116,6 @@ $ping,third-party
 ###bandeauCookies
 ###bandeau_cookie
 ###bandeau_cookies
-###banner-300x250
 ###banner-468x60
 ###banner-728
 ###banner-ad-large
@@ -16908,7 +16920,6 @@ $ping,third-party
 ##.adds300x250
 ##.adds620x90
 ##.addthis_toolbox
-##.addtitle
 ##.addvert
 ##.addwide
 ##.adengageadzone
@@ -17096,7 +17107,6 @@ $ping,third-party
 ##.ads-bt
 ##.ads-btm
 ##.ads-by
-##.ads-by-google
 ##.ads-callback
 ##.ads-cols
 ##.ads-decorator
@@ -17166,7 +17176,6 @@ $ping,third-party
 ##.ads-smartphone
 ##.ads-sponsored-title
 ##.ads-sponsors
-##.ads-square
 ##.ads-square-large
 ##.ads-square-small
 ##.ads-squares
@@ -17307,7 +17316,6 @@ $ping,third-party
 ##.ads_div
 ##.ads_div1
 ##.ads_foot
-##.ads_footer
 ##.ads_footerad
 ##.ads_full_1
 ##.ads_google
@@ -17592,7 +17600,6 @@ $ping,third-party
 ##.adsponsor
 ##.adspost
 ##.adspot-desk
-##.adspot-title
 ##.adspot1
 ##.adspot200x90
 ##.adspot728x90
@@ -17844,7 +17851,6 @@ $ping,third-party
 ##.advert-background
 ##.advert-banner-holder
 ##.advert-bannerad
-##.advert-bar
 ##.advert-bg-250
 ##.advert-border
 ##.advert-bot-box
@@ -18003,7 +18009,6 @@ $ping,third-party
 ##.advertisement-space
 ##.advertisement-sponsor
 ##.advertisement-txt
-##.advertisement.leaderboard
 ##.advertisement.rectangle
 ##.advertisement.under-article
 ##.advertisement300x250
@@ -20376,7 +20381,6 @@ $ping,third-party
 ##.listings_ad
 ##.live-ad
 ##.lng-ad
-##.local-ads
 ##.localad
 ##.location-ad
 ##.log_ads
@@ -20672,7 +20676,6 @@ $ping,third-party
 ##.nav-ad-plus-leader
 ##.nav-adWrapper
 ##.nav__cookies
-##.navbar-ads
 ##.navbar-header-ad
 ##.navbar-privacy
 ##.naviad
@@ -21631,7 +21634,6 @@ $ping,third-party
 ##.td-more-articles-box
 ##.td-sponsor-title
 ##.tdAdHeader
-##.td_ad
 ##.td_block_social_counter
 ##.td_footer_ads
 ##.td_left_widget_ad
@@ -22395,7 +22397,6 @@ $ping,third-party
 ##[href^="https://www.brighteonstore.com/products/"] img
 ##[href^="https://www.herbanomic.com/"] > img
 ##[href^="https://www.hostg.xyz/"] > img
-##[href^="https://www.mypatriotsupply.com/"] > img
 ##[href^="https://www.mypillow.com/"] > img
 ##[href^="https://www.restoro.com/"]
 ##[href^="https://www.targetingpartner.com/"]
@@ -23081,6 +23082,8 @@ $cookie=cX_G
 $cookie=cX_LSS
 $cookie=cX_P
 $cookie=cX_S
+$cookie=cfz_google-analytics_v4
+$cookie=cfzs_google-analytics_v4
 $cookie=clRequestId
 $cookie=clVisitorId
 $cookie=compass_uid
@@ -23135,6 +23138,9 @@ $cookie=optimizely-user-attributes
 $cookie=optimizely-user-id
 $cookie=optimizelyEndUserId,domain=~nintendo.com
 $cookie=outbrain_cid_fetch
+$cookie=panoramaId
+$cookie=panoramaIdType
+$cookie=panoramaId_expiry
 $cookie=pbjs-unifiedid
 $cookie=permutive-id
 $cookie=permutive-session
@@ -23528,7 +23534,7 @@ $removeparam=ysclid
 /^https?:\/\/(?:[^.]+\.){2}(?:com|io|net)\/c(?:\/\d+){3}\/?\?.*?&?u=http/$doc,to=com|io|net,urlskip=?u
 /^https?:\/\/(?:[^.]+\.){2}(?:com|io|net)\/c(?:\/\d+){3}\/?\?.*?&?url=http/$doc,to=com|io|net,match-case,urlskip=?url
 /^https?:\/\/(?:www\.anrdoezrs\.net|cj\.dotomi\.com)\/links(?:-t)?\/\d+\/sid\/[^\/]+\/http/$doc,to=cj.dotomi.com|www.anrdoezrs.net,urlskip=/\/sid\/[^\/]+\/(http[^?]+)/
-/^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.(?:com|bid|link|live|online|top|club)\/\/?(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,third-party,redirect=noopjs
+/^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.com\/\/?(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,third-party,redirect=noopjs
 /^https?:\/\/146\.59\.211\.(\d){1,3}.*/$popup,third-party
 /^https?:\/\/[0-9a-f]{50,}\.s3\.amazonaws\.com\/[0-9a-f]{10}$/$xmlhttprequest,third-party
 /^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{3,}\.[a-z]{2,11}\.?[a-z]{0,7}\/(?:[0-9a-z]{6,10}\/)?\/?(?:article\d{4}\.doc)?\?(?:cid=[0-9a-z]+&)?[ou]=[0-9a-z]{7}(?:&t=\d+)?&[ou]=[0-9a-z]{7}/$document,match-case
@@ -25314,7 +25320,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /cloudflare-v1-getup-*.html^$doc
 /modi-cloudflare-update.html^$doc
 /^https:\/\/gov\.[^.]*gr\.[a-z]{2,6}/$doc,to=~gov|~edu|~gov.gr
-/cloudfront\.net\/(?=[a-z]{0,6}\d)[a-f0-9]{7}\.js$/$script,3p,match-case
+/\.cloudfront\.net\/(?=[a-z]{0,6}\d)[a-f0-9]{7}\.js$/$script,3p,match-case,to=~d3dvi1l4i1go4x.cloudfront.net
 /\.[a-z]{3,}\/a\.aspx\?cid=/$doc,match-case,to=~com|~net|~org|~gov|~edu
 /\.[a-z]{3,}\/products\.aspx\?cname=.+&cid=/$doc,match-case,to=~com|~net|~org|~gov|~edu
 /^https:\/\/online\.[a-z]{7,}\.top\//$doc,to=top
@@ -25358,7 +25364,6 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https?:\/\/[0-9a-z]*\.?[-0-9a-z][-0-9a-z][-0-9a-z]+\.[a-z][a-z]+\.?[a-z]*\/([0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]+\/)?\/?(article[0-9][0-9][0-9][0-9]\.doc)?\?(cid=[0-9a-z]+&)?[ou]=[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z](&t=[0-9]+)?&[ou]=[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]/$document,match-case
 /\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\/invoke\.js/$script,third-party
 /^https:\/\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.com\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js$/$script,third-party
-/^https:\/\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]+\.com\/en\/([a-z][a-z]+\/)?([a-z][a-z]+\/)?[a-z][a-z]+\?([a-z]+=[^&=?\s]*?&)*?id=[12][0-9][0-9][0-9][0-9][0-9][0-9]/$script,third-party,match-case
 /\/[0-9][0-9][0-9][0-9][0-9]\?version_name=[a-z]$/$xmlhttprequest
 /?&pid=*&subid=
 /?&subid=*&pid=
@@ -25539,6 +25544,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 ##video[poster*="-load"][poster*=".com/content/"]
 /^https:\/\/[a-z]{2}\.[a-z]{7,14}\.com\/r[0-9A-Za-z]{10,16}\/[A-Za-z]{5}$/$script,third-party
 /^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.[a-z]{3,7}\/[a-z][0-9A-Za-z]{10,16}\/\d{4,6}$/$script,third-party,match-case
+/^https?:\/\/([0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]?[0-9a-z]?[0-9a-z]?\.)?[0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-]+\.com\/\/?([0-9a-z][0-9a-z]\/)([0-9a-z][0-9a-z]\/)([0-9a-z][0-9a-z]\/)?[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js/$script,xmlhttprequest,third-party
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f]\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js/$script,xmlhttprequest,third-party
 /^https:\/\/[a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-][a-z0-9-]+\.com\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\/invoke\.js/$script,third-party
 /\/\/([0-9a-z]+\.)?([0-9a-z]+\.)?[0-9a-z]+\.[0-9a-z]+\.[a-z][a-z]+\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]\.js\?st=[0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z]?[0-9A-Z]?$/$~third-party,match-case
@@ -42511,7 +42517,6 @@ $$amp-ad
 ###gc_cookie_consent_banner
 ###gcms_cookie_manager
 ###gdpr-acceptance
-###gdpr-alert
 ###gdpr-banner-component
 ###gdpr-banner-module
 ###gdpr-banner-wrapper
@@ -49004,7 +49009,6 @@ $$amp-ad
 ##.gdpr-advice-desktop
 ##.gdpr-agree
 ##.gdpr-agreement-box
-##.gdpr-alert
 ##.gdpr-alert-bar
 ##.gdpr-alert-bottom
 ##.gdpr-alert-box-wrapper
