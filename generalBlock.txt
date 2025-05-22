@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-21 02:11:38 UTC
+! Updated: 2025-05-22 01:23:42 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -292,6 +292,7 @@
 /^https:\/\/[a-z]{10,12}\.com\/[a-z\/]{2,}\?id=[12]\d{6}$/$script,third-party,match-case
 /tds/ae?*&clickid=$document
 /?pl=*&sm=$document
+/script/suv5.js|$script
 /script/frustration.js|$script
 /page/bouncy.php?&bpae=*&redirectType=js&inIframe=$all
 /^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$script,third-party
@@ -512,6 +513,7 @@
 /adsplugin/js/*$script
 /adsscript.$script
 /adsTracking.$script
+/adsWrapper.js$script
 /ads~adsize~
 /adtech;
 /adtools.js$script
@@ -1125,6 +1127,7 @@
 ###ad-728-90
 ###ad-8
 ###ad-9
+###ad-Rectangle_1
 ###ad-Superbanner
 ###ad-banner-top
 ###ad-banner-wrap
@@ -1188,6 +1191,7 @@
 ###ad-slot-502
 ###ad-slot-top
 ###ad-slot1
+###ad-slot2
 ###ad-slug-wrapper
 ###ad-space
 ###ad-standard
@@ -1412,6 +1416,7 @@
 ###ads_3
 ###ads_4
 ###ads_banner
+###ads_body_2
 ###ads_bottom
 ###ads_box
 ###ads_container
@@ -1682,6 +1687,7 @@
 ###humix-vid-ezAutoMatch
 ###iframe-ad
 ###imgAddDirectLink
+###index-ad
 ###index_ad
 ###initializeAd
 ###inline_ad
@@ -1827,6 +1833,7 @@
 ###sticky-ad-container
 ###sticky-ads
 ###sticky-footer-ad
+###sticky-footer-ads
 ###sticky-rail-ad
 ###stickyAd
 ###stickyBottomAd
@@ -1916,6 +1923,7 @@
 ##.Ads-slot
 ##.AdsBox
 ##.AdsSlot
+##.Adsense
 ##.Advert-label
 ##.AdvertWrapper
 ##.ArticleAd
@@ -2192,6 +2200,7 @@
 ##.ad-position
 ##.ad-post
 ##.ad-post-footer
+##.ad-post-top
 ##.ad-push
 ##.ad-r
 ##.ad-rail
@@ -2479,6 +2488,7 @@
 ##.ad_code
 ##.ad_col
 ##.ad_column
+##.ad_column_box
 ##.ad_cont
 ##.ad_container
 ##.ad_container_body
@@ -2762,6 +2772,7 @@
 ##.adsNetwork
 ##.adsRight
 ##.adsText
+##.adsTxt
 ##.adsWidget
 ##.adsWrap
 ##.ads_2
@@ -2845,6 +2856,7 @@
 ##.adsenseBannerArea
 ##.adsense_single
 ##.adsense_wrapper
+##.adsenvelope
 ##.adserving
 ##.adsghori
 ##.adsinfo
@@ -2941,6 +2953,7 @@
 ##.adver-header
 ##.adverTag
 ##.advert--header
+##.advert--inline
 ##.advert--leaderboard
 ##.advert--placeholder
 ##.advert--square
@@ -3545,6 +3558,7 @@
 ##.homeAd
 ##.homeAd2
 ##.homePageAdSquare
+##.homepage-ad
 ##.homepageAd
 ##.homepage__native-ad
 ##.horizontal-ad
@@ -3978,6 +3992,7 @@
 ##.sidebar-ad-div
 ##.sidebar-ad-rect
 ##.sidebar-ads
+##.sidebar-advert
 ##.sidebar-advertisement
 ##.sidebar-square-ad
 ##.sidebar-top-ad
@@ -4484,6 +4499,7 @@
 ###hgiks-top
 ##.zone.zone--loaded
 ##.happy-under-player
+##a[href*=".cfm?domain="][href*="&fp="]
 ##.CitrusBannerWrapper--enollj
 ##citrus-ad-wrapper
 ##.RC-AD
@@ -10055,7 +10071,6 @@ $ping,third-party
 ##.right_ad_2
 ##.right_ad_4
 ##.sidebar-ad-top
-##.sidebar-advert
 ##.single-post-ad
 ##.sponsored-headlines
 ##.sticky-footer-ad-container
@@ -10733,7 +10748,6 @@ $ping,third-party
 ###ad-728x90
 ###ad-Content_1
 ###ad-Content_2
-###ad-Rectangle_1
 ###ad-Rectangle_2
 ###ad-a
 ###ad-ads
@@ -10918,7 +10932,6 @@ $ping,third-party
 ###ad-slot-5
 ###ad-slot-lb
 ###ad-slot-right
-###ad-slot2
 ###ad-slot4
 ###ad-small-banner
 ###ad-space-big
@@ -11595,7 +11608,6 @@ $ping,third-party
 ###ads_big
 ###ads_block
 ###ads_body_1
-###ads_body_2
 ###ads_body_3
 ###ads_body_4
 ###ads_body_5
@@ -13561,7 +13573,6 @@ $ping,third-party
 ###incontentAd1
 ###incontentAd2
 ###incontentAd3
-###index-ad
 ###index-bottom-advert
 ###indexSquareAd
 ###indexad
@@ -14562,7 +14573,6 @@ $ping,third-party
 ###sticky-add-side-block
 ###sticky-ads-top
 ###sticky-custom-ads
-###sticky-footer-ads
 ###sticky-left-ad
 ###stickyAdBlock
 ###stickySidebarAd
@@ -15010,7 +15020,6 @@ $ping,third-party
 ##.AdsRectangleWrapper
 ##.Ads__wrapper
 ##.Ads_header
-##.Adsense
 ##.AdsenseBox
 ##.Adsterra
 ##.Adtext
@@ -15799,7 +15808,6 @@ $ping,third-party
 ##.ad-position-1
 ##.ad-position-2
 ##.ad-poss
-##.ad-post-top
 ##.ad-postText
 ##.ad-poster
 ##.ad-posterad-inlisting
@@ -16545,7 +16553,6 @@ $ping,third-party
 ##.ad_cl
 ##.ad_claim
 ##.ad_cls_fix
-##.ad_column_box
 ##.ad_common
 ##.ad_con
 ##.ad_cont_footer
@@ -17275,7 +17282,6 @@ $ping,third-party
 ##.adsTopCont
 ##.adsTower2
 ##.adsTowerWrap
-##.adsTxt
 ##.ads_160
 ##.ads_180
 ##.ads_300
@@ -17480,7 +17486,6 @@ $ping,third-party
 ##.adsenseframe
 ##.adsenseleaderboard
 ##.adsensemobile
-##.adsenvelope
 ##.adsep
 ##.adserve_728
 ##.adserverBox
@@ -17835,7 +17840,6 @@ $ping,third-party
 ##.advert--banner-wrap
 ##.advert--fallback
 ##.advert--in-sidebar
-##.advert--inline
 ##.advert--loading
 ##.advert--outer
 ##.advert--right-rail
@@ -19986,7 +19990,6 @@ $ping,third-party
 ##.home_mrec_ad
 ##.homeadwrapper
 ##.homepage--sponsor-content
-##.homepage-ad
 ##.homepage-ad-block
 ##.homepage-ad-module
 ##.homepage-advertisement
@@ -22512,7 +22515,6 @@ $ping,third-party
 ##a.gggg[href^="https"]
 ##a[data-url^="https://vulpix.bet/?ref="]
 ##a[href*="&maxads="]
-##a[href*=".cfm?domain="][href*="&fp="]
 ##a[href*=".com?s="]
 ##a[href*=".engine.adglare.net/"]
 ##a[href*=".foxqck.com/"]
@@ -23643,7 +23645,6 @@ $removeparam=ysclid
 /ads728.$image
 /ads728x90.$image
 /adsAPI.js$script
-/adsWrapper.js$script
 /ads_iframe.$subdocument
 /adsdelivery/*$subdocument
 /adsen.php
@@ -24119,6 +24120,7 @@ $removeparam=ysclid
 /js/htmlkc.js
 /js/jquery.smartbanner.js
 /js/js4.js
+/js/kaixin.js
 /js/lmdas.js
 /js/mts.js
 /js/mts66.js
@@ -24299,7 +24301,6 @@ $removeparam=ysclid
 /script/q91a.js|$script
 /script/su.js$script,third-party
 /script/suv4r.js$third-party
-/script/suv5.js|$script
 /script/thankYou.js$third-party
 /script/uBlock.js$third-party
 /script/xxAG1.js$third-party
