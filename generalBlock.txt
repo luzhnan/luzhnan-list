@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-22 01:23:42 UTC
+! Updated: 2025-05-23 02:58:45 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -217,6 +217,7 @@
 ##.ContentAd
 ###inPlayerGGzone
 ##iframe[style="position: absolute; top: -1000px; left: -1000px; visibility: hidden; border: medium none; background-color: transparent;"]
+##.video-info > div.video-link:has(> b > a[href][target="_blank"][rel="sponsored"])
 ##.wrapper-player div.before-player
 ##body ~ div[style^="z-index: 2147483647 !important; position: fixed !important; width:"]
 ##body ~ iframe[id][style^="width: 100% !important; height:"][style*="inset:"]
@@ -239,6 +240,7 @@
 ##.advMasthead
 ##iframe[src^="https://mmmdn.net/"]
 ##body .top-advert
+##iframe[src^="//tsyndicate.com/"]
 ##iframe[src^="https://tsyndicate.com/"]
 ##.roxot-dynamic
 ##body > div#fixedban
@@ -281,7 +283,6 @@
 ##.top-banners
 /vast.php?idzone=
 /banner.go?spaceid=
-/captha/cap/|$document,popup
 /^https:\/\/[a-z]{6,13}\.(cloud|xyz)\/[A-Za-z0-9_-]{48}[A-Z]{3}$/$document
 /player/html.php?aid=*&video_id=*&referer=
 /sm/getcode?apiKey=
@@ -781,6 +782,7 @@
 /site=*/size=*/viewid=
 /site=*/viewid=*/size=
 /size=*/random=*/viewid=
+/slider_ad.js$script
 /sliderad.js$script
 /sp/delivery/*$script
 /spacedesc=
@@ -855,6 +857,7 @@
 ://sli.*/imp?s=$image
 /render-ad.php?ad_id=
 /render-sidebar-ad.php?ad_id=
+/_meetups/r.php?click_id=$document
 /ad-shield/e/*$script,third-party
 ://www.*.xyz/content/*/-1/$script,subdocument,third-party,xmlhttprequest
 /plugins/ad-ace/assets/js/coupons.js$script
@@ -1166,6 +1169,7 @@
 ###ad-manager
 ###ad-mid-rect
 ###ad-middle
+###ad-mpu
 ###ad-mrec
 ###ad-overlay
 ###ad-panel
@@ -1228,6 +1232,7 @@
 ###adLink1
 ###adMain
 ###adModal
+###adPopup
 ###adReady
 ###adRight
 ###adSkinLeft
@@ -1260,6 +1265,7 @@
 ###ad_block
 ###ad_bnr_atf_01
 ###ad_bnr_atf_02
+###ad_bnr_btf_07
 ###ad_bottom
 ###ad_box
 ###ad_btmslot
@@ -1631,6 +1637,7 @@
 ###floatingAd
 ###floating_ad
 ###floating_ads_bottom_textcss_container
+###foot-ad-wrap
 ###footAd
 ###footad
 ###footer-ad
@@ -1805,6 +1812,7 @@
 ###sidebar_ad
 ###sidebar_ad_1
 ###sidebar_ad_2
+###sidebar_ad_3
 ###sidebar_ads
 ###sidebar_topad
 ###sidebarad
@@ -1816,6 +1824,7 @@
 ###sky-left
 ###sky-right
 ###skyscraper-ad
+###skyscraperAdWrap
 ###skyscraper_ad
 ###slideAd
 ###slide_ad
@@ -1975,6 +1984,7 @@
 ##.ad--droite_haute
 ##.ad--droite_middle
 ##.ad--footer
+##.ad--header
 ##.ad--in-content
 ##.ad--inner
 ##.ad--leaderboard
@@ -2205,6 +2215,7 @@
 ##.ad-r
 ##.ad-rail
 ##.ad-reader-con-item
+##.ad-rect
 ##.ad-rectangle
 ##.ad-rectangle-1
 ##.ad-rectangle-container
@@ -2922,6 +2933,7 @@
 ##.adv-cont
 ##.adv-header
 ##.adv-holder
+##.adv-intext
 ##.adv-label
 ##.adv-link
 ##.adv-right
@@ -2948,6 +2960,7 @@
 ##.advads-close-button
 ##.advads-target
 ##.advads-widget
+##.advads_ad_widget-2
 ##.adver
 ##.adver-block
 ##.adver-header
@@ -3090,6 +3103,7 @@
 ##.ajdg_bnnrwidgets
 ##.ajdg_grpwidgets
 ##.alice-adslot
+##.align.Ad
 ##.alt_ad_block
 ##.am-adslot
 ##.am-bazaar-ad
@@ -3164,6 +3178,7 @@
 ##.banner728x90
 ##.bannerAd
 ##.bannerAds
+##.bannerAdvert
 ##.banner_240x400
 ##.banner_300_250
 ##.banner_300x250
@@ -3469,6 +3484,7 @@
 ##.gallery_ad
 ##.gam-ad
 ##.game-ads
+##.genericAds
 ##.gnm-ad-unit
 ##.gnm-ad-unit-container
 ##.google-2ad-m
@@ -3765,6 +3781,7 @@
 ##.msg-ad
 ##.msgad
 ##.mvp-ad-label
+##.mvp-feat1-list-ad
 ##.mvp-flex-ad
 ##.mvp-post-ad-wrap
 ##.mvp-widget-ad
@@ -3785,6 +3802,7 @@
 ##.nav_ad
 ##.navbar-ad-section
 ##.navbar-ads
+##.newad
 ##.news-ad
 ##.news-ad-square-a
 ##.news-ad-square-box
@@ -3863,6 +3881,7 @@
 ##.primary-ad
 ##.primary-ad-widget
 ##.primis-wrapper
+##.print-ad-wrapper
 ##.print-adslot
 ##.product-ad
 ##.programtic-ads
@@ -6607,6 +6626,7 @@
 /server/detect.php?
 /service/track?
 /services/pixel.html?
+/services/t/l?referrer=
 /servlet/Cookie?
 /session-tracker/tracking-
 /session/preparecookies?$domain=~mirapodo.de|~mytoys.de|~yomonda.de
@@ -6654,6 +6674,7 @@
 /sitestats.gif?
 /sitetrek.js
 /skype-analytics.js
+/sLT_bEhAvIoR_aNaLySiS/*$xmlhttprequest
 /sluurpy_track.js
 /smart-pixel.min.js
 /smartpixel-1.js
@@ -7382,6 +7403,7 @@
 ://posthog.$script,domain=~posthog.com
 ://segment-api.
 ://segment-cdn.
+://stats.*/code/e.js
 ://t.targito.
 ://track.*/collect
 ://track.*/dye
@@ -9427,7 +9449,6 @@ $ping,third-party
 ##a[href*=":10443/"] > img[src$="gif"]
 ##a[href*=":7888/?register="]
 ##a[href*=":8701/?register="]
-##a[href*="?channelCode="] > img[src*=".com"]
 ##a[href*="?channelCode="] > img[src*=".xyz"]
 ##a[href*="?invite_code="] > img[src*=".com"]
 ##a[href*="?register="] > img[src*=".douyinpic.com"]
@@ -9868,7 +9889,6 @@ $ping,third-party
 ###ad--article-top-wrapper
 ###ad-block-2
 ###ad-halfpage
-###ad-mpu
 ###ad-standard-wrap
 ###ad-wallpaper
 ###ad_6
@@ -10054,7 +10074,6 @@ $ping,third-party
 ##.mobile-ad-placeholder
 ##.mrf-adv
 ##.multiad2
-##.mvp-feat1-list-ad
 ##.newsfeed_adunit
 ##.noskim.ad
 ##.p-ads-billboard
@@ -11100,7 +11119,6 @@ $ping,third-party
 ###adPlacement_9
 ###adPlacer
 ###adPopover
-###adPopup
 ###adPosition0
 ###adPosition14
 ###adPosition5
@@ -11206,7 +11224,6 @@ $ping,third-party
 ###ad_block_mpu
 ###ad_blocker
 ###ad_bnr_atf_03
-###ad_bnr_btf_07
 ###ad_bnr_btf_08
 ###ad_body
 ###ad_box_top
@@ -13204,7 +13221,6 @@ $ping,third-party
 ###fnAdblockingOverlay
 ###foCookieNotice
 ###fondAdblock
-###foot-ad-wrap
 ###foot-ad2-wrap
 ###footAdArea
 ###footAds
@@ -14361,7 +14377,6 @@ $ping,third-party
 ###sidebarSponsors
 ###sidebarTextAds
 ###sidebarTowerAds
-###sidebar_ad_3
 ###sidebar_ad_big
 ###sidebar_ad_container
 ###sidebar_ad_top
@@ -14426,7 +14441,6 @@ $ping,third-party
 ###skyscrapeAd
 ###skyscraperAd
 ###skyscraperAdContainer
-###skyscraperAdWrap
 ###skyscraperAds
 ###skyscraperWrapperAd
 ###skyscraper_advert
@@ -15284,7 +15298,6 @@ $ping,third-party
 ##.ad--fullsize
 ##.ad--google
 ##.ad--halfpage
-##.ad--header
 ##.ad--homepage-top
 ##.ad--in-article
 ##.ad--inArticleBanner
@@ -15827,7 +15840,6 @@ $ping,third-party
 ##.ad-rail-wrapper
 ##.ad-ratio
 ##.ad-rb-hover
-##.ad-rect
 ##.ad-rect-atf-01
 ##.ad-rect-top-right
 ##.ad-rectangle-banner
@@ -17733,7 +17745,6 @@ $ping,third-party
 ##.adv-halfpage
 ##.adv-in-body
 ##.adv-inset
-##.adv-intext
 ##.adv-intext-label
 ##.adv-key
 ##.adv-leaderboard
@@ -17819,7 +17830,6 @@ $ping,third-party
 ##.advads-sticky
 ##.advads_ad_widget-11
 ##.advads_ad_widget-18
-##.advads_ad_widget-2
 ##.advads_ad_widget-21
 ##.advads_ad_widget-3
 ##.advads_ad_widget-4
@@ -18253,7 +18263,6 @@ $ping,third-party
 ##.alertCookie
 ##.alertcookie
 ##.alerts-manager-container
-##.align.Ad
 ##.alignads
 ##.allow-cookie-stripe
 ##.alma-cookie-disclaimer
@@ -18446,7 +18455,6 @@ $ping,third-party
 ##.bannerAdSidebar
 ##.bannerAdTower
 ##.bannerAdWrap
-##.bannerAdvert
 ##.bannerAside
 ##.bannerGoogle
 ##.bannerInformativaEU
@@ -19746,7 +19754,6 @@ $ping,third-party
 ##.gdprPopup
 ##.gdpr_cookie_popup
 ##.general-ad
-##.genericAds
 ##.ggl_ads_row
 ##.ggl_txt_ads
 ##.giant_pushbar_ads_l
@@ -20694,7 +20701,6 @@ $ping,third-party
 ##.new_ad_normal
 ##.new_ad_wrapper_all
 ##.new_ads_unit
-##.newad
 ##.newad1
 ##.news-ads-top
 ##.news_ad_box
@@ -20946,7 +20952,6 @@ $ping,third-party
 ##.primary-advertisment
 ##.primis-player-container
 ##.primis-video
-##.print-ad-wrapper
 ##.printAds
 ##.privacy-alert
 ##.privacy-warning
@@ -23767,6 +23772,7 @@ $removeparam=ysclid
 /bugsnag.min.js$third-party
 /bundle/trafee/prelands/*
 /c-hive.min.js$script,~third-party
+/captha/cap/|$document,popup
 /cb/cb.ta.js?v=
 /ccm19.js
 /ccnst/ccbundle.min.js
@@ -24328,7 +24334,6 @@ $removeparam=ysclid
 /skin/adv/*$~xmlhttprequest
 /skyscraperad.$image
 /slide_in_ads_close.gif$image
-/slider_ad.js$script
 /small_ad.$image,domain=~eh-ic.com
 /smart-eu-cookies.min.js
 /smio-push-notification/*
@@ -25356,6 +25361,7 @@ $frame,csp=sandbox allow-downloads allow-forms allow-modals allow-same-origin al
 /^https:\/\/[a-z]{8}\.[a-z]{2,8}\/[!.+=@][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|beauty|cam|click|cloud|coupons|digital|diy|food|forum|gay|guru|life|live|living|link|my|property|pw|rocks|run|sbs|shop|store|tattoo|tech|today|top|uno|work,match-case
 /door/?ad_campaign_id=$doc
 ://booking.*.com/sign-in?op_token=$doc
+://x_x-*-*.translate.goog/?_x_tr_sl=auto&_x_tr_tl=$doc
 /edgemesh.*.js$script,domain=~edgemesh.com|~edgeno.de
 /adsensebase.js$script
 ://api.*/lib/native.wasm$3p
@@ -29123,6 +29129,7 @@ $$amp-ad
 ###share-wrap
 ###share-wrapper
 ###share-youtube
+###shareActions
 ###shareArticle
 ###shareBadges
 ###shareBarBottom
@@ -37700,6 +37707,7 @@ $$amp-ad
 /cookiehint.min.js
 /cookiehinweis.js
 /cookiehinweis.min.js
+/cookiehinweis/script.js
 /cookieinfo.js
 /cookieinfo.min.js
 /cookieinfo2.min.js
@@ -37853,6 +37861,7 @@ $$amp-ad
 /dist/gdpr-$domain=~express.co.uk
 /dist/orejime.js
 /diyscmp.min.js
+/django_privacy_mgmt/*$script
 /dkmb_gdpr.js
 /dl.cmp.min.js
 /DonCookie.min.js
@@ -37920,6 +37929,7 @@ $$amp-ad
 /gdpr-consent.js
 /gdpr-consent.min.js
 /gdpr-consent/*
+/gdpr-cookie-consent.min.js
 /gdpr-cookie.js
 /gdpr-min.js
 /gdpr-popup-
@@ -38192,6 +38202,7 @@ $$amp-ad
 /script_cookie.js
 /script_cookies.js
 /scripts/cookiebar/*
+/scw-cookie-iub.min.js
 /sdk-cookie-consent-v2.js
 /sdk-gdpr.min.js
 /sdk.privacy-center.
@@ -52481,6 +52492,7 @@ $$amp-ad
 /ps_emailsubscription.js
 /sapo_newsletters.js
 /section-newsletter-popup.js
+/std_newsletter_2017.js
 /subscribe-popup.js
 /subscriber.newsletter.js
 /td-newsletter/style.css
@@ -66199,6 +66211,17 @@ $$script[tag-content="adsbygoogle"]
 /^supersonicads\./
 /^wlmonitor\./
 /^zjtoolbar\./
+/-go\.experian\.com/
+/-adnow\.com/
+/dkswshap-/
+/\.srvqck/
+/\.fstsrv/
+/\.sagewwl/
+/-ulogl2\.kwai-pro\.com/
+/-ulogl2\.kwaipros\.com/
+/-ulog\.kwai-pro\.com/
+/-ulog\.ksapisrv\.com/
+/-logsdk\.kwai-pro\.com/
 /bahoom/
 /\.estream\./
 /jshosting/
