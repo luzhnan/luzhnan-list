@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-25 01:38:23 UTC
+! Updated: 2025-05-26 00:57:45 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -538,6 +538,7 @@
 /aff_ad?$script
 /affiliate/banner/*$image
 /affiliate/banners/*$image
+/affiliates/banner$image
 /afr.php?$~xmlhttprequest
 /afx_prid/*$script
 /ajax/banner/vpn|$xmlhttprequest
@@ -1535,7 +1536,6 @@
 ###aside_ad
 ###ax-billboard
 ###ax-billboard-sub
-###banner-300x250
 ###banner-728x90
 ###banner-ad
 ###banner-ad-container
@@ -1577,7 +1577,6 @@
 ###btmad
 ###carbonads
 ###commentTopAd
-###companion-ad
 ###connatix
 ###connatix_placeholder_desktop
 ###content-ad
@@ -1903,7 +1902,6 @@
 ###topadblock
 ###topadzone
 ###topbannerad
-###toppannonse
 ###video-ad
 ###video-adv
 ###video-advert
@@ -2058,6 +2056,7 @@
 ##.ad-banner-top
 ##.ad-banner-wrapper
 ##.ad-banners
+##.ad-bar
 ##.ad-below
 ##.ad-bg
 ##.ad-bigbox
@@ -2628,6 +2627,7 @@
 ##.adcont
 ##.adcontainer2
 ##.adcontainer_big
+##.adcopy
 ##.add300x250
 ##.addiv
 ##.addtitle
@@ -2677,7 +2677,6 @@
 ##.ads-300-250
 ##.ads-300x250
 ##.ads-300x600
-##.ads-728-90
 ##.ads-728x90
 ##.ads-ad
 ##.ads-banner
@@ -3015,7 +3014,6 @@
 ##.advert.mobile
 ##.advert.mpu
 ##.advert.skyscraper
-##.advert1
 ##.advert2
 ##.advert4
 ##.advertBlock
@@ -3498,7 +3496,6 @@
 ##.gallery_ad
 ##.gam-ad
 ##.game-ads
-##.genericAds
 ##.gnm-ad-unit
 ##.gnm-ad-unit-container
 ##.google-2ad-m
@@ -3713,7 +3710,6 @@
 ##.local-ads
 ##.logo-ad
 ##.logoAds
-##.long-ads
 ##.loop-ad
 ##.lower-ad
 ##.lst_ads
@@ -4068,6 +4064,7 @@
 ##.slider-ads
 ##.small-ad
 ##.smallAd
+##.small_ads
 ##.smallad
 ##.smartad
 ##.smn-new-gpt-ad
@@ -4220,7 +4217,6 @@
 ##.topadblock
 ##.topads
 ##.tower-ad
-##.tpd-banner-ad-container
 ##.trc-content-sponsored
 ##.tsm-ad
 ##.type-ad
@@ -4351,6 +4347,7 @@
 ##[href^="https://aads.com/campaigns/"]
 ##[href^="https://ad.admitad.com/"]
 ##[href^="https://ad1.adfarm1.adition.com/"]
+##[href^="https://ap.octopuspop.com/click/"] > img
 ##[href^="https://go.xlrdr.com"]
 ##[href^="https://join.playboyplus.com/track/"]
 ##[href^="https://join3.bannedsextapes.com"]
@@ -4481,7 +4478,6 @@
 ##a[href^="https://www.financeads.net/tc.php?"]
 ##a[href^="https://www.geekbuying.com/dynamic-ads/"]
 ##a[href^="https://www.infowarsstore.com/"] > img
-##a[href^="https://www.mrskin.com/tour"]
 ##a[href^="https://www.nutaku.net/signup/landing/"]
 ##a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="]
 ##a[href^="https://www.toprevenuegate.com/"]
@@ -9793,6 +9789,8 @@ $ping,third-party
 /static/idingdian/idd.
 /themes/default/wap/images/douyin.gif
 /pa.dajiahao*.top/
+##.row.nav-bottom + div[style^="display: block; position: relative; width: 0px; height:"]
+##a[href*="aHR0cHM6Ly9xc2Z2bDExLmFsYXp2LmNvbS8zNzA4Lmh0bWw="]
 ##.txp_ad_center
 ###asx_text
 ###wp > .V-video-float
@@ -10127,6 +10125,7 @@ $ping,third-party
 ##.td-ad-m
 ##.td-ad-p
 ##.tpd-banner-desktop
+##.tpd-banner-ad-container
 ##.top-dfp-wrapper
 ##.nn_mobile_mpu_wrapper
 ##.static_mpu_wrap
@@ -12168,6 +12167,7 @@ $ping,third-party
 ###bandeauCookies
 ###bandeau_cookie
 ###bandeau_cookies
+###banner-300x250
 ###banner-468x60
 ###banner-728
 ###banner-ad-large
@@ -12508,6 +12508,7 @@ $ping,third-party
 ###comments-ad-container
 ###comments-ads
 ###compAdvertisement
+###companion-ad
 ###companionAd
 ###companionAdDiv
 ###companion_Ad
@@ -14786,6 +14787,7 @@ $ping,third-party
 ###topleaderAd
 ###topleaderboardad
 ###topnavad
+###toppannonse
 ###topright-ad
 ###toprightAdvert
 ###toprightad
@@ -15459,7 +15461,6 @@ $ping,third-party
 ##.ad-banner-smaller
 ##.ad-banner-static
 ##.ad-banner-top-wrapper
-##.ad-bar
 ##.ad-bar-header
 ##.ad-bb
 ##.ad-before-header
@@ -16939,7 +16940,6 @@ $ping,third-party
 ##.adcontainer300x250l
 ##.adcontainer300x250r
 ##.adcontainer_footer
-##.adcopy
 ##.add-sidebar
 ##.add300
 ##.add300top
@@ -17106,6 +17106,7 @@ $ping,third-party
 ##.ads-336x280
 ##.ads-468
 ##.ads-728
+##.ads-728-90
 ##.ads-728by90
 ##.ads-980x90
 ##.ads-above-comments
@@ -17923,6 +17924,7 @@ $ping,third-party
 ##.advert-wrap1
 ##.advert-wrap2
 ##.advert-wrapper-exco
+##.advert1
 ##.advert120
 ##.advert1Banner
 ##.advert300
@@ -19767,6 +19769,7 @@ $ping,third-party
 ##.gdprPopup
 ##.gdpr_cookie_popup
 ##.general-ad
+##.genericAds
 ##.ggl_ads_row
 ##.ggl_txt_ads
 ##.giant_pushbar_ads_l
@@ -20411,6 +20414,7 @@ $ping,third-party
 ##.logoad
 ##.logoutAd
 ##.logoutAdContainer
+##.long-ads
 ##.longAd
 ##.longAdBox
 ##.longAds
@@ -21400,7 +21404,6 @@ $ping,third-party
 ##.smallAdvertisments
 ##.small_ad
 ##.small_ad_bg
-##.small_ads
 ##.smalladblock
 ##.smallads
 ##.smalladscontainer
@@ -22387,7 +22390,6 @@ $ping,third-party
 ##[href^="https://9996867.com"]
 ##[href^="https://affiliate.fastcomet.com/"] > img
 ##[href^="https://antiagingbed.com/discount/"] > img
-##[href^="https://ap.octopuspop.com/click/"] > img
 ##[href^="https://awbbjmp.com/"]
 ##[href^="https://charmingdatings.life/"]
 ##[href^="https://clicks.affstrack.com/"] > img
@@ -22683,6 +22685,7 @@ $ping,third-party
 ##a[href^="https://www.highperformancecpmgate.com/"]
 ##a[href^="https://www.liquidfire.mobi/"]
 ##a[href^="https://www.mrskin.com/account/"]
+##a[href^="https://www.mrskin.com/tour"]
 ##a[href^="https://www.onlineusershielder.com/"]
 ##a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"]
 ##a[href^="https://www8.smartadserver.com/"]
@@ -23674,7 +23677,6 @@ $removeparam=ysclid
 /affiliate/ad/*$image
 /affiliate/ads/*$image
 /affiliateads/*$image
-/affiliates/banner$image
 /afon7.$script,~third-party
 /afu.php?$popup
 /ajax/getCookieConsent.php
@@ -54069,8 +54071,6 @@ $$amp-ad
 ##.agl_wrapper
 ##.ekm-age-verification
 ##.show.age-check-wrapper
-##.row.nav-bottom + div[style^="display: block; position: relative; width: 0px; height:"]
-##a[href*="aHR0cHM6Ly9xc2Z2bDExLmFsYXp2LmNvbS8zNzA4Lmh0bWw="]
 /fontawesome-$font,third-party
 /fonts/*.ttf$font,third-party
 ###adb-mask
