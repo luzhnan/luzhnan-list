@@ -1,11 +1,17 @@
 ! Title: Relevant rules for specified domains
-! Generated: 2025-05-29 14:54:22 CST
+! Generated: 2025-05-29 20:07:56 CST
 ! Target Domains File: generated_domain_set_rules.txt
 ! Source Rules File: aggregated_atomized_rules.txt
-! Output Rule Count: 20973
+! Output Rule Count: 21051
 
 @@$domain=xvideos.com,websocket
 @@*$domain=rekidai-info.github.io,xhr
+@@-ad0.$domain=azure.com
+@@-ad1.$domain=azure.com
+@@-ad2.$domain=azure.com
+@@-ad3.$domain=azure.com
+@@-ad4.$domain=azure.com
+@@-ad5.$domain=azure.com
 @@-atari-embeds.googleusercontent.com/embeds/*/inner-frame-minified.html$stealth=referrer
 @@.b-cdn.net/*.m3u8?$stealth=referrer,xmlhttprequest
 @@.com/adv/$domain=my.ctrip.com
@@ -186,6 +192,7 @@
 @@||account.aliyun.com^$document
 @@||account.microsoft.com/?refd=$stealth=3p-cookie
 @@||account.microsoft.com/auth/$stealth=3p-cookie
+@@||account.withings.com^$stealth=ip
 @@||accounts.google.com/gsi/$stealth=referrer
 @@||accounts.google.com/o/oauth2/$removeparam
 @@||accounts.google.com/signin/oauth/$removeparam
@@ -617,6 +624,7 @@
 @@||copilot.microsoft.com/?ncedge=$content,elemhide,extension,jsinject
 @@||coral.coralproject.net^
 @@||coral.coralproject.net^$stealth
+@@||cosmos.azure.com^$stealth=referrer
 @@||count.taobao.com/counter$script
 @@||count.video.sina.com.cn^*?video_ids=
 @@||cq.qq.com/js/cody/*scroll_ad.js
@@ -1130,6 +1138,8 @@
 @@||js.monitor.azure.com/scripts/*/ms.analytics-web-*.min.js$domain=mediastream.microsoft.com
 @@||js.monitor.azure.com/scripts/*/ms.analytics-web-*.min.js$domain=remoteassistance.support.services.microsoft.com
 @@||js.monitor.azure.com/scripts/*/ms.analytics-web-*.min.js$domain=skype.com
+@@||js.monitor.azure.com/scripts/c/ms.jsll-3.min.js$domain=contentsafety.cognitive.azure.com
+@@||js.monitor.azure.com^$app=com.microsoft.office.officehubrow
 @@||js.spotx.tv/directsdk/$domain=bloomberg.*,script
 @@||js.spotx.tv/directsdk/*.js$domain=bloomberg.com
 @@||jsdelivr.net/gh/niihen/niihen.github.io/niihen-com/safelink/$domain=link.idblog.eu.org|niihen.com,script
@@ -1158,6 +1168,7 @@
 @@||login.live.com^$stealth
 @@||login.microsoftonline.com^$stealth
 @@||logo.clearbit.com^$image,third-party
+@@||loki.delve.office.com/api/$stealth=3p-auth
 @@||ltn.gold-usergeneratedcontent.net^$domain=hitomi.la,script,third-party
 @@||m.da.mgtv.com/m/player?_type_object=$domain=m.mgtv.com
 @@||m.media-amazon.com/images/*$domain=amazon.*,stealth=referrer
@@ -1170,6 +1181,7 @@
 @@||mail.google.com/mail/$stealth
 @@||mail.google.com/mail/u/$removeparam
 @@||mail.google.com^$generichide
+@@||management.azure.com^$stealth=3p-auth
 @@||mangadex.*/images^
 @@||mangapark.net^$image
 @@||manhua.acimg.cn^$domain=ac.qq.com,stealth=referrer
@@ -1321,6 +1333,7 @@
 @@||platform.x.com^$tag=twitter-embeds
 @@||play.google.com/log?$domain=meet.google.com
 @@||play.google.com/log?format=json$domain=news.google.com
+@@||play.vidyard.com^$stealth=referrer|webrtc
 @@||player.vimeo.com/video^$stealth=referrer
 @@||plus.google.com/hangouts/$stealth=webrtc
 @@||plus.google.com/hangouts/_/CONVERSATION/$document
@@ -1333,6 +1346,8 @@
 @@||pornhub.phncdn.com^$domain=pornhub.com|pornhub.org|pornhub.net|redtube.com|redtube.net|tube8.com|tube8.es|tube8.fr|youporn.com|youporngay.com,image
 @@||pornhublive.com/bio.php?$domain=pornhub.com|pornhub.org|pornhub.net,popup
 @@||portal-portm.meituan.com/horn$domain=meishi.meituan.com,removeparam=utm_medium,xmlhttprequest
+@@||portal.azure.com/*/resource/subscriptions/$stealth=3p-auth
+@@||portal.azure.com^$stealth=referrer
 @@||profile.microsoft.com/RegSysProfileCenter/$stealth=3p-cookie
 @@||pstatp.com^$app=com.ss.android.ugc.aweme
 @@||pub.alimama.com/common/adzone/
@@ -1530,6 +1545,8 @@
 @@||stats.g.doubleclick.net^|$app=com.nttdocomo.android.danimeapp
 @@||store.storeimages.cdn-apple.com^$domain=apple.com,stealth=referrer
 @@||store.storeimages.cdn-apple.com^*/appmeasurement.js$domain=apple.com
+@@||stores.office.com/authredir
+@@||stores.office.com/myaccount/advancedinstalls.aspx
 @@||stripe.com/*?*referrer=$removeparam
 @@||stripe.com^$domain=pay.openai.com
 @@||substrate.office.com/NotesFabric/api/*/me/notes$domain=outlook.live.com,stealth=3p-auth
@@ -2010,9 +2027,11 @@ $domain=~translate.googleusercontent.com|~google.*,removeparam=usg
 /adverts.$domain=~0xacab.org|~adverts.ie|~adverts.org.ua|~github.com|~gitlab.com,~script,~xmlhttprequest
 /adwords/*$domain=~google.com
 /apc/trans.gif?$domain=live.com
+/apc/trans.gif?$domain=office.com
 /api/livechat/prompt/browse/event|$domain=samsung.com
 /api/log?^$domain=~graph.baidu.com
 /api/v1/EndpointTracker$domain=live.com
+/api/v1/EndpointTracker$domain=office.com
 /assets/ads/*$domain=~outlook.live.com,~image
 /assets/sidebar/*$domain=v2ex.com
 /c.gif?$domain=web.skype.com,image,redirect=1x1.gif
@@ -4515,9 +4534,12 @@ email.careers.duolingo.com$image
 email.careers.intercom.com$image
 email.commerce.godaddy.com$image
 email.crunchmatch.techcrunch.com$image
+email.email-ws.withings.com$image
 email.email.anthropic.com$image
 email.email.commerce.godaddy.com$image
 email.email.payments.godaddy.com$image
+email.email.us.withings.com$image
+email.email.withings.com$image
 email.email.ycombinator.com$image
 email.email2.anthropic.com$image
 email.enterprise.github.com$image
@@ -7420,6 +7442,14 @@ nytimes.com,nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion#?##ap
 nytimes.com,nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion#?#div[data-testid="block-Well"] > div[class] > div[data-well-section="well-section"]:has( > div[class] > .ad)
 nytimes.com,nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion#?#div[data-testid="block-Well"] > div[class^="css-"] > [class^="css-"][data-well-section="well-section"]:has(> div[class^="css-"] > div > .ad)
 nytimes.com,nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion#?#section[aria-labelledby="new-york-section"] > div > div[class^="css"] > #pp_morein-wrapper:upward(1)
+office.com###epb
+office.com###supFeedbackWrapper
+office.com###uhfCookieAlert
+office.com##.headPopup
+office.com##.m-alert
+office.com##.m-alert.f-information
+office.com##ohp-mobile-app-banner
+office.com#$#div[class][style*="filter: blur"] { filter: none !important; }
 oisd.nl###adgbnr
 okcfox-com.cdn.ampproject.org##div[data-testid="story-body"] div[style]:has(> div[style] > amp-ad)
 old.reddit.com##.comment .author[href="https://old.reddit.com/user/AutoModerator"]:upward(.comment)
@@ -7496,6 +7526,7 @@ outlook.live.com#?#div[data-app-section="MessageList"] > div:first-child:has(> d
 outlook.live.com#?#div[data-app-section="MessageList"] div[role="listbox"] .customScrollBar > div[style] > div[style^="position: absolute"]:first-child:has(i[data-icon-name="Delete"] + div + button)
 outlook.live.com#?#main > div[class] > div[style] > div[class][style*="position"]:matches-property("/__reactProps/.children.props.adIndex")
 outlook.live.com#?#main[aria-hidden] > div[class] > div[style] > div[class][style="position: absolute; left: 0px; top: 0px; height: 80px; width: 100%;"]:has(> div[class] > div[role="group"] > #OwaContainer)
+outlook.office.com###obf-ToastContainer
 page.email.vimeo.com$image
 pages.academic.cambridge.org$image
 pages.adstudio.byspotify.com$image
@@ -7505,6 +7536,7 @@ pages.email.skype.com$image
 pages.email.tesla.com$image
 pages.email.windows.com$image
 pages.email2.microsoft.com$image
+pages.email2.office.com$image
 pages.emails.paypal.com$image
 pages.emails.tesla.com$image
 pages.emarketing.cambridge.org$image
@@ -8166,6 +8198,7 @@ serverfault.com##.js-dismissable-hero
 serverfault.com##.js-dismissable-hero:has-text(Sign up)
 serverfault.com##.js-freemium-cta
 serverfault.com##.onetrust-pc-dark-filter
+setup.office.com###wcpConsentBannerCtrl
 seura.fi,www.msn.com#@#.nativead
 sh.reddit.com##+js(trusted-set-local-storage-item, xpromo-consolidation, $currentDate$)
 sh.reddit.com##[data-id="user-hover-card"] a[href="/user/AutoModerator/"]:upward(shreddit-comment)
@@ -8658,6 +8691,7 @@ technet.microsoft.com###ux-banner
 technet.microsoft.com##.RightAdRail > div > table[width="100%"]
 technet.microsoft.com##.STMain
 telegram.org##.tg_try_desktop
+templates.office.com##.odcom-template-details-sharing-pane
 tencent.com##.cdc-commercial-swiper
 testpages.adblockplus.org###abptest
 theathletic-com.cdn.ampproject.org##.slideup-free-apron-container
@@ -9301,6 +9335,7 @@ view.email.skype.com$image
 view.email.tesla.com$image
 view.email.windows.com$image
 view.email2.bing.com$image
+view.email2.office.com$image
 view.emarketing.cambridge.org$image
 view.engage.windows.com$image
 view.globalbuyer.alibaba.com$image
@@ -9625,6 +9660,15 @@ wired.com#$?#.grid-layout__aside > .sticky-box > .sticky-box__primary > div[data
 wired.com#?##app-root > .page--article > div[class="row"]:has(> .consumer-marketing-unit--cm-footer:only-child)
 wired.com#?#.article__chunks > .grid-layout--adrail > .grid--item > .callout--content-type--asset-embed:has(> .heading-h5 > a[href^="https://www.wired.com/newsletter/"])
 wit.ai,threads.com#%#//scriptlet('trusted-set-cookie-reload', 'cb', '5_2030_01_01_1')
+withings.com##+js(set-cookie, cookieconsent_advertising, false)
+withings.com##+js(set-cookie, cookieconsent_statistics, false)
+withings.com##+js(set-cookie, withings_cookieconsent_dismissed, 1)
+withings.com#%#//scriptlet('set-cookie', 'cookieconsent_advertising', 'false')
+withings.com#%#//scriptlet('set-cookie', 'cookieconsent_social', 'false')
+withings.com#%#//scriptlet('set-cookie', 'cookieconsent_statistics', 'false')
+withings.com#%#//scriptlet('set-cookie', 'withings_cookieconsent_dismissed', '1')
+withings.com#@##analytics_cookie
+withings.com#@#.cookie_message
 wjla-com.cdn.ampproject.org##div[data-testid="story-body"] div[style]:has(> div[style] > amp-ad)
 wk.baidu.com###baiduAppStyle
 wk.baidu.com###bottomFixed
@@ -11302,6 +11346,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 |h.msn.com^
 |haitaoad.nosdn.127.net^
 |hc-ssp.sm.cn^
+|hd.xiaojukeji.com^
 |hd.xiaomi.com^
 |hd02.lg.xiaomi.com^
 |hdj.baidu.com^
@@ -12095,6 +12140,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||adtrack.quark.cn^
 ||adtrack.uc.cn^
 ||adtrack.ucweb.com^
+||adtrack.xiaojukeji.com^
 ||adv.app.qq.com^
 ||adv.sec.intl.miui.com^
 ||adv.sec.miui.com^
@@ -12959,6 +13005,10 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ax1x.com/2020/06/14/NSoyHe.png
 ||ayw-tt-game.oss-cn-beijing.aliyuncs.com^
 ||az-neverblock.aznude.workers.dev^
+||azure.com*/api/Telemetry|
+||azure.com/api/clientlog|
+||azure.com/api/extensiontelemetry|
+||azure.com/api/metric|
 ||azureedge.net/adtags/
 ||azureedge.net/javascripts/Tracking.
 ||azureedge.net/js/cookie_notificacao.min.js
@@ -13875,12 +13925,14 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||concertads-configs.vox-cdn.com^
 ||condenastdigital.com/content?$third-party
 ||condenastdigital.com/track$third-party
+||conf.diditaxi.com.cn/nav/widget^$replace=/\"data\"//
 ||conf.international.baidu.com^
 ||conf.wifi.360.cn^
 ||confiant.msn.com^
 ||config-api.internet.apps.samsung.com^
 ||config.3g.qq.com/qqsecure_config_update/cloudtestnew^
 ||config.ab.qq.com^
+||config.fp.measure.office.com/conf/v*/*/fpconfig.min.json$script
 ||config.parsely.com^$third-party
 ||config.uca.cloud.unity3d.com^
 ||connect.facebook.com^$domain=~atlassolutions.com|~facebook.com|~facebook.de|~facebook.fr|~facebook.net|~fb.com|~fb.me|~fbcdn.net|~fbsbx.com|~friendfeed.com|~instagram.com|~internalfb.com|~messenger.com|~oculus.com|~whatsapp.com|~workplace.com,third-party
@@ -15392,6 +15444,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||data.adobedc.net^$third-party
 ||data.bilibili.com^
 ||data.bilibili.com^$redirect=noop.txt
+||data.diagnostics.office.com^
 ||data.em2.cloudflare.com^
 ||data.fastlane-email.paypal.com^
 ||data.glbdns2.microsoft.com^
@@ -16255,6 +16308,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||fonts.gstatic.com^$third-party
 ||fonts.shopify.com^$3p
 ||fonts.wp.com^$3p
+||forms.office.com^$removeparam=route
 ||fourier.alibaba.com^
 ||fourier.taobao.com^
 ||fp-cdn.azureedge.net/prod/
@@ -17290,6 +17344,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||i.loli.net/*.png$image
 ||i.paypal.com^
 ||i.posthog.com^
+||i.s-microsoft.com/wedcs/ms.js
 ||i.snssdk.com/bds/banner^
 ||i.snssdk.com/im/v1/PullMessage$app=com.ss.android.article.news
 ||i.snssdk.com/slardar/sdk.js
@@ -17434,6 +17489,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||imhentai.xxx/js/slider_
 ||improving.duckduckgo.com^
 ||imtt.qq.com^
+||in.applicationinsights.azure.com^
 ||in.yimg.com^
 ||incomaker.b-cdn.net/wpjcz.js
 ||indianetouristvisacoin.wordpress.com^
@@ -17641,6 +17697,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||jrclick.jd.com^
 ||js-agent.newrelic.com^$3p
 ||js-agent.newrelic.com^$badfilter
+||js.monitor.azure.com/scripts/c/ms.analytics-web-3.min.js
 ||js.newrutor.eu.org^
 ||js.tv.itc.cn/gg.seed.js^
 ||js.tv.itc.cn/site/wemedia/play^$replace=/onStartAdShown/null/
@@ -17992,6 +18049,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||mcs.zijieapi.com^
 ||mdevstat.qqlive.qq.com^
 ||mdt.qq.com^
+||measure.office.com^
 ||media-amazon.com/images/S/apesafeframe/ape/sf/$script
 ||media-amazon.com^$app=com.offerup
 ||media.globalsign.com^
@@ -18140,6 +18198,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||mon.snssdk.com^
 ||mon.zijieapi.com^
 ||monitor-frontend-collector.a.bybit-aws.com^
+||monitor.azure.com^
 ||monitor.music.qq.com^
 ||monitor.qq.com^
 ||monitor.uu.qq.com/analytics/
@@ -18413,6 +18472,8 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||odinvzc.azureedge.net/apc/trans.gif
 ||offer.alibaba.com^
 ||offer.alibaba.com^$popup
+||office.com^$removeparam=ocid
+||office.net/*/web-vitals.*.js
 ||offnavi.map.baidu.com^
 ||ogads-pa.clients6.google.com^
 ||ogads-pa.googleapis.com^
@@ -18477,6 +18538,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||oth.eve.qq.com^
 ||ott.cibntv.net/*/ad/*.ts?ccode=$domain=v.youku.com,xmlhttprequest
 ||ourtime-assist.members-authenticated.workers.dev^$all,to=~ourtime.com
+||outlook-1.cdn.office.net/owamini/*/resources/analytics-ping.js
 ||outlook.live.com/ows/*/OutlookOptions/AdsAggregate
 ||outlookads.live.com^
 ||outreach.crossref.org^
@@ -18511,6 +18573,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||package.box.xiaomi.com^
 ||pacontainer.s3.amazonaws.com^
 ||page.amap.com^
+||page.udache.com/activity/apps/member-update-popup/popup^
 ||pagead*.google.com^
 ||pagead-googlehosted.l.google.com^
 ||pagead-tpc.l.google.com^
@@ -18979,6 +19042,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||raw.githubusercontent.com/easylist/easylist/master/docs/2x2.png$third-party
 ||raw.githubusercontent.com/expertad^$3p
 ||raw.githubusercontent.com^$app=com.yoku.marumovie
+||raw.vidyard.com^
 ||rcgi.video.qq.com^
 ||rcm-images.amazon.com^
 ||rdstat.tanx.com^
@@ -19059,10 +19123,18 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||report.qq.com^
 ||report.tv.kohesport.qq.com^
 ||report.vip.qq.com^
+||res.cdn.office.net/owamail/*/resources/analytics-ping.js
+||res.cdn.office.net/owamail/*/scripts/owa.Analytics.js
+||res.cloudinary.com/*/Ads%20Video/preroll_$media,redirect=noop-1s.mp4
+||res.cloudinary.com/*/Ads*/preroll_candy$media,redirect=noopmp3-0.1s
 ||res.mi.baidu.com^
 ||res.mmstat.com^
+||res.office365.com/footprint/v*/scripts/fp-min.js$script
+||res.office365.com/footprint/v*/scripts/fpconfig.json$script
 ||res.wx.qq.com/promotion/res/htmledition/mobile/js/feedback/main*.js
 ||res.wx.qq.com/promotion/res/htmledition/mobile/js/vendor*.js
+||res.xiaojukeji.com/resapi/activity/getPreloaded^
+||res.xiaojukeji.com/resapi/activity/mget^$replace=/didipas_second_floor_index//
 ||rescn.u3.ucweb.com^
 ||researchgate.net/track/
 ||researchgate.net^$doc,removeparam=_tp
@@ -19114,6 +19186,8 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||s-adashx.ut.uc.cn^
 ||s-cdn.phonearena.com/js/*/widgets/survey.js
 ||s-cdn.phonearena.com/js/ops/taina.js
+||s-microsoft.com/mscc/
+||s-microsoft.com/mscc/$~stylesheet
 ||s.360.cn/so/zz.gif
 ||s.360.cn^
 ||s.baidu.com^
@@ -20063,6 +20137,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||tracker.ai.xiaomi.com^
 ||tracker.baidu.com^
 ||tracker.dcdn.baidu.com^
+||tracker.didistatic.com^
 ||tracker.downdetector.com^
 ||tracking.*.miui.com^
 ||tracking.agora.io^
@@ -20291,6 +20366,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||vid*/stats/event
 ||video-ad.sm.cn^
 ||video-ads.rubiconproject.com/video/*/vast.xml$important,redirect=nooptext
+||video-analytics-api.cloudinary.com^
 ||video-dsp.pddpic.com^
 ||video-err-log-*.cos.ap-beijing.myqcloud.com^
 ||video-stats.video.google.com^
@@ -20305,6 +20381,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||videopush.baidu.com^
 ||videorolls.row.aiv-cdn.net/*.mp4$domain=amazon.com,media,redirect=noop-0.1s.mp3
 ||videorolls.row.aiv-cdn.net/*.mp4$domain=amazon.com,media,redirect=noopmp3-0.1s
+||vidyard.com/api/metrics
 ||view.adjust.com^$app=com.easybrain.nonogram
 ||view.inews.qq.com^$removeparam=ft
 ||view.inews.qq.com^$removeparam=refer
@@ -20646,6 +20723,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||xiaohongshu.com^$removeparam=verifyUuid
 ||xiaohongshu.com^$removeparam=xhsshare
 ||xiaohongshu.com^$removeparam=xsec_source
+||xiaojukeji.com/d?v=^
 ||xiaoma-ssp.oss-cn-hangzhou.aliyuncs.com^
 ||xiaomi.com/js/mstr.js?
 ||ximalaya.com/discovery-firstpage/explore^$replace=/[\s\S]*?//
