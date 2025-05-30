@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-05-30 02:03:49 UTC
+! Updated: 2025-05-30 14:58:49 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -339,6 +339,7 @@
 /getMultiAdsStrategy
 /getStartPageAds
 /getads?
+/api/users/*&ev=$script
 /aclib.js^$script
 /embed-1/ajax/e-1/banners|$xmlhttprequest
 /in/show/?tag_ab=*&site_id=
@@ -355,6 +356,7 @@
 /api/senddata?$xmlhttprequest,third-party
 /_xa/ads_
 /ad-provider.
+/s/s/js/m/im.js?v=
 /s/s/js/i-top.js?v=
 /rndskittytor.com/*$script
 /nbk/frnd_ld.js
@@ -788,6 +790,7 @@
 /site=*/size=*/viewid=
 /site=*/viewid=*/size=
 /size=*/random=*/viewid=
+/slider_ad.js$script
 /sliderad.js$script
 /sp/delivery/*$script
 /spacedesc=
@@ -832,6 +835,7 @@
 /wp-bannerize.$script,stylesheet
 /wp-bannerize/*$script,stylesheet
 /wp-content/plugins/amazon-auto-links/*$script,stylesheet
+/wp-content/plugins/amazon-product-in-a-post-plugin/*
 /wp-content/plugins/m-wp-popup/*$script
 /wp-content/plugins/the-moneytizer/*$script
 /wp-content/plugins/wp-ad-guru/*$script,stylesheet
@@ -1075,7 +1079,6 @@
 ###AD_G
 ###AD_L
 ###AD_Top
-###ADbox
 ###Ad-Container
 ###Ad-Content
 ###AdBanner
@@ -1235,7 +1238,6 @@
 ###adLink1
 ###adMain
 ###adModal
-###adPopup
 ###adReady
 ###adRight
 ###adSkinLeft
@@ -1516,6 +1518,7 @@
 ###advertisement-text
 ###advertisement1
 ###advertisement_banner
+###advertisingTop
 ###advertorial
 ###adverts
 ###adverttop
@@ -1598,6 +1601,7 @@
 ###dfp-ad-right3
 ###dfp-ad-slot2
 ###dfp-ad-top-wrapper
+###dfp-article-mpu
 ###dfp-atf
 ###dfp-btf
 ###dfp-header
@@ -1710,6 +1714,7 @@
 ###interstitial_ad
 ###intro_ad_1
 ###iqadtile1
+###iqadtile15
 ###iqadtile16
 ###iqadtile4
 ###iqadtile41
@@ -1823,7 +1828,6 @@
 ###sidebar_ad
 ###sidebar_ad_1
 ###sidebar_ad_2
-###sidebar_ad_3
 ###sidebar_ads
 ###sidebar_topad
 ###sidebarad
@@ -1883,6 +1887,7 @@
 ###topAD
 ###topAd
 ###topAd728x90
+###topAdArea
 ###topAdContainer
 ###topAdDiv
 ###topAds
@@ -2061,6 +2066,7 @@
 ##.ad-banner-top
 ##.ad-banner-wrapper
 ##.ad-banners
+##.ad-bar
 ##.ad-below
 ##.ad-bg
 ##.ad-bigbox
@@ -2129,6 +2135,7 @@
 ##.ad-element
 ##.ad-entity-container
 ##.ad-feedback
+##.ad-field
 ##.ad-fixed
 ##.ad-flag
 ##.ad-flex
@@ -2415,7 +2422,6 @@
 ##.adLeft
 ##.adLink
 ##.adLoader
-##.adModule
 ##.adNone
 ##.adOverlay
 ##.adPanel
@@ -2496,7 +2502,6 @@
 ##.ad_banner_2
 ##.ad_banner_468
 ##.ad_banner_728
-##.ad_bar
 ##.ad_below_content
 ##.ad_bg
 ##.ad_block
@@ -2528,7 +2533,6 @@
 ##.ad_feature
 ##.ad_float
 ##.ad_footer
-##.ad_frame
 ##.ad_gam
 ##.ad_global_header
 ##.ad_google
@@ -2589,7 +2593,6 @@
 ##.ad_to_list
 ##.ad_top
 ##.ad_top_3
-##.ad_txt2
 ##.ad_under
 ##.ad_unit
 ##.ad_unit_wrapper
@@ -2976,6 +2979,7 @@
 ##.adv_banner
 ##.adv_box
 ##.adv_img
+##.adv_link
 ##.adv_right
 ##.adv_title
 ##.adv_txt
@@ -3046,7 +3050,6 @@
 ##.advertise-link
 ##.advertise-pic
 ##.advertiseText
-##.advertise_box
 ##.advertise_text
 ##.advertisement-banner
 ##.advertisement-block
@@ -3466,7 +3469,6 @@
 ##.foot-ad
 ##.footad
 ##.footer-ad
-##.footer-ad-labeling
 ##.footer-ad-row
 ##.footer-ad-section
 ##.footer-ad-unit
@@ -3802,7 +3804,6 @@
 ##.mrec-ads
 ##.msg-ad
 ##.msgad
-##.mv_atf_ad_holder
 ##.mvp-ad-label
 ##.mvp-feat1-list-ad
 ##.mvp-flex-ad
@@ -4306,7 +4307,6 @@
 ##.widget_adv_location
 ##.widget_adv_text
 ##.widget_advads_ad_widget
-##.widget_awaken_pro_medium_rectangle_ad
 ##.widget_better-ads
 ##.widget_doubleclick_widget
 ##.widget_evolve_ad_gpt_widget
@@ -4402,7 +4402,6 @@
 ##a[href^="https://aj1070.online/"]
 ##a[href^="https://ak.stikroltiltoowi.net/"]
 ##a[href^="https://bc.game/"]
-##a[href^="https://best-experience-cool.com/"]
 ##a[href^="https://bngprm.com/"]
 ##a[href^="https://bngpt.com/"]
 ##a[href^="https://bongacams10.com/track?"]
@@ -4634,7 +4633,6 @@
 ##.ob-smartfeed-wrapper
 ##.ob-widget-header
 ##.outbrain
-##.outbrain-ad-units
 ##.outbrain-module
 ##.outbrain-placeholder
 ##.outbrain-widget
@@ -9910,7 +9908,6 @@ $ping,third-party
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z]([a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$script,3p
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z]([a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$script,3p,redirect-rule=noop.js
 /^https?:\/\/[-a-z]{5,13}\.(fun|tech|world|pro|life|love|buzz|click|cfd|club|pro|online|today|space|global|rocks|shop|icu|xyz|top|com|vip)\/[0-9a-z]{1,20}\?(?=[A-Za-z]{0,21}\d?)(?=[0-9a-z]{0,21}[A-Z])[0-9A-Za-z]{15,22}=(?=[%a-z]*[0-9A-Z])[%0-9A-Za-z]{35,2000}$/$xhr,3p
-/api/users/*&ev=$script
 /ajax/embed-4/banners$xhr,1p
 /ajax/banner/vpn|$xhr,1p
 /ajax/banners?page=$xhr,1p
@@ -9999,6 +9996,7 @@ $ping,third-party
 ##.adElement
 ##.adHolderStory
 ##.adMinHeight280
+##.adModule
 ##.adModule--inner
 ##.adModule--outer
 ##.adRectangle-pos-medium
@@ -10274,6 +10272,7 @@ $ping,third-party
 ##.mid-outbrain
 ##.outBrainWrapper
 ##.outbrain-ad-slot
+##.outbrain-ad-units
 ##.outbrain-ads
 ##.outbrain-bg
 ##.outbrain-bloc
@@ -10549,6 +10548,7 @@ $ping,third-party
 ###AD_468x60
 ###AD_ROW
 ###AD_text
+###ADbox
 ###Ad-3-Slider
 ###Ad-4-Slider
 ###Ad-Top
@@ -11157,6 +11157,7 @@ $ping,third-party
 ###adPlacement_9
 ###adPlacer
 ###adPopover
+###adPopup
 ###adPosition0
 ###adPosition14
 ###adPosition5
@@ -12007,7 +12008,6 @@ $ping,third-party
 ###advertisingLink
 ###advertisingRightColumn
 ###advertisingRightRight
-###advertisingTop
 ###advertisingTopWrapper
 ###advertising_300
 ###advertising_320
@@ -13061,7 +13061,6 @@ $ping,third-party
 ###dfp-ad-slot7
 ###dfp-ad-slot7-wrapper
 ###dfp-ap-2016-interstitial
-###dfp-article-mpu
 ###dfp-atf-desktop
 ###dfp-banner
 ###dfp-banner-popup
@@ -13679,7 +13678,6 @@ $ping,third-party
 ###iqadoverlay
 ###iqadtile11
 ###iqadtile14
-###iqadtile15
 ###iqadtile2
 ###iqadtile3
 ###iqadtile6
@@ -14407,6 +14405,7 @@ $ping,third-party
 ###sidebarSponsors
 ###sidebarTextAds
 ###sidebarTowerAds
+###sidebar_ad_3
 ###sidebar_ad_big
 ###sidebar_ad_container
 ###sidebar_ad_top
@@ -14706,7 +14705,6 @@ $ping,third-party
 ###top-skin-ad-bg
 ###top-sponsor-ad
 ###top-story-ad
-###topAdArea
 ###topAdBanner
 ###topAdBar
 ###topAdBox
@@ -15470,7 +15468,6 @@ $ping,third-party
 ##.ad-banner-smaller
 ##.ad-banner-static
 ##.ad-banner-top-wrapper
-##.ad-bar
 ##.ad-bar-header
 ##.ad-bb
 ##.ad-before-header
@@ -15626,7 +15623,6 @@ $ping,third-party
 ##.ad-feature-text
 ##.ad-featured-video-caption
 ##.ad-fi
-##.ad-field
 ##.ad-filler
 ##.ad-filmstrip
 ##.ad-first
@@ -16552,6 +16548,7 @@ $ping,third-party
 ##.ad_banner_728x90_inner
 ##.ad_banner_border
 ##.ad_banner_div
+##.ad_bar
 ##.ad_belowfirstpost_frame
 ##.ad_bgskin
 ##.ad_big_banner
@@ -16612,6 +16609,7 @@ $ping,third-party
 ##.ad_floating_box
 ##.ad_fluid
 ##.ad_footer_super_banner
+##.ad_frame
 ##.ad_frame_around
 ##.ad_fullwidth
 ##.ad_gpt
@@ -16775,6 +16773,7 @@ $ping,third-party
 ##.ad_ttl
 ##.ad_two
 ##.ad_two_third
+##.ad_txt2
 ##.ad_type_1
 ##.ad_type_adsense
 ##.ad_type_dfp
@@ -17831,7 +17830,6 @@ $ping,third-party
 ##.adv_here
 ##.adv_leaderboard
 ##.adv_left
-##.adv_link
 ##.adv_main_middle
 ##.adv_main_middle_wrapper
 ##.adv_main_right_down
@@ -18011,6 +18009,7 @@ $ping,third-party
 ##.advertiseContainer
 ##.advertiseHere
 ##.advertise_ads
+##.advertise_box
 ##.advertise_brand
 ##.advertise_carousel
 ##.advertise_here
@@ -19596,6 +19595,7 @@ $ping,third-party
 ##.foot_adsense
 ##.footer-300-ad
 ##.footer-ad-full-wrapper
+##.footer-ad-labeling
 ##.footer-ad-squares
 ##.footer-adrow
 ##.footer-ads-slide
@@ -20683,6 +20683,7 @@ $ping,third-party
 ##.mtop_adfit
 ##.mu-ad-container
 ##.muniweb-cookies
+##.mv_atf_ad_holder
 ##.mw-ad
 ##.mw-cookiewarning-container
 ##.myAdsGroup
@@ -22053,6 +22054,7 @@ $ping,third-party
 ##.widget_advwidget
 ##.widget_alaya_ad
 ##.widget_arvins_ad_randomizer
+##.widget_awaken_pro_medium_rectangle_ad
 ##.widget_blog_subscription
 ##.widget_com_ad_widget
 ##.widget_core_ads_desk
@@ -22582,6 +22584,7 @@ $ping,third-party
 ##a[href^="https://baipahanoop.net/"]
 ##a[href^="https://banners.livepartners.com/"]
 ##a[href^="https://believessway.com/"]
+##a[href^="https://best-experience-cool.com/"]
 ##a[href^="https://billing.purevpn.com/aff.php"] > img
 ##a[href^="https://black77854.com/"]
 ##a[href^="https://bodelen.com/"]
@@ -24344,7 +24347,6 @@ $removeparam=ysclid
 /skin/adv/*$~xmlhttprequest
 /skyscraperad.$image
 /slide_in_ads_close.gif$image
-/slider_ad.js$script
 /small_ad.$image,domain=~eh-ic.com
 /smart-eu-cookies.min.js
 /smio-push-notification/*
@@ -24457,7 +24459,6 @@ $removeparam=ysclid
 /wp-content/plugins/adunblocker/*
 /wp-content/plugins/advanced-user-manager/aum-script.js
 /wp-content/plugins/advanced-widget-manage/awm-script.js
-/wp-content/plugins/amazon-product-in-a-post-plugin/*
 /wp-content/plugins/anti_ad_blocker/*
 /wp-content/plugins/append-link-on-copy/js/append_link.js$script,1p
 /wp-content/plugins/arscode-ninja-popups/*
@@ -54123,6 +54124,7 @@ $$amp-ad
 /wp-content/plugins/leaky-paywall/js/leaky-paywall-cookie.js$script,~third-party
 /wp-content/*/plugins/rcp-view-limit/$script,~third-party
 /zephr/feature$xmlhttprequest
+/\.cronista\.com\/files\/cachefiles\/.+\.js\?\d/$script,~third-party
 /www\.vogue\.co\.uk\/[-\w]+/$script,~third-party
 /\.(femmesdaujourdhui|flair|knack|levif|libelle)\.be\/.+\/(\w+-){2,}/$inline-script
 #@#.cmpwrapper
