@@ -1,5 +1,5 @@
 ! Title: Ultra Minimal General Rules (No Comments)
-! Updated: 2025-06-01 02:10:32 UTC
+! Updated: 2025-06-01 12:19:14 UTC
 ! Only includes rules starting with #, /, $, or :
 ! Excluded rules containing $app=
 ! Excluded rules containing $domain= (unless the domain is an exception, e.g. $domain=~example.com)
@@ -563,6 +563,7 @@
 /api/ad.$script
 /api/direct/*?s1=$script
 /api/v2/items/*?ev=
+/apopwin.js$script
 /apstag.js$script
 /apu.php?$script
 /arcads.js$script
@@ -1266,6 +1267,7 @@
 ###ad_banner
 ###ad_bar
 ###ad_bg
+###ad_big
 ###ad_block
 ###ad_bnr_atf_01
 ###ad_bnr_atf_02
@@ -2157,7 +2159,6 @@
 ##.ad-hint
 ##.ad-holder
 ##.ad-horizontal
-##.ad-horizontal-top-wrapper
 ##.ad-icon
 ##.ad-iframe
 ##.ad-iframe-container
@@ -2451,7 +2452,6 @@
 ##.adStyle
 ##.adTag
 ##.adText
-##.adTile
 ##.adTip
 ##.adTitle
 ##.adTop
@@ -2829,7 +2829,6 @@
 ##.ads_column
 ##.ads_content
 ##.ads_css
-##.ads_footer
 ##.ads_header
 ##.ads_inview
 ##.ads_item
@@ -2922,7 +2921,6 @@
 ##.adstextpad
 ##.adstop
 ##.adsverting
-##.adszone
 ##.adtable
 ##.adtag
 ##.adtech
@@ -2978,7 +2976,6 @@
 ##.adv_banner
 ##.adv_box
 ##.adv_img
-##.adv_link
 ##.adv_right
 ##.adv_title
 ##.adv_txt
@@ -3100,6 +3097,7 @@
 ##.advertising_widget
 ##.advertisment
 ##.advertismentContainer
+##.advertisment_notice
 ##.advertorial
 ##.adverts
 ##.adviewDFPBanner
@@ -3371,7 +3369,6 @@
 ##.content_ads
 ##.content_gpt_top_ads
 ##.contentad
-##.ct-ads
 ##.custom-ad
 ##.custom-ad-container
 ##.custom-ads
@@ -3436,6 +3433,7 @@
 ##.e3lan300-250
 ##.e3lan300_250-widget
 ##.eaa-ad
+##.easy-ads
 ##.easyAdsBox
 ##.easyAdsSinglePosition
 ##.ebm-ad-target__outer
@@ -3564,6 +3562,7 @@
 ##.header-ad-widget
 ##.header-ad-wrap
 ##.header-ad-wrapper
+##.header-adbox
 ##.header-ads
 ##.header-ads-wrap
 ##.header-ads-wrapper
@@ -3580,6 +3579,7 @@
 ##.headerAd
 ##.headerAds
 ##.headerAdvert
+##.headerAdvertisement
 ##.headerTopAd
 ##.header__ad
 ##.header__ads
@@ -4004,7 +4004,6 @@
 ##.sagreklam
 ##.sal-adv-gpt
 ##.sam_ad
-##.scad
 ##.scroll-track-ad
 ##.search-ad
 ##.search-results-ad
@@ -4052,7 +4051,6 @@
 ##.sidebar_ad_container
 ##.sidebar_ads
 ##.sidebar_sponsors
-##.sidebarad
 ##.sidebaradbox
 ##.sidebox-ad
 ##.signad
@@ -11252,7 +11250,6 @@ $ping,third-party
 ###ad_bar_rect
 ###ad_before_header
 ###ad_bg_image
-###ad_big
 ###ad_bigbox
 ###ad_bigbox_companion
 ###ad_bigrectangle
@@ -15678,6 +15675,7 @@ $ping,third-party
 ##.ad-homepage-one
 ##.ad-hor
 ##.ad-horizontal-large
+##.ad-horizontal-top-wrapper
 ##.ad-hoverable
 ##.ad-hpto
 ##.ad-identifier
@@ -16447,6 +16445,7 @@ $ping,third-party
 ##.adTextStreaming
 ##.adTextWrap
 ##.adTicker
+##.adTile
 ##.adTileWrap
 ##.adTiler
 ##.adTitleR
@@ -17352,6 +17351,7 @@ $ping,third-party
 ##.ads_div
 ##.ads_div1
 ##.ads_foot
+##.ads_footer
 ##.ads_footerad
 ##.ads_full_1
 ##.ads_google
@@ -17665,6 +17665,7 @@ $ping,third-party
 ##.adswitch
 ##.adswordatas
 ##.adsystem_ad
+##.adszone
 ##.adt-300x250
 ##.adt-300x600
 ##.adt-728x90
@@ -17829,6 +17830,7 @@ $ping,third-party
 ##.adv_here
 ##.adv_leaderboard
 ##.adv_left
+##.adv_link
 ##.adv_main_middle
 ##.adv_main_middle_wrapper
 ##.adv_main_right_down
@@ -18142,7 +18144,6 @@ $ping,third-party
 ##.advertisment_bar
 ##.advertisment_caption
 ##.advertisment_full
-##.advertisment_notice
 ##.advertisment_two
 ##.advertize
 ##.advertize_here
@@ -19244,6 +19245,7 @@ $ping,third-party
 ##.crm-adcontain
 ##.crumb-ad
 ##.cspAd
+##.ct-ads
 ##.ct-advert
 ##.ct-advertising-footer
 ##.ct-bottom-ads
@@ -19455,7 +19457,6 @@ $ping,third-party
 ##.e3lan300-100
 ##.ePrivacyOuterWrapper
 ##.eads
-##.easy-ads
 ##.ebayads
 ##.ec-cookie-policy
 ##.ecdcCookiePolicy
@@ -19922,7 +19923,6 @@ $ping,third-party
 ##.header-ad-top
 ##.header-ad-zone
 ##.header-adbanner
-##.header-adbox
 ##.header-adcode
 ##.header-adplace
 ##.header-ads-area
@@ -19945,7 +19945,6 @@ $ping,third-party
 ##.headerAdSpacing
 ##.headerAdWrapper
 ##.headerAdspace
-##.headerAdvertisement
 ##.headerCookies
 ##.headerTextAd
 ##.headerTopAds
@@ -21191,6 +21190,7 @@ $ping,third-party
 ##.sb_ad_holder
 ##.sc-ad
 ##.sc-cookies
+##.scad
 ##.scaled-juicyads
 ##.script-ad
 ##.scroll-ad-item-container
@@ -21316,6 +21316,7 @@ $ping,third-party
 ##.sidebar_box_ad
 ##.sidebar_right_ad
 ##.sidebar_skyscraper_ad
+##.sidebarad
 ##.sidebarad_bottom
 ##.sidebaradcontent
 ##.sidebarads
@@ -23529,7 +23530,7 @@ $removeparam=ysclid
 /^94\.242\.247\.(2[0-9]|3[0-2]):/$network
 /^https:\/\/(?:as(?:loader)?|loader)\.([-0-9A-Za-z]+.[-A-Za-z]{2,30})\/script\/(?:[-0-9a-z]+\.)?\1\.js\?h=\d{9}$/$xmlhttprequest,~third-party,urltransform=/script.+/loader.min.js/
 /^https:\/\/[0-9a-z]{5,}\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,~third-party
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,redirect=noopjs,to=com|~aswpsdkus.com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|artforum.com|artnews.com|awkward.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|eater.com|eldiariony.com|fark.com|femestella.com|footwearnews.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|madeeveryday.com|mandatory.com|masslive.com|mlive.com|mmamania.com|naszemiasto.pl|nationalpost.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nothingbutnewcastle.com|nsjonline.com|nypost.com|oregonlive.com|pagesix.com|pennlive.com|playstationlifestyle.net|pravda.sk|robbreport.com|rollingstone.com|sbnation.com|sheknows.com|sneakernews.com|sourcingjournal.com|sport-fm.gr|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|thecw.com|thedailymeal.com|theflowspace.com|themarysue.com|tokfm.pl|torontosun.com|tvline.com|usmagazine.com|wallup.net|wimp.com|worldstar.com|worldstarhiphop.com|wwd.com|yourcountdown.to
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,redirect=noopjs,to=com|~aswpsdkus.com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|artforum.com|artnews.com|awkward.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|eater.com|eldiariony.com|fark.com|femestella.com|footwearnews.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|madeeveryday.com|maidenhead-advertiser.co.uk|mandatory.com|masslive.com|mlive.com|mmamania.com|naszemiasto.pl|nationalpost.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nothingbutnewcastle.com|nsjonline.com|nypost.com|oregonlive.com|pagesix.com|pennlive.com|playstationlifestyle.net|pravda.sk|robbreport.com|rollingstone.com|sbnation.com|sheknows.com|sneakernews.com|sourcingjournal.com|sport-fm.gr|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|thecw.com|thedailymeal.com|theflowspace.com|themarysue.com|tokfm.pl|torontosun.com|tvline.com|usmagazine.com|wallup.net|wimp.com|worldstar.com|worldstarhiphop.com|wwd.com|yourcountdown.to
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~aswpsdkus.com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,redirect=noopjs,ipaddress=/^(3[45]\.\d+\.\d{2,3}\.\d{2,3}|2600:1901:0:[a-f0-9]{3,4}::1)$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{12,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~aswpsdkus.com|~chimpstatic.com|~geniuslinkcdn.com|~squareoffs.com,header=etag:/^W\/"[0-9a-f]{64}"$/
@@ -23709,7 +23710,6 @@ $removeparam=ysclid
 /api/getPos?jspath=/videos/view//*
 /api/imagine.min.js$third-party
 /api/users?token=$subdocument,third-party
-/apopwin.js$script
 /app/*/%E6%B5%8F%E8%A7%88%E5%99%A8.apk
 /app/get*?t=*http$third-party
 /app/market/*/%E9%AB%98%E9%80%9F%E6%B5%8F%E8%A7%8%A8.apk
@@ -41138,8 +41138,6 @@ $$amp-ad
 ###cookiedeclaration
 ###cookiedesktop
 ###cookiedetection
-###cookiedialog
-###cookiedialogbox
 ###cookiedings
 ###cookiedingsbums
 ###cookiedirectiveButtonContainer
@@ -50521,7 +50519,6 @@ $$amp-ad
 ##.opl-cookie-control
 ##.opt-action-bar
 ##.optanon-show-settings-popup-wrapper
-##.optanon-toggle-display
 ##.optin-stats
 ##.optinCookie
 ##.optomaCookieWrap
@@ -51995,8 +51992,6 @@ $$amp-ad
 ##cookie-banner
 ##cookie-bar
 ##cookie-confirmation
-##cookie-consent
-##cookie-consent-component
 ##cookie-drawer-policy
 ##cookie-info
 ##cookie-law-banner
