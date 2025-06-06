@@ -18,7 +18,6 @@
 ||macrumors.com^$script,frame,xhr,font,third-party
 ||androidauthority.com^$script,frame,xhr,font,third-party
 ||theverge.com^$script,font
-||digvps.com^$script,frame,xhr,font,third-party
 
 ||zz.bdstatic.com^
 ||zz.bdstatic.com^$redirect-rule=noop.js
@@ -472,6 +471,47 @@ www.opposhop.cn##.welcome-wrapper.oc-hairline--bottom
 wikipedia.org###siteNotice
 www.maoken.com##.c-popup.slidepop
 add.org##.elementor
+
+! x.com
+x.com##*[aria-label="Trending"]
+x.com##*[aria-label="Communities"]
+x.com##*[aria-label="Verified"]
+x.com##*[aria-label="Premium"]
+x.com##*[aria-label="Grok"]
+x.com##[aria-label="Home timeline"] > div:nth-of-type(1):style(position: static !important)
+x.com##[data-testid="DMDrawer"]
+x.com##span:has-text(/^Ad$/):upward(article)
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="inlinePrompt"])
+x.com##[data-testid="vo-signup-tab"]
+x.com##[data-testid$="-subscribe"]
+x.com##button[aria-label^="Subscribe to"]
+x.com##*[aria-label="Grok actions"]
+x.com##article nav:has([data-testid="ScrollSnap-SwipeableList"])
+x.com##[data-testid="grokImgGen"]:upward(1)
+x.com##button[aria-label="Profile Summary"]
+x.com##[data-testid="GrokDrawer"]
+x.com##article a[href^="/i/grok"]:upward(2)
+x.com##[data-testid="verified_profile_visitor_upsell"]
+
+! ddg
+duckduckgo.com##.footer
+duckduckgo.com##.js-feedback-btn-wrap
+duckduckgo.com##.header--aside > div
+duckduckgo.com##.privacy-reminder
+duckduckgo.com##.js-zci-link--chat
+duckduckgo.com##[data-react-module-id="wikinlp"]
+duckduckgo.com##[data-testid="feedback-prompt"]:upward(div)
+
+! ins and threads
+instagram.com##a[href^="https://www.threads.net"]
+instagram.com##article:upward(1) > div:style(visibility: hidden !important)
+
+! tg
+web.telegram.org##:matches-path(/a/.*$/) .SponsoredMessage
+web.telegram.org##:matches-path(/a/.*$/) .SearchInput [aria-label="Open Stories"]
+web.telegram.org##:matches-path(/a/.*$/) .story-circle
+web.telegram.org##:matches-path(/a/.*$/) #StoryRibbon
+web.telegram.org##:matches-path(/a/.*$/) .story-toggler-wrapper
 
 ||cstserver.com/templates/cstserver/img/tawk.png
 cstserver.com##.notification
