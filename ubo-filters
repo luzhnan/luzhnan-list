@@ -523,3 +523,12 @@ web.telegram.org##:matches-path(/a/.*$/) .story-toggler-wrapper
 ||cstserver.com/templates/cstserver/img/tawk.png
 cstserver.com##.notification
 nodeseek.com##.promotation-item
+
+! https://arstechnica.com/security/2025/06/meta-and-yandex-are-de-anonymizing-android-users-web-browsing-identifiers/
+||0.0.0.0^$third-party,domain=~[::]|~[::ffff:0:0]
+||[::]^$third-party,domain=~0.0.0.0|~[::ffff:0:0]
+||[::ffff:0:0]^$third-party,domain=~0.0.0.0|~[::]
+||localhost^$third-party,domain=~127.0.0.1|~[::1]|~[::ffff:7f00:1]
+||127.0.0.1^$third-party,domain=~localhost|~[::1]|~[::ffff:7f00:1]
+||[::1]^$third-party,domain=~localhost|~127.0.0.1|~[::ffff:7f00:1]
+||[::ffff:7f00:1]^$third-party,domain=~localhost|~127.0.0.1|~[::1]
