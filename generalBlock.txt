@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-07-04 06:49:02 UTC
+! Updated: 2025-07-08 01:44:44 UTC
 ! Source URLs Attempted: 66
 ! Source URLs Successfully Fetched: 66
-! Lines fetched (pre-dedupe, post-initial-clean): 1623507
-! Unique lines (pre-final-filter): 569721
-! Final rules in this list: 76447
+! Lines fetched (pre-dedupe, post-initial-clean): 1628805
+! Unique lines (pre-final-filter): 570054
+! Final rules in this list: 76439
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -43094,7 +43094,6 @@
 ##[href^="https://charmingdatings.life/"]
 ##[href^="https://clicks.affstrack.com/"] > img
 ##[href^="https://cpa.10kfreesilver.com/"]
-##[href^="https://dl-protect.net/get-premium-url"]
 ##[href^="https://exi8ef83z9.com/"]
 ##[href^="https://fireads.online/"]
 ##[href^="https://glersakr.com/"]
@@ -46783,6 +46782,7 @@ $removeparam=adgrpid
 $removeparam=adj_adgroup
 $removeparam=adj_campaign
 $removeparam=adj_creative
+$removeparam=adj_t
 $removeparam=adjust_adgroup
 $removeparam=adjust_campaign
 $removeparam=adjust_creative
@@ -49156,7 +49156,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$doc,match-case,to=com|net
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$frame,popup,3p,strict3p,match-case,to=com|net
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/js\?t=[_a-z0-9]+&ns=[a-z]{2}$/$script,3p,strict3p,match-case,to=com|net
-/^https:\/\/[a-z]{7,8}\.[a-z]{2,8}\/[!.+,=@][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=art|asia|auction|bar|beauty|biz|cam|click|cloud|coupons|digital|diy|food|forum|gay|guru|info|life|live|living|link|my|property|pw|rocks|run|sbs|shop|store|studio|tattoo|tech|today|top|uno|work,match-case
+/^https:\/\/[a-z]{7,8}\.[a-z]{2,8}\/[!.+,=?@\[][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=agency|art|asia|auction|bar|beauty|beer|biz|business|cam|click|cloud|coupons|digital|diy|fashion|food|forum|gay|guru|info|life|live|living|link|ltd|my|property|pw|rocks|run|sbs|shop|store|studio|tattoo|tech|today|top|uno|work,match-case
 /^https:\/\/[a-z]{7,8}\.com\/\?s=[0-9a-z]{13}&q=/$doc,to=com,match-case
 /^https:\/\/[a-z]{7,}\.[a-z]{3,}\/get\/\?s=[a-zA-Z0-9]+=*$/$script,3p,match-case,to=~edu|~gov
 /^https:\/\/[a-z]{7,}\.[a-z]{3,}\/img\/$/$script,3p,match-case,to=~edu|~gov
@@ -49166,6 +49166,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[a-z]{8,15}\.(?:(com|net)\/(?:\d{1,3}\/)?tag\.min\.js$)/$script,third-party
 /^https:\/\/[a-z]{8,15}\.(?:(com|net)\/(?:\d{1,3}\/)?tag\.min\.js$)/$script,third-party,redirect=noop.js,script
 /^https:\/\/[a-z]{8,15}\.(?:(com|net)\/(?:\d{1,3}\/)?tag\.min\.js$)/$script,third-party,redirect=noopjs
+/^https:\/\/[a-z]{8,16}\.(?:club|fun|hair|info|work|xyz)\/[0-9a-zA-Z%]{170,400}$/$script,third-party
 /^https:\/\/[a-z]{8,16}\.com\/[a-z]{6,20}\?[a-zA-Z=&,].*&s=.*/$script,3p
 /^https:\/\/[a-z]{8}\.(?:cfd|pro|xyz)\/\?params=aD[01][a-zA-Z0-9]{43}Z1c2VyPT[a-zA-Z0-9]{40}/$doc,script,popup,to=cfd|pro|xyz
 /^https:\/\/[a-z]{8}\.xyz\/main\.js$/$script,3p
@@ -49193,6 +49194,8 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/ht[a-z]\d{2}\.vip\//$doc,to=vip
 /^https:\/\/mbdk\d+\.com\//$doc,to=com|~mbbank.com.vn
 /^https:\/\/netembed\.xyz\/[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]\.js\?/$script
+/^https:\/\/ob\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]*\.com\/i\/[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]\.js$/$script,3p,match-case
+/^https:\/\/ob\.[a-z]{8,}\.com\/i\/[a-f0-9]{32}\.js$/$script,3p,match-case,to=com
 /^https:\/\/online\.[a-z]{7,}\.top\//$doc,to=top
 /^https:\/\/ourtime\.[a-z]+-[a-z]+\.workers\.dev\//$doc,to=workers.dev|~ourtime.com
 /^https:\/\/pancake(?:dro|swa)pclick\d+\.vercel\.app\//$doc,to=vercel.app|~pancakeswap.finance
@@ -49257,7 +49260,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/([a-z][a-z]\.)?[a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\.[a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\/[a-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?\/[0-9][0-9][0-9][0-9][0-9]?[0-9]?$/$script,third-party
 /^https?:\/\/([a-z]{4,}\.)?support-\d{1,2}\.ru\//$doc,to=ru
 /^https?:\/\/.*(com|net|top|xyz)\/(bundle|warning|style|bootstrap|brand|reset|jquery-ui|styles|error|logo|index|favicon|star|header)\.(png|css)\?[A-Za-z0-9]{30,}.*/$third-party
-/^https?:\/\/.*\.(jpg|jpeg|gif|png|svg|ico|js|txt|css|srt|vtt|webp)/$popup,from=123series.ru|19turanosephantasia.com|1movieshd.cc|4anime.gg|4stream.gg|5movies.fm|720pstream.nu|745mingiestblissfully.com|adblockstrtape.link|animepahe.ru|animesultra.net|asianembed.io|bato.to|batotoo.com|batotwo.com|bigclatterhomesguideservice.com|bormanga.online|bunnycdn.ru|clicknupload.to|cloudvideo.tv|dailyuploads.net|databasegdriveplayer.co|divicast.com|dood.la|dood.pm|dood.sh|dood.so|dood.to|dood.video|dood.watch|dood.ws|dood.yt|doodcdn.com|dopebox.to|dramacool.pk|eplayvid.com|eplayvid.net|exey.io|extreme-down.plus|files.im|filmestorrents.net|flashx.net|fmovies.app|fmovies.ps|fmovies.world|fraudclatterflyingcar.com|gayforfans.com|gdtot.nl|go-stream.site|gogoanime.run|gogoanimes.to|gomovies.pics|gospeljingle.com|hexupload.net|hindilinks4u.cam|hindilinks4u.nl|housecardsummerbutton.com|kaiju-no8.com|kaisen-jujutsu.com|kimoitv.com|kissanimes.net|leveling-solo.org|lookmoviess.com|magusbridemanga.com|mixdrop.sx|mkvcage.site|mlbstream.me|mlsbd.shop|mlwbd.host|movierulz.cam|movies2watch.ru|movies2watch.tv|moviesrulz.net|mp4upload.com|myflixer.it|myflixer.pw|myflixer.today|myflixertv.to|nflstream.io|ngomik.net|nkiri.com|nswgame.com|olympicstreams.co|paidnaija.com|playemulator.online|primewire.today|prmovies.org|putlocker.digital|racaty.io|racaty.net|record-ragnarok.com|redirect-ads.com|reputationsheriffkennethsand.com|sflix.to|shadowrangers.live|skidrow-games.com|skidrowcodex.net|sockshare.ac|sockshare1.com|solarmovies.movie|speedvideo.net|sportsbay.watch|steampiay.cc|stemplay.cc|streamani.net|streamsb.net|streamsport.icu|streamta.pe|streamtape.cc|streamtape.com|streamtape.net|streamz.ws|strikeout.cc|strikeout.nu|strtape.cloud|strtape.site|strtape.tech|strtapeadblock.me|strtpe.link|tapecontent.net|telerium.net|tinycat-voe-fashion.com|toxitabellaeatrebates306.com|turkish123.com|un-block-voe.net|upbam.org|uploadmaza.com|upmovies.net|upornia.com|uprot.net|upstream.to|upvid.co|v-o-e-unblock.com|vidbam.org|vidembed.cc|vidnext.net|vido.fun|vidsrc.me|vipbox.lc|vipleague.pm|viprow.nu|vipstand.pm|voe-un-block.com|voe-unblock.com|voe.sx|voeun-block.net|voeunbl0ck.com|voeunblck.com|voeunblk.com|voeunblock3.com|vumooo.vip|watchserieshd.tv|watchseriesstream.com|xmovies8.fun|xn--tream2watch-i9d.com|yesmovies.mn|youflix.site|youtube4kdownloader.com|ytanime.tv|yts-subs.com,badfilter
+/^https?:\/\/.*\.(jpg|jpeg|gif|png|svg|ico|js|txt|css|srt|vtt|webp)/$popup,from=123series.ru|1movieshd.cc|4anime.gg|4stream.gg|5movies.fm|720pstream.nu|adblockstrtape.link|animepahe.ru|animesultra.net|asianembed.io|bato.to|batotoo.com|batotwo.com|bigclatterhomesguideservice.com|bormanga.online|bunnycdn.ru|clicknupload.to|cloudvideo.tv|dailyuploads.net|databasegdriveplayer.co|divicast.com|dood.la|dood.pm|dood.sh|dood.so|dood.to|dood.video|dood.watch|dood.ws|dood.yt|doodcdn.com|dopebox.to|dramacool.pk|eplayvid.com|eplayvid.net|exey.io|extreme-down.plus|files.im|filmestorrents.net|flashx.net|fmovies.app|fmovies.ps|fmovies.world|gayforfans.com|gdtot.nl|go-stream.site|gogoanime.run|gogoanimes.to|gomovies.pics|gospeljingle.com|hexupload.net|hindilinks4u.cam|hindilinks4u.nl|housecardsummerbutton.com|kaiju-no8.com|kaisen-jujutsu.com|kimoitv.com|kissanimes.net|leveling-solo.org|lookmoviess.com|magusbridemanga.com|mixdrop.sx|mkvcage.site|mlbstream.me|mlsbd.shop|mlwbd.host|movierulz.cam|movies2watch.ru|movies2watch.tv|moviesrulz.net|mp4upload.com|myflixer.it|myflixer.pw|myflixer.today|myflixertv.to|nflstream.io|ngomik.net|nkiri.com|nswgame.com|olympicstreams.co|paidnaija.com|playemulator.online|primewire.today|prmovies.org|putlocker.digital|racaty.io|racaty.net|record-ragnarok.com|redirect-ads.com|sflix.to|shadowrangers.live|skidrow-games.com|skidrowcodex.net|sockshare.ac|sockshare1.com|solarmovies.movie|speedvideo.net|sportsbay.watch|steampiay.cc|stemplay.cc|streamani.net|streamsb.net|streamsport.icu|streamta.pe|streamtape.cc|streamtape.com|streamtape.net|streamz.ws|strikeout.cc|strikeout.nu|strtape.cloud|strtape.site|strtape.tech|strtapeadblock.me|strtpe.link|tapecontent.net|telerium.net|tinycat-voe-fashion.com|toxitabellaeatrebates306.com|turkish123.com|un-block-voe.net|upbam.org|uploadmaza.com|upmovies.net|upornia.com|uprot.net|upstream.to|upvid.co|v-o-e-unblock.com|vidbam.org|vidembed.cc|vidnext.net|vido.fun|vidsrc.me|vipbox.lc|vipleague.pm|viprow.nu|vipstand.pm|voe-un-block.com|voe-unblock.com|voe.sx|voeun-block.net|voeunbl0ck.com|voeunblck.com|voeunblk.com|voeunblock3.com|vumooo.vip|watchserieshd.tv|watchseriesstream.com|xmovies8.fun|xn--tream2watch-i9d.com|yesmovies.mn|youflix.site|youtube4kdownloader.com|ytanime.tv|yts-subs.com,badfilter
 /^https?:\/\/.*\/sw\.js\?[a-zA-Z0-9%]{50,}/$script,~third-party
 /^https?:\/\/.+\.beacon\.qq\.com/
 /^https?:\/\/.+\.gdt\.qq\.com/
@@ -49294,13 +49297,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/[a-z]{7,}\.com\/go\/[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}\b/$doc,match-case,to=com
 /^https?:\/\/[a-z]{8,15}\.(com|xyz)\/$/##+js(no-fetch-if, method:HEAD)
 /^https?:\/\/[a-z]{8,15}\.(com|xyz)\/$/$xhr,3p
-/^https?:\/\/[a-z]{8,15}\.club\/[%0-9a-zA-Z]{170,}$/$script,3p,match-case
-/^https?:\/\/[a-z]{8,15}\.com?\/(?=[0-9a-zA-Z]*%)(?=[%a-zA-Z]*\d)(?=[%0-9a-z]*[A-Z])[%0-9a-zA-Z]{170,}$/$script,3p,match-case,from=~edu|~gov,to=co|com
-/^https?:\/\/[a-z]{8,15}\.fun\/[%0-9a-zA-Z]{170,}$/$script,3p,match-case
-/^https?:\/\/[a-z]{8,15}\.hair\/[%0-9a-zA-Z]{170,}$/$script,3p,match-case
-/^https?:\/\/[a-z]{8,15}\.work\/[%0-9a-zA-Z]{170,}$/$script,3p
 /^https?:\/\/[a-z]{8,15}\.xyz\/$/$xmlhttprequest,third-party,method=head,to=xyz
-/^https?:\/\/[a-z]{8,15}\.xyz\/[%0-9a-zA-Z]{170,}$/$script,3p
 /^https?:\/\/[www.0-9a-z]{7,}\.com\/.*\/invoke\.js$/$script,3p,badfilter
 /^https?:\/\/ad\d\.sina\.com/
 /^https?:\/\/ad\d\.sina\.com\.cn/
@@ -57083,7 +57080,6 @@ $~xmlhttprequest,removeparam=mbid
 /gawker/ads.
 /gazette/ads/*
 /gb-tracker-client-3.min.js
-/gb/zone?zid=$xhr,3p
 /gc?refurl=
 /gciAnalytics.
 /gciaf/prod/*-GCIAF-STANDARD
@@ -60432,7 +60428,6 @@ $~xmlhttprequest,removeparam=mbid
 /paidlisting/*
 /pandalocker.$script
 /pandectes-core.js
-/pandectes-gdpr-compliance-49/assets/pandectes-core.js
 /panelad.
 /pap.swf?
 /park_html_functions.*.js
@@ -63405,6 +63400,7 @@ $~xmlhttprequest,removeparam=mbid
 /tag-adv.
 /tag/proxy?id=G-
 /tag/tag.jsp?
+/tag?name=PageView$xmlhttprequest
 /tag?tags=
 /tagAnalyticsCNIL.
 /tagAnalyticscnil.php
@@ -64488,7 +64484,6 @@ $~xmlhttprequest,removeparam=mbid
 /uts/t/*
 /utx?cb=$third-party
 /utx?tid=
-/utx?tid=$xhr,3p
 /uu114/ad/*
 /uutils.fcg?
 /uvstat.js
@@ -65114,6 +65109,7 @@ $~xmlhttprequest,removeparam=mbid
 /wp-content/plugins/affiliate-wp/assets/js/tracking.min.js
 /wp-content/plugins/amazon-auto-links/*$script,stylesheet
 /wp-content/plugins/amazon-product-in-a-post-plugin/*
+/wp-content/plugins/anti-adblocker/*
 /wp-content/plugins/anti-block/*
 /wp-content/plugins/anti_ad_blocker/*
 /wp-content/plugins/append-link-on-copy/js/append_link.js$script,1p
@@ -65592,6 +65588,7 @@ $~xmlhttprequest,removeparam=mbid
 /yna_stat.
 /yna_stat.js
 /yobee-cmp.js
+/yofi-telemetry-prod.min.js
 /your-ad-
 /your-ad.
 /your_ad.
@@ -71780,7 +71777,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||memoriadatv.com^$ghide
 @@||memoryhackers.org^$generichide
 @@||memoryhackers.org^$stealth=ip
-@@||menjelajahi.com^$ghide
 @@||mens1069.com^$generichide
 @@||menshealth.com/*/pubads$script,~third-party
 @@||menshealth.com/*/pubads.ist
@@ -72630,7 +72626,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||ontiva.com/js/prebid-ads.js
 @@||ontiva.com^$generichide
 @@||ontools.net^$generichide
-@@||onuploads.com^$ghide
 @@||onvasortir.com/advertisement.html
 @@||onvasortir.com^$generichide
 @@||ooyala.com/crossdomain.xml
@@ -73534,7 +73529,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||rev.evrensel.net/www/delivery/*.php
 @@||revdownload.com/*.php$generichide
 @@||rexdlfile.com/index.php?id=$stealth=referrer
-@@||reyada-365.com^$ghide
 @@||rgu.ac.uk/media/mod_cookieconsent/js/cookieconsent.js$~third-party
 @@||rhymes-with.com^$generichide
 @@||ric-ul.ru^$stealth=dpi
@@ -75452,7 +75446,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||uploadshare.net^$generichide
 @@||uploadshare.net^$ghide
 @@||uploady.io^$generichide
-@@||uploadydl.com^$ghide
 @@||uponor.ee/UponorInternet/build/js/cookieconsent.min.js
 @@||upos-sz-mirrorhw.bilivideo.com^$stealth=referrer
 @@||uppit.com^$generichide
@@ -76010,7 +76003,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||wn-gruesse.de^*/socialshareprivacy/$script
 @@||wn-markt.de^*/socialshareprivacy/$script
 @@||wn-mobil.de^*/socialshareprivacy/$script
-@@||wnacg.org/download$ghide
 @@||wnioski.mpips.gov.pl/ewnioski/js/common/privacyPolicy.js$script,~third-party
 @@||wochenblitz.com/js/advertisment/
 @@||wohnungsboerse.net^$xhr,1p
