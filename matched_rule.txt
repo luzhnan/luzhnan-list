@@ -1,8 +1,8 @@
 ! Title: Relevant rules for specified domains
-! Updated: 2025-07-25 09:40:20 CST
+! Updated: 2025-07-25 14:46:45 CST
 ! Target Domains File: generated_domain_set_rules.txt
 ! Source Rules File: aggregated_atomized_rules.txt
-! Output Rule Count: 25492
+! Output Rule Count: 25569
 
 @@$domain=xvideos.com,websocket
 @@*$domain=rekidai-info.github.io,xhr
@@ -7702,6 +7702,11 @@ linkedin.com#?#div.feed-shared-update-v2:-abp-has(span.update-components-actor__
 linkedin.com#?#ol.feed-container > li.feed-item:has(> article[data-is-sponsored])
 linkedin.com#@#.ad-banner-container
 linkst.fandom.com$image
+linux.do##.custom-gated-topic-container
+linux.do##.topic-in-gated-category .container.posts::before:style(background: transparent !important;)
+linux.do##body.topic-in-gated-category:remove-class(topic-in-gated-category)
+linux.do#$#div.topic-in-gated-category { display: none !important; }
+linux.do#%#//scriptlet('remove-class', 'topic-in-gated-category', 'body')
 list.jd.com##.jdm-tbar-tab-qrcode
 lite.duckduckgo.com##+js(href-sanitizer, a[href^="//duckduckgo.com/l/?uddg="], ?uddg)
 lite.qwant.com#?#.content > article.result:has(> p > span.ad)
@@ -8921,6 +8926,7 @@ neeva.com##.cta-search-result-result__extensionCTAContainer-4d4uV
 netflix.com###cookie-disclosure
 netflix.com###uma > div > .message
 netflix.com##+js(json-prune, result.adverts)
+netflix.com##+js(no-fetch-if, logs.netflix.com)
 netflix.com##.cookie-disclosure-visible
 netflix.com##div[data-testid="CookieBanner"]
 netflix.com##section[data-guid^="article-social-share-buttons"]
@@ -10542,17 +10548,21 @@ sogou.com##.ad
 sogou.com##.ad_result
 sogou.com##.ads
 sogou.com##.aside-qcode
+sogou.com##.banner-container
 sogou.com##.banner-vda
 sogou.com##.bottombar
 sogou.com##.cs_dropbox[pbflag="xialaresou"]
 sogou.com##.daohang-gamecenter
 sogou.com##.erwm-box
 sogou.com##.hd-slider > .slider-container
+sogou.com##.ips-overwrite-width
 sogou.com##.js-ad-item
 sogou.com##.m[pbflag="bt_mai"]
 sogou.com##.mobad
+sogou.com##.pc-brand-wrapper
 sogou.com##.pop-tuiguang
 sogou.com##.pz-widget-flash-container
+sogou.com##.qb-download-banner-non-share
 sogou.com##.recommend-pop
 sogou.com##.side_adv_wrap
 sogou.com##.sponsored
@@ -10564,7 +10574,6 @@ sogou.com##.top_adv_wrap
 sogou.com##.trans-side-banner
 sogou.com##.u-page-gg
 sogou.com##A[data-log*="PicAd"]
-sogou.com##DIV.banner-container
 sogou.com##div[class^="news-top-banner"]
 sogou.com##div[class^="page-bottom-banner"]
 sogou.com##div[class^="page-top-banner"]
@@ -14517,6 +14526,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||101.qq.com/js/base.js$replace=/(el\.getAttribute\("type"\) === "text\/javascript")/\(\$1 && !el\.getAttribute\("nonce"\)\)/
 ||1014042311.rsc.cdn77.org/log.gif
 ||1080872514.rsc.cdn77.org^
+||1097834592.rsc.cdn77.org^
 ||11.mydrivers.com/drivers/
 ||11.mydrivers.com/news/03.js
 ||11.mydrivers.com/news/google468x60.js
@@ -14741,6 +14751,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ad.doubleclick.net/ddm/adj/small_ad.js$domain=quiziizz.github.io,redirect=noopjs,script
 ||ad.doubleclick.net/ddm/clk/$domain=ad.doubleclick.net
 ||ad.doubleclick.net/ddm/trackclk/$removeparam=/^dc_trk_/
+||ad.eporner.com^
 ||ad.gmw.cn^
 ||ad.hpplay.cn^
 ||ad.imp.joins.com^
@@ -14779,6 +14790,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ad4point.*.digitaloceanspaces.com/afp_p.js
 ||ad5.sina.com.cn^
 ||ada.baidu.com^
+||adagiobanner.s3.amazonaws.com^
 ||adapi.foooooot.com^
 ||adash*.m.taobao.com^
 ||adash-c.m.taobao.com^
@@ -15073,6 +15085,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||afd.baidu.com^
 ||afd.l.google.com^
 ||aff-im.cdn.bcebos.com/onlineEnv/*/pc_nb.js^
+||affiliate.googleusercontent.com^
 ||affilimate.io^$third-party
 ||affim.baidu.com^
 ||affportal.bhphoto.com/dl/redventures/*^u=http$doc,urlskip=?u
@@ -15689,6 +15702,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||api.narrativ.com/favicon.ico
 ||api.newsfeed.intl.miui.com^
 ||api.open.uc.cn^
+||api.optnmnstr.com^
 ||api.parsely.com/*/analytics/
 ||api.parsely.com/v2/profile?uuid=*&apikey=
 ||api.qwant.com/*/homepage/trends?
@@ -16576,25 +16590,59 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||c-adash.m.taobao.com^
 ||c-nfa.jd.com^
 ||c.alimama.com^
+||c.ar.msn.com^
 ||c.arstechnica.com^
+||c.at.msn.com^
 ||c.baidu.com^
+||c.be.msn.com^
 ||c.bing.com/c.gif
 ||c.bing.com^
+||c.br.msn.com^
+||c.ca.msn.com^
+||c.cl.msn.com^
+||c.de.msn.com^
+||c.dk.msn.com^
+||c.es.msn.com^
+||c.fi.msn.com^
+||c.fr.msn.com^
 ||c.gj.qq.com^
+||c.gr.msn.com^
+||c.hk.msn.com^
+||c.id.msn.com^
+||c.ie.msn.com^
+||c.il.msn.com^
+||c.in.msn.com^
+||c.it.msn.com^
+||c.jp.msn.com^
 ||c.l.qq.com/click^
+||c.latam.msn.com^
 ||c.live.com^
 ||c.m.163.com/nc/gl
 ||c.m.163.com/nc/jsonp/wc2018/headline/board.html^
 ||c.mse.360.cn^
 ||c.msn.com^
+||c.my.msn.com^
 ||c.newyorker.com^
+||c.nl.msn.com^
+||c.no.msn.com^
 ||c.paypal.com^$image
 ||c.paypal.com^$script
+||c.ph.msn.com^
+||c.prodigy.msn.com^
+||c.pt.msn.com^
+||c.ru.msn.com^
 ||c.sayhi.360.cn^
+||c.se.msn.com^
+||c.sg.msn.com^
 ||c.speedtest.net/flash/*.swf|
+||c.th.msn.com^
+||c.tr.msn.com^
+||c.tw.msn.com^
 ||c.uaa.iqiyi.com^
+||c.uk.msn.com^
 ||c.wired.com^
 ||c.yes.youku.com^
+||c.za.msn.com^
 ||c00.adobe.com^
 ||c0nt4ct-me.pages.dev^
 ||c0nt4ct-me.pages.dev^$all
@@ -16992,6 +17040,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||cmshow.qq.com/apollo/js/singleEntry/error_page_game.js
 ||cmshow.qq.com/xydata/cmshowGamePlatform
 ||cmsjs.eastmoney.com^$subdocument
+||cmweb.ilike.alibaba.com^
 ||cn-vmc-images.alicdn.com/plato/file/mp4$app=com.youku.phone,media
 ||cn-vmc-images.alicdn.com^
 ||cn.vercount.one^
@@ -18763,6 +18812,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||demo.emaillpb.adobe.com^
 ||demoamericas275.adobe.com^
 ||deprecated-custom-domains.b-cdn.net^$third-party
+||derangedadage91wis.files.wordpress.com^
 ||desgao1zt7irn.cloudfront.net^
 ||dev-push.m.youku.com^
 ||dev.email-signify.cjm.adobe.com^
@@ -19084,6 +19134,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||dqd5t8xfxmhi7.cloudfront.net^
 ||dqif5bl25s0bf.cloudfront.net^
 ||dqv45r33u0ltv.cloudfront.net^
+||dr.soso.com^
 ||dr3k6qonw2kee.cloudfront.net^
 ||dr6su5ow3i7eo.cloudfront.net^
 ||dr6vcclmzwk74.cloudfront.net^
@@ -19297,6 +19348,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ecommstats.s3.amazonaws.com^$third-party
 ||ecpm.tanx.com^
 ||edge.adobedc.net^
+||edgecast-vod.yimg.com^
 ||edgeservices.bing.com/edgesvc/turing/BingChatAdsFetch?showonlyads
 ||edigitalsurvey.com^
 ||edigitalsurvey.com^$third-party
@@ -20910,6 +20962,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||imdns.hpplay.cn^
 ||img-dsp.oss-cn-beijing.aliyuncs.com^
 ||img-x.jd.com^
+||img.alibaba.com^
 ||img.gou.wpscdn.cn^
 ||img.lancdn.com/*-top-banner-
 ||img.response.digicert.com^
@@ -20952,6 +21005,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||improving.duckduckgo.com^
 ||imtt.qq.com^
 ||in.applicationinsights.azure.com^
+||in.yimg.com^
 ||includemodal.global.ssl.fastly.net/sp.js
 ||incomaker.b-cdn.net/wpjcz.js
 ||indexww.com^
@@ -21280,6 +21334,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||judge.me^$third-party
 ||juggler.services.disqus.com^
 ||jun01.oss-cn-beijing.aliyuncs.com^
+||jzclick.soso.com^
 ||jzt.jd.com^
 ||k.qwant.com^
 ||k.youku.com/player/getFlvPath/sid/*&vl=
@@ -21883,6 +21938,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||mobileads.msn.com^
 ||mobileanalytics.*.amazonaws.com^
 ||mobileanalytics.us-east-1.amazonaws.com^
+||mobileleads.msn.com^
 ||mobilelog.kugou.com^
 ||mobilem.360.cn^
 ||mobilemaps-pa.googleapis.com/google.internal.mothership.maps.mobilemaps.ads.v1.MobileMapsAdsService/ListPromotedPinAds^
@@ -22191,6 +22247,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||nv*.cdn.bcebos.com/nv*/static/ecom/amd/wiseSearchSync-*-chunk.js^
 ||nxet1.360doc.cn^
 ||nyt.com/ads/tpc-check.html$domain=nytimes.com
+||nytadvertising.nytimes.com^
 ||nytimes.com/svc/onsite-messaging/query$xmlhttprequest,~third-party
 ||nytimes.com/v1/purr-cache
 ||nytimes.com^$cookie=jkidd-s
@@ -22210,6 +22267,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||oceanengine.com^
 ||odc.weather.com^
 ||odinvzc.azureedge.net/apc/trans.gif
+||offer.alibaba.com^
 ||offer.alibaba.com^$popup
 ||office.com^$removeparam=ocid
 ||office.net/*/web-vitals.*.js
@@ -22219,6 +22277,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ogs.google.com/widget/callout?$domain=play.google.com,subdocument
 ||ohm-dot-hackster-io.appspot.com^
 ||oi8ytfzxa.appspot.com^
+||oimsgad.qq.com^
 ||okx.com/jsstat/sb?
 ||omappapi.com^
 ||omappapi.com^$third-party
@@ -22538,6 +22597,8 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ping.pinyin.sogou.com^
 ||ping.typekit.net/p.gif
 ||pingback.sogou.com^
+||pingfore.qq.com^
+||pingfore.soso.com^
 ||pinghot.qq.com^
 ||pingjs.qq.com^
 ||pingma.qq.com^
@@ -22668,6 +22729,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||presentationtracking.netflix.com^
 ||pressablecdn.com/wp-content/uploads/2022/06/OCI-Free-Tier-Campaign-set
 ||preview.msn.com^
+||prexyone.appspot.com^
 ||primer.typekit.net^$xmlhttprequest
 ||privacy-center.org^
 ||privacy-center.org^$third-party
@@ -22876,8 +22938,10 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||qq.com^$app=com.onelap.bls.dear
 ||qq.com^$removeparam=ptag
 ||qqdata.ab.qq.com^
+||qqlogo.qq.com^
 ||qqshow2-item.qq.com^
 ||qreport.qunar.com^
+||qring-tms.qq.com^
 ||qrl.existence.pp.ua^
 ||qss-client.qq.com^
 ||qubitanalytics.appspot.com^
@@ -22953,6 +23017,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||rad.msn.com^
 ||radar.cloudflare.com/api/analytics
 ||rads.msn.com^
+||rads.stackoverflow.com^
 ||raindrop.io/pb/api/event
 ||rarepepewtf.pages.dev^$doc
 ||rating6.kingsoft-office-service.com^
@@ -22965,6 +23030,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||rawgit.com/fahimraza/FK/master/ad-unblocker.js^$script
 ||rawgit.com/wejdaneblogger/master/master/wejdane-adblocker.js
 ||rcgi.video.qq.com^
+||rcm-images.amazon.com^
 ||rd.e.sogou.com^
 ||rdstat.tanx.com^
 ||re.m.taobao.com^
@@ -23094,6 +23160,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||rh.qq.com^
 ||rich.qq.com^
 ||richmedia.video.qq.com^
+||richmedia.yimg.com^
 ||right.com.cn/forum/static/image/common/logo
 ||right.com.cn/forum/static/image/common/logo*.gif
 ||right.com.cn/forum/static/image/common/logo1.
@@ -23162,6 +23229,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||s.inews.gtimg.com/inewsapp^
 ||s.lenovo.com^
 ||s.shopify.com/visit/record.gif?
+||s.skimresources.com^
 ||s.so.360.cn^
 ||s.ssl.qhimg.com/static/*/home/card/loader.js
 ||s.weibo.com/widget.html
@@ -23426,6 +23494,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||shopifysvc.com/v1/metrics
 ||shouji.360.cn^
 ||shouji.sogou.com^
+||show-msgch.qq.com^
 ||show.look.360.cn^
 ||showwxml.qq.com^
 ||shuaji.360.cn^
@@ -23985,6 +24054,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||support.theguardian.com/*/guardian-ad-lite?returnAddress=http$doc,urlskip=?returnAddress
 ||support.you.163.com/xhr/boot/getBootMedia.json^
 ||supportmetrics.apple.com^
+||survey.china.alibaba.com^
 ||surveygizmobeacon.s3.amazonaws.com^$domain=support.mozilla.org
 ||susapi.lenovomm.com^
 ||suvset.sohu.com^
@@ -24264,6 +24334,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||tiqcdn.com^
 ||tiqcdn.com^$badfilter
 ||tir94wepsdxox.appspot.com^
+||titkoshirek.wordpress.com^
 ||tj.b.qq.com^
 ||tj.kugou.com^
 ||tj.video.qq.com^
@@ -24344,6 +24415,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||tongji.baidu.com^
 ||toolbar.baidu.com^
 ||toolbar.msn.com^
+||toolbar.soso.com^
 ||tools.3g.qq.com^
 ||toomics.com/*/img/event/payment_promotion_bnr
 ||toomics.com^$removeparam=channel
@@ -24532,6 +24604,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||udc.msn.com^
 ||udd1i5.zhihu.com^
 ||udpolimenew.baidu.com^
+||uedata.amazon.com^
 ||ufosdk.baidu.com^
 ||ug.snssdk.com^
 ||uid.ksosoft.com^
@@ -24572,6 +24645,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||unitelogreport.reader.qq.com^$redirect=noop.js,script
 ||unitelogreport.reader.qq.com^$redirect=noopjs
 ||unity3d.com/v1/events
+||unityads.unity.cn^
 ||unityads.unity3d.com^
 ||unpkg.com/@polymarket/embeds@*/dist/index.js
 ||unpkg.com/@textback/notification-widget
@@ -24586,6 +24660,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||unpkg.com^$badfilter
 ||unsplash.com/nabc^
 ||unsplash.com/nmetrics
+||unstat.baidu.com^
 ||up-hl.3g.qq.com^
 ||up1.tj.u2.ucweb.com^
 ||up4.ucweb.com^
@@ -24738,6 +24813,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||vm.gtimg.cn/tencentwap/script/QQVideo/activity/interact/interact*.js^$replace=/(adv)/\\$1/
 ||vnote-*.myqcloud.com^$all
 ||vns86.oss-*.aliyuncs.com^
+||voduscdn.azureedge.net^
 ||voice-ourtime.*.workers.dev^$doc,to=~ourtime.com
 ||volcsiriusbd.com^
 ||vortex.data.microsoft.com/collect
@@ -25024,6 +25100,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||www.iqiyi.com/*.html?vfrm=pcw_home^$replace=/(adurl|h5adsrc)//
 ||www.msn.com^$replace=/\.feed-ads-wrapper\{display:flex;/\.feed-ads-wrapper\{display:none!important;/
 ||www.reddit.com/|$1p,method=post,xhr
+||www.visualwebsiteoptimizer.com^
 ||www.youtube.com/@melonitysoft/$doc
 ||www.youtube.com/@pengwincheat/$doc
 ||www.youtube.com/channel/UCEMJ0wTeQgvyyvQTil7tteQ/$doc
