@@ -1,8 +1,8 @@
 ! Title: Relevant rules for specified domains
-! Updated: 2025-08-06 10:34:26 CST
+! Updated: 2025-08-06 14:29:21 CST
 ! Target Domains File: generated_domain_set_rules.txt
 ! Source Rules File: aggregated_atomized_rules.txt
-! Output Rule Count: 27707
+! Output Rule Count: 27776
 
 @@$domain=xvideos.com,websocket
 @@*$domain=rekidai-info.github.io,xhr
@@ -355,6 +355,7 @@
 @@||alicdn.com^*/click_track.js
 @@||alicdn.com^*/log.js,
 @@||alicdn.com^*yksdk/*sdk.js$domain=youku.com,script
+@@||aliexpress.*^$cookie=/^_ga_/
 @@||alimama.com^$domain=tanx.com
 @@||aliyun.com/nocaptcha/analyze.js
 @@||aliyun.com/scratchCardSlide/analyze.jsonp?
@@ -824,6 +825,7 @@
 @@||duckduckgo.com/share/spice/amazon/
 @@||duckduckgo.com/y.js?*url
 @@||e.cn.miaozhen.com/r/k=*=http
+@@||e11956.x.akamaiedge.net^$domain=aliexpress.com,popup
 @@||eastprodcdn.azureedge.net/bundles/*velaro$script
 @@||ecma.bdimg.com/holmes/*.svg
 @@||ecmb.bdimg.com/*.jpg
@@ -1101,6 +1103,7 @@
 @@||googleapis.com/youtube/*/search?key=$stealth=referrer
 @@||googlesyndication.com/pageadimg/$domain=adwords.google.com
 @@||googletagmanager.com/gtag/js$domain=9to5mac.com
+@@||googletagmanager.com/gtag/js$domain=aliexpress.com
 @@||googletagmanager.com/gtag/js$domain=docs.wps.com
 @@||googletagmanager.com/gtag/js$domain=freepik.com,script
 @@||googletagmanager.com/gtag/js$domain=godaddy.com
@@ -1109,6 +1112,7 @@
 @@||googletagmanager.com/gtm.js$3p,domain=eu.community.samsung.com,script
 @@||googletagmanager.com/gtm.js$domain=9to5mac.com
 @@||googletagmanager.com/gtm.js$domain=ads.spotify.com
+@@||googletagmanager.com/gtm.js$domain=aliexpress.com
 @@||googletagmanager.com/gtm.js$domain=bybit.com
 @@||googletagmanager.com/gtm.js$domain=duolingo.com
 @@||googletagmanager.com/gtm.js$domain=fandom.com
@@ -1453,6 +1457,8 @@
 @@||miui.com/unlock/$stealth=referrer
 @@||mixpanel.com^$domain=mixpanel.com
 @@||mmstat.com/eg.js$domain=1688.com
+@@||mmstat.com/eg.js$domain=aliexpress.*
+@@||mmstat.com/eg.js$domain=aliexpress.com,script
 @@||mmstat.com/eg.js$domain=player.youku.com
 @@||mmstat.com/eg.js$domain=taobao.com
 @@||mmstat.com/eg.js$domain=tmall.com
@@ -1688,6 +1694,7 @@
 @@||s.206ads.com/js/data/androidauthority.com.js$domain=androidauthority.com
 @@||s.206ads.com/prebid.js$domain=androidauthority.com
 @@||s.aolcdn.com/ads/adsWrapperMSNI.js$domain=outlook.live.com
+@@||s.click.aliexpress.com/deep_link.htm?aff_short_key=$removeparam=aff_short_key
 @@||s.imgur.com/min/advertising.js
 @@||s.imgur.com/min/px.js$domain=imgur.com
 @@||s.ntv.io/serve/load.js$domain=bloomberg.com
@@ -2127,6 +2134,7 @@ $doc,domain=accounts.binance.com,removeparam=ref
 $doc,domain=adguard.com,removeparam=cid
 $doc,domain=adobe.com,removeparam=ref
 $doc,domain=alibaba.com,removeparam=cardId
+$doc,domain=aliexpress.*,removeparam=src
 $doc,domain=amazon.*,removeparam=/^asc_.*$/
 $doc,domain=amazon.*,removeparam=channel
 $doc,domain=amazon.*,removeparam=ref_
@@ -2265,6 +2273,8 @@ $domain=adguard-vpn.*,removeparam=clid
 $domain=adguard-vpn.com,removeparam=aid
 $domain=adguard.com,removeparam=aid
 $domain=adguard.info,removeparam=aid
+$domain=aliexpress.*,removeparam=sk
+$domain=aliexpress.com,removeparam=sourceType
 $domain=aliyun.com,removeparam=spm
 $domain=amazon.*,removeparam=%2AVersion%2A
 $domain=amazon.*,removeparam=%2Aentries%2A
@@ -2651,6 +2661,7 @@ $domain=~translate.googleusercontent.com|~google.*,removeparam=usg
 /web/ad/*$domain=gamer.com.tw
 /webcam.mp4$domain=91porn.com
 /webcam600.mp4$domain=91porn.com
+/webpush-ui.js$domain=aliexpress.com
 /wp-content/uploads/pum/*$domain=creativecommons.org
 /wrapperMessagingWithoutDetection.js$domain=bbc.com
 /wrapperMessagingWithoutDetection.js$domain=bloomberg.com,script
@@ -3311,6 +3322,29 @@ alibabacloud.com##.BottomBanner
 alibabacloud.com##.b-alicloud-bottom
 alibabacloud.com##.btn-survey
 alibabacloud.com##.hmod-alicloud-contact-sales-support
+aliexpress.*###gdpr-new-container
+aliexpress.*#$#hide-if-contains-visible-text /AD|Annonce|Anuncio|Anzeige|Reklama|Advertentie|Ad|Pub|Publicidad|Werbeanzeige|Rekl|ad|Reklam|Anúncio|광고|Ann|إعلان|מודעה/ 'div>div.card-out-wrapper' 'div > div > div > a[target="_blank"] + div[class]'
+aliexpress.com###header-float-banner
+aliexpress.com###mobile-download
+aliexpress.com###root *[data-spm="share"]:upward(4)
+aliexpress.com##*[alt="download APP"]
+aliexpress.com##+js(aeld, mouseleave)
+aliexpress.com##._header_qrCode_
+aliexpress.com##.aliexpress-notice
+aliexpress.com##.drogue-poplayer-modal
+aliexpress.com##.hot-words
+aliexpress.com##.image-poplayer-modal
+aliexpress.com##.search-item-card-wrapper-list:has( > div:only-child > div:only-child > a + div[class*="multi"])
+aliexpress.com##.top-banner-container
+aliexpress.com##a[class^="manhattan--container--"][class*="main--card--"]:has(span[style="background-color:rgba(0,0,0,0.20);position:absolute;top:8px;color:#fff;padding:2px 5px;background:rgba(0,0,0,0.20);border-radius:4px;right:8px"])
+aliexpress.com##a[class^="manhattan--container--"][class*="main--card--"]:has(span[style="background: rgba(0, 0, 0, 0.2); position: absolute; top: 8px; color: rgb(255, 255, 255); padding: 2px 5px; border-radius: 4px; right: 8px;"])
+aliexpress.com##body > div[style="display: block; z-index: 1000000;"]
+aliexpress.com##div[class*="search-item-card-wrapper-"]:has(span[class^="multi--ad-"])
+aliexpress.com##div[class^="share-and-wish--share--"]
+aliexpress.com##div[data-spm="seoads"]
+aliexpress.com##header-float-banner { display: none !important; }
+aliexpress.com#?##card-list > .search-item-card-wrapper-gallery:-abp-has(a.search-card-item[href*="&aem_p4p_detail="] div[class*="cards--image--"] > div[class*="multi--ax--"]:-abp-contains(/^(?:AD|An[uú]ncio|광고|広告)$/)):-abp-has(+ .search-item-card-wrapper-gallery a.search-card-item:not([href*="&aem_p4p_detail="]))
+aliexpress.com,aliexpress.us#$#body.smartbanner-placeholder { padding-top: 0 !important; }
 alipay.com###J-cooperant-banner
 aliyun.com###yq-a-r-bottom
 aliyun.com##+js(set, aplus, {})
@@ -14347,6 +14381,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 |hd.xiaomi.com^
 |hd02.lg.xiaomi.com^
 |hdj.baidu.com^
+|hdns.ksyun.com^
 |heyue.xiaomi.com^
 |hijack.baidu.com^
 |hk.mibi.xiaomi.com^
@@ -15776,6 +15811,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||adserver-vpc-alb-1-725730730.us-west-2.elb.amazonaws.com^
 ||adserver.bing.com^
 ||adservergatewayprod.southcentralus.cloudapp.azure.com^
+||adservice.aliexpress.com^
 ||adservice.google.com.*/adsid/integrator.js?domain=player.tubia.com$redirect=nooptext,xhr
 ||adservice.google.com^
 ||adservice.kugou.com^
@@ -16045,6 +16081,23 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||alicdn.com^*yksdk/*sdk.js$domain=youku.com,script
 ||alicloud.b-cdn.net/1.js
 ||alienxchain*.pages.dev^$doc
+||aliexpress.*/item/$removeparam=pvid
+||aliexpress.*^$removeparam=/^scm[_a-z-]*=/
+||aliexpress.*^$removeparam=af
+||aliexpress.*^$removeparam=aff_request_id
+||aliexpress.*^$removeparam=algo_expid
+||aliexpress.*^$removeparam=algo_pvid
+||aliexpress.*^$removeparam=btsid
+||aliexpress.*^$removeparam=cv
+||aliexpress.*^$removeparam=dp
+||aliexpress.*^$removeparam=gps-id
+||aliexpress.*^$removeparam=mall_affr
+||aliexpress.*^$removeparam=sk
+||aliexpress.*^$removeparam=terminal_id
+||aliexpress.*^$removeparam=ws_ab_test
+||aliexpress.com/ts?
+||aliexpress.com^$removeparam=algo_exp_id
+||aliexpress.com^$removeparam=utparam-url
 ||alimama.alicdn.com^
 ||alimama.cn^$domain=~alimama.com|~foctop.com|~meidebi.com|~qinqintejia.com|~tanx.com|~taobao.com|~youhuiyouhui.com.cn,third-party
 ||alimama.com^$third-party
@@ -16868,6 +16921,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||assets*.msn.com/bundles/*/nativeadstemplates.*.js
 ||assets.adobedtm.com^$app=com.aa.android|uk.co.thetimes|de.spiegel.android.app.spon|com.hilton.android.hhonors
 ||assets.adobedtm.com^$domain=samsung.com
+||assets.alicdn.com/g/*/affiliate-tracker.js$domain=aliexpress.com
 ||assets.alicdn.com/g/alilog/aplus_plugin_xwj/index.js
 ||assets.bwbx.io/*/initialize_ads-*.js$domain=bloomberg.com
 ||assets.bwbx.io/s3/foundation/event-recorder-client/1.0/event-recorder-client.min.js
@@ -17533,6 +17587,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||brand.sogou.com/micro?yyid=
 ||brand.sogou.com^
 ||brandadsstatic.vivo.com.cn^
+||brands.aliexpress.com^
 ||brave.com/static-assets/js/analysis.js
 ||braze.com^
 ||braze.com^$third-party
@@ -17910,6 +17965,11 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||clearbuy.com/api/cookie
 ||click.alibaba.com^
 ||click.alibaba.com^$subdocument,third-party
+||click.aliexpress.com^
+||click.aliexpress.com^$badfilter
+||click.aliexpress.com^$image
+||click.aliexpress.com^$script
+||click.aliexpress.com^$subdocument,third-party
 ||click.alimama.com^
 ||click.aliyun.com^
 ||click.bes.baidu.com^
@@ -20964,6 +21024,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||forms.lenovo.com^
 ||forms.office.com^$removeparam=route
 ||fourier.alibaba.com^
+||fourier.aliexpress.com^
 ||fourier.taobao.com^
 ||fourmtagservices.appspot.com^
 ||fp-*it*.fengkongcloud.com^
@@ -21874,6 +21935,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||gtm.tipranks.com^
 ||gtm.wise.com^
 ||gtmsdd.alicdn.com^
+||gtreus.aliexpress.com^
 ||gtrk.s3.amazonaws.com^
 ||gu-pix.appspot.com^$third-party
 ||gu.qlogo.cn^
@@ -21931,6 +21993,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||hd.xiaomi.com^
 ||hd2.3g.qq.com^
 ||hdfcbank.com.data.adobedc.net^
+||hdns.ksyun.com^
 ||hdslb.com/bfs/ad/
 ||hdslb.com/bfs/cm/cm-sdk/static/js/bili-collect.js$domain=bilibili.com,important,redirect=noop.js,script
 ||hdslb.com/bfs/cm/cm-sdk/static/js/bili-collect.js$domain=bilibili.com,important,redirect=noopjs,script
@@ -22726,6 +22789,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||kgmobilestat.kugou.com^
 ||kgmobilestatbak.kugou.com^
 ||kinesis.eu-west-1.amazonaws.com^
+||kingdata.ksyun.com^
 ||kinja-static.com/assets/*/regwalled-content.*.js$domain=qz.com,script
 ||kinstruments-measurements.s3-external-1.amazonaws.com^
 ||kj65rdasz.appspot.com^
@@ -23489,6 +23553,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||mobileservice.cn^
 ||mobondhrd.appspot.com^
 ||mobwsa.ximalaya.com^
+||moduleanalysis.aliexpress.com^
 ||mon*-*.tiktokv.com^
 ||mon-*.tiktokv.com^
 ||mon-hl.snssdk.com/monitor/appmonitor/*/settings^$replace=/("ad": 1)/"ad": 0/
@@ -24181,6 +24246,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||pconline.com.cn/jrzcz/*/intf
 ||pconline.com.cn/js/ad_
 ||pconline.com.cn/js/ivy.js
+||pcookie.aliexpress.com^
 ||pcookie.tanx.com^
 ||pcookie.taobao.com^
 ||pcstat.kugou.com^
@@ -25042,6 +25108,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||s.baidu.com^
 ||s.bdstatic.com/common/openjs/openBox.js?
 ||s.c-ctrip.com^
+||s.click.aliexpress.com/af_pixel.htm
 ||s.deepl.com^
 ||s.f.360.cn^
 ||s.go.sohu.com/cxrd/?callback^
@@ -25736,6 +25803,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ssl-images-amazon.com/images/*/MAsf-
 ||ssl-images-amazon.com/images/*/common/1x1._*.gif$domain=~amazon.com
 ||ssl-images-amazon.com/images/S/apesafeframe/ape/sf/$script
+||ssp.kss.ksyun.com^
 ||ssp.qq.com^
 ||ssp.vivo.com.cn/api/v1/reqAd
 ||sspai.com/api/v1/recommend*=article_
@@ -27138,6 +27206,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||wp-r.github.io/*/assets/js/jquery.adsplacer.frontend.js
 ||wp-r.github.io/*/assets/js/jquery.iframetracker.js
 ||wp-r.github.io/adsplacer_pro/$third-party
+||wp.aliexpress.com/trace.gif?event=
 ||wp.com/*/a8c-analytics.js
 ||wp.com/ask4pc.net/wp-content/uploads/2109/SomeAdsHere
 ||wp.com/assets.sheetmusicplus.com/banner/
