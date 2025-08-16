@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-08-15 02:25:33 UTC
+! Updated: 2025-08-16 02:40:31 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1596378
-! Unique lines (pre-final-filter): 590526
-! Final rules in this list: 76550
+! Lines fetched (pre-dedupe, post-initial-clean): 1589998
+! Unique lines (pre-final-filter): 583926
+! Final rules in this list: 76555
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -32499,6 +32499,7 @@
 ##.listbuilder-popup-embedded
 ##.listicle-instream-ad-holder
 ##.listing-item-ad
+##.listing-page-ad
 ##.listing-share
 ##.listingAd
 ##.listings_ad
@@ -49134,6 +49135,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$script,3p
 /^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$script,third-party
 /^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[a-f0-9]+\/\d+\?version_name=\w&domain=/$xmlhttprequest,third-party
+/^https:\/\/[0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-]?[0-9a-z-]?[0-9a-z-]?\.(com|click|icu|net|shop)\/js\/responsive\.js$/$script,third-party,match-case
 /^https:\/\/[0-9a-z-]{4,7}\.(?:com|click|icu|net|shop)\/js\/responsive\.js$/$script,third-party,match-case
 /^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/(?:article\d{4}\.doc)?\?utm_campaign=\w{40,}/$doc,match-case,to=life|live|top|xyz
 /^https:\/\/[0-9a-z]{5,}\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,~third-party
@@ -68192,7 +68194,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||commonsensemedia.org/ajax/review/$~third-party,xmlhttprequest
 @@||community-uploads-production.*.amazonaws.com^$stealth=3p-cache
 @@||community-wscdn.xmwol.com^$stealth=referrer,image,stylesheet
-@@||community.brave.com/t/$xmlhttprequest
+@@||community.brave.app/t/$xmlhttprequest
 @@||community.mozilla.org/wp-content/uploads/$image
 @@||comnuan.com/ads.js
 @@||comohoy.com^$ghide
@@ -68869,6 +68871,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||dragontea.ink^$generichide
 @@||dragontea.ink^$ghide
 @@||drake-scans.com^$generichide
+@@||dramafren.org^$generichide
 @@||dramaz.se/*antiadblock.js
 @@||dream-sound.com^$generichide
 @@||dreamcheeky.com^$generichide
@@ -71025,6 +71028,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||kanalfrederikshavn.dk^*/jquery.openx.js?
 @@||kansas.com^$generichide
 @@||kansascity.com^$generichide
+@@||kantie.org^$generichide
 @@||kantotero.net^$generichide
 @@||kapsamaharitasi.turktelekom.com.tr^$stealth=ip
 @@||karanpc.com^$generichide
@@ -74185,7 +74189,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||smartnator.com/assets/js/prebid-ads.js
 @@||smartphonehrvatska.com^$generichide
 @@||smartpixel.tv
-@@||smartstore.naver.com^$stealth=useragent
+@@||smartstore.naver.com^$stealth
 @@||smashingmagazine.com/wp-content/*themes/smashing-magazine/*ads*.js
 @@||smashresume.com^$generichide
 @@||smashresume.com^$ghide
@@ -76132,6 +76136,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||work.ink^$ghide
 @@||work.ink^$xhr,1p
 @@||workers.dev/*%3D%3D.$xmlhttprequest,stealth=referrer
+@@||workers.dev/*.jpeg$stealth=referrer
 @@||workers.dev/*.m3u8$stealth=referrer
 @@||workingtitlefilms.com/site-content/plugins/nbcu-plugins/bwp-minify/$stylesheet
 @@||world-sms.org/get-ad/$xhr,1p
