@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-08-20 03:55:42 UTC
+! Updated: 2025-08-21 01:46:14 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1600720
-! Unique lines (pre-final-filter): 584766
-! Final rules in this list: 76595
+! Lines fetched (pre-dedupe, post-initial-clean): 1609542
+! Unique lines (pre-final-filter): 591358
+! Final rules in this list: 76600
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -49305,6 +49305,9 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/[-0-9a-z]{5,}\.com\/[0-9a-z]{8,10}\?key=[0-9a-f]{32}$/$frame,3p
 /^https?:\/\/[-a-z0-9]{25,}\.vercel\.app\/id\/\d{15,17}\.html\b/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z0-9]{8,}\.ru\/\?load=[a-zA-Z0-9]+(-[a-zA-Z0-9]+)+$/$doc,match-case,to=ru
+/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.com[-.][-a-z0-9][-a-z0-9]+\.[a-z][a-z][a-z]?[a-z]?[a-z]?\//$doc,to=cc|cfd|cyou|icu|live|top|vip|win|world|xin
+/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.gov[-.][-a-z0-9][-a-z0-9]+\.[a-z][a-z][a-z]?[a-z]?[a-z]?\//$doc,to=cc|cfd|cyou|icu|live|top|vip|win|world|xin
+/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.org[-.][-a-z0-9][-a-z0-9]+\.[a-z][a-z][a-z]?[a-z]?[a-z]?\//$doc,to=cc|cfd|cyou|icu|live|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{12,}\.vercel\.app\/[^.]+?=D400e/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z]{12,}\.vercel\.app\/[^.]+?g_ep=?EgoyMDI/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z]{4,}\.(?:com|org)[-.][-a-z]{2,}\.(?:cc|top|vip|world|xin)\/pay\b/$doc,match-case,to=cc|top|vip|world|xin
@@ -49346,6 +49349,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/d\d\.sina\.com\.cn/
 /^https?:\/\/d\d\.sinaimg\.cn/
 /^https?:\/\/dienmayxanh[-a-z0-9]+\.com\//$doc,to=com|~dienmayxanh.com
+/^https?:\/\/gov[-.][-a-z0-9][-a-z0-9]+\.[a-z][a-z][a-z]?[a-z]?[a-z]?\//$doc,to=cc|cfd|cyou|icu|live|top|vip|win|world|xin
 /^https?:\/\/icloud\.apple\.[a-z]{6,}\.[a-z]+/$doc,to=co|cn
 /^https?:\/\/reddit-\d{1,2}\.[a-z]{4}\.(?:net|org|pw)\//$doc,to=net|org|pw|~reddit.com
 /^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$xmlhttprequest,third-party
@@ -72915,6 +72919,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||pass.1688.com^$subdocument
 @@||passiontimes.hk^$generichide
 @@||passiontimes.hk^*-ad.php?
+@@||passport.baidu.com^$stealth=referrer
 @@||passport.csdn.net/login^$stealth=referrer
 @@||passport.yandex.ru^$stealth=3p-cookie
 @@||paste.bin.sx^$ghide
