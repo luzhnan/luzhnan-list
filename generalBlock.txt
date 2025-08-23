@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-08-21 01:46:14 UTC
+! Updated: 2025-08-23 01:30:00 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1609542
-! Unique lines (pre-final-filter): 591358
-! Final rules in this list: 76600
+! Lines fetched (pre-dedupe, post-initial-clean): 1611558
+! Unique lines (pre-final-filter): 590674
+! Final rules in this list: 76634
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -17861,6 +17861,7 @@
 ##.ad-towers
 ##.ad-transition
 ##.ad-trck
+##.ad-truvid
 ##.ad-two
 ##.ad-twos
 ##.ad-txt
@@ -45648,6 +45649,7 @@
 ##div[style^="position:"][ontouchstart="fCidsp(event)"]
 ##div[style^="position:absolute;"] > div[id^="img_"]
 ##div[style^="position:absolute;left:0px;"] + div[class^="img_"]
+##div[style^="position:fixed; bottom:0vw; left:"][style$="vw;background: #000;opacity:0.01;"]
 ##div[style^="position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01"]
 ##div[style^="transition-duration:0ms!important;margin:0px!important;padding:0px!important;border:none!important;position:absolute!important;top:0px!important;"]
 ##div[style^="v"] > a[href*="html-load.com"][target][style="text-decoration:none;"]
@@ -46056,6 +46058,7 @@ $$iframe[id^="google_ads_frame"]
 $$ins[class="adsbygoogle"]
 $$p[id^="div-gpt-ad-"]
 $$script:contains(/document\.write[^|&%$#@!]{0,400}:8007"\+"\/cc\//)
+$$script:contains(?is_not=1&target=1&ty=2)
 $$script:contains(_mJd5Y2FNOfYm62LY5FuY7O5Yc6)
 $$script[src="/js/sy2.js"]
 $$script[tag-content="adsbygoogle"]
@@ -46634,12 +46637,34 @@ $removeparam=/^at_custom/
 $removeparam=/^cm_mmc/
 $removeparam=/^fb_(source|ref)=/
 $removeparam=/^fb_action_(types|ids)=/
+$removeparam=/^featured_on=pythonbytes$/
 $removeparam=/^ga_[a-z_]+=/
 $removeparam=/^hmb_(campaign|medium|source)=/
 $removeparam=/^itm_(campaign|medium|source)=/
 $removeparam=/^mc_(eid|cid|tc)=/
 $removeparam=/^otm_[a-z_]*=/
 $removeparam=/^qxjkl=tsid:/
+$removeparam=/^ref=blog\.codinghorror\.com$/
+$removeparam=/^ref=blog\.min\.io$/
+$removeparam=/^ref=blog\.pragmaticengineer\.com$/
+$removeparam=/^ref=blog\.skyvern\.com$/
+$removeparam=/^ref=brianlovin\.com$/
+$removeparam=/^ref=buyoncesoftware$/
+$removeparam=/^ref=connortumbleson\.com$/
+$removeparam=/^ref=dailydev$/
+$removeparam=/^ref=devblog\.qnx\.com$/
+$removeparam=/^ref=dzombak\.com$/
+$removeparam=/^ref=forourposterity\.com$/
+$removeparam=/^ref=futuretools\.io$/
+$removeparam=/^ref=gamingcreative\.co$/
+$removeparam=/^ref=ghuntley\.com$/
+$removeparam=/^ref=haxrob\.net$/
+$removeparam=/^ref=issylong\.com$/
+$removeparam=/^ref=martysweet\.co\.uk$/
+$removeparam=/^ref=runtime\.news$/
+$removeparam=/^ref=spyglass\.org$/
+$removeparam=/^ref=thediff\.co$/
+$removeparam=/^ref=underfl0w\.com$/
 $removeparam=/^source=googleps$/
 $removeparam=/^utm(_[a-z_]*)?=/
 $removeparam=/^vn(_[a-z]*)+=/
@@ -47099,6 +47124,7 @@ $removeparam=dsp_uid
 $removeparam=dt_dapp
 $removeparam=dt_platform
 $removeparam=dti
+$removeparam=duckai
 $removeparam=dummy_vsid
 $removeparam=dvp_idcerr
 $removeparam=dvp_psfts
@@ -47701,6 +47727,7 @@ $removeparam=utm_source
 $removeparam=utm_source_platform
 $removeparam=utm_supplier
 $removeparam=utm_swu
+$removeparam=utm_tag
 $removeparam=utm_term
 $removeparam=utm_umguk
 $removeparam=utm_userid
@@ -47843,6 +47870,7 @@ $~xmlhttprequest,removeparam=mbid
 /.well-known/private-click-measurement
 /.well-known/shopify/monorail
 //*.emgrt.com^$third-party
+//cdn.*/uni-ggs.js$third-party
 //feedproxy.*/~r/*$image
 //m.manhua123.net/js/com2.js
 //s.php?id=$script,third-party
@@ -49140,6 +49168,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/(www\.)?sp\d{4,5}p\.com\//$doc,to=com|~shopee.vn
 /^https:\/\/[-a-z]{16,}\.z\d{2}\.web\.core\.windows\.net\/[a-z]{70,}(\/[a-z]{40,})?\.html/$doc,match-case,to=web.core.windows.net
 /^https:\/\/[-a-z]{4,}\.dogfriendlytahoe\.com\//$doc,to=dogfriendlytahoe.com
+/^https:\/\/[-a-z]{8,}\.com\/[f-i](?=[a-z]*[0-9A-Z_-])[0-9A-Z_a-z-]{3,}\/[0-9A-Za-z][-\/0-9A-Z_a-z]{118,132}$/$script,xmlhttprequest,match-case,third-party
 /^https:\/\/[-a-z]{8,}\.com\/[f-i](?=[a-z]*[0-9A-Z_-])[0-9A-Z_a-z-]{3,}\/[0-9a-z][-\/0-9A-Z_a-z]{118,132}$/$script,xmlhttprequest,match-case,third-party
 /^https:\/\/[.\w]+\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,match-case,1p,strict1p
 /^https:\/\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.com\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\.js$/$script,third-party
@@ -49176,7 +49205,6 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[a-z0-9]{50,}\.[a-z0-9]{4,11}\.com\/[a-zA-Z0-9]{50,}$/$xhr,3p,method=get,to=com|~google.com|~microsoft.com,from=com|ru|su
 /^https:\/\/[a-z0-9]{50,}\.[a-z0-9]{4,11}\.ru\/[a-zA-Z0-9]{50,}$/$xhr,3p,method=get,to=ru,from=com|ru|su
 /^https:\/\/[a-z0-9]{50,}\.[a-z0-9]{4,11}\.su\/[a-zA-Z0-9]{50,}$/$xhr,3p,method=get,to=su,from=com|ru|su
-/^https:\/\/[a-z]+\.com\/away\.php\?url=[%0-9A-z]{100,}$/$doc
 /^https:\/\/[a-z][a-z][a-z][a-z]?[a-z]?\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\.top\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\/[a-z][a-z][a-z][a-z][a-z][a-z]?(\?d=[0-9])?$/$script,third-party,match-case
 /^https:\/\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]+\.com\/en\/([a-z][a-z]+\/)?([a-z][a-z]+\/)?[a-z][a-z]+\?([a-z]+=[^&=? ]*&)*id=[12][0-9][0-9][0-9][0-9][0-9][0-9]/$script,third-party,match-case
 /^https:\/\/[a-z]\.[a-z]{10,}\.top\/l(?:\/|$)/$doc,to=top|~usps.com
@@ -49254,6 +49282,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/www\.[0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-][0-9a-z-]+\.xyz\/script\/[0-9A-Za-z.-]+\.[A-Za-z-][A-Za-z-]+\.js$/$script,third-party,match-case
 /^https:\/\/www\.[0-9a-z-]{8,}\.com\/script\/(?=[0-9a-z]{0,29}[A-Z])[0-9A-Za-z]{10,30}\.js$/$script,third-party,match-case
 /^https:\/\/www\.[0-9a-z-]{8,}\.xyz\/script\/[-.0-9A-Za-z]+\.[A-Za-z-]{2,30}\.js$/$script,third-party,match-case
+/^https:\/\/www\.[a-z]{12,}\.com\/[-a-z]*%E[%0-9A-F]{20,}-[-0-9a-z]{3,}%E[-%0-9A-Fa-z]{70,}-p-\d{3,5}\.html$/$doc,match-case
 /^https:\/\/www\.[a-z]{8,16}\.com\/(?:[A-Za-z]+\/)*(?:[_0-9A-Za-z]{1,20}[-.])*[_0-9A-Za-z]{1,20}\.js$/$script,third-party,match-case,header=link:/adsco\.re\/>;rel=preconnect/
 /^https:\/\/www\.[a-z]{8,16}\.com\/(?:[A-Za-z]+\/)*(?:[_0-9A-Za-z]{1,20}[-.])*[_0-9A-Za-z]{1,20}\.js$/$script,third-party,match-case,header=popads-node
 /^https:\/\/www\.[a-z]{8,16}\.com\/[a-z]{4,14}\.min\.css$/$script,3p
@@ -56282,7 +56311,7 @@ $~xmlhttprequest,removeparam=mbid
 /entry_stats?
 /envoy.sb?sbaid
 /eo?_t=$image
-/eos/v1/$image
+/eos/v1/*$image
 /epf_v1_95.js
 /eplanningv4.
 /eporner-banner-
@@ -58380,6 +58409,7 @@ $~xmlhttprequest,removeparam=mbid
 /invideoad.
 /inviteads/*
 /inx-ad.
+/iomm/latest/bootstrap/*
 /ionic-consent.js
 /iotechnologies.js
 /ip-advertising/*
@@ -58598,6 +58628,7 @@ $~xmlhttprequest,removeparam=mbid
 /js/ads
 /js/ads-
 /js/ads.
+/js/ads.$badfilter
 /js/ads/*0.js
 /js/ads/*2.js
 /js/ads/*5.js
@@ -62509,6 +62540,7 @@ $~xmlhttprequest,removeparam=mbid
 /shopify-boomerang-
 /shopify-datalayer-minified.js
 /shopify-event.gif?
+/shopify/assets/themes_support/notifications/spacer-
 /shopify/track.js
 /shopify_stats.js
 /shopifycloud/media-analytics/v*/analytics.js
@@ -63255,7 +63287,6 @@ $~xmlhttprequest,removeparam=mbid
 /stats/enc-
 /stats/et_track.asp?
 /stats/event.js?
-/stats/events$xmlhttprequest
 /stats/footer.js
 /stats/ga.
 /stats/ga.js
@@ -64519,6 +64550,7 @@ $~xmlhttprequest,removeparam=mbid
 /unbxdAnalytics.
 /unbxdAnalytics.js
 /unbxdAnalyticsConfig.
+/uni-ggs.js
 /unib0ts/unibots*/*/script.js
 /unibluead.
 /unibo-cookies.min.js
@@ -64978,6 +65010,7 @@ $~xmlhttprequest,removeparam=mbid
 /watchdog/hits/collect$xmlhttprequest
 /watchit_ad.
 /watchnew?key=$frame,3p
+/watchnew?key=$subdocument,third-party
 /watchnew?shu=$frame,3p
 /watchonline_cookies.
 /waterad2.
@@ -67829,7 +67862,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||cdn.consentmanager.net/delivery/js/cmp*.min.js$stealth=referrer
 @@||cdn.consentmanager.net/delivery/lang/langpurpose*.min.js$stealth=referrer
 @@||cdn.contentful.com/spaces^$stealth=3p-auth
-@@||cdn.cookielaw.org/consent
 @@||cdn.cookielaw.org/scripttemplates/*.*.*/
 @@||cdn.cookielaw.org/skins^
 @@||cdn.cookielaw.org/vendorlist^
@@ -70092,7 +70124,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||golangnote.com^$generichide
 @@||goldmansachs.com/a/pg/js/prod/gs-analytics-init.js
 @@||golem.de/abo/setconsentcookie.php
-@@||golem.de/bannertest/iqdigital/dist/show_ad.js
 @@||golem.de/news^
 @@||gomaainfo.com^$generichide
 @@||gomein.net.cn^*,
@@ -72120,6 +72151,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||mobilkulup.com^$generichide
 @@||mobinovels.com^$generichide
 @@||mobinozer.com^$ghide
+@@||mockupbee.com/wp-content/plugins/wordpress-popup/assets/js/$1p
 @@||modekoninginmaxima.nl^$generichide
 @@||model-viewer.com^$ghide
 @@||modelbazar.cz^$generichide
@@ -73284,6 +73316,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||pprune.org/clientscript/vbulletin_analytics.js
 @@||ppstatic.pl/lib/*/js/ads/*/reklama.js
 @@||pptv.com/webdelivery/webafp?cb=loadAdStatus&*sports.pp
+@@||ppzj-youtube.cfd/play/$stealth=referrer
 @@||pracuj.pl^$cookie=gptrackCookie
 @@||prad.de^$generichide
 @@||pradjadj.com/assets/plugins/*/assets/js/advertisement.min.js
@@ -75405,6 +75438,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||turbo.az^$stealth=referrer
 @@||turbogenerator.info/adblock.js$script
 @@||turbogvideos.com^$ghide
+@@||turboplayers.xyz/t/$stealth=referrer
 @@||turbovidhls.com/t/$stealth=referrer
 @@||turiver.com^$generichide
 @@||turkanime.*/ad/$xhr,1p
