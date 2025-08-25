@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-08-23 01:30:00 UTC
+! Updated: 2025-08-25 02:53:59 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1611558
-! Unique lines (pre-final-filter): 590674
-! Final rules in this list: 76634
+! Lines fetched (pre-dedupe, post-initial-clean): 1612203
+! Unique lines (pre-final-filter): 590294
+! Final rules in this list: 76619
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -4295,7 +4295,6 @@
 ###closeGdprContent
 ###close_cnil
 ###closeable-ad
-###cloudAdTag
 ###cloudmeCookieInfo
 ###clr-cookie-bar-container
 ###cm-cookie-accept
@@ -4406,7 +4405,6 @@
 ###colAd
 ###collapse-newsletter
 ###collapse-newsletter-trigger
-###colombiaAdBox
 ###colorify-pro-cookie-ify
 ###columnAd
 ###com4cookies-container
@@ -4587,16 +4585,6 @@
 ###content_mpu
 ###content_share
 ###contentad
-###contentad-adsense-homepage-1
-###contentad-commercial-1
-###contentad-content-box-1
-###contentad-footer-tfm-1
-###contentad-lower-medium-rectangle-1
-###contentad-story-middle-1
-###contentad-superbanner-1
-###contentad-top-adsense-1
-###contentad-topbanner-1
-###contentadcontainer
 ###contentads
 ###contentcookies
 ###contextad
@@ -7182,8 +7170,6 @@
 ###crestashareiconincontent
 ###criteoAd
 ###crocopush_banner
-###crt-adblock-a
-###crt-adblock-b
 ###csSocial
 ###cs_left_couplet
 ###cs_politykacookies
@@ -7201,8 +7187,6 @@
 ###cta-cookie
 ###cta_prompt_bottom
 ###ctl00_CiasteczkaPolityka_RNCockie_popup
-###ctl00_ContentPlaceHolder1_ucAdHomeRightFO_divAdvertisement
-###ctl00_ContentPlaceHolder1_ucAdHomeRight_divAdvertisement
 ###ctl00_CookieArea
 ###ctl00_CookieConfirmPanel
 ###ctl00_CookieInfo
@@ -7219,7 +7203,6 @@
 ###ctl00_PanelCookie
 ###ctl00_PanelPolitykaPrywatnosci
 ###ctl00_PanelRGPD
-###ctl00_adFooter
 ###ctl00_chdr_pnlCookieHeader
 ###ctl00_ckWarning
 ###ctl00_cookieConsent_pnlCookie
@@ -7245,7 +7228,6 @@
 ###ctl00_divCookies
 ###ctl00_header1_CookieHeader
 ###ctl00_informacjaCookiesLayout4
-###ctl00_leaderboardAdvertContainer
 ###ctl00_panCookieAbfrage
 ###ctl00_panel_cookie
 ###ctl00_pnlCookie
@@ -7256,12 +7238,9 @@
 ###ctl00_pnl_cookie
 ###ctl00_privacyCookies_LIPCNB_PrivacyandCookiesNoticePanel
 ###ctl00_privacyUpdate
-###ctl00_skyscraperAdvertContainer
 ###ctl00_theseusCookiePolicy_cookiePol
 ###ctl00_theseusCookiePolicy_ulCookiePol
-###ctl00_topAd
 ###ctl00_ucDatenschutz
-###ctl00_ucFooter_ucFooterBanner_divAdvertisement
 ###ctl00_upCookie
 ###ctl01_ctl00_CookiePreferencesControl
 ###ctl01_pnlCookieBanner
@@ -7327,7 +7306,6 @@
 ###daextlwcnf-cookie-notice-container-mask
 ###dap-cookie-bar
 ###daraz-smart-banner
-###darazAd
 ###darkener_cookie
 ###data-controller-stripe
 ###data-privacy-bar
@@ -7366,7 +7344,6 @@
 ###dd-fblike-iframe
 ###dd-footer-social
 ###dd-navigation-social
-###ddAdZone2
 ###dd_ajax_float
 ###dd_cookie_bar
 ###ddb_fluid_native_ddb_0
@@ -7419,7 +7396,6 @@
 ###dfp-ad-slot7
 ###dfp-ad-slot7-wrapper
 ###dfp-ad-top-wrapper
-###dfp-ap-2016-interstitial
 ###dfp-article-mpu
 ###dfp-atf
 ###dfp-atf-desktop
@@ -26078,6 +26054,8 @@
 ##.cookieaccept
 ##.cookieaccept_wrapper
 ##.cookieacceptance
+##.cookieadmin_cookie_modal
+##.cookieadmin_law_container
 ##.cookieadv
 ##.cookieadvise
 ##.cookiealarm
@@ -49045,7 +49023,7 @@ $~xmlhttprequest,removeparam=mbid
 /\.srvqck/
 /\.stenaline\./
 /\.stream\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
-/\.temporary\.site\/service\/[a-f0-9]{32}\//$doc,to=temporary.site|~impots.gouv.fr
+/\.temporary\.site\/service\/[a-f0-9]{32}\//$doc,match-case,to=temporary.site|~impots.gouv.fr
 /\.top\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
 /\.trade\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
 /\.webcam\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
@@ -49059,7 +49037,7 @@ $~xmlhttprequest,removeparam=mbid
 /\/(public|resources|static|assets)\/([a-f0-9]){28,31}$/$script,xmlhttprequest,~third-party
 /\/[0-9][0-9][0-9][0-9][0-9]\?version_name=[a-z]$/$xmlhttprequest
 /\/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\/invoke\.js/$script,third-party
-/\/[0-9a-f]{32}\.js/$script,xhr,3p,to=com,from=7fractals.icu|alexsports.*|allevertakstream.space|cdn256.xyz|fsportshd.xyz|meltol.net|snapinstadownload.xyz|sportstohfa.online|stellarthread.com|streamshunters.eu|totalsportek1000.com|wavewalt.me|worldsports.*
+/\/[0-9a-f]{32}\.js/$script,xhr,3p,to=com,from=7fractals.icu|alexsports.*|allevertakstream.space|btvsports.my|capo6play.com|capoplay.net|cdn256.xyz|cr7-soccer.store|dropbang.net|fsportshd.xyz|meltol.net|snapinstadownload.xyz|sportstohfa.online|stellarthread.com|streamshunters.eu|totalsportek1000.com|wavewalt.me|worldsports.*|ziggogratis.site
 /\/[0-9a-f]{32}\.js/$script,xhr,3p,to=com,from=alexsports.cv|alexsports.site|worldsports.st
 /\/[0-9a-f]{32}\/invoke\.js/$script,3p
 /\/[0-9a-f]{32}\/invoke\.js/$script,third-party
@@ -49151,7 +49129,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.[a-z]{3,7}\/[a-z][0-9A-Za-z]{10,16}\/\d{4,6}$/$script,third-party,match-case
 /^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{5}$/$script,third-party,match-case
 /^https:\/\/(?:appeal|contact|page)\.[a-z]{15,}\.com\/appeal_case_id\b/$doc,to=com|~facebook.com
-/^https:\/\/(?:as(?:loader)?|loader)\.[-0-9A-Za-z]+.[-A-Za-z]{2,30}\/loader.min.js$/$script,~third-party
+/^https:\/\/(?:as(?:loader)?|loader)\.[-0-9A-Za-z]+\.[-A-Za-z]{2,16}\/loader\.min\.js$/$script,~third-party
 /^https:\/\/(?:cdn77\.)?aj[0-9a-z]{2}\d{2}\.bid\/[0-9a-z]{8}\.js$/$script,3p,to=bid
 /^https:\/\/(?:cdn77\.)?aj[0-9a-z]{2}\d{2}\.online\/[-_0-9A-Za-z]{70,}$/$frame,3p,to=online
 /^https:\/\/(?:cdn77\.)?aj[0-9a-z]{2}\d{2}\.online\/[0-9a-z]{8}\.js$/$script,3p,to=online
@@ -49179,7 +49157,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[0-9a-z-]{4,7}\.(?:com|click|icu|net|shop)\/js\/responsive\.js$/$script,third-party,match-case
 /^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/(?:article\d{4}\.doc)?\?utm_campaign=\w{40,}/$doc,match-case,to=life|live|top|xyz
 /^https:\/\/[0-9a-z]{5,}\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,~third-party
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,redirect=noopjs,to=com|~aswpsdkus.com|~chimpstatic.com|~mojirater.com|~polldaddy.com|~squareoffs.com|~succeedscene.com|~veraviews.com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|arstechnica.com|artforum.com|artnews.com|awkward.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|billboard.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|danslescoulisses.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|dpreview.com|eater.com|ebaumsworld.com|eldiariony.com|fark.com|femestella.com|fmradiofree.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|greenbaypressgazette.com|grunge.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kens5.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|madeeveryday.com|maidenhead-advertiser.co.uk|mandatory.com|mardomreport.net|masslive.com|melangery.com|miamiherald.com|mlive.com|mmamania.com|momtastic.com|mostlymorgan.com|motherwellmag.com|musicfeeds.com.au|naszemiasto.pl|nationalpost.com|nationalreview.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nordot.app|nothingbutnewcastle.com|nsjonline.com|nypost.com|observer.com|ontvtonight.com|oregonlive.com|pagesix.com|patheos.com|pennlive.com|pep.ph|playstationlifestyle.net|pravda.sk|prydwen.gg|puckermom.com|reelmama.com|rlfans.com|robbreport.com|rollingstone.com|royalmailchat.co.uk|sbnation.com|sheknows.com|smartworld.it|sneakernews.com|sourcingjournal.com|sport-fm.gr|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|techcrunch.com|thedailymeal.com|theflowspace.com|themarysue.com|tiermaker.com|timesofisrael.com|tokfm.pl|torontosun.com|tvline.com|usatoday.com|usmagazine.com|variety.com|wallup.net|weather.com|wimp.com|worldstar.com|worldstarhiphop.com|wunderground.com|wwd.com|wzzm13.com|ydr.com|yourcountdown.to
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,redirect=noopjs,to=com|~aswpsdkus.com|~chimpstatic.com|~mojirater.com|~polldaddy.com|~squareoffs.com|~succeedscene.com|~veraviews.com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|arstechnica.com|artforum.com|artnews.com|audiomack.com|awkward.com|azcentral.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|billboard.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|danslescoulisses.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|dpreview.com|eater.com|ebaumsworld.com|eldiariony.com|fark.com|femestella.com|fmradiofree.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|greenbaypressgazette.com|grunge.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kens5.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|madeeveryday.com|maidenhead-advertiser.co.uk|mandatory.com|mardomreport.net|masslive.com|melangery.com|miamiherald.com|mlive.com|mmamania.com|momtastic.com|mostlymorgan.com|motherwellmag.com|musicfeeds.com.au|naszemiasto.pl|nationalpost.com|nationalreview.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nordot.app|nothingbutnewcastle.com|nsjonline.com|nypost.com|observer.com|ontvtonight.com|oregonlive.com|pagesix.com|palmbeachpost.com|patheos.com|pennlive.com|pep.ph|phillyvoice.com|playstationlifestyle.net|pravda.sk|prydwen.gg|puckermom.com|reelmama.com|rlfans.com|robbreport.com|rollingstone.com|royalmailchat.co.uk|sandrarose.com|sbnation.com|sheknows.com|smartworld.it|sneakernews.com|sourcingjournal.com|sport-fm.gr|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|techcrunch.com|thedailymeal.com|theflowspace.com|themarysue.com|tiermaker.com|timesofisrael.com|tiscali.cz|tokfm.pl|torontosun.com|tvline.com|usatoday.com|usmagazine.com|variety.com|wallup.net|weather.com|wimp.com|worldstar.com|worldstarhiphop.com|wunderground.com|wwd.com|wzzm13.com|ydr.com|yourcountdown.to
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~aswpsdkus.com|~chimpstatic.com|~mojirater.com|~polldaddy.com|~squareoffs.com|~succeedscene.com|~veraviews.com,redirect=noopjs,ipaddress=/^(3[45]\.\d+\.\d{2,3}\.\d{2,3}|2600:1901:0:[a-f0-9]{3,4}::1)$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{12,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~aswpsdkus.com|~chimpstatic.com|~mojirater.com|~polldaddy.com|~squareoffs.com|~succeedscene.com|~veraviews.com,header=etag:/^W\/"[0-9a-f]{64}"$/
@@ -49259,7 +49237,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/hotels-\d{6}\.eu\//$doc,to=eu|~booking.com
 /^https:\/\/mbdk\d+\.com\//$doc,to=com|~mbbank.com.vn
 /^https:\/\/netembed\.xyz\/[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]\.js\?/$script
-/^https:\/\/ob\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]*\.com\/i\/[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]\.js$/$script,3p,match-case
+/^https:\/\/ob\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]*\.com\/i\/[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]\.js$/$script,3p,match-case,to=com
 /^https:\/\/ob\.[a-z]{8,}\.com\/i\/[a-f0-9]{32}\.js$/$script,3p,match-case,to=com
 /^https:\/\/online\.[a-z]{7,}\.top\//$doc,to=top
 /^https:\/\/ourtime\.[a-z]+-[a-z]+\.workers\.dev\//$doc,to=workers.dev|~ourtime.com
@@ -53224,6 +53202,7 @@ $~xmlhttprequest,removeparam=mbid
 /api/track?guid
 /api/tracking/*
 /api/trk?
+/api/trpc/event.tracking|$xhr
 /api/users/*&ev=$script
 /api/users?token=$popup
 /api/users?token=$subdocument,third-party
@@ -54404,6 +54383,8 @@ $~xmlhttprequest,removeparam=mbid
 /cdn5.js?
 /cdn_cookie_service.$image
 /cdn_cookie_service.html
+/cdp/usage/ClientsideImpression?
+/cdp/usage/GetWeblabTreatment?
 /cds-webanalytics.
 /cds.ad.
 /cdx-radar/*
@@ -57625,6 +57606,7 @@ $~xmlhttprequest,removeparam=mbid
 /gp/*/ref=$doc,uritransform=/\/ref=[^\/?#]+//,to=www.amazon.*|www.amazon.ae|www.amazon.ca|www.amazon.cn|www.amazon.co.jp|www.amazon.co.uk|www.amazon.com|www.amazon.com.au|www.amazon.de|www.amazon.es|www.amazon.fr|www.amazon.in|www.amazon.nl|www.amazon.sg
 /gp/r.html?$image
 /gp/r.html?C=*&ref_=pe_*_open$image
+/gp/video/acquisition/utilities/monitoring|
 /gpt-prebid.js$script
 /gpt.js$script
 /gpt.min.js
@@ -64550,7 +64532,6 @@ $~xmlhttprequest,removeparam=mbid
 /unbxdAnalytics.
 /unbxdAnalytics.js
 /unbxdAnalyticsConfig.
-/uni-ggs.js
 /unib0ts/unibots*/*/script.js
 /unibluead.
 /unibo-cookies.min.js
@@ -65009,7 +64990,6 @@ $~xmlhttprequest,removeparam=mbid
 /watchbutton11.png$image
 /watchdog/hits/collect$xmlhttprequest
 /watchit_ad.
-/watchnew?key=$frame,3p
 /watchnew?key=$subdocument,third-party
 /watchnew?shu=$frame,3p
 /watchonline_cookies.
@@ -65316,6 +65296,8 @@ $~xmlhttprequest,removeparam=mbid
 /wp-content/plugins/content-copy-protection-disable-right-click/assets/*
 /wp-content/plugins/content-protector-pack/*
 /wp-content/plugins/cookie-law-info/public/js/cookie-law-info-public.js
+/wp-content/plugins/cookieadmin-pro/assets/*
+/wp-content/plugins/cookieadmin/assets/*
 /wp-content/plugins/cookies-and-content-security-policy
 /wp-content/plugins/cool-image-share/*
 /wp-content/plugins/creame-whatsapp-me/public/js/joinchat.
@@ -65380,6 +65362,7 @@ $~xmlhttprequest,removeparam=mbid
 /wp-content/plugins/pageviews-counter/*
 /wp-content/plugins/pageviews/pageviews.js
 /wp-content/plugins/pageviews/pageviews.min.js
+/wp-content/plugins/pixelyoursite-pro/*
 /wp-content/plugins/pixelyoursite/*
 /wp-content/plugins/platinumpopup/*
 /wp-content/plugins/platinumpopup/*$script,stylesheet
@@ -73869,6 +73852,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||sammyboy.com/members/*advertisement$xmlhttprequest
 @@||sammyboy.com/threads/*advertisement$xmlhttprequest
 @@||samnaprawiam.com^$generichide
+@@||sampledrive.org/wp-content/plugins/wordpress-popup/assets/js/$script,1p
 @@||samplefan.com/img/ad/$image
 @@||samplette.io^$stealth=push
 @@||samuraiscan.com^$generichide
@@ -76372,6 +76356,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||xiaomifirmwareupdater.com^$generichide
 @@||xiaomitoday.com^$ghide
 @@||xiaomitools.com^$generichide
+@@||xiaosaas.com/org/RecordScreen/rrweb.min.js$~third-party
 @@||xidian.edu.cn^$generichide
 @@||xilinjie.com^$generichide
 @@||xinhuanet.com/gsstatics/*/images/ad/
