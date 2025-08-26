@@ -1,122 +1,140 @@
-! Title: luzhnan-lists for ubo
+! Title: luzhnan-lists for ubo (Optimized)
 ! Description: luzhnan-lists for ubo
-! Updated: 2025-07-24 15:39:43 CST
+! Updated: 2025-07-24 15:39:43 CST (Original timestamp)
+! Last Organized: 2024-05-24
 
+! ============================================================
+! 1. 全局规则 (Global Rules)
+! ============================================================
+
+! 屏蔽第三方字体，减少跟踪和加快加载速度
 *.ttf*$font,third-party
 *.woff2*$font,third-party
 *.woff*$font,third-party
 *.otf*$font,third-party
-! 微软邮箱网页版放行字体
-@@res.public.onecdn.static.microsoft$font,domain=live.com
+
+! 强制所有元素的鼠标指针为默认样式
 *##*:style(cursor: auto !important)
 
+! 解决 Google 故意增加的 YouTube 播放延迟 (仅 Firefox)
+!#if env_firefox
+www.youtube.com##+js(nano-stb, resolve(1), 5000, 0.001)
+!#endif
+
+! 来源于其他规则列表的通用规则
+##a[href^="https://ra7.xyz"]
+##a[href^="https://ra10.xyz"]
+##a[href*="//enter.javhd.com/track/"]
+/ping.gif$redirect=1x1.gif
+/counters.gif$redirect=1x1.gif
+wss://*.xyz:*?x=$3p
+
+! 屏蔽本地网络请求，防止信息泄露
+||0.0.0.0^$third-party,domain=~[::]|~[::ffff:0:0]
+||[::]^$third-party,domain=~0.0.0.0|~[::ffff:0:0]
+||[::ffff:0:0]^$third-party,domain=~0.0.0.0|~[::]
+||localhost^$third-party,domain=~127.0.0.1|~[::1]|~[::ffff:7f00:1]
+||127.0.0.1^$third-party,domain=~localhost|~[::1]|~[::ffff:7f00:1]
+||[::1]^$third-party,domain=~localhost|~127.0.0.1|~[::ffff:7f00:1]
+||[::ffff:7f00:1]^$third-party,domain=~localhost|~127.0.0.1|~[::1]
+
+
+! ============================================================
+! 2. 白名单规则 (Whitelist Rules)
+! ============================================================
+
+! 微软邮箱网页版放行字体
+@@res.public.onecdn.static.microsoft$font,domain=live.com
+! Google 服务放行字体
 @@aistudio.google.com$font,third-party
 @@analytics.google.com$font,third-party
 @@developer.android.com$font,third-party
 
+
+! ============================================================
+! 3. 网络请求拦截 (Network Blocking)
+! ============================================================
+
+! 科技媒体
 ||9to5google.com^$script,frame,xhr,font,third-party
 ||9to5mac.com^$script,frame,xhr,font,third-party
 ||macrumors.com^$script,frame,xhr,font,third-party
 ||androidauthority.com^$script,frame,xhr,font,third-party
 ||theverge.com^$script,font
 
+! 百度统计
 ||zz.bdstatic.com^
 ||zz.bdstatic.com^$redirect-rule=noop.js
 
-! Facebook Plugins (3rd-party embedded plugins)
+! Facebook 插件
 ||facebook.com/plugins/$third-party,domain=~atlassolutions.com|~facebook.com|~facebook.de|~facebook.fr|~facebook.net|~fb.com|~fb.me|~fbcdn.net|~fbsbx.com|~friendfeed.com|~instagram.com|~internalfb.com|~messenger.com|~oculus.com|~whatsapp.com|~workplace.com
 
+! YouTube 嵌入视频 (允许在搜索引擎结果中播放)
 ||youtube-nocookie.com/embed^$3p,frame,domain=~bing.com|~google.com|~duckduckgo.com
 ||youtube.com^$3p,frame,domain=~bing.com|~google.com|~duckduckgo.com
 
-! 移除追踪链接
-! ||xiaohongshu.com^$removeparam
-! ||dianping.com^$removeparam
-! ||bilibili.com^$removeparam
-||taobao.com^$removeparam=traceId
-! ||taobao.com^$removeparam=~id
-||m.dianping.com^$removeparam=msource
-||m.dianping.com^$removeparam=utm_source
-||m.dianping.com^$removeparam=shoptype
-||m.dianping.com^$removeparam=shopcategoryid
-||m.dianping.com^$removeparam=isoversea
-||m.dianping.com^$removeparam=shareid
+! 东方财富
+||dfcfw.com^
+||avator.eastmoney.com^
+||gbfek.eastmoney.com^
+||eastmoney.com/usercollect/
+*$image,domain=wap.eastmoney.com
+bdstatics*.$script
 
-! 最近淘宝和天猫不知道哪里来的一套新的追踪参数
-||detail.tmall.com^$removeparam=shareUniqueId
-||detail.tmall.com^$removeparam=un_site
-||detail.tmall.com^$removeparam=wxsign
-||detail.tmall.com^$removeparam=tbSocialPopKey
-||detail.tmall.com^$removeparam=tk
-||taobao.com^$removeparam=bxsign
-||taobao.com^$removeparam=shareUniqueId
-||taobao.com^$removeparam=tbSocialPopKey
-||taobao.com^$removeparam=un_site
-||taobao.com^$removeparam=wxsign
-||taobao.com^$removeparam=tk
-
-||hema.taobao.com^$removeparam=shareId
-
-||m.mi.com^$removeparam=spmref
-||m.mi.com^$removeparam=scmref
-
-||item.m.jd.com^$removeparam=utm_user
-||item.m.jd.com^$removeparam=ad_od
-||item.m.jd.com^$removeparam=gx
-||item.m.jd.com^$removeparam=gxd
-
-! |xiaohongshu.com^$removeparam=app_platform
-||xiaohongshu.com^$removeparam=app_version
-||xiaohongshu.com^$removeparam=share_from_user_hidden
-||xiaohongshu.com^$removeparam=type
-||xiaohongshu.com^$removeparam=author_share
-||xiaohongshu.com^$removeparam=xhsshare
-||xiaohongshu.com^$removeparam=shareRedId
-||xiaohongshu.com^$removeparam=apptime
-||xiaohongshu.com^$removeparam=noteAttributes
-||xiaohongshu.com^$removeparam=exSource
-||xiaohongshu.com^$removeparam=source
-||xiaohongshu.com^$removeparam=appuid
-||xiaohongshu.com^$removeparam=xsec_source
-! ||xiaohongshu.com^$removeparam=xsec_token
-||xiaohongshu.com^$removeparam=share_id
-
-||feishu.cn^$removeparam=from
-||feishu.cn^$removeparam=source_type
-
-||weibo.com^$removeparam=refer_flag
-||weibo.com^$removeparam=from
-
-||meizu.com^$removeparam=from
-||meizu.com^$removeparam=skuId
-||meizu.com^$removeparam=list_plate
-
-||smzdm.com^$removeparam=send_by
-||smzdm.com^$removeparam=invite_code
-||smzdm.com^$removeparam=zdm_ss
-||smzdm.com^$removeparam=from
-
-! 为了解决 Google 故意加了五秒的延迟
-!#if env_firefox
-www.youtube.com##+js(nano-stb, resolve(1), 5000, 0.001)
-!#endif
-
+! 其他
 ||client.crisp.chat^
 ||picsum.photos^
 ||app.chatwoot.com^
+||n.sinaimg.cn/finance/cece9e13/20170607/btn-hqzx.gif$image
+||www.ithome.com/block/dajia.html$subdocument
+||www.okx.com/cdn/assets/okfe/customer-service/*
+||youtube.com/sw.js
+! AdGuard Chinese
+://rou*/_next/static/chunks/pages/home-
+||geuba.xyz^
+||cstserver.com/templates/cstserver/img/tawk.png
 
-! 2024-03-11 https://www.macrumors.com
-macrumors.com##.video-wrapper
-macrumors.com###comments
-macrumors.com##.noskim.front---xGV7W2m.footer--2v61-WeP
 
-! for Safari
-newyorker.com##[class*=paywallbar i]
+! ============================================================
+! 4. URL 参数清理 (Tracking Parameter Removal)
+! ============================================================
 
-! 去掉 YouTube 首页可以手动关闭的元素
-youtube.com##[class*=dismissible]
+! 淘宝 / 天猫 / 盒马
+||taobao.com^$removeparam=traceId|bxsign|shareUniqueId|tbSocialPopKey|un_site|wxsign|tk
+||detail.tmall.com^$removeparam=shareUniqueId|un_site|wxsign|tbSocialPopKey|tk
+||hema.taobao.com^$removeparam=shareId
 
-! 2024-02-02 https://9to5google.com
+! 大众点评
+||m.dianping.com^$removeparam=msource|utm_source|shoptype|shopcategoryid|isoversea|shareid
+
+! 小米
+||m.mi.com^$removeparam=spmref|scmref
+
+! 京东
+||item.m.jd.com^$removeparam=utm_user|ad_od|gx|gxd
+
+! 小红书
+! ||xiaohongshu.com^$removeparam=xsec_token
+||xiaohongshu.com^$removeparam=app_version|share_from_user_hidden|type|author_share|xhsshare|shareRedId|apptime|noteAttributes|exSource|source|appuid|xsec_source|share_id
+
+! 飞书
+||feishu.cn^$removeparam=from|source_type
+
+! 微博
+||weibo.com^$removeparam=refer_flag|from
+
+! 魅族
+||meizu.com^$removeparam=from|skuId|list_plate
+
+! 什么值得买
+||smzdm.com^$removeparam=send_by|invite_code|zdm_ss|from
+
+
+! ============================================================
+! 5. 分站元素屏蔽 (Site-Specific Element Hiding)
+! ============================================================
+
+! --- 9to5google.com (2024-02-02) ---
 9to5google.com##.xs.container.sidebar
 9to5google.com##.article__youtube-video
 9to5google.com###comments
@@ -126,7 +144,7 @@ youtube.com##[class*=dismissible]
 9to5google.com##hr.has-alpha-channel-opacity.wp-block-separator
 9to5google.com##[class*=is-type-video]
 
-! 2024-02-02 https://9to5mac.com
+! --- 9to5mac.com (2024-02-02) ---
 9to5mac.com##.xs.container.sidebar
 9to5mac.com##.article__youtube-video
 9to5mac.com###comments
@@ -134,230 +152,50 @@ youtube.com##[class*=dismissible]
 9to5mac.com##iframe
 9to5mac.com##[class*=is-type-video]
 
-! 2024-03-09 https://www.theverge.com
-www.theverge.com###coral_thread
+! --- alist.nn.ci (2024-02-26) ---
+alist.nn.ci##.ads-container.theme-hope-content
 
-! 2023-12-11 https://finance.sina.com.cn
-||n.sinaimg.cn/finance/cece9e13/20170607/btn-hqzx.gif$image
+! --- androidcentral.com (2024-03-05) ---
+androidcentral.com##.van_vid_carousel__padding
+androidcentral.com###desktop-in-article
+androidcentral.com##.dfp-leaderboard-container
+androidcentral.com###affiliate-disclaimer
+androidcentral.com##[class*=comments]
+androidcentral.com##[class*=newsletter]
 
-! https://sspai.com
-sspai.com###article-comment-box
-sspai.com##.related-read-box
-sspai.com##.footer-content
-sspai.com##.article-detail > .bgGrey
-sspai.com###btn-call-app
-! sspai.com##.comp__CommunityTopicCard__wrapper:has(.__author:has([href*="slug"]))
+! --- androidfaithful.com (2024-08-14) ---
+androidfaithful.com##.accent.gh-announcement-bar
+androidfaithful.com##.gh-portal-triggerbtn-iframe
+androidfaithful.com###ad-target-5
+androidfaithful.com###ghost-comments-root
 
-! 2024-04-11 https://analytics.google.com
+! --- analytics.google.com (2024-04-11) ---
 analytics.google.com##ga-announcements.ng-star-inserted
 
-! 2023-07-20 https://sspaime.feishu.cn
-feishu.cn##.disabled-contextmenu.not-compatible__announce
-feishu.cn##.template-mark-banner__content
+! --- betahub.cn (2023-10-16) ---
+betahub.cn##.widget-area
 
-! 2023-07-23 https://docs.qq.com
-docs.qq.com##.css-1rwuqpz.css-u162nh.docs-component-like-livelist-like-notification-list
+! --- bloomberg.com (2024-12-03) ---
+bloomberg.com##.styles_shareBookmarkMobile__tQ_ue
+bloomberg.com##.styles_shareBottom
+bloomberg.com##.floating-copy-link
+bloomberg.com##.basicLeftRail_share__4jofR
 
-! 2023-08-28 https://www.zhihu.com 移动端屏蔽推荐框
-zhihu.com##.KfeCollection-VipRecommendCard
-zhihu.com##.RelatedReadings.Card
-zhihu.com##.MobileAppHeader-actions
-
-! 2023-07-30 https://zhuanlan.zhihu.com 去掉知乎文章的推荐阅读
-zhuanlan.zhihu.com##.Recommendations-Main
-
-! 2023-07-26 https://www.chongdiantou.com
+! --- chongdiantou.com (2023-07-26) ---
 www.chongdiantou.com##.theiaStickySidebar
 
-! 2023-07-26 https://movie.douban.com
-movie.douban.com##.gray_ad
-movie.douban.com###subject-others-interests
+! --- coinglass.com (2024-12-03) ---
+coinglass.com##.cg-style-zj69fb.MuiBox-root.appd
+coinglass.com##.cg-style-0.MuiBox-root.ru-okx-box
 
-! 2023-08-04 https://m.douban.com
-m.douban.com##.subject-banner
+! --- cstserver.com ---
+cstserver.com##.notification
 
-! 2024-02-28 https://m.douban.com
-m.douban.com##.score-write
-m.douban.com##.app-link
-m.douban.com##.write-comment
-m.douban.com##.write-review
-m.douban.com##.TalionNav-primary-wrap
-m.douban.com###TalionNav
-m.douban.com##.talion-nav-footer
-m.douban.com##.sub-vendor
-
-! 2023-07-30 https://wap.eastmoney.com
-||dfcfw.com^
-||avator.eastmoney.com^
-||gbfek.eastmoney.com^
-||eastmoney.com/usercollect/
-*$image,domain=wap.eastmoney.com
-bdstatics*.$script
-! 2024-03-21 https://wap.eastmoney.com
-wap.eastmoney.com##.open-inapp
-wap.eastmoney.com##.comm-footer
-wap.eastmoney.com##.computer
-wap.eastmoney.com##.stock-footer
-! 2024-12-8
-wap.eastmoney.com###dc-result-tc
-wap.eastmoney.com###swiper-ad
-
-
-! 2023-08-01 https://weibo.com 尝试屏蔽微博，感觉不太行（实际上居然可以
-weibo.com##.Main_sideMain_263ZF
-weibo.com##.Nav_main_32v4H
-! 2023-08-24 https://weibo.com
-weibo.com##.Nav_holder_2kLYT
-weibo.com##.Bar_card_3Jk5b.Bar_main_R1N5v
-weibo.com##.Frame_top_2ybWw
-
-! 2023-08-14 https://danjuanfunds.com
+! --- danjuanfunds.com (2023-08-14) ---
 danjuanfunds.com###download-bar
 danjuanfunds.com##div.style_bar__2heD6
 
-! 2023-08-14 https://youzhiyouxing.cn
-youzhiyouxing.cn##.miniprogram\:tw-hidden.tw-btn-primary
-youzhiyouxing.cn##.tw-text-t-normal.tw-bg-bgd-page.browser\:tw-block.tw-hidden.tw-shadow-medium.tw-h-full
-
-! 2023-08-15 https://finance.eastmoney.com
-finance.eastmoney.com##.gubaComment
-
-! 2023-08-18 https://www.zhihu.com
-zhihu.com##.HotQuestions.Card
-
-! 2023-08-20 https://maobuni.com
-maobuni.com##.ad-page-top.t-md.p-block.puock-text
-maobuni.com##.ad-global-top.t-md.p-block.puock-text
-maobuni.com##.ad-global-bottom.t-md.p-block.puock-text
-maobuni.com##div.widget_custom_html.widget.widget_text
-
-! 2023-08-21 https://www.ithome.com IT之家桌面版
-ithome.com##.down_app
-ithome.com##.unready.post_comment
-||www.ithome.com/block/dajia.html$subdocument
-ithome.com###nav
-ithome.com###top
-
-! 2023-09-05 https://www.ithome.com
-ithome.com###tt
-ithome.com##.at-bottom.fix-bottom.fx.fr
-ithome.com##.fx.fr
-ithome.com##.shareto
-ithome.com##.newsgrade
-ithome.com##.related_post
-ithome.com##.main-site.card
-
-! 2024-03-01 https://m.ithome.com
-m.ithome.com##.tougao-user
-m.ithome.com##.footer-box
-m.ithome.com##.relevant-news
-m.ithome.com##.hot-comment-box
-m.ithome.com##.comment
-m.ithome.com##.grade
-m.ithome.com##.hot-app
-m.ithome.com##.ad-tips
-m.ithome.com##.news-footer
-
-! 2023-08-22 https://m.amap.com 高德移动版
-m.amap.com##.clearfix.shadow.o-downloadtips-tint
-
-! 2023-08-23 https://www.xiaohongshu.com 小红书移动版：会有划动图片后无法继续纵向划动查看文字内容的问题。
-xiaohongshu.com##.engage-bar-container
-xiaohongshu.com##.light-theme.hotlist-container
-xiaohongshu.com##.modal-box
-xiaohongshu.com##.reds-modal-open.reds-modal
-xiaohongshu.com##.onix-carousel-item.exp-style.related-note-container
-xiaohongshu.com##.topic-container.winkblank-padding.block.reds-box
-xiaohongshu.com##.expStyle.bottom-button-box
-xiaohongshu.com##.nav-bar-box-expand.nav-bar-box
-xiaohongshu.com##.nav-bar-placeholder.placeholder-expand
-xiaohongshu.com##.nav-bar.winkblank-padding.block.flex.y-middle.reds-box
-
-! 2023-09-03 https://www.xiaohongshu.com 小红书移动版：视频
-www.xiaohongshu.com##.fixed.nav-bar-box
-www.xiaohongshu.com##.user-notes-clo-layout-container.user-notes-box
-www.xiaohongshu.com##.recommend-box
-
-! 2023-09-02 https://www.xiaohongshu.com 小红书桌面版
-www.xiaohongshu.com##.visible.floating-box
-! 2024-04-15 https://www.xiaohongshu.com
-www.xiaohongshu.com##.comments-login
-
-! 2023-09-03 https://www.macrumors.com
-www.macrumors.com##slick-inline-search
-www.macrumors.com##.slick-inline-search-panel
-
-! 2023-09-04 https://m.ixigua.com 西瓜视频移动版
-m.ixigua.com##.xigua-bar--primary.xigua-bar
-m.ixigua.com##.xigua-horizontal
-m.ixigua.com##.xigua-guide-button
-
-! 2023-09-04 https://post.m.smzdm.com 什么值得买移动版
-post.m.smzdm.com##.app-position
-post.m.smzdm.com##.handle-btns
-post.m.smzdm.com##.footer-banner-wrap
-post.m.smzdm.com##.interested-module.module-waper
-post.m.smzdm.com##.basis-tab
-post.m.smzdm.com##.J_copy.btn-open-app
-post.m.smzdm.com##.logo-download
-post.m.smzdm.com##.footer-wrap
-post.m.smzdm.com##.buying-guide
-post.m.smzdm.com##div.altice-common-module.module-waper
-
-! 2025年3月15日 https://post.smzdm.com
-post.smzdm.com###feed-side
-post.smzdm.com##.J_trigger_ani.article-card
-
-! 2023-09-05 https://www.pingwest.com 品玩桌面版
-www.pingwest.com##.clearboth.topAd
-www.pingwest.com##.drop-down-adom.right-wrap
-www.pingwest.com##.download-app-tip
-www.pingwest.com##.shares
-www.pingwest.com##.show.w-s-recommend
-
-! 2023-09-05 https://m.thepaper.cn 澎湃新闻移动版
-m.thepaper.cn###__next > div > div
-m.thepaper.cn##.index_wraper__xtG7v
-m.thepaper.cn##.index_wraper__h_AK6
-m.thepaper.cn##div:nth-of-type(6)
-
-! 2023-09-05 https://www.thepaper.cn 澎湃新闻桌面版（会闪烁）
-www.thepaper.cn##.index_wrapper__jYtRh
-www.thepaper.cn##.index_header__mmxqW
-www.thepaper.cn##.index_light__1FQxw.index_wrapper__4FlTK
-www.thepaper.cn##.index_recommendsWrap__tMtpk > .mdCard
-www.thepaper.cn##.index_container__ETYBL > .index_content___Uhtm
-
-! 2023-09-05 https://mas.to  不是很在乎趋势
-mas.to##.getting-started__trends
-
-! 2023-09-06 https://www.gcores.com
-gcores.com##.newsPage_r
-gcores.com##.originalPage_bottom
-gcores.com##.commentsMana
-
-! 2024-03-01 https://jable.tv
-jable.tv##.text-sponsor
-jable.tv###video_comments_video_comments
-jable.tv##.new-comment
-! 下面的不是生成的
-jable.tv###jimds-slider
-jable.tv###site-content > div.container > section.pb-3.pb-e-lg-40.text-center
-jable.tv##.badge
-jable.tv##.text-center > a[target="_blank"] > img
-jable.tv##.uu-ads
-jable.tv##a[href*="?banner="]
-jable.tv##a[href="http://uus52.com/"]
-jable.tv##div[class^="root-"]
-jable.tv#?#div.col-6.col-sm-4.col-lg-12:has(> div.video-img-box > div.img-box > a[href*="?banner="])
-
-! 2023-09-16 https://www.eet-china.com
-eet-china.com##.detail-bar-tab.bar-tab.bar
-eet-china.com##.hot-recommend
-eet-china.com##.intereste-new
-eet-china.com##.workshop-live
-
-! 2023-09-23 https://m.dianping.com 大众点评移动网页版
+! --- dianping.com (大众点评) ---
 m.dianping.com##.wx-view.slide-in.sidebar
 m.dianping.com##.downloadLayer
 m.dianping.com##.wx-view.header-download
@@ -370,45 +208,8 @@ m.dianping.com##.wx-view.ask-everyone-wrap
 m.dianping.com##.wx-view.slide-out.sidebar
 m.dianping.com###cocktail-root > .wx-view.groupItem
 m.dianping.com##.component-shop-comment
-
-! 2023-10-16 https://betahub.cn
-betahub.cn##.widget-area
-
-! 2024-02-04 https://m.xiachufang.com
-m.xiachufang.com###site-body > .pr20.pl20.wrapper
-m.xiachufang.com##.fixed-footer
-m.xiachufang.com##.tc.dib.w-100.button
-m.xiachufang.com##.bottom-fixed-open-btn
-m.xiachufang.com##[class*=open-app]
-
-! 2024-02-07 https://lanfanapp.com
-lanfanapp.com##.actions
-lanfanapp.com##.bottom-banner-download
-lanfanapp.com##.app-download-banner
-lanfanapp.com##.open-app-btn
-
-zfrontier.com##[class*=app-opener]
-
-! 2024-02-26 https://alist.nn.ci
-alist.nn.ci##.ads-container.theme-hope-content
-
-! 2024-03-01 https://www.okx.com
-||www.okx.com/cdn/assets/okfe/customer-service/*
-okx.com###ok-cs-button
-
-! 2024-03-05 https://www.androidcentral.com
-androidcentral.com##.van_vid_carousel__padding
-androidcentral.com###desktop-in-article
-androidcentral.com##.dfp-leaderboard-container
-androidcentral.com###affiliate-disclaimer
-androidcentral.com##[class*=comments]
-androidcentral.com##[class*=newsletter]
-
-! 2024-04-19 https://m.dianping.com
 m.dianping.com##.wx-view.service-wrap
 m.dianping.com##.wx-view.tuanInfo
-
-! 2024-05-08 https://m.dianping.com
 m.dianping.com##.recommend-content-wrap
 m.dianping.com##.recommend-waterfall.seed-waterfall
 m.dianping.com##.more-review-btn
@@ -421,72 +222,222 @@ m.dianping.com##.border-bottom-new.C_header_new
 m.dianping.com##.seed-comment-content-wrapper-light
 m.dianping.com##.seed-feeds-reply-wrapper
 
-! 2024年5月29日 https://m.mi.com
-m.mi.com###guide-bar-bottom
-m.mi.com###guide-bar-top
-
-! 2024年6月1日 https://m.sohu.com
-m.sohu.com###CallAppContainer
-m.sohu.com##.comment-footer
-
-xueqiu.com##.modal__login__banner
-xueqiu.com##.modal__login.modal
-xueqiu.com##.js-shown.dimmer.modals
-
-v2ex.com##.adsbygoogle
-
-! 2024年8月6日 https://console.dnspod.cn
+! --- dnspod.cn (2024-08-06) ---
 console.dnspod.cn##.dp-package-guide.__advertise
 
-! 2024年8月14日 https://www.androidfaithful.com
-androidfaithful.com##.accent.gh-announcement-bar
-androidfaithful.com##.gh-portal-triggerbtn-iframe
-androidfaithful.com###ad-target-5
-androidfaithful.com###ghost-comments-root
+! --- docs.qq.com (2023-07-23) ---
+docs.qq.com##.css-1rwuqpz.css-u162nh.docs-component-like-livelist-like-notification-list
 
-! Sep 2, 2024 https://www.mayoclinic.org
+! --- douban.com (豆瓣) ---
+movie.douban.com##.gray_ad
+movie.douban.com###subject-others-interests
+m.douban.com##.subject-banner
+m.douban.com##.score-write
+m.douban.com##.app-link
+m.douban.com##.write-comment
+m.douban.com##.write-review
+m.douban.com##.TalionNav-primary-wrap
+m.douban.com###TalionNav
+m.douban.com##.talion-nav-footer
+m.douban.com##.sub-vendor
+
+! --- duckduckgo.com ---
+duckduckgo.com##.footer
+duckduckgo.com##.js-feedback-btn-wrap
+duckduckgo.com##.header--aside > div
+duckduckgo.com##.privacy-reminder
+duckduckgo.com##.js-zci-link--chat
+duckduckgo.com##[data-react-module-id="wikinlp"]
+duckduckgo.com##[data-testid="feedback-prompt"]:upward(div)
+
+! --- eastmoney.com (东方财富) ---
+wap.eastmoney.com##.open-inapp
+wap.eastmoney.com##.comm-footer
+wap.eastmoney.com##.computer
+wap.eastmoney.com##.stock-footer
+wap.eastmoney.com###dc-result-tc
+wap.eastmoney.com###swiper-ad
+finance.eastmoney.com##.gubaComment
+
+! --- eet-china.com (2023-09-16) ---
+eet-china.com##.detail-bar-tab.bar-tab.bar
+eet-china.com##.hot-recommend
+eet-china.com##.intereste-new
+eet-china.com##.workshop-live
+
+! --- feishu.cn (飞书) ---
+feishu.cn##.disabled-contextmenu.not-compatible__announce
+feishu.cn##.template-mark-banner__content
+
+! --- gcores.com (2023-09-06) ---
+gcores.com##.newsPage_r
+gcores.com##.originalPage_bottom
+gcores.com##.commentsMana
+
+! --- instagram.com & threads.net ---
+instagram.com##a[href^="https://www.threads.net"]
+instagram.com##article:upward(1) > div:style(visibility: hidden !important)
+
+! --- interactivebrokers.com ---
+interactivebrokers.com###cookie-modal
+interactivebrokers.com##div.modal-backdrop.fade.show:last-child
+
+! --- ithome.com (IT之家) ---
+ithome.com##.down_app
+ithome.com##.unready.post_comment
+ithome.com###nav
+ithome.com###top
+ithome.com###tt
+ithome.com##.at-bottom.fix-bottom.fx.fr
+ithome.com##.fx.fr
+ithome.com##.shareto
+ithome.com##.newsgrade
+ithome.com##.related_post
+ithome.com##.main-site.card
+m.ithome.com##.tougao-user
+m.ithome.com##.footer-box
+m.ithome.com##.relevant-news
+m.ithome.com##.hot-comment-box
+m.ithome.com##.comment
+m.ithome.com##.grade
+m.ithome.com##.hot-app
+m.ithome.com##.ad-tips
+m.ithome.com##.news-footer
+
+! --- jable.tv (2024-03-01) ---
+jable.tv##.text-sponsor
+jable.tv###video_comments_video_comments
+jable.tv##.new-comment
+jable.tv###jimds-slider
+jable.tv###site-content > div.container > section.pb-3.pb-e-lg-40.text-center
+jable.tv##.badge
+jable.tv##.text-center > a[target="_blank"] > img
+jable.tv##.uu-ads
+jable.tv##a[href*="?banner="]
+jable.tv##a[href="http://uus52.com/"]
+jable.tv##div[class^="root-"]
+jable.tv#?#div.col-6.col-sm-4.col-lg-12:has(> div.video-img-box > div.img-box > a[href*="?banner="])
+
+! --- lanfanapp.com (2024-02-07) ---
+lanfanapp.com##.actions
+lanfanapp.com##.bottom-banner-download
+lanfanapp.com##.app-download-banner
+lanfanapp.com##.open-app-btn
+
+! --- latepost.com (2024-12-16) ---
+latepost.com##.right-float
+
+! --- m.amap.com (高德地图) (2023-08-22) ---
+m.amap.com##.clearfix.shadow.o-downloadtips-tint
+
+! --- m.ixigua.com (西瓜视频) (2023-09-04) ---
+m.ixigua.com##.xigua-bar--primary.xigua-bar
+m.ixigua.com##.xigua-horizontal
+m.ixigua.com##.xigua-guide-button
+
+! --- macrumors.com ---
+macrumors.com##.video-wrapper
+macrumors.com###comments
+macrumors.com##.noskim.front---xGV7W2m.footer--2v61-WeP
+www.macrumors.com##slick-inline-search
+www.macrumors.com##.slick-inline-search-panel
+
+! --- maobuni.com (2023-08-20) ---
+maobuni.com##.ad-page-top.t-md.p-block.puock-text
+maobuni.com##.ad-global-top.t-md.p-block.puock-text
+maobuni.com##.ad-global-bottom.t-md.p-block.puock-text
+maobuni.com##div.widget_custom_html.widget.widget_text
+
+! --- mas.to (2023-09-05) ---
+mas.to##.getting-started__trends
+
+! --- mayoclinic.org (2024-09-02) ---
 mayoclinic.org##.horizontal.internal
 mayoclinic.org##.internal-promo-stack-order.side.internal
 mayoclinic.org##.social
 
-! Dec 3, 2024 https://www.coinglass.com
-coinglass.com##.cg-style-zj69fb.MuiBox-root.appd
-coinglass.com##.cg-style-0.MuiBox-root.ru-okx-box
+! --- mi.com (小米) (2024-05-29) ---
+m.mi.com###guide-bar-bottom
+m.mi.com###guide-bar-top
 
-! Dec 3, 2024 https://www.bloomberg.com
-bloomberg.com##.styles_shareBookmarkMobile__tQ_ue
-bloomberg.com##.styles_shareBottom
-bloomberg.com##.floating-copy-link
-bloomberg.com##.basicLeftRail_share__4jofR
+! --- newyorker.com (for Safari) ---
+newyorker.com##[class*=paywallbar i]
 
-interactivebrokers.com###cookie-modal
-interactivebrokers.com##div.modal-backdrop.fade.show:last-child
+! --- nodeseek.com ---
+nodeseek.com##.promotation-item
 
-! Dec 16, 2024 https://www.latepost.com
-latepost.com##.right-float
+! --- okx.com (2024-03-01) ---
+okx.com###ok-cs-button
 
-! Jan 24, 2025 https://cn.tradingview.com
+! --- pingwest.com (品玩) (2023-09-05) ---
+www.pingwest.com##.clearboth.topAd
+www.pingwest.com##.drop-down-adom.right-wrap
+www.pingwest.com##.download-app-tip
+www.pingwest.com##.shares
+www.pingwest.com##.show.w-s-recommend
+
+! --- smzdm.com (什么值得买) ---
+post.m.smzdm.com##.app-position
+post.m.smzdm.com##.handle-btns
+post.m.smzdm.com##.footer-banner-wrap
+post.m.smzdm.com##.interested-module.module-waper
+post.m.smzdm.com##.basis-tab
+post.m.smzdm.com##.J_copy.btn-open-app
+post.m.smzdm.com##.logo-download
+post.m.smzdm.com##.footer-wrap
+post.m.smzdm.com##.buying-guide
+post.m.smzdm.com##div.altice-common-module.module-waper
+post.smzdm.com###feed-side
+post.smzdm.com##.J_trigger_ani.article-card
+
+! --- sohu.com (搜狐) (2024-06-01) ---
+m.sohu.com###CallAppContainer
+m.sohu.com##.comment-footer
+
+! --- sspai.com (少数派) ---
+sspai.com###article-comment-box
+sspai.com##.related-read-box
+sspai.com##.footer-content
+! sspai.com##.article-detail > .bgGrey
+sspai.com###btn-call-app
+! sspai.com##.comp__CommunityTopicCard__wrapper:has(.__author:has([href*="slug"]))
+
+! --- telegram.org ---
+web.telegram.org##:matches-path(/a/.*$/) .SponsoredMessage
+web.telegram.org##:matches-path(/a/.*$/) .SearchInput [aria-label="Open Stories"]
+web.telegram.org##:matches-path(/a/.*$/) .story-circle
+web.telegram.org##:matches-path(/a/.*$/) #StoryRibbon
+web.telegram.org##:matches-path(/a/.*$/) .story-toggler-wrapper
+
+! --- thepaper.cn (澎湃新闻) ---
+m.thepaper.cn###__next > div > div
+m.thepaper.cn##.index_wraper__xtG7v
+m.thepaper.cn##.index_wraper__h_AK6
+m.thepaper.cn##div:nth-of-type(6)
+www.thepaper.cn##.index_wrapper__jYtRh
+www.thepaper.cn##.index_header__mmxqW
+www.thepaper.cn##.index_light__1FQxw.index_wrapper__4FlTK
+www.thepaper.cn##.index_recommendsWrap__tMtpk > .mdCard
+www.thepaper.cn##.index_container__ETYBL > .index_content___Uhtm
+
+! --- theverge.com (2024-03-09) ---
+www.theverge.com###coral_thread
+
+! --- tradingview.com (2025-01-24) ---
 tradingview.com##.js-offer-button
 tradingview.com##.js-big-footer-banner-init-ssr.tv-footer__banner
 
-! https://raw.githubusercontent.com/SukkaW/Filters/refs/heads/master/src/filters/index.txt
-##a[href^="https://ra7.xyz"]
-##a[href^="https://ra10.xyz"]
-##a[href*="//enter.javhd.com/track/"]
-/ping.gif$redirect=1x1.gif
-/counters.gif$redirect=1x1.gif
-||youtube.com/sw.js
-! AdGuard Chinese
-://rou*/_next/static/chunks/pages/home-
-||geuba.xyz^
-wss://*.xyz:*?x=$3p
+! --- v2ex.com ---
+v2ex.com##.adsbygoogle
 
-www.opposhop.cn##.welcome-wrapper.oc-hairline--bottom
-wikipedia.org###siteNotice
-www.maoken.com##.c-popup.slidepop
-add.org##.elementor
+! --- weibo.com (微博) ---
+weibo.com##.Main_sideMain_263ZF
+weibo.com##.Nav_main_32v4H
+weibo.com##.Nav_holder_2kLYT
+weibo.com##.Bar_card_3Jk5b.Bar_main_R1N5v
+weibo.com##.Frame_top_2ybWw
 
-! x.com
+! --- x.com (Twitter) ---
 x.com##*[aria-label="Trending"]
 x.com##*[aria-label="Communities"]
 x.com##*[aria-label="Verified"]
@@ -507,35 +458,54 @@ x.com##[data-testid="GrokDrawer"]
 x.com##article a[href^="/i/grok"]:upward(2)
 x.com##[data-testid="verified_profile_visitor_upsell"]
 
-! ddg
-duckduckgo.com##.footer
-duckduckgo.com##.js-feedback-btn-wrap
-duckduckgo.com##.header--aside > div
-duckduckgo.com##.privacy-reminder
-duckduckgo.com##.js-zci-link--chat
-duckduckgo.com##[data-react-module-id="wikinlp"]
-duckduckgo.com##[data-testid="feedback-prompt"]:upward(div)
+! --- xiachufang.com (下厨房) (2024-02-04) ---
+m.xiachufang.com###site-body > .pr20.pl20.wrapper
+m.xiachufang.com##.fixed-footer
+m.xiachufang.com##.tc.dib.w-100.button
+m.xiachufang.com##.bottom-fixed-open-btn
+m.xiachufang.com##[class*=open-app]
 
-! ins and threads
-instagram.com##a[href^="https://www.threads.net"]
-instagram.com##article:upward(1) > div:style(visibility: hidden !important)
+! --- xiaohongshu.com (小红书) ---
+xiaohongshu.com##.engage-bar-container
+xiaohongshu.com##.light-theme.hotlist-container
+xiaohongshu.com##.modal-box
+xiaohongshu.com##.reds-modal-open.reds-modal
+xiaohongshu.com##.onix-carousel-item.exp-style.related-note-container
+xiaohongshu.com##.topic-container.winkblank-padding.block.reds-box
+xiaohongshu.com##.expStyle.bottom-button-box
+xiaohongshu.com##.nav-bar-box-expand.nav-bar-box
+xiaohongshu.com##.nav-bar-placeholder.placeholder-expand
+xiaohongshu.com##.nav-bar.winkblank-padding.block.flex.y-middle.reds-box
+www.xiaohongshu.com##.fixed.nav-bar-box
+www.xiaohongshu.com##.user-notes-clo-layout-container.user-notes-box
+www.xiaohongshu.com##.recommend-box
+www.xiaohongshu.com##.visible.floating-box
+www.xiaohongshu.com##.comments-login
 
-! tg
-web.telegram.org##:matches-path(/a/.*$/) .SponsoredMessage
-web.telegram.org##:matches-path(/a/.*$/) .SearchInput [aria-label="Open Stories"]
-web.telegram.org##:matches-path(/a/.*$/) .story-circle
-web.telegram.org##:matches-path(/a/.*$/) #StoryRibbon
-web.telegram.org##:matches-path(/a/.*$/) .story-toggler-wrapper
+! --- xueqiu.com (雪球) ---
+xueqiu.com##.modal__login__banner
+xueqiu.com##.modal__login.modal
+xueqiu.com##.js-shown.dimmer.modals
 
-||cstserver.com/templates/cstserver/img/tawk.png
-cstserver.com##.notification
-nodeseek.com##.promotation-item
+! --- youzhiyouxing.cn (有知有行) (2023-08-14) ---
+youzhiyouxing.cn##.miniprogram\:tw-hidden.tw-btn-primary
+youzhiyouxing.cn##.tw-text-t-normal.tw-bg-bgd-page.browser\:tw-block.tw-hidden.tw-shadow-medium.tw-h-full
 
-! https://arstechnica.com/security/2025/06/meta-and-yandex-are-de-anonymizing-android-users-web-browsing-identifiers/
-||0.0.0.0^$third-party,domain=~[::]|~[::ffff:0:0]
-||[::]^$third-party,domain=~0.0.0.0|~[::ffff:0:0]
-||[::ffff:0:0]^$third-party,domain=~0.0.0.0|~[::]
-||localhost^$third-party,domain=~127.0.0.1|~[::1]|~[::ffff:7f00:1]
-||127.0.0.1^$third-party,domain=~localhost|~[::1]|~[::ffff:7f00:1]
-||[::1]^$third-party,domain=~localhost|~127.0.0.1|~[::ffff:7f00:1]
-||[::ffff:7f00:1]^$third-party,domain=~localhost|~127.0.0.1|~[::1]
+! --- youtube.com ---
+youtube.com##[class*=dismissible]
+
+! --- zfrontier.com ---
+zfrontier.com##[class*=app-opener]
+
+! --- zhihu.com (知乎) ---
+zhihu.com##.KfeCollection-VipRecommendCard
+zhihu.com##.RelatedReadings.Card
+zhihu.com##.MobileAppHeader-actions
+zhihu.com##.HotQuestions.Card
+zhuanlan.zhihu.com##.Recommendations-Main
+
+! --- 其他未分类 ---
+www.opposhop.cn##.welcome-wrapper.oc-hairline--bottom
+wikipedia.org###siteNotice
+www.maoken.com##.c-popup.slidepop
+add.org##.elementor
