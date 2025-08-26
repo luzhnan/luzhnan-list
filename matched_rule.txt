@@ -1,8 +1,8 @@
 ! Title: Relevant rules for specified domains
-! Updated: 2025-08-26 10:13:17 CST
+! Updated: 2025-08-26 16:34:11 CST
 ! Target Domains File: generated_domain_set_rules.txt
 ! Source Rules File: aggregated_atomized_rules.txt
-! Output Rule Count: 28236
+! Output Rule Count: 28266
 
 @@$domain=xvideos.com,websocket
 @@*$domain=rekidai-info.github.io,xhr
@@ -29,6 +29,7 @@
 @@/advertising-$domain=forums.macrumors.com,~image,~script
 @@/adx.$domain=tanx.com
 @@/api/ad/*$domain=pinduoduo.com
+@@/assets/ads-*.js$domain=notateslaapp.com
 @@/cdn-cgi/pe/bag2?*optimizely.com$domain=coindesk.com
 @@/cookieconsent.$domain=sammobile.com
 @@/crossdomain.xml$domain=phonearena.com
@@ -355,6 +356,7 @@
 @@||akamaized.net/*.m4s$domain=bilibili.com,stealth=referrer
 @@||algolia.net/*/indexes/$stealth=referrer
 @@||algolia.net/*/indexes/*/queries?x-algolia-agent*vue-instantsearch*algolia-api-key$stealth=referrer
+@@||algolianet.com/*/indexes/$stealth=referrer
 @@||alibaba.tanx.com^$domain=alidns.com
 @@||alicdn.com/??*/tracker/
 @@||alicdn.com/dt/tracker/2.5.1/tracker.js$domain=alimama.com
@@ -5632,6 +5634,7 @@ duckduckgo.com#%#//scriptlet('set-local-storage-item', 'duckaiHasAgreedToTerms',
 duckduckgo.com#%#//scriptlet('trusted-set-cookie', 'ax', 'v433-5')
 duckduckgo.com#%#//scriptlet('trusted-set-local-storage-item', 'adblockNotice', '{"dismissed":true,"impressionCount":0}')
 duckduckgo.com#@#.js-sidebar-ads
+dune.com##.CookieNotification_notification__0Nkrk
 duolingo.com##+js(no-xhr-if, excess.duolingo.com/batch)
 duolingo.com##._15MEM
 duolingo.com##._1UOwI._3bfsh
@@ -9487,6 +9490,23 @@ nodeseek.com###nsk-right-panel-container > div.category-list + div:not([class])
 nodeseek.com##.promotation-item
 nomadgoods.com##.DataPrivacyBanner
 notability.zendesk.com###safari-warning-callout
+notateslaapp.com##+js(abort-current-script, Promise, img.onerror)
+notateslaapp.com##+js(no-setTimeout-if, /adthrive|blockedAds|books/)
+notateslaapp.com##+js(set-constant, canSeeAds, true)
+notateslaapp.com##.button-follow
+notateslaapp.com##.follow-us
+notateslaapp.com##.mod-sponsors
+notateslaapp.com##.newsletter-mod
+notateslaapp.com##.share
+notateslaapp.com##.vtwjhpktrbfmw
+notateslaapp.com##div[class^="book"] > .release-book
+notateslaapp.com#%#//scriptlet("prevent-setTimeout", "/adthrive|blockedAds|books/")
+notateslaapp.com#%#//scriptlet("set-constant", "canSeeAds", "true")
+notateslaapp.com#%#//scriptlet('abort-current-inline-script', 'Promise', 'img.onerror')
+notateslaapp.com#?#.articles-container > div.container:has(> div.release > script[src*="amazon-adsystem"])
+notateslaapp.com#?#.content > div[class^="col-a"] > div.container:has(> div.release > div.subscribe-container)
+notateslaapp.com#?#.mobile-only-on-col-ab:-abp-contains(Subscribe)
+notateslaapp.com#?#a[href^="https://www.getAdfinity.com"] > img[src^="data:image/png;base64"]:upward(3)
 nothing.tech##+js(brave-fix)
 nothing.tech##mc_embed_signup
 notion.site,notion.so#%#//scriptlet('set-cookie', 'notion_cookie_consent', '0')
@@ -14305,6 +14325,8 @@ zdnet.com##div[data-component="newsletterWidget"]
 zdnet.com#%#//scriptlet('trusted-set-cookie', 'OptanonConsent', 'groups=C0001%3A1%2CC0002%3A0%2CC0003%3A0%2CC0004%3A0%2CC0005%3A1')
 zdnet.com#@##onetrust-consent-sdk
 zdnet.com#@#.sponsoredItem
+zed.dev##section.flex > div.w-full:has(> label[for="email"])
+zed.dev#?#.grid > div.col-span-full:has(> div.w-full > button.w-full:contains(Subscribe))
 zeenews-india-com.cdn.ampproject.org##.amp-flying-carpet-text-border
 zeenews-india-com.cdn.ampproject.org##.co-container#warning-message
 zeenews-india-com.cdn.ampproject.org##amp-fx-flying-carpet[height="300px"]
@@ -15394,6 +15416,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||7q1z79gxsi.global.ssl.fastly.net^$third-party
 ||857chwukib.data.adobedc.net^
 ||888.tv.sohu.com^
+||8rn1y79f02-1.algolianet.com^
 ||91yun.co/download/
 ||92x.tumblr.com^
 ||9game.cn/stat/
@@ -17968,6 +17991,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||bsrv.qq.com^
 ||btf-analytics.s3.amazonaws.com^
 ||btlaunch.baidu.com^
+||btloader.com^
 ||btrace.qq.com^
 ||btrace.video.qq.com/kvcollect^
 ||btrace.video.qq.com^
@@ -27475,6 +27499,9 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||webmetrics.mayoclinic.org^
 ||webpage.qidian.qq.com/qidian/chatv3/$third-party
 ||webpublic.substack.com^$all
+||webpushr.com^
+||webpushr.com^$3p
+||webpushr.com^$third-party
 ||website-security.geotrust.com^
 ||website-security.rapidssl.com^
 ||webstat.ws.126.net^
@@ -28016,6 +28043,9 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||zdassets.com/web_widget/$media
 ||zdnet.com/m3d0s1/recommendation/
 ||zdstatic.speedtest.net^
+||zed.dev/_vercel/insights/view
+||zed.dev/api/send_page_event
+||zed.dev/api/send_page_event|
 ||zendesk.com/embeddable_blip?type=analytics&data=
 ||zendesk.com/frontendevents/$xmlhttprequest
 ||zenmatefeedback.typeform.com/forms/*/insights/events/
