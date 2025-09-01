@@ -1,8 +1,8 @@
 ! Title: Relevant rules for specified domains
-! Updated: 2025-08-31 13:18:46 CST
+! Updated: 2025-09-01 10:27:10 CST
 ! Target Domains File: generated_domain_set_rules.txt
 ! Source Rules File: aggregated_atomized_rules.txt
-! Output Rule Count: 28972
+! Output Rule Count: 28963
 
 @@$domain=xvideos.com,websocket
 @@*$domain=rekidai-info.github.io,xhr
@@ -1014,6 +1014,7 @@
 @@||geolocation.onetrust.com/cookieconsentpub/*/geo/location$domain=downdetector.com
 @@||geolocation.onetrust.com/cookieconsentpub/*/geo/location$domain=reuters.com
 @@||gias.jd.com/js/td.js
+@@||gifshow.com/rest/wd/common/log/collect/acfun
 @@||gimg*.baidu.com$3p,image
 @@||gist.github.com/ad^
 @@||github.com/**/google-analytics
@@ -1347,6 +1348,7 @@
 @@||img*.bdstatic.com/static/common/widget/ui/admanager$domain=image.baidu.com
 @@||img*.doubanio.com^$domain=douban.com,stealth=referrer
 @@||img.connatix.com/*.jpg$3p,domain=accuweather.com,image
+@@||img.logo.dev^$image,third-party
 @@||img.soutula.com^$domain=fabiaoqing.com,stealth=referrer
 @@||imgbox.com/site_ads.js
 @@||imgsa.baidu.com^$app=com.baidu.tieba
@@ -1407,6 +1409,7 @@
 @@||kbsml.com^
 @@||kcjervis.github.io/jervis/static/media/src/images/ships/banner/
 @@||kh.google.com/rt/earth/$stealth=referrer|searchqueries,xmlhttprequest
+@@||ksapisrv.com/rest/wd/common/log/collect/
 @@||ksv-video-publish-m3u8.cdn.bcebos.com/*.m3u8$stealth=referrer
 @@||l.qq.com/lview?$domain=888.sports.qq.com
 @@||l.yimg.com/g/combo/*/comscore.$script
@@ -2553,6 +2556,7 @@ $domain=~translate.googleusercontent.com|~google.*,removeparam=usg
 *$domain=texviewer.herokuapp.com,redirect-rule=noopjs,script
 *$domain=youku.com,image,redirect-rule=1x1.gif
 *-ad.sm.cn*
+*-ad.video.yximgs.com*
 *-be-pack-sign.pglstatp-toutiao.com*
 *-normal.zijieapi.com*
 *.xml$3p,domain=eporner.com,xhr
@@ -3789,6 +3793,8 @@ appstorrent.ru##.ad
 aqara.com###modal-agreement
 architecture-weekly.com,substack.com#?#.pencraft:has(> div[class*="font-text-"]:contains(/Facebook|Bluesky|LinkedIn|Reddit|Pinterest|Hacker News|X \(Twitter\)|Share to X/))
 archive.*#?#div[style^="display:table-cell;"] > div[align="right"]:has(> div[style*="dashed"] a[title^="Install"][title$="extension"])
+archive.is###DIVSHARE > center#DIVSHARE2 button[onclick^="window.open"]
+archive.is##+js(brave-fix)
 archive.org###donate_banner
 archive.org##+js(set-constant, archive_analytics, noopFunc)
 archive.org##+js(set-constant, archive_analytics.create_tracking_image, noopFunc)
@@ -5004,11 +5010,11 @@ chatgpt.com##+js(set-cookie, oai_consent_analytics, false)
 chatgpt.com##+js(set-cookie, oai_consent_marketing, false)
 chatgpt.com##+js(set-session-storage-item, oai/apps/noAuthHasDismissedSoftRateLimitModal, true)
 chatgpt.com##.md\:px-\[60px\]:has-text(By messaging ChatGPT)
-chatgpt.com##.z-20.bottom-full:has-text(Get Extension)
 chatgpt.com##div[class^="lg"]:has(> div.mx-auto > div.block > div.relative > div.mb-2 > div.flex > div.flex-row > svg[height="62"][width="62"])
 chatgpt.com#%#//scriptlet('set-cookie', 'oai-allow-ne', 'false')
 chatgpt.com#%#//scriptlet('set-cookie', 'oai_consent_analytics', 'false')
 chatgpt.com#%#//scriptlet('set-cookie', 'oai_consent_marketing', 'false')
+chatgpt.com#?#.z-20.bottom-full:-abp-contains(Get Extension)
 chejiahao.autohome.com.cn#$?##parent-container + div > div[class^="style_video_player_container"] { remove: true; }
 chemicalbook.com##.ad2
 chemicalbook.com##.ad3
@@ -6373,6 +6379,7 @@ fontawesome.com##.wrap-ad
 fontawesome.com##.wrap-carbon-ad
 fontawesome.com#@#.fa-ad
 fonts.google.com#%#//scriptlet('trusted-set-local-storage-item', 'bannersDismissed', '["cookieBar","privacyBanner"]')
+form.typeform.com##+js(trusted-set-cookie, attribution_user_id, , 0, , domain, .typeform.com)
 form.typeform.com##div[data-qa="cookie-region"]
 forum.duolingo.com##body > div.ReactModalPortal:not(:empty):has(img[src$="/images/duo_wave.svg"])
 forum.duolingo.com#?#.ReactModal__Overlay:has(> div.ReactModal__Content h2[class]:contains(Learn Italian in))
@@ -14984,6 +14991,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 |lives.l.qq.com^
 |livew.l.qq.com^
 |loan-supermarket.faas.ele.me^
+|log-sdk.gifshow.com^
 |log.amemv.com^
 |log.byteoversea.com^
 |log.mmstat.com^
@@ -15257,6 +15265,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 |u1.img.mobile.sina.cn^
 |ucstat.baidu.com^
 |ulog.imap.baidu.com^
+|ulogjs.gifshow.com^
 |umdc.aliapp.org^
 |union.gdtimg.com^
 |url8807.global.passport.xiaomi.com^
@@ -15316,6 +15325,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 |yt-adv.bn.netease.com^
 |yuedu.iqiyi.com^
 ||*-ad-sign.byteimg.com^
+||*-ad.a.yximgs.com^
 ||*.com/*/*/tt?id=$third-party
 ||*.iqiyi.com/*/other/*/f4/*.f4v?dis_dz=*&src=iqiyi.com*uuid=
 ||*.iqiyi.com/videos/other/*.f4v?dis_dz=*&src=iqiyi.com*&uuid=
@@ -15420,11 +15430,9 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||18comic.vip/templates/frontend/airav/js/td_js/td_ga_tracker.js
 ||1991482557.rsc.cdn77.org^
 ||1bitspace.github.io/wgaming/es/rectangle-medium/v2.html
-||1jk5qcsjzo.data.adobedc.net^
 ||1oavsblobprodcus350.blob.core.windows.net^
 ||1wincdn.b-cdn.net^
 ||2016.sina.cn^
-||2025.ip138.com^
 ||2052.flash2-http.qq.com^
 ||23img.com^*/qomnyi.
 ||2g312kn32qfy-1323053341.cos.ap-bangkok.myqcloud.com^
@@ -15470,7 +15478,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||51.la^
 ||51.la^$third-party
 ||60aaf9c6.salamanderprocessing.pages.dev^
-||643108e7617ef.cdn.sohucs.com^
 ||64vxnlajoo.data.adobedc.net^
 ||682a5845.b-cdn.net^
 ||70e0lr7rnk.data.adobedc.net^
@@ -15481,13 +15488,11 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||7zgiest3zy.data.adobedc.net^
 ||857chwukib.data.adobedc.net^
 ||888.tv.sohu.com^
-||8cgtll9rh8.data.adobedc.net^
 ||8rn1y79f02-1.algolianet.com^
 ||91yun.co/download/
 ||92x.tumblr.com^
 ||96bkyzkstu.data.adobedc.net^
 ||9game.cn/stat/
-||9hxz01cr9k.data.adobedc.net^
 ||9kvptcrbor.data.adobedc.net^
 ||9svjumhzt6.data.adobedc.net^
 ||9w2zed1szg.execute-api.us-east-1.amazonaws.com^
@@ -15549,14 +15554,12 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a12856330147.cdn.optimizely.com^
 ||a12862740503.cdn.optimizely.com^
 ||a130654005.cdn.optimizely.com^
-||a13296620007.cdn.optimizely.com^
 ||a13302150067.cdn.optimizely.com^
 ||a134224613.cdn.optimizely.com^
 ||a1370244502.cdn.optimizely.com^
 ||a14127233.cdn.optimizely.com^
 ||a14222970305.cdn.optimizely.com^
 ||a14464890104.cdn.optimizely.com^
-||a1464009.cdn.optimizely.com^
 ||a14721270268.cdn.optimizely.com^
 ||a14738960062.cdn.optimizely.com^
 ||a14932920627.cdn.optimizely.com^
@@ -15577,7 +15580,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a16909830060.cdn.optimizely.com^
 ||a16943174984.cdn.optimizely.com^
 ||a16954880846.cdn.optimizely.com^
-||a17085262301.cdn.optimizely.com^
 ||a1719570453.cdn.optimizely.com^
 ||a17202440929.cdn.optimizely.com^
 ||a17252776862.cdn.optimizely.com^
@@ -15587,12 +15589,9 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a17432131820.cdn.optimizely.com^
 ||a17477841202.cdn.optimizely.com^
 ||a17586580222.cdn.optimizely.com^
-||a17791710119.cdn.optimizely.com^
 ||a17831451227.cdn.optimizely.com^
 ||a17843980021.cdn.optimizely.com^
-||a17870831401.cdn.optimizely.com^
 ||a1790135602.cdn.optimizely.com^
-||a17908764894.cdn.optimizely.com^
 ||a17924000440.cdn.optimizely.com^
 ||a17941920996.cdn.optimizely.com^
 ||a17957420003.cdn.optimizely.com^
@@ -15609,7 +15608,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a18365751434.cdn.optimizely.com^
 ||a18379630710.cdn.optimizely.com^
 ||a18581841923.cdn.optimizely.com^
-||a18628381365.cdn.optimizely.com^
 ||a187838077.cdn.optimizely.com^
 ||a18802385558.cdn.optimizely.com^
 ||a19065870423.cdn.optimizely.com^
@@ -15631,7 +15629,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a20035616984.cdn.optimizely.com^
 ||a20137790451.cdn.optimizely.com^
 ||a20139847744.cdn.optimizely.com^
-||a20151573008.cdn.optimizely.com^
 ||a20245427593.cdn.optimizely.com^
 ||a20352597942.cdn.optimizely.com^
 ||a20381590292.cdn.optimizely.com^
@@ -15647,8 +15644,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a20758793323.cdn.optimizely.com^
 ||a208064236.cdn.optimizely.com^
 ||a20936640092.cdn.optimizely.com^
-||a20976504213.cdn.optimizely.com^
-||a21006041081.cdn.optimizely.com^
 ||a21006071257.cdn.optimizely.com^
 ||a21011434469.cdn.optimizely.com^
 ||a21017440049.cdn.optimizely.com^
@@ -15662,10 +15657,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a21362120414.cdn.optimizely.com^
 ||a21362261371.cdn.optimizely.com^
 ||a21362900246.cdn.optimizely.com^
-||a21394690517.cdn.optimizely.com^
 ||a21723500485.cdn.optimizely.com^
-||a21777400434.cdn.optimizely.com^
-||a21837592637.cdn.optimizely.com^
 ||a21861931614.cdn.optimizely.com^
 ||a21875130079.cdn.optimizely.com^
 ||a22021240096.cdn.optimizely.com^
@@ -15677,24 +15669,18 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a22462820096.cdn.optimizely.com^
 ||a22612690898.cdn.optimizely.com^
 ||a22633641389.cdn.optimizely.com^
-||a22633721281.cdn.optimizely.com^
 ||a22711502979.cdn.optimizely.com^
 ||a22744560884.cdn.optimizely.com^
 ||a22788570099.cdn.optimizely.com^
-||a22791482274.cdn.optimizely.com^
 ||a22794480215.cdn.optimizely.com^
-||a22847230856.cdn.optimizely.com^
-||a22916101539.cdn.optimizely.com^
-||a23018580040.cdn.optimizely.com^
 ||a23038660059.cdn.optimizely.com^
-||a2320460149.cdn.optimizely.com^
 ||a23208360281.cdn.optimizely.com^
 ||a23497771291.cdn.optimizely.com^
 ||a23730662547.cdn.optimizely.com^
 ||a23736871217.cdn.optimizely.com^
 ||a23755061915.cdn.optimizely.com^
 ||a23755770403.cdn.optimizely.com^
-||a23791891397.cdn.optimizely.com^
+||a23762020753.cdn.optimizely.com^
 ||a23810210071.cdn.optimizely.com^
 ||a24086370557.cdn.optimizely.com^
 ||a24096340716.cdn.optimizely.com^
@@ -15702,10 +15688,8 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a24132941202.cdn.optimizely.com^
 ||a24201730177.cdn.optimizely.com^
 ||a24312020311.cdn.optimizely.com^
-||a24344740158.cdn.optimizely.com^
 ||a24389681160.cdn.optimizely.com^
 ||a24397840812.cdn.optimizely.com^
-||a24427100571.cdn.optimizely.com^
 ||a24561750242.cdn.optimizely.com^
 ||a24591270085.cdn.optimizely.com^
 ||a24612720185.cdn.optimizely.com^
@@ -15714,7 +15698,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a24698640007.cdn.optimizely.com^
 ||a247012668.cdn.optimizely.com^
 ||a24704070387.cdn.optimizely.com^
-||a24708080542.cdn.optimizely.com^
 ||a24708110218.cdn.optimizely.com^
 ||a24717620105.cdn.optimizely.com^
 ||a24723780022.cdn.optimizely.com^
@@ -15722,6 +15705,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a24733290240.cdn.optimizely.com^
 ||a24783860046.cdn.optimizely.com^
 ||a24796730409.cdn.optimizely.com^
+||a24922491682.cdn.optimizely.com^
 ||a24938460681.cdn.optimizely.com^
 ||a24945110014.cdn.optimizely.com^
 ||a24948720649.cdn.optimizely.com^
@@ -15740,11 +15724,9 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a25251511284.cdn.optimizely.com^
 ||a25264541367.cdn.optimizely.com^
 ||a25289140643.cdn.optimizely.com^
-||a25312460735.cdn.optimizely.com^
 ||a25342060228.cdn.optimizely.com^
 ||a25408250069.cdn.optimizely.com^
 ||a25451710626.cdn.optimizely.com^
-||a25475310284.cdn.optimizely.com^
 ||a25522010911.cdn.optimizely.com^
 ||a25563730275.cdn.optimizely.com^
 ||a25577230094.cdn.optimizely.com^
@@ -15755,9 +15737,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a25670000279.cdn.optimizely.com^
 ||a25678140304.cdn.optimizely.com^
 ||a25683390326.cdn.optimizely.com^
-||a25683900258.cdn.optimizely.com^
-||a25686490086.cdn.optimizely.com^
-||a25689160375.cdn.optimizely.com^
 ||a25691410171.cdn.optimizely.com^
 ||a25695190937.cdn.optimizely.com^
 ||a25705090359.cdn.optimizely.com^
@@ -15783,7 +15762,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a26334390584.cdn.optimizely.com^
 ||a26412040784.cdn.optimizely.com^
 ||a26536550308.cdn.optimizely.com^
-||a26537530010.cdn.optimizely.com^
 ||a26549020246.cdn.optimizely.com^
 ||a26564690691.cdn.optimizely.com^
 ||a26584670725.cdn.optimizely.com^
@@ -15791,14 +15769,12 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a26604040285.cdn.optimizely.com^
 ||a2665520353.cdn.optimizely.com^
 ||a26669750187.cdn.optimizely.com^
-||a26735090827.cdn.optimizely.com^
 ||a26749981227.cdn.optimizely.com^
 ||a26779291179.cdn.optimizely.com^
 ||a26780310980.cdn.optimizely.com^
 ||a26800730042.cdn.optimizely.com^
 ||a26927690432.cdn.optimizely.com^
 ||a26933370629.cdn.optimizely.com^
-||a26942930964.cdn.optimizely.com^
 ||a26951531343.cdn.optimizely.com^
 ||a26969400928.cdn.optimizely.com^
 ||a26973760104.cdn.optimizely.com^
@@ -15814,54 +15790,38 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a27274641010.cdn.optimizely.com^
 ||a27469530272.cdn.optimizely.com^
 ||a275532918.cdn.optimizely.com^
-||a27673780102.cdn.optimizely.com^
-||a27988430061.cdn.optimizely.com^
 ||a27990360155.cdn.optimizely.com^
-||a27998290150.cdn.optimizely.com^
 ||a28007920049.cdn.optimizely.com^
 ||a28218570026.cdn.optimizely.com^
-||a28361970244.cdn.optimizely.com^
-||a28409520185.cdn.optimizely.com^
-||a28417170302.cdn.optimizely.com^
-||a28437560005.cdn.optimizely.com^
 ||a2854150041.cdn.optimizely.com^
 ||a28554780121.cdn.optimizely.com^
-||a28901180531.cdn.optimizely.com^
 ||a2900460605.cdn.optimizely.com^
 ||a29022480071.cdn.optimizely.com^
 ||a29086100055.cdn.optimizely.com^
-||a29141630018.cdn.optimizely.com^
-||a29203880216.cdn.optimizely.com^
 ||a29208100149.cdn.optimizely.com^
-||a29330850058.cdn.optimizely.com^
+||a29413380209.cdn.optimizely.com^
 ||a29494440593.cdn.optimizely.com^
 ||a29563440009.cdn.optimizely.com^
 ||a29586640232.cdn.optimizely.com^
 ||a29623890030.cdn.optimizely.com^
-||a29730520486.cdn.optimizely.com^
+||a29734250217.cdn.optimizely.com^
 ||a29742610112.cdn.optimizely.com^
-||a29745850123.cdn.optimizely.com^
 ||a29755160391.cdn.optimizely.com^
 ||a29773460025.cdn.optimizely.com^
-||a29793560205.cdn.optimizely.com^
 ||a29864360354.cdn.optimizely.com^
 ||a2986850373.cdn.optimizely.com^
-||a30018331732.cdn.optimizely.com^
 ||a30050670980.cdn.optimizely.com^
 ||a30077060071.cdn.optimizely.com^
 ||a30077310600.cdn.optimizely.com^
 ||a30177210136.cdn.optimizely.com^
 ||a30338710256.cdn.optimizely.com^
-||a30347390156.cdn.optimizely.com^
 ||a30388500107.cdn.optimizely.com^
 ||a30397970302.cdn.optimizely.com^
 ||a30406320356.cdn.optimizely.com^
 ||a3058550533.cdn.optimizely.com^
 ||a315407138.cdn.optimizely.com^
 ||a3179610124.cdn.optimizely.com^
-||a3778780304.cdn.optimizely.com^
 ||a4268742351.cdn.optimizely.com^
-||a4368606971.cdn.optimizely.com^
 ||a4477903919.cdn.optimizely.com^
 ||a4513484151455744.cdn.optimizely.com^
 ||a4533470681104384.cdn.optimizely.com^
@@ -15875,7 +15835,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a47b-collector-alb-630215029.us-east-1.elb.amazonaws.com^
 ||a47b-collector-eu-alb-1031015564.eu-west-1.elb.amazonaws.com^
 ||a4806508815319040.cdn.optimizely.com^
-||a4912227187163136.cdn.optimizely.com^
 ||a4978460394.cdn.optimizely.com^
 ||a4983603034062848.cdn.optimizely.com^
 ||a4993150444371968.cdn.optimizely.com^
@@ -15885,7 +15844,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a5133694441095168.cdn.optimizely.com^
 ||a5160292989009920.cdn.optimizely.com^
 ||a5171550442225664.cdn.optimizely.com^
-||a5173948275490816.cdn.optimizely.com^
 ||a524690941.cdn.optimizely.com^
 ||a5324015129067520.cdn.optimizely.com^
 ||a5354424722259968.cdn.optimizely.com^
@@ -15893,27 +15851,21 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a5366642083889152.cdn.optimizely.com^
 ||a5435521705.cdn.optimizely.com^
 ||a5465611416.cdn.optimizely.com^
-||a5584628518486016.cdn.optimizely.com^
 ||a5590338467790848.cdn.optimizely.com^
 ||a5595260258.cdn.optimizely.com^
 ||a5607107806887936.cdn.optimizely.com^
 ||a5676741851611136.cdn.optimizely.com^
-||a5682661843271680.cdn.optimizely.com^
 ||a5698391926112256.cdn.optimizely.com^
 ||a5728063363743744.cdn.optimizely.com^
 ||a5729668758765568.cdn.optimizely.com^
 ||a5740182066954240.cdn.optimizely.com^
 ||a5763127292198912.cdn.optimizely.com^
-||a5807877756026880.cdn.optimizely.com^
 ||a5809436334227456.cdn.optimizely.com^
 ||a591102174.cdn.optimizely.com^
 ||a5935064.cdn.optimizely.com^
 ||a5961084.cdn.optimizely.com^
 ||a6023320244584448.cdn.optimizely.com^
 ||a6040864640729088.cdn.optimizely.com^
-||a6076186451771392.cdn.optimizely.com^
-||a6084004789616640.cdn.optimizely.com^
-||a6084697625722880.cdn.optimizely.com^
 ||a6089398316433408.cdn.optimizely.com^
 ||a61135178.cdn.optimizely.com^
 ||a6136581106.cdn.optimizely.com^
@@ -15922,13 +15874,11 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a6157793305034752.cdn.optimizely.com^
 ||a6169963916951552.cdn.optimizely.com^
 ||a6207300250632192.cdn.optimizely.com^
-||a6238166017900544.cdn.optimizely.com^
 ||a6253774759526400.cdn.optimizely.com^
 ||a6295702960078848.cdn.optimizely.com^
 ||a6376052200046592.cdn.optimizely.com^
 ||a6451678757519360.cdn.optimizely.com^
 ||a6504733288955904.cdn.optimizely.com^
-||a6524475903049728.cdn.optimizely.com^
 ||a6529002483.cdn.optimizely.com^
 ||a6558036.cdn.optimizely.com^
 ||a6561280243.cdn.optimizely.com^
@@ -15936,10 +15886,8 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||a6606848644612096.cdn.optimizely.com^
 ||a6686257430921216.cdn.optimizely.com^
 ||a6691694497234944.cdn.optimizely.com^
-||a6699546328170496.cdn.optimizely.com^
 ||a6951820096.cdn.optimizely.com^
 ||a72135589.cdn.optimizely.com^
-||a72168671.cdn.optimizely.com^
 ||a745050198.cdn.optimizely.com^
 ||a750482796.cdn.optimizely.com^
 ||a752092193.cdn.optimizely.com^
@@ -16010,7 +15958,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||accounts.google.com/gsi/iframe/select?client_id=$domain=reddit.com
 ||accounts.google.com/gsi/log
 ||accounts.google.com^$doc,removeparam=dsh
-||accredo.com.data.adobedc.net^
 ||accscdn.m.taobao.com^
 ||acg.tv^$domain=bilibili.com,image
 ||acg.tv^$domain=bilibili.com,object
@@ -16080,6 +16027,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ad.163.com^
 ||ad.3.cn^
 ||ad.360.cn^
+||ad.a.yximgs.com^
 ||ad.api.3g.youku.com^
 ||ad.api.mobile.youku.com^
 ||ad.browser.qq.com
@@ -16104,6 +16052,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ad.mh.163.com^
 ||ad.mi.com^
 ||ad.mobile.youku.com^
+||ad.partner.gifshow.com^
 ||ad.player.baidu.com^
 ||ad.qq.com^
 ||ad.quickapp.hybrid.xiaomi.com^
@@ -16206,6 +16155,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||adjust.com^$script,third-party
 ||adjust.io^
 ||adjust.world^
+||adktracking-1671721947.eu-west-3.elb.amazonaws.com^
 ||adkwai.com^
 ||adlog.vivo.com.cn^
 ||adm.baidu.com^
@@ -16289,7 +16239,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ads-marketing-vivofs.vivo.com.cn^
 ||ads-privacy-api.prd.mz.internal.unity3d.com^
 ||ads-prod-narrowcasting.s3.us-west-2.amazonaws.com^
-||ads-product-integration.googleusercontent.com^
 ||ads-production-public.s3.amazonaws.com^
 ||ads-production-public.s3.us-east-1.amazonaws.com^
 ||ads-rendering-prod.corp.google.com^
@@ -16559,7 +16508,12 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||algolia.io/1/events?
 ||algolia.io/1/isalive
 ||algolia.io/1/isalive$badfilter
+||ali-ad.a.yximgs.com^
 ||ali-bj-pcdn-*.biliapi.net^
+||ali-ec.static.yximgs.com/kos/*/hybrid/svga/svga^
+||ali-ec.static.yximgs.com/kos/*/hybrid/vendor/vendor^
+||ali-p2p-v2.pull.yximgs.com^
+||ali-p2p.pull.yximgs.com^
 ||ali-stats.jpush.cn^$app=com.insigmacc.nannsmk
 ||ali-web-player-tracker.biliapi.net^
 ||aliapp.org^
@@ -16712,7 +16666,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||alpwiijq5x.data.adobedc.net^
 ||als-svc.nytimes.com^
 ||als.baidu.com^
-||alterramountaincompany.data.adobedc.net^
 ||altmetric.com^
 ||altura-advertising.s3.eu-west-2.amazonaws.com^
 ||amap-aos-info-nogw.amap.com^
@@ -17107,7 +17060,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||announcements.bybit.com^$removeparam=sa_utm_tcn
 ||anonymous-analytics.tonkeeper.com^
 ||anquan.baidu.com^
-||ansys.com.data.adobedc.net^
 ||anti-adblock.herokuapp.com^
 ||anti-automation-v*.b-cdn.net^$doc
 ||antivirus.baidu.com^
@@ -17142,6 +17094,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||api-lytics.macpaw.com^
 ||api-pravoved.s3.amazonaws.com^$third-party
 ||api-read.facebook.com/restserver.php?api_key=$third-party
+||api-rec.stellar.intl.miui.com^
 ||api-visitor-analytics.intercom.com^
 ||api-z.weidian.com^
 ||api.*.com/p/report?$domain=bybit.com
@@ -17163,6 +17116,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||api.brs.intl.miui.com/browser/hp/*/banner^
 ||api.brs.intl.miui.com/browser/sbox/*/ad^
 ||api.brs.intl.miui.com^
+||api.calendar.intl.miui.com^
 ||api.chaohua.weibo.cn^$app=com.youku.phone
 ||api.comm.miui.com^
 ||api.competition.intl.miui.com^
@@ -17210,6 +17164,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||api.iegadp.qq.com^
 ||api.im.qcloud.com/*/imopenstat/im_native_sdk_report_v2^
 ||api.ip.sb/geoip$third-party
+||api.iplay.163.com^
 ||api.ithome.com/json/newscontent
 ||api.ithome.com/json/newslist^$)/\"url\": \/0\/,/,replace=/(\"url\":\s+?https:\/\/lapin\.ithome\.com\/html\/digi\/[\d]{6}\.htm
 ||api.ithome.com/json/newslist^$replace=/\"aid\":\s+?\d/\"aid\": 0/
@@ -17617,6 +17572,10 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ayw-tt-game.oss-cn-beijing.aliyuncs.com^
 ||az-neverblock.aznude.workers.dev^
 ||az.appstore.vivo.com.cn^
+||az1-api.ksapisrv.com^
+||az2-api.ksapisrv.com^
+||az3-api.ksapisrv.com^
+||az4-api.ksapisrv.com^
 ||azuki-*.vercel.app^$all
 ||azure.com*/api/Telemetry|
 ||azure.com/api/clientlog|
@@ -17885,7 +17844,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||bbci.co.uk^*/analytics.js$domain=bbc.co.uk,redirect=noopjs,script
 ||bbs.naixi.net/source/plugin/*_7ree/js/js_7ree.js
 ||bc.qunar.com^
-||bcbsks.data.adobedc.net^
 ||bce.baidu.com^
 ||bce.bdstatic.com/p3m/common-service/uploads/dibu_edc2214.png
 ||bcebos.com/24x360x528.gif
@@ -17900,6 +17858,8 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||bcebos.com/im-cs/a69c0123ae867534560f1a0df1b6b2a8.png
 ||bchtstmets.data.adobedc.net^
 ||bcs.data.adobedc.net^
+||bd-p2p-v2.pull.yximgs.com^
+||bd-p2p.pull.yximgs.com^
 ||bd.hd.sohu.com^
 ||bdg-analytics.appspot.com^
 ||bdimg.com/brands/yxtg/source/juhe-v2.js
@@ -17950,6 +17910,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||bdstatics.eastmoney.com/web/prd/jump_tracker.js^
 ||bdtt.b-cdn.net^
 ||bduserlog.eastmoney.com/bd-blink-server/asyncbapi/records^
+||bduserlog.eastmoney.com^
 ||bdvenlinea*.pages.dev^$doc
 ||bdvenlinea-banvenez-beram.pages.dev^$all
 ||bdvenlineaconfirmate.pages.dev^$all
@@ -18124,7 +18085,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||bkh5vv.video.qq.com/getinfo?callback^
 ||bkssl.bdimg.com/static/wiki-m-common/pkgModules/larkplayer-
 ||bkssl.bdimg.com/static/wiki-m-lemma/widget/loadMoreContent-n/invokeBaiduApp/invokeBaiduApp*
-||blackbaud.com.data.adobedc.net^
 ||blackhole.m.jd.com^
 ||blastairdropclaims.pages.dev^$doc
 ||bldr.mkt.samsung.com^
@@ -18417,7 +18377,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||cdn.data.video.iqiyi.com/cdn/qiyiapp/*/ticket_android_plugin.bundle
 ||cdn.dingxiang-inc.com/ctu-group/constid-js/index.js$domain=right.com.cn,e.textContent=".wp > .a_t:has(> table > tbody > tr > td > .adsbygoogle) { display: none !important; }"\,e=document.createElement("style");e.type="text\/css"\,replace=/(^\/\*!.*?\*\/)/\$1try{const t=document.head\,t.appendChild(e)}catch(t){};/
 ||cdn.exp.xiaomi.com^
-||cdn.fds.api.xiaomi.com^
 ||cdn.flashtalking.com/*.mp4?cb=$domain=safeframe.googlesyndication.com,important,media,redirect=noop-1s.mp4
 ||cdn.flashtalking.com/*.mp4?cb=$domain=safeframe.googlesyndication.com,important,media,redirect=noopmp4-1s
 ||cdn.flashtalking.com^$domain=safeframe.googlesyndication.com,media,redirect=noop-1s.mp4
@@ -18544,7 +18503,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ce-global-track-*.amazonaws.com^
 ||cell.com^$removeparam=_returnURL
 ||centene.com.data.adobedc.net^
-||centene.data.adobedc.net^
+||centralus-ads.centralus.cloudapp.azure.com^
 ||cert-test.sandbox.google.com^
 ||ceshi127722.obs.cn-north-4.myhuaweicloud.com^
 ||ceuswatcab01.blob.core.windows.net^
@@ -18766,7 +18725,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||cloudservice14.kingsoft-office-service.com^$app=cn.wps.moffice_eng
 ||cloudservice24.kingsoft-office-service.com/cards
 ||cltgtstor001.blob.core.windows.net^
-||clubhkt.data.adobedc.net^
 ||cm.baidu.com^
 ||cm.bilibili.com/cm/api$redirect=noop.txt
 ||cm.bilibili.com/cm/api/$xhr
@@ -18852,7 +18810,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||collector-px2bubkzbv.px-cloud.net^
 ||collector-px2e972lwz.px-cloud.net^
 ||collector-px2sz8xyop.px-cloud.net^
-||collector-px2tcs0qig.px-cloud.net^
 ||collector-px2yes24ut.px-cloud.net^
 ||collector-px35rnwkzs.px-cloud.net^
 ||collector-px3c3ez9ug.px-cloud.net^
@@ -18880,12 +18837,10 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||collector-pxa0o07ort.px-cloud.net^
 ||collector-pxaflyiz9n.px-cloud.net^
 ||collector-pxajdckzhd.px-cloud.net^
-||collector-pxanwxj5lc.px-cloud.net^
 ||collector-pxaotqiwnf.px-cloud.net^
 ||collector-pxarwfvluf.px-cloud.net^
 ||collector-pxb47t2jmz.px-cloud.net^
 ||collector-pxbj5oofe8.px-cloud.net^
-||collector-pxcarq85yu.px-cloud.net^
 ||collector-pxcfrcfefa.px-cloud.net^
 ||collector-pxckx6ilor.px-cloud.net^
 ||collector-pxcvbtpurj.px-cloud.net^
@@ -18939,7 +18894,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||collector-pxk3pmk6aw.px-cloud.net^
 ||collector-pxk56wkc4o.px-cloud.net^
 ||collector-pxk9q1jq56.px-cloud.net^
-||collector-pxkdrmolsb.px-cloud.net^
 ||collector-pxkdrqnl15.px-cloud.net^
 ||collector-pxkgkikzzj.px-cloud.net^
 ||collector-pxkknkrjgu.px-cloud.net^
@@ -18961,7 +18915,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||collector-pxmkulqa8r.px-cloud.net^
 ||collector-pxmmbmd3jc.px-cloud.net^
 ||collector-pxnddshz8n.px-cloud.net^
-||collector-pxnelrpptk.px-cloud.net^
 ||collector-pxneog4e2e.px-cloud.net^
 ||collector-pxnkld3k8m.px-cloud.net^
 ||collector-pxnp9b16cq.px-cloud.net^
@@ -18999,7 +18952,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||collector-pxtk74ox9h.px-cloud.net^
 ||collector-pxtn88q85m.px-cloud.net^
 ||collector-pxtqeghk7v.px-cloud.net^
-||collector-pxtsv50is4.px-cloud.net^
 ||collector-pxtu0h5frq.px-cloud.net^
 ||collector-pxtxbsu81h.px-cloud.net^
 ||collector-pxu6b0qd2s.px-cloud.net^
@@ -19010,7 +18962,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||collector-pxv5xrmij5.px-cloud.net^
 ||collector-pxva6hkt61.px-cloud.net^
 ||collector-pxvb73hteg.px-cloud.net^
-||collector-pxvl48pwoc.px-cloud.net^
 ||collector-pxvlufj7uv.px-cloud.net^
 ||collector-pxvnpbbfwe.px-cloud.net^
 ||collector-pxvtb0vdec.px-cloud.net^
@@ -19042,7 +18993,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||collector-pxzcx1k7er.px-cloud.net^
 ||collector-pxzdyjqpod.px-cloud.net^
 ||collector-pxzg5bkbll.px-cloud.net^
-||collector-pxzitus4e5.px-cloud.net^
 ||collector-pxzmxivlix.px-cloud.net^
 ||collector-pxzneitfzp.px-cloud.net^
 ||collector-pxznu59zhd.px-cloud.net^
@@ -19072,7 +19022,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||conde.digital^
 ||condenastdigital.com/content?$third-party
 ||condenastdigital.com/track$third-party
-||conduenttransportsolutionsinc.data.adobedc.net^
 ||conf-sg-dc.heytapdl.com.akamaized.net^
 ||conf.diditaxi.com.cn/nav/widget^$replace=/\"data\"//
 ||conf.international.baidu.com^
@@ -19189,6 +19138,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||counter.sina.com.cn^
 ||countly-api.mysugr.com.cdn.cloudflare.net^
 ||countly-community.slack.com^
+||countly-ctps.westeurope.cloudapp.azure.com^
 ||countly.mail.163.com^
 ||countly.wire.com^
 ||cowtransfer.com/api/generic/backgrounds
@@ -19246,7 +19196,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||crl.microsoft.com^
 ||crlog-crcn.adobe.com^
 ||crm-eve.b2b.alibaba-inc.com^
-||crm.ws.ctrip.com^
 ||crowdstrike-cloudtrail-storage-bb-126d5e.s3.us-west-1.amazonaws.com^$doc
 ||crs.baidu.com^
 ||cryweb.github.io^
@@ -20759,6 +20708,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||data.bilibili.com^$badfilter
 ||data.cip.test.ajo.adobe.com^
 ||data.codeandtheoryamerptrsd.campaign-sandbox.adobe.com^
+||data.corp.unity3d.com^
 ||data.customer-success-apac.adobe.com^
 ||data.diagnostics.office.com^
 ||data.digital.adobe.com^
@@ -21141,6 +21091,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||dmxhgf4zuwdvu.cloudfront.net^
 ||dmz3nd5oywtsw.cloudfront.net^
 ||dn-geekpark-new.qbox.me/uploads/ad/
+||dn-growing.qbox.me^
 ||dn0qt3r0xannq.cloudfront.net^
 ||dn34cbtcv9mef.cloudfront.net^
 ||dn3uy6cx65ujf.cloudfront.net^
@@ -21481,7 +21432,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||e1.o.lencr.org^
 ||e20d8e38992b.o3n.io^
 ||e8aeb8bbdbbd7.cdn.sohucs.com^
-||e8u2tnpszf.data.adobedc.net^
 ||earth.cointelegraph.com^
 ||eastmoney.com/Extends/GetReferralLinkJavaScriptObj
 ||eastmoney.com/analysis/
@@ -21561,7 +21511,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||emdcadvise.eastmoney.com^
 ||emea.flow.microsoft.com/providers/Internal.Telemetry
 ||emiratesnbdbankpjsc.data.adobedc.net^
-||emma-metrics-aggregates-prod.s3.amazonaws.com^
 ||emoticon-sns.iqiyi.com^
 ||emoticon.sns.iqiyi.com^
 ||ems-a8net-tracking.easy-myshop.jp^
@@ -22091,6 +22040,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||gd.189.cn^*.htm?SP=$popup,third-party
 ||gd.189.cn^*.htm?SP=$third-party
 ||gd.sina.com.cn/iframe/22/
+||gdfp.gifshow.com^
 ||gdpr-service.herokuapp.com^$third-party
 ||gdpr-settings.s3.amazonaws.com/rcp-rollei/pandectes-asset.
 ||gdpr-settings.s3.amazonaws.com^
@@ -23146,6 +23096,9 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||huq-query-loggers-california-3cec807da3e9dc0d.elb.us-west-1.amazonaws.com^
 ||huq-query-loggers-europe-west1-32ef7f4bbf54ce27.elb.eu-west-1.amazonaws.com^
 ||husky.sogou.com^
+||hw-ot-ad.a.yximgs.com^
+||hw-p2p-v2.pull.yximgs.com^
+||hw-p2p.pull.yximgs.com^
 ||hw-sh-pcdn-*.biliapi.net^
 ||hw-v2-web-player-tracker.biliapi.net^
 ||hwa.his.huawei.com^
@@ -23158,7 +23111,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||hz-telemetry.adobe.io^
 ||hz.youku.com/red/
 ||hz.youku.com^
-||i-cmg-amlg-prod.appspot.com^
 ||i-cmg-amlg-prod.appspot.com^$third-party
 ||i.alipayobjects.com/i/ecmng/$domain=my.alipay.com,image
 ||i.eporner.com^
@@ -23222,6 +23174,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ic.snssdk.com/service/settings$replace=/"tt_ad_video_can_auto_play": 1/"tt_ad_video_can_auto_play": 0/
 ||ic.snssdk.com/service/settings$replace=/tt_ad_config//
 ||ic.snssdk.com/service/settings$replace=/tt_ad_landing_page_config//
+||ic.snssdk.com^
 ||ic.wps.cn^
 ||icash.baidu.com/cloan/operation/activity^
 ||icelandclothing.myshopify.com^
@@ -23260,7 +23213,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ifs.tanx.com^
 ||igcum80w74.data.adobedc.net^
 ||igexin.com^
-||ignifyecom.s3.amazonaws.com^
 ||iherb.com/VtidNbtC/init.js
 ||ihg.com.data.adobedc.net^
 ||iindiaxxx.b-cdn.net/disk2/Buaksib-IPL-PROMO-4.mp4$domain=111.90.150.149,media,redirect=noopmp3-0.1s
@@ -23404,6 +23356,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||instagram-nextjs-three.vercel.app^$all
 ||instagram.*.fna.fbcdn.net^$domain=~instagram.com,removeparam=ccb
 ||instagram.com/ajax/bz
+||instagram.com/ajax/qm/?
 ||instagram.com/ajax/qm/?__
 ||instagram.com/api/v*/injected_story_units/
 ||instagram.com/api/v1/injected_story_units/
@@ -23534,7 +23487,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||iqiyi.com^$removeparam=vfrmblk
 ||iqiyi.com^$removeparam=vfrmrst
 ||ir.mail.163.com^
-||iriscapitallimited.data.adobedc.net^
 ||irpmt.mail.163.com^
 ||is.snssdk.com/*/article/information^
 ||is.snssdk.com/cloudpush/local_push^
@@ -23554,7 +23506,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||it.snssdk.com/location/suloin/?iid=
 ||it.snssdk.com/network/get_network^$app=com.ss.android.article.news
 ||it.snssdk.com/service/2/app_log/?iid=
-||it16akp2xi.data.adobedc.net^
 ||itaspa.data.adobedc.net^
 ||itc.*^prod=ad&
 ||itc.cn/?prod=rtb&
@@ -23614,6 +23565,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||j5.dfcfw.com/WG/appconf/*.png^
 ||j5.dfcfw.com/WG/conf/*.png^
 ||ja*.gamersky.com^
+||ja2.gamersky.com^
 ||jable.tv/assets/*0.gif
 ||jable.tv/assets/images/*-slider.
 ||jable.tv/assets/images/wejo/$image
@@ -23668,6 +23620,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||jrclick.jd.com/qd/qidian*.js^$replace=/initAD\(\)/jd/
 ||jrclick.jd.com/qd/qidian*.js^$replaec=/getAD//
 ||jrclick.jd.com^
+||js-ad.a.yximgs.com^
 ||js-agent.newrelic.com^$3p
 ||js-agent.newrelic.com^$badfilter
 ||js.intercomcdn.com/audio/
@@ -23781,6 +23734,9 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||kraken.com/analytics
 ||kraken.com/js/sift.min.js
 ||kroger.data.adobedc.net^
+||ks-p2p-v2.pull.yximgs.com^
+||ks-p2p.pull.yximgs.com^
+||ks.pull.yximgs.com^
 ||kstj.baidu.com^
 ||kuaibao.qq.com^
 ||kufar-promo-block.s3-eu-west-1.amazonaws.com^$app=se.scmv.belarus
@@ -23820,7 +23776,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||landing.ultimate-success-emea.test.ajo.adobe.com^
 ||landingpage.emaillpb.adobe.com^
 ||lapin.ithome.com/html/digi^
-||later-analytics-reports.s3-accelerate.amazonaws.com^
 ||laz-g-cdn.alicdn.com/lazada/dynamic-static-nopolyfill/*/daraz-marketing-tracker.js
 ||lazada-ad-workstation.oss-ap-southeast-1.aliyuncs.com^
 ||lb-analytics-ingest-1486152707.us-east-1.elb.amazonaws.com^
@@ -23971,20 +23926,16 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||log-2c864c4b.eu.v2.we-stats.com^
 ||log-2f6769e4.us.v2.we-stats.com^
 ||log-2ffe60ee.au.v2.we-stats.com^
-||log-3347ea06.bzl.v2.we-stats.com^
 ||log-3fbbe2c8.us.v2.we-stats.com^
 ||log-453ea5e6.ind.v2.we-stats.com^
 ||log-532e636f.us.v2.we-stats.com^
 ||log-54085ba9.us.v2.we-stats.com^
 ||log-58144bf0.we-stats.com^
 ||log-5d65a0ab.us.v2.we-stats.com^
-||log-772742e3.us.v2.we-stats.com^
 ||log-788fdc13.suk.v2.we-stats.com^
 ||log-7db8f4a6.us.v2.we-stats.com^
 ||log-7ef308be.us.v2.we-stats.com^
-||log-81e622d0.us.v2.we-stats.com^
 ||log-86a11b6f.us.v2.we-stats.com^
-||log-876f0067.us.v2.we-stats.com^
 ||log-87e12e85.suk.v2.we-stats.com^
 ||log-9449377.eu-west-2.elb.amazonaws.com^
 ||log-96951fce.us.v2.we-stats.com^
@@ -24019,6 +23970,8 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||log-klink.zijieapi.com^
 ||log-lf.snssdk.com^
 ||log-lq.snssdk.com^
+||log-sdk.gifshow.com^
+||log-sdk.ksapisrv.com^
 ||log-upload-eur.mihoyo.com^
 ||log-upload-os.mihoyo.com^
 ||log-upload.mihoyo.com^
@@ -24095,7 +24048,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||logs-f4e48049.eu.v2.we-stats.com^
 ||logs.amap.com^
 ||logs.appsource.microsoft.com^
-||logs.azuremarketplace.microsoft.com^
 ||logs.blip.net^
 ||logs.bloomberg.com^
 ||logs.chronosphere.io^
@@ -24103,6 +24055,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||logs.datadoghq.com^$third-party
 ||logs.dradis.netflix.com^
 ||logs.eu-west-1.internal.dradis.netflix.com^
+||logs.grayjay.app^
 ||logs.igslb.bloomberg.com^
 ||logs.netflix.com^
 ||logs.us-east-1.internal.dradis.netflix.com^
@@ -24318,7 +24271,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||matchbin-assets.s3.amazonaws.com^
 ||matomo-alb-1841731790.us-east-1.elb.amazonaws.com^
 ||matomo-lb-1420184415.us-east-1.elb.amazonaws.com^
-||matomo-production-313173901.us-east-2.elb.amazonaws.com^
 ||matomo-wpmudev-analytics1-925643958.us-east-2.elb.amazonaws.com^
 ||matomo-wpmudev-analytics2-742601353.us-east-2.elb.amazonaws.com^
 ||matomo-wpmudev-analytics3-898024192.us-east-2.elb.amazonaws.com^
@@ -24726,6 +24678,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||mtj.baidu.com^
 ||mtrace.qq.com^
 ||mtvod-ali.meituan.net^
+||multi-az-ulog.ksapisrv.com^
 ||mum.alibabachengdun.com^
 ||musculahq.appspot.com^
 ||music.163.com/device/signature/create/deviceid.js
@@ -24802,7 +24755,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||napaprolink.com.data.adobedc.net^
 ||narrativ.com/api/v0/client_redirect/*^url=http$doc,urlskip=?url
 ||narrativ.com^$domain=androidauthority.com
-||nationalbankofcanada.data.adobedc.net^
 ||nativead.s3.amazonaws.com^
 ||nativeapp.toutiao.com^
 ||navi-airbnb.vercel.app^$all
@@ -24897,11 +24849,13 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||nexvelar.b-cdn.net/videoplayback_.mp4
 ||nexxtv-events.servicebus.windows.net^
 ||nfa.jd.com^
+||nflshop.com.data.adobedc.net^
 ||nfsvgvusih.data.adobedc.net^
 ||nga.178.com/common_res/js_box.js
 ||nhantienquocte*.vercel.app^$doc
 ||nhentai.net/api/_/popunder?$popup
 ||nhtradecfg.eastmoney.com^
+||nikoncorporation.data.adobedc.net^
 ||nikutjyjgchr*.b-cdn.net^$doc
 ||ninja.akamaized.net^
 ||nitrous-analytics.s3.amazonaws.com^
@@ -25042,7 +24996,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||openmonitor.alipay-eco.com^
 ||openmonitor.alipay.com^
 ||openrcv.baidu.com^
-||opentelemetry-collector-1730785506.us-east-1.elb.amazonaws.com^
 ||openweb.bid^
 ||openweb.bid^$third-party
 ||operate-sdk-telemetry.unity3d.com^
@@ -25285,6 +25238,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||pcapp-data-collect.youku.com^
 ||pcbrowser.dd.qq.com^
 ||pcdn.xmcdn.com^
+||pcdn.yximgs.com^
 ||pcfg.wps.cn^
 ||pcm-img.zhls.qq.com^
 ||pcmag.com/js/alpine/$domain=speedtest.net
@@ -25561,7 +25515,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||powerpoint-telemetry.officeapps.live.com^
 ||powr-counter.herokuapp.com^
 ||ppc-excel-telemetry.officeapps.live.com^
-||ppc-onenote-telemetry.officeapps.live.com^
 ||ppc-powerpoint-telemetry.officeapps.live.com^
 ||ppc-word-telemetry.officeapps.live.com^
 ||ppm-licensingtelemetry.servicebus.windows.net^
@@ -25577,12 +25530,14 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||predataclient.b-cdn.net^
 ||preferences.premierleague.test.ajo.adobe.com^
 ||preferences.ubs.test.ajo.adobe.com^
+||preload.xiaomi.com^
 ||presence.teams.live.com^
 ||presentationtracking.netflix.com^
 ||pressablecdn.com/wp-content/uploads/2022/06/OCI-Free-Tier-Campaign-set
 ||preview.msn.com^
 ||prexyone.appspot.com^
 ||primer.typekit.net^$xmlhttprequest
+||princess.com.data.adobedc.net^
 ||privacy-center.org^
 ||privacy-center.org^$third-party
 ||privacy-center.org^*/events
@@ -25625,6 +25580,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||promotion-partner.kuaishou.com^
 ||property-rental-seven.vercel.app^$all
 ||propsid.b-cdn.net^
+||proxy-mob-cld.alicdn.com^
 ||proxy-skadnetwork.apple.com^
 ||proxy.sec.miui.com^
 ||prt-stsdk.vivo.com.cn^
@@ -25721,6 +25677,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||purr.nytimes.com/*/purr-cache
 ||push.126.net^
 ||push.douban.com^
+||push.gifshow.com^
 ||push.m.youku.com/collect-api/
 ||push.m.youku.com^
 ||push.mcp.weibo.cn^
@@ -25976,6 +25933,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||reader.qq.com/common/log^
 ||reader.qq.com/common/readTime/getWeekExchangeInfo^$replace=/inspireVideoAd//
 ||reader.qq.com/user/experiments/v2?qimei^$replace=/(topbanner|image_url)//
+||realmadridclubdefutbol.data.adobedc.net^
 ||recirculation.spot.im^
 ||recmd.html5.qq.com^
 ||reddit.com/api/info.json?$third-party
@@ -26159,12 +26117,14 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||rtlog16-normal-alisg.tiktokv.com^
 ||rtlog16-normal-useast1a.tiktokv.com^
 ||rtlog17-normal-alisg.tiktokv.com^
+||rtlog17-normal-useast1a.tiktokv.com^
 ||rtlog19-normal-alisg.tiktokv.com^
 ||rtlog19-normal-useast1a.tiktokv.com^
 ||rtlog22-normal-alisg.tiktokv.com^
 ||rtlog22-normal-useast1a.tiktokv.com^
 ||rtmonitor.kugou.com^
 ||rtwebcollects.kugou.com^
+||ru.video.intl.xiaomi.com^
 ||rubiconproject.com^
 ||rum-metrics.bunny.net^
 ||rum.ap-northeast-1.amazonaws.com^
@@ -26342,6 +26302,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||script.wikia.nocookie.net/fandom-ae-assets/identity-service/$domain=fandom.com
 ||scripts.dkmedia.vercel.app/popunders/
 ||sd-tagging.azurefd.net^
+||sdac.lenovomm.com^
 ||sdfp.snssdk.com^
 ||sdk-collector-prod-723125464.eu-central-1.elb.amazonaws.com^
 ||sdk.*.braze.com^$third-party
@@ -26493,7 +26454,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||sharethis.com^$third-party
 ||shazam.com/services/metrics/
 ||shell.com.data.adobedc.net^
-||shell.data.adobedc.net^
 ||shenghuo.xiaomi.com^
 ||shooter.m.jd.com^
 ||shop.app/pay/hop?analytics_trace_id=
@@ -27012,6 +26972,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||static.xvideos.com^
 ||static.youku.com/*/index/js/iresearch.js
 ||static.youku.com/*/js/cps.js
+||static.yximgs.com^$app=com.and.idiom.tip
 ||static.zdassets.com^$font,third-party
 ||static.zhihu.com/heifetz/main.signflow.*.js$domain=www.zhihu.com,script
 ||static.zhihu.com/heifetz/main.signflow.*.js$domain=zhihu.com,script
@@ -27050,6 +27011,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||stats.wp.com^
 ||stats2.arstechnica.com^
 ||stats2.newyorker.com^
+||statscollector-1-asia.agora.io^
 ||statscollector-1-north-america.agora.io^
 ||statscollector-1.agora.io^
 ||statsfe1.ws.microsoft.com^
@@ -27161,6 +27123,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||sv.map.baidu.com^
 ||sw.mobile.sogou.com^
 ||swa.gtimg.com^
+||swiftanalyticsprod.servicebus.windows.net^
 ||sworkitads.herokuapp.com^
 ||swwwxww.oss-cn-hangzhou.aliyuncs.com^
 ||sxeimx.mydays.de^
@@ -27218,7 +27181,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||t10.baidu.com^
 ||t11.baidu.com^
 ||t12.baidu.com^
-||t17.market.xiaomi.com^
 ||t2.market.xiaomi.com^
 ||t3.market.xiaomi.com^
 ||t4.market.xiaomi.com^
@@ -27393,7 +27355,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||teredo.ipv6.microsoft.com^
 ||terminallog-76327.gzc.vod.tencent-cloud.com^
 ||terroirsense-wp.oss-cn-shanghai.aliyuncs.com/*/ad*$image
-||tesco.com.data.adobedc.net^
 ||tescobankbarclays.data.adobedc.net^
 ||tescostores.data.adobedc.net^
 ||teslaamg.obs.cn-east-3.myhuaweicloud.com^
@@ -27432,7 +27393,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||theta.sogou.com^
 ||theta.sogoucdn.com^
 ||theweathercompany.data.adobedc.net^
-||thind-gke-euw.prd.data.corp.unity3d.com^
 ||third-bucket.oss-cn-shenzhen.aliyuncs.com/ad/
 ||thm.market.xiaomi.com/thm/stats
 ||thm.market.xiaomi.com^
@@ -27587,6 +27547,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||tnc3-bjlgy.zijieapi.com^
 ||tnc31-platform-useast2a.tiktokv.com^
 ||tns.simba.taobao.com^
+||tob-tracker.yximgs.com^
 ||toblog.ctobsnssdk.com^$app=com.yyets.pro|com.zidongdianji
 ||tocukgaytx.data.adobedc.net^
 ||togame.iqiyi.com^
@@ -27643,7 +27604,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||track.uc.cn^
 ||tracker-663174376.us-east-1.elb.amazonaws.com^
 ||tracker-dot-dfty-optimeeze-leroymerlinfr.appspot.com^
-||tracker-dot-dfty-optimeeze-leroymerlinpt.appspot.com^
 ||tracker-dot-optimeeze.appspot.com^
 ||tracker-load-balancer-910132794.us-east-1.elb.amazonaws.com^
 ||tracker-themes.s3.amazonaws.com^
@@ -27786,6 +27746,10 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||two-gun-volley.pages.dev^
 ||twrailpolice.appspot.com/campaign.xml
 ||twrailpolice.appspot.com/full_ad_priority.txt
+||tx-ad.a.yximgs.com^
+||tx-kmpaudio.pull.yximgs.com^
+||tx-p2p-v2.pull.yximgs.com^
+||tx-p2p.pull.yximgs.com^
 ||txc.gtimg.com^$app=com.free.player
 ||tyh.taobao.com^
 ||tynt.com.cdn.cloudflare.net^
@@ -27798,6 +27762,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||u-mob.cn^
 ||u-x.jd.com^
 ||u.360.cn^
+||u.api.look.360.cn^
 ||u.ctrip.com/showcaseadvertisementsit/
 ||u.ctrip.com^
 ||u1.img.mobile.sina.cn^
@@ -27825,7 +27790,24 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||ukc-visio-telemetry.officeapps.live.com^
 ||ukmnlp.techbang.com^
 ||ulic.baidu.com^
+||ulog*.gifshow.com^
+||ulog-*.ksapisrv.com^
+||ulog-sdk.gifshow.com^
+||ulog-sdk.ksapisrv.com^
+||ulog.*.ksapisrv.com^
+||ulog.gifshow.com^
 ||ulog.imap.baidu.com^
+||ulog.ksapisrv.com^
+||ulog.v6.gifshow.com^
+||ulogjp.gifshow.com^
+||ulogjs.gifshow.com^
+||ulogjs.ksapisrv.com^
+||ulogko.gifshow.com^
+||ulogs1.gifshow.com^
+||ulogs1.ksapisrv.com^
+||ulogs2.gifshow.com^
+||ulogs2.ksapisrv.com^
+||ulogvg.gifshow.com^
 ||ultimate-tech-products.myshopify.com^
 ||um-public-panel-prod.s3.amazonaws.com^
 ||um.hd.sohu.com^
@@ -27956,6 +27938,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||uvk.3hentai.net^
 ||uwqghwfdwqywetqwfghewqeqweig.s3.ap-southeast-2.amazonaws.com^$all
 ||uz-analysis.akamaized.net^
+||v*-ad.video.yximgs.com^
 ||v*-be-pack.pglstatp-toutiao.com^
 ||v.blog.sohu.com/dostat.do?
 ||v.embed-cdn.com/v8/player.js$domain=streamable.com,script
@@ -27966,10 +27949,13 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||v.youku.com^$removeparam=ptag
 ||v.youku.com^$removeparam=scm
 ||v.youku.com^$removeparam=spm
+||v1-ad.video.yximgs.com^
 ||v120gszvrs.data.adobedc.net^
 ||v16-ad.byteoversea.com^
+||v2-ad.video.yximgs.com^
 ||v2.sohu.com/integration-api/batch/web^
 ||v2ex.com/pro/emitter
+||v3-ad.video.yximgs.com^
 ||v6-adashx.ut.taobao.com^
 ||v6-c.m.163.com/nc/gl/ft^$replace=/(video_endAds|GoldMarket|httpdnsserver|promo|float_ads|ucx_ad|video_float_ad|mycenter_funclist_config|ucx_freeflowcard|ad_invokeapp|nex_ad|tie_ad_docYanxuan)//
 ||v6-gw.m.163.com/commons-user-main/api/*/commons/user/profile/main^
@@ -27978,7 +27964,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||va.media.tumblr.com/internal/*/tumblr_sponsored_day.mp4
 ||va.tawk.to/log
 ||va.tawk.to/log^
-||vailresorts.data.adobedc.net^
 ||val.api.youku.com^
 ||vali*.cibntv.net^*.mp4?$domain=player.youku.com,media,rewrite=abp-resource:blank-mp3
 ||vali-dns.cp31.ott.cibntv.net^$app=com.youku.phone
@@ -28012,7 +27997,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||vas-lf-x.snssdk.com/video/openapi
 ||vastz.b-cdn.net/hsr/HSR*.mp4
 ||vbc-telemetry-prod.s3.amazonaws.com^
-||vbzxsg2ebt.data.adobedc.net^
 ||vcardsdkservice.vivo.com.cn^
 ||vcenyzahqf.data.adobedc.net^
 ||vcl-brain.snssdk.com^
@@ -28072,7 +28056,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||view.inews.qq.com^$removeparam=ft
 ||view.inews.qq.com^$removeparam=refer
 ||view.zijieapi.com^
-||viking.com.data.adobedc.net^
 ||vimeo.com/ablincoln/
 ||vimeo.com/ablincoln/fatal_attraction?type=pageview
 ||vimeo.com/add/
@@ -28131,11 +28114,11 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||w.inews.qq.com^
 ||w.m.taobao.com^
 ||w0-eg-d12-de-yd-nka-ne-rklkyazwo0.vercel.app^
+||w1.wskwai.com^
 ||w2g-ping.b-cdn.net^
 ||w3-reporting-csp.reddit.com^
 ||w3-reporting-nel.reddit.com^
 ||w3-reporting.reddit.com^
-||w4aa025brr.data.adobedc.net^
 ||wa-groupbebe.pages.dev^$all
 ||wa.gtimg.com^
 ||wa.scribd.com^
@@ -28179,6 +28162,8 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||weather.com/weather/assets/omniture-visitorapi.*.js
 ||web-ivcbrasil-pixel.s3.us-west-2.amazonaws.com^
 ||web-ivcbrasil-tag.s3.us-west-2.amazonaws.com^
+||web-trace.ksapisrv.com/ktrace/collect^
+||web-trace.ksapisrv.com^
 ||web.archive.org/web/*/http://rpc.blogrolling.com/display.php?r=$1p,script
 ||web.chtbl.com^
 ||web.core.windows.net/?_event=$doc
@@ -28350,6 +28335,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||wkstatic.bdimg.com/static/wkview/widget/ui/tools/hao123common/hao123common*.js^
 ||wl.hd.sohu.com^
 ||wl.jd.com^$third-party
+||wlog.ksapisrv.com^
 ||wlog.kuaishou.com^
 ||wlx.tenpay.com/cgi-bin/wx/common/ccm_index.cgi^$\s*?\{[\s\S]*?welfare\.png[\s\S]*?\}//,replace=/\
 ||wm.baidu.com^
@@ -28426,6 +28412,8 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||wral-snowplow-collector-1139283751.us-east-1.elb.amazonaws.com^
 ||wren.condenastdigital.com^
 ||wreport.meituan.net^
+||ws-p2p-v2.pull.yximgs.com^
+||ws-p2p.pull.yximgs.com^
 ||ws.amazon.com/widgets/*=gettrackingid|
 ||ws.sharethis.com^$script
 ||ws.sj.qq.com^
@@ -28581,6 +28569,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||xlog.snssdk.com^
 ||xlog.tiktokv.com^
 ||xlog16-normal-c-useast1a.tiktokv.com^
+||xlog16-platform-ycru.tiktokv.com^
 ||xmaterial.tu.qq.com^
 ||xmcdn.com/storages/f651-customerservice/E3/40/GAqhntALzRUHAAJ3LgOTtToZ.
 ||xmpush.xiaomi.com^
@@ -28635,7 +28624,6 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||yimg.com^*/l?ig=$image
 ||yingxiao.baidu.com^
 ||yingxiao.ximalaya.com^
-||yjxyikhv93.data.adobedc.net^
 ||yk-ssp-ad.cp31.ott.cibntv.net^
 ||ykad-data.cp31.ott.cibntv.net^
 ||ykad-data.youku.com^
@@ -28733,7 +28721,9 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||yun-hl.3g.qq.com^
 ||yun.baidu.com/act/api/activityentry?
 ||yunxinfw.com^
-||ywx79wmimh.data.adobedc.net^
+||yximgs.com/bs2/adcarsku/*.gif
+||yximgs.com/bs2/adcarsku/sku1563a96c-38ca-4563-a4b5-522208113126.
+||yximgs.com/bs2/adcarsku/sku9c0e68cc-2f12-4e47-a340-a7293ee88c88.
 ||yybx.oss-cn-hangzhou.aliyuncs.com^
 ||z-library.sk/components/z-promotion.js
 ||z-library.sk/components/z-recommended-search.js
@@ -28824,6 +28814,7 @@ zy.youku.com$$div[class="ad-banner-wrapper"]
 ||zqhd.eastmoney.com^
 ||zqtk.net^
 ||zqtk.net^$third-party
+||zt.gifshow.com^
 ||zt.jd.com^
 ||ztd.dds.microsoft.com^
 ||zurich.data.adobedc.net^
