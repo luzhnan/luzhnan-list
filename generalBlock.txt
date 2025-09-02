@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-09-01 02:33:55 UTC
+! Updated: 2025-09-02 02:19:03 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1647556
-! Unique lines (pre-final-filter): 601114
-! Final rules in this list: 76406
+! Lines fetched (pre-dedupe, post-initial-clean): 1620522
+! Unique lines (pre-final-filter): 591924
+! Final rules in this list: 76415
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -45117,6 +45117,7 @@
 ##div[class$="player-promo-col"]
 ##div[class*="-storyBodyAd-"]
 ##div[class*="_AdInArticle_"]
+##div[class*="cookiesAnnounce-"]
 ##div[class*='bookid_ads']
 ##div[class][id][style] > .pic_container
 ##div[class^="AdBannerWrapper-"]
@@ -47457,6 +47458,7 @@ $removeparam=utm_adset
 $removeparam=utm_affiliate
 $removeparam=utm_brand
 $removeparam=utm_campaign
+$removeparam=utm_campaign_name
 $removeparam=utm_campaignid
 $removeparam=utm_channel
 $removeparam=utm_cid
@@ -47466,6 +47468,7 @@ $removeparam=utm_emcid
 $removeparam=utm_emmid
 $removeparam=utm_id
 $removeparam=utm_id_
+$removeparam=utm_journey_id
 $removeparam=utm_keyword
 $removeparam=utm_medium
 $removeparam=utm_name
@@ -47481,6 +47484,7 @@ $removeparam=utm_siteid
 $removeparam=utm_social
 $removeparam=utm_social-type
 $removeparam=utm_source
+$removeparam=utm_source_code
 $removeparam=utm_source_platform
 $removeparam=utm_supplier
 $removeparam=utm_swu
@@ -48976,7 +48980,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,third-party,match-case
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,xhr,3p
 /^https:\/\/[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$doc,match-case,to=art|baby|buzz|cfd|click|cyou|eu|fit|fun|hair|homes|ink|lat|lol|mom|my|pics|sbs|skin|top|world|xyz
-/^https:\/\/[a-z]{4,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$doc,match-case,to=biz|blog|cc|cloud|club|info|life|me|one|online|shop|site|space|store
+/^https:\/\/[a-z]{4,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$doc,match-case,to=biz|blog|cc|cloud|club|info|life|live|me|one|online|shop|site|space|store
 /^https:\/\/[a-z]{5,7}\.[0-9a-z]{12}\.top\/[0-9a-f]{32}\/[0-9-a-f]{32}\/$/$doc,match-case,to=top
 /^https:\/\/[a-z]{6,13}\.(cloud|xyz)\/[A-Za-z0-9_-]{48}[A-Z]{3}$/$document
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$doc,match-case,to=com|net
@@ -53179,6 +53183,7 @@ $~xmlhttprequest,removeparam=mbid
 /astracker.js
 /astracker/*
 /astracker/ast.php
+/astyle/wap.js$~third-party
 /async/ads-
 /asyncadload.
 /asyncggtracking.
@@ -57167,6 +57172,7 @@ $~xmlhttprequest,removeparam=mbid
 /gfx/ads/*
 /gfx/socials/*
 /gg.php
+/gg/gg.js
 /gg4.
 /gg5.
 /gg54.oss-
@@ -58054,6 +58060,7 @@ $~xmlhttprequest,removeparam=mbid
 /index-ad.
 /index-ad.js$script
 /index.html?Aniph=1-$doc
+/index.html?Anph=1-$doc
 /index.html?channelCode=
 /index.html?ph0n=1-$doc
 /index.html?ph0nq=$doc
@@ -73184,6 +73191,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||psprices.com^$ghide
 @@||pstatic.net^$image,stealth=referrer
 @@||pstream.net/js/prebid35.js$~third-party
+@@||psynet.co.kr^$stealth=dpi
 @@||ptitchef.com/js/ads.js
 @@||pttcell.com.tr^$stealth=dpi
 @@||pttplay.com/js/momo/adsbygoogle.js
@@ -75474,6 +75482,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||uyduportal.net^$generichide
 @@||uze-ads.com/ads/$~third-party
 @@||uzmantv.com/metadata/$stealth=referrer
+@@||v.ddys.*.mp4$stealth=referrer
 @@||v.fwmrm.net/?$xmlhttprequest
 @@||v.fwmrm.net/ad/*&resp=vast2
 @@||v.fwmrm.net/ad/g/*Nelonen$script
