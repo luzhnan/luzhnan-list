@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-09-02 02:19:03 UTC
+! Updated: 2025-09-03 05:07:20 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1620522
-! Unique lines (pre-final-filter): 591924
-! Final rules in this list: 76415
+! Lines fetched (pre-dedupe, post-initial-clean): 1630025
+! Unique lines (pre-final-filter): 600662
+! Final rules in this list: 76421
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -30563,6 +30563,7 @@
 ##.htl-ad
 ##.htl-ad-placeholder
 ##.htl-inarticle-container
+##.htlad-GL_Adhesion
 ##.html-advertisement
 ##.html5PlayerShare
 ##.htpush-chrome-style-notification
@@ -31637,6 +31638,7 @@
 ##.js-scroll_to_top
 ##.js-sd-social
 ##.js-selection-twitter
+##.js-seznam-sidebar-ad
 ##.js-share-article
 ##.js-share-body
 ##.js-share-btn
@@ -35633,6 +35635,7 @@
 ##.push-notification-popover
 ##.push-notification-prompt
 ##.push-notifications-primer
+##.push-notifications-prompt
 ##.push-overlay
 ##.push-sdk-prompt-shell
 ##.push-slider[clickmode="cpt"]
@@ -44616,6 +44619,7 @@
 ##body > div#dontfoid
 ##body > div#fixedban
 ##body > div#inplayer[align="center"]
+##body > div.container[style="margin-bottom: 10px;"] > script:first-child ~ div[style="height:60px;width:100%;"]
 ##body > div.demo-wrapper[style="display:none;"] + div[id][class]
 ##body > div.ns-cookie-consent
 ##body > div:not([class]):not([id]) > script + div[id^="img_"] > div[id^="img_"][visibility="visible"]
@@ -48919,7 +48923,6 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/(?:cdn77\.)?aj\d{4}\.bid\/[-_0-9A-Za-z]{80,}\?/$xhr,3p,to=bid
 /^https:\/\/(?:www\.)?[-a-z0-9]+\.com\.[-a-z0-9]+\.com\//$doc,to=com,ipaddress=148.251.54.196
 /^https:\/\/(?:www\.)?[-a-z0-9]+\.xyz\.[-a-z0-9]+\.com\//$doc,to=com,ipaddress=148.251.54.196
-/^https:\/\/(?:www\.)?roblox(?:\.com)?\.[a-z]{2}\//$doc,to=roblox.*|~roblox.com
 /^https:\/\/(?:www\d\.)?[-a-z]{6,}\.(?:club|com|info|net|org)\/(?=[-_a-zA-Z]{0,42}\d)(?=[-_0-9a-z]{0,42}[A-Z])[-_0-9a-zA-Z]{43}\/\?(?:pub|s)id=[-_0-9a-z{}]{1,32}(?:&qs\d=\S+)?&cid=[-_0-9a-zA-Z]{10,36}(?:&s=0\.\d+)?(?:#\S+)?$/$doc,match-case,to=club|com|info|net|org
 /^https:\/\/(?:www\d\.)?[-a-z]{6,}\.(?:club|com|info|net|org)\/(?=[-_a-zA-Z]{0,42}\d)(?=[-_0-9a-z]{0,42}[A-Z])[-_0-9a-zA-Z]{43}\/\?cid=[-_0-9a-zA-Z]{10,36}(?:&qs\d=\S+)?&(?:s|pub)id=[-_0-9a-z{}]{1,32}(?:&s=0\.\d+)?(?:#\S+)?$/$doc,match-case,to=club|com|info|net|org
 /^https:\/\/(?:www\d\.)?[-a-z]{6,}\.(?:club|com|info|net|org)\/(?=[-_a-zA-Z]{0,42}\d)(?=[-_0-9a-z]{0,42}[A-Z])[-_0-9a-zA-Z]{43}\/\?clickID=[0-9a-f]{32}&sourceID=\d+$/$doc,match-case,to=club|com|info|net|org
@@ -61598,6 +61601,7 @@ $~xmlhttprequest,removeparam=mbid
 /renewalad/*
 /repdata.*/b/ss/*
 /repeat_adv.
+/replay?ddsource=
 /reporo_
 /report-re.
 /report/click?
@@ -69751,6 +69755,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||geojamal.com^$generichide
 @@||geomedia.gala100.net^$generichide
 @@||germancarforum.com^$generichide
+@@||germanos.gr/touch/assets/resources/germanos/assets/js/CookieJar.js$~third-party
 @@||gestyy.com^$generichide
 @@||gestyy.com^$ghide
 @@||get-click2.blogspot.com^$ghide
@@ -70241,6 +70246,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||hk.on.cc/js/v4/oncc-adbanner.js
 @@||hk.on.cc/js/v4/urchin.js
 @@||hk.on.cc/mobile/js/lib/adbanner.js
+@@||hk.on.cc^$generichide
 @@||hk01.com^*/ga_trace.js
 @@||hk01.com^*/scripts/ga.js
 @@||hkjc.com/bannerad/
