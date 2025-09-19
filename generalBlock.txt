@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-09-17 01:43:28 UTC
+! Updated: 2025-09-19 02:07:26 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1631378
-! Unique lines (pre-final-filter): 579928
-! Final rules in this list: 76365
+! Lines fetched (pre-dedupe, post-initial-clean): 1650605
+! Unique lines (pre-final-filter): 585452
+! Final rules in this list: 76379
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -18544,9 +18544,9 @@
 ##.ad_bottom_left
 ##.ad_bottom_mpu
 ##.ad_bottom_space
-##.ad_box
 ##.ad_box1
 ##.ad_box2
+##.ad_box:not(.text-ad)
 ##.ad_box_2
 ##.ad_box_6
 ##.ad_box_9
@@ -45080,6 +45080,7 @@
 ##div[class^="proadszone-"]
 ##div[class^="ps_"][value="20"]
 ##div[class^="share42init"]
+##div[class^="smartbanner"][class$="-android"]
 ##div[class^="sp-"] > div.ss-ic
 ##div[class^="style__social"]
 ##div[data-actirise-slot]
@@ -45408,7 +45409,7 @@
 ##iframe[src^="http://cdn1.adexprt.com/"]
 ##iframe[src^="http://cdn2.adexprt.com/"]
 ##iframe[src^="https://av.ageverify.co/"]
-##iframe[src^="https://creative.xlirdr.com/"]
+##iframe[src^="https://creative."][src*="/widgets/v4/Universal?"]
 ##iframe[src^="https://mmmdn.net/"]
 ##iframe[src^="https://tsyndicate.com/"]
 ##iframe[src^="https://vidsservices.space/"]
@@ -48844,7 +48845,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[0-9a-z-]{4,7}\.(?:com|click|icu|net|shop)\/js\/responsive\.js$/$script,third-party,match-case
 /^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/(?:article\d{4}\.doc)?\?utm_campaign=\w{40,}/$doc,match-case,to=life|live|top|xyz
 /^https:\/\/[0-9a-z]{5,}\.[a-z]{2,3}\/z-[5-9]\d{6}$/$script,~third-party
-/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,redirect=noopjs,to=com|~aswpsdkus.com|~chimpstatic.com|~mojirater.com|~polldaddy.com|~squareoffs.com|~succeedscene.com|~veraviews.com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|arstechnica.com|artforum.com|artnews.com|audiomack.com|awkward.com|azcentral.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|billboard.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|danslescoulisses.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|dpreview.com|eater.com|ebaumsworld.com|egoallstars.com|eldiariony.com|fark.com|femestella.com|flickr.com|fmradiofree.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|greenbaypressgazette.com|grunge.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kens5.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|madeeveryday.com|maidenhead-advertiser.co.uk|mandatory.com|mardomreport.net|masslive.com|melangery.com|miamiherald.com|mlive.com|mmamania.com|momtastic.com|mostlymorgan.com|motherwellmag.com|musicfeeds.com.au|naszemiasto.pl|nationalpost.com|nationalreview.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nordot.app|nothingbutnewcastle.com|nsjonline.com|nypost.com|observer.com|ontvtonight.com|oregonlive.com|pagesix.com|palmbeachpost.com|patheos.com|pennlive.com|pep.ph|phillyvoice.com|playstationlifestyle.net|pravda.sk|prydwen.gg|puckermom.com|reelmama.com|reuters.com|rlfans.com|robbreport.com|rollingstone.com|royalmailchat.co.uk|sandrarose.com|sbnation.com|sheknows.com|sidereel.com|smartworld.it|sneakernews.com|sourcingjournal.com|sport-fm.gr|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|techcrunch.com|thedailymeal.com|theflowspace.com|themarysue.com|theverge.com|tiermaker.com|timesofisrael.com|tiscali.cz|tokfm.pl|torontosun.com|tvline.com|usatoday.com|usmagazine.com|variety.com|wallup.net|weather.com|wimp.com|worldstar.com|worldstarhiphop.com|wunderground.com|wwd.com|wzzm13.com|ydr.com|yourcountdown.to
+/^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,redirect=noopjs,to=com|~aswpsdkus.com|~chimpstatic.com|~mojirater.com|~polldaddy.com|~squareoffs.com|~succeedscene.com|~veraviews.com,_____,from=15min.lt|247sports.com|abc17news.com|agrodigital.com|al.com|aliontherunblog.com|allaboutthetea.com|allmusic.com|allthingsthrifty.com|amessagewithabottle.com|arstechnica.com|artforum.com|artnews.com|audiomack.com|awkward.com|azcentral.com|barcablaugranes.com|barnsleychronicle.com|bethcakes.com|betweenenglandandiowa.com|bgr.com|billboard.com|blazersedge.com|blogher.com|blu-ray.com|bluegraygal.com|briefeguru.de|brobible.com|cagesideseats.com|cbsnews.com|cbssports.com|celiacandthebeast.com|chaptercheats.com|cleveland.com|clickondetroit.com|commercialobserver.com|competentedigitale.ro|dailydot.com|dailykos.com|dailyvoice.com|danslescoulisses.com|deadline.com|decider.com|didyouknowfacts.com|dogtime.com|dpreview.com|eater.com|ebaumsworld.com|egoallstars.com|eldiariony.com|fark.com|femestella.com|flickr.com|fmradiofree.com|free-power-point-templates.com|freeconvert.com|frogsandsnailsandpuppydogtail.com|funtasticlife.com|fwmadebycarli.com|golfdigest.com|greenbaypressgazette.com|grunge.com|gulflive.com|hollywoodreporter.com|homeglowdesign.com|honeygirlsworld.com|ibtimes.co.in|imgur.com|indiewire.com|intouchweekly.com|jasminemaria.com|kens5.com|kion546.com|knowyourmeme.com|last.fm|lehighvalleylive.com|lettyskitchen.com|lifeandstylemag.com|lifeinleggings.com|lizzieinlace.com|localnews8.com|lonestarlive.com|madeeveryday.com|maidenhead-advertiser.co.uk|mandatory.com|mardomreport.net|masslive.com|melangery.com|miamiherald.com|mlive.com|mmamania.com|momtastic.com|mostlymorgan.com|motherwellmag.com|musicfeeds.com.au|naszemiasto.pl|nationalpost.com|nationalreview.com|nbcsports.com|news.com.au|ninersnation.com|nj.com|nordot.app|nothingbutnewcastle.com|nsjonline.com|nypost.com|observer.com|ontvtonight.com|oregonlive.com|pagesix.com|palmbeachpost.com|patheos.com|pennlive.com|pep.ph|phillyvoice.com|playstationlifestyle.net|pravda.sk|prydwen.gg|puckermom.com|reelmama.com|reuters.com|rlfans.com|robbreport.com|rollingstone.com|royalmailchat.co.uk|sandrarose.com|sbnation.com|sheknows.com|sidereel.com|smartworld.it|sneakernews.com|sourcingjournal.com|sport-fm.gr|sportico.com|stylecaster.com|superherohype.com|syracuse.com|tastingtable.com|techcrunch.com|thedailymeal.com|theflowspace.com|themarysue.com|theverge.com|tiermaker.com|timesofisrael.com|tiscali.cz|tokfm.pl|torontosun.com|tvline.com|usatoday.com|usmagazine.com|variety.com|wallup.net|weather.com|wimp.com|worldstar.com|worldstarhiphop.com|wunderground.com|wwd.com|wzzm13.com|ydr.com|yourcountdown.to
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)\/(?:js\/)?)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~aswpsdkus.com|~chimpstatic.com|~mojirater.com|~polldaddy.com|~squareoffs.com|~succeedscene.com|~veraviews.com,redirect=noopjs,ipaddress=/^(3[45]\.\d+\.\d{2,3}\.\d{2,3}|2600:1901:0:[a-f0-9]{3,4}::1)$/
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-f]{6,16}\/?[_0-9a-f]{12,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com,redirect=noopjs
 /^https:\/\/[0-9a-z]{7,25}\.com\/(?:assets|build|bundles|chunks|dist|files|j|public|scripts|static)?\/?(?:js\/)?[_0-9a-z]{6,16}\/?[_0-9a-z]{5,120}(?:[-.](?:app|bundle|ma?in|module|prod|index|v\d|vendor))?(?:\.js)?$/$script,3p,match-case,to=com|~aswpsdkus.com|~chimpstatic.com|~mojirater.com|~polldaddy.com|~squareoffs.com|~succeedscene.com|~veraviews.com,header=etag:/^W\/"[0-9a-f]{64}"$/
@@ -48998,9 +48999,9 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/[-0-9a-z]{5,}\.com\/[0-9a-z]{8,10}\?key=[0-9a-f]{32}$/$frame,3p
 /^https?:\/\/[-a-z0-9]{25,}\.vercel\.app\/id\/\d{15,17}\.html\b/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z0-9]{8,}\.ru\/\?load=[a-zA-Z0-9]+(-[a-zA-Z0-9]+)+$/$doc,match-case,to=ru
-/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.com[-.][-a-z0-9][-a-z0-9]+\.[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
-/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.gov[-.][-a-z0-9][-a-z0-9]+\.[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
-/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.org[-.][-a-z0-9][-a-z0-9]+\.[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.com[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.gov[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.org[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{12,}\.vercel\.app\/[^.]+?=D400e/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z]{12,}\.vercel\.app\/[^.]+?g_ep=?EgoyMDI/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z]{4,}\.(?:com|org)[-.][-a-z]{2,}\.(?:cc|top|vip|world|xin)\/pay\b/$doc,match-case,to=cc|top|vip|world|xin
@@ -49046,7 +49047,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/d\d\.sina\.com\.cn/
 /^https?:\/\/d\d\.sinaimg\.cn/
 /^https?:\/\/dienmayxanh[-a-z0-9]+\.com\//$doc,to=com|~dienmayxanh.com
-/^https?:\/\/gov[-.][-a-z0-9][-a-z0-9]+\.[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/gov[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
 /^https?:\/\/icloud\.apple\.[a-z]{6,}\.[a-z]+/$doc,to=co|cn
 /^https?:\/\/instagram-[a-z][a-z][a-z][a-z][a-z]+\.[a-z]+\//$doc,to=cc|top|help
 /^https?:\/\/instagram-[a-z]{5,}\.[a-z]{2,4}\//$doc,to=cc|top|help
@@ -55505,8 +55506,10 @@ $~xmlhttprequest,removeparam=mbid
 /detroitchicago/kenai.js$script
 /detroitchicago/memphis.js$script
 /detroitchicago/minneapolis.js$script
+/detroitchicago/overlandpark.js
 /detroitchicago/portland.js$script
 /detroitchicago/raleigh.js$script
+/detroitchicago/reno.js
 /detroitchicago/reportads.js$script
 /detroitchicago/rochester.js$script
 /detroitchicago/sidebarwall.js$script
@@ -56256,6 +56259,7 @@ $~xmlhttprequest,removeparam=mbid
 /eyewondermanagement.
 /eyewondermanagement28.
 /ez_aba_load/*
+/ezais/analytics
 /ezais/analytics?
 /ezakus.js
 /ezcl.webp?
@@ -64350,6 +64354,7 @@ $~xmlhttprequest,removeparam=mbid
 /utils~analytics.
 /utiq\./
 /utiqloader.js
+/utm-tags.min.js
 /utm-tracker.min.js
 /utm-tracking.js
 /utm.gif?
@@ -65512,6 +65517,7 @@ $~xmlhttprequest,removeparam=mbid
 /yt-track-streamer
 /ytrek7.$script,~third-party
 /yume_ad_library_
+/yummi.js
 /yunfile/offline_banner/*
 /yy_transv/js/cmp.js
 /yzx?
@@ -66312,6 +66318,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||akamaihd.net/assets/7E32DC3D-28E0-4A2B-9994-A4A2278228E8/arena/heap/advertisements.js
 @@||akamaihd.net/i^$third-party
 @@||akamaihd.net/origin-com-store-webassets/$script,document
+@@||akashio.com^$generichide
 @@||akashiro.co.id^$generichide
 @@||akilliphone.com/views/kuteshop/assets/js/cookies-message.min.js$script,~third-party
 @@||akoam.net^$generichide
@@ -67457,6 +67464,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||camiris.com^$generichide
 @@||camlovers.tv/player/kt_player.js
 @@||campus.arte.tv/js/components/cookie-banner.js
+@@||camsclips.com/player/stats.php?event=Init$image
 @@||camsecure.co/httpswebcam/*.html$stealth=referrer
 @@||camsexvideo.net/js/advertising.js
 @@||camvideoshub.com/livejasmin.com.js$script
@@ -70824,6 +70832,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||karanpc.com^$generichide
 @@||karaoke-tutor.com^$generichide
 @@||karar.com/assets/default/js/adsbygoogle.js
+@@||kargoist.com^$stealth=dpi
 @@||karwan.tv^$generichide
 @@||kaspersky.co$content
 @@||kaspersky.com/advert/
@@ -71054,6 +71063,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||larvelfaucet.com^$generichide
 @@||larvf.com/js/ads.js
 @@||larvf.com/js/ads.js$script
+@@||lasicilia.it/wp-content/plugins/digistream/digiplayer/js/videojs.ga.js?$script,~third-party
 @@||lasprovincias.es/*/adfrm.js$script
 @@||lasprovincias.es^$ghide
 @@||last.fm/static/js-build/tracking/tealium-utag-set.js$script,1p
@@ -72407,6 +72417,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||oddschecker.com/cookie-policy-banner/$~third-party
 @@||odkrywamyzakryte.com/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/
 @@||odl.one/oc-content/plugins/deductor/advertisement.js
+@@||odleglosci.pl/arcads.js
 @@||odnoklassniki.ru/get$stealth=referrer
 @@||oemdtc.com^$generichide
 @@||ofeminin.pl/*&srcc=ucs$removeparam=utm_source
@@ -72743,6 +72754,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||pesmaster.com^$generichide
 @@||petdrugsonline.co.uk/scripts/gtm.js$~third-party
 @@||petrochina.com.cn/advertisement_
+@@||petrolofisi.com.tr^$stealth=dpi
 @@||peytonlist.ru^$generichide
 @@||pg-wuming.com/js/*/adblocker-1.js
 @@||pg-wuming.com^$generichide
@@ -73863,6 +73875,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||shop.bmw.com.au/assets/analytics-setup.js$~third-party
 @@||shop.bora-sauna.de/components/cookieconsent2/build/cookieconsent.min.js
 @@||shop.dangerfield.com.au/min/?*/cookiealert.css
+@@||shop.pilotinstitute.com/*^checkout_type=$doc,removeparam=_gl
 @@||shopback.com.tw^$generichide
 @@||shopeemobile.com/shopee/*/modules/ads/
 @@||shopeesz.com/shopee/*/modules/ads/
@@ -74183,6 +74196,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||ssl-gumtree.classistatic.com/*/_/advertising.js
 @@||ssl-thumb2.720static.com^$stealth=referrer,image
 @@||ssl.kaptcha.com/collect/sdk$script,xhr
+@@||ssl.pstatic.net/static.news/mnews/resources/*/js/generated/statistics_jquery.js
 @@||sso.adperfect.com/client_authentication/?$elemhide,jsinject,extension,xmlhttprequest
 @@||sso.kinopoisk.ru^$stealth=3p-cookie
 @@||sso.myscript.com^$stealth=3p-auth
