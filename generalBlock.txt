@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-10-01 01:24:14 UTC
+! Updated: 2025-10-02 02:27:23 UTC
 ! Source URLs Attempted: 68
-! Source URLs Successfully Fetched: 67
-! Lines fetched (pre-dedupe, post-initial-clean): 1610528
-! Unique lines (pre-final-filter): 569035
-! Final rules in this list: 76404
+! Source URLs Successfully Fetched: 68
+! Lines fetched (pre-dedupe, post-initial-clean): 1607859
+! Unique lines (pre-final-filter): 568325
+! Final rules in this list: 76432
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -15446,6 +15446,8 @@
 ###zsmsg-policy
 ###zw_cookie_law_short_info
 ###zwcc
+##+js(ra, class, div.wkwp-paywall)
+##+js(rc, didomi-popup-open, body.didomi-popup-open)
 ##+js(set-constant, navigator.getBattery, noopPromiseResolve)
 ##+js(set-constant, navigator.privateAttribution, undefined)
 ##.-advertsSidebar
@@ -45029,6 +45031,7 @@
 ##div.wcc-box-bottom-left
 ##div.wcc-box-bottom-right
 ##div.wcc-classic-bottom
+##div.wkwp-paywall-block
 ##div:not(#video)[style^="width: 100%;"][style$="display: block;"] iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"]
 ##div:not([class]) + style + div[class^="img_"] > img[src*="html-load.com/"]
 ##div[align="center"] > a[href^="/url/"] > img[src*=".alicdn.com"]
@@ -45365,6 +45368,7 @@
 ##footer div.c-footer__share
 ##form.cookie-bar--fluid
 ##form.cookieBanner
+##form[aria-label="Sign up for newsletter: Daily Briefing"]
 ##gannett-atoms-component-newsletter-cta
 ##gdpr-cookies
 ##gg-toolbar--specials
@@ -45668,6 +45672,7 @@
 #@#.adslot_1
 #@#.adunit
 #@#.afs_ads
+#@#.cmpwrapper
 #@#.display_ad
 #@#.footer-cta
 #@#.google-ad
@@ -45738,6 +45743,7 @@ $$div[id^="div_openx_ad_"]
 $$div[id^="lazyad-"]
 $$div[id^="sticky_ad_"]
 $$div[id^="tms-ad-dfp-"]
+$$div[style="display: none !important; width: 1px"]:contains(ed2k://)
 $$iframe[id^="google_ads_frame"]
 $$ins[class="adsbygoogle"]
 $$p[id^="div-gpt-ad-"]
@@ -45881,6 +45887,8 @@ $cookie=_parsely_visitor
 $cookie=_pcid
 $cookie=_pctx
 $cookie=_pcus
+$cookie=_pubCommonId
+$cookie=_pubCommonId_cst
 $cookie=_pubcid
 $cookie=_pubcid_cst
 $cookie=_pulse2data
@@ -48678,6 +48686,7 @@ $~xmlhttprequest,removeparam=mbid
 /YandexMetric.$badfilter
 /YuduStatistics/*
 /ZagUser.js
+/[a-z]{1}\d{2,3}\.\w+\.(co(m|\.uk)|net|org)\/script\.js/$script,~third-party
 /\(com\?[0-9]+/$third-party
 /\.(?:boats|cfd)\/contract\/\d{14,19}\b/$doc,match-case,to=boats|cfd|~facebook.com
 /\.(?:cc|com|top|vip)\/index\/index\/lang\/[a-z]{2}-[a-z]{2}\b/$doc,to=cc|com|top|vip
@@ -48687,6 +48696,7 @@ $~xmlhttprequest,removeparam=mbid
 /\.(cc|com|top|xyz)\/i\/v$/$third-party,xmlhttprequest
 /\.(com|cn|top|xyz)\/(j|K)\/[0-9]{6}$/$script,third-party
 /\.(cyou|ink)\/[a-z]{4}_[0-9]{5}_[a-z]{5}js\?/$script,third-party
+/\.(femmesdaujourdhui|flair|knack|levif|libelle)\.be\/.+\/(\w+-){2,}/$inline-script
 /\.[a-z]cinma[a-z].top\//$script,third-party
 /\.[a-z]dinma[a-z].top\//$script,third-party
 /\.[a-z]dinmi[a-z].top\//$script,third-party
@@ -48708,6 +48718,7 @@ $~xmlhttprequest,removeparam=mbid
 /\.com\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
 /\.com\/proc\.php\?[0-9a-f]{40}$/$doc
 /\.cricket\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
+/\.cronista\.com\/files\/cachefiles\/.+\.js\?\d/$script,~third-party
 /\.date\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
 /\.download\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
 /\.engage\.3m\./
@@ -48832,7 +48843,6 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/(?:[-a-z0-9]{2,}\.){1,2}(?:[a-z]{2,3}|click|online)\/(?:[-a-z0-9]+\/){1,4}[a-zA-Z0-9]{150}\/verify\b/$doc,match-case,method=get,to=~edu|~gov
 /^https:\/\/(?:[^.]+\.)?\d{6}-coinbase\.com\//$doc,to=com|~coinbase.com
 /^https:\/\/(?:[a-f0-9]+\.)?[a-f0-9]{58}\.pages\.dev\//$doc,to=pages.dev
-/^https:\/\/(?:[a-z0-9]{2,}-)+10\d{4}\.square\.site\//$doc,to=square.site
 /^https:\/\/(?:[a-z0-9]{2,}-)+10\d{4}\.weeblysite\.com\//$doc,to=weeblysite.com
 /^https:\/\/(?:[a-z]+\.)?hotel-(?:id)?\d{3,8}\.com\//$doc,to=com|~booking.com
 /^https:\/\/(?:[a-z]+\.)?hotel-(?:id)?\d{3,8}\.eu\//$doc,to=eu|~booking.com
@@ -48905,7 +48915,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,3p,match-case
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,third-party,match-case
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,xhr,3p
-/^https:\/\/[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$doc,match-case,to=art|autos|baby|boats|buzz|cards|cfd|click|cyou|eu|fit|fun|hair|homes|ink|lat|lol|mom|my|pics|quest|sbs|skin|today|top|world|xyz
+/^https:\/\/[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$doc,match-case,to=art|autos|baby|boats|buzz|cards|cfd|click|cyou|eu|fit|fun|hair|homes|ink|lat|lol|mom|my|pics|quest|sbs|skin|today|top|work|world|xyz
 /^https:\/\/[a-z]{4,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$doc,match-case,to=biz|blog|cc|cloud|club|info|life|live|me|one|online|shop|site|space|store
 /^https:\/\/[a-z]{5,10}\.[a-z]{5,10}\.[a-z]{3}\/y1\.html$/$doc,match-case,to=com|top|~weebly.com
 /^https:\/\/[a-z]{5,7}\.[0-9a-z]{12}\.top\/[0-9a-f]{32}\/[0-9-a-f]{32}\/$/$doc,match-case,to=top
@@ -52993,6 +53003,7 @@ $~xmlhttprequest,removeparam=mbid
 /apu.php?*&zoneid=
 /apw.js
 /aqtag.
+/arc/subs/p.min.js$script,~third-party
 /arcAdsJS/*
 /arcads.js$script
 /ard.png?
@@ -53902,6 +53913,7 @@ $~xmlhttprequest,removeparam=mbid
 /c.wasm
 /c.wrating.com/*
 /c/674_rlt.js
+/c/assets/pigeon.js$script,~third-party
 /c/i.php?id=$script,third-party
 /c2_count.js
 /c4s_cookie_notification.js
@@ -56185,6 +56197,7 @@ $~xmlhttprequest,removeparam=mbid
 /evergage.min.js
 /evidon-banner.js
 /evidon-sitenotice-tag.js
+/evolok/*ev-widgets.min.js$script
 /evt.gif?
 /evtrack-
 /ewtrack.
@@ -60322,6 +60335,7 @@ $~xmlhttprequest,removeparam=mbid
 /payperpost.
 /paypic/*
 /paytmscripts.js
+/paywall/evercookie_get.js$script,~third-party
 /pb-ads/*
 /pb.min.
 /pbasitetracker.
@@ -62237,6 +62251,7 @@ $~xmlhttprequest,removeparam=mbid
 /sharecounter?
 /sharecounts/*
 /shared-content/art/stats/common/tracker.js
+/shared-content/art/tncms/api/access.*.js$script,~third-party
 /shared-social-
 /shared/ad_
 /shared/ads.
@@ -64183,6 +64198,7 @@ $~xmlhttprequest,removeparam=mbid
 /ts.php?$xhr,3p
 /ts.php?q=$xmlhttprequest,third-party
 /ts.php?z=$xmlhttprequest,third-party
+/ts/ttfc.html?sc=$document,popup
 /tsc.php?*&ses=
 /tse/tracking.
 /tsrHitCounter.
@@ -65005,6 +65021,7 @@ $~xmlhttprequest,removeparam=mbid
 /wp-coin-hive.js
 /wp-content/*/an-temp/*
 /wp-content/*/javascripts/*.passive_display_adblock.js$~third-party
+/wp-content/*/plugins/rcp-view-limit/$script,~third-party
 /wp-content/ads/*
 /wp-content/ads/*$~xmlhttprequest
 /wp-content/blog-plugins/wordads-classes/js/notice.bundle.js$script
@@ -65100,6 +65117,7 @@ $~xmlhttprequest,removeparam=mbid
 /wp-content/plugins/icegram/*
 /wp-content/plugins/image-watermark/*$script
 /wp-content/plugins/image-watermark/js/no-right-click.js
+/wp-content/plugins/incognito_dectector/$script,~third-party
 /wp-content/plugins/incognito_dectector/*/incognito-detector.
 /wp-content/plugins/indeed-social-media/*
 /wp-content/plugins/instagram-feed/*$~stylesheet
@@ -65111,6 +65129,7 @@ $~xmlhttprequest,removeparam=mbid
 /wp-content/plugins/kill-adblock/*
 /wp-content/plugins/ko-fi-button/js/widget.js
 /wp-content/plugins/leaky-paywall/js/leaky-paywall-cookie.js$script,1p,badfilter
+/wp-content/plugins/leaky-paywall/js/leaky-paywall-cookie.js$script,~third-party
 /wp-content/plugins/lightweight-cookie-notice-free/*
 /wp-content/plugins/lnw-ad-blocker-detector/*$script
 /wp-content/plugins/m-wp-popup/*$script
@@ -65118,6 +65137,7 @@ $~xmlhttprequest,removeparam=mbid
 /wp-content/plugins/mailchimp/*
 /wp-content/plugins/mailoptin/*
 /wp-content/plugins/modesco-zen-subscribe/*
+/wp-content/plugins/newspack-plugin/dist/memberships-gate-metering.js$script,~third-party
 /wp-content/plugins/newspack-popups/*
 /wp-content/plugins/ninja-gdpr-compliance/*
 /wp-content/plugins/noadblock-nice-message/*
@@ -65350,6 +65370,7 @@ $~xmlhttprequest,removeparam=mbid
 /www/delivery/*$script,subdocument
 /www/js/ad/*
 /www/xengine/*
+/www\.vogue\.co\.uk\/[-\w]+$/$script,~third-party
 /wwwads.
 /wwwcount.cgi?
 /wx-cookie-
@@ -65420,7 +65441,7 @@ $~xmlhttprequest,removeparam=mbid
 /xpiads.
 /xpopunder.
 /xpopup.js
-/xpopup.js$script
+/xpopup/xpopup.js
 /xstat.aspx?
 /xstat/?id=$script,~third-party
 /xstat/ppjs?
@@ -65570,6 +65591,7 @@ $~xmlhttprequest,removeparam=mbid
 /zaz-admanager/*
 /zbs.kek.js
 /zclkredirect?visitid=$doc
+/zclkvisitor/*^campaignid=$doc
 /zcool-analytics.js
 /zcredirect?$document
 /zcredirect?$popup
@@ -65581,6 +65603,7 @@ $~xmlhttprequest,removeparam=mbid
 /zebra_cookie.js
 /zedo_
 /zemtracker.
+/zephr/feature$xmlhttprequest
 /zergbid.
 /zero.gif?*&uid=
 /zgdpr.min.js
@@ -66457,6 +66480,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||amica.pl/static/*/Amasty_GdprFrontendUi/js/*.js
 @@||amigosmuseoreinasofia.org/assets/js/cookiecuttr/jquery.cookie.js
 @@||aminhaconta.xl.pt/Campaigns/Blockers/ads.html$subdocument,document=record.xl.pt
+@@||ampproject.org/v0/amp-consent-$script
 @@||ams.cdn.arkadiumhosted.com/assets/*/advertisements.js
 @@||ams.cdn.arkadiumhosted.com/assets/*/display-ads-f.js
 @@||amtonline.com.br^$generichide
@@ -67750,6 +67774,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||cgtips.org^$generichide
 @@||chaintv.xyz/homestatic/js/adjs.js
 @@||challenge.place^$ghide
+@@||challenge.seyra.online/challenge.js?api_key=$script
 @@||challenges.cloudflare.com/turnstile/$3p,script
 @@||challenges.cloudflare.com/turnstile/$script
 @@||challenges.cloudflare.com^$stealth
@@ -68055,6 +68080,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||consent.gutefrage.net/Notice.*.js
 @@||consent.shieldsgazette.com/Notice.*.js
 @@||consentmanager.mgr.consensu.org/delivery/consent.php
+@@||consentmanager.net$script,third-party
 @@||conservationmag.org^$generichide
 @@||conservationmag.org^$ghide
 @@||consilium.europa.eu/assets/chunk/cookie-banner.js$~third-party
@@ -72043,7 +72069,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||mx-sh.net/advertisements.js
 @@||mx-sh.net^$generichide
 @@||mxcontent.net/*.mp4$media,stealth=referrer
-@@||my-site-*.square.site^$doc
 @@||my.asos.com/identity^$stealth=referrer
 @@||my.foxnews.com^$stealth=referrer
 @@||my.goabode.com/assets/js/fp2.min.js$script,~third-party
@@ -72096,6 +72121,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||myntra.com/beacon/user-data^$xhr,1p
 @@||mypapercraft.net^$generichide
 @@||mypearson.com^*/ga.min.js
+@@||myprivacy-static.dpgmedia.net/consent.js$script,third-party
 @@||myqqjd.com/wp-content/plugins/open-
 @@||myqqjd.com^$generichide
 @@||myreadingmanga.disqus.com^$script
@@ -72776,6 +72802,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||pervyi-tv.online/ads/$image
 @@||pervyi-tv.online^$ghide
 @@||pes-patch.com^$generichide
+@@||pes6stars.com/pageear.js$script,1p
 @@||pesmaster.com^$generichide
 @@||petdrugsonline.co.uk/scripts/gtm.js$~third-party
 @@||petrochina.com.cn/advertisement_
@@ -73722,6 +73749,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||scylla.wgplayer.com/f_webp/$image
 @@||scyts.com^$generichide
 @@||sdc.pingan.com^$~image
+@@||sdk.privacy-center.org^$script,third-party
 @@||sdltutorials.com/Data/Ads/AppStateBanner.jpg$~third-party
 @@||se.com/_uce_/immutable/chunks/google-analytics.$script
 @@||se.com/myschneider/assets/onetrust.$~third-party
