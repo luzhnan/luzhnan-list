@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-10-09 02:35:07 UTC
+! Updated: 2025-10-10 01:48:48 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1630471
-! Unique lines (pre-final-filter): 574742
-! Final rules in this list: 76448
+! Lines fetched (pre-dedupe, post-initial-clean): 1626901
+! Unique lines (pre-final-filter): 570038
+! Final rules in this list: 76456
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -45097,7 +45097,7 @@
 ##div[class^="proadszone-"]
 ##div[class^="ps_"][value="20"]
 ##div[class^="share42init"]
-##div[class^="smartbanner"][class$="-android"]
+##div[class^="smartbanner"][class*="-android"]
 ##div[class^="sp-"] > div.ss-ic
 ##div[class^="style__social"]
 ##div[data-actirise-slot]
@@ -45897,6 +45897,8 @@ $cookie=_rdt_uuid
 $cookie=_scor_uid
 $cookie=_sharedID
 $cookie=_sharedID_cst
+$cookie=_sharedid
+$cookie=_sharedid_cst
 $cookie=_shopify_y
 $cookie=_sotmpid
 $cookie=_sotmsid
@@ -48101,6 +48103,7 @@ $~xmlhttprequest,removeparam=mbid
 /ButtonAd_
 /C4ATracker.
 /CBM.Tracking.js?
+/CC6F9ACB52D1582671AFEA808AFE10FE.gif
 /CI0/0$image
 /CME-ad-
 /CSAdobeTracking.
@@ -48916,11 +48919,10 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,3p,match-case
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,third-party,match-case
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,xhr,3p
-/^https:\/\/[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$doc,match-case,to=art|autos|baby|best|boats|buzz|cards|cfd|click|cyou|eu|fit|fun|guru|hair|homes|ink|lat|lol|mom|my|pics|quest|sale|sbs|skin|today|top|work|world|xyz
+/^https:\/\/[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$doc,match-case,to=art|autos|baby|best|boats|buzz|cards|cfd|click|cyou|eu|fit|fun|guru|hair|homes|ink|lat|lol|mom|my|pics|quest|sale|sbs|skin|today|top|wiki|work|world|xyz
 /^https:\/\/[a-z]{4,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$doc,match-case,to=biz|blog|cc|cloud|club|info|life|live|me|one|online|shop|site|space|store
 /^https:\/\/[a-z]{5,10}\.[a-z]{5,10}\.[a-z]{3}\/y1\.html$/$doc,match-case,to=com|top|~weebly.com
 /^https:\/\/[a-z]{5,7}\.[0-9a-z]{12}\.top\/[0-9a-f]{32}\/[0-9-a-f]{32}\/$/$doc,match-case,to=top
-/^https:\/\/[a-z]{6,12}\.[a-z]{4,6}\/index\.php/$doc,to=online|shop|~tibiantis.online,match-case
 /^https:\/\/[a-z]{6,13}\.(cloud|xyz)\/[A-Za-z0-9_-]{48}[A-Z]{3}$/$document
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$doc,match-case,to=com|net
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$frame,popup,3p,strict3p,match-case,to=com|net
@@ -49012,6 +49014,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/(?:ak\.)?[a-z0-9]{5,15}\.(?:com|net)\/1\/\d{7}/$doc,frame,popup
 /^https?:\/\/(?:ak\.)?[a-z0-9]{5,15}\.(?:com|net)\/4\/\d{7}/$doc,frame,popup
 /^https?:\/\/(?:ak\.)?[a-z0-9]{5,15}\.(?:com|net)\/5\/\d{7}/$doc,frame,popup
+/^https?:\/\/(?:www\.)?swan[0-9]\.[ctv][cio]p?\//$doc,to=cc|top|vip
 /^https?:\/\/(?:www\.anrdoezrs\.net|cj\.dotomi\.com)\/links(?:-t)?\/\d+\/sid\/[^\/]+\/http/$doc,to=cj.dotomi.com|www.anrdoezrs.net,urlskip=/\/sid\/[^\/]+\/(http[^?]+)/
 /^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-f]{2}\/){2,3}[0-9a-f]{32}\.js$/$script,3p
 /^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-z]{2}\/){2,3}[0-9a-f]{32}\.js/$script,3p,redirect-rule=noop.js
@@ -49087,6 +49090,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/icloud\.apple\.[a-z]{6,}\.[a-z]+/$doc,to=co|cn
 /^https?:\/\/instagram-[a-z][a-z][a-z][a-z][a-z]+\.[a-z]+\//$doc,to=cc|top|help
 /^https?:\/\/instagram-[a-z]{5,}\.[a-z]{2,4}\//$doc,to=cc|top|help
+/^https?:\/\/qqh[0-9]\.mom\//$doc,to=mom
 /^https?:\/\/reddit-\d{1,2}\.[a-z]{4}\.(?:net|org|pw)\//$doc,to=net|org|pw|~reddit.com
 /^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$xmlhttprequest,third-party
 /^https?:\/\/sa\d\.tuisong\.baidu\.com/
@@ -63107,6 +63111,7 @@ $~xmlhttprequest,removeparam=mbid
 /statscounter/*
 /statscript.js
 /statsd_proxy
+/statsig/rgstr?k=client-
 /statspage.$badfilter
 /statspider?
 /statspixel.
@@ -64438,7 +64443,7 @@ $~xmlhttprequest,removeparam=mbid
 /v1/pixel?
 /v1/r.gif?
 /v1/rgstr?k=client-
-/v1/rgstr|
+/v1/rgstr^
 /v1/stats/track
 /v1/tracker.js
 /v1/viewport_events
@@ -70683,6 +70688,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||island.lk/userfiles/image/danweem/island.gif
 @@||islcollective.com/tpls/*/js/common/ads.js
 @@||isolaillyon.it^$generichide
+@@||istanbulsenin.istanbul^$stealth=dpi
 @@||isthischannelmonetized.com/wp-content/plugins/*/assets/js/bannerad.js
 @@||isthischannelmonetized.com^$ghide
 @@||isthischannelmonetized.com^$script,1p
@@ -71594,6 +71600,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||marketscreener.com/search/?$removeparam
 @@||marriedgames.com.br/wp-content/cache/*/js/advertising-*.js
 @@||martinfowler.com/articles/asyncJS.css$stylesheet,~third-party
+@@||marunouchi.com/_nuxt/CookieBanner.
 @@||mas-13.site^$generichide
 @@||mashtips.com/wp-content/plugins/ad-inserter/*/*.js
 @@||mashtips.com/wp-content/plugins/ad-inserter/images/ads.png
@@ -75507,6 +75514,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||uwufufu.com/_nuxt/mixpanel.$~third-party
 @@||uwupad.me^$ghide
 @@||uyduportal.net^$generichide
+@@||uzaktanegitim.ibb.istanbul^$stealth=dpi
 @@||uze-ads.com/ads/$~third-party
 @@||uzmantv.com/metadata/$stealth=referrer
 @@||v.ddys.*.mp4$stealth=referrer
