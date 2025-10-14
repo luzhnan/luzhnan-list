@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-10-13 03:29:29 UTC
+! Updated: 2025-10-14 02:32:54 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1626333
-! Unique lines (pre-final-filter): 569997
-! Final rules in this list: 76459
+! Lines fetched (pre-dedupe, post-initial-clean): 1637808
+! Unique lines (pre-final-filter): 576240
+! Final rules in this list: 76462
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -13009,7 +13009,6 @@
 ###sharingfooter
 ###shark-cookie
 ###shop-cookie
-###shoper-foot ~ div.consents
 ###shopify-pc__banner
 ###shopify-section-age-gate
 ###shopify-section-age-verification
@@ -24022,6 +24021,7 @@
 ##.cky-box-bottom-right.cky-consent-container
 ##.cky-classic-bottom.cky-consent-container
 ##.cky-consent-container
+##.cky-overlay
 ##.cl-ad-billboard
 ##.cl-consent
 ##.cl-social
@@ -37613,7 +37613,6 @@
 ##.shift-ad
 ##.shiftr-cookie-notice
 ##.shop_index > div#cookie
-##.shop_index > div.consents
 ##.shopee-search-user-brief
 ##.shopui-eu-cookie-bar
 ##.shortadvertisement
@@ -43387,6 +43386,7 @@
 ##a[href="#scrolltop"]
 ##a[href="#top-of-page"]
 ##a[href="#tothetop"]
+##a[href="/AllRes/Vlog2.html"]
 ##a[href="/ad2.html"]
 ##a[href="/e/member/register/index.php?tobind=0&groupid=1"]
 ##a[href="/gghtml/tyc.html"]
@@ -46334,6 +46334,7 @@ $removeparam=/^fb_(source|ref)=/
 $removeparam=/^fb_action_(types|ids)=/
 $removeparam=/^featured_on=pythonbytes$/
 $removeparam=/^ga_[a-z_]+=/
+$removeparam=/^has-promotion=$/
 $removeparam=/^hmb_(campaign|medium|source)=/
 $removeparam=/^itm_(campaign|medium|source)=/
 $removeparam=/^mc_(eid|cid|tc)=/
@@ -48925,7 +48926,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$doc,match-case,to=com|net
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$frame,popup,3p,strict3p,match-case,to=com|net
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/js\?t=[_a-z0-9]+&ns=[a-z]{2}$/$script,3p,strict3p,match-case,to=com|net
-/^https:\/\/[a-z]{7,8}\.[a-z]{2,8}\/[!.+,=?@\[][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=agency|art|asia|auction|bar|beauty|beer|best|biz|business|cam|cards|click|cloud|coupons|digital|diy|fashion|food|forum|gay|guru|info|life|live|living|link|ltd|my|property|pw|rocks|run|sbs|shop|store|studio|tattoo|tech|today|top|uno|work,match-case
+/^https:\/\/[a-z]{7,8}\.[a-z]{2,8}\/[!.+,=?@\[][\/0-9a-z]{20,30}\.[-a-z]{2,7}$/$doc,to=agency|art|asia|auction|bar|beauty|beer|best|biz|business|cam|cards|click|cloud|coupons|digital|diy|fashion|food|forum|gay|guru|info|life|live|living|link|ltd|my|ooo|property|pw|rocks|run|sbs|shop|store|studio|tattoo|tech|today|top|uno|work,match-case
 /^https:\/\/[a-z]{7,8}\.com\/\?s=[0-9a-z]{13}&q=/$doc,to=com,match-case
 /^https:\/\/[a-z]{7,}\.[a-z]{3,}\/get\/\?s=[a-zA-Z0-9]+=*$/$script,3p,match-case,to=~edu|~gov
 /^https:\/\/[a-z]{7,}\.[a-z]{3,}\/img\/$/$script,3p,match-case,to=~edu|~gov
@@ -49035,7 +49036,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/.+\.l\.qq\.com/
 /^https?:\/\/.+\/videos\/other\/.+/
 /^https?:\/\/146\.59\.211\.(\d){1,3}.*/$popup,third-party
-/^https?:\/\/[-0-9a-z]{5,}\.com\/[0-9a-z]{8,10}\?key=[0-9a-f]{32}$/$frame,3p
+/^https?:\/\/[-0-9a-z]{5,}\.com\/[0-9a-z]{8,10}\?key=[0-9a-f]{32}$/$doc,frame,to=com
 /^https?:\/\/[-a-z0-9]{25,}\.vercel\.app\/id\/\d{15,17}\.html\b/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z0-9]{8,}\.ru\/\?load=[a-zA-Z0-9]+(-[a-zA-Z0-9]+)+$/$doc,match-case,to=ru
 /^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.com[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
@@ -66766,7 +66767,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||apiblogger.xyz/blogger/video-play.mp4$stealth=referrer
 @@||apim.canadiantire.ca^$stealth=referrer
 @@||apim.prd.natlot.be^$stealth=3p-auth
-@@||apis.naver.com^$stealth=dpi
 @@||apiservices.krxd.net/click_tracker^
 @@||apjr.needrom.com/advert*.js
 @@||apk.tw/source/plugin/mydefplugin/advertise.js$script,~third-party
@@ -67275,7 +67275,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||bing.com/secure/Passport.aspx$stealth=referrer
 @@||bing.com/translator/api/Translate/TranslateArray?$third-party,xmlhttprequest
 @@||bing.com^$generichide
-@@||bing.com^$stealth=ip
+@@||bing.com^$stealth=ip|referrer|push
 @@||bingfeng.tw/source/plugin/unadblock/*_ads_*.js
 @@||bingfeng.tw^$generichide
 @@||biochemden.com^$generichide
@@ -67433,6 +67433,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||bscfsdf.azzureedge.xyz/scripts/*.m3u8$stealth=referrer
 @@||bsdex.de^$cname
 @@||bsp.needrom.com/advert*.js
+@@||bstlar.com^$generichide
 @@||bt*.t-ru.org^$stealth=useragent
 @@||bt.com^*/touchclarity/homepage/omtr_tc.js
 @@||bt.dk/build/advertisement.e39e7e4b.js
@@ -67686,6 +67687,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||cdn.needrom.com/advert*.js
 @@||cdn.needrom.com/advert3.js$script
 @@||cdn.oddschecker.com/cookie-policy-banner/bundle/cookie-policy-banner-$script
+@@||cdn.optimizely.com/*.json$xhr
 @@||cdn.parkiet.com/cmp/cmp.min.js
 @@||cdn.playwire.com/bolt4/js/zeus/frame/admgr$script,1p
 @@||cdn.plytv.me/scripts/embed.min.js
@@ -67989,6 +67991,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||cntv.cn/include/video/js/cntv_Advertise.js
 @@||cntv.cn^*_ad.js
 @@||cnubis.com/*?download_token=$stealth=referrer
+@@||co.kr^$stealth=dpi
 @@||coachmag.co.uk^$ghide
 @@||coastwatersports.co.uk/min/?f=ext/jquery/
 @@||cobachpl8.milaulas.com^$generichide
@@ -69132,6 +69135,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||extremeoverclocking.com^$ghide
 @@||extremereportbot.com^$ghide
 @@||eyalo.com^$generichide
+@@||eyejokerdb.com^$stealth=dpi
 @@||ez3c.tw/js/adblockDetector.js
 @@||ez3c.tw^$generichide
 @@||ezodn.com/cmp/gvl.json$xmlhttprequest
@@ -72211,6 +72215,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||naturalnews.com/wp-content/themes/$script,1p
 @@||natureetdecouvertes.com^*/pixel.png$~third-party
 @@||natureetdecouvertes.com^*/pixel.png$~third-party,badfilter
+@@||naver.com^$stealth=dpi
 @@||navratdoreality.cz^$generichide
 @@||nazolog.com^$generichide
 @@||nb-music.net^$generichide
@@ -72321,7 +72326,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||nicecarsinfo.com^$generichide
 @@||nicematin.com/assets/*/ads.js$script
 @@||nichepcgamer.com^$generichide
-@@||nid.naver.com^$stealth=dpi
 @@||niezawodny.pl/templates/js/cookie-consent.js$~third-party
 @@||niftyfutures.org^$ghide
 @@||nihasi.ru/upload/resize_cache/*/300_250_$image,~third-party
@@ -75517,7 +75521,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||uwufufu.com/_nuxt/mixpanel.$~third-party
 @@||uwupad.me^$ghide
 @@||uyduportal.net^$generichide
-@@||uzaktanegitim.ibb.istanbul^$stealth=dpi
 @@||uze-ads.com/ads/$~third-party
 @@||uzmantv.com/metadata/$stealth=referrer
 @@||v.ddys.*.mp4$stealth=referrer
