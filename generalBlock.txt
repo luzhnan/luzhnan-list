@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-10-22 03:42:53 UTC
+! Updated: 2025-10-24 02:36:02 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1626663
-! Unique lines (pre-final-filter): 565140
-! Final rules in this list: 76494
+! Lines fetched (pre-dedupe, post-initial-clean): 1636537
+! Unique lines (pre-final-filter): 573236
+! Final rules in this list: 76500
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -2349,8 +2349,8 @@
 ###ads_text
 ###ads_textlinks
 ###ads_title
-###ads_top
 ###ads_top2
+###ads_top:not(a)
 ###ads_top_banner
 ###ads_top_container
 ###ads_top_content
@@ -4545,8 +4545,6 @@
 ###content-cookie
 ###content-cookies
 ###content-header-ad
-###content-left-ad
-###content-right-ad
 ###content-share-top
 ###content-sharer-article
 ###content-social
@@ -8614,7 +8612,6 @@
 ###footer_ad_container
 ###footer_ad_frame
 ###footer_ad_holder
-###footer_ad_modules
 ###footer_adcode
 ###footer_add
 ###footer_addvertise
@@ -14614,7 +14611,6 @@
 ###top_span_ad
 ###top_sponsor_ads
 ###top_sponsor_text
-###top_wide_ad
 ###topad
 ###topad-728x90
 ###topad-block
@@ -17457,6 +17453,7 @@
 ##.ad-placeholder-leaderboard
 ##.ad-placeholder-wrapper
 ##.ad-placeholder-wrapper-dynamic
+##.ad-placeholder:not(#detect, #detect_ad_empire, #filter_ads_by_classname, .adsbox)
 ##.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
 ##.ad-placeholder__inner
 ##.ad-placement-left
@@ -17669,7 +17666,6 @@
 ##.ad-space-mpu-box
 ##.ad-space-topbanner
 ##.ad-space:not(.textads)
-##.ad-space:not(.textads):not(.adbox)
 ##.ad-spacing
 ##.ad-span
 ##.ad-speedbump
@@ -17861,6 +17857,7 @@
 ##.ad-zone
 ##.ad-zone-ajax
 ##.ad-zone-container
+##.ad-zone:not(.adsbox, .textads)
 ##.ad-zone:not(.textads)
 ##.ad.addon
 ##.ad.bottomrect
@@ -46558,6 +46555,8 @@ $removeparam=adsafe_jsinfo
 $removeparam=adsafe_type
 $removeparam=adsafe_url
 $removeparam=adset_id
+$removeparam=adsterra_clid
+$removeparam=adsterra_placement_id
 $removeparam=adt_ei
 $removeparam=adtech_uid
 $removeparam=adtype
@@ -46870,6 +46869,7 @@ $removeparam=fb_action_types
 $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
+$removeparam=fbadid
 $removeparam=fbclid
 $removeparam=fcref
 $removeparam=fetch_unseen
@@ -47107,6 +47107,8 @@ $removeparam=mx_maq_call
 $removeparam=n_cid
 $removeparam=na_ci
 $removeparam=na_exid
+$removeparam=nb_expid_meta
+$removeparam=nb_placement
 $removeparam=ncid
 $removeparam=nettype
 $removeparam=nosto
@@ -57563,6 +57565,8 @@ $~xmlhttprequest,removeparam=mbid
 /home/ads-
 /home/ads/*
 /home/ads_
+/home/new/v*/api/applogger.php
+/home/new/v*/api/get-ip.php
 /home/sponsor_
 /home30/ad.
 /homeCounter.
@@ -58950,6 +58954,7 @@ $~xmlhttprequest,removeparam=mbid
 /localga.js
 /locker.php?pub=*&gateid=$script
 /locotrack.js
+/log-adblock.php?
 /log-ads.
 /log-moltron-interaction?
 /log-nt/*
@@ -66059,6 +66064,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||9zvip.net^$elemhide
 @@||a-ads.com/assets/common/ad_blocker-203c5bd097d317c7badf88cd5afdaf79091c5f0b9ab00763ae2a84ee4d2c218b.js|$script
 @@||a-delivery*.mxdcontent.net^$stealth=referrer,media
+@@||a.asd.$generichide
 @@||a.fsdn.com/sd/js/scripts/ad.js
 @@||a.klaviyo.com/consent-pages/client/$xmlhttprequest
 @@||a.lulucdn.com/js/dnsads.js
@@ -66145,8 +66151,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||ad.abchina.com^
 @@||ad.admitad.com/*/*&ulp=
 @@||ad.admitad.com/*/?ulp=
-@@||ad.admitad.com/3rd-party/*/cookie/?f=CookieChecker.remoteTest
-@@||ad.admitad.com/3rd-party/advert.js
 @@||ad.admitad.com/g/*&ulp=http$doc
 @@||ad.adverticum.net/cc.js
 @@||ad.alimama.com^$genericblock
@@ -66667,7 +66671,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||aobi.100bt.com/play/ad/ad*.swf
 @@||aol.com/mm_track/slideshow/$subdocument
 @@||aone-soft.com/style/images/ad2.jpg
-@@||aosmark.com/ads.js
 @@||aosmark.com^$ghide
 @@||apfeltalk.de/community/$xmlhttprequest
 @@||aphim.co^$generichide
@@ -66810,6 +66813,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||app.appsflyer.com/*?af_ios_url=https*shopee.co
 @@||app.appsflyer.com/id*&*navigate_url*shopee.co
 @@||app.appsflyer.com^$third-party
+@@||app.axenthost.com^$generichide
 @@||app.canada.com/video/assets/js/lib/advertisement.js
 @@||app.clarity.so^$~third-party
 @@||app.conceptboard.com^*/SocialIcons.js$xmlhttprequest
@@ -70881,6 +70885,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||js.iplsc.com/inpl.abd/*/proxy.html?host=$generichide
 @@||js.jansatta.com/ads_js.js
 @@||js.skyscnr.com/sttc/acorn/static/*/CookieBanner.*.chunk.*
+@@||js.stripe.com^$stealth=referrer
 @@||js.tudouui.com/bin/player2/$object
 @@||js.vpro.nl/vpro/*/statcounter.js?
 @@||jsdelivr.net/npm/sharer.js
@@ -72774,6 +72779,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||parenting.pl^$generichide
 @@||parhaye.com^$generichide
 @@||parlament.mt/scripts/easy-social-share.js
+@@||parliament.nz/*/stormcaster.js$script,~third-party
 @@||parse.ly/page-data/help/api/analytics/$xhr,1p
 @@||partner.ipla.tv/embed/$stealth=referrer
 @@||partner.market.yandex.ru^$stealth=referrer
@@ -73841,7 +73847,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||seelen.io^$script,1p
 @@||seg-cdn.pumpkin.care/analytics.js/$~third-party
 @@||seguridad.compensar.com/lib/js/fingerprint2.js$~third-party
-@@||seir-sanduk.com/$script,1p
 @@||seireshd.com^$generichide
 @@||seireshd.com^$ghide
 @@||seirsanduk.*/$script,1p
@@ -74225,6 +74230,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||sozcukbul.com^$generichide
 @@||sozi.cn/images/ad/tj
 @@||sozialversicherung-kompetent.de/plugins/system/gdpr/assets/js/cookieconsent.min.js
+@@||sp.auth.adobe.com/reggie/*/regcode$stealth=3p-auth
 @@||sp1.baidu.com/*/gettts?$media
 @@||space.bilibili.com^$removeparam
 @@||spacecentre.co.uk/wp-content/plugins/uk-cookie-consent^
