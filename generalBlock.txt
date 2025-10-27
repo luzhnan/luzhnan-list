@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-10-25 13:07:57 UTC
+! Updated: 2025-10-27 06:23:00 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1641293
-! Unique lines (pre-final-filter): 576867
-! Final rules in this list: 76501
+! Lines fetched (pre-dedupe, post-initial-clean): 1637904
+! Unique lines (pre-final-filter): 572862
+! Final rules in this list: 76512
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -24462,6 +24462,7 @@
 ##.contenidoAvisoPoliticaCookies
 ##.content > #dhxhtml
 ##.content > .module > .small-icon-container > a.small-icon-div[target="_blank"]
+##.content > .myads
 ##.content > .small-icon-container > a.small-icon-div[target="_blank"]
 ##.content > a > .topline
 ##.content > aside.ad
@@ -29593,7 +29594,13 @@
 ##.gg-one
 ##.gg1000
 ##.gg430
+##.gg_1
+##.gg_2
+##.gg_3
 ##.gg_300
+##.gg_4
+##.gg_5
+##.gg_6
 ##.gg_728
 ##.gg_950
 ##.gg_960
@@ -48724,6 +48731,7 @@ $~xmlhttprequest,removeparam=mbid
 /\.accountant\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
 /\.bid\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
 /\.bitiba\./
+/\.bizjournals\.com\/.+\/(news|stories)\/.+\.html/$inline-script
 /\.click\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
 /\.cloudfront\.net\/(?=[a-z]{0,6}\d)[a-f0-9]{7}\.js$/$script,3p,match-case,to=~d3dvi1l4i1go4x.cloudfront.net
 /\.club\/[0-9]{2,9}\/$/$script,stylesheet,third-party,xmlhttprequest
@@ -62720,7 +62728,6 @@ $~xmlhttprequest,removeparam=mbid
 /soku/giantstar/js/youlog.js
 /solarcode.js
 /solid.gif?z=
-/solid.gif?z=*&abvar=$third-party
 /somaadscaleskyscraperscript.
 /some-ad.
 /someads.
@@ -66373,6 +66380,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||aii.sh^$generichide
 @@||aii.sh^$ghide
 @@||aiimgvlog.fun^$generichide
+@@||aile.gov.tr^$stealth=dpi
 @@||aimasummd.blog.fc2.com^$generichide
 @@||aipebel.com^$generichide
 @@||airav.cc/js/td_ga_tracker.js
@@ -70148,6 +70156,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||harvard.edu/scripts/ga_social_tracking.js
 @@||hastingsobserver.co.uk^$ghide
 @@||hatauzmani.com^$generichide
+@@||havenclick.com/www/delivery/asyncjs.php
 @@||havoc-os.com^$generichide
 @@||hax.co.id^$ghide
 @@||haxnode.net^$generichide
@@ -73244,6 +73253,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||promotique.com.au^*/Common/ga.js$script,1p
 @@||properhacks.weebly.com^$ghide
 @@||proquest.com/modules.gz/snowplow/snowplow-
+@@||proregion24.by^$stealth=dpi
 @@||protestia.com^$generichide
 @@||proton.me/*/google-ads-$image,1p
 @@||proton.me/static/*/google-ads-blog.webp
@@ -74391,6 +74401,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||statcounter.com/js//fusioncharts.charts.js
 @@||statcounter.com/js/fusioncharts.js
 @@||statcounter.com/js/packed/statcounter-$script,~third-party
+@@||stateless.me^$ghide
 @@||states.newegg.com/b/ss/neweggprod/
 @@||static*.lacoste.com/static/on/demandware.static/Sites-*-Site/-/*/framework/components/cookie-consent.js
 @@||static*.nytimes.com/newsgraphics/*/_assets/graphics/$xmlhttprequest,elemhide,jsinject,extension
