@@ -1,5 +1,18 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-10-31 07:51:41 UTC
+! Updated: 2025-10-31 14:24:13 UTC
+! Source URLs Attempted: 68
+! Source URLs Successfully Fetched: 68
+! Lines fetched (pre-dedupe, post-initial-clean): 1683080
+! Unique lines (pre-final-filter): 589235
+! Final rules in this list: 76536
+!
+! Filtering Logic Applied:
+! - All source comments, empty lines, HOSTS entries removed.
+! - Excluded rules specific to particular domains (e.g., 'example.com##banner', '||example.com', 'example.com$image').
+! - Excluded rules containing '$app=', '$domain=', or ',domain=' options.
+! - Aims to keep only general network, cosmetic, and scriptlet rules.
+! - The ',important' modifier has been removed from rules.
+! --- Generated rules below ---
 ###-CookieConsentContainer
 ###ACCETTA_COOKIES
 ###AC_ad
@@ -48847,6 +48860,7 @@ $~xmlhttprequest,removeparam=mbid
 /^duomeng\./
 /^dwtrack\./
 /^guanggao\./
+/^http.*[^?]\?$/$doc,removeparam=/^=$/
 /^http:\/\/[a-z]{5}\.[a-z]{5}\.com\/[a-z]{10}\.apk$/$doc,match-case,to=com
 /^https://[a-z]{40,}\.pages\.dev\//$doc,to=pages.dev
 /^https:\/\/(?:[-a-z0-9]+\.){2}workers\.dev\/v3\/(?:forgotpassword|security|signup)\b/$doc,to=workers.dev
@@ -48911,6 +48925,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/[a-z0-9]{2,}\.[a-z0-9]{4,11}\.ru\/[a-zA-Z0-9]{30,}\?[a-zA-Z0-9]{25,}$/$doc,to=ru
 /^https:\/\/[a-z0-9]{2,}\.[a-z0-9]{4,11}\.su\/[a-zA-Z0-9]{30,}\?[a-zA-Z0-9]{25,}$/$doc,to=su
 /^https:\/\/[a-z0-9]{3,}\.[a-z]{8,10}\.ru\/[a-zA-Z0-9]{6,8}\/#[A-Z][a-z]{5,}@[a-z]+\.com$/$doc,match-case,to=ru
+/^https:\/\/[a-z0-9]{4,15}\.pages\.dev\/\d\/login\b/$doc,match-case,to=pages.dev
 /^https:\/\/[a-z0-9]{50,}\.[a-z0-9]{4,11}\.com\/[a-zA-Z0-9]{50,}$/$xhr,3p,method=get,to=com|~google.com|~microsoft.com,from=com|ru|su
 /^https:\/\/[a-z0-9]{50,}\.[a-z0-9]{4,11}\.ru\/[a-zA-Z0-9]{50,}$/$xhr,3p,method=get,to=ru,from=com|ru|su
 /^https:\/\/[a-z0-9]{50,}\.[a-z0-9]{4,11}\.su\/[a-zA-Z0-9]{50,}$/$xhr,3p,method=get,to=su,from=com|ru|su
@@ -62998,6 +63013,7 @@ $~xmlhttprequest,removeparam=mbid
 /static_ads/*
 /staticadslot.
 /statics/analytics.js?
+/statics/govv.js$~third-party
 /statics/js/dddd.js
 /statics/js/guding.js
 /statics/js/hth1111.html
@@ -76533,4 +76549,3 @@ $~xmlhttprequest,removeparam=mbid
 ^via=futurepedia^$removeparam=via
 ^z=*&var=$removeparam=var
 ^z=*&var=$removeparam=var,doc
-
