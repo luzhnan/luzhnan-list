@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-10-31 14:24:13 UTC
+! Updated: 2025-11-02 02:01:22 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1683080
-! Unique lines (pre-final-filter): 589235
-! Final rules in this list: 76536
+! Lines fetched (pre-dedupe, post-initial-clean): 1690466
+! Unique lines (pre-final-filter): 595155
+! Final rules in this list: 76506
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -38165,6 +38165,7 @@
 ##.slate-footer__follow-slate
 ##.slice-container-newsletterForm
 ##.slice_Cookies
+##.slick-slider.slick-initialized[dir='ltr']
 ##.slickshare
 ##.slide-ad
 ##.slide-desc-share
@@ -46239,6 +46240,8 @@ $doc,removeparam=_clde
 $doc,removeparam=_cldee
 $doc,removeparam=_ft_
 $doc,removeparam=_hsenc
+$doc,removeparam=adsterra_clid
+$doc,removeparam=adsterra_placement_id
 $doc,removeparam=af_reengagement_window
 $doc,removeparam=af_xp
 $doc,removeparam=afid
@@ -46379,6 +46382,7 @@ $removeparam=/^ref=winstall$/
 $removeparam=/^source=googleps$/
 $removeparam=/^utm(_[a-z_]*)?=/
 $removeparam=/^vn(_[a-z]*)+=/
+$removeparam=/^wdorigin=.*$/i
 $removeparam=/^wt_?z?mc=/
 $removeparam=24sata_ref
 $removeparam=2p_affiliate_id
@@ -47122,6 +47126,7 @@ $removeparam=ncid
 $removeparam=nettype
 $removeparam=nosto
 $removeparam=nosto_source
+$removeparam=notification_referrer_id
 $removeparam=nr_email_referer
 $removeparam=nrtv_as_src
 $removeparam=nrtv_cid
@@ -47291,6 +47296,7 @@ $removeparam=share_link_id
 $removeparam=shrsl_analytics_sscid
 $removeparam=shrsl_analytics_sstid
 $removeparam=sifi_uid
+$removeparam=slref
 $removeparam=sm12
 $removeparam=sms_click
 $removeparam=sms_source
@@ -47342,6 +47348,7 @@ $removeparam=sv_session
 $removeparam=svisitor
 $removeparam=sxsrf
 $removeparam=szredirectid
+$removeparam=t-src
 $removeparam=ta_partner_did
 $removeparam=taboola_id
 $removeparam=tagtag_uid
@@ -47473,7 +47480,6 @@ $removeparam=vsm_type
 $removeparam=vxii_pdid
 $removeparam=waad
 $removeparam=wbraid
-$removeparam=wdorigin
 $removeparam=wgexpiry
 $removeparam=wgu
 $removeparam=wickedid
@@ -47495,6 +47501,7 @@ $removeparam=wx_navbar_hidden
 $removeparam=wx_navbar_transparent
 $removeparam=wx_statusbar_hidden
 $removeparam=x-acqsource
+$removeparam=x-clickref
 $removeparam=x-wts
 $removeparam=x50878
 $removeparam=xcreo
@@ -49027,7 +49034,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/(35|104)\.(\d){1,3}\.(\d){1,3}\.(\d){1,3}\//$popup,third-party
 /^https?:\/\/(?!assets|script|static)(?:[0-9a-z]{10,13}|[0-9a-z]{6})\.[0-9A-Za-z.\-_]+\/(?=[0-9a-z+\/\-]*[A-Z])[0-9A-Za-z+\/\-]{80,106}$/$match-case,script,~third-party
 /^https?:\/\/(?!assets|script|static)(?:[0-9a-z]{10,13}|[0-9a-z]{6})\.[0-9A-Za-z.\-_]+\/(?=[0-9a-z+\/\-]*[A-Z])[0-9A-Za-z+\/\-]{80,106}$/$script,1p,match-case,strict3p
-/^https?:\/\/(?:[-a-z]{4,}\.)?gov[-.][-a-z0-9]{2,}\.[a-z]{2,6}\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/(?:[-a-z]{4,}\.)?gov[-.][-a-z0-9]{2,}\.[a-z]{2,6}\//$doc,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
 /^https?:\/\/(?:[^.]+\.){2}(?:com|io|net)\/[a-zA-Z0-9]{6}\?subId1=[^&]+&u=http/$doc,to=com|io|net,urlskip=?u
 /^https?:\/\/(?:[^.]+\.){2}(?:com|io|net)\/c(?:\/\d+){3}\/?\?.*?&?URL=http/$doc,to=com|io|net,match-case,urlskip=?URL
 /^https?:\/\/(?:[^.]+\.){2}(?:com|io|net)\/c(?:\/\d+){3}\/?\?.*?&?u=http/$doc,to=com|io|net,urlskip=?u
@@ -49063,15 +49070,15 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/[-0-9a-z]{5,}\.com\/[0-9a-z]{8,10}\?key=[0-9a-f]{32}$/$doc,frame,to=com
 /^https?:\/\/[-a-z0-9]{25,}\.vercel\.app\/id\/\d{15,17}\.html\b/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z0-9]{8,}\.ru\/\?load=[a-zA-Z0-9]+(-[a-zA-Z0-9]+)+$/$doc,match-case,to=ru
-/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.com[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
-/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.gov[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
-/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.org[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.com[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.gov[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.org[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{12,}\.vercel\.app\/[^.]+?=D400e/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z]{12,}\.vercel\.app\/[^.]+?g_ep=?EgoyMDI/$doc,match-case,to=vercel.app|~facebook.com
 /^https?:\/\/[-a-z]{4,}\.(?:com|org)[-.][-a-z]{2,}\.(?:cc|top|vip|world|xin)\/pay\b/$doc,match-case,to=cc|top|vip|world|xin
 /^https?:\/\/[-a-z]{4,}\.(?:com|org)[-.][-a-z]{2,}\.(?:cc|top|vip|world|xin)\/us\b/$doc,match-case,to=cc|top|vip|world|xin
-/^https?:\/\/[-a-z]{4,}\.com[-.][-a-z0-9]{2,}\.[a-z]{2,6}\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
-/^https?:\/\/[-a-z]{4,}\.org[-.][-a-z0-9]{2,}\.[a-z]{2,6}\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/[-a-z]{4,}\.com[-.][-a-z0-9]{2,}\.[a-z]{2,6}\//$doc,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/[-a-z]{4,}\.org[-.][-a-z0-9]{2,}\.[a-z]{2,6}\//$doc,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{5,12}\.[a-z]{3,6}\/[0-9a-h]{1,17}\?[0-9a-zA-Z]{1,21}=[%0-9a-zA-Z]{200,1300}/$xhr,3p,match-case
 /^https?:\/\/[-a-z]{5,13}\.(fun|tech|world|pro|life|love|buzz|click|cfd|club|pro|online|today|space|global|rocks|shop|icu|xyz|top|com|vip)\/[0-9a-z]{1,20}\?(?=[A-Za-z]{0,21}\d?)(?=[0-9a-z]{0,21}[A-Z])[0-9A-Za-z]{15,22}=(?=[%a-z]*[0-9A-Z])[%0-9A-Za-z]{35,2000}$/$xhr,3p
 /^https?:\/\/[-a-z]{6,}\.(?:com?|info|pro|xyz)\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$third-party,match-case,script,xmlhttprequest
@@ -49113,7 +49120,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/d\d\.sinaimg\.cn/
 /^https?:\/\/dienmayxanh[-a-z0-9]+\.com\//$doc,to=com|~dienmayxanh.com
 /^https?:\/\/gitcoin-[a-z]+\.com\//$all,reason="Blatant scammers who are not related to GitHub or Gitcoin whatsoever."
-/^https?:\/\/gov[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
+/^https?:\/\/gov[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$doc,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
 /^https?:\/\/icloud\.apple\.[a-z]{6,}\.[a-z]+/$doc,to=co|cn
 /^https?:\/\/instagram-[a-z][a-z][a-z][a-z][a-z]+\.[a-z]+\//$doc,to=cc|top|help
 /^https?:\/\/instagram-[a-z]{5,}\.[a-z]{2,4}\//$doc,to=cc|top|help
@@ -54973,7 +54980,6 @@ $~xmlhttprequest,removeparam=mbid
 /cookieconsent.latest.min.js
 /cookieconsent.min.$~stylesheet
 /cookieconsent.umd.js
-/cookieconsent/*
 /cookieconsent_
 /cookieconsent_.min.js
 /cookieconsentbar.js
@@ -60105,8 +60111,8 @@ $~xmlhttprequest,removeparam=mbid
 /ontopadvertising.
 /oo/*/l.js
 /oo/*/l.js|$~third-party
-/oo/*/lsync.js
-/oo/*/lsync.js$~third-party
+/oo/*/lsync.
+/oo/*/lsync.$~third-party
 /oo/cl*.js?rd=
 /oo/cl*.js?rd=$~third-party
 /oo/cl.js|$~third-party
@@ -60499,6 +60505,7 @@ $~xmlhttprequest,removeparam=mbid
 /piNctTracking.js
 /piano-analytics-$script
 /piano-analytics.js
+/piano-analytics/pa.js
 /piano/engagement
 /piaofu.js
 /pic.gif?m=
@@ -62242,6 +62249,7 @@ $~xmlhttprequest,removeparam=mbid
 /sfCounter/*
 /sfdc/networktracking.js
 /sfsafsadfjbbj-dsafjnb-1321533417.
+/sftouch?branchId=
 /sg.asp?wsg&df=1$script,third-party
 /sgtracker.js
 /sh588com888/*
@@ -65898,6 +65906,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||123link.biz/js/blockadblock.js
 @@||123link.biz^$generichide
 @@||123link.pw/1/2/advertisement.js
+@@||123multihub.one^$generichide
 @@||126.net/163/frontend/share/js/
 @@||126.net/images/blank.gif
 @@||1337x.st/css/webfonts/oswald-*.$font
@@ -66970,7 +66979,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||assets*.akamai.coub.com/assets/
 @@||assets.247sports.com/Scripts/SkyNet/Shared/ads.js
 @@||assets.beinsports.com/*/scripts/ads.js$~third-party
-@@||assets.digitalocean.com/cookieConsent/$script,stylesheet
 @@||assets.espn.go.com/espn360/builds/nielsen/ggce*.swf
 @@||assets.fyers.in/Lib/analytics/Analytics.js$~third-party
 @@||assets.gameallianz.com/api/js/ads/ads.js
@@ -67166,7 +67174,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||battlecats-db.imgs-server.com^$stealth=referrer
 @@||battlecats.spica-net.com^$generichide
 @@||battlestick2.net/ads.js
-@@||baumschule-pflanzen.de/wp-content/plugins/complianz-gdpr/assets/js/cookieconsent.min.js
 @@||bax.tv^$generichide
 @@||bazaraki.com/adv/
 @@||bazonline.ch/scripts/advertisement.js
@@ -67358,7 +67365,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||blackcircles.ca^$script,~third-party
 @@||blackmod.net^$generichide
 @@||blackpoolgazette.co.uk^$generichide
-@@||blancvpn.com/_nuxt/CookieConsent.
 @@||bleachernation.com/headerprebid/bn_prebid_logic_*.js
 @@||bleepingcomputer.com/*/*/*/$~script,~stylesheet,~xmlhttprequest,~image
 @@||bleepingcomputer.com/download/ads-spy/
@@ -67563,6 +67569,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||cam-archive.com^$generichide
 @@||camarchive.tv/assets/ads.js
 @@||camcam.cc^$generichide
+@@||camel3.live/lib/sensorsdata.full.min.js$~third-party
 @@||camelcamelcamel.com/tracker?rf=
 @@||camera.aeonax.com^$generichide
 @@||camerabay.tv/ads/entry/camerabay/fullbk/bg.jpg
@@ -67622,7 +67629,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||carefood.kz/upload/$image
 @@||carexpert.com.tw/wp-content/plugins/like-box-pro/includes/javascript/front_end_js.js
 @@||cargocollective.com/designs/$document
-@@||carport-diagnose.de/script/cookieconsent.min.js
 @@||carport-diagnose.de/script/cookieconsent.min.js$~third-party
 @@||carrefourpl.snrpage.com^$removeparam=utm_source
 @@||carsensor.net/usedcar/modules/clicklog_top_lp_revo.php$xmlhttprequest
@@ -68087,7 +68093,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||colorcodedlyrics.com/wp-content/plugins/*/sharing.min.js
 @@||colorspire.com^$generichide
 @@||comandotorrent.tv^$generichide
-@@||combi.de/*/cookieconsent/
 @@||comcast.net^$stealth
 @@||comci.kr:4081^$stealth=dpi
 @@||comci.net^$stealth
@@ -68204,7 +68209,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||corvusrom.com^$generichide
 @@||cosmomaker3.blogspot.com^$generichide
 @@||cosmos.azure.com^$stealth=referrer
-@@||costa.co.uk/js/libs/cookieconsent.min.js
 @@||costco.com.mx/*/js/trackermediator.js$script,1p
 @@||costco.com.tw/_ui/shared/js/analyticsmediator.js
 @@||costco.com.tw/jsps/website/zh/images/location/AD
@@ -68522,6 +68526,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||detectadblock.com/*.js$~third-party
 @@||detectadblock.com/ads.js
 @@||detectadblock.com/ads.js$script
+@@||detectportal.firefox.com^$document
 @@||detik.com/urchin.js
 @@||detutorial.com^$generichide
 @@||deutsche-weihnachtsmaerkte.de/booster/$~third-party
@@ -68611,7 +68616,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||ditiezu.com^*.php$subdocument
 @@||divan.tv$generichide
 @@||divany.hu^$generichide
-@@||dixons.nl/catalog/view/theme/dixons/assets/js/vendor/*/cookieconsent.min.js
 @@||dixonsretail.*.omtrdc.net/b/ss/dixonsrtcurrysprod/*/REDIR/*currys.co.uk*api.dcg-search.co*curry
 @@||diyanet.gov.tr^$stealth=dpi
 @@||diymediahome.org/*/adframe.min.js$script,~third-party
@@ -68636,6 +68640,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||dlh.net/ads.html$subdocument
 @@||dlh.net/ajax/keyassign.php?$elemhide
 @@||dlh.net/public/js/advertisement.js
+@@||dlhd.dad^$genericblock
 @@||dlink.mobilejsr.com^$ghide
 @@||dlkoo.cc/down/*/*.htm$popup
 @@||dlkoo.cc/down/Copydown1
@@ -68887,7 +68892,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||easylife.tw/js/adblockDetector.js
 @@||easylife.tw^$generichide
 @@||easypari.fr^*/sitestat.js
-@@||easyparts-rollerteile.de/cookieconsent.php
 @@||easyreaders.site^$ghide
 @@||easyupload.io/cdn-cgi/zaraz/s.js
 @@||easyupload.io/cdn-cgi/zaraz/s.js$1p
@@ -68898,6 +68902,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||ebanking.meezanbank.com/AmbitRetailFrontEnd/js/fingerprint2.min.js$~third-party
 @@||ebates.com/dist/static/*/analytics/*$script,1p
 @@||ebates.com^$generichide
+@@||ebay.*/*promote$xmlhttprequest,elemhide,jsinject,extension
 @@||ebay.*/bfl/placebid/$xmlhttprequest,elemhide,jsinject,extension
 @@||ebay.*/makeOffer/$document,subdocument
 @@||ebay.*/sio/buyer/reviewSellersOffer/$xmlhttprequest,elemhide,jsinject,extension
@@ -68980,7 +68985,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||elahmad.com/tv/videojs/packages/videojs-analytics/videojs-analytics.min.js$script,1p
 @@||elbotola.com^$ghide
 @@||elcomercio.es^$ghide
-@@||elconfidencial.com/javascript/v*/class/requireModules/cookieConsent/CookieConsent.js
 @@||elconfidencial.com^*/AnalyticsEvent.js
 @@||elconfidencial.com^*/EventTracker.js
 @@||elcorreo.com^$ghide
@@ -69038,7 +69042,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||emojipedia.org/ab_fl.js
 @@||emome.net/files/advertising/
 @@||empflix.com^$removeparam
-@@||ems.entega.de/js/lib/cookieconsent.js
 @@||ems.entega.de/js/lib/cookieconsent.js$~third-party
 @@||emturbovid.com/t/$stealth=referrer
 @@||emturbovid.com/t/*?poster=$stealth=referrer
@@ -69082,7 +69085,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||ero18.cc^$generichide
 @@||erocdn.net/data/*.jpg$stealth=referrer
 @@||erocosplay.org^$generichide
-@@||erolnik.gov.pl/content/scripts/cookieconsent.min.js
 @@||erovoice.us^$generichide
 @@||erovoice.us^$ghide
 @@||erpsoftwarelink.blogspot.com^$generichide
@@ -69493,7 +69495,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||forum.notebookreview.com/threads^
 @@||forum.release-apk.com/*#/*/ad/$image
 @@||forum.release-apk.com^$generichide
-@@||forum.scssoft.com/ext/scssoft/cookiebanner/styles/all/template/cookieconsent.js
 @@||forum.warthunder.ru/?&identity_
 @@||forum.warthunder.ru/index.php?*&section=
 @@||forumcoin.win^$generichide
@@ -69534,7 +69535,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||frankiepeach.com^$generichide
 @@||frankonia.de/js/lib/smart-app-banner.js$~third-party
 @@||freaktab.com^$generichide
-@@||free-hearts.com/game/js/lib/cookie-consent/cookieconsent.js
 @@||free-premium.maxidbr.com^$generichide
 @@||free-proxy.cz/js/showads.js
 @@||free-reseau.fr/css/publicite.css|$stylesheet
@@ -69600,7 +69600,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||freewebcart.com^$generichide
 @@||fregat.com/wp-content/plugins/popup-maker/assets/js/site.min.js
 @@||freiepresse.de/js/werbung/advertisement.js
-@@||freikirche-hamm.de/plugins/system/gdpr/assets/js/cookieconsent.min.js$~third-party
 @@||fresherslive.com^$generichide
 @@||freshersnow.com^$ghide
 @@||freshstuff4u.info^$generichide
@@ -69856,7 +69855,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||getpczone.com^$generichide
 @@||getpublica.com/playlist.m3u8$xmlhttprequest
 @@||getrelax.cc^$generichide
-@@||getsysteminfo.com/javascript/cookieconsent.min.js
 @@||getsysteminfo.com/javascript/cookieconsent.min.js$script,~third-party
 @@||gett.com/*/wp-content/uploads/sites/*/adv*.png
 @@||getuikit.com/docs/pages/*.md$jsinject,elemhide,extension
@@ -69876,7 +69874,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||giga.de/wp-content/plugins/econa-stats/log/video-views/log.php?id=
 @@||gigabyte.*^$cookie=/^_ga_/
 @@||gigabyte.us/fileupload/
-@@||gigacloud.ua/assets/*/cookieconsent.
 @@||gigacloud.ua^*/cookieconsent.min.js$~third-party
 @@||gigaho.com^$generichide
 @@||gigya.com/*/socialize.js
@@ -70353,7 +70350,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||honeyhunterworld.com^$ghide
 @@||honoku.com/_app/immutable/chunks/cookiebanner.$~third-party
 @@||hopetech.com/_repository/*/ftpUploads/scripts/cookiepolicy.js
-@@||hopkinsmedicinevirtualadvisors.org/_app/immutable/chunks/CookieConsent.
 @@||hopto.org/js/prebid-ads.
 @@||hopto.org^$generichide
 @@||hornywood.tv/intermission/loadTargetUrl$xmlhttprequest
@@ -70405,6 +70401,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||hse24.de^*/emos2.js
 @@||hsugoi.com/*.mp4$stealth=referrer
 @@||ht.cdn.turner.com/*.smil$document
+@@||html-load.com^
 @@||html-load.com^$stealth=referrer
 @@||html5.5games.cc^$stealth=referrer,third-party
 @@||html5.gamedistribution.com/*/$stealth=referrer
@@ -70448,7 +70445,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||hypercomments.com/auth/$stealth=3p-cookie
 @@||hyperdebrid.*^$ghide
 @@||hyperdebrid.net^$generichide
-@@||hypinvest.mijnhypotheekonline.nl/*/cookieconsent.stater.js
 @@||hypixel.net^$generichide
 @@||hyundaiusa.com/js/analytics/analytics.js$script,1p
 @@||i*.gmx.com/image
@@ -70559,7 +70555,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||imasdk.googleapis.com/js/core/bridge*.html$subdocument
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$from=247sports.com|airtelxstream.in|antena3.ro|api.screen9.com|asianctv.upns.pro|asianembed.cam|autokult.pl|bbc.com|blastingnews.com|bloomberg.co.jp|bloomberg.com|bsfuji.tv|cbc.ca|cbsnews.com|cbssports.com|chicagotribune.com|clickorlando.com|cnet.com|crunchyroll.com|delish.com|digi24.ro|distro.tv|doubtnut.com|einthusan.tv|etonline.com|farfeshplus.com|filmweb.pl|game.pointmall.rakuten.net|gamebox.gesoten.com|gamepix.com|gameplayneo.com|games.usatoday.com|gbnews.com|geo.dailymotion.com|givemesport.com|goodmorningamerica.com|goodstream.uno|gospodari.com|haberler.com|howstuffworks.com|humix.com|ignboards.com|iheart.com|insideedition.com|irctc.co.in|klix.ba|ktla.com|kxan.com|laurelberninteriors.com|lemino.docomo.ne.jp|locipo.jp|maharashtratimes.com|maxpreps.com|metacritic.com|minigame.aeriagames.jp|missoulian.com|myspace.com|nettavisen.no|paralympic.org|paramountplus.com|player.abacast.net|player.amperwave.net|player.earthtv.com|player.performgroup.com|plex.tv|pointmall.rakuten.co.jp|realmadrid.com|rte.ie|rumble.com|s.yimg.jp|scrippsdigital.com|sonyliv.com|southpark.lat|southparkstudios.com|spiele.heise.de|sportsbull.jp|sportsport.ba|stirr.com|success-games.net|synk-casualgames.com|tbs.co.jp|tdn.com|thecw.com|truvid.com|tubitv.com|tunein.com|tv-asahi.co.jp|tv.abcnyheter.no|tv.finansavisen.no|tv.rakuten.co.jp|tver.jp|tvp.pl|univtec.com|utsports.com|video.tv-tokyo.co.jp|vlive.tv|watch.nba.com|wbal.com|weather.com|webdunia.com|wellgames.com|worldsurfleague.com|wowbiz.ro|wsj.com|wtk.pl|zdnet.com|zeebiz.com
 @@||imbc.com/operate/common/ad/covid
-@@||imds-professional.com/wp-content/plugins/complianz-gdpr/assets/js/cookieconsent.min.js
 @@||imedikament.de^$ghide
 @@||imeteo.sk/clanok/adx.adform.net/adx/
 @@||imfeifan.com/adv/$~third-party
@@ -70615,7 +70610,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||impossible3ds.com/wp-content/plugins/uk-cookie-consent/js/uk-cookie-consent-js$~third-party
 @@||impotsurlerevenu.org^$ghide
 @@||impresa.italia.it/itlg/app/bower_components/angular-cookie-law/angular-cookie-law.js
-@@||imrotenochsen.de/wp-content/plugins/complianz-gdpr/assets/js/cookieconsent.min.js
 @@||imrworldwide.com^*/flashdetect.js
 @@||imrworldwide.com^*/swfobject.js
 @@||imsolo.pro^$ghide
@@ -70804,7 +70798,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||jagobd.com^$generichide
 @@||jagran.com/*/ads.js$script
 @@||jagranjunction.com/js/ads.js$script
-@@||jahnupartner.de/plugins/system/gdpr/assets/*/cookieconsent.min.
 @@||jaiefra.com^$generichide
 @@||jakbudowac.pl^$generichide
 @@||jandan.net^$generichide
@@ -70862,7 +70855,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||jeux.meteocity.com^$generichide
 @@||jeuxvideo-live.com/js/ads.js
 @@||jezandwayne.com/wp-content/uploads/*.webm$document
-@@||jg-werbegeschenke.de/wp-content/plugins/complianz-gdpr/assets/js/cookieconsent.min.js
 @@||jheberg.net/js/*_advertisement.js$script
 @@||jianshu.com/asimov/ab_test/info
 @@||jiav000.com^$generichide
@@ -71105,7 +71097,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||krainz-loipersdorf.at/statics/js/cookieconsent.js$~third-party
 @@||kraj-lbc.cz^$stealth=dpi
 @@||kralplayoynat.com/embed/$stealth=referrer
-@@||kranich-schutz.de/wp-content/plugins/complianz-gdpr/assets/js/cookieconsent.min.js
 @@||krebsonsecurity.com
 @@||kreditkarten-banking.lbb.de^$removeparam
 @@||krok8.com/wp-content/plugins/pageviews/pageviews.min.js$script,~third-party
@@ -71408,7 +71399,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||local.adguard.org^
 @@||localbitcoins.com/ads_edit
 @@||localizaagencia.com^$generichide
-@@||lock5stat.com/StatKey/js/cookieconsent.min.js
 @@||lockwood-avenue.com^*/cookielaw/$~third-party
 @@||logcg.content-delivery.top/wp-content/plugins/bwp-minify/min/?f=
 @@||logging.apache.org^
@@ -71539,7 +71529,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||ma-x.org^$generichide
 @@||maalaimalar.com^$ghide
 @@||mabzicle.com^$ghide
-@@||mac4ever.com/min.php?*/javascript/cookieconsent.js
 @@||macauo2o.com/advertise/
 @@||macitynet.it/pubblicita-
 @@||macitynet.it/wp-content/plugins/cookie-law-info^
@@ -71645,10 +71634,8 @@ $~xmlhttprequest,removeparam=mbid
 @@||maps4heroes.com^$generichide
 @@||marbas.com.tr^$stealth=dpi
 @@||marca.com^$generichide
-@@||mares.com/*/Resources/Public/Lib/cookieconsent/cookieconsent.min.js
 @@||marinetraffic.live^$generichide
 @@||mariouniverse.com^$generichide
-@@||maritim.de/typo3conf/ext/av_site/Resources/Public/JavaScript/3rdparty/cookieconsent.min.js
 @@||mark.isbank.com.tr^$script,image,1p
 @@||market.correos.es/static/cookie-consent/css/style.css
 @@||market.viber.com^$elemhide
@@ -71967,7 +71954,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||mistore.jp/content/dam/isetan_mitsukoshi/advertise/$~third-party
 @@||mitaku.net^$generichide
 @@||mitly.us^$ghide
-@@||mitreden.zdf.de/_app/immutable/chunks/CookieConsent.*.js
 @@||mitsubishiclub.cz^$generichide
 @@||mitti.se^$generichide
 @@||miui.com/unlock/$stealth=referrer
@@ -72224,7 +72210,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||myspass.de/myspass/includes/apps/player/standard/avt_config.php?$object-subrequest
 @@||myspass.de/myspass/includes/apps/video/getvideometadataxml.php?$object-subrequest
 @@||myssl.com/scripts/analyze.js
-@@||mytime.de/*/cookieconsent/
 @@||mytuner-radio.com^$generichide
 @@||myuploadedpremium.de^$generichide
 @@||myuploadedpremium.de^$ghide
@@ -72423,7 +72408,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||nonsensediamond.*^$ghide
 @@||noodid.ee/chordQuiz/$~third-party
 @@||noon.khsm.io^$generichide
-@@||nordcoast-coffee.de/js/cookieconsent.min.js
 @@||norlysplay.dk/public/js/cookie-banner.$~third-party
 @@||noromax.my.id^$generichide
 @@||northwave.com/wp-content/plugins/uk-cookie-consent/assets/js/uk-cookie-consent-js
@@ -72828,6 +72812,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||passport.csdn.net/login^$stealth=referrer
 @@||passport.jlcpcb.com^$removeparam=from
 @@||passport.yandex.ru^$stealth=3p-cookie
+@@||passwordsleakcheck-pa.googleapis.com$stealth=dpi
 @@||paste.bin.sx^$ghide
 @@||pastebin.com/etc/geo.php?
 @@||pastemod.com^$generichide
@@ -73318,7 +73303,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||pudelek.pl^$generichide
 @@||puhutv.com^$ghide
 @@||puma.112.2o7.net^
-@@||pureliving-wiesbaden.de/plugins/system/gdpr/assets/js/cookieconsent.min.js
 @@||purpleair.com/js/gdpr-cookie-consent-popup-plugin/$~third-party
 @@||purposegames.com^$generichide
 @@||push2check.com/stats.php
@@ -73552,7 +73536,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||reimg.org/images^$image,stealth=referrer
 @@||relampagomovies.com^$generichide
 @@||relmz.io^$generichide
-@@||remax.es/wp-content/plugins/complianz-gdpr/assets/js/cookieconsent.min.js
 @@||remington-europe.com/static/version1735728075/frontend/Magento/base/default/Amasty_GdprFrontendUi/
 @@||remix.es^$ghide
 @@||remixsearch.co^$ghide
@@ -74061,7 +74044,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||signaler-pa.googleapis.com/punctual/*/chooseServer$stealth=3p-auth
 @@||signaler-pa.googleapis.com/punctual/multi-watch/channel$stealth=3p-auth
 @@||signalshares.com/webtrends.min.js$script,~third-party
-@@||signalstart.com/assets/global/plugins/cookieconsent/cookieconsent.min.js
 @@||significatocanzoni.it^$generichide
 @@||signin.aws.amazon.com/signin^$stealth
 @@||signin.rockstargames.com^$stealth=dpi
@@ -74260,7 +74242,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||sozcu.com.tr^$generichide
 @@||sozcukbul.com^$generichide
 @@||sozi.cn/images/ad/tj
-@@||sozialversicherung-kompetent.de/plugins/system/gdpr/assets/js/cookieconsent.min.js
 @@||sp.auth.adobe.com/reggie/*/regcode$stealth=3p-auth
 @@||sp1.baidu.com/*/gettts?$media
 @@||space.bilibili.com^$removeparam
@@ -74500,7 +74481,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||static.parastorage.com/services/cookie-consent-banner-for-uou/$script
 @@||static.parastorage.com/services/editor-elements/dist/facebookshare.$script,third-party
 @@||static.popads.net/js/trustguard.js
-@@||static.potreningu.pl/layout/v2/js/_global/cookieconsent.js
 @@||static.purexbox.com/javascript/popunder2.js
 @@||static.pushsquare.com/javascript/popunder2.js
 @@||static.stands4.com/app_common/js/prebid-ads.js
@@ -74660,7 +74640,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||svc.dynamics.com^*t/$frame
 @@||svgrepo.com/show/$image,~third-party
 @@||svipvids.com^$generichide
-@@||sw-i.de/typo3conf/ext/epl_site/Resources/Public/js/lib/cookieconsent.js
 @@||swa.mail.ru/cgi-bin/counters?$script
 @@||swagbucks.com^$generichide
 @@||swap.qth.com/include/adblockdetection/adblockDetector.js
@@ -74748,7 +74727,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||tajemnice-swiata.pl^$generichide
 @@||tajs.qq.com/stats?$~third-party
 @@||takemehome.pl/*?offer_id=*&aff_id=
-@@||takprosto.cc/wp-content/plugins/complianz-gdpr-premium/assets/css/cookieconsent.min.
 @@||talkceltic.net/forums/js/Siropu/AM/ads.min.js
 @@||talktv.vn/resource/third-party/jwplayer/ads.js$object-subrequest
 @@||talon.by/squeeze/
@@ -74856,7 +74834,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||telegraaf.tcdn.nl/javascript/showads.*.js$script
 @@||telegram.hr^$content
 @@||telegraph.co.uk/template/ver1-0/js/webtrends/live/wtid.js
-@@||telekom.si/*/common/js/cookieconsent.plugin.tk.js
 @@||telemporio4.blogspot.com^$generichide
 @@||telepisodes.org^$generichide
 @@||telepisodes.org^$ghide
@@ -74944,7 +74921,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||thedelimagazine.com^$ghide
 @@||thefastlaneforum.com/community/js/*/adblocker-leader.js
 @@||thefightingcock.co.uk^$generichide
-@@||thefly.com/js/cookieConsent.js
 @@||thefly.com/js/cookieConsent.js$~third-party
 @@||thefoodstorydotcom.wpcomstaging.com^$generichide
 @@||thefreedictionary.com^$generichide
@@ -75074,7 +75050,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||tinytranslation.xyz^$generichide
 @@||tio.ch^$generichide
 @@||tio.ch^$ghide
-@@||tiom.pl/static/js/cookieconsent.min.js
 @@||tiom.pl/static/js/cookieconsent.min.js$~third-party
 @@||tionghoa.info^$generichide
 @@||tipico.de/js/modules/fingerprintjs2/fingerprint2.min.js$script,~third-party
@@ -75524,7 +75499,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||uploadshare.net^$generichide
 @@||uploadshare.net^$ghide
 @@||uploady.io^$generichide
-@@||uponor.ee/UponorInternet/build/js/cookieconsent.min.js
 @@||upos-sz-mirrorhw.bilivideo.com^$stealth=referrer
 @@||uppit.com^$generichide
 @@||uppit.com^$ghide
@@ -75652,7 +75626,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||vertamedia.com/assets/img/adimage.png
 @@||verteleseriesonline.com^$generichide
 @@||vesmir.cz/components/eu_cookie/$script
-@@||veterinaaria.ee/rpdg/cookieconsent/save
 @@||veuclips.com^$generichide
 @@||vev.*^$ghide
 @@||vfsglobal.*/*/Track/*^$stealth=donottrack|useragent|ip
@@ -75975,7 +75948,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||websetnet.com^$generichide
 @@||webstatic.nero.com^
 @@||webtic.it/js/cookieconsent-init.js
-@@||webticketing*.cinestar.de/app/scripts/provider/CookieConsent.js
 @@||webticketing2.cinestar.de/app/scripts/provider/GoogleTagManager.js$script,1p
 @@||webtrack.dhlglobalmail.com^
 @@||webtv.stofa.dk/public/js/cookie-banner.$script,~third-party
@@ -76020,7 +75992,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||whiskyprices.co.uk^$ghide
 @@||whiskyprijzen.*^$ghide
 @@||whiskyprix.*^$ghide
-@@||whitelab.hu/assets/ext/cookieconsent/cookieconsent.
 @@||whoami.akamai.net^
 @@||wholecloud.net/banner.php$script
 @@||wholehk.com^$generichide
@@ -76055,7 +76026,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||wikiversity.org^$generichide
 @@||wiktionary.org^$generichide
 @@||wilderssecurity.com/forums/
-@@||wildvogel-futter.de/wp-content/plugins/complianz-gdpr/assets/*/cookieconsent.min.
 @@||willhaben.apa.net/clientscript/xtcore.js
 @@||willyweather.com.au/bundles/willyweatherwebapp/ads.js
 @@||win10.vn^$generichide
