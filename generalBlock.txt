@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-11-04 05:03:56 UTC
+! Updated: 2025-11-06 02:15:07 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1683491
-! Unique lines (pre-final-filter): 587485
-! Final rules in this list: 76506
+! Lines fetched (pre-dedupe, post-initial-clean): 1701794
+! Unique lines (pre-final-filter): 598283
+! Final rules in this list: 76514
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -49036,6 +49036,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/(?:[^.]+\.){2}(?:com|io|net)\/c(?:\/\d+){3}\/?\?.*?&?u=http/$doc,to=com|io|net,urlskip=?u
 /^https?:\/\/(?:[^.]+\.){2}(?:com|io|net)\/c(?:\/\d+){3}\/?\?.*?&?url=http/$doc,to=com|io|net,match-case,urlskip=?url
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.(xyz|shop|top|club|live|click|life|fun)\/[a-zA-Z0-9]{3,18}\/[0-9]{2,8}$/$script,3p
+/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{3,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$script,third-party,match-case
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[0-9a-z-]+)?$/$popup,third-party,match-case
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[0-9a-z-]+)?$/$subdocument,script,xmlhttprequest,third-party,match-case
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z]([a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$script,3p
@@ -53007,6 +53008,7 @@ $~xmlhttprequest,removeparam=mbid
 /app.dsgvo.min.js
 /app.php/ads/*
 /app/*/%E6%B5%8F%E8%A7%88%E5%99%A8.apk
+/app/Eclog/js/cid.generate.js
 /app/ads.
 /app/ads/*
 /app/apx14.js
@@ -63195,7 +63197,6 @@ $~xmlhttprequest,removeparam=mbid
 /storefront.google-analytics-4.min.js
 /storefrontmarketing/webpush/webpush.client.
 /stories/ads/*
-/stormcaster.js
 /story_ad.
 /story_ads_
 /storyadcode.
@@ -63643,6 +63644,7 @@ $~xmlhttprequest,removeparam=mbid
 /token?referer=
 /tomorrowfocusAd.
 /tongji.js
+/tongji/ad.js
 /tongji/baidutongji.js
 /too_ad/*
 /toolkitads.
@@ -65951,6 +65953,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||25cineframes.com^$ghide
 @@||2700chess.com/js/analysis.js$script,1p
 @@||2chmatome2.jp/images/sp/320x250.png$~third-party
+@@||2ix2tv.de^$ghide
 @@||2kspecialist.net^$generichide
 @@||2o7.net/b/ss/bmwmobiledev
 @@||2unlimited.info/js/adsense.js
@@ -68738,6 +68741,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||douploads.*^$ghide
 @@||douyucdn.cn^*-share-master/
 @@||dove-cameron.org^$generichide
+@@||dovkembed.pw/livetv/$stealth=referrer
 @@||down.cc/down/js/ad.js
 @@||down.fast-down.com^$ghide
 @@||down.mdiaload.com^$generichide
@@ -69450,6 +69454,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||flygresor.se/static*/resources/build/js/module/CookieNotice/module.js
 @@||flying-lines.com/banners/$image,~third-party
 @@||flyordie.com/games/online/iframeafg*.html
+@@||flysmartavia.com^$stealth=donottrack|java|location|push|useragent|webrtc
 @@||fmkorea.com/modules/point/icons/*$image,1p
 @@||fmovies.to/subtitles/*$xhr
 @@||fnggcdn.com/items/$stealth=referrer
@@ -69961,6 +69966,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||goalad.com^$ghide
 @@||goalpro-demo.blogspot.com^$generichide
 @@||goalsarena.org^$generichide
+@@||goalsport.info^$generichide
 @@||gobits.io^$generichide
 @@||gocolumbialions.com^$ghide
 @@||gocomics.com/assets/ad-dependencies-$script,~third-party
@@ -70726,6 +70732,8 @@ $~xmlhttprequest,removeparam=mbid
 @@||iphonetweak.fr^$ghide
 @@||ipinfo.io/static/images/use-cases/adtech.jpg$image,~third-party
 @@||ipip.net/ping.php?
+@@||iplark.com^$extension='AdGuard Popup Blocker'|'AdGuard Popup Blocker (Beta)'
+@@||iplark.com^$stealth=donottrack|java|location|push|useragent|webrtc
 @@||iplogger.org/templates/new/scripts/advertisement.js
 @@||ipm.corel.com/static/common/scripts/omni-tracking/omni-tracking.min.js$script,1p
 @@||iprima.cz^$stealth=referrer
@@ -72792,7 +72800,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||parenting.pl^$generichide
 @@||parhaye.com^$generichide
 @@||parlament.mt/scripts/easy-social-share.js
-@@||parliament.nz/*/stormcaster.js$script,~third-party
 @@||parse.ly/page-data/help/api/analytics/$xhr,1p
 @@||partner.ipla.tv/embed/$stealth=referrer
 @@||partner.market.yandex.ru^$stealth=referrer
@@ -72980,6 +72987,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||play.history.com^$cookie=/^AMCVS?_.*AdobeOrg/
 @@||play.history.com^$elemhide
 @@||play.history.com^$ghide
+@@||play.moviehd.cfd/play/$stealth=referrer
 @@||play.mylifetime.com^$cookie=/^AMCVS?_.*AdobeOrg/
 @@||play.nova.bg/prebid-ads.js
 @@||play.openhub.tv^$stealth=referrer
@@ -74742,6 +74750,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||tapewithadblock.org^$generichide
 @@||tapisa.online^$ghide
 @@||taplytics-umami.grubhub.com/jssdk/$script,1p
+@@||target.microsoft.com^$xhr,1p
 @@||target.my.com/media/js/app/ads.js^
 @@||target.my.com^$~third-party,document
 @@||targetfaq.jra-van.jp^$stealth=dpi
@@ -75551,7 +75560,6 @@ $~xmlhttprequest,removeparam=mbid
 @@||usgamer.net/static/scripts/AdsLoad.js
 @@||usgamer.net/static/scripts/SidebarAds.js
 @@||usgamer.net^$generichide
-@@||usine-digitale.fr/*/stormcaster.js$script,~third-party
 @@||usopen.org/AppMeasurement.js$script,1p
 @@||usplastic.com/js/hawk.js
 @@||ustream.*^$script,1p
