@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-11-10 01:42:22 UTC
+! Updated: 2025-11-11 03:55:30 UTC
 ! Source URLs Attempted: 68
 ! Source URLs Successfully Fetched: 68
-! Lines fetched (pre-dedupe, post-initial-clean): 1696658
-! Unique lines (pre-final-filter): 589207
-! Final rules in this list: 76543
+! Lines fetched (pre-dedupe, post-initial-clean): 1685993
+! Unique lines (pre-final-filter): 586990
+! Final rules in this list: 76552
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -49061,6 +49061,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https?:\/\/(?:www\.anrdoezrs\.net|cj\.dotomi\.com)\/links(?:-t)?\/\d+\/sid\/[^\/]+\/http/$doc,to=cj.dotomi.com|www.anrdoezrs.net,urlskip=/\/sid\/[^\/]+\/(http[^?]+)/
 /^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-f]{2}\/){2,3}[0-9a-f]{32}\.js$/$script,3p
 /^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-z]{2}\/){2,3}[0-9a-f]{32}\.js/$script,3p,redirect-rule=noop.js
+/^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.com\/(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,xmlhttprequest,third-party
 /^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.com\/\/?(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,third-party,redirect=noop.js
 /^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.com\/\/?(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,third-party,redirect=noopjs
 /^https?:\/\/(?:www\.|[a-z0-9]{7,10}\.)?[a-z0-9-]{5,}\.com\/\/?(?:[a-z0-9]{2}\/){2,3}[a-f0-9]{32}\.js/$script,xmlhttprequest,third-party
@@ -53289,6 +53290,7 @@ $~xmlhttprequest,removeparam=mbid
 /b.ads.
 /b.banners.impress.
 /b.gif?
+/b.k3r.jp/?a=$image
 /b.rnc?
 /b/s/beacon
 /b/ss/*&aqe=
@@ -62932,6 +62934,7 @@ $~xmlhttprequest,removeparam=mbid
 /srp.gif?
 /srv/ad/*
 /ss/o/*.gif
+/ss/o/*/ho.gif$image
 /ss3/ads/*
 /ssc_ad.
 /ssl-intgr-net/*
@@ -66436,6 +66439,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||airplaydirect.com/openx/www/images/$image
 @@||airportinfo.live/images/ads.gif
 @@||aisandbox-pa.googleapis.com/v1:checkAppAvailability$stealth=referrer
+@@||aisandbox-pa.googleapis.com^$stealth=3p-auth
 @@||aixifan.com/acfun-H5/public/script/sensorsdata.
 @@||aixifan.com/acsdk/log.min.js?
 @@||aixifan.com/dotnet/20130418/script/fingerprint.
@@ -66454,6 +66458,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||akamaihd.net/origin-com-store-webassets/$script,document
 @@||akashio.com^$generichide
 @@||akashiro.co.id^$generichide
+@@||aki-h.stream/v/$stealth=referrer
 @@||akilliphone.com/views/kuteshop/assets/js/cookies-message.min.js$script,~third-party
 @@||akoam.net^$generichide
 @@||akoam.ws^$generichide
@@ -68805,6 +68810,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||downsub.com^$xhr,1p
 @@||dozenofelites.com^$elemhide
 @@||dphotoworld.net^$generichide
+@@||dplayer82.site^$stealth=referrer
 @@||dqmsl-search.net^$generichide
 @@||dqzsteel.com/Website/Image/guanggao/
 @@||dr-ios.com^$generichide
@@ -73253,6 +73259,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||privat24.privatbank.ua^$stealth=referrer|3p-cookie
 @@||privatbank.ua/content/*/fp2.min.js$~third-party
 @@||privateinsta.com/javascript/rqrkrm.js$script
+@@||privtech.co.jp/blog/data
 @@||prizebitcoins.com/banner.gif$image
 @@||pro.gooooal.com/ad/ad_2.js
 @@||proboards.com^$ghide
@@ -75380,6 +75387,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||tv3sport.dk^$elemhide
 @@||tv5.org/cms/javascript/*/sitestat.js
 @@||tv99.tv^$generichide
+@@||tvappapk.com^$generichide
 @@||tvarticles.org^$generichide
 @@||tvb.com/social/share_
 @@||tvb.com^*/videojs.ads.
@@ -76025,6 +76033,7 @@ $~xmlhttprequest,removeparam=mbid
 @@||whatsapp.com^$generichide
 @@||whatsapp.com^$generichide,badfilter
 @@||whentai.com/combine.js$script,1p
+@@||whentostream.com^$generichide
 @@||whirlpool.com/foresee/foresee-trigger.js
 @@||whiskypreisvergleich.de^$ghide
 @@||whiskyprices.co.uk^$ghide
