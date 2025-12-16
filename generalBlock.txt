@@ -1,10 +1,10 @@
 ! Title: Ultra Minimal General Rules (No Comments, No Domain-Specific)
-! Updated: 2025-12-15 02:39:09 UTC
+! Updated: 2025-12-16 02:23:56 UTC
 ! Source URLs Attempted: 67
 ! Source URLs Successfully Fetched: 66
-! Lines fetched (pre-dedupe, post-initial-clean): 1421894
-! Unique lines (pre-final-filter): 542523
-! Final rules in this list: 65901
+! Lines fetched (pre-dedupe, post-initial-clean): 1412874
+! Unique lines (pre-final-filter): 540477
+! Final rules in this list: 65904
 !
 ! Filtering Logic Applied:
 ! - All source comments, empty lines, HOSTS entries removed.
@@ -30424,6 +30424,7 @@
 ##.home-newsletter-widget
 ##.home-page-ad
 ##.home-privacy-coookies
+##.home-qf > div[class*="img-ad"]
 ##.home-sidebar-ad
 ##.home-social-callout
 ##.home-social-links
@@ -48992,6 +48993,7 @@ $~xmlhttprequest,removeparam=mbid
 /^https:\/\/cdn\.jsdelivr\.net\/npm\/[-a-z_]{4,22}@latest\/dist\/script\.min\.js$/$script,third-party
 /^https:\/\/cs\d{3}\.\w+\.com\/cscript\/\d{3}\/[\w\d]+\.js$/$script,3p,match-case
 /^https:\/\/cs\d{3}\.\w+\.com\/cscript\/\d{3}\/[\w\d]+\.js$/$script,third-party,match-case
+/^https:\/\/d[0-9a-z]{12,13}\.cloudfront\.net\/loader\.min\.js$/$script,3p,match-case,header=etag:/^W\/"[0-9a-f]{32}"$/
 /^https:\/\/d[0-9a-z]{12,13}\.cloudfront\.net\/loader\.min\.js$/$script,third-party,match-case,header=etag:/^W\/"[0-9a-f]{32}"$/
 /^https:\/\/dich-vu(?:-[a-z0-9]+){2,3}\.com\//$doc,to=com
 /^https:\/\/ee(?:-[a-z]{5,}){1,2}\.firebaseapp\.com\//$doc,to=firebaseapp.com|~ee.co.uk
@@ -58478,6 +58480,7 @@ $~xmlhttprequest,removeparam=mbid
 /jquery.js?*&rx=*&foxtail=$image,1p
 /jquery.lazyload-ad-$script
 /jquery.lazyload-ad.js
+/jquery.meerkat.
 /jquery.openxtag.js
 /jquery.overlayad.js
 /jquery.particleground.js
