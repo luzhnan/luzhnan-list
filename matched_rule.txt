@@ -1,9 +1,9 @@
 ! Title: Relevant rules for specified domains
-! Updated: 2026-02-12 08:51:13 CST
+! Updated: 2026-02-12 10:40:55 CST
 ! Target Domains File: generated_domain_set_rules.txt
 ! Source Rules File: aggregated_rules_atomized.txt
 ! Allowlist: 0 wildcard, 30 exact
-! Output Rule Count: 39682
+! Output Rule Count: 39686
 
 @@$domain=androidpolice.com|babygaga.com|backyardboss.net|carbuzz.com|cbr.com|collider.com|dualshockers.com|footballfancast.com|footballleagueworld.co.uk|gamerant.com|givemesport.com|hardcoregamer.com|hotcars.com|howtogeek.com|makeuseof.com|moms.com|movieweb.com|pocket-lint.com|pocketnow.com|screenrant.com|simpleflying.com|thegamer.com|therichest.com|thesportster.com|thethings.com|thetravel.com|topspeed.com|xda-developers.com,generichide
 @@$domain=xvideos.com,websocket
@@ -14662,7 +14662,6 @@ nytimes.com##+js(set, navigator.storage.estimate, undefined)
 nytimes.com##+js(set, webkitRequestFileSystem, noopFunc)
 nytimes.com##+js(set-constant, Navigator.prototype.joinParakeetInterestGroup, noopFunc)
 nytimes.com##+js(set-local-storage-item, /^statsig/, $remove$)
-nytimes.com##+js(trusted-json-edit-fetch-response, ..show_ads=false, propsToMatch, /statsig/initialize?)
 nytimes.com##.MAG_web_anon_all_monthly-sale-dock-MKT_anon_subscribe_dock
 nytimes.com##.MAG_web_anon_new-journey-rollout
 nytimes.com##.MAG_web_non-sub_post-election-sale
@@ -20438,7 +20437,11 @@ www.newyorker.com##h2[class~="BaseWrap"]:has-text(/New Yorker Favorites/):upward
 www.newyorker.com##h2[class~="BaseWrap"]:has-text(/New Yorker Favorites/):upward(div) + div
 www.ntv.co.jp##+js(aeld, contextmenu, preventDefault)
 www.nytimes.com###styln-guide
+www.nytimes.com##+js(set, Object.prototype.hasAd, false)
 www.nytimes.com##+js(trusted-click-element, button.fides-reject-all-button, , 1500)
+www.nytimes.com##+js(trusted-json-edit-fetch-response, ..show_ads=false, propsToMatch, /statsig/initialize?)
+www.nytimes.com##+js(trusted-replace-argument, String.prototype.includes, this, json:"subscribed", condition, /^anon$/)
+www.nytimes.com##+js(trusted-replace-argument, matchMedia.call, 1, json:"none", condition, max-width)
 www.nytimes.com##.css-1jmk4jh
 www.nytimes.com##.css-ew4tgv
 www.nytimes.com##.css-s2htvn
@@ -34206,6 +34209,7 @@ zx.sina.cn##.z_c2.j_article_relevent_news.s_card
 ||nxet1.360doc.cn^
 ||nyt.com/ads/tpc-check.html$domain=nytimes.com
 ||nytadvertising.nytimes.com^
+||nytimes.com/games-assets/v2/*.js$domain=www.nytimes.com,replace=/shouldRenderAd:\(\)=>d&&/shouldRenderAd:()=>false&&/,script
 ||nytimes.com/svc/onsite-messaging/query$xmlhttprequest,~third-party
 ||nytimes.com/v1/purr-cache
 ||nytimes.com^$cookie=jkidd-s
