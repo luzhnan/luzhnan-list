@@ -1,7 +1,7 @@
 ! Title: Ultra Minimal General Rules (Cleaned)
-! Updated: 2026-05-30 10:06:21 UTC
-! Source URLs: 74/75
-! Rule Count: 47200
+! Updated: 2026-05-31 00:50:19 UTC
+! Source URLs: 75/75
+! Rule Count: 47223
 ! Profile: full
 ! Description: General network, cosmetic, and scriptlet rules only.
 ! No domain-specific rules. No comments. Options normalized.
@@ -13510,6 +13510,8 @@
 ###zsmsg-policy
 ###zw_cookie_law_short_info
 ###zwcc
+##+js(ra, class, div.wkwp-paywall)
+##+js(rc, didomi-popup-open, body.didomi-popup-open)
 ##+js(set-constant, navigator.getBattery, noopPromiseResolve)
 ##+js(set-constant, navigator.privateAttribution, undefined)
 ##.-advertsSidebar
@@ -36608,6 +36610,7 @@
 ##bottomadblock
 ##broadstreet-zone-container
 ##button.btn[data-openuri*="/4/"]
+##button.everlit-overlay-btn
 ##button[aria-label="Share on Facebook"]
 ##button[aria-label="Share on Twitter"]
 ##button[aria-label="Share on X(Twitter)"]
@@ -37016,6 +37019,7 @@
 ##div.wcc-box-bottom-left
 ##div.wcc-box-bottom-right
 ##div.wcc-classic-bottom
+##div.wkwp-paywall-block
 ##div[align="center"] > a[href^="/url/"] > img[src*=".alicdn.com"]
 ##div[align="center"] > a[href^="/url/"] > img[src*=".qpic.cn"]
 ##div[aria-label="Ads"]
@@ -37399,6 +37403,7 @@
 #@#.adslot
 #@#.adslot_1
 #@#.adunit
+#@#.cmpwrapper
 #@#.display_ad
 #@#.google-ad
 #@#.has-ad
@@ -39427,6 +39432,7 @@ $removeparam=zmg_code
 /Win0SecurityEr0CH0700Err0rSt/index.html$doc
 /YandexAds.$badfilter
 /YandexMetric.$badfilter
+/[a-z]{1}\d{2,3}\.\w+\.(co(m|\.uk)|net|org)\/script\.js/$script,~third-party
 /\.(?:boats|cfd)\/contract\/\d{14,19}\b/$doc,match-case,to=boats|cfd|~facebook.com
 /\.(?:cc|com|top|vip)\/index\/index\/lang\/[a-z]{2}-[a-z]{2}\b/$doc,to=cc|com|top|vip
 /\.(?:click|pages\.dev|surge\.sh)\/help\/contact\/\d{14,19}\b/$doc,match-case,to=click|pages.dev|surge.sh|~facebook.com
@@ -39450,10 +39456,12 @@ $removeparam=zmg_code
 /\.fstsrv/
 /\.goplay\.su\/[a-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]+\/[0-9][0-9][0-9][0-9]?[0-9]?[0-9]?$/$xhr,match-case,to=goplay.su
 /\.goplay\.su\/[a-z][0-9A-Za-z]{10,}\/\d{3,6}$/$xhr,match-case,to=goplay.su
+/\.lequipe\.fr\/assets\/js\/.*[wW]all.+\.js/$script,~third-party
 /\.net\.daraz\./
 /\.nimiq\./
 /\.sagewwl/
 /\.srvqck/
+/\.straitstimes\.com\/.+(\w+-){3,}.+\?rel=plus/$inline-script
 /\.temporary\.site\/service\/[a-f0-9]{32}\//$doc,match-case,to=temporary.site|~impots.gouv.fr
 /\.workers\.dev\/help\/\d{14,19}\b/$doc,to=workers.dev|~facebook.com
 /\.zooplus\./
@@ -39482,6 +39490,7 @@ $removeparam=zmg_code
 /\/accounts\/19[56]\d{3}\/messages\/\d{1,2}\/clicks\/\d{4,5}\/\d{1,2}\b/$doc,match-case
 /\/assets\/jquery\/jquery-\d\.\d\.(?:\d\.)?min\.js\?(?:v=2)?&?type=(?:adult|mainstream)$/$script,1p
 /\/contract\/support-case-id=\d{14,19}\b/$doc,match-case,to=~facebook.com
+/\/every\.to\/[-\w]+\//$inline-script
 /\/js\/script_[0-9][0-9]\.[0-9][0-9]\.js\?[0-9]+$/$script,1p,match-case
 /\/m\/js(?:drive|nom|sp|v)\.js\b/$script,1p,strict1p
 /\/n\/js(?:drive|nom|sp|v)\.js\b/$script,1p,strict1p
@@ -39654,7 +39663,7 @@ $removeparam=zmg_code
 /^https:\/\/[a-z]{14}\.azureedge\.net\/\d{4}j\b/$doc,to=azureedge.net
 /^https:\/\/[a-z]{16,}\.s3\.[-a-z]+1\.amazonaws\.com\/[a-z]{66,}(?:\/[a-z]{45})?\.html/$doc,match-case,to=amazonaws.com
 /^https:\/\/[a-z]{2,3}\d\.biz\/go\/[0-9a-z]{15,18}$/$doc,to=biz
-/^https:\/\/[a-z]{2}\.[a-z]{7,14}\.com\/[rt][0-9A-Za-z]{10,16}\/[A-Za-z]{4,5}$/$script,xhr,3p,match-case
+/^https:\/\/[a-z]{2}\.[a-z]{7,14}\.com\/[rt][0-9A-Za-z]{10,16}\/[A-Za-z]{4,5}(?:\?|$)/$script,xhr,3p,match-case
 /^https:\/\/[a-z]{2}\.[a-z]{7,14}\.shop\/i[0-9A-Za-z]{10,16}\/[A-Za-z]{4,5}\b/$frame,3p,match-case
 /^https:\/\/[a-z]{3,4}\.[a-z]{8,16}\.com\/loader\.min\.js$/$script,3p,match-case,header=etag:/^W\/"[0-9a-f]{32}-\d{13}"$/
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[A-Za-z]{10,16}\/[A-Za-z]{5,6}$/$popup,3p,to=top
@@ -39766,7 +39775,7 @@ $removeparam=zmg_code
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.com\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{3,6}(?:[?&][_a-z0-9]+=[-0-9a-zA-Z]+)*$/$frame,xhr,popup,3p,match-case,to=com
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.website\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{3,6}(?:[?&][_a-z0-9]+=[-0-9a-zA-Z]+)*$/$frame,xhr,popup,3p,match-case,to=website
 /^https?:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.[a-z]{3,7}\/[a-z][0-9A-Za-z]{10,}\/\d{3,6}$/$script,3p,match-case,header=Access-Control-Allow-Headers,from=~edu|~gov,to=~edu|~gov
-/^https?:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,16}\/[A-Za-z]{4,5}(?:\?(?:param|_)=\w+)?$/$script,xhr,3p,match-case,to=com
+/^https?:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,16}\/[A-Za-z]{4,5}(?:\?|$)/$script,xhr,3p,match-case,to=com
 /^https?:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/r(?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,16}\/[A-Za-z]{5}(?:\?param=\w+)?$/$script,3p
 /^https?:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.shop\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,16}\/[A-Za-z]{4,5}(?:[&?]param_\d=\d+)*$/$frame,3p,match-case
 /^https?:\/\/(?:\w+\.){1,2}[a-z]{2,}\/[a-f0-9]{32}\.js\?_=17\d{8}$/$script,1p,strict1p,match-case
@@ -39848,6 +39857,7 @@ $removeparam=zmg_code
 /^https?:\/\/[a-z]+\d\.gogomailbali(\.it)?\.eu\.org\/#\?act=/$doc,match-case,to=eu.org
 /^https?:\/\/[a-z]?[a-z]?\.?[a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\.[a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\/[fgprst][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]+\/[0-9][0-9][0-9][0-9]?[0-9]?[0-9]?$/$script,3p,match-case
 /^https?:\/\/[a-z]?[a-z]?\.?[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\.com\/[rt][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?\/[A-Za-z][A-Za-z][A-Za-z][A-Za-z][A-Za-z]?$/$script,xhr,3p,match-case
+/^https?:\/\/[a-z]?[a-z]?\.?[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\.com\/[rt][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?\/[A-Za-z][A-Za-z][A-Za-z][A-Za-z][A-Za-z]?\?/$script,xhr,3p,match-case
 /^https?:\/\/[a-z]?[a-z]?\.?[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\.shop\/i[0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?\/[A-Za-z][A-Za-z][A-Za-z][A-Za-z][A-Za-z]?/$frame,3p,match-case
 /^https?:\/\/[a-z][a-z][a-z][a-z]+\.top\/z-[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]?[a-z0-9]?[a-z0-9]?$/$script,3p,match-case,to=top
 /^https?:\/\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z]+\.com\/[+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z][+\/0-9a-zA-Z]+$/$frame,3p,match-case,to=com,from=info|me|pm|site|~edu.me|~edu.pm|~gov.me|~proton.me
@@ -40733,6 +40743,7 @@ $removeparam=zmg_code
 /aptrk.js
 /apu.php?$script
 /apu.php?*&zoneid=
+/arc/subs/p.min.js$script,~third-party
 /arcads.js$script
 /ard.png?
 /aria-web-telemetry-
@@ -41099,6 +41110,7 @@ $removeparam=zmg_code
 /c.vialoops.com/*$image
 /c.wrating.com/*
 /c/674_rlt.js
+/c/assets/pigeon.js$script,~third-party
 /c/i.php?id=$script,3p
 /c2.knock.app/t/*$image
 /c2_count.js
@@ -42430,6 +42442,7 @@ $removeparam=zmg_code
 /evergage.js
 /evergage.min.js
 /evidon-banner.js
+/evolok/*ev-widgets.min.js$script
 /evt.gif?
 /exactag.js
 /exactag_clientside.js
@@ -44378,6 +44391,7 @@ $removeparam=zmg_code
 /partytown/partytown-sw.js
 /pay/collect|$xhr
 /paypic/*
+/paywall/evercookie_get.js$script,~third-party
 /pbasitetracker.min.js
 /pbjsandwichdirecta9-$script
 /pc/Tpl/baibaipc//js/*
@@ -45367,6 +45381,7 @@ $removeparam=zmg_code
 /sharebutton?
 /sharecount/*
 /shared-content/art/stats/common/tracker.js
+/shared-content/art/tncms/api/access.*.js$script,~third-party
 /shared/btn_
 /shared/js/ga.js|
 /shared/sentry/*
@@ -46675,6 +46690,7 @@ $removeparam=zmg_code
 /wp-bannerize/*$script,stylesheet
 /wp-coin-hive-util.js
 /wp-coin-hive.js
+/wp-content/*/plugins/rcp-view-limit/$script,~third-party
 /wp-content/ads/*$~xhr
 /wp-content/blog-plugins/wordads-classes/js/notice.bundle.js$script
 /wp-content/cache/busting/google-tracking/*
@@ -46749,6 +46765,7 @@ $removeparam=zmg_code
 /wp-content/plugins/icegram/*
 /wp-content/plugins/image-watermark/*$script
 /wp-content/plugins/image-watermark/js/no-right-click.js
+/wp-content/plugins/incognito_dectector/$script,~third-party
 /wp-content/plugins/incognito_dectector/*/incognito-detector.
 /wp-content/plugins/indeed-social-media/*
 /wp-content/plugins/instagram-feed/*$~stylesheet
@@ -46758,10 +46775,12 @@ $removeparam=zmg_code
 /wp-content/plugins/kadence-simple-share/*
 /wp-content/plugins/kill-adblock/*
 /wp-content/plugins/ko-fi-button/js/widget.js
+/wp-content/plugins/leaky-paywall/js/leaky-paywall-cookie.js$script,~third-party
 /wp-content/plugins/lightweight-cookie-notice-free/*
 /wp-content/plugins/m-wp-popup/*$script
 /wp-content/plugins/mailchimp/*
 /wp-content/plugins/mailoptin/*
+/wp-content/plugins/newspack-plugin/dist/*-gate-metering.js$script,~third-party
 /wp-content/plugins/newspack-popups/*
 /wp-content/plugins/ninja-gdpr-compliance/*
 /wp-content/plugins/noti-blocker/*$script
@@ -46771,6 +46790,7 @@ $removeparam=zmg_code
 /wp-content/plugins/pixelyoursite-pro/*
 /wp-content/plugins/pixelyoursite/*
 /wp-content/plugins/platinumpopup/*$script,stylesheet
+/wp-content/plugins/pmpro-limit-post-views/js/pmprolpv.js$script,~third-party
 /wp-content/plugins/popad/*$script,stylesheet
 /wp-content/plugins/push-notification/*
 /wp-content/plugins/quick-cache-cleaner/qcc-script.js
@@ -46847,6 +46867,7 @@ $removeparam=zmg_code
 /wp-js/analytics.js
 /wp-json/burst/v1/track/*
 /wp-json/iawp/*
+/wp-json/leaky-paywall/v1/check-restrictions$xmlhttprequest,~third-party
 /wp-json/navy/v*/tag?pid=$xhr,1p
 /wp-monero-miner-class.js
 /wp-monero-miner-util.min.js
@@ -46915,6 +46936,7 @@ $removeparam=zmg_code
 /wup?cid=
 /wutime-adblocktracker/*
 /www/delivery/*$script,subdocument
+/www\.vogue\.co\.uk\/[-\w]+$/$script,~third-party
 /wwwcount.cgi?
 /wx-cookie-
 /wxh_asy.js
@@ -47024,6 +47046,7 @@ $removeparam=zmg_code
 /zdcc.min.js
 /zdconsent.js
 /zebra_cookie.js
+/zephr/feature$xmlhttprequest
 /zgdpr.min.js
 /zhugeio.js
 /zigcookie.js
