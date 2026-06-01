@@ -1,5 +1,5 @@
 ! Title: Relevant rules for specified domains
-! Updated: 2026-05-31 18:06:42 CST
+! Updated: 2026-06-01 08:50:26 CST
 ! Target Domains File: generated_domain_set_rules.txt
 ! Source Rules File: aggregated_rules_atomized.txt
 ! Allowlist: 0 wildcard, 38 exact
@@ -2983,6 +2983,8 @@ $domain=~v.youku.com,removeparam=scm
 .youtube.com/attribution_link?$image
 .zone/ads/
 /(.*\/GetPlaybackResources\?.*)%2CCuepointPlaylist(.*)/$domain=www.amazon.co.jp|www.amazon.co.uk|www.amazon.com|www.amazon.de|www.primevideo.com,uritransform=//$1$2/,xmlhttprequest
+/DNSCheck.js$domain=~github.com
+/DNSChecker.js$domain=~github.com
 /GetPlaybackResources?$domain=amazon.co.jp,removeparam=deviceAdInsertionTypeOverride,xmlhttprequest
 /GetPlaybackResources?$domain=amazon.com,removeparam=deviceAdInsertionTypeOverride,xmlhttprequest
 /GetPlaybackResources?$domain=amazon.de,removeparam=deviceAdInsertionTypeOverride,xmlhttprequest
@@ -6083,7 +6085,6 @@ cnet.com##.c-adDisplay_container
 cnet.com##.c-asurionBottomBanner
 cnet.com##.c-asurionInteractiveBanner
 cnet.com##.c-asurionInteractiveBanner_wrapper
-cnet.com##.c-avLazyStickyVideo
 cnet.com##.c-avStickyVideo
 cnet.com##.c-avStickyVideo:remove()
 cnet.com##.c-globalModal
@@ -6091,7 +6092,6 @@ cnet.com##.c-newsletterInlineUnit
 cnet.com##.c-newsletterSubscribeHighlight
 cnet.com##.c-pageReviewContent_ad
 cnet.com##.c-shoppingExtModal
-cnet.com##.c-shortcodeVideo_wrap
 cnet.com##.c-siteTermsBanner
 cnet.com##.c-socialShareButton
 cnet.com##.modal-backdrop
@@ -8884,7 +8884,7 @@ gsmarena.com###subHeader3:contains(daily deals)
 gsmarena.com###subHeader:has(> #topAdv)
 gsmarena.com###topAdv
 gsmarena.com###wrapper > div#outer > div#subHeader
-gsmarena.com##+js(aeld, DOMContentLoaded, doubleclick)
+gsmarena.com##+js(aeld, DOMContentLoaded, /doubleclick|offsetHeight/)
 gsmarena.com##+js(remove-cookie, DeviceID)
 gsmarena.com##.adv
 gsmarena.com##.d-flex:has(pgs-ad)
@@ -9613,7 +9613,6 @@ insideevs.com##.msnt-mail-footer
 insideevs.com##.outstream_partner
 insideevs.com##.widget-newsletter
 insideevs.com##amp-iframe:has([src^="https://widget.sellwild.com"]):remove()
-insideevs.com#@#.m1-header-ad
 instagram.com###react-root ~ div[class*=" "][class$=" "][role="presentation"]:has(a[href^="/accounts/"][href*="signup/"]):not(:has(button[type="button"] > div > svg[aria-label][width="18"][height="18"][viewBox*="48"]))
 instagram.com##+js(json-prune, data.xdt_injected_story_units.ad_media_items)
 instagram.com##+js(set, _sharedData.is_whitelisted_crawl_bot, true)
@@ -13714,7 +13713,6 @@ screenrant.com##[id^="adsninja-ad-zone-adsninja-ad-unit-footer"]
 screenrant.com##body:style(overflow: auto !important;)
 screenrant.com##div[id^="adsninja-"]:not([id*="-instreamInContent-"])
 screenrant.com#@#.ad-current
-screenrant.com#@#.ad-zone
 screenrant.com#@#.ad-zone-container
 screenrant.com#@#.adsninja-ad-zone
 screenrant.com#@#.w-adsninja-video-player
@@ -17334,7 +17332,6 @@ xda-developers.com##[id^="adsninja-ad-zone-adsninja-ad-unit-footer"]
 xda-developers.com##body:style(overflow: auto !important;)
 xda-developers.com##div[id^="edit"][class="postbit-wrapper "] > div[style="margin:10px 0;min-height:250px;max-height:250px;overflow:hidden;"]
 xda-developers.com#@#.ad-current
-xda-developers.com#@#.ad-zone
 xda-developers.com#@#.ad-zone-container
 xda-developers.com#@#.adsninja-ad-zone
 xdaforums.com###xdaforums_leaderboard_atf
@@ -18332,6 +18329,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||58cdn.com.cn/ds/tgbrand/*.js
 ||58cdn.com.cn/ds/zhuangxiu/jzad-
 ||58cdn.com.cn/resource/xxzl/xxfw/
+||60aaf9c6.salamanderprocessing.pages.dev^
 ||682a5845.b-cdn.net^
 ||6park.com/img/*0.gif
 ||6park.com/parks/$script
@@ -18364,7 +18362,6 @@ zuoye.baidu.com##dl[class="card related"]
 ||a-cdn.anthropic.com/analytics.js/*/analytics.min.js
 ||a-cdn.anthropic.com/next-integrations/integrations/facebook-pixel
 ||a-dxk.play.api.3g.youku.com^
-||a-gwo.pages.dev^
 ||a-mo.net^
 ||a-reporting.nytimes.com^
 ||a.baidu.com^
@@ -20297,7 +20294,6 @@ zuoye.baidu.com##dl[class="card related"]
 ||bendibao.com/weixin_
 ||bes-mtj.baidu.com^
 ||best.obs.cn-sz1.ctyun.cn^
-||best10cdn.blob.core.windows.net^
 ||bestbuy.com/bf?$ping
 ||bestbuy.com/~assets/bby/_js/ext/bbydyn/dyn_digital_gvp.js
 ||bestbuy.com^$removeparam=acampID
@@ -20680,6 +20676,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||c2shb.pubgw.yahoo.com/admax/bid/partners/PBJS^
 ||c2shb.pubgw.yahoo.com^
 ||c2shb.ssp.yahoo.com^
+||c3436037.salamanderprocessing.pages.dev^
 ||c6.paypal.com^$image
 ||c783.fastcompany.com^
 ||ca-fe.pstatic.net/web-mobile/static/naverStatLogger
@@ -23446,7 +23443,6 @@ zuoye.baidu.com##dl[class="card related"]
 ||dlem1deojpcg7.cloudfront.net^
 ||dlh8c15zw7vfn.cloudfront.net^
 ||dlied6.bytes.tcdnos.com^
-||dlied6.yz.tcdnos.com^
 ||dljnjom9md7c.cloudfront.net/02/zara.js
 ||dlk457skl57zp.cloudfront.net^
 ||dlmr7hpb2buud.cloudfront.net^
@@ -25734,6 +25730,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||iyf.tv/play/$xmlhttprequest
 ||izatcloud.net^$third-party
 ||izmncdnboxuse*.b-cdn.net^$document
+||j-0-09g-9bh-h-ggf-1324992141.cos.ap-bangkok.myqcloud.com^
 ||j.br.baidu.com^
 ||j0v36abmdj.execute-api.us-east-1.amazonaws.com^
 ||j3lbpcd9.r.us-east-1.awstrack.me^
@@ -26525,6 +26522,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||maxmind.com/js/device.js$third-party
 ||maxmind.com^*/geoip.js
 ||maxmind.com^*/geoip2.js
+||maxvideo2026.vercel.app^
 ||mazu.m.qq.com^
 ||mazu.sec.miui.com^
 ||mbdlog.iqiyi.com^
@@ -27931,7 +27929,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||pub-algeriatenders.s3.eu-central-1.amazonaws.com^
 ||pub-bbbdebc2599c4d74b04c5d53e439f7a7.r2.dev^
 ||pub-bfc34934a91a4893817098f73415917a.r2.dev^
-||pub-cdd0dd27ae6a4aee9841d397e0496374.r2.dev^
+||pub-ec081eb0fab74385a17d8d77afeeda3b.r2.dev^
 ||pub.doubleverify.com/dvtag/*/pub.js$domain=bbc.com,redirect=noop.js,script
 ||pub.network/core/prebid-universal-creative.js^$redirect=noopjs,script,third-party
 ||pub.network/core/pubfig/
@@ -30421,6 +30419,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||v9banners-com.cdn.ampproject.org^
 ||va.tawk.to/log
 ||va.tawk.to/log^
+||vaamsmgfreocmroe-1342087530.cos.sa-saopaulo.myqcloud.com^
 ||val.api.youku.com^
 ||valipl.cp31.ott.cibntv.net^$domain=youku.com,media,redirect=noopmp3-0.1s
 ||valuecommerce.com/resolve/*^u=http$document,urlskip=?u
@@ -30681,6 +30680,7 @@ zuoye.baidu.com##dl[class="card related"]
 ||webtelegram.eu.org^$all
 ||webterren.com^
 ||webtoons.naver.com^
+||weco2.oss-me-east-1.aliyuncs.com^
 ||weglot.com/pageviews?
 ||weibo.cn/h5logs/
 ||weibo.cn/status/banner?
