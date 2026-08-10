@@ -1,7 +1,7 @@
 ! Title: Ultra Minimal General Rules Lite (High-Hit Optimized)
-! Updated: 2026-08-09 00:50:21 UTC
+! Updated: 2026-08-10 00:50:17 UTC
 ! Source URLs: 75/75
-! Rule Count: 45367
+! Rule Count: 45365
 ! Profile: lite
 ! Description: High-hit optimized sources plus network and privacy rules from supplemental sources.
 ! No domain-specific rules. No comments. Options normalized.
@@ -9930,6 +9930,7 @@
 ###newsletter-form-footer
 ###newsletter-overlay
 ###newsletter-popin
+###newsletter-popup-overlay
 ###newsletter-promo
 ###newsletter-signup-footer
 ###newsletter-signup-short-form
@@ -9969,7 +9970,6 @@
 ###nk_cookie_privacy_message
 ###nl_id_cookie--container
 ###nld_cookies
-###nlgate
 ###nm-cookieWrapper
 ###nm-subscribe-box
 ###nm-subscribe-wrapper
@@ -10901,7 +10901,6 @@
 ###reportPop
 ###requestCookies
 ###res-cockie
-###reseaux_sociaux
 ###responsive-ad
 ###responsive-ad-sidebar-container
 ###responsive_ad
@@ -18849,7 +18848,6 @@
 ##.author-social
 ##.author-social__share
 ##.author-socials
-##.authorSocial
 ##.author_social
 ##.author_socials
 ##.automart-cookiealert
@@ -20671,7 +20669,6 @@
 ##.component-cookies-message
 ##.component-cookies-msg
 ##.component-cookies-popup
-##.component-newsletter-signup
 ##.component-outbrain
 ##.component-social
 ##.component_eu_eprivacy_option
@@ -23499,7 +23496,6 @@
 ##.downloadAds
 ##.download_ad
 ##.dp-cookie-legal
-##.dp-footer__to-top
 ##.dp-share
 ##.dpdpa--popup
 ##.dpl-cookie-banner
@@ -23989,6 +23985,7 @@
 ##.facebook-footer
 ##.facebook-hover
 ##.facebook-image
+##.facebook-inner
 ##.facebook-like
 ##.facebook-like-box
 ##.facebook-like-static
@@ -24508,7 +24505,6 @@
 ##.footer__link--social
 ##.footer__links__social
 ##.footer__list--social
-##.footer__nav--social
 ##.footer__nav-social
 ##.footer__newsletter
 ##.footer__newsletter-form
@@ -26011,6 +26007,7 @@
 ##.inc-ad
 ##.inconsent-bar
 ##.incontent-ad1
+##.incontent-newsletter
 ##.incontentAd
 ##.incontent_ads
 ##.incrypted-cookie-bar
@@ -28206,6 +28203,7 @@
 ##.newsletter-area
 ##.newsletter-article-bottom
 ##.newsletter-banner
+##.newsletter-banner-sidebar
 ##.newsletter-bar
 ##.newsletter-block-wrapper
 ##.newsletter-bottom
@@ -30376,6 +30374,7 @@
 ##.share-blog
 ##.share-body
 ##.share-bottom
+##.share-bottom-new
 ##.share-box-fixed
 ##.share-box-wrapper
 ##.share-btn
@@ -30981,7 +30980,6 @@
 ##.sidebarAdvert
 ##.sidebar__ad
 ##.sidebar__newsletter
-##.sidebar__share
 ##.sidebar_ad
 ##.sidebar_ad_300
 ##.sidebar_ad_300_250
@@ -31394,6 +31392,7 @@
 ##.social-floating
 ##.social-follow
 ##.social-follow-bar
+##.social-follow-item
 ##.social-foot
 ##.social-footer
 ##.social-footer-block
@@ -31485,7 +31484,6 @@
 ##.social-networking
 ##.social-networks-container
 ##.social-networks-footer
-##.social-networks-links
 ##.social-networks-list
 ##.social-networks__item
 ##.social-news-buttons
@@ -32936,7 +32934,6 @@
 ##.tt-cookie-bar
 ##.tt-cookie-bar-module
 ##.tt-plugin.tt-share-entry-with-sns
-##.tt-share
 ##.tt_ads
 ##.tt_cookie_banner
 ##.ttacjs__overlay
@@ -37564,6 +37561,7 @@ $to=iltalehti.fi|hs.fi,uritransform=/#Echobox=[\d]{10}$//
 /\.nimiq\./
 /\.sagewwl/
 /\.srvqck/
+/\.telegram\.hr\/.+\/(\w+-){3,}/$inline-script
 /\.temporary\.site\/service\/[a-f0-9]{32}\//$doc,match-case,to=temporary.site|~impots.gouv.fr
 /\.workers\.dev\/help\/\d{14,19}\b/$doc,to=workers.dev|~facebook.com
 /\.zooplus\./
@@ -37797,7 +37795,6 @@ $to=iltalehti.fi|hs.fi,uritransform=/#Echobox=[\d]{10}$//
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$doc,match-case,to=com|net
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$frame,popup,3p,strict3p,match-case,to=com|net
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/js\?t=[_a-z0-9]+&ns=[a-z]{2}$/$script,3p,strict3p,match-case,to=com|net
-/^https:\/\/[a-z]{6,}\.[a-z]{12,}\.(?:cfd|cyou)\/[a-z0-9]{1,2}\/[a-zA-Z0-9]{6,}\?[a-z0-9]{2,3}=ey/$xhr,3p,match-case
 /^https:\/\/[a-z]{7,8}\.com\/\?s=[0-9a-z]{13}&q=/$doc,to=com,match-case
 /^https:\/\/[a-z]{7,}\.[a-z]{3,}\/get\/\?s=[a-zA-Z0-9]+=*$/$script,3p,match-case,to=~edu|~gov
 /^https:\/\/[a-z]{7,}\.[a-z]{3,}\/img\/$/$script,3p,match-case,to=~edu|~gov
@@ -44663,6 +44660,7 @@ $to=iltalehti.fi|hs.fi,uritransform=/#Echobox=[\d]{10}$//
 /vj3/*$third-party
 /vjioew-1322507002.
 /vjslog?
+/vk_button.png
 /vlado7.$script,1p
 /vli-platform/adb-analytics@
 /vmind.qqvideo.tc.qq.com^
@@ -44829,7 +44827,6 @@ $to=iltalehti.fi|hs.fi,uritransform=/#Echobox=[\d]{10}$//
 /wp-content/client-mu-plugins/src/Paywall/static/js/connext-paywall-analytics.min.js
 /wp-content/mbp-banner/*$image
 /wp-content/ntww/natwest3/*.php^$doc,to=~natwest.com
-/wp-content/plugins/1shortlink/*
 /wp-content/plugins/2-click-socialmedia-buttons/*
 /wp-content/plugins/ad-inserter/js/ai-functions.min.js
 /wp-content/plugins/adblock-detector/adblock-detector.js
@@ -45005,6 +45002,7 @@ $to=iltalehti.fi|hs.fi,uritransform=/#Echobox=[\d]{10}$//
 /wp-cookie-allow/*$script,stylesheet
 /wp-gdpr-compliance/assets/js/front.min.js
 /wp-js/analytics.js
+/wp-json/api/advanced_placement/*
 /wp-json/burst/v1/track/*
 /wp-json/iawp/*
 /wp-json/leaky-paywall/v1/check-restrictions$xmlhttprequest,~third-party
